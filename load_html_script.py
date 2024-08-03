@@ -296,5 +296,5 @@ html_content += """
 """
 
 # Save the HTML content to a file
-with open('strava_events.html', 'w', encoding='utf-8') as file:
+with open('index.html', 'w', encoding='utf-8') as file:
     file.write(html_content)
