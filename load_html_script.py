@@ -1,7 +1,6 @@
-
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from pymongo import MongoClient
-import datetime
 import os
 import requests
 import pytz
@@ -22,10 +21,10 @@ local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local tim
 
 # 获取当前时间所在周的周一00:00AM时间, 切不能小于当前时间
 def get_start_of_week():
-    now = datetime.datetime.now(pytz.utc)  # 使用UTC时间
-    start_of_week = now - datetime.timedelta(days=now.weekday(), hours=now.hour, minutes=now.minute, seconds=now.second, microseconds=now.microsecond)
+    now = datetime.now(pytz.utc)  # 使用UTC时间
+    start_of_week = now - timedelta(days=now.weekday(), hours=now.hour, minutes=now.minute, seconds=now.second, microseconds=now.microsecond)
     if start_of_week <= now:
-        start_of_week = start_of_week - datetime.timedelta(days=7)
+        start_of_week = start_of_week - timedelta(days=7)
     return start_of_week
 
 # Fetch events from MongoDB where the start time is after the Monday of the current week
@@ -44,18 +43,25 @@ all_events_list = []
 for event in events_cursor:
     # Convert the event's event_time_utc to datetime.datetime object if it's a string, hint: string format 2024-07-26T15:30:00.000+00:00
     if isinstance(event['event_time_utc'], str):
-        event_time_utc = datetime.datetime.strptime(event['event_time_utc'], '%Y-%m-%dT%H:%M:%S.%f+00:00')
+        event_time_utc = datetime.strptime(event['event_time_utc'], '%Y-%m-%dT%H:%M:%S.%f+00:00')
         event_time_utc = event_time_utc.replace(tzinfo=None)  # Remove the timezone info
         event['event_time_utc'] = event_time_utc
+    elif isinstance(event['event_time_utc'], datetime):
+        event['event_time_utc'] = event['event_time_utc'].replace(tzinfo=None)  # Ensure no timezone info
     all_events_list.append(event)
 
 
-# Split the events into two lists by start of today, one list for future events and one list for past events
-start_of_today = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-print(f"Start of today: {start_of_today}")
-future_events_list = [event for event in all_events_list if event['event_time_utc'] > start_of_today]
+# Split the events into two lists by 6 hours before the current time;
+# one list for future events (ongoing events started in 6 hours, future events),
+# and one list for past events.
+six_hours_before = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+print(f"Start of today: {six_hours_before}")
+future_events_list = [event for event in all_events_list if event['event_time_utc'] >= six_hours_before]
 future_events_list.sort(key=lambda x: x['event_time_utc'])
-past_events_list = [event for event in all_events_list if event not in future_events_list]
+past_events_list = [event for event in all_events_list if event['event_time_utc'] < six_hours_before]
+
+# Sort the events
+future_events_list.sort(key=lambda x: x['event_time_utc'])
 past_events_list.sort(key=lambda x: x['event_time_utc'], reverse=True)  # you are so smart copilot #
 
 # DEBUG: 在CLI中打印events的数量
@@ -82,6 +88,9 @@ print(f"Total number of past events: {len(past_events_list)}")
 #         print("-" * 40)
 #     print("~" * 40)
 
+# Sample output: Aug 1st (2024) 9:39 PM PDT
+current_time_str_PDT = datetime.now(local_tz).strftime('%D %H:%M')
+
 # 生成HTML内容
 html_content = """
 <!DOCTYPE html>
@@ -103,6 +112,12 @@ html_content = """
             padding: 10px;
             text-align: center;
             border-bottom: 4px solid #fff; /* White border at the bottom */
+        }
+        .label-font {  /* Small font size and gray color for labels */
+            font-size: 0.8em;
+            color: #888;
+            font-family: 'Courier New', Courier, monospace;
+            padding-left: 20px;
         }
         .event {
             border: 1px solid #ccc;
@@ -247,7 +262,7 @@ def gen_div_for_events_from_list(events_list):
                         <div class="date">{day_str}</div>
                         <div class="month">{month_str}</div>
         """
-        if year != datetime.datetime.now().year:
+        if year != datetime.now().year:
             events_div += f"""
                         <div class="year">{year}</div>
             """
@@ -298,7 +313,7 @@ def gen_div_for_events_from_list(events_list):
 
 # Generate the HTML content for future and past events
 html_content += f"""
-        <h2><span class="top-bar">好 骑 友</span> Upcoming Events</h2>
+        <h2><span class="top-bar">好 骑 友</span> Upcoming Events<span class="label-font">Updated on {current_time_str_PDT}</span></h2>
 """
 html_content += gen_div_for_events_from_list(future_events_list)
 
