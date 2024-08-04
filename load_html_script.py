@@ -89,7 +89,9 @@ html_content = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strava Club Events</title>
+    <link rel="icon" href="/path/to/haoqiyou.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/path/to/haoqiyou.ico" type="image/x-icon">
+    <title>好骑友网(骑行活动收集器)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
