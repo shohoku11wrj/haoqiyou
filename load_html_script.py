@@ -95,6 +95,13 @@ html_content = """
             font-family: Arial, sans-serif;
             color: #6d6d78;
         }
+        .top-bar {
+            background-color: #c60c30; /* Deep red color */
+            color: #fff; /* White font color */
+            padding: 10px;
+            text-align: center;
+            border-bottom: 4px solid #fff; /* White border at the bottom */
+        }
         .event {
             border: 1px solid #ccc;
             margin: 10px;
@@ -279,7 +286,7 @@ def gen_div_for_events_from_list(events_list):
 
 # Generate the HTML content for future and past events
 html_content += f"""
-        <h2>Upcoming Events</h2>
+        <h2><span class="top-bar">好 骑 友</span> Upcoming Events</h2>
 """
 html_content += gen_div_for_events_from_list(future_events_list)
 
