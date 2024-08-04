@@ -201,7 +201,8 @@ def gen_div_for_events_from_list(events_list):
         # Convert the event's event_time_utc from datetime.datetime to local time zone
         event_time_utc = event['event_time_utc'].replace(tzinfo=pytz.utc)
         event_time_local = event_time_utc.astimezone(local_tz)
-        event_time_str = event_time_local.strftime('%H:%M %p')  # 12-hour format with AM/PM
+        # 12-hour format with AM/PM
+        event_time_str = event_time_local.strftime('%I:%M %p').lstrip('0')
         # Extract month and day separately for the date-box
         year = event_time_utc.year
         month_str = event_time_local.strftime('%b').upper()
