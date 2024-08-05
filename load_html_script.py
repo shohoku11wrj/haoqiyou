@@ -54,8 +54,8 @@ for event in events_cursor:
 # Split the events into two lists by 6 hours before the current time;
 # one list for future events (ongoing events started in 6 hours, future events),
 # and one list for past events.
-six_hours_before = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-print(f"Start of today: {six_hours_before}")
+six_hours_before = datetime.now(pytz.utc).replace(tzinfo=None) - timedelta(hours=6)
+print(f"Six hours before: {six_hours_before}")
 future_events_list = [event for event in all_events_list if event['event_time_utc'] >= six_hours_before]
 future_events_list.sort(key=lambda x: x['event_time_utc'])
 past_events_list = [event for event in all_events_list if event['event_time_utc'] < six_hours_before]
@@ -112,12 +112,6 @@ html_content = """
             padding: 10px;
             text-align: center;
             border-bottom: 4px solid #fff; /* White border at the bottom */
-        }
-        .label-font {  /* Small font size and gray color for labels */
-            font-size: 0.8em;
-            color: #888;
-            font-family: 'Courier New', Courier, monospace;
-            padding-left: 20px;
         }
         .event {
             border: 1px solid #ccc;
@@ -313,7 +307,8 @@ def gen_div_for_events_from_list(events_list):
 
 # Generate the HTML content for future and past events
 html_content += f"""
-        <h2><span class="top-bar">好 骑 友</span> Upcoming Events<span class="label-font">Updated on {current_time_str_PDT}</span></h2>
+        <h2><span class="top-bar">好 骑 友</span>Upcoming Events</h2>
+        <span>Updated on {current_time_str_PDT}</span>
 """
 html_content += gen_div_for_events_from_list(future_events_list)
 
