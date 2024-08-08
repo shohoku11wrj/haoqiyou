@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from pymongo import MongoClient
 import os
+import re
 import requests
 import pytz
 
@@ -31,6 +32,19 @@ def get_start_of_week():
     if start_of_week <= now:
         start_of_week = start_of_week - timedelta(days=7)
     return start_of_week
+
+# 转移url成hyperlink成<a href="url" target="_blank">text</a>
+def convert_urls_to_links(text):
+    # case_1: 原文已经提供了<a>标签
+    if re.search(r'<a href="([^"]+)" target="_blank">[^<]+</a>', text):
+        return text
+    # case_2: 原文提供了markdown形式[text](url)
+    markdown_pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
+    text = markdown_pattern.sub(r'<a href="\2" target="_blank">\1</a>', text)
+    # case_3: 原文只有url
+    url_pattern = re.compile(r'(?<!href=")(https?://[^\s]+)')
+    text = url_pattern.sub(r'<a href="\1" target="_blank">\1</a>', text)
+    return text
 
 # Fetch events from MongoDB where the start time is after the Monday of the current week
 start_of_week_utc = get_start_of_week()
@@ -259,8 +273,11 @@ def gen_div_for_events_from_list(events_list):
         elif event['source_type'] == 'news':
             source_group_name = f"新闻 - {event['source_group_name']}"
 
+        # Convert URLs in the description to hyperlinks
+        event_description = convert_urls_to_links(event['description'])
 
-        # TODO: if year is not current year, add year to the date-box
+
+        # If year is not current year, add year to the date-box
         events_div += f"""
         <div class="event">
             <div class="event-section">
@@ -312,7 +329,7 @@ def gen_div_for_events_from_list(events_list):
                 <div class="event-description">发起人: {event['organizer']} <br></div>
                 <div class="event-description">活动来自: <a href="{source_event_url}" target="_blank">{source_group_name}</a></div>
                 <br>
-                <div class="event-description">{event['description']}</div>
+                <div class="event-description">{event_description}</div>
             </div>
         </div>
         """
