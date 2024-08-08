@@ -16,6 +16,11 @@ client = MongoClient(MONGO_CONNECTION_STRING)
 db = client[RIDE_EVENT_DB_NAME]
 collection = db[RIDE_EVENTS_COLLECTION_NAME]
 
+# List of group_ids to exclude
+excluded_group_ids = [
+    265,  # Los Gatos Bicycle Racing Club
+]
+
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
 
@@ -32,6 +37,7 @@ start_of_week_utc = get_start_of_week()
 print(f"Start of the week (UTC): {start_of_week_utc}")
 events_cursor = collection.find({
     'is_active': {'$eq': True},
+    'source_group_id': {'$nin': excluded_group_ids},
     '$or': [
         {'event_time_utc': {'$gte': start_of_week_utc}},
         {'event_time_utc': {'$type': 'string', '$gte': start_of_week_utc.isoformat()}}
