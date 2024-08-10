@@ -261,7 +261,7 @@ def gen_div_for_events_from_list(events_list):
             print(e)
         
         # Source URL
-        source_event_url = event['strava_url'] if event['source_type'] == 'strava' else ""
+        source_event_url = event.get('strava_url', "")
         if source_event_url == "" and 'source_url' in event:
             source_event_url = event['source_url']
         source_group_name = event['source_group_name']
