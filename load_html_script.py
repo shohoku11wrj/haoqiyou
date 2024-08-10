@@ -75,12 +75,14 @@ for event in events_cursor:
 # and one list for past events.
 six_hours_before = datetime.now(pytz.utc).replace(tzinfo=None) - timedelta(hours=6)
 print(f"Six hours before: {six_hours_before}")
-future_events_list = [event for event in all_events_list if event['event_time_utc'] >= six_hours_before]
-future_events_list.sort(key=lambda x: x['event_time_utc'])
+one_month_later = datetime.now(pytz.utc).replace(tzinfo=None) + timedelta(days=30)
+future_events_list = [event for event in all_events_list if event['event_time_utc'] >= six_hours_before and event['event_time_utc'] <= one_month_later]
+planning_events_list = [event for event in all_events_list if event['event_time_utc'] > one_month_later]
 past_events_list = [event for event in all_events_list if event['event_time_utc'] < six_hours_before]
 
 # Sort the events
 future_events_list.sort(key=lambda x: x['event_time_utc'])
+planning_events_list.sort(key=lambda x: x['event_time_utc'])
 past_events_list.sort(key=lambda x: x['event_time_utc'], reverse=True)  # you are so smart copilot #
 
 # DEBUG: 在CLI中打印events的数量
@@ -360,6 +362,13 @@ html_content += """
 """
 
 html_content += gen_div_for_events_from_list(future_events_list)
+
+
+html_content += f"""
+        <h2>Planning Events</h2>
+"""
+html_content += gen_div_for_events_from_list(planning_events_list)
+
 
 html_content += f"""
         <h2>Past Events</h2>
