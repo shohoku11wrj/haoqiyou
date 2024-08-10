@@ -177,6 +177,59 @@ for club_id, event_id, event in all_events_list:
         )
     )
 
+# Backfill strava_routes that are active and after the start of the week
+start_of_week_utc = get_start_of_week()
+strava_routes_cursor = collection.find({
+    'is_active': True,
+    '$or': [
+        {'event_time_utc': {'$gte': start_of_week_utc}},
+        {'event_time_utc': {'$type': 'string', '$gte': start_of_week_utc.isoformat()}}
+    ],
+    'source_type': {'$ne': 'strava'},
+    'strava_url': {'$exists': 1},
+    '$or': [
+        {'is_backfilled': {'$exists': False}},
+        {'is_backfilled': {'$eq': False}}
+    ]
+})
+backfill_event_count = 0
+
+for strava_route_event in strava_routes_cursor:
+    backfill_event_count += 1
+    try:
+        # extract the route_id from the strava_url https://www.strava.com/routes/3257233396236180976
+        strava_route_id = int(strava_route_event['strava_url'].split('/')[-1])
+        route_details = get_route_details(strava_route_id, access_token)
+        distance = route_details.get('distance', None)  # Distance in meters
+        elevation_gain = route_details.get('elevation_gain', None)  # Elevation gain in meters
+        distance_meters = int(distance)
+        elevation_gain_meters = int(elevation_gain)
+        strava_map_url = route_details.get('map_urls', {}).get('url', None)
+    except ValueError as e:
+        print(e)
+    
+    # Prepare the event document for MongoDB
+    update_event_document = {
+        'distance_meters': distance_meters,
+        'elevation_gain_meters': elevation_gain_meters,
+        'route_map_url': strava_map_url,
+        'raw_event': route_details,
+        'is_backfilled': True
+    }
+
+    operations.append(
+        UpdateOne(
+            {
+                'source_type': strava_route_event['source_type'],
+                'source_group_id': strava_route_event['source_group_id'],
+                'source_event_id': strava_route_event['source_event_id']
+            },
+            {'$set': update_event_document}
+        )
+    )
+
+print(f"Backfilled {backfill_event_count} strava_routes")
+
 # Execute the bulk write operation
 if operations:
     result = collection.bulk_write(operations)
