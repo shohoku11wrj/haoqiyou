@@ -17,8 +17,8 @@ client = MongoClient(MONGO_CONNECTION_STRING)
 db = client[RIDE_EVENT_DB_NAME]
 collection = db[RIDE_EVENTS_COLLECTION_NAME]
 
-# List of group_ids to exclude
-excluded_group_ids = [
+# List of group_ids of extra events
+extra_event_group_ids = [
     265,  # Los Gatos Bicycle Racing Club
 ]
 
@@ -51,7 +51,6 @@ start_of_week_utc = get_start_of_week()
 print(f"Start of the week (UTC): {start_of_week_utc}")
 events_cursor = collection.find({
     'is_active': {'$eq': True},
-    'source_group_id': {'$nin': excluded_group_ids},
     '$or': [
         {'event_time_utc': {'$gte': start_of_week_utc}},
         {'event_time_utc': {'$type': 'string', '$gte': start_of_week_utc.isoformat()}}
@@ -276,10 +275,12 @@ def gen_div_for_events_from_list(events_list):
         # Convert URLs in the description to hyperlinks
         event_description = convert_urls_to_links(event['description'])
 
+        # Add the extra-event class if the event belongs to extra_event_group_ids
+        event_class = "extra-event" if event['source_group_id'] in extra_event_group_ids else ""
 
         # If year is not current year, add year to the date-box
         events_div += f"""
-        <div class="event">
+        <div class="event {event_class}">
             <div class="event-section">
                 <div class="event-details">
                     <div class="date-box">
@@ -340,6 +341,24 @@ html_content += f"""
         <h2><span class="top-bar">好 骑 友</span>Upcoming Events</h2>
         <span>Updated on {current_time_str_PDT}</span>
 """
+
+# Add a checkbox to switch displaying or hiding extra events
+html_content += """
+    <label>
+        <input type="checkbox" id="toggleExtra">
+        <span style="color:#0000ff">只显示精选活动</span>
+    </label>
+    <script>
+        document.getElementById('toggleExtra').addEventListener('change', function() {
+            var extraEvents = document.querySelectorAll('.extra-event');
+            extraEvents.forEach(function(event) {
+                event.style.display = this.checked ? 'none' : 'block';
+                event.style.backgroundColor = this.checked ? 'transparent' : '#cad6e6' ;
+            }, this);
+        });
+    </script>
+"""
+
 html_content += gen_div_for_events_from_list(future_events_list)
 
 html_content += f"""

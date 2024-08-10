@@ -118,9 +118,23 @@
     <div id="events-container">
 
         <h2><span class="top-bar">好 骑 友</span>Upcoming Events</h2>
-        <span>Updated on 08/08/24 15:24</span>
+        <span>Updated on 08/09/24 22:02</span>
 
-        <div class="event">
+    <label>
+        <input type="checkbox" id="toggleExtra">
+        <span style="color:#0000ff">只显示精选活动</span>
+    </label>
+    <script>
+        document.getElementById('toggleExtra').addEventListener('change', function() {
+            var extraEvents = document.querySelectorAll('.extra-event');
+            extraEvents.forEach(function(event) {
+                event.style.display = this.checked ? 'none' : 'block';
+                event.style.backgroundColor = this.checked ? 'transparent' : '#cad6e6' ;
+            }, this);
+        });
+    </script>
+
+        <div class="event ">
             <div class="event-section">
                 <div class="event-details">
                     <div class="date-box">
@@ -158,7 +172,7 @@ Stay tuned for more details. Follow Live in Peace Bike Shop on Instagram and on 
             </div>
         </div>
         
-        <div class="event">
+        <div class="event ">
             <div class="event-section">
                 <div class="event-details">
                     <div class="date-box">
@@ -199,7 +213,42 @@ Plan: Summit bicycle start - OLH top: podium ceremony - West alpine - Page mill 
             </div>
         </div>
         
-        <div class="event">
+        <div class="event extra-event">
+            <div class="event-section">
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">11</div>
+                        <div class="month">AUG</div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22642, -121.98273
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA 95032 <br>
+        
+                    <span class="meet-up">总路程:</span> 43.43 km (26.99 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 645 m (2,116 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1740793" target="_blank">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/RQXWBEIYS3NZQWIAJF6TBBD2F44GVWXFFNW6QOGSXNISVI45CVWNWQGXG7WL6DMGUQVJALSNF6TXMUXL6WWTUX5RHGKABESA52GSQBY=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Group Road Ride - Redwood Gulch</div>
+                <div class="event-description">发起人: Rachel Vasquez <br></div>
+                <div class="event-description">活动来自: <a href="https://www.strava.com/clubs/265/group_events/1740793" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+                <br>
+                <div class="event-description"></div>
+            </div>
+        </div>
+        
+        <div class="event ">
             <div class="event-section">
                 <div class="event-details">
                     <div class="date-box">
@@ -239,7 +288,42 @@ The <a href="https://connect.garmin.com/modern/course/295508238" target="_blank"
             </div>
         </div>
         
-        <div class="event">
+        <div class="event extra-event">
+            <div class="event-section">
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">13</div>
+                        <div class="month">AUG</div>
+        
+                    </div>
+                    <div>
+                        <strong>6:10 PM</strong> Tuesday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22634, -121.98254
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA 95030 <br>
+        
+                    <span class="meet-up">总路程:</span> 37.91 km (23.56 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 490 m (1,607 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/CLBO67D57LE7G7AAS7O36DPX4NAYBHTX6Y7VE623OA7IEVPJGWZ7EF2PLJGCH3JL5I4GP3YYLHNWX5CXJKSN5H2RVACVNRTTNDWLUOI=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Mike's Bikes Shop Ride</div>
+                <div class="event-description">发起人: LGBRC Rides <br></div>
+                <div class="event-description">活动来自: <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+                <br>
+                <div class="event-description">Mike's Bikes shop ride led by Mike's Bikes shop employees.  We roll as soon as they close the store (6:10 to 6:15-ish).  </div>
+            </div>
+        </div>
+        
+        <div class="event ">
             <div class="event-section">
                 <div class="event-details">
                     <div class="date-box">
@@ -287,7 +371,42 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
         
         <h2>Past Events</h2>
 
-        <div class="event">
+        <div class="event extra-event">
+            <div class="event-section">
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">09</div>
+                        <div class="month">AUG</div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Friday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22625, -121.98236
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA 95032 <br>
+        
+                    <span class="meet-up">总路程:</span> 89.30 km (55.49 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 1,607 m (5,272 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1740797" target="_blank">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4PFEAIL2FKPTXQGKXC4THC3D2UEG7QY2GPKJVE4WPESJULRMVB7B3XLKGALFISSANGBJ5FCBZY3H4EJU4RRGR2HAKVAERKJ7WG53H6Q=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">FRIDAY Bonus Ride - Group Road Ride</div>
+                <div class="event-description">发起人: Mark Thompson <br></div>
+                <div class="event-description">活动来自: <a href="https://www.strava.com/clubs/265/group_events/1740797" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+                <br>
+                <div class="event-description">Bonus Friday ride, starting from Mikes Bikes in Los Gatos and going to the beach.  We will stop for water/bathroom at a park just before Capitola.  We will also stop at a gas station in Scotts Valley for cold water and bathrooms.</div>
+            </div>
+        </div>
+        
+        <div class="event ">
             <div class="event-section">
                 <div class="event-details">
                     <div class="date-box">
@@ -330,7 +449,7 @@ Note: Mostly beginner level. Alpine segment has steep sections but encourage beg
             </div>
         </div>
         
-        <div class="event">
+        <div class="event ">
             <div class="event-section">
                 <div class="event-details">
                     <div class="date-box">
@@ -370,7 +489,42 @@ Note: Mostly beginner level. Alpine segment has steep sections but encourage beg
             </div>
         </div>
         
-        <div class="event">
+        <div class="event extra-event">
+            <div class="event-section">
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">04</div>
+                        <div class="month">AUG</div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 37.2262, -121.98224
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA 95032 <br>
+        
+                    <span class="meet-up">总路程:</span> 47.77 km (29.68 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 682 m (2,237 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1734143" target="_blank">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/TAX5JQ6RPRNL36H5D2OTYEZDOIQB4C5ZCLCA3L2MPJ6NSHGAFSJSXHO64DP5USVHC3PHHAU72IYD5LWN3GECAEL2NRKX4FEH42ZCCXA=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Group Road Ride - IBM from the South</div>
+                <div class="event-description">发起人: Mark Thompson <br></div>
+                <div class="event-description">活动来自: <a href="https://www.strava.com/clubs/265/group_events/1734143" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+                <br>
+                <div class="event-description">Route will head out over Shannon, Hicks to Camden and into the neighborhoods at Leyland Park Dr.  We will stop at the bathrooms/water on Mockingbird Hill Ln (12 miles into the ride).  Then summit IBM hill before returning to Mikes Bikes.</div>
+            </div>
+        </div>
+        
+        <div class="event ">
             <div class="event-section">
                 <div class="event-details">
                     <div class="date-box">
@@ -405,6 +559,41 @@ Note: Mostly beginner level. Alpine segment has steep sections but encourage beg
                 <br>
                 <div class="event-description"> summit bicycle集合，骑一个portola loop+olh，休闲配速。
 <a href="https://www.strava.com/routes/3254652246197406494" target="_blank">https://www.strava.com/routes/3254652246197406494</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event">
+            <div class="event-section">
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">03</div>
+                        <div class="month">AUG</div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Saturday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22643, -121.98213
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> Mike's Bikes Los Gatos <br>
+        
+                    <span class="meet-up">总路程:</span> 100.14 km (62.22 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 1,284 m (4,212 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1734728" target="_blank">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/J5NXQYOTIXCOZ6MHQV3VGVE77UTVGBWQRLXLW2AIDTHSLVCXWVUAVJDBFKDQGQK76LKKMQT4IQHSF7IFGYZLYLNK7PAYRRAIBVFTG6Y=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Saturday Road Ride! Old La Honda</div>
+                <div class="event-description">发起人: Everyday Heroes Athletics Coach Ben <br></div>
+                <div class="event-description">活动来自: <a href="https://www.strava.com/clubs/265/group_events/1734728" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+                <br>
+                <div class="event-description">It's a casual tempo ride. Come enjoy a classic (possibly THE classic) Peninsula climb!</div>
             </div>
         </div>
         
