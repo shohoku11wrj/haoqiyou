@@ -12,4 +12,6 @@ TODO:
  * Share one event via event detail path, or generate a postcard for one event to share
  * Simplify the index page, reduce layout size of each event so that events can be organized compactly (卡片式，瀑布式); hide some details of event in the index page
  * Map view, can catch all events in the Bay Area mapview. Each event pin on the map will be labeled "date + time + distance". Optional: cast routes of events on the map
+ * Support (cloud) comments for each event
+ * Allow event owner to cancel/edit details of the event.
  
