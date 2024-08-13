@@ -134,17 +134,23 @@ html_content = """
             text-align: center;
             border-bottom: 4px solid #fff; /* White border at the bottom */
         }
+        /* Include the CSS here */
+        #events-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax value as needed */
+            gap: 10px; /* Space between grid items */
+            margin: 0 10px;
+        }
         .event {
             border: 1px solid #ccc;
-            margin: 10px;
             padding: 10px;
             position: relative;
-            margin-bottom: 20px;
             padding-left: 60px; /* Add padding to avoid overlap with date-box */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
         }
         .event-section {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap; /* Allow wrapping of events */
             margin: 0 10px;
         }
         .event-title {
@@ -197,26 +203,32 @@ html_content = """
         .meet-up {
             color: #6d6d78;
         }
-        @media (min-width: 1440px) {
-            .event {
-                display: flex;
-                flex-direction: row;
-            }
-            .event-section {
-                flex-direction: column;
-                margin-bottom: 0;
-            }
-            .event-details {
-                flex-direction: row;
-            }
-            .date-box {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            .event-details div {
-                margin-right: 10px;
-                margin-bottom: 0;
-            }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            z-index: 1000;
+        }
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .close-btn {
+            float: right;
+            cursor: pointer;
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -230,8 +242,37 @@ html_content = """
     </script>
 </head>
 <body>
-    <div id="events-container">
 """
+
+def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, source_group_name):
+    # Convert URLs in the description to hyperlinks
+    event_description = convert_urls_to_links(event['description'])
+    popup_div = f"""
+            <div id="event-{event['_id']}" style="display: none;">
+                <h2>{event['title']}</h2>
+                <p class="event-description">{event_description}</p>
+                <a href="{source_event_url}" target="_blank" class="event-link">
+                    <img src="{event['route_map_url']}" alt="Route Image" width="100%">
+                </a>
+                <p><strong>时间:</strong> {event_time_str}, {day_of_week}, {month_str} {day_str}, {year}</p>
+                <p><strong>集合GPS:</strong> {gps_coordinates_str}</p>
+                <p><strong>集合地点:</strong> {event['meet_up_location']}</p>
+                <p><strong>总路程::</strong> {distance_str}</p>
+                <p><strong>总爬坡:</strong> {elevation_gain_str}</p>
+                <p><strong>发起人:</strong> {event['organizer']}</p>
+                <p><strong>活动来源:</strong> <a href="{source_event_url}" target="_blank">{source_group_name}</a></p>
+            """
+    if 'expected_participants_number' in event and event['expected_participants_number'] != "" and event['expected_participants_number'] != "0":
+        popup_div += f"""
+            <p><strong>预计人数:</strong> {event['expected_participants_number']}</p>
+        """
+
+    if 'actual_participants_number' in event and event['actual_participants_number'] != "" and event['actual_participants_number'] != "0":
+        popup_div += f"""
+            <p><strong>实际人数:</strong> {event['actual_participants_number']}</p>
+        """
+    popup_div += "</div>"
+    return popup_div
 
 def gen_div_for_events_from_list(events_list):
     events_div = ""
@@ -274,16 +315,16 @@ def gen_div_for_events_from_list(events_list):
         elif event['source_type'] == 'news':
             source_group_name = f"新闻 - {event['source_group_name']}"
 
-        # Convert URLs in the description to hyperlinks
-        event_description = convert_urls_to_links(event['description'])
-
         # Add the extra-event class if the event belongs to extra_event_group_ids
         event_class = "extra-event" if event['source_group_id'] in extra_event_group_ids else ""
 
         # If year is not current year, add year to the date-box
         events_div += f"""
-        <div class="event {event_class}">
+        <div class="event {event_class}" data-event-id="event-{event['_id']}">
             <div class="event-section">
+        """
+        events_div += gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, source_group_name)
+        events_div += f"""
                 <div class="event-details">
                     <div class="date-box">
                         <div class="date">{day_str}</div>
@@ -323,16 +364,14 @@ def gen_div_for_events_from_list(events_list):
                 </div>
             </div>
             <div class="event-section">
-                <a href="{source_event_url}" target="_blank">
+                <a href="{source_event_url}" target="_blank" class="event-link">
                     <img src="{event['route_map_url']}" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
                 <div class="event-title">{event['title']}</div>
                 <div class="event-description">发起人: {event['organizer']} <br></div>
-                <div class="event-description">活动来自: <a href="{source_event_url}" target="_blank">{source_group_name}</a></div>
-                <br>
-                <div class="event-description">{event_description}</div>
+                <div class="event-description">活动来源: <a href="{source_event_url}" target="_blank" class="event-link">{source_group_name}</a></div>
             </div>
         </div>
         """
@@ -359,25 +398,74 @@ html_content += """
             }, this);
         });
     </script>
+    <div id="events-container">
 """
 
 html_content += gen_div_for_events_from_list(future_events_list)
 
 
 html_content += f"""
+        </div>
         <h2>Planning Events</h2>
+        <div id="events-container">
 """
 html_content += gen_div_for_events_from_list(planning_events_list)
 
 
 html_content += f"""
+        </div>
         <h2>Past Events</h2>
+        <div id="events-container">
 """
 html_content += gen_div_for_events_from_list(past_events_list)
 
 # Close the HTML content
 html_content += """
     </div>
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup" id="popup">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <div id="popup-content"></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.expand').forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const fullDescription = this.getAttribute('data-full-description');
+                    this.parentElement.innerHTML = fullDescription;
+                });
+            });
+
+            document.querySelectorAll('.event').forEach(function(eventDiv) {
+                eventDiv.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const eventId = this.getAttribute('data-event-id');
+                    const eventDetails = document.getElementById(eventId).innerHTML;
+                    document.getElementById('popup-content').innerHTML = eventDetails;
+                    document.getElementById('popup-overlay').style.display = 'block';
+                    document.getElementById('popup').style.display = 'block';
+                });
+            });
+
+            document.querySelectorAll('.event-link').forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                });
+            });
+
+            document.getElementById('close-btn').addEventListener('click', function() {
+                document.getElementById('popup-overlay').style.display = 'none';
+                document.getElementById('popup').style.display = 'none';
+            });
+
+            document.getElementById('popup-overlay').addEventListener('click', function() {
+                document.getElementById('popup-overlay').style.display = 'none';
+                document.getElementById('popup').style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
 """
