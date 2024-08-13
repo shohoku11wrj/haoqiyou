@@ -215,6 +215,8 @@ html_content = """
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             padding: 20px;
             z-index: 1000;
+            max-height: 100vh; /* Set maximum height to the viewport height */
+            overflow-y: auto;
         }
         .popup-overlay {
             display: none;
