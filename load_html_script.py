@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 from pymongo import MongoClient
 import os
@@ -62,8 +62,19 @@ all_events_list = []
 for event in events_cursor:
     # Convert the event's event_time_utc to datetime.datetime object if it's a string, hint: string format 2024-07-26T15:30:00.000+00:00
     if isinstance(event['event_time_utc'], str):
-        event_time_utc = datetime.strptime(event['event_time_utc'], '%Y-%m-%dT%H:%M:%S.%f+00:00')
-        event_time_utc = event_time_utc.replace(tzinfo=None)  # Remove the timezone info
+        datetime_str = event['event_time_utc']
+        dt, tz = datetime_str[:-6], datetime_str[-6:]
+        event_time_tz = datetime.strptime(dt, '%Y-%m-%dT%H:%M:%S.%f')
+        # Parse the timezone part
+        tz_hours, tz_minutes = int(tz[1:3]), int(tz[4:6])
+        tz_delta = timedelta(hours=tz_hours, minutes=tz_minutes)
+        if tz[0] == '-':
+            tz_delta = -tz_delta
+        # Apply the timezone to the datetime object
+        event_time_tz = event_time_tz.replace(tzinfo=timezone(tz_delta))
+        # convert to UTC
+        event_time_utc = event_time_tz.astimezone(pytz.utc)
+        event_time_utc = event_time_utc.replace(tzinfo=None)  # Ensure no timezone info
         event['event_time_utc'] = event_time_utc
     elif isinstance(event['event_time_utc'], datetime):
         event['event_time_utc'] = event['event_time_utc'].replace(tzinfo=None)  # Ensure no timezone info
@@ -134,10 +145,9 @@ html_content = """
             text-align: center;
             border-bottom: 4px solid #fff; /* White border at the bottom */
         }
-        /* Include the CSS here */
         #events-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax value as needed */
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust minmax value as needed */
             gap: 10px; /* Space between grid items */
             margin: 0 10px;
         }
@@ -145,8 +155,8 @@ html_content = """
             border: 1px solid #ccc;
             padding: 10px;
             position: relative;
-            padding-left: 60px; /* Add padding to avoid overlap with date-box */
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            padding-left: 55px;
+            box-sizing: border-box;
         }
         .event-section {
             display: flex;
@@ -259,11 +269,16 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
                 <p><strong>时间:</strong> {event_time_str}, {day_of_week}, {month_str} {day_str}, {year}</p>
                 <p><strong>集合GPS:</strong> {gps_coordinates_str}</p>
                 <p><strong>集合地点:</strong> {event['meet_up_location']}</p>
-                <p><strong>总路程::</strong> {distance_str}</p>
-                <p><strong>总爬坡:</strong> {elevation_gain_str}</p>
-                <p><strong>发起人:</strong> {event['organizer']}</p>
-                <p><strong>活动来源:</strong> <a href="{source_event_url}" target="_blank">{source_group_name}</a></p>
             """
+    if 'distance_meters' in event and event['distance_meters'] > 0:
+        popup_div += f"""
+            <p><strong>总路程::</strong> {distance_str}</p>
+            <p><strong>总爬坡:</strong> {elevation_gain_str}</p>
+        """
+    popup_div += f"""
+        <p><strong>发起人:</strong> {event['organizer']}</p>
+        <p><strong>活动来源:</strong> <a href="{source_event_url}" target="_blank">{source_group_name}</a></p>
+    """
     if 'expected_participants_number' in event and event['expected_participants_number'] != "" and event['expected_participants_number'] != "0":
         popup_div += f"""
             <p><strong>预计人数:</strong> {event['expected_participants_number']}</p>
