@@ -60,6 +60,16 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 10px;
+            min-width: 60px;
+            border: 1px solid #dfdfe8;
+            display: inline-block;
+            text-align: center;
+        }
+        .date-box .date {
+            margin-top: 8px;
+            color: #fc5200;
+            font-size: 24px;
+            line-height: 20px;
         }
         .event-section:first-child {
             flex: 0 0 300px; /* Fixed width for the first column */
@@ -71,18 +81,6 @@
         .event-section:nth-child(3) {
             display: flex;
             flex-direction: column; /* Ensure row by row layout */
-        }
-        .date-box {
-            min-width: 60px;
-            border: 1px solid #dfdfe8;
-            display: inline-block;
-            text-align: center;
-        }
-        .date-box .date {
-            margin-top: 8px;
-            color: #fc5200;
-            font-size: 24px;
-            line-height: 20px;
         }
         .meet-up {
             color: #6d6d78;
@@ -112,6 +110,13 @@
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+        .event-title-row {
+            display: flex;
+            align-items: center; /* Align items vertically in the center */
+        }
+        .event-title-row .event-title {
+            margin: 0 0 0 50px;
+        }
         .close-btn {
             float: right;
             cursor: pointer;
@@ -129,8 +134,8 @@
 </head>
 <body>
 
-        <h2><span class="top-bar">好 骑 友</span>Upcoming Events</h2>
-        <span>Updated on 08/13/24 14:40</span>
+        <h2><span class="top-bar">好 骑 友</span><span style="opacity: 0;">U</span>Pcoming Events</h2>
+        <span>Updated on 08/13/24 22:52</span>
 
     <label>
         <input type="checkbox" id="toggleExtra">
@@ -150,16 +155,23 @@
         <div class="event extra-event" data-event-id="event-66a5cbd49719a87a0cc4301e">
             <div class="event-section">
         
-            <div id="event-66a5cbd49719a87a0cc4301e" style="display: none;">
-                <h2>Mike's Bikes Shop Ride</h2>
-                <p class="event-description">Mike's Bikes shop ride led by Mike's Bikes shop employees.  We roll as soon as they close the store (6:10 to 6:15-ish).  </p>
-                <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VJS3TNATTQVUNJZLZ64DJMNO525CIOILFHB4YHYBDYUQZ3T5Z74NXFGOXQY6EG7UDSIKOYV2HVDF346M4O4SRXXIT6Z4WEFYLJMAOQY=" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 6:10 PM, Tuesday, AUG 13, 2024</p>
-                <p><strong>集合GPS:</strong> 37.22634, -121.98254</p>
-                <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA 95030</p>
-            
+        <div id="event-66a5cbd49719a87a0cc4301e" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">13</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Mike's Bikes Shop Ride</div>
+            </div>
+            <p class="event-description">Mike's Bikes shop ride led by Mike's Bikes shop employees.  We roll as soon as they close the store (6:10 to 6:15-ish).  </p>
+            <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VJS3TNATTQVUNJZLZ64DJMNO525CIOILFHB4YHYBDYUQZ3T5Z74NXFGOXQY6EG7UDSIKOYV2HVDF346M4O4SRXXIT6Z4WEFYLJMAOQY=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 6:10 PM, Tuesday, AUG 13, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22634, -121.98254</p>
+            <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA 95030</p>
+        
             <p><strong>总路程::</strong> 37.91 km (23.56 miles)</p>
             <p><strong>总爬坡:</strong> 490 m (1,607 ft)</p>
         
@@ -200,18 +212,25 @@
         <div class="event " data-event-id="event-66bbc61499c68bc28d25042d">
             <div class="event-section">
         
-            <div id="event-66bbc61499c68bc28d25042d" style="display: none;">
-                <h2>14th Annual Silicon Valley Bike Summit</h2>
-                <p class="event-description">Thursday, August 29 · 9am - 6pm PDT
+        <div id="event-66bbc61499c68bc28d25042d" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">29</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">14th Annual Silicon Valley Bike Summit</div>
+            </div>
+            <p class="event-description">Thursday, August 29 · 9am - 6pm PDT
 Connect with insights and expertise at Silicon Valley’s largest gathering of active transportation leaders and organizers from government, the private sector, non-profits, and the general public. This is THE most information rich event of the year for bicycle professionals, elected and appointed officials, and citizen advocates in and around Silicon Valley. It’s well worth attending by professionals and advocates from elsewhere in the US as well.
 Register on <a href="https://www.eventbrite.com/e/silicon-valley-bike-summit-2024-tickets-841947175667?aff=oddtdtcreator" target="_blank">https://www.eventbrite.com/e/silicon-valley-bike-summit-2024-tickets-841947175667?aff=oddtdtcreator</a></p>
-                <a href="https://bikesiliconvalley.org/events/summit" target="_blank" class="event-link">
-                    <img src="https://images.squarespace-cdn.com/content/v1/6189ac221f143a6d4957a531/039e0b0e-165b-446a-8040-31d569c2c79d/2024+Summit+Graphic+-+EB+%26+Website.png?format=1500w" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 9:00 AM, Thursday, AUG 29, 2024</p>
-                <p><strong>集合GPS:</strong> 37.655545, -122.433568</p>
-                <p><strong>集合地点:</strong> Library | Parks & Recreation Center, 901 Civic Campus Way South San Francisco, CA 94080</p>
-            
+            <a href="https://bikesiliconvalley.org/events/summit" target="_blank" class="event-link">
+                <img src="https://images.squarespace-cdn.com/content/v1/6189ac221f143a6d4957a531/039e0b0e-165b-446a-8040-31d569c2c79d/2024+Summit+Graphic+-+EB+%26+Website.png?format=1500w" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 9:00 AM, Thursday, AUG 29, 2024</p>
+            <p><strong>集合GPS:</strong> 37.655545, -122.433568</p>
+            <p><strong>集合地点:</strong> Library | Parks & Recreation Center, 901 Civic Campus Way South San Francisco, CA 94080</p>
+        
         <p><strong>发起人:</strong> Silicon Valley Bicycle Coalition</p>
         <p><strong>活动来源:</strong> <a href="https://bikesiliconvalley.org/events/summit" target="_blank">新闻 - Silicon Valley Bicycle Coalition</a></p>
     </div>
@@ -250,9 +269,18 @@ Register on <a href="https://www.eventbrite.com/e/silicon-valley-bike-summit-202
         <div class="event " data-event-id="event-66a7fb5f9719a87a0c2b7be9">
             <div class="event-section">
         
-            <div id="event-66a7fb5f9719a87a0c2b7be9" style="display: none;">
-                <h2>往西，越过天际(Skyline)吧骚年</h2>
-                <p class="event-description">路线:
+        <div id="event-66a7fb5f9719a87a0c2b7be9" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">27</div>
+                    <div class="month">JUL</div>
+    
+                    <div class="year">2025</div>
+        
+                </div>
+                <div class="event-title">往西，越过天际(Skyline)吧骚年</div>
+            </div>
+            <p class="event-description">路线:
 Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山
 
 适合夏天的避暑路线 credit @Steve
@@ -262,13 +290,13 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
 
 本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在第一章(练 <a href="https://rangerway.com/way/cycling-routes-at-bay-area)" target="_blank">https://rangerway.com/way/cycling-routes-at-bay-area)</a> 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。
 这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。</p>
-                <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/QELLUZD63XVHN5S3POI3LEFAFJIFEP3SD26THE3QG5G6TFM7E6A2TLTDP5BTYJZI2VUJYLIAYFH4Q7JHX6HXGH7MAQ3M4S3CD3VYUGY=" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 9:00 AM, Sunday, JUL 27, 2025</p>
-                <p><strong>集合GPS:</strong> 37.42856, -122.25082</p>
-                <p><strong>集合地点:</strong> Woodside Town Hall, 2955 Woodside Rd, Woodside, CA 94062</p>
-            
+            <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/QELLUZD63XVHN5S3POI3LEFAFJIFEP3SD26THE3QG5G6TFM7E6A2TLTDP5BTYJZI2VUJYLIAYFH4Q7JHX6HXGH7MAQ3M4S3CD3VYUGY=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 9:00 AM, Sunday, JUL 27, 2025</p>
+            <p><strong>集合GPS:</strong> 37.42856, -122.25082</p>
+            <p><strong>集合地点:</strong> Woodside Town Hall, 2955 Woodside Rd, Woodside, CA 94062</p>
+        
             <p><strong>总路程::</strong> 81.28 km (50.50 miles)</p>
             <p><strong>总爬坡:</strong> 1,724 m (5,656 ft)</p>
         
@@ -315,20 +343,27 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
         <div class="event " data-event-id="event-66b3c27a4f65c484c7712707">
             <div class="event-section">
         
-            <div id="event-66b3c27a4f65c484c7712707" style="display: none;">
-                <h2>Sunday O' La Honda! My 19:59! ride </h2>
-                <p class="event-description">Sunday O' La Honda! My 19:59! ride
+        <div id="event-66b3c27a4f65c484c7712707" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">11</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Sunday O' La Honda! My 19:59! ride </div>
+            </div>
+            <p class="event-description">Sunday O' La Honda! My 19:59! ride
 Meet by: 8/11, 8:29am, leave in 9m59s.
 Meet at: 392 California Ave, Palo Alto, CA 94306
 Note: Chen Cheng sub-20min OLH celebratory ride
 Plan: Summit bicycle start - OLH top: podium ceremony - West alpine - Page mill descent - Cal Ave celebratory Lunch (Terun?)</p>
-                <a href="https://www.strava.com/clubs/1157973/group_events/1741460" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/BKEURDNOFCNQOGDDJBONSIGDCIBTNI464UTPOTYGK55ZXR3JQY3HLBIES7JA3LNACXEDJPOV4N6URYYESYONGGTT73LTHP2T5CUMXTA=" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 11, 2024</p>
-                <p><strong>集合GPS:</strong> 37.42687, -122.14576</p>
-                <p><strong>集合地点:</strong> 392 California Ave, Palo Alto, CA 94306</p>
-            
+            <a href="https://www.strava.com/clubs/1157973/group_events/1741460" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/BKEURDNOFCNQOGDDJBONSIGDCIBTNI464UTPOTYGK55ZXR3JQY3HLBIES7JA3LNACXEDJPOV4N6URYYESYONGGTT73LTHP2T5CUMXTA=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 11, 2024</p>
+            <p><strong>集合GPS:</strong> 37.42687, -122.14576</p>
+            <p><strong>集合地点:</strong> 392 California Ave, Palo Alto, CA 94306</p>
+        
             <p><strong>总路程::</strong> 63.44 km (39.42 miles)</p>
             <p><strong>总爬坡:</strong> 1,319 m (4,327 ft)</p>
         
@@ -377,16 +412,23 @@ Plan: Summit bicycle start - OLH top: podium ceremony - West alpine - Page mill 
         <div class="event extra-event" data-event-id="event-66b3c27a4f65c484c7712708">
             <div class="event-section">
         
-            <div id="event-66b3c27a4f65c484c7712708" style="display: none;">
-                <h2>Group Road Ride - Redwood Gulch</h2>
-                <p class="event-description"></p>
-                <a href="https://www.strava.com/clubs/265/group_events/1740793" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5G7TONXJS6JYTAVIU7E5J46DSTLYQRLF4TYOI5QOLFMRADXLWNZYSJX25TSPT3ZCUTRWKD3SP54CCV4UARCMKMB6LFFTSVN4X7AZKTQ=" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 11, 2024</p>
-                <p><strong>集合GPS:</strong> 37.22642, -121.98273</p>
-                <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA 95032</p>
-            
+        <div id="event-66b3c27a4f65c484c7712708" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">11</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Group Road Ride - Redwood Gulch</div>
+            </div>
+            <p class="event-description"></p>
+            <a href="https://www.strava.com/clubs/265/group_events/1740793" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5G7TONXJS6JYTAVIU7E5J46DSTLYQRLF4TYOI5QOLFMRADXLWNZYSJX25TSPT3ZCUTRWKD3SP54CCV4UARCMKMB6LFFTSVN4X7AZKTQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 11, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22642, -121.98273</p>
+            <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA 95032</p>
+        
             <p><strong>总路程::</strong> 43.43 km (26.99 miles)</p>
             <p><strong>总爬坡:</strong> 645 m (2,116 ft)</p>
         
@@ -427,17 +469,24 @@ Plan: Summit bicycle start - OLH top: podium ceremony - West alpine - Page mill 
         <div class="event " data-event-id="event-66b7f29f5a5369e55f8a36d1">
             <div class="event-section">
         
-            <div id="event-66b7f29f5a5369e55f8a36d1" style="display: none;">
-                <h2>Sunday Livermore 休閒騎</h2>
-                <p class="event-description">Easy spin around the Livermore winery scenic area. Planning on doing lunch at Beer garden after ride.
+        <div id="event-66b7f29f5a5369e55f8a36d1" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">11</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Sunday Livermore 休閒騎</div>
+            </div>
+            <p class="event-description">Easy spin around the Livermore winery scenic area. Planning on doing lunch at Beer garden after ride.
 The Point Reyes Redux ride planned at the same time for searching wallet is canceled.</p>
-                <a href="https://connect.garmin.com/modern/course/297157839" target="_blank" class="event-link">
-                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihbRJvcMLycPQxNsdULsTFRn_Gk3JQ9lTLAJMhRfdK_rbXMlZMSVcd9fI0_8uqunPEfn4QGFg6o2mq8VMglX4S8waesrgDv0zms=s2560" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 11, 2024</p>
-                <p><strong>集合GPS:</strong> 37.656352, -121.899075</p>
-                <p><strong>集合地点:</strong> Safeway parking lot, 6790 Bernal Ave, Pleasanton, CA 94566</p>
-            
+            <a href="https://connect.garmin.com/modern/course/297157839" target="_blank" class="event-link">
+                <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihbRJvcMLycPQxNsdULsTFRn_Gk3JQ9lTLAJMhRfdK_rbXMlZMSVcd9fI0_8uqunPEfn4QGFg6o2mq8VMglX4S8waesrgDv0zms=s2560" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 11, 2024</p>
+            <p><strong>集合GPS:</strong> 37.656352, -121.899075</p>
+            <p><strong>集合地点:</strong> Safeway parking lot, 6790 Bernal Ave, Pleasanton, CA 94566</p>
+        
             <p><strong>总路程::</strong> 54.86 km (34.09 miles)</p>
             <p><strong>总爬坡:</strong> 315 m (1,033 ft)</p>
         
@@ -486,22 +535,29 @@ The Point Reyes Redux ride planned at the same time for searching wallet is canc
         <div class="event " data-event-id="event-66ad492fec5d50eb4ae5498b">
             <div class="event-section">
         
-            <div id="event-66ad492fec5d50eb4ae5498b" style="display: none;">
-                <h2>集市: The Big Bike Swap - 2024</h2>
-                <p class="event-description">This event will be hosted by and benefit Live in Peace and its amazing bike shop and programs.
+        <div id="event-66ad492fec5d50eb4ae5498b" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">10</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">集市: The Big Bike Swap - 2024</div>
+            </div>
+            <p class="event-description">This event will be hosted by and benefit Live in Peace and its amazing bike shop and programs.
 Combining their bike swaps from years past, Andrew Yee and Fergus Tanaka (at BikeX and Ritchey) and with the support of bike industry vet Ming Tan of Haley Cycles, will be hosting a huge bike swap on August 18th, Sunday, from 9am-2pm. 
 It’ll be at 1900 University Circle, East Palo Alto, just off 101. 
 We’ll have real bathrooms, a food truck or two, and plenty of space to spread out and hang with your bike buddies. 
 Reserve your seller’s spot here. 
 Buyers, $5 cash at the door.
 Stay tuned for more details. Follow Live in Peace Bike Shop on Instagram and on Facebook to stay up to date with the bike swap.</p>
-                <a href="https://www.liveinpeace.org/bikeswap?fbclid=IwZXh0bgNhZW0CMTEAAR1Gjcr81aAKypfE09qITECrJeXRgpVNX-eNLyfrgVjr5B3Vul6zCedBhI0_aem_Hynm6IRhBHQ37iFchgqcAA" target="_blank" class="event-link">
-                    <img src="https://images.squarespace-cdn.com/content/v1/57a51a2c725e25e92a24374e/05a545b5-9e9f-49f0-bdef-c1348ca156b9/53195113374_83c2d553a6_o.jpg?format=1500w" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 9:00 AM, Saturday, AUG 10, 2024</p>
-                <p><strong>集合GPS:</strong> 37.459129, -122.142324</p>
-                <p><strong>集合地点:</strong> 1900 University Cir, East Palo Alto, CA 94303</p>
-            
+            <a href="https://www.liveinpeace.org/bikeswap?fbclid=IwZXh0bgNhZW0CMTEAAR1Gjcr81aAKypfE09qITECrJeXRgpVNX-eNLyfrgVjr5B3Vul6zCedBhI0_aem_Hynm6IRhBHQ37iFchgqcAA" target="_blank" class="event-link">
+                <img src="https://images.squarespace-cdn.com/content/v1/57a51a2c725e25e92a24374e/05a545b5-9e9f-49f0-bdef-c1348ca156b9/53195113374_83c2d553a6_o.jpg?format=1500w" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 9:00 AM, Saturday, AUG 10, 2024</p>
+            <p><strong>集合GPS:</strong> 37.459129, -122.142324</p>
+            <p><strong>集合地点:</strong> 1900 University Cir, East Palo Alto, CA 94303</p>
+        
         <p><strong>发起人:</strong> Live in Peace, with Ritchey Design and Haley Cycles</p>
         <p><strong>活动来源:</strong> <a href="https://www.liveinpeace.org/bikeswap?fbclid=IwZXh0bgNhZW0CMTEAAR1Gjcr81aAKypfE09qITECrJeXRgpVNX-eNLyfrgVjr5B3Vul6zCedBhI0_aem_Hynm6IRhBHQ37iFchgqcAA" target="_blank">新闻 - Live In Peace Bike Shop</a></p>
     </div>
@@ -536,16 +592,23 @@ Stay tuned for more details. Follow Live in Peace Bike Shop on Instagram and on 
         <div class="event extra-event" data-event-id="event-66b789d74ba12893f5a9edfa">
             <div class="event-section">
         
-            <div id="event-66b789d74ba12893f5a9edfa" style="display: none;">
-                <h2>Saturday Ride up Umunhum</h2>
-                <p class="event-description">Rachel is wonderful and generously stepping up to lead BOTH rides this weekend. It's almost like she likes riding bikes! This is a pretty classic local climb. Should be great visibility at the top. </p>
-                <a href="https://www.strava.com/clubs/265/group_events/1741493" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/CJ643LUMLEIJNZT6J7PZJVKL6EHWK34T6QBFYWM2JQOGP2YDQH6OHUTAE2ZFTMHOXRQ3OWP5HNZRD7QSFWAPF6QFSTG2ZP3ZMMZRVOA=" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 8:30 AM, Saturday, AUG 10, 2024</p>
-                <p><strong>集合GPS:</strong> 37.22631, -121.98219</p>
-                <p><strong>集合地点:</strong> Mike's Bikes Los Gatos</p>
-            
+        <div id="event-66b789d74ba12893f5a9edfa" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">10</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Saturday Ride up Umunhum</div>
+            </div>
+            <p class="event-description">Rachel is wonderful and generously stepping up to lead BOTH rides this weekend. It's almost like she likes riding bikes! This is a pretty classic local climb. Should be great visibility at the top. </p>
+            <a href="https://www.strava.com/clubs/265/group_events/1741493" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/CJ643LUMLEIJNZT6J7PZJVKL6EHWK34T6QBFYWM2JQOGP2YDQH6OHUTAE2ZFTMHOXRQ3OWP5HNZRD7QSFWAPF6QFSTG2ZP3ZMMZRVOA=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Saturday, AUG 10, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22631, -121.98219</p>
+            <p><strong>集合地点:</strong> Mike's Bikes Los Gatos</p>
+        
             <p><strong>总路程::</strong> 63.19 km (39.27 miles)</p>
             <p><strong>总爬坡:</strong> 1,392 m (4,566 ft)</p>
         
@@ -586,16 +649,23 @@ Stay tuned for more details. Follow Live in Peace Bike Shop on Instagram and on 
         <div class="event " data-event-id="event-66b7093d87f92a4b8c461314">
             <div class="event-section">
         
-            <div id="event-66b7093d87f92a4b8c461314" style="display: none;">
-                <h2>Sat Easy Paced Ride - Kings上 84下</h2>
-                <p class="event-description">Gouing to do easy paced ride this Saturday morning - Meeting at Gunn High at 8:20AM and start the route at 8:30AM. Going to climb Kings Mountain and come back down 84. Currently there will be total of 4 riders - easy pace since 1 is a relatively new rider.</p>
-                <a href="https://www.strava.com/routes/3257233396236180976" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/EYGREVCDMHOCS3PHM73N2ZQY3ZZI5YC5Y2AOFIOT3L6U3EAADSRFRIQZ5XFZRYMUNPMLGYYO2L63XAS2OPVYWUCOO3PBXX5Z3BZYLWA=" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 8:20 AM, Saturday, AUG 10, 2024</p>
-                <p><strong>集合GPS:</strong> 37.400881, -122.132296</p>
-                <p><strong>集合地点:</strong> Gunn High School, 780 Arastradero Rd, Palo Alto, CA 94306</p>
-            
+        <div id="event-66b7093d87f92a4b8c461314" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">10</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Sat Easy Paced Ride - Kings上 84下</div>
+            </div>
+            <p class="event-description">Gouing to do easy paced ride this Saturday morning - Meeting at Gunn High at 8:20AM and start the route at 8:30AM. Going to climb Kings Mountain and come back down 84. Currently there will be total of 4 riders - easy pace since 1 is a relatively new rider.</p>
+            <a href="https://www.strava.com/routes/3257233396236180976" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/EYGREVCDMHOCS3PHM73N2ZQY3ZZI5YC5Y2AOFIOT3L6U3EAADSRFRIQZ5XFZRYMUNPMLGYYO2L63XAS2OPVYWUCOO3PBXX5Z3BZYLWA=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:20 AM, Saturday, AUG 10, 2024</p>
+            <p><strong>集合GPS:</strong> 37.400881, -122.132296</p>
+            <p><strong>集合地点:</strong> Gunn High School, 780 Arastradero Rd, Palo Alto, CA 94306</p>
+        
             <p><strong>总路程::</strong> 56.34 km (35.01 miles)</p>
             <p><strong>总爬坡:</strong> 986 m (3,234 ft)</p>
         
@@ -640,16 +710,23 @@ Stay tuned for more details. Follow Live in Peace Bike Shop on Instagram and on 
         <div class="event extra-event" data-event-id="event-66b3c27a4f65c484c7712706">
             <div class="event-section">
         
-            <div id="event-66b3c27a4f65c484c7712706" style="display: none;">
-                <h2>FRIDAY Bonus Ride - Group Road Ride</h2>
-                <p class="event-description">Bonus Friday ride, starting from Mikes Bikes in Los Gatos and going to the beach.  We will stop for water/bathroom at a park just before Capitola.  We will also stop at a gas station in Scotts Valley for cold water and bathrooms.</p>
-                <a href="https://www.strava.com/clubs/265/group_events/1740797" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5LGQA7DXL2KHKPX3O7VR3WADB6OZKRPVTC4ZFSAHMVKUPNJLJGVWMMB6LWZIMQ7GHWR5ZCFSDVSOITJZGWIQVRSDUPXU3XKRG4TUU4Q=" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> 8:30 AM, Friday, AUG 09, 2024</p>
-                <p><strong>集合GPS:</strong> 37.22625, -121.98236</p>
-                <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA 95032</p>
-            
+        <div id="event-66b3c27a4f65c484c7712706" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">09</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">FRIDAY Bonus Ride - Group Road Ride</div>
+            </div>
+            <p class="event-description">Bonus Friday ride, starting from Mikes Bikes in Los Gatos and going to the beach.  We will stop for water/bathroom at a park just before Capitola.  We will also stop at a gas station in Scotts Valley for cold water and bathrooms.</p>
+            <a href="https://www.strava.com/clubs/265/group_events/1740797" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5LGQA7DXL2KHKPX3O7VR3WADB6OZKRPVTC4ZFSAHMVKUPNJLJGVWMMB6LWZIMQ7GHWR5ZCFSDVSOITJZGWIQVRSDUPXU3XKRG4TUU4Q=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Friday, AUG 09, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22625, -121.98236</p>
+            <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA 95032</p>
+        
             <p><strong>总路程::</strong> 89.30 km (55.49 miles)</p>
             <p><strong>总爬坡:</strong> 1,607 m (5,272 ft)</p>
         

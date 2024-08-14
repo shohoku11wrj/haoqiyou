@@ -186,6 +186,16 @@ html_content = """
             flex-direction: column;
             align-items: center;
             margin-bottom: 10px;
+            min-width: 60px;
+            border: 1px solid #dfdfe8;
+            display: inline-block;
+            text-align: center;
+        }
+        .date-box .date {
+            margin-top: 8px;
+            color: #fc5200;
+            font-size: 24px;
+            line-height: 20px;
         }
         .event-section:first-child {
             flex: 0 0 300px; /* Fixed width for the first column */
@@ -197,18 +207,6 @@ html_content = """
         .event-section:nth-child(3) {
             display: flex;
             flex-direction: column; /* Ensure row by row layout */
-        }
-        .date-box {
-            min-width: 60px;
-            border: 1px solid #dfdfe8;
-            display: inline-block;
-            text-align: center;
-        }
-        .date-box .date {
-            margin-top: 8px;
-            color: #fc5200;
-            font-size: 24px;
-            line-height: 20px;
         }
         .meet-up {
             color: #6d6d78;
@@ -238,6 +236,13 @@ html_content = """
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+        .event-title-row {
+            display: flex;
+            align-items: center; /* Align items vertically in the center */
+        }
+        .event-title-row .event-title {
+            margin: 0 0 0 50px;
+        }
         .close-btn {
             float: right;
             cursor: pointer;
@@ -260,16 +265,29 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
     # Convert URLs in the description to hyperlinks
     event_description = convert_urls_to_links(event['description'])
     popup_div = f"""
-            <div id="event-{event['_id']}" style="display: none;">
-                <h2>{event['title']}</h2>
-                <p class="event-description">{event_description}</p>
-                <a href="{source_event_url}" target="_blank" class="event-link">
-                    <img src="{event['route_map_url']}" alt="Route Image" width="100%">
-                </a>
-                <p><strong>时间:</strong> {event_time_str}, {day_of_week}, {month_str} {day_str}, {year}</p>
-                <p><strong>集合GPS:</strong> {gps_coordinates_str}</p>
-                <p><strong>集合地点:</strong> {event['meet_up_location']}</p>
-            """
+        <div id="event-{event['_id']}" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">{day_str}</div>
+                    <div class="month">{month_str}</div>
+    """
+    if year != datetime.now().year:
+        popup_div += f"""
+                    <div class="year">{year}</div>
+        """
+
+    popup_div += f"""
+                </div>
+                <div class="event-title">{event['title']}</div>
+            </div>
+            <p class="event-description">{event_description}</p>
+            <a href="{source_event_url}" target="_blank" class="event-link">
+                <img src="{event['route_map_url']}" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> {event_time_str}, {day_of_week}, {month_str} {day_str}, {year}</p>
+            <p><strong>集合GPS:</strong> {gps_coordinates_str}</p>
+            <p><strong>集合地点:</strong> {event['meet_up_location']}</p>
+        """
     if 'distance_meters' in event and event['distance_meters'] > 0:
         popup_div += f"""
             <p><strong>总路程::</strong> {distance_str}</p>
@@ -396,7 +414,7 @@ def gen_div_for_events_from_list(events_list):
 
 # Generate the HTML content for future and past events
 html_content += f"""
-        <h2><span class="top-bar">好 骑 友</span>Upcoming Events</h2>
+        <h2><span class="top-bar">好 骑 友</span><span style="opacity: 0;">U</span>Pcoming Events</h2>
         <span>Updated on {current_time_str_PDT}</span>
 """
 
