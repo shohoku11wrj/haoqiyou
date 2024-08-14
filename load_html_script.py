@@ -19,7 +19,8 @@ collection = db[RIDE_EVENTS_COLLECTION_NAME]
 
 # List of group_ids of extra events
 extra_event_group_ids = [
-    265,  # Los Gatos Bicycle Racing Club
+    265,    # Los Gatos Bicycle Racing Club
+    908336  # Ruekn Bicci Gruppo (Southern California)
 ]
 
 # 本地时区

@@ -50,7 +50,8 @@ club_ids = [
     '1157973',  # Featherweight Club (FWC)
     '265',      # Los Gatos Bicycle Racing Club
     '1047313',  # Alto Velo C Ride
-    '1115522'   # NorCal Cycling China Fans
+    '1115522',  # NorCal Cycling China Fans
+    '908336'    # Ruekn Bicci Gruppo (Southern California)
 ]
 
 # Strava APIs
@@ -137,6 +138,11 @@ for club_id, event_id, event in all_events_list:
     event_time_utc = event_time_utc.replace(tzinfo=pytz.utc)
     # Format the GPS coordinates to at most 5 digits after floats, and without brackets
     gps_coordinates = ', '.join(map(str, [round(coord, 5) for coord in event['start_latlng']]))
+    # Check if organizing_athlete is not None
+    if event['organizing_athlete'] is not None:
+        organizer = f"{event['organizing_athlete']['firstname']} {event['organizing_athlete']['lastname']}"
+    else:
+        organizer = "Club Organizer"
 
     try:
         distance, elevation_gain = get_event_route_distance_and_elevation(event['route_id'], access_token)
@@ -156,7 +162,7 @@ for club_id, event_id, event in all_events_list:
         'gps_coordinates': gps_coordinates,
         'distance_meters': distance_meters,
         'elevation_gain_meters': elevation_gain_meters,
-        'organizer': f"{event['organizing_athlete']['firstname']} {event['organizing_athlete']['lastname']}",
+        'organizer': organizer,
         'strava_url': f"https://www.strava.com/clubs/{club_id}/group_events/{event_id}",
         'title': event['title'],
         'description': event['description'],
