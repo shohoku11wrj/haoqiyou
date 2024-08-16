@@ -353,10 +353,13 @@ def gen_div_for_events_from_list(events_list):
 
         # Add the extra-event class if the event belongs to extra_event_group_ids
         event_class = "extra-event" if event['source_group_id'] in extra_event_group_ids else ""
+        event_id = event['_id']
+        event_url = f"?id=event-{event_id}"
 
         # If year is not current year, add year to the date-box
         events_div += f"""
-        <div class="event {event_class}" data-event-id="event-{event['_id']}">
+        <div class="event {event_class}" data-event-id="event-{event_id}">
+            <a href="{event_url}" class="event-link"></a>
             <div class="event-section">
         """
         events_div += gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, source_group_name)
@@ -482,6 +485,8 @@ html_content += """
                     document.getElementById('popup-content').innerHTML = eventDetails;
                     document.getElementById('popup-overlay').style.display = 'block';
                     document.getElementById('popup').style.display = 'block';
+                    // Update the URL
+                    history.pushState(null, '', `?id=${eventId}`);
                 });
             });
 
@@ -494,13 +499,36 @@ html_content += """
             document.getElementById('close-btn').addEventListener('click', function() {
                 document.getElementById('popup-overlay').style.display = 'none';
                 document.getElementById('popup').style.display = 'none';
+                // Remove the event ID from the URL
+                history.pushState(null, '', window.location.pathname);
             });
 
             document.getElementById('popup-overlay').addEventListener('click', function() {
                 document.getElementById('popup-overlay').style.display = 'none';
                 document.getElementById('popup').style.display = 'none';
+                // Remove the event ID from the URL
+                history.pushState(null, '', window.location.pathname);
             });
+
+            
+            // Check for URL parameter and open popup if it exists
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('id');
+            if (eventId) {
+                const eventElement = document.querySelector(`[data-event-id="${eventId}"]`);
+                if (eventElement) {
+                    showEventDetailPopup(eventElement);
+                }
+            }
         });
+
+        function showEventDetailPopup(eventElement) {
+            const eventId = eventElement.getAttribute('data-event-id');
+            const eventDetails = document.getElementById(eventId).innerHTML;
+            document.getElementById('popup-content').innerHTML = eventDetails;
+            document.getElementById('popup-overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
     </script>
 </body>
 </html>
