@@ -140,8 +140,8 @@ html_content = """
             color: #6d6d78;
         }
         .top-bar {
-            background-color: #c60c30; /* Deep red color */
-            color: #fff; /* White font color */
+            background-color: #a2ab8c;  /* SEKA 海沫绿 */
+            color: #c60c30;  /* Deep red color */
             padding: 10px;
             text-align: center;
             border-bottom: 4px solid #fff; /* White border at the bottom */
@@ -158,6 +158,9 @@ html_content = """
             position: relative;
             padding-left: 55px;
             box-sizing: border-box;
+        }
+        .event.selected-event {
+            border: 2px solid #a2ab8c;
         }
         .event-section {
             display: flex;
@@ -358,7 +361,7 @@ def gen_div_for_events_from_list(events_list):
             source_group_name = f"新闻 - {event['source_group_name']}"
 
         # Add the extra-event class if the event belongs to extra_event_group_ids
-        event_class = "extra-event" if event['source_group_id'] in extra_event_group_ids else ""
+        event_class = "extra-event" if event['source_group_id'] in extra_event_group_ids else "selected-event"
         event_id = event['_id']
         event_url = f"?id=event-{event_id}"
 
