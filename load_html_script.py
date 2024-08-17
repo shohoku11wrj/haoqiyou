@@ -198,6 +198,12 @@ html_content = """
             font-size: 24px;
             line-height: 20px;
         }
+        .date-box .date-relative {
+            margin-top: 4px;
+            color: #fc5200;
+            font-size: 18px;
+            line-height: 18px;
+        }
         .event-section:first-child {
             flex: 0 0 300px; /* Fixed width for the first column */
         }
@@ -374,6 +380,9 @@ def gen_div_for_events_from_list(events_list):
                         <div class="year">{year}</div>
             """
         events_div += f"""
+                        <div class="date-relative" event-date="{event_time_local}"></div>
+        """
+        events_div += f"""
                     </div>
                     <div>
                         <strong>{event_time_str}</strong> {day_of_week}<br>
@@ -476,6 +485,8 @@ html_content += """
                     this.parentElement.innerHTML = fullDescription;
                 });
             });
+            
+            loadRelateiveDateForEvents();
 
             document.querySelectorAll('.event').forEach(function(eventDiv) {
                 eventDiv.addEventListener('click', function(event) {
@@ -528,6 +539,33 @@ html_content += """
             document.getElementById('popup-content').innerHTML = eventDetails;
             document.getElementById('popup-overlay').style.display = 'block';
             document.getElementById('popup').style.display = 'block';
+        }
+
+        function loadRelateiveDateForEvents() {
+            document.querySelectorAll('.date-relative').forEach(function(dateRelativeDiv) {
+                const eventDateStr = dateRelativeDiv.getAttribute('event-date');
+                // convert to Date object
+                const eventDateObj = new Date(eventDateStr);
+                const currentDate = new Date();
+                const oneDay = 24 * 60 * 60 * 1000;
+                const diffDays = Math.round((eventDateObj - currentDate) / oneDay);
+
+                let label = '';
+
+                if (diffDays === 0) {
+                    label = '今天';
+                } else if (diffDays === 1) {
+                    label = '明天';
+                } else if (diffDays === 2) {
+                    label = '后天';
+                } else if (diffDays === -1) {
+                    label = '昨天';
+                }
+
+                if (label) {
+                    dateRelativeDiv.innerHTML = label;
+                }
+            });
         }
     </script>
 </body>
