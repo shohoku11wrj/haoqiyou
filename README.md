@@ -9,7 +9,7 @@ Release on https://haoqiyou.net
 
 TODO:
  * [x] Event detail page & event detail path for each event
- * Share one event via event detail path, or generate a postcard for one event to share
+ * [x] Share one event via event detail path, or generate a postcard for one event to share
  * [x] Simplify the index page, reduce layout size of each event so that events can be organized compactly (卡片式，瀑布式); hide some details of event in the index page
  * Map view, can catch all events in the Bay Area mapview. Each event pin on the map will be labeled "date + time + distance". Optional: cast routes of events on the map
  * Support (cloud) comments for each event
