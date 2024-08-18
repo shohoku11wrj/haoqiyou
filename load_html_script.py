@@ -550,6 +550,9 @@ html_content += """
                 // convert to Date object
                 const eventDateObj = new Date(eventDateStr);
                 const currentDate = new Date();
+                // Normalize both dates to midnight
+                eventDateObj.setHours(0, 0, 0, 0);
+                currentDate.setHours(0, 0, 0, 0);
                 const oneDay = 24 * 60 * 60 * 1000;
                 const diffDays = Math.round((eventDateObj - currentDate) / oneDay);
 
