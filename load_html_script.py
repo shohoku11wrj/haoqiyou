@@ -217,6 +217,7 @@ html_content = """
         .event-section:nth-child(3) {
             display: flex;
             flex-direction: column; /* Ensure row by row layout */
+            clear: both; /* Ensures it does not overlap with floated elements */
         }
         .meet-up {
             color: #6d6d78;
