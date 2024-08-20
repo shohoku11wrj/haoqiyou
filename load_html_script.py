@@ -420,8 +420,8 @@ def gen_div_for_events_from_list(events_list):
                 </a>
             </div>
             <div class="event-section">
-                <div class="event-title">{event['title']}</div>
-                <div class="event-description">发起人: {event['organizer']} <br></div>
+                <div class="event-title">{event['title']}</div> <br>
+                <div class="event-description">发起人: {event['organizer']}</div> <br>
                 <div class="event-description">活动来源: <a href="{source_event_url}" target="_blank" class="event-link">{source_group_name}</a></div>
             </div>
         </div>
