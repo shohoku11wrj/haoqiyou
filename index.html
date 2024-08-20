@@ -144,7 +144,7 @@
 <body>
 
         <h2><span class="top-bar">好 骑 友</span><span style="opacity: 0;">U</span>Pcoming Events</h2>
-        <span>Updated on 08/19/24 20:42</span>
+        <span>Updated on 08/19/24 21:13</span>
 
     <label>
         <input type="checkbox" id="toggleExtra">
@@ -593,6 +593,10 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
         </div>
         
+        </div>
+        <h2>Planning Events</h2>
+        <div id="events-container">
+
         <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cae">
             <a href="?id=event-66bce958be18d8701a365cae" class="event-link"></a>
             <div class="event-section">
@@ -833,10 +837,6 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
         </div>
         
-        </div>
-        <h2>Planning Events</h2>
-        <div id="events-container">
-
         <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cb6">
             <a href="?id=event-66bce958be18d8701a365cb6" class="event-link"></a>
             <div class="event-section">
@@ -1526,10 +1526,8 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
     <div class="popup" id="popup">
         <span class="close-btn" id="close-btn">&times;</span>
         <div id="popup-content"></div>
-        <div id="commento"></div>
-        <script id="commento-js" defer
-        src="https://cdn.commento.io/js/commento.js" data-page-id="index.html">
-        </script>
+        <a href="#" id="load-commento-link">Load Comments</a>
+        <div id="commento" style="display: none;"></div>
     </div>
     
     <script>
@@ -1552,8 +1550,6 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
                     document.getElementById('popup-content').innerHTML = eventDetails;
                     document.getElementById('popup-overlay').style.display = 'block';
                     document.getElementById('popup').style.display = 'block';
-                    document.getElementById('commento').style.display = 'block';
-                    document.getElementById('commento-js').setAttribute('data-page-id', eventId);
                     // Update the URL
                     history.pushState(null, '', `?id=${eventId}`);
                 });
@@ -1569,7 +1565,6 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
                 document.getElementById('popup-overlay').style.display = 'none';
                 document.getElementById('popup').style.display = 'none';
                 document.getElementById('commento').style.display = 'none';
-                document.getElementById('commento-js').setAttribute('data-page-id', 'index.html');
                 // Remove the event ID from the URL
                 history.pushState(null, '', window.location.pathname);
             });
@@ -1578,7 +1573,6 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
                 document.getElementById('popup-overlay').style.display = 'none';
                 document.getElementById('popup').style.display = 'none';
                 document.getElementById('commento').style.display = 'none';
-                document.getElementById('commento-js').setAttribute('data-page-id', 'index.html');
                 // Remove the event ID from the URL
                 history.pushState(null, '', window.location.pathname);
             });
@@ -1593,6 +1587,17 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
                     showEventDetailPopup(eventElement);
                 }
             }
+
+            // Add event listener to the hyperlink
+            document.getElementById('load-commento-link').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+                // Extract the 'id' parameter from the URL
+                const eventId = getParameterByName('id');
+                // Load Commento with the extracted eventId
+                if (eventId) {
+                    loadCommento(eventId);
+                }
+            });
         });
 
         function showEventDetailPopup(eventElement) {
@@ -1601,8 +1606,6 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
             document.getElementById('popup-content').innerHTML = eventDetails;
             document.getElementById('popup-overlay').style.display = 'block';
             document.getElementById('popup').style.display = 'block';
-            document.getElementById('commento').style.display = 'block';
-            document.getElementById('commento-js').setAttribute('data-page-id', eventId);
         }
 
         function loadRelateiveDateForEvents() {
@@ -1633,6 +1636,31 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
                     dateRelativeDiv.innerHTML = label;
                 }
             });
+        }
+
+        // Function to get URL parameter by name
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Function to load Commento
+        function loadCommento(eventId) {
+            // Create a new Commento script element
+            const script = document.createElement('script');
+            script.id = 'commento-js';
+            script.defer = true;
+            script.src = 'https://cdn.commento.io/js/commento.js';
+            script.setAttribute('data-page-id', eventId);
+
+            // Append the new script element to the commento div
+            document.getElementById('commento').innerHTML = '';
+            document.getElementById('commento').appendChild(script);
+            document.getElementById('commento').style.display = 'block';
         }
     </script>
 </body>

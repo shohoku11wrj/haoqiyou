@@ -87,9 +87,9 @@ for event in events_cursor:
 # and one list for past events.
 six_hours_before = datetime.now(pytz.utc).replace(tzinfo=None) - timedelta(hours=6)
 print(f"Six hours before: {six_hours_before}")
-one_month_later = datetime.now(pytz.utc).replace(tzinfo=None) + timedelta(days=30)
-future_events_list = [event for event in all_events_list if event['event_time_utc'] >= six_hours_before and event['event_time_utc'] <= one_month_later]
-planning_events_list = [event for event in all_events_list if event['event_time_utc'] > one_month_later]
+days_difference = datetime.now(pytz.utc).replace(tzinfo=None) + timedelta(days=14)
+future_events_list = [event for event in all_events_list if event['event_time_utc'] >= six_hours_before and event['event_time_utc'] <= days_difference]
+planning_events_list = [event for event in all_events_list if event['event_time_utc'] > days_difference]
 past_events_list = [event for event in all_events_list if event['event_time_utc'] < six_hours_before]
 
 # Sort the events
@@ -477,10 +477,8 @@ html_content += """
     <div class="popup" id="popup">
         <span class="close-btn" id="close-btn">&times;</span>
         <div id="popup-content"></div>
-        <div id="commento"></div>
-        <script id="commento-js" defer
-        src="https://cdn.commento.io/js/commento.js" data-page-id="index.html">
-        </script>
+        <a href="#" id="load-commento-link">Load Comments</a>
+        <div id="commento" style="display: none;"></div>
     </div>
     
     <script>
@@ -503,8 +501,6 @@ html_content += """
                     document.getElementById('popup-content').innerHTML = eventDetails;
                     document.getElementById('popup-overlay').style.display = 'block';
                     document.getElementById('popup').style.display = 'block';
-                    document.getElementById('commento').style.display = 'block';
-                    document.getElementById('commento-js').setAttribute('data-page-id', eventId);
                     // Update the URL
                     history.pushState(null, '', `?id=${eventId}`);
                 });
@@ -520,7 +516,6 @@ html_content += """
                 document.getElementById('popup-overlay').style.display = 'none';
                 document.getElementById('popup').style.display = 'none';
                 document.getElementById('commento').style.display = 'none';
-                document.getElementById('commento-js').setAttribute('data-page-id', 'index.html');
                 // Remove the event ID from the URL
                 history.pushState(null, '', window.location.pathname);
             });
@@ -529,7 +524,6 @@ html_content += """
                 document.getElementById('popup-overlay').style.display = 'none';
                 document.getElementById('popup').style.display = 'none';
                 document.getElementById('commento').style.display = 'none';
-                document.getElementById('commento-js').setAttribute('data-page-id', 'index.html');
                 // Remove the event ID from the URL
                 history.pushState(null, '', window.location.pathname);
             });
@@ -544,6 +538,17 @@ html_content += """
                     showEventDetailPopup(eventElement);
                 }
             }
+
+            // Add event listener to the hyperlink
+            document.getElementById('load-commento-link').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+                // Extract the 'id' parameter from the URL
+                const eventId = getParameterByName('id');
+                // Load Commento with the extracted eventId
+                if (eventId) {
+                    loadCommento(eventId);
+                }
+            });
         });
 
         function showEventDetailPopup(eventElement) {
@@ -552,8 +557,6 @@ html_content += """
             document.getElementById('popup-content').innerHTML = eventDetails;
             document.getElementById('popup-overlay').style.display = 'block';
             document.getElementById('popup').style.display = 'block';
-            document.getElementById('commento').style.display = 'block';
-            document.getElementById('commento-js').setAttribute('data-page-id', eventId);
         }
 
         function loadRelateiveDateForEvents() {
@@ -584,6 +587,31 @@ html_content += """
                     dateRelativeDiv.innerHTML = label;
                 }
             });
+        }
+
+        // Function to get URL parameter by name
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Function to load Commento
+        function loadCommento(eventId) {
+            // Create a new Commento script element
+            const script = document.createElement('script');
+            script.id = 'commento-js';
+            script.defer = true;
+            script.src = 'https://cdn.commento.io/js/commento.js';
+            script.setAttribute('data-page-id', eventId);
+
+            // Append the new script element to the commento div
+            document.getElementById('commento').innerHTML = '';
+            document.getElementById('commento').appendChild(script);
+            document.getElementById('commento').style.display = 'block';
         }
     </script>
 </body>
