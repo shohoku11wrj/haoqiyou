@@ -477,6 +477,10 @@ html_content += """
     <div class="popup" id="popup">
         <span class="close-btn" id="close-btn">&times;</span>
         <div id="popup-content"></div>
+        <div id="commento"></div>
+        <script id="commento-js" defer
+        src="https://cdn.commento.io/js/commento.js" data-page-id="index.html">
+        </script>
     </div>
     
     <script>
@@ -499,6 +503,8 @@ html_content += """
                     document.getElementById('popup-content').innerHTML = eventDetails;
                     document.getElementById('popup-overlay').style.display = 'block';
                     document.getElementById('popup').style.display = 'block';
+                    document.getElementById('commento').style.display = 'block';
+                    document.getElementById('commento-js').setAttribute('data-page-id', eventId);
                     // Update the URL
                     history.pushState(null, '', `?id=${eventId}`);
                 });
@@ -513,6 +519,8 @@ html_content += """
             document.getElementById('close-btn').addEventListener('click', function() {
                 document.getElementById('popup-overlay').style.display = 'none';
                 document.getElementById('popup').style.display = 'none';
+                document.getElementById('commento').style.display = 'none';
+                document.getElementById('commento-js').setAttribute('data-page-id', 'index.html');
                 // Remove the event ID from the URL
                 history.pushState(null, '', window.location.pathname);
             });
@@ -520,6 +528,8 @@ html_content += """
             document.getElementById('popup-overlay').addEventListener('click', function() {
                 document.getElementById('popup-overlay').style.display = 'none';
                 document.getElementById('popup').style.display = 'none';
+                document.getElementById('commento').style.display = 'none';
+                document.getElementById('commento-js').setAttribute('data-page-id', 'index.html');
                 // Remove the event ID from the URL
                 history.pushState(null, '', window.location.pathname);
             });
@@ -542,6 +552,8 @@ html_content += """
             document.getElementById('popup-content').innerHTML = eventDetails;
             document.getElementById('popup-overlay').style.display = 'block';
             document.getElementById('popup').style.display = 'block';
+            document.getElementById('commento').style.display = 'block';
+            document.getElementById('commento-js').setAttribute('data-page-id', eventId);
         }
 
         function loadRelateiveDateForEvents() {
