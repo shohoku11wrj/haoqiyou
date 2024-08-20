@@ -137,7 +137,7 @@ for club_id, event_id, event in all_events_list:
     event_time_utc = datetime.datetime.strptime(event['upcoming_occurrences'][0], '%Y-%m-%dT%H:%M:%SZ')
     event_time_utc = event_time_utc.replace(tzinfo=pytz.utc)
     # Format the GPS coordinates to at most 5 digits after floats, and without brackets
-    gps_coordinates = ', '.join(map(str, [round(coord, 5) for coord in event['start_latlng']]))
+    gps_coordinates = ', '.join(map(str, [round(coord, 5) for coord in event['start_latlng']])) if event['start_latlng'] else ''
     # Check if organizing_athlete is not None
     if event['organizing_athlete'] is not None:
         organizer = f"{event['organizing_athlete']['firstname']} {event['organizing_athlete']['lastname']}"
