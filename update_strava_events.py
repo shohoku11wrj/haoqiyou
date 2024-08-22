@@ -183,7 +183,9 @@ for club_id, event_id, event in all_events_list:
         )
     )
 
-# Backfill strava_routes that are active and after the start of the week
+##########################################################################
+# Backfill strava_routes that are active and after the start of the week #
+##########################################################################
 start_of_week_utc = get_start_of_week()
 strava_routes_cursor = collection.find({
     'is_active': True,

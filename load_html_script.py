@@ -271,7 +271,7 @@ html_content = """
 <body>
 """
 
-def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, source_group_name):
+def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name):
     # Convert URLs in the description to hyperlinks
     event_description = convert_urls_to_links(event['description'])
     popup_div = f"""
@@ -286,12 +286,22 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
                     <div class="year">{year}</div>
         """
 
+    # Detail page for the event
     popup_div += f"""
                 </div>
                 <div class="event-title">{event['title']}</div>
             </div>
             <p class="event-description">{event_description}</p>
-            <a href="{source_event_url}" target="_blank" class="event-link">
+    """
+    # If the event has a event_picture_url URL, display it with link to source_url
+    if 'event_picture_url' in event and event['event_picture_url'].startswith('http'):
+        popup_div += f"""
+            <a href="{event['source_url']}" target="_blank" class="event-link">
+                <img src="{event['event_picture_url']}" alt="Event Image" width="100%">
+            </a>
+        """
+    popup_div += f"""
+            <a href="{route_url}" target="_blank" class="event-link">
                 <img src="{event['route_map_url']}" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> {event_time_str}, {day_of_week}, {month_str} {day_str}, {year}</p>
@@ -349,9 +359,12 @@ def gen_div_for_events_from_list(events_list):
             print(e)
         
         # Source URL
-        source_event_url = event.get('strava_url', "")
-        if source_event_url == "" and 'source_url' in event:
-            source_event_url = event['source_url']
+        route_url = event.get('strava_url', "")
+        if route_url == "" and 'source_url' in event and event['source_url'].startswith('http'):
+            route_url = event['source_url']
+        source_event_url = event.get('source_url', "")
+        if source_event_url == "" and route_url != "":
+            source_event_url = route_url
         source_group_name = event['source_group_name']
         if event['source_type'] == 'strava':
             source_group_name = f"Strava Club - {event['source_group_name']}"
@@ -371,7 +384,7 @@ def gen_div_for_events_from_list(events_list):
             <a href="{event_url}" class="event-link"></a>
             <div class="event-section">
         """
-        events_div += gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, source_group_name)
+        events_div += gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name)
         events_div += f"""
                 <div class="event-details">
                     <div class="date-box">
@@ -415,7 +428,16 @@ def gen_div_for_events_from_list(events_list):
                 </div>
             </div>
             <div class="event-section">
-                <a href="{source_event_url}" target="_blank" class="event-link">
+        """
+        # If the event has a event_picture_url URL, display it with link to source_url
+        if 'event_picture_url' in event and event['event_picture_url'].startswith('http'):
+            events_div += f"""
+                <a href="{event['source_url']}" target="_blank" class="event-link">
+                    <img src="{event['event_picture_url']}" alt="Event Image" width="100%">
+                </a>
+        """
+        events_div += f"""
+                <a href="{route_url}" target="_blank" class="event-link">
                     <img src="{event['route_map_url']}" alt="Route Image" width="100%">
                 </a>
             </div>
