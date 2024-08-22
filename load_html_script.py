@@ -207,6 +207,8 @@ html_content = """
             font-size: 18px;
             line-height: 18px;
         }
+        .area-box {
+        }
         .event-section:first-child {
             flex: 0 0 300px; /* Fixed width for the first column */
         }
@@ -346,6 +348,14 @@ def gen_div_for_events_from_list(events_list):
         # 地点
         # Format the GPS coordinates to at most 5 digits after floats, and without brackets
         gps_coordinates_str = event['gps_coordinates']
+        # Find the event_area by matching the GPS coordinates with the area boundaries: south california, north california
+        event_area = ""
+        if gps_coordinates_str:
+            gps_coordinates = [float(coord) for coord in gps_coordinates_str.split(', ')]
+            if 35 <= gps_coordinates[0] <= 40 and -123.3 <= gps_coordinates[1] <= -119.5:
+                event_area = '北加'
+            elif 32 <= gps_coordinates[0] <= 35 and -120 <= gps_coordinates[1] <= -114:
+                event_area = '南加'
 
         try:
             distance = event['distance_meters']
@@ -398,6 +408,10 @@ def gen_div_for_events_from_list(events_list):
         events_div += f"""
                         <div class="date-relative" event-date="{event_time_local}"></div>
         """
+        if event_area:
+            events_div += f"""
+                    <div class="area-box">{event_area}</div>
+            """
         events_div += f"""
                     </div>
                     <div>
@@ -428,6 +442,14 @@ def gen_div_for_events_from_list(events_list):
                 </div>
             </div>
             <div class="event-section">
+                <a href="{route_url}" target="_blank" class="event-link">
+                    <img src="{event['route_map_url']}" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">{event['title']}</div> <br>
+                <div class="event-description">发起人: {event['organizer']}</div> <br>
+                <div class="event-description">活动来源: <a href="{source_event_url}" target="_blank" class="event-link">{source_group_name}</a></div>
         """
         # If the event has a event_picture_url URL, display it with link to source_url
         if 'event_picture_url' in event and event['event_picture_url'].startswith('http'):
@@ -437,14 +459,6 @@ def gen_div_for_events_from_list(events_list):
                 </a>
         """
         events_div += f"""
-                <a href="{route_url}" target="_blank" class="event-link">
-                    <img src="{event['route_map_url']}" alt="Route Image" width="100%">
-                </a>
-            </div>
-            <div class="event-section">
-                <div class="event-title">{event['title']}</div> <br>
-                <div class="event-description">发起人: {event['organizer']}</div> <br>
-                <div class="event-description">活动来源: <a href="{source_event_url}" target="_blank" class="event-link">{source_group_name}</a></div>
             </div>
         </div>
         """
