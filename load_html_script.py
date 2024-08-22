@@ -124,7 +124,10 @@ print(f"Total number of past events: {len(past_events_list)}")
 # Sample output: Aug 1st (2024) 9:39 PM PDT
 current_time_str_PDT = datetime.now(local_tz).strftime('%D %H:%M')
 
-# 生成HTML内容
+
+##########################################################################################################
+# 生成 HTML + css 内容                                                                                    #
+##########################################################################################################
 html_content = """
 <!DOCTYPE html>
 <html lang="en">
@@ -226,17 +229,18 @@ html_content = """
         .popup {
             display: none;
             position: fixed;
-            top: 50%;
+            top: 10%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
+            transform: translate(-50%, -10%);
+            width: 90%;
             max-width: 600px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            padding: 20px;
+            padding: 20px 20px 5px 20px;
             z-index: 1000;
-            max-height: 100vh; /* Set maximum height to the viewport height */
+            max-height: 99vh; /* Set maximum height to the viewport height */
             overflow-y: auto;
+            box-sizing: border-box;
         }
         .popup-overlay {
             display: none;
@@ -248,12 +252,20 @@ html_content = """
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+        .popup .date-box {
+            position: relative;
+            padding: 0px;
+            margin-bottom: 0px;
+            min-width: ppx;
+            display: inline-block;
+            text-align: center;
+        }
         .event-title-row {
             display: flex;
             align-items: center; /* Align items vertically in the center */
         }
         .event-title-row .event-title {
-            margin: 0 0 0 50px;
+            margin: 0 0 0 0px;
         }
         .close-btn {
             float: right;
@@ -328,6 +340,14 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
         popup_div += f"""
             <p><strong>实际人数:</strong> {event['actual_participants_number']}</p>
         """
+
+    # Generate QR code for the event with URL: https://haoqiyou.net/?id=event-{event['_id']}
+    qr_code_url = f"https://haoqiyou.net/?id=event-{event['_id']}"
+    popup_div += f"""
+        <p><strong>扫码查看活动:</strong></p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={qr_code_url}" alt="QR Code" width="150">
+    """
+
     popup_div += "</div>"
     return popup_div
 
@@ -513,7 +533,7 @@ html_content += """
     <div class="popup" id="popup">
         <span class="close-btn" id="close-btn">&times;</span>
         <div id="popup-content"></div>
-        <a href="#" id="load-commento-link">Load Comments</a>
+        <a href="#" id="load-commento-link">点击查看评论区</a>
         <div id="commento" style="display: none;"></div>
     </div>
     
