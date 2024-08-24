@@ -139,6 +139,9 @@ html_content = """
         body {
             font-family: Arial, sans-serif;
             color: #6d6d78;
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 16px);
         }
         .top-bar {
             background-color: #a2ab8c;  /* SEKA 海沫绿 */
@@ -258,18 +261,37 @@ html_content = """
             float: right;
             cursor: pointer;
         }
-        .page-container {
-            display: flex;
-            height: 100vh; /* Full height of the viewport */
+        @media only screen and (min-width: 1000px) {
+            .page-container {
+                display: flex;
+                flex-grow: 1;
+                align-items: stretch;
+                flex-shrink: 1;
+                overflow-y: hidden;/*let list-container scroll*/
+            }
+            .list-container {
+                width: 50%; /* Takes up half the width of the container */
+                overflow-y: auto; /* Allows scrolling if content overflows */
+            }
+            .map-container {
+                width: 50%; /* Takes up half the width of the container */
+            }
         }
-        .list-container {
-            width: 50%; /* Takes up half the width of the container */
-            overflow-y: auto; /* Allows scrolling if content overflows */
-        }
-        .map-container {
-            width: 50%; /* Takes up half the width of the container */
-            height: 100%;
-            overflow-y: auto; /* Allows scrolling if content overflows */
+        @media only screen and (max-width: 999px) {
+            .page-container {
+                display: flex;
+                flex-direction: column;
+            }
+            .list-container {
+                width: 100%;
+                order: 2;
+            }
+            .map-container {
+                height: 600px;
+                width: 100%;
+                order: 1;
+                margin: 8px 0px;
+            }
         }
     </style>
     <!-- Google tag (gtag.js) -->
