@@ -267,8 +267,6 @@ html_content = """
             overflow-y: auto; /* Allows scrolling if content overflows */
         }
         .map-container {
-            display: flex;
-            justify-content: flex-end;
             width: 50%; /* Takes up half the width of the container */
             height: 100%;
             overflow-y: auto; /* Allows scrolling if content overflows */
@@ -513,6 +511,7 @@ html_content += gen_div_for_events_from_list(past_events_list)
 
 # Close the HTML content
 html_content += """
+            </div>
         </div>
         <!-- Close the list-container div -->
         <div class="map-container">

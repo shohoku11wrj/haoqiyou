@@ -11,9 +11,10 @@ TODO:
  * [x] Event detail page & event detail path for each event
  * [x] Share one event via event detail path, or generate a postcard for one event to share
  * [x] Simplify the index page, reduce layout size of each event so that events can be organized compactly (卡片式，瀑布式); hide some details of event in the index page
- * Generate a card for sharing event, with QRcode
- * Map view, can catch all events in the Bay Area mapview. Each event pin on the map will be labeled "date + time + distance". Optional: cast routes of events on the map
- * Support (cloud) comments for each event
+ * [x] Generate a card for sharing event, with QRcode
+ * [x] Map view, can catch all events in the Bay Area mapview.
+ * Map view: Each event pin on the map will be labeled "date + time + distance". Optional: cast routes of events on the map
+ * [x] Support (cloud) comments for each event: commento.io
  * Allow event owner to cancel/edit details of the event.
  * Migrate events from MongoDB to local JSON file
  
