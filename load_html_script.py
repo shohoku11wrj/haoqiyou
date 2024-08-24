@@ -126,171 +126,8 @@ current_time_str_PDT = datetime.now(local_tz).strftime('%D %H:%M')
 
 
 ##########################################################################################################
-# 生成 HTML + css 内容                                                                                    #
+# 生成 HTML body content                                                                                 #
 ##########################################################################################################
-html_content = """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="haoqiyou.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="haoqiyou.ico" type="image/x-icon">
-    <title>好骑友网(骑行活动收集器)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            color: #6d6d78;
-        }
-        .top-bar {
-            background-color: #a2ab8c;  /* SEKA 海沫绿 */
-            color: #c60c30;  /* Deep red color */
-            padding: 10px;
-            text-align: center;
-            border-bottom: 4px solid #fff; /* White border at the bottom */
-        }
-        #events-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust minmax value as needed */
-            gap: 10px; /* Space between grid items */
-            margin: 0 10px;
-        }
-        .event {
-            border: 1px solid #ccc;
-            padding: 10px;
-            position: relative;
-            padding-left: 55px;
-            box-sizing: border-box;
-        }
-        .event.selected-event {
-            border: 2px solid #a2ab8c;
-        }
-        .event-section {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping of events */
-            margin: 0 10px;
-        }
-        .event-title {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        .event-details {
-            display: flex;
-            flex-direction: column;
-        }
-        .event-description {
-            white-space: pre-wrap; /* CSS3 */
-            white-space: -moz-pre-wrap; /* Mozilla */
-            white-space: -pre-wrap; /* Opera 4-6 */
-            white-space: -o-pre-wrap; /* Opera 7 */
-            word-wrap: break-word; /* Internet Explorer 5.5+ */
-        }
-        .date-box {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 10px;
-            min-width: 60px;
-            border: 1px solid #dfdfe8;
-            display: inline-block;
-            text-align: center;
-        }
-        .date-box .date {
-            margin-top: 8px;
-            color: #fc5200;
-            font-size: 24px;
-            line-height: 20px;
-        }
-        .date-box .date-relative {
-            margin-top: 4px;
-            color: #fc5200;
-            font-size: 18px;
-            line-height: 18px;
-        }
-        .area-box {
-        }
-        .event-section:first-child {
-            flex: 0 0 300px; /* Fixed width for the first column */
-        }
-        .event-section:nth-child(2) {
-            flex: 0 0 350px; /* Fixed width for the second column */
-            max-width: 350px; /* Restrict maximum width */
-        }
-        .event-section:nth-child(3) {
-            display: flex;
-            clear: both; /* Ensures it does not overlap with floated elements */
-        }
-        .meet-up {
-            color: #6d6d78;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 10%;
-            left: 50%;
-            transform: translate(-50%, -10%);
-            width: 90%;
-            max-width: 600px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            padding: 20px 20px 5px 20px;
-            z-index: 1000;
-            max-height: 99vh; /* Set maximum height to the viewport height */
-            overflow-y: auto;
-            box-sizing: border-box;
-        }
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-        .popup .date-box {
-            position: relative;
-            padding: 0px;
-            margin-left: -20px;
-            margin-bottom: 0px;
-            min-width: 45px;
-            display: inline-block;
-            text-align: center;
-        }
-        .popup .date-box .date {
-            margin-top: 0px;
-            color: #fc5200;
-            font-size: 20px;
-            line-height: 20px;
-        }
-        .event-title-row {
-            display: flex;
-            align-items: center; /* Align items vertically in the center */
-        }
-        .event-title-row .event-title {
-            margin: 0 0 0 0px;
-        }
-        .close-btn {
-            float: right;
-            cursor: pointer;
-        }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51069014-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-51069014-1');
-    </script>
-</head>
-<body>
-"""
 
 def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name):
     # Convert URLs in the description to hyperlinks
@@ -491,14 +328,18 @@ def gen_div_for_events_from_list(events_list):
         """
     return events_div
 
-# Generate the HTML content for future and past events
-html_content += f"""
+##########################################################################################################
+# 开始创建 html_content                                                                                   #
+##########################################################################################################
+
+# Generate the events list content for future and past events
+events_list_content = f"""
         <h2><span class="top-bar">好 骑 友</span><span style="opacity: 0;">U</span>Pcoming Events</h2>
         <span>Updated on {current_time_str_PDT}</span>
 """
 
 # Add a checkbox to switch displaying or hiding extra events
-html_content += """
+events_list_content += """
     <label>
         <input type="checkbox" id="toggleExtra">
         <span style="color:#0000ff">只显示精选活动</span>
@@ -512,175 +353,38 @@ html_content += """
             }, this);
         });
     </script>
-    <div id="events-container">
+    <div class="events-container">
 """
 
-html_content += gen_div_for_events_from_list(future_events_list)
+events_list_content += gen_div_for_events_from_list(future_events_list)
 
 
-html_content += f"""
+events_list_content += f"""
         </div>
         <h2>Planning Events</h2>
-        <div id="events-container">
+        <div class="events-container">
 """
-html_content += gen_div_for_events_from_list(planning_events_list)
+events_list_content += gen_div_for_events_from_list(planning_events_list)
 
 
-html_content += f"""
+events_list_content += f"""
         </div>
         <h2>Past Events</h2>
-        <div id="events-container">
+        <div class="events-container">
 """
-html_content += gen_div_for_events_from_list(past_events_list)
+events_list_content += gen_div_for_events_from_list(past_events_list)
 
 # Close the HTML content
-html_content += """
+events_list_content += """
     </div>
-    <div class="popup-overlay" id="popup-overlay"></div>
-    <div class="popup" id="popup">
-        <span class="close-btn" id="close-btn">&times;</span>
-        <div id="popup-content"></div>
-        <a href="#" id="load-commento-link">点击查看评论区</a>
-        <div id="commento" style="display: none;"></div>
-    </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.expand').forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const fullDescription = this.getAttribute('data-full-description');
-                    this.parentElement.innerHTML = fullDescription;
-                });
-            });
-            
-            loadRelateiveDateForEvents();
-
-            document.querySelectorAll('.event').forEach(function(eventDiv) {
-                eventDiv.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const eventId = this.getAttribute('data-event-id');
-                    const eventDetails = document.getElementById(eventId).innerHTML;
-                    document.getElementById('popup-content').innerHTML = eventDetails;
-                    document.getElementById('popup-overlay').style.display = 'block';
-                    document.getElementById('popup').style.display = 'block';
-                    // Update the URL
-                    history.pushState(null, '', `?id=${eventId}`);
-                });
-            });
-
-            document.querySelectorAll('.event-link').forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                });
-            });
-
-            document.getElementById('close-btn').addEventListener('click', function() {
-                document.getElementById('popup-overlay').style.display = 'none';
-                document.getElementById('popup').style.display = 'none';
-                document.getElementById('commento').style.display = 'none';
-                // Remove the event ID from the URL
-                history.pushState(null, '', window.location.pathname);
-            });
-
-            document.getElementById('popup-overlay').addEventListener('click', function() {
-                document.getElementById('popup-overlay').style.display = 'none';
-                document.getElementById('popup').style.display = 'none';
-                document.getElementById('commento').style.display = 'none';
-                // Remove the event ID from the URL
-                history.pushState(null, '', window.location.pathname);
-            });
-
-            
-            // Check for URL parameter and open popup if it exists
-            const urlParams = new URLSearchParams(window.location.search);
-            const eventId = urlParams.get('id');
-            if (eventId) {
-                const eventElement = document.querySelector(`[data-event-id="${eventId}"]`);
-                if (eventElement) {
-                    showEventDetailPopup(eventElement);
-                }
-            }
-
-            // Add event listener to the hyperlink
-            document.getElementById('load-commento-link').addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent the default link behavior
-                // Extract the 'id' parameter from the URL
-                const eventId = getParameterByName('id');
-                // Load Commento with the extracted eventId
-                if (eventId) {
-                    loadCommento(eventId);
-                }
-            });
-        });
-
-        function showEventDetailPopup(eventElement) {
-            const eventId = eventElement.getAttribute('data-event-id');
-            const eventDetails = document.getElementById(eventId).innerHTML;
-            document.getElementById('popup-content').innerHTML = eventDetails;
-            document.getElementById('popup-overlay').style.display = 'block';
-            document.getElementById('popup').style.display = 'block';
-        }
-
-        function loadRelateiveDateForEvents() {
-            document.querySelectorAll('.date-relative').forEach(function(dateRelativeDiv) {
-                const eventDateStr = dateRelativeDiv.getAttribute('event-date');
-                // convert to Date object
-                const eventDateObj = new Date(eventDateStr);
-                const currentDate = new Date();
-                // Normalize both dates to midnight
-                eventDateObj.setHours(0, 0, 0, 0);
-                currentDate.setHours(0, 0, 0, 0);
-                const oneDay = 24 * 60 * 60 * 1000;
-                const diffDays = Math.round((eventDateObj - currentDate) / oneDay);
-
-                let label = '';
-
-                if (diffDays === 0) {
-                    label = '今天';
-                } else if (diffDays === 1) {
-                    label = '明天';
-                } else if (diffDays === 2) {
-                    label = '后天';
-                } else if (diffDays === -1) {
-                    label = '昨天';
-                }
-
-                if (label) {
-                    dateRelativeDiv.innerHTML = label;
-                }
-            });
-        }
-
-        // Function to get URL parameter by name
-        function getParameterByName(name, url = window.location.href) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-            const results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
-
-        // Function to load Commento
-        function loadCommento(eventId) {
-            // Create a new Commento script element
-            const script = document.createElement('script');
-            script.id = 'commento-js';
-            script.defer = true;
-            script.src = 'https://cdn.commento.io/js/commento.js';
-            script.setAttribute('data-page-id', eventId);
-
-            // Append the new script element to the commento div
-            document.getElementById('commento').innerHTML = '';
-            document.getElementById('commento').appendChild(script);
-            document.getElementById('commento').style.display = 'block';
-        }
-    </script>
-</body>
-</html>
 """
 
-# Save the HTML content to a file
+# Read the index_template file
+with open('index_template.html', 'r', encoding='utf-8') as file:
+    index_template = file.read()
+
+index_html = index_template.replace('{{content}}', events_list_content)
+
+# Save the index_html to a file
 with open('index.html', 'w', encoding='utf-8') as file:
-    file.write(html_content)
+    file.write(index_html)

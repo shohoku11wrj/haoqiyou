@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="haoqiyou.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="haoqiyou.ico" type="image/x-icon">
+    <title>好骑友网(骑行活动收集器)</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51069014-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-51069014-1');
+    </script>
+</head>
+<body>
+
+{{content}}
+
+  <div class="popup-overlay" id="popup-overlay"></div>
+  <div class="popup" id="popup">
+      <span class="close-btn" id="close-btn">&times;</span>
+      <div id="popup-content"></div>
+      <a href="#" id="load-commento-link">点击查看评论区</a>
+      <div id="commento" style="display: none;"></div>
+  </div>
+<script src="scripts.js"></script>
+</body>
+</html>
