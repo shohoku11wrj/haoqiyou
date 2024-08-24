@@ -130,6 +130,21 @@
             float: right;
             cursor: pointer;
         }
+        .page-container {
+            display: flex;
+            height: 100vh; /* Full height of the viewport */
+        }
+        .list-container {
+            width: 50%; /* Takes up half the width of the container */
+            overflow-y: auto; /* Allows scrolling if content overflows */
+        }
+        .map-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%; /* Takes up half the width of the container */
+            height: 100%;
+            overflow-y: auto; /* Allows scrolling if content overflows */
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51069014-1"></script>
@@ -144,7 +159,7 @@
 <body>
 
         <h2><span class="top-bar">好 骑 友</span><span style="opacity: 0;">U</span>Pcoming Events</h2>
-        <span>Updated on 08/22/24 23:29</span>
+        <span>Updated on 08/23/24 19:17</span>
 
     <label>
         <input type="checkbox" id="toggleExtra">
@@ -163,175 +178,9 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=maps,marker&v=beta"
         defer
     ></script>
-    <gmp-map
-        center="37.4220656,-122.0840897"
-        zoom="10"
-        map-id="DEMO_MAP_ID"
-        style="height: 400px"
-    >
-
-            <gmp-advanced-marker
-                position="37.2262, -121.98224"
-                title="Group Road Ride - Hicks/New Almaden"
-                gmp-clickable="true"
-                data-event-id="event-66bffee4a213c281aaf7bc7a"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.703295, -121.918388"
-                title="周日Dublin - Livermore休闲骑"
-                gmp-clickable="true"
-                data-event-id="event-66c048611d2e6b05b76e4536"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="34.06214, -118.0424"
-                title="🥃 SBF Anniversary Ride"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365c9b"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.506308, -122.340967"
-                title="周六中午 Cañada Rd + Old La Honda 休闲环形骑"
-                gmp-clickable="true"
-                data-event-id="event-66beb4e4790fed4b000f3116"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.39267, -121.84885"
-                title="Saturday Mt. Hamilton"
-                gmp-clickable="true"
-                data-event-id="event-66bce7a9be18d8701a2b86fe"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.22659, -121.98265"
-                title="Saturday GRAVEL ride: August 17"
-                gmp-clickable="true"
-                data-event-id="event-66be557ef93e3609c28d6d70"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="34.15036, -117.83908"
-                title="🌯 Mamba day GMR gate ->shack PR challenge. "
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365ca2"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.89649, -117.89353"
-                title="🍸"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365ca3"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.23536, -121.96331"
-                title="Sunday Los Gatos Beginner ride"
-                gmp-clickable="true"
-                data-event-id="event-66c3979836c843fcbfcff266"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.22538, -121.9826"
-                title="Group Road Ride - Down Redwood Gulch"
-                gmp-clickable="true"
-                data-event-id="event-66c539cec68f86c19e9840f0"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.22634, -121.98254"
-                title="Mike's Bikes Shop Ride"
-                gmp-clickable="true"
-                data-event-id="event-66a5cbd49719a87a0cc4301e"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.655545, -122.433568"
-                title="14th Annual Silicon Valley Bike Summit"
-                gmp-clickable="true"
-                data-event-id="event-66bbc61499c68bc28d25042d"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.68695, -117.821"
-                title="☝🏻"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365ca7"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.76202, -117.8961"
-                title="✌🏻 Costa Mesa Specialized Ride (Due to labor day weekend, Specialized ride has been rescheduled)"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365cae"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.451227, -122.107893"
-                title="2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限"
-                gmp-clickable="true"
-                data-event-id="event-66c3eee6e9115b364c5ecb15"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position=""
-                title="Rapha Women's 100 Ride"
-                gmp-clickable="true"
-                data-event-id="event-66c4b2ba36c843fcbf1f409f"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.8059, -117.87756"
-                title="🤟🏻"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365cb1"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.80502, -117.87595"
-                title="🖖🏻"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365cb6"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.78278, -117.81839"
-                title="🖐🏻"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365cb7"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.42856, -122.25082"
-                title="往西，越过天际(Skyline)吧骚年"
-                gmp-clickable="true"
-                data-event-id="event-66a7fb5f9719a87a0c2b7be9"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-    </gmp-map>
-    <div id="events-container">
+    <div class="page-container">
+        <div class="list-container">
+            <div id="events-container">
 
         <div class="event extra-event" data-event-id="event-66bce958be18d8701a365ca2">
             <a href="?id=event-66bce958be18d8701a365ca2" class="event-link"></a>
@@ -346,14 +195,16 @@
                 </div>
                 <div class="event-title">🌯 Mamba day GMR gate ->shack PR challenge. </div>
             </div>
-            <p class="event-description">Gate to shack PR challenge, maybe up to ski lift after if anyone is down for it! 
+            <p class="event-description">YM9NN2
+
+Gate to shack PR challenge, maybe up to ski lift after if anyone is down for it! 
 
 7:15 AM Roll out
 
 Distance - ⭐️⭐️⭐️
 Elevation- ⭐️⭐️⭐️⭐️</p>
             <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/LYKJ3JKENOWLNUYQUJTE74CDAU7F4HRP4USUJTJGEFEOPW3IE5VBHW35XHGXQVAM3MN4FRGKRIXSPJPXEZEPLQELXTVT3EYW7LXEYKY=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UNAFESYWWCBCDYYUQYP32T6P7JXQPDH4QCTU4YB4IU7WTTFGXFWHS5XNZVD5NG7ZVQJNJOP4DTQMOKXVU2H56DTPNAGWP2KX6FAIQWQ=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Saturday, AUG 24, 2024</p>
             <p><strong>集合GPS:</strong> 34.15036, -117.83908</p>
@@ -388,13 +239,73 @@ Elevation- ⭐️⭐️⭐️⭐️</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/LYKJ3JKENOWLNUYQUJTE74CDAU7F4HRP4USUJTJGEFEOPW3IE5VBHW35XHGXQVAM3MN4FRGKRIXSPJPXEZEPLQELXTVT3EYW7LXEYKY=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UNAFESYWWCBCDYYUQYP32T6P7JXQPDH4QCTU4YB4IU7WTTFGXFWHS5XNZVD5NG7ZVQJNJOP4DTQMOKXVU2H56DTPNAGWP2KX6FAIQWQ=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
                 <div class="event-title">🌯 Mamba day GMR gate ->shack PR challenge. </div> <br>
                 <div class="event-description">发起人: Johnson  G- Ruekn/ACE Cycle Works/RCC#48818</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66c9248842db03b1bf9edb02">
+            <a href="?id=event-66c9248842db03b1bf9edb02" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66c9248842db03b1bf9edb02" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">24</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div>
+            </div>
+            <p class="event-description">Sierra is maybe my favorite bay area climb not involving dirt. It's annoying to get to, so, logically, we should hit up Metcalf on the way with its delightful backside descent.</p>
+            <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/QKCDJK3TPZX3C4BA27QT2ZW5GBNOTLG56KVCLDKWKVBOYSKGJ3VSTUX4TBN5IQAF2QF4UJH7WE6EJJLROQSOWYZCUKNYNDMM2M25EYQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Saturday, AUG 24, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22633, -121.98218</p>
+            <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA  95030</p>
+        
+            <p><strong>总路程::</strong> 144.74 km (89.94 miles)</p>
+            <p><strong>总爬坡:</strong> 1,983 m (6,505 ft)</p>
+        
+        <p><strong>发起人:</strong> Dan Scannell</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">24</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-24 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Saturday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22633, -121.98218
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA  95030 <br>
+        
+                    <span class="meet-up">总路程:</span> 144.74 km (89.94 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 1,983 m (6,505 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/QKCDJK3TPZX3C4BA27QT2ZW5GBNOTLG56KVCLDKWKVBOYSKGJ3VSTUX4TBN5IQAF2QF4UJH7WE6EJJLROQSOWYZCUKNYNDMM2M25EYQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div> <br>
+                <div class="event-description">发起人: Dan Scannell</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
             </div>
         </div>
         
@@ -411,7 +322,9 @@ Elevation- ⭐️⭐️⭐️⭐️</p>
                 </div>
                 <div class="event-title">🍸</div>
             </div>
-            <p class="event-description">7:15 AM Roll out, and a coffee break for 30-40 minutes
+            <p class="event-description">DF3RX6
+
+7:15 AM Roll out, and a coffee break for 30-40 minutes
 
 Distance - ⭐️⭐️
 Elevation- 
@@ -446,7 +359,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 
 We look forward to enjoyable ride. See you on the road!</p>
             <a href="https://www.strava.com/clubs/908336/group_events/1703934" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5RVKBL23IWSBCRCEG2VTNJJIHNCDKZJZ3JRENVTELVN3HZM2TJYXIFFT5CHGFG66DAPQAT2BRLLG4BA3CEX4LZZ2NFGPIFASOXYTOJQ=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OBUBSWORD3HS2DIBGWDGWJAWPJ6P2TVMLXSOCPUDQU44RNQWCZRYLRAS3U723DJTHEKW6QUZ4WZ5UBOOJWGGFBLL4FQO4B4PY7J3CLI=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Sunday, AUG 25, 2024</p>
             <p><strong>集合GPS:</strong> 33.89649, -117.89353</p>
@@ -481,7 +394,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1703934" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5RVKBL23IWSBCRCEG2VTNJJIHNCDKZJZ3JRENVTELVN3HZM2TJYXIFFT5CHGFG66DAPQAT2BRLLG4BA3CEX4LZZ2NFGPIFASOXYTOJQ=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OBUBSWORD3HS2DIBGWDGWJAWPJ6P2TVMLXSOCPUDQU44RNQWCZRYLRAS3U723DJTHEKW6QUZ4WZ5UBOOJWGGFBLL4FQO4B4PY7J3CLI=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -511,7 +424,7 @@ We look forward to enjoyable ride. See you on the road!</p>
 -Note: Road only. For beginner, by beginner*.
 -Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.</p>
             <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/PXDLDTXQFDE423T2BY2DKMROY6BY4TBCMNIV5273WPXEEOWGXAHEAQIVNUYGE4BFJXLC7JIRSSLPUW2K65KXE6F34ZPAZSDJ7URZI3Q=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/J2VPG5JC7OSZLNHE5SYEUJSHAV4ZS5AEGDWU55KGNOTOG2KGCZBGHAJP4GFUHCH3AV2XOUSAKI4ZJQ5FKPFGTUFZKVLDXIFWLOZVZOI=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 25, 2024</p>
             <p><strong>集合GPS:</strong> 37.23536, -121.96331</p>
@@ -522,7 +435,9 @@ We look forward to enjoyable ride. See you on the road!</p>
         
         <p><strong>发起人:</strong> Yu Ji 🍪</p>
         <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank">Strava Club - Featherweight Club (FWC)</a></p>
-    </div>
+    
+            <p><strong>预计人数:</strong> 9+</p>
+        </div>
                 <div class="event-details">
                     <div class="date-box">
                         <div class="date">25</div>
@@ -542,11 +457,13 @@ We look forward to enjoyable ride. See you on the road!</p>
                     <span class="meet-up">总路程:</span> 34.24 km (21.27 miles) <br>
                     <span class="meet-up">总爬坡:</span> 450 m (1,476 ft) <br>
             
+                    <span class="meet-up">预计人数:</span> 9+ <br>
+            
                 </div>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/PXDLDTXQFDE423T2BY2DKMROY6BY4TBCMNIV5273WPXEEOWGXAHEAQIVNUYGE4BFJXLC7JIRSSLPUW2K65KXE6F34ZPAZSDJ7URZI3Q=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/J2VPG5JC7OSZLNHE5SYEUJSHAV4ZS5AEGDWU55KGNOTOG2KGCZBGHAJP4GFUHCH3AV2XOUSAKI4ZJQ5FKPFGTUFZKVLDXIFWLOZVZOI=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -571,7 +488,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <p class="event-description">This route is the clockwise version of the regular Redwood Gulch route (2nd Sunday of the month as of this posting).  This gives us an opportunity to climb highway 9.  One notable change is the out/back after the decent of Redwood Gulch on Stevens Canyon Rd, this adds an additional 4 miles to the total.  Before the intersection with Mt. Eden we will stop at Cooley Picnic Area on the left for bathrooms and water.  After a quick stop we continue around the reservoir and then follow neighborhood roads back to Mike’s Bikes.</p>
             <a href="https://www.strava.com/clubs/265/group_events/1753524" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UGT2I4EJZ3JX3CRXQ4LIM5VDXSVPIZQ5IUWKCOSZYTZSITIN4JJVNXAPW2LRUWKJKKII53BDFVGNJM4VVGE7SIDHHSYUWM3O6ULD2LA=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/DF6Q7QPUNGBOD6SMS4TQ7GEAAKVHH55QOO66UNJJNW2AC4GV3BZTRNEXPVDSUCTAMISIUF2L5JKYZJJGOXWHZ3MXMI54WCFQMQYJMYI=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 25, 2024</p>
             <p><strong>集合GPS:</strong> 37.22538, -121.9826</p>
@@ -606,7 +523,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/265/group_events/1753524" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UGT2I4EJZ3JX3CRXQ4LIM5VDXSVPIZQ5IUWKCOSZYTZSITIN4JJVNXAPW2LRUWKJKKII53BDFVGNJM4VVGE7SIDHHSYUWM3O6ULD2LA=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/DF6Q7QPUNGBOD6SMS4TQ7GEAAKVHH55QOO66UNJJNW2AC4GV3BZTRNEXPVDSUCTAMISIUF2L5JKYZJJGOXWHZ3MXMI54WCFQMQYJMYI=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -631,7 +548,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <p class="event-description">Mike's Bikes shop ride led by Mike's Bikes shop employees.  We roll as soon as they close the store (6:10 to 6:15-ish).  </p>
             <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/R4GIDNU3TJ76RMFCOVC46VQ6PBUZ4GPXY6O5PU7US7SQFRIBP7O3SALUPC22YTFWXZNPO4DWRZRPRSI2YKD24TPCPUWWTRIWC37LBII=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/2AVZIZF4AAX7O6VEQWNF3ONTUAG6777BBYL2GEVUWQODAQAMCNEXIVMQGKJ4YT2CFQB3VCA3Z4T3PWHD464MWIBZEH2SI56FAEGSCCI=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 6:10 PM, Tuesday, AUG 27, 2024</p>
             <p><strong>集合GPS:</strong> 37.22634, -121.98254</p>
@@ -666,7 +583,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/R4GIDNU3TJ76RMFCOVC46VQ6PBUZ4GPXY6O5PU7US7SQFRIBP7O3SALUPC22YTFWXZNPO4DWRZRPRSI2YKD24TPCPUWWTRIWC37LBII=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/2AVZIZF4AAX7O6VEQWNF3ONTUAG6777BBYL2GEVUWQODAQAMCNEXIVMQGKJ4YT2CFQB3VCA3Z4T3PWHD464MWIBZEH2SI56FAEGSCCI=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -780,7 +697,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 
 We look forward to enjoyable ride. See you on the road!</p>
             <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/WAY3U263GHZSO7O4CGACAHYVCK3PD27XMY4OM272PW5AVGDUY7DECW4AUCBTGUFBAGV4T2MXFM46XDFYT2CNAXUWJ637X5EK53NWCJA=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/47O4LRIUU76ULNL6WBAX3UNMIGZ4O3NJRGMWATEOL65JVBTDKG77KYMY2OIMCD2TXXHPY2FEN2IFLPSPCYRGD7P2P5QE2IMSIBTLCUY=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 01, 2024</p>
             <p><strong>集合GPS:</strong> 33.68695, -117.821</p>
@@ -815,7 +732,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/WAY3U263GHZSO7O4CGACAHYVCK3PD27XMY4OM272PW5AVGDUY7DECW4AUCBTGUFBAGV4T2MXFM46XDFYT2CNAXUWJ637X5EK53NWCJA=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/47O4LRIUU76ULNL6WBAX3UNMIGZ4O3NJRGMWATEOL65JVBTDKG77KYMY2OIMCD2TXXHPY2FEN2IFLPSPCYRGD7P2P5QE2IMSIBTLCUY=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -825,9 +742,9 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
         </div>
         
-        </div>
-        <h2>Planning Events</h2>
-        <div id="events-container">
+            </div>
+            <h2>Planning Events</h2>
+            <div id="events-container">
 
         <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cae">
             <a href="?id=event-66bce958be18d8701a365cae" class="event-link"></a>
@@ -877,7 +794,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 
 We look forward to enjoyable ride. See you on the road!</p>
             <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/M443Z6VE4HHFFGQCVJ5V7MNUEB6QNLG73IA647XCA3SW2F7OEXK5NRVA4TY4BWXU5ADIPGHQ6IQXXN3S6DZQRW7APZIPF2G4DXDRXVQ=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/3J65YTEYVVUIPIBBXNXVKQSUN6JGFVFMZIHDDF7HS65ZWOFAJOQH2UK4DBEF5ZMBLGN67AD5XGG3RC7C2UZIQUV6H7Z3WV3I2C5KJRQ=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 6:45 AM, Sunday, SEP 08, 2024</p>
             <p><strong>集合GPS:</strong> 33.76202, -117.8961</p>
@@ -912,7 +829,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/M443Z6VE4HHFFGQCVJ5V7MNUEB6QNLG73IA647XCA3SW2F7OEXK5NRVA4TY4BWXU5ADIPGHQ6IQXXN3S6DZQRW7APZIPF2G4DXDRXVQ=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/3J65YTEYVVUIPIBBXNXVKQSUN6JGFVFMZIHDDF7HS65ZWOFAJOQH2UK4DBEF5ZMBLGN67AD5XGG3RC7C2UZIQUV6H7Z3WV3I2C5KJRQ=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -999,13 +916,16 @@ Make it official and join thousands of riders around the world by signing up to 
                 </div>
                 <div class="event-title">Rapha Women's 100 Ride</div>
             </div>
-            <p class="event-description">100km ride；Detail TBD</p>
+            <p class="event-description">-Start location: Byxbee Park, 2375 Embarcadero Rd, Palo Alto, CA 94303
+-Time: meet 8:30am leave in 10min
+-note: All gender welcomed; 100km ride
+-Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.</p>
             <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SY4DVI5H27KV5CGQE6QOGCZJL3TV3HV27MV6QVYXXLO2W3JE5MCIH6JR62TBBVMKHE3D4RRGCLW4YVP4TEZKMWFSXJ2OOGWA2R2VOUY=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/H466RS65BHHJEMNLP4MC2XNUWRWCEWWTEGWHLC2GQ6VBZ7PM47YUVBN524BUZOKMPUMGVN2ELZ4BTXAJ5W7XIYRNXFUWFVZILHUQCMA=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 8:30 AM, Sunday, SEP 08, 2024</p>
             <p><strong>集合GPS:</strong> </p>
-            <p><strong>集合地点:</strong> </p>
+            <p><strong>集合地点:</strong> Byxbee Park, 2375 Embarcadero Rd, Palo Alto, CA 94303</p>
         
             <p><strong>总路程::</strong> 103.82 km (64.51 miles)</p>
             <p><strong>总爬坡:</strong> 355 m (1,164 ft)</p>
@@ -1027,7 +947,7 @@ Make it official and join thousands of riders around the world by signing up to 
                     </div>
                 </div>
                 <div>
-                    <span class="meet-up">集合地点:</span>  <br>
+                    <span class="meet-up">集合地点:</span> Byxbee Park, 2375 Embarcadero Rd, Palo Alto, CA 94303 <br>
         
                     <span class="meet-up">总路程:</span> 103.82 km (64.51 miles) <br>
                     <span class="meet-up">总爬坡:</span> 355 m (1,164 ft) <br>
@@ -1036,7 +956,7 @@ Make it official and join thousands of riders around the world by signing up to 
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SY4DVI5H27KV5CGQE6QOGCZJL3TV3HV27MV6QVYXXLO2W3JE5MCIH6JR62TBBVMKHE3D4RRGCLW4YVP4TEZKMWFSXJ2OOGWA2R2VOUY=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/H466RS65BHHJEMNLP4MC2XNUWRWCEWWTEGWHLC2GQ6VBZ7PM47YUVBN524BUZOKMPUMGVN2ELZ4BTXAJ5W7XIYRNXFUWFVZILHUQCMA=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1094,7 +1014,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 
 We look forward to enjoyable ride. See you on the road!</p>
             <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ORWMQ3QDTTIS5YS2KZSLOBDIEICIKL6OIGOJRSSR75ARCUXX7KAHARE2J2ZG6KIQQINO33OR5VZYFVTHH57NLSAVK4QNMIMIIW6757A=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/A2L63R7A5DACTIUP7TDEWDGULYJRDCWC4GFH75KLV7U7ZDZAT6ZYXNUWPIAD25XH4SAYI7XQT5N64EKPHNCIPOSSLCHJOTFK5PO7FUI=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 15, 2024</p>
             <p><strong>集合GPS:</strong> 33.8059, -117.87756</p>
@@ -1129,7 +1049,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ORWMQ3QDTTIS5YS2KZSLOBDIEICIKL6OIGOJRSSR75ARCUXX7KAHARE2J2ZG6KIQQINO33OR5VZYFVTHH57NLSAVK4QNMIMIIW6757A=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/A2L63R7A5DACTIUP7TDEWDGULYJRDCWC4GFH75KLV7U7ZDZAT6ZYXNUWPIAD25XH4SAYI7XQT5N64EKPHNCIPOSSLCHJOTFK5PO7FUI=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1187,7 +1107,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 
 We look forward to enjoyable ride. See you on the road!</p>
             <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/6ITQR2PEYPCSO7F4DWN5J5QEGX32PKNVJQYCOSJRR6DDD7GQ4J7U3ZLEFLF3VSRCEBRRCXL7Z5NW4DAAKO23MVJRVQGXPHTTQ4VGHAA=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5C6NUY56QIUBW6O5SVUP3GYOKCBRWXOVPG25O5BYL6DOSZ6B6Y2VHWTF6OZT6O4ZAH3AZXCQY43EGPXHC6TFZJUKJ43YKGFXWKDNDMQ=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 22, 2024</p>
             <p><strong>集合GPS:</strong> 33.80502, -117.87595</p>
@@ -1222,7 +1142,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/6ITQR2PEYPCSO7F4DWN5J5QEGX32PKNVJQYCOSJRR6DDD7GQ4J7U3ZLEFLF3VSRCEBRRCXL7Z5NW4DAAKO23MVJRVQGXPHTTQ4VGHAA=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5C6NUY56QIUBW6O5SVUP3GYOKCBRWXOVPG25O5BYL6DOSZ6B6Y2VHWTF6OZT6O4ZAH3AZXCQY43EGPXHC6TFZJUKJ43YKGFXWKDNDMQ=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1280,7 +1200,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 
 We look forward to enjoyable ride. See you on the road!</p>
             <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/BJHGEYFUZN57MBF65DJRFHB2JS5S3D7W6WCMMWRD7B333PS2J3XQ5H2MGZBMULHHB2HUH3ZOCCX4QMTE4KBQKSWNEUBIGDHISJDDV6Y=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/R7GG77ITWTMV7CKA57JP4K7SQMAYSNS3CMZFYS6S4WTTFLQZQHYACZEQLIIXEENYZVICYIVNO6Q3BACDKHCZJBGPOPWLDTWUVDM37BQ=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 29, 2024</p>
             <p><strong>集合GPS:</strong> 33.78278, -117.81839</p>
@@ -1315,7 +1235,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/BJHGEYFUZN57MBF65DJRFHB2JS5S3D7W6WCMMWRD7B333PS2J3XQ5H2MGZBMULHHB2HUH3ZOCCX4QMTE4KBQKSWNEUBIGDHISJDDV6Y=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/R7GG77ITWTMV7CKA57JP4K7SQMAYSNS3CMZFYS6S4WTTFLQZQHYACZEQLIIXEENYZVICYIVNO6Q3BACDKHCZJBGPOPWLDTWUVDM37BQ=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1351,7 +1271,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
 本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 <a href="https://rangerway.com/way/cycling-routes-at-bay-area" target="_blank">旧金山湾区骑行路线 第一章 练</a> 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。
 这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。</p>
             <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/HKQGPCDSSRBNFKSIUSNKEOK4CYUTL5K6FHUIB66IFCCSK32SROSGU4EI4FD7E2PERNG6QKJUXE2QMICOLTONXPHJKP4BHHVMQFNDNIA=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UKQ652MKUWFRZ3OLX6BYKLVT5YTTC4LKBSPSHY7OG2JRT74FONF334DGLJMCXSC7VQNJ3VC2SV4KSB3TB7YZOUMKKMBS5SYFICLAQ4A=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 9:00 AM, Sunday, JUL 27, 2025</p>
             <p><strong>集合GPS:</strong> 37.42856, -122.25082</p>
@@ -1388,7 +1308,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/HKQGPCDSSRBNFKSIUSNKEOK4CYUTL5K6FHUIB66IFCCSK32SROSGU4EI4FD7E2PERNG6QKJUXE2QMICOLTONXPHJKP4BHHVMQFNDNIA=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UKQ652MKUWFRZ3OLX6BYKLVT5YTTC4LKBSPSHY7OG2JRT74FONF334DGLJMCXSC7VQNJ3VC2SV4KSB3TB7YZOUMKKMBS5SYFICLAQ4A=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1398,9 +1318,9 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
             </div>
         </div>
         
-        </div>
-        <h2>Past Events</h2>
-        <div id="events-container">
+            </div>
+            <h2>Past Events</h2>
+            <div id="events-container">
 
         <div class="event extra-event" data-event-id="event-66bffee4a213c281aaf7bc7a">
             <a href="?id=event-66bffee4a213c281aaf7bc7a" class="event-link"></a>
@@ -1823,6 +1743,185 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
             </div>
         </div>
         
+        </div>
+        <!-- Close the list-container div -->
+        <div class="map-container">
+            <gmp-map
+                center="37.4220656,-122.0840897"
+                zoom="10"
+                map-id="DEMO_MAP_ID"
+            >
+
+            <gmp-advanced-marker
+                position="37.2262, -121.98224"
+                title="Group Road Ride - Hicks/New Almaden"
+                gmp-clickable="true"
+                data-event-id="event-66bffee4a213c281aaf7bc7a"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.703295, -121.918388"
+                title="周日Dublin - Livermore休闲骑"
+                gmp-clickable="true"
+                data-event-id="event-66c048611d2e6b05b76e4536"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="34.06214, -118.0424"
+                title="🥃 SBF Anniversary Ride"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365c9b"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.506308, -122.340967"
+                title="周六中午 Cañada Rd + Old La Honda 休闲环形骑"
+                gmp-clickable="true"
+                data-event-id="event-66beb4e4790fed4b000f3116"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.39267, -121.84885"
+                title="Saturday Mt. Hamilton"
+                gmp-clickable="true"
+                data-event-id="event-66bce7a9be18d8701a2b86fe"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.22659, -121.98265"
+                title="Saturday GRAVEL ride: August 17"
+                gmp-clickable="true"
+                data-event-id="event-66be557ef93e3609c28d6d70"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="34.15036, -117.83908"
+                title="🌯 Mamba day GMR gate ->shack PR challenge. "
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365ca2"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.22633, -121.98218"
+                title="Saturday Road Ride - Sierra via Metcalf"
+                gmp-clickable="true"
+                data-event-id="event-66c9248842db03b1bf9edb02"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.89649, -117.89353"
+                title="🍸"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365ca3"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.23536, -121.96331"
+                title="Sunday Los Gatos Beginner ride"
+                gmp-clickable="true"
+                data-event-id="event-66c3979836c843fcbfcff266"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.22538, -121.9826"
+                title="Group Road Ride - Down Redwood Gulch"
+                gmp-clickable="true"
+                data-event-id="event-66c539cec68f86c19e9840f0"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.22634, -121.98254"
+                title="Mike's Bikes Shop Ride"
+                gmp-clickable="true"
+                data-event-id="event-66a5cbd49719a87a0cc4301e"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.655545, -122.433568"
+                title="14th Annual Silicon Valley Bike Summit"
+                gmp-clickable="true"
+                data-event-id="event-66bbc61499c68bc28d25042d"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.68695, -117.821"
+                title="☝🏻"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365ca7"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.76202, -117.8961"
+                title="✌🏻 Costa Mesa Specialized Ride (Due to labor day weekend, Specialized ride has been rescheduled)"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365cae"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.451227, -122.107893"
+                title="2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限"
+                gmp-clickable="true"
+                data-event-id="event-66c3eee6e9115b364c5ecb15"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position=""
+                title="Rapha Women's 100 Ride"
+                gmp-clickable="true"
+                data-event-id="event-66c4b2ba36c843fcbf1f409f"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.8059, -117.87756"
+                title="🤟🏻"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365cb1"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.80502, -117.87595"
+                title="🖖🏻"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365cb6"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.78278, -117.81839"
+                title="🖐🏻"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365cb7"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.42856, -122.25082"
+                title="往西，越过天际(Skyline)吧骚年"
+                gmp-clickable="true"
+                data-event-id="event-66a7fb5f9719a87a0c2b7be9"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            </gmp-map>
+        </div>
     </div>
     <div class="popup-overlay" id="popup-overlay"></div>
     <div class="popup" id="popup">

@@ -258,6 +258,21 @@ html_content = """
             float: right;
             cursor: pointer;
         }
+        .page-container {
+            display: flex;
+            height: 100vh; /* Full height of the viewport */
+        }
+        .list-container {
+            width: 50%; /* Takes up half the width of the container */
+            overflow-y: auto; /* Allows scrolling if content overflows */
+        }
+        .map-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%; /* Takes up half the width of the container */
+            height: 100%;
+            overflow-y: auto; /* Allows scrolling if content overflows */
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51069014-1"></script>
@@ -473,45 +488,48 @@ html_content += """
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=maps,marker&v=beta"
         defer
     ></script>
-    <gmp-map
-        center="37.4220656,-122.0840897"
-        zoom="10"
-        map-id="DEMO_MAP_ID"
-        style="height: 400px"
-    >
-"""
-
-html_content += gen_gmp_advanced_marker_for_events_from_list(past_events_list)
-html_content += gen_gmp_advanced_marker_for_events_from_list(future_events_list)
-html_content += gen_gmp_advanced_marker_for_events_from_list(planning_events_list)
-
-
-
-html_content += """
-    </gmp-map>
-    <div id="events-container">
+    <div class="page-container">
+        <div class="list-container">
+            <div id="events-container">
 """
 
 html_content += gen_div_for_events_from_list(future_events_list)
 
 
 html_content += f"""
-        </div>
-        <h2>Planning Events</h2>
-        <div id="events-container">
+            </div>
+            <h2>Planning Events</h2>
+            <div id="events-container">
 """
 html_content += gen_div_for_events_from_list(planning_events_list)
 
 
 html_content += f"""
-        </div>
-        <h2>Past Events</h2>
-        <div id="events-container">
+            </div>
+            <h2>Past Events</h2>
+            <div id="events-container">
 """
 html_content += gen_div_for_events_from_list(past_events_list)
 
 # Close the HTML content
 html_content += """
+        </div>
+        <!-- Close the list-container div -->
+        <div class="map-container">
+            <gmp-map
+                center="37.4220656,-122.0840897"
+                zoom="10"
+                map-id="DEMO_MAP_ID"
+            >
+"""
+
+html_content += gen_gmp_advanced_marker_for_events_from_list(past_events_list)
+html_content += gen_gmp_advanced_marker_for_events_from_list(future_events_list)
+html_content += gen_gmp_advanced_marker_for_events_from_list(planning_events_list)
+
+html_content += """
+            </gmp-map>
+        </div>
     </div>
     <div class="popup-overlay" id="popup-overlay"></div>
     <div class="popup" id="popup">
