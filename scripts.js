@@ -1,71 +1,89 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.expand').forEach(function(link) {
-      link.addEventListener('click', function(event) {
-          event.preventDefault();
-          const fullDescription = this.getAttribute('data-full-description');
-          this.parentElement.innerHTML = fullDescription;
-      });
-  });
+    document.getElementById('toggleExtra').addEventListener('change', function() {
+        var extraEvents = document.querySelectorAll('.extra-event');
+        extraEvents.forEach(function(event) {
+            event.style.display = this.checked ? 'none' : 'block';
+            event.style.backgroundColor = this.checked ? 'transparent' : '#cad6e6' ;
+        }, this);
+    });
+
+    document.querySelectorAll('.expand').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const fullDescription = this.getAttribute('data-full-description');
+            this.parentElement.innerHTML = fullDescription;
+        });
+    });
+    
+    loadRelateiveDateForEvents();
+
+    document.querySelectorAll('.event').forEach(function(eventDiv) {
+        eventDiv.addEventListener('click', function(event) {
+            event.preventDefault();
+            const eventId = this.getAttribute('data-event-id');
+            const eventDetails = document.getElementById(eventId).innerHTML;
+            document.getElementById('popup-content').innerHTML = eventDetails;
+            document.getElementById('popup-overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+            // Update the URL
+            history.pushState(null, '', `?id=${eventId}`);
+        });
+    });
+
+    document.querySelectorAll('.event-link').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    });
   
-  loadRelateiveDateForEvents();
+    document.querySelectorAll("gmp-advanced-marker").forEach(function(advancedMarker){
+        advancedMarker.addEventListener("gmp-click", (evt) => {
+            const eventId = advancedMarker.getAttribute('data-event-id');
+            const eventDetails = document.getElementById(eventId).innerHTML;
+            document.getElementById('popup-content').innerHTML = eventDetails;
+            document.getElementById('popup-overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        })
+    });
 
-  document.querySelectorAll('.event').forEach(function(eventDiv) {
-      eventDiv.addEventListener('click', function(event) {
-          event.preventDefault();
-          const eventId = this.getAttribute('data-event-id');
-          const eventDetails = document.getElementById(eventId).innerHTML;
-          document.getElementById('popup-content').innerHTML = eventDetails;
-          document.getElementById('popup-overlay').style.display = 'block';
-          document.getElementById('popup').style.display = 'block';
-          // Update the URL
-          history.pushState(null, '', `?id=${eventId}`);
-      });
-  });
+    document.getElementById('close-btn').addEventListener('click', function() {
+        document.getElementById('popup-overlay').style.display = 'none';
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('commento').style.display = 'none';
+        // Remove the event ID from the URL
+        history.pushState(null, '', window.location.pathname);
+    });
 
-  document.querySelectorAll('.event-link').forEach(function(link) {
-      link.addEventListener('click', function(event) {
-          event.stopPropagation();
-      });
-  });
+    document.getElementById('popup-overlay').addEventListener('click', function() {
+        document.getElementById('popup-overlay').style.display = 'none';
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('commento').style.display = 'none';
+        // Remove the event ID from the URL
+        history.pushState(null, '', window.location.pathname);
+    });
 
-  document.getElementById('close-btn').addEventListener('click', function() {
-      document.getElementById('popup-overlay').style.display = 'none';
-      document.getElementById('popup').style.display = 'none';
-      document.getElementById('commento').style.display = 'none';
-      // Remove the event ID from the URL
-      history.pushState(null, '', window.location.pathname);
-  });
+    
+    // Check for URL parameter and open popup if it exists
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get('id');
+    if (eventId) {
+        const eventElement = document.querySelector(`[data-event-id="${eventId}"]`);
+        if (eventElement) {
+            showEventDetailPopup(eventElement);
+        }
+    }
 
-  document.getElementById('popup-overlay').addEventListener('click', function() {
-      document.getElementById('popup-overlay').style.display = 'none';
-      document.getElementById('popup').style.display = 'none';
-      document.getElementById('commento').style.display = 'none';
-      // Remove the event ID from the URL
-      history.pushState(null, '', window.location.pathname);
-  });
-
-  
-  // Check for URL parameter and open popup if it exists
-  const urlParams = new URLSearchParams(window.location.search);
-  const eventId = urlParams.get('id');
-  if (eventId) {
-      const eventElement = document.querySelector(`[data-event-id="${eventId}"]`);
-      if (eventElement) {
-          showEventDetailPopup(eventElement);
-      }
-  }
-
-  // Add event listener to the hyperlink
-  document.getElementById('load-commento-link').addEventListener('click', function(event) {
-      event.preventDefault(); // Prevent the default link behavior
-      // Extract the 'id' parameter from the URL
-      const eventId = getParameterByName('id');
-      // Load Commento with the extracted eventId
-      if (eventId) {
-          loadCommento(eventId);
-      }
-  });
+    // Add event listener to the hyperlink
+    document.getElementById('load-commento-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        // Extract the 'id' parameter from the URL
+        const eventId = getParameterByName('id');
+        // Load Commento with the extracted eventId
+        if (eventId) {
+            loadCommento(eventId);
+        }
+    });
 });
 
 function showEventDetailPopup(eventElement) {

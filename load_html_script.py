@@ -121,9 +121,6 @@ print(f"Total number of past events: {len(past_events_list)}")
 #         print("-" * 40)
 #     print("~" * 40)
 
-# Sample output: Aug 1st (2024) 9:39 PM PDT
-current_time_str_PDT = datetime.now(local_tz).strftime('%D %H:%M')
-
 
 ##########################################################################################################
 # 生成 HTML body content                                                                                 #
@@ -185,12 +182,12 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
             <p><strong>实际人数:</strong> {event['actual_participants_number']}</p>
         """
 
-    # Generate QR code for the event with URL: https://haoqiyou.net/?id=event-{event['_id']}
-    qr_code_url = f"https://haoqiyou.net/?id=event-{event['_id']}"
-    popup_div += f"""
-        <p><strong>扫码查看活动:</strong></p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={qr_code_url}" alt="QR Code" width="150">
-    """
+    # # Generate QR code for the event with URL: https://haoqiyou.net/?id=event-{event['_id']}
+    # qr_code_url = f"https://haoqiyou.net/?id=event-{event['_id']}"
+    # popup_div += f"""
+    #     <p><strong>扫码查看活动:</strong></p>
+    #     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={qr_code_url}" alt="QR Code" width="150">
+    # """
 
     popup_div += "</div>"
     return popup_div
@@ -332,27 +329,8 @@ def gen_div_for_events_from_list(events_list):
 # 开始创建 html_content                                                                                   #
 ##########################################################################################################
 
-# Generate the events list content for future and past events
-events_list_content = f"""
-        <h2><span class="top-bar">好 骑 友</span><span style="opacity: 0;">U</span>Pcoming Events</h2>
-        <span>Updated on {current_time_str_PDT}</span>
-"""
-
-# Add a checkbox to switch displaying or hiding extra events
-events_list_content += """
-    <label>
-        <input type="checkbox" id="toggleExtra">
-        <span style="color:#0000ff">只显示精选活动</span>
-    </label>
-    <script>
-        document.getElementById('toggleExtra').addEventListener('change', function() {
-            var extraEvents = document.querySelectorAll('.extra-event');
-            extraEvents.forEach(function(event) {
-                event.style.display = this.checked ? 'none' : 'block';
-                event.style.backgroundColor = this.checked ? 'transparent' : '#cad6e6' ;
-            }, this);
-        });
-    </script>
+events_list_content = """
+    <h2><span style="opacity: 0;">U</span>Pcoming Events</h2>
     <div class="events-container">
 """
 
@@ -374,7 +352,7 @@ events_list_content += f"""
 """
 events_list_content += gen_div_for_events_from_list(past_events_list)
 
-# Close the HTML content
+# Close the last events-container div
 events_list_content += """
     </div>
 """
@@ -383,7 +361,11 @@ events_list_content += """
 with open('index_template.html', 'r', encoding='utf-8') as file:
     index_template = file.read()
 
-index_html = index_template.replace('{{content}}', events_list_content)
+# Sample output: Aug 1st (2024) 9:39 PM PDT
+current_time_str_PDT = datetime.now(local_tz).strftime('%D %H:%M')
+index_html = index_template.replace('{{current_time_str_PDT}}', current_time_str_PDT)
+index_html = index_html.replace('{{list_content}}', events_list_content)
+index_html = index_html.replace('{{map_content}}', '')
 
 # Save the index_html to a file
 with open('index.html', 'w', encoding='utf-8') as file:

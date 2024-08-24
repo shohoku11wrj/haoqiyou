@@ -1,0 +1,52 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh; /* Prevents the container from exceeding the viewport height */
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 1000px) {
+  .page-container {
+      display: flex;
+      flex-grow: 1;
+      align-items: stretch;
+      flex-shrink: 1;
+      overflow-y: hidden;/*let list-container scroll*/
+      max-height: 100vh; /* Prevents the container from exceeding the viewport height */
+  }
+  .list-container {
+      width: 50%; /* Takes up half the width of the container */
+      overflow-y: auto; /* Allows scrolling if content overflows */
+      height: 100vh; /* 100% of the viewport height */
+      max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
+      box-sizing: border-box;
+  }
+  .map-container {
+      width: 50%; /* Takes up half the width of the container */
+      max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
+      box-sizing: border-box;
+  }
+}
+@media only screen and (max-width: 999px) {
+  .page-container {
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh; /* Prevents the container from exceeding the viewport height */
+      box-sizing: border-box;
+  }
+  .list-container {
+      width: 100%;
+      order: 2;
+      height: 50vh; /* Set a fixed height for smaller screens */
+      overflow-y: auto; /* Allows scrolling if content overflows */
+      max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
+      box-sizing: border-box;
+  }
+  .map-container {
+      height: 600px;
+      width: 100%;
+      order: 1;
+      margin: 8px 0px;
+      max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
+      box-sizing: border-box;
+  }
+}

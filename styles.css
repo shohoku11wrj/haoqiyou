@@ -3,12 +3,19 @@ body {
   font-family: Arial, sans-serif;
   color: #6d6d78;
 }
+.top-bar-container {
+  display: flex;
+  align-items: center;
+}
 .top-bar {
   background-color: #a2ab8c;  /* SEKA 海沫绿 */
   color: #c60c30;  /* Deep red color */
   padding: 10px;
   text-align: center;
   border-bottom: 4px solid #fff; /* White border at the bottom */
+  font-family: 'Noto Sans', 'Heiti', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
 }
 .events-container {
   display: grid;
