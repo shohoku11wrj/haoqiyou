@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="haoqiyou.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="haoqiyou.ico" type="image/x-icon">
+    <link rel="icon" href="../haoqiyou.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../haoqiyou.ico" type="image/x-icon">
     <title>好骑友网(骑行活动收集器)</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="dev_style.css">
@@ -26,10 +26,18 @@
             <span style="color:#0000ff">只显示精选活动</span>
         </label>
     </div>
-
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=maps,marker&v=beta"
-        defer
+  
+    <script>
+    document.getElementById('toggleExtra').addEventListener('change', function() {
+        var extraEvents = document.querySelectorAll('.extra-event');
+        extraEvents.forEach(function(event) {
+            event.style.display = this.checked ? 'none' : 'block';
+            event.style.backgroundColor = this.checked ? 'transparent' : '#cad6e6' ;
+        }, this);
+    });
+    </script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry"
     ></script>
 
     <div class="page-container">

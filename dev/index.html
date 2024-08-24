@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="haoqiyou.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="haoqiyou.ico" type="image/x-icon">
+    <link rel="icon" href="../haoqiyou.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../haoqiyou.ico" type="image/x-icon">
     <title>好骑友网(骑行活动收集器)</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="dev_style.css">
@@ -17,19 +17,28 @@
 
         gtag('config', 'UA-51069014-1');
     </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=maps,marker&v=beta"
-        defer
-    ></script>
 </head>
 <body>
     <div class="top-bar-container">
-        <span class="top-bar">好 骑 友</span>  <span>Updated on 08/24/24 10:44</span>
+        <span class="top-bar">好 骑 友</span>  <span>Updated on 08/24/24 15:49</span>
         <label>
             <input type="checkbox" id="toggleExtra">
             <span style="color:#0000ff">只显示精选活动</span>
         </label>
     </div>
+  
+    <script>
+    document.getElementById('toggleExtra').addEventListener('change', function() {
+        var extraEvents = document.querySelectorAll('.extra-event');
+        extraEvents.forEach(function(event) {
+            event.style.display = this.checked ? 'none' : 'block';
+            event.style.backgroundColor = this.checked ? 'transparent' : '#cad6e6' ;
+        }, this);
+    });
+    </script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry"
+    ></script>
 
     <div class="page-container">
         <div class="list-container">
@@ -37,133 +46,6 @@
     <h2><span style="opacity: 0;">U</span>Pcoming Events</h2>
     <div class="events-container">
 
-        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365ca2">
-            <a href="?id=event-66bce958be18d8701a365ca2" class="event-link"></a>
-            <div class="event-section">
-        
-        <div id="event-66bce958be18d8701a365ca2" style="display: none;">
-            <div class="event-title-row">
-                <div class="date-box">
-                    <div class="date">24</div>
-                    <div class="month">AUG</div>
-    
-                </div>
-                <div class="event-title">🌯 Mamba day GMR gate ->shack PR challenge. </div>
-            </div>
-            <p class="event-description">YM9NN2
-
-Gate to shack PR challenge, maybe up to ski lift after if anyone is down for it! 
-
-7:15 AM Roll out
-
-Distance - ⭐️⭐️⭐️
-Elevation- ⭐️⭐️⭐️⭐️</p>
-            <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4IJLDGJMMYABO6QTBDPWQCRRSB24K24XZSQNAVHPYSBXNKC2XVG4LABY2W76V256WE7XFSMMAZBSYG2O2FCOYKJ2WNYA7NL4I5MPTOQ=" alt="Route Image" width="100%">
-            </a>
-            <p><strong>时间:</strong> 7:00 AM, Saturday, AUG 24, 2024</p>
-            <p><strong>集合GPS:</strong> 34.15036, -117.83908</p>
-            <p><strong>集合地点:</strong> 1340 E Palm Dr</p>
-        
-            <p><strong>总路程::</strong> 87.58 km (54.42 miles)</p>
-            <p><strong>总爬坡:</strong> 2,473 m (8,113 ft)</p>
-        
-        <p><strong>发起人:</strong> Johnson  G- Ruekn/ACE Cycle Works/RCC#48818</p>
-        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
-    </div>
-                <div class="event-details">
-                    <div class="date-box">
-                        <div class="date">24</div>
-                        <div class="month">AUG</div>
-        
-                        <div class="date-relative" event-date="2024-08-24 07:00:00-07:00"></div>
-        
-                    </div>
-                    <div>
-                        <strong>7:00 AM</strong> Saturday<br>
-                        <span class="meet-up">集合GPS:</span> 34.15036, -117.83908
-                    </div>
-                </div>
-                <div>
-                    <span class="meet-up">集合地点:</span> 1340 E Palm Dr <br>
-        
-                    <span class="meet-up">总路程:</span> 87.58 km (54.42 miles) <br>
-                    <span class="meet-up">总爬坡:</span> 2,473 m (8,113 ft) <br>
-            
-                </div>
-            </div>
-            <div class="event-section">
-                <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4IJLDGJMMYABO6QTBDPWQCRRSB24K24XZSQNAVHPYSBXNKC2XVG4LABY2W76V256WE7XFSMMAZBSYG2O2FCOYKJ2WNYA7NL4I5MPTOQ=" alt="Route Image" width="100%">
-                </a>
-            </div>
-            <div class="event-section">
-                <div class="event-title">🌯 Mamba day GMR gate ->shack PR challenge. </div> <br>
-                <div class="event-description">发起人: Johnson  G- Ruekn/ACE Cycle Works/RCC#48818</div> <br>
-                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
-            </div>
-        </div>
-        
-        <div class="event extra-event" data-event-id="event-66c9248842db03b1bf9edb02">
-            <a href="?id=event-66c9248842db03b1bf9edb02" class="event-link"></a>
-            <div class="event-section">
-        
-        <div id="event-66c9248842db03b1bf9edb02" style="display: none;">
-            <div class="event-title-row">
-                <div class="date-box">
-                    <div class="date">24</div>
-                    <div class="month">AUG</div>
-    
-                </div>
-                <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div>
-            </div>
-            <p class="event-description">Sierra is maybe my favorite bay area climb not involving dirt. It's annoying to get to, so, logically, we should hit up Metcalf on the way with its delightful backside descent.</p>
-            <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VJG4IDFANXLGUKN6I2YOFOVBZEQOVWTRHF2STGBU3NBFOFIYU7C4IRS6JCJ2MLWJZUAYBMDMZY7LXVAREDKEJRZVKMXJCKE77Z5REDI=" alt="Route Image" width="100%">
-            </a>
-            <p><strong>时间:</strong> 8:30 AM, Saturday, AUG 24, 2024</p>
-            <p><strong>集合GPS:</strong> 37.22633, -121.98218</p>
-            <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA  95030</p>
-        
-            <p><strong>总路程::</strong> 144.74 km (89.94 miles)</p>
-            <p><strong>总爬坡:</strong> 1,983 m (6,505 ft)</p>
-        
-        <p><strong>发起人:</strong> Dan Scannell</p>
-        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></p>
-    </div>
-                <div class="event-details">
-                    <div class="date-box">
-                        <div class="date">24</div>
-                        <div class="month">AUG</div>
-        
-                        <div class="date-relative" event-date="2024-08-24 08:30:00-07:00"></div>
-        
-                    </div>
-                    <div>
-                        <strong>8:30 AM</strong> Saturday<br>
-                        <span class="meet-up">集合GPS:</span> 37.22633, -121.98218
-                    </div>
-                </div>
-                <div>
-                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA  95030 <br>
-        
-                    <span class="meet-up">总路程:</span> 144.74 km (89.94 miles) <br>
-                    <span class="meet-up">总爬坡:</span> 1,983 m (6,505 ft) <br>
-            
-                </div>
-            </div>
-            <div class="event-section">
-                <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VJG4IDFANXLGUKN6I2YOFOVBZEQOVWTRHF2STGBU3NBFOFIYU7C4IRS6JCJ2MLWJZUAYBMDMZY7LXVAREDKEJRZVKMXJCKE77Z5REDI=" alt="Route Image" width="100%">
-                </a>
-            </div>
-            <div class="event-section">
-                <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div> <br>
-                <div class="event-description">发起人: Dan Scannell</div> <br>
-                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
-            </div>
-        </div>
-        
         <div class="event selected-event" data-event-id="event-66c954dde99d56b3652a387e">
             <a href="?id=event-66c954dde99d56b3652a387e" class="event-link"></a>
             <div class="event-section">
@@ -1232,6 +1114,133 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
         <h2>Past Events</h2>
         <div class="events-container">
 
+        <div class="event extra-event" data-event-id="event-66c9248842db03b1bf9edb02">
+            <a href="?id=event-66c9248842db03b1bf9edb02" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66c9248842db03b1bf9edb02" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">24</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div>
+            </div>
+            <p class="event-description">Sierra is maybe my favorite bay area climb not involving dirt. It's annoying to get to, so, logically, we should hit up Metcalf on the way with its delightful backside descent.</p>
+            <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VJG4IDFANXLGUKN6I2YOFOVBZEQOVWTRHF2STGBU3NBFOFIYU7C4IRS6JCJ2MLWJZUAYBMDMZY7LXVAREDKEJRZVKMXJCKE77Z5REDI=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Saturday, AUG 24, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22633, -121.98218</p>
+            <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA  95030</p>
+        
+            <p><strong>总路程::</strong> 144.74 km (89.94 miles)</p>
+            <p><strong>总爬坡:</strong> 1,983 m (6,505 ft)</p>
+        
+        <p><strong>发起人:</strong> Dan Scannell</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">24</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-24 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Saturday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22633, -121.98218
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA  95030 <br>
+        
+                    <span class="meet-up">总路程:</span> 144.74 km (89.94 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 1,983 m (6,505 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VJG4IDFANXLGUKN6I2YOFOVBZEQOVWTRHF2STGBU3NBFOFIYU7C4IRS6JCJ2MLWJZUAYBMDMZY7LXVAREDKEJRZVKMXJCKE77Z5REDI=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div> <br>
+                <div class="event-description">发起人: Dan Scannell</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365ca2">
+            <a href="?id=event-66bce958be18d8701a365ca2" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce958be18d8701a365ca2" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">24</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">🌯 Mamba day GMR gate ->shack PR challenge. </div>
+            </div>
+            <p class="event-description">YM9NN2
+
+Gate to shack PR challenge, maybe up to ski lift after if anyone is down for it! 
+
+7:15 AM Roll out
+
+Distance - ⭐️⭐️⭐️
+Elevation- ⭐️⭐️⭐️⭐️</p>
+            <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4IJLDGJMMYABO6QTBDPWQCRRSB24K24XZSQNAVHPYSBXNKC2XVG4LABY2W76V256WE7XFSMMAZBSYG2O2FCOYKJ2WNYA7NL4I5MPTOQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 7:00 AM, Saturday, AUG 24, 2024</p>
+            <p><strong>集合GPS:</strong> 34.15036, -117.83908</p>
+            <p><strong>集合地点:</strong> 1340 E Palm Dr</p>
+        
+            <p><strong>总路程::</strong> 87.58 km (54.42 miles)</p>
+            <p><strong>总爬坡:</strong> 2,473 m (8,113 ft)</p>
+        
+        <p><strong>发起人:</strong> Johnson  G- Ruekn/ACE Cycle Works/RCC#48818</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">24</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-24 07:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>7:00 AM</strong> Saturday<br>
+                        <span class="meet-up">集合GPS:</span> 34.15036, -117.83908
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 1340 E Palm Dr <br>
+        
+                    <span class="meet-up">总路程:</span> 87.58 km (54.42 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 2,473 m (8,113 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4IJLDGJMMYABO6QTBDPWQCRRSB24K24XZSQNAVHPYSBXNKC2XVG4LABY2W76V256WE7XFSMMAZBSYG2O2FCOYKJ2WNYA7NL4I5MPTOQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">🌯 Mamba day GMR gate ->shack PR challenge. </div> <br>
+                <div class="event-description">发起人: Johnson  G- Ruekn/ACE Cycle Works/RCC#48818</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
         <div class="event extra-event" data-event-id="event-66bffee4a213c281aaf7bc7a">
             <a href="?id=event-66bffee4a213c281aaf7bc7a" class="event-link"></a>
             <div class="event-section">
@@ -1664,6 +1673,22 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
             >
 
             <gmp-advanced-marker
+                position="37.22633, -121.98218"
+                title="Saturday Road Ride - Sierra via Metcalf"
+                gmp-clickable="true"
+                data-event-id="event-66c9248842db03b1bf9edb02"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="34.15036, -117.83908"
+                title="🌯 Mamba day GMR gate ->shack PR challenge. "
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365ca2"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
                 position="37.2262, -121.98224"
                 title="Group Road Ride - Hicks/New Almaden"
                 gmp-clickable="true"
@@ -1708,22 +1733,6 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
                 title="Saturday GRAVEL ride: August 17"
                 gmp-clickable="true"
                 data-event-id="event-66be557ef93e3609c28d6d70"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="34.15036, -117.83908"
-                title="🌯 Mamba day GMR gate ->shack PR challenge. "
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365ca2"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.22633, -121.98218"
-                title="Saturday Road Ride - Sierra via Metcalf"
-                gmp-clickable="true"
-                data-event-id="event-66c9248842db03b1bf9edb02"
                 event_type="extra-event"
             ></gmp-advanced-marker>
         
@@ -1841,17 +1850,6 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
         
             </gmp-map>
         </div>
-        <script>
-        document.querySelectorAll("gmp-advanced-marker").forEach(function(advancedMarker){
-            advancedMarker.addEventListener("gmp-click", (evt) => {
-                const eventId = advancedMarker.getAttribute('data-event-id');
-                const eventDetails = document.getElementById(eventId).innerHTML;
-                document.getElementById('popup-content').innerHTML = eventDetails;
-                document.getElementById('popup-overlay').style.display = 'block';
-                document.getElementById('popup').style.display = 'block';
-            })
-        });
-        </script>
     </div>
 
     <div class="popup-overlay" id="popup-overlay"></div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Maps Example</title>
+  <script>
+    // Include the initMap function here
+    function initMap() {
+      // The location of the center of the map
+      const centerLocation = { lat: -34.397, lng: 150.644 };
+
+      // Create a map object and specify the DOM element for display.
+      const map = new google.maps.Map(document.getElementById('map'), {
+        center: centerLocation,
+        zoom: 8
+      });
+
+      // Create an AdvancedMarkerElement and set its position.
+      const marker = new google.maps.marker.AdvancedMarkerElement({
+        position: centerLocation,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+  </script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry">
+  </script>
+</head>
+<body>
+  <div id="map" style="height: 500px; width: 100%;"></div>
+</body>
+</html>

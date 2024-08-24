@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="haoqiyou.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="haoqiyou.ico" type="image/x-icon">
+    <link rel="icon" href="../haoqiyou.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../haoqiyou.ico" type="image/x-icon">
     <title>好骑友网(骑行活动收集器)</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Google tag (gtag.js) -->
@@ -19,18 +19,12 @@
 </head>
 <body>
     <div class="top-bar-container">
-        <span class="top-bar">好 骑 友</span>  <span>Updated on 08/24/24 10:45</span>
+        <span class="top-bar">好 骑 友</span>  <span>Updated on 08/24/24 12:11</span>
         <label>
             <input type="checkbox" id="toggleExtra">
             <span style="color:#0000ff">只显示精选活动</span>
         </label>
     </div>
-
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=maps,marker&v=beta"
-        defer
-    ></script>
-
     <div class="page-container">
         <div class="list-container">
 
@@ -1767,6 +1761,29 @@ Disclaimer: Attendant must wear protective gears, obey traffic laws, and underst
 
             </gmp-map>
         </div>
+        <script>
+        document.querySelectorAll('.event').forEach(function(eventDiv) {
+            eventDiv.addEventListener('click', function(event) {
+                event.preventDefault();
+                const eventId = this.getAttribute('data-event-id');
+                const eventDetails = document.getElementById(eventId).innerHTML;
+                document.getElementById('popup-content').innerHTML = eventDetails;
+                document.getElementById('popup-overlay').style.display = 'block';
+                document.getElementById('popup').style.display = 'block';
+                // Update the URL
+                history.pushState(null, '', `?id=${eventId}`);
+            });
+        });
+
+        function initMap() {
+            var map = new google.maps.Map(document.querySelector('gmp-map'), {
+                center: {lat: 37.4220656, lng: -122.0840897},
+                zoom: 10,
+                mapId: 'DEMO_MAP_ID'
+            });
+        }
+        </script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=maps,marker&v=beta" defer></script>
     </div>
 
     <div class="popup-overlay" id="popup-overlay"></div>
