@@ -255,10 +255,17 @@ html_content = """
         .popup .date-box {
             position: relative;
             padding: 0px;
+            margin-left: -20px;
             margin-bottom: 0px;
-            min-width: ppx;
+            min-width: 45px;
             display: inline-block;
             text-align: center;
+        }
+        .popup .date-box .date {
+            margin-top: 0px;
+            color: #fc5200;
+            font-size: 20px;
+            line-height: 20px;
         }
         .event-title-row {
             display: flex;
