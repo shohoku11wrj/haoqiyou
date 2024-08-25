@@ -6,6 +6,10 @@ body {
 .top-bar-container {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+.column {
+  flex: 0 0 auto; /* Make the column only as wide as its content */
 }
 .top-bar {
   background-color: #a2ab8c;  /* SEKA 海沫绿 */

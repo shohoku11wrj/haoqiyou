@@ -68,11 +68,16 @@
 </head>
 <body>
     <div class="top-bar-container">
-        <span class="top-bar">好 骑 友</span>  <span>Updated on {{current_time_str_PDT}}</span>
-        <label>
-            <input type="checkbox" id="toggleExtra">
-            <span style="color:#0000ff">只显示精选活动</span>
-        </label>
+        <div class="column">
+            <span class="top-bar">好 骑 友</span>
+        </div>
+        <div class="column">
+            <span>Updated on {{current_time_str_PDT}}</span><br/>
+            <label>
+                <input type="checkbox" id="toggleExtra">
+                <span style="color:#0000ff">只显示精选活动</span>
+            </label>
+        </div>
     </div>
 
     <div class="page-container">

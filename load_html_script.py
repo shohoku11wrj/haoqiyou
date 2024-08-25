@@ -151,7 +151,7 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
     # If the event has a event_picture_url URL, display it with link to source_url
     if 'event_picture_url' in event and event['event_picture_url'].startswith('http'):
         popup_div += f"""
-            <a href="{event['source_url']}" target="_blank" class="event-link">
+            <a href="{source_event_url}" target="_blank" class="event-link">
                 <img src="{event['event_picture_url']}" alt="Event Image" width="100%">
             </a>
         """
@@ -315,7 +315,7 @@ def gen_div_for_events_from_list(events_list):
         # If the event has a event_picture_url URL, display it with link to source_url
         if 'event_picture_url' in event and event['event_picture_url'].startswith('http'):
             events_div += f"""
-                <a href="{event['source_url']}" target="_blank" class="event-link">
+                <a href="{source_event_url}" target="_blank" class="event-link">
                     <img src="{event['event_picture_url']}" alt="Event Image" width="100%">
                 </a>
         """
