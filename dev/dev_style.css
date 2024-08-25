@@ -35,7 +35,6 @@
       width: 100%;
       order: 2;
       height: 50vh; /* Set a fixed height for smaller screens */
-      overflow-y: auto; /* Allows scrolling if content overflows */
       max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
       box-sizing: border-box;
   }
@@ -44,7 +43,6 @@
       width: 100%;
       order: 1;
       margin: 8px 0px;
-      max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
-      box-sizing: border-box;
+      /* box-sizing: border-box; */
   }
 }
