@@ -1,7 +1,9 @@
+.top-bar-container {
+  height: 60px;
+}
 .page-container {
   display: flex;
   flex-direction: column;
-  max-height: 100vh; /* Prevents the container from exceeding the viewport height */
   box-sizing: border-box;
 }
 @media only screen and (min-width: 1000px) {
@@ -9,20 +11,16 @@
       flex-direction: row; /* Change to row direction for larger screens */
       display: flex;
       flex-grow: 1;
-      align-items: baseline;
       flex-shrink: 1;
       overflow-y: hidden;/*let list-container scroll*/
-      max-height: 100vh; /* Prevents the container from exceeding the viewport height */
+      height: calc(100vh - 76px); /* kill scroll bar on larger screen*/
   }
   .list-container {
       width: 50%; /* Takes up half the width of the container */
       overflow-y: auto; /* Allows scrolling if content overflows */
-      height: 100vh; /* 100% of the viewport height */
-      max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
   }
   .map-container {
       width: 50%; /* Takes up half the width of the container */
-      max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
   }
 }
 @media only screen and (max-width: 999px) {

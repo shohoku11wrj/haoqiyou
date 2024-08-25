@@ -299,14 +299,15 @@ def gen_gmp_advanced_marker_for_events_from_list(event_list):
         event_title=event['title']
         event_id=f"event-{event['_id']}"
         gps_coordinates_str = event['gps_coordinates']
+        if gps_coordinates_str=="":
+            continue
+        gps_coordinates_str='{ lat: ' + gps_coordinates_str.replace(',',', lng: ') + ' }'
         events_marker += f"""
-            <gmp-advanced-marker
-                position="{gps_coordinates_str}"
-                title="{event_title}"
-                gmp-clickable="true"
-                data-event-id="{event_id}"
-                event_type="{event_type}"
-            ></gmp-advanced-marker>
+            {'{'}
+                title: "{event_title}",
+                position: {gps_coordinates_str},
+                id: "{event_id}",
+            {'}'},
         """
     return events_marker
 
@@ -354,7 +355,7 @@ with open('dev/dev_index_template.html', 'r', encoding='utf-8') as file:
 current_time_str_PDT = datetime.now(local_tz).strftime('%D %H:%M')
 index_html = index_template.replace('{{current_time_str_PDT}}', current_time_str_PDT)
 index_html = index_html.replace('{{list_content}}', events_list_content)
-index_html = index_html.replace('{{map_content}}', map_content)
+index_html = index_html.replace("'{{map_content}}'", map_content)
 
 # Save the index_html to a file
 with open('dev/index.html', 'w', encoding='utf-8') as file:

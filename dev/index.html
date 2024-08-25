@@ -25,13 +25,149 @@
                 zoom: 10,
                 mapId: 'DEMO_MAP_ID'
             });
-            // Use the AdvancedMarkerElement
-            const marker = new google.maps.marker.AdvancedMarkerElement({
-                map: map,
-                position: centerLocation,
-                title: 'Bay Area Cycling Events'
-            });
+
+            const events=[
+
+            {
+                title: "周六下午1:30 龟速爬page mill",
+                position: { lat: 37.42856, lng:  -122.25082 },
+                id: "event-66c954dde99d56b3652a387e",
+            },
+        
+            {
+                title: "Saturday Road Ride - Sierra via Metcalf",
+                position: { lat: 37.22633, lng:  -121.98218 },
+                id: "event-66c9248842db03b1bf9edb02",
+            },
+        
+            {
+                title: "🌯 Mamba day GMR gate ->shack PR challenge. ",
+                position: { lat: 34.15036, lng:  -117.83908 },
+                id: "event-66bce958be18d8701a365ca2",
+            },
+        
+            {
+                title: "Group Road Ride - Hicks/New Almaden",
+                position: { lat: 37.2262, lng:  -121.98224 },
+                id: "event-66bffee4a213c281aaf7bc7a",
+            },
+        
+            {
+                title: "周日Dublin - Livermore休闲骑",
+                position: { lat: 37.703295, lng:  -121.918388 },
+                id: "event-66c048611d2e6b05b76e4536",
+            },
+        
+            {
+                title: "🥃 SBF Anniversary Ride",
+                position: { lat: 34.06214, lng:  -118.0424 },
+                id: "event-66bce958be18d8701a365c9b",
+            },
+        
+            {
+                title: "周六中午 Cañada Rd + Old La Honda 休闲环形骑",
+                position: { lat: 37.506308, lng:  -122.340967 },
+                id: "event-66beb4e4790fed4b000f3116",
+            },
+        
+            {
+                title: "Saturday Mt. Hamilton",
+                position: { lat: 37.39267, lng:  -121.84885 },
+                id: "event-66bce7a9be18d8701a2b86fe",
+            },
+        
+            {
+                title: "Saturday GRAVEL ride: August 17",
+                position: { lat: 37.22659, lng:  -121.98265 },
+                id: "event-66be557ef93e3609c28d6d70",
+            },
+        
+            {
+                title: "🍸",
+                position: { lat: 33.89649, lng:  -117.89353 },
+                id: "event-66bce958be18d8701a365ca3",
+            },
+        
+            {
+                title: "Sunday Los Gatos Beginner ride",
+                position: { lat: 37.23536, lng:  -121.96331 },
+                id: "event-66c3979836c843fcbfcff266",
+            },
+        
+            {
+                title: "Group Road Ride - Down Redwood Gulch",
+                position: { lat: 37.22538, lng:  -121.9826 },
+                id: "event-66c539cec68f86c19e9840f0",
+            },
+        
+            {
+                title: "Mike's Bikes Shop Ride",
+                position: { lat: 37.22634, lng:  -121.98254 },
+                id: "event-66a5cbd49719a87a0cc4301e",
+            },
+        
+            {
+                title: "14th Annual Silicon Valley Bike Summit",
+                position: { lat: 37.655545, lng:  -122.433568 },
+                id: "event-66bbc61499c68bc28d25042d",
+            },
+        
+            {
+                title: "☝🏻",
+                position: { lat: 33.68695, lng:  -117.821 },
+                id: "event-66bce958be18d8701a365ca7",
+            },
+        
+            {
+                title: "✌🏻 Costa Mesa Specialized Ride (Due to labor day weekend, Specialized ride has been rescheduled)",
+                position: { lat: 33.76202, lng:  -117.8961 },
+                id: "event-66bce958be18d8701a365cae",
+            },
+        
+            {
+                title: "2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限",
+                position: { lat: 37.451227, lng:  -122.107893 },
+                id: "event-66c3eee6e9115b364c5ecb15",
+            },
+        
+            {
+                title: "🤟🏻",
+                position: { lat: 33.8059, lng:  -117.87756 },
+                id: "event-66bce958be18d8701a365cb1",
+            },
+        
+            {
+                title: "🖖🏻",
+                position: { lat: 33.80502, lng:  -117.87595 },
+                id: "event-66bce958be18d8701a365cb6",
+            },
+        
+            {
+                title: "🖐🏻",
+                position: { lat: 33.78278, lng:  -117.81839 },
+                id: "event-66bce958be18d8701a365cb7",
+            },
+        
+            {
+                title: "往西，越过天际(Skyline)吧骚年",
+                position: { lat: 37.42856, lng:  -122.25082 },
+                id: "event-66a7fb5f9719a87a0c2b7be9",
+            },
+        
+            ];
+
             
+            events.map(event=>{
+                    const marker = new google.maps.marker.AdvancedMarkerElement({
+                    map: map,
+                    position: event.position,
+                    title: event.title,
+                    gmpClickable: true,
+                })
+                marker.addListener("gmp-click", ({ domEvent, latLng }) => {
+                    document.location.href = '?id='+event.id;
+                })
+            });
             // Custom Overlay
             class CustomOverlay extends google.maps.OverlayView {
                 constructor(map) {
@@ -39,200 +175,6 @@
                     this.map = map;
                     this.div = null;
                     this.setMap(map);
-                }
-
-                onAdd() {
-                    this.div = document.createElement('div');
-                    this.div.style.borderStyle = 'none';
-                    this.div.style.borderWidth = '0px';
-                    this.div.style.position = 'absolute';
-                    this.div.innerHTML = `
-            <gmp-advanced-marker
-                position="37.42856, -122.25082"
-                title="周六下午1:30 龟速爬page mill"
-                gmp-clickable="true"
-                data-event-id="event-66c954dde99d56b3652a387e"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.22633, -121.98218"
-                title="Saturday Road Ride - Sierra via Metcalf"
-                gmp-clickable="true"
-                data-event-id="event-66c9248842db03b1bf9edb02"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="34.15036, -117.83908"
-                title="🌯 Mamba day GMR gate ->shack PR challenge. "
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365ca2"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.2262, -121.98224"
-                title="Group Road Ride - Hicks/New Almaden"
-                gmp-clickable="true"
-                data-event-id="event-66bffee4a213c281aaf7bc7a"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.703295, -121.918388"
-                title="周日Dublin - Livermore休闲骑"
-                gmp-clickable="true"
-                data-event-id="event-66c048611d2e6b05b76e4536"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="34.06214, -118.0424"
-                title="🥃 SBF Anniversary Ride"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365c9b"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.506308, -122.340967"
-                title="周六中午 Cañada Rd + Old La Honda 休闲环形骑"
-                gmp-clickable="true"
-                data-event-id="event-66beb4e4790fed4b000f3116"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.39267, -121.84885"
-                title="Saturday Mt. Hamilton"
-                gmp-clickable="true"
-                data-event-id="event-66bce7a9be18d8701a2b86fe"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.22659, -121.98265"
-                title="Saturday GRAVEL ride: August 17"
-                gmp-clickable="true"
-                data-event-id="event-66be557ef93e3609c28d6d70"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.89649, -117.89353"
-                title="🍸"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365ca3"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.23536, -121.96331"
-                title="Sunday Los Gatos Beginner ride"
-                gmp-clickable="true"
-                data-event-id="event-66c3979836c843fcbfcff266"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.22538, -121.9826"
-                title="Group Road Ride - Down Redwood Gulch"
-                gmp-clickable="true"
-                data-event-id="event-66c539cec68f86c19e9840f0"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.22634, -121.98254"
-                title="Mike's Bikes Shop Ride"
-                gmp-clickable="true"
-                data-event-id="event-66a5cbd49719a87a0cc4301e"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.655545, -122.433568"
-                title="14th Annual Silicon Valley Bike Summit"
-                gmp-clickable="true"
-                data-event-id="event-66bbc61499c68bc28d25042d"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.68695, -117.821"
-                title="☝🏻"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365ca7"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.76202, -117.8961"
-                title="✌🏻 Costa Mesa Specialized Ride (Due to labor day weekend, Specialized ride has been rescheduled)"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365cae"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.451227, -122.107893"
-                title="2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限"
-                gmp-clickable="true"
-                data-event-id="event-66c3eee6e9115b364c5ecb15"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position=""
-                title="Rapha Women's 100 Ride"
-                gmp-clickable="true"
-                data-event-id="event-66c4b2ba36c843fcbf1f409f"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.8059, -117.87756"
-                title="🤟🏻"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365cb1"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.80502, -117.87595"
-                title="🖖🏻"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365cb6"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="33.78278, -117.81839"
-                title="🖐🏻"
-                gmp-clickable="true"
-                data-event-id="event-66bce958be18d8701a365cb7"
-                event_type="extra-event"
-            ></gmp-advanced-marker>
-        
-            <gmp-advanced-marker
-                position="37.42856, -122.25082"
-                title="往西，越过天际(Skyline)吧骚年"
-                gmp-clickable="true"
-                data-event-id="event-66a7fb5f9719a87a0c2b7be9"
-                event_type="selected-event"
-            ></gmp-advanced-marker>
-        `;
-                    const panes = this.getPanes();
-                    panes.overlayLayer.appendChild(this.div);
-                }
-
-                draw() {
-                    const overlayProjection = this.getProjection();
-                    const position = overlayProjection.fromLatLngToDivPixel(centerLocation);
-                    const div = this.div;
-                    div.style.left = position.x + 'px';
-                    div.style.top = position.y + 'px';
                 }
 
                 onRemove() {
@@ -247,12 +189,12 @@
         }
     </script>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAa-YWC_WqDbvhOCOtfl1xmRo3CvRSeck&callback=initMap&libraries=places,geometry"
-    ></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry,marker&v=beta"
+></script>
 </head>
 <body>
     <div class="top-bar-container">
-        <span class="top-bar">好 骑 友</span>  <span>Updated on 08/24/24 20:39</span>
+        <span class="top-bar">好 骑 友</span>  <span>Updated on 08/25/24 03:54</span>
         <label>
             <input type="checkbox" id="toggleExtra">
             <span style="color:#0000ff">只显示精选活动</span>

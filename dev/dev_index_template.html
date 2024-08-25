@@ -25,13 +25,23 @@
                 zoom: 10,
                 mapId: 'DEMO_MAP_ID'
             });
-            // Use the AdvancedMarkerElement
-            const marker = new google.maps.marker.AdvancedMarkerElement({
-                map: map,
-                position: centerLocation,
-                title: 'Bay Area Cycling Events'
-            });
+
+            const events=[
+'{{map_content}}'
+            ];
+
             
+            events.map(event=>{
+                    const marker = new google.maps.marker.AdvancedMarkerElement({
+                    map: map,
+                    position: event.position,
+                    title: event.title,
+                    gmpClickable: true,
+                })
+                marker.addListener("gmp-click", ({ domEvent, latLng }) => {
+                    document.location.href = '?id='+event.id;
+                })
+            });
             // Custom Overlay
             class CustomOverlay extends google.maps.OverlayView {
                 constructor(map) {
@@ -39,24 +49,6 @@
                     this.map = map;
                     this.div = null;
                     this.setMap(map);
-                }
-
-                onAdd() {
-                    this.div = document.createElement('div');
-                    this.div.style.borderStyle = 'none';
-                    this.div.style.borderWidth = '0px';
-                    this.div.style.position = 'absolute';
-                    this.div.innerHTML = `{{map_content}}`;
-                    const panes = this.getPanes();
-                    panes.overlayLayer.appendChild(this.div);
-                }
-
-                draw() {
-                    const overlayProjection = this.getProjection();
-                    const position = overlayProjection.fromLatLngToDivPixel(centerLocation);
-                    const div = this.div;
-                    div.style.left = position.x + 'px';
-                    div.style.top = position.y + 'px';
                 }
 
                 onRemove() {
@@ -71,8 +63,8 @@
         }
     </script>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAa-YWC_WqDbvhOCOtfl1xmRo3CvRSeck&callback=initMap&libraries=places,geometry"
-    ></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry,marker&v=beta"
+></script>
 </head>
 <body>
     <div class="top-bar-container">
