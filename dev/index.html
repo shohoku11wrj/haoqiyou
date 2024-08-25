@@ -17,13 +17,242 @@
 
         gtag('config', 'UA-51069014-1');
     </script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFqMRcvPgXlKJUoWBWz7ezuzEYqjqhWr0&callback=initMap&libraries=places,geometry">
+    <script>
+        function initMap() {
+            const centerLocation = { lat: 37.4220656, lng: -122.0840897 };
+            const map = new google.maps.Map(document.getElementById('map-container'), {
+                center: centerLocation,
+                zoom: 10,
+                mapId: 'DEMO_MAP_ID'
+            });
+            // Use the AdvancedMarkerElement
+            const marker = new google.maps.marker.AdvancedMarkerElement({
+                map: map,
+                position: centerLocation,
+                title: 'Bay Area Cycling Events'
+            });
+            
+            // Custom Overlay
+            class CustomOverlay extends google.maps.OverlayView {
+                constructor(map) {
+                    super();
+                    this.map = map;
+                    this.div = null;
+                    this.setMap(map);
+                }
+
+                onAdd() {
+                    this.div = document.createElement('div');
+                    this.div.style.borderStyle = 'none';
+                    this.div.style.borderWidth = '0px';
+                    this.div.style.position = 'absolute';
+                    this.div.innerHTML = `
+            <gmp-advanced-marker
+                position="37.42856, -122.25082"
+                title="周六下午1:30 龟速爬page mill"
+                gmp-clickable="true"
+                data-event-id="event-66c954dde99d56b3652a387e"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.22633, -121.98218"
+                title="Saturday Road Ride - Sierra via Metcalf"
+                gmp-clickable="true"
+                data-event-id="event-66c9248842db03b1bf9edb02"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="34.15036, -117.83908"
+                title="🌯 Mamba day GMR gate ->shack PR challenge. "
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365ca2"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.2262, -121.98224"
+                title="Group Road Ride - Hicks/New Almaden"
+                gmp-clickable="true"
+                data-event-id="event-66bffee4a213c281aaf7bc7a"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.703295, -121.918388"
+                title="周日Dublin - Livermore休闲骑"
+                gmp-clickable="true"
+                data-event-id="event-66c048611d2e6b05b76e4536"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="34.06214, -118.0424"
+                title="🥃 SBF Anniversary Ride"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365c9b"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.506308, -122.340967"
+                title="周六中午 Cañada Rd + Old La Honda 休闲环形骑"
+                gmp-clickable="true"
+                data-event-id="event-66beb4e4790fed4b000f3116"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.39267, -121.84885"
+                title="Saturday Mt. Hamilton"
+                gmp-clickable="true"
+                data-event-id="event-66bce7a9be18d8701a2b86fe"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.22659, -121.98265"
+                title="Saturday GRAVEL ride: August 17"
+                gmp-clickable="true"
+                data-event-id="event-66be557ef93e3609c28d6d70"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.89649, -117.89353"
+                title="🍸"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365ca3"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.23536, -121.96331"
+                title="Sunday Los Gatos Beginner ride"
+                gmp-clickable="true"
+                data-event-id="event-66c3979836c843fcbfcff266"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.22538, -121.9826"
+                title="Group Road Ride - Down Redwood Gulch"
+                gmp-clickable="true"
+                data-event-id="event-66c539cec68f86c19e9840f0"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.22634, -121.98254"
+                title="Mike's Bikes Shop Ride"
+                gmp-clickable="true"
+                data-event-id="event-66a5cbd49719a87a0cc4301e"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.655545, -122.433568"
+                title="14th Annual Silicon Valley Bike Summit"
+                gmp-clickable="true"
+                data-event-id="event-66bbc61499c68bc28d25042d"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.68695, -117.821"
+                title="☝🏻"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365ca7"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.76202, -117.8961"
+                title="✌🏻 Costa Mesa Specialized Ride (Due to labor day weekend, Specialized ride has been rescheduled)"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365cae"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.451227, -122.107893"
+                title="2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限"
+                gmp-clickable="true"
+                data-event-id="event-66c3eee6e9115b364c5ecb15"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position=""
+                title="Rapha Women's 100 Ride"
+                gmp-clickable="true"
+                data-event-id="event-66c4b2ba36c843fcbf1f409f"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.8059, -117.87756"
+                title="🤟🏻"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365cb1"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.80502, -117.87595"
+                title="🖖🏻"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365cb6"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="33.78278, -117.81839"
+                title="🖐🏻"
+                gmp-clickable="true"
+                data-event-id="event-66bce958be18d8701a365cb7"
+                event_type="extra-event"
+            ></gmp-advanced-marker>
+        
+            <gmp-advanced-marker
+                position="37.42856, -122.25082"
+                title="往西，越过天际(Skyline)吧骚年"
+                gmp-clickable="true"
+                data-event-id="event-66a7fb5f9719a87a0c2b7be9"
+                event_type="selected-event"
+            ></gmp-advanced-marker>
+        `;
+                    const panes = this.getPanes();
+                    panes.overlayLayer.appendChild(this.div);
+                }
+
+                draw() {
+                    const overlayProjection = this.getProjection();
+                    const position = overlayProjection.fromLatLngToDivPixel(centerLocation);
+                    const div = this.div;
+                    div.style.left = position.x + 'px';
+                    div.style.top = position.y + 'px';
+                }
+
+                onRemove() {
+                    if (this.div) {
+                        this.div.parentNode.removeChild(this.div);
+                        this.div = null;
+                    }
+                }
+            }
+
+            new CustomOverlay(map);
+        }
     </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFqMRcvPgXlKJUoWBWz7ezuzEYqjqhWr0&callback=initMap&libraries=places,geometry"
+    ></script>
 </head>
 <body>
     <div class="top-bar-container">
-        <span class="top-bar">好 骑 友</span>  <span>Updated on 08/24/24 15:54</span>
+        <span class="top-bar">好 骑 友</span>  <span>Updated on 08/24/24 20:35</span>
         <label>
             <input type="checkbox" id="toggleExtra">
             <span style="color:#0000ff">只显示精选活动</span>
@@ -35,6 +264,1019 @@
 
     <h2><span style="opacity: 0;">U</span>Pcoming Events</h2>
     <div class="events-container">
+
+        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365ca3">
+            <a href="?id=event-66bce958be18d8701a365ca3" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce958be18d8701a365ca3" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">25</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">🍸</div>
+            </div>
+            <p class="event-description">DF3RX6
+
+7:15 AM Roll out, and a coffee break for 30-40 minutes
+
+Distance - ⭐️⭐️
+Elevation- 
+
+🅿️ Vista Park
+2000 E Bastanchury Rd, Fullerton, CA 92835
+
+☕️ Coffee Parlor (20.44M)
+2944 Clark Ave, Long Beach, CA 90815
+
+---------------------------------------------
+
+**Sunday Group Ride Notice and Rules**
+
+Join us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:
+
+1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.
+
+2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)
+
+3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.
+
+4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.
+
+5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.
+
+6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.
+
+7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.
+
+8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
+
+We look forward to enjoyable ride. See you on the road!</p>
+            <a href="https://www.strava.com/clubs/908336/group_events/1703934" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/WQVOI74VMA6F4PCPJLGBMQBYUN6BM4S3CAQIDHIU5LAFL7LWZUSMGEKKXAKDRRBIKS2IVWTXFFIQMEF55C3AJSMVRL6KHFLMBZBG7SA=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 7:00 AM, Sunday, AUG 25, 2024</p>
+            <p><strong>集合GPS:</strong> 33.89649, -117.89353</p>
+            <p><strong>集合地点:</strong> 2000 E Bastanchury Rd, Fullerton, CA 92835</p>
+        
+            <p><strong>总路程::</strong> 63.33 km (39.35 miles)</p>
+            <p><strong>总爬坡:</strong> 249 m (816 ft)</p>
+        
+        <p><strong>发起人:</strong> Club Organizer</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1703934" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">25</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-25 07:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>7:00 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 33.89649, -117.89353
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 2000 E Bastanchury Rd, Fullerton, CA 92835 <br>
+        
+                    <span class="meet-up">总路程:</span> 63.33 km (39.35 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 249 m (816 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/908336/group_events/1703934" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/WQVOI74VMA6F4PCPJLGBMQBYUN6BM4S3CAQIDHIU5LAFL7LWZUSMGEKKXAKDRRBIKS2IVWTXFFIQMEF55C3AJSMVRL6KHFLMBZBG7SA=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">🍸</div> <br>
+                <div class="event-description">发起人: Club Organizer</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1703934" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
+        <div class="event selected-event" data-event-id="event-66c3979836c843fcbfcff266">
+            <a href="?id=event-66c3979836c843fcbfcff266" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66c3979836c843fcbfcff266" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">25</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Sunday Los Gatos Beginner ride</div>
+            </div>
+            <p class="event-description">Los Gatos Beginner ride
+-Meet by: 8:30am, leave in 10min.
+-Meet at: Philz coffee: 681 Blossom Hill Rd #102, Los Gatos, CA 95032
+-Route: <a href="https://www.strava.com/routes/3245464502408241026" target="_blank">https://www.strava.com/routes/3245464502408241026</a>
+-Note: Road only. For beginner, by beginner*.
+-Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.</p>
+            <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4FWWWX74DEHZATL5UKBOICUTU2FZ3E7TGW3INTVCXNNTU2SWFXFXT2LEDAWFFDPAUY6V4CTATUS2H2X3K3T6NXKQ4UORCH6CA2TAK5A=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 25, 2024</p>
+            <p><strong>集合GPS:</strong> 37.23536, -121.96331</p>
+            <p><strong>集合地点:</strong> 681 Blossom Hill Rd #102, Los Gatos, CA 95032</p>
+        
+            <p><strong>总路程::</strong> 34.24 km (21.27 miles)</p>
+            <p><strong>总爬坡:</strong> 450 m (1,476 ft)</p>
+        
+        <p><strong>发起人:</strong> Yu Ji 🍪</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank">Strava Club - Featherweight Club (FWC)</a></p>
+    
+            <p><strong>预计人数:</strong> 9+</p>
+        </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">25</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-25 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 37.23536, -121.96331
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 681 Blossom Hill Rd #102, Los Gatos, CA 95032 <br>
+        
+                    <span class="meet-up">总路程:</span> 34.24 km (21.27 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 450 m (1,476 ft) <br>
+            
+                    <span class="meet-up">预计人数:</span> 9+ <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4FWWWX74DEHZATL5UKBOICUTU2FZ3E7TGW3INTVCXNNTU2SWFXFXT2LEDAWFFDPAUY6V4CTATUS2H2X3K3T6NXKQ4UORCH6CA2TAK5A=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Sunday Los Gatos Beginner ride</div> <br>
+                <div class="event-description">发起人: Yu Ji 🍪</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank" class="event-link">Strava Club - Featherweight Club (FWC)</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66c539cec68f86c19e9840f0">
+            <a href="?id=event-66c539cec68f86c19e9840f0" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66c539cec68f86c19e9840f0" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">25</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Group Road Ride - Down Redwood Gulch</div>
+            </div>
+            <p class="event-description">This route is the clockwise version of the regular Redwood Gulch route (2nd Sunday of the month as of this posting).  This gives us an opportunity to climb highway 9.  One notable change is the out/back after the decent of Redwood Gulch on Stevens Canyon Rd, this adds an additional 4 miles to the total.  Before the intersection with Mt. Eden we will stop at Cooley Picnic Area on the left for bathrooms and water.  After a quick stop we continue around the reservoir and then follow neighborhood roads back to Mike’s Bikes.</p>
+            <a href="https://www.strava.com/clubs/265/group_events/1753524" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/FJSJAQZBOU63LYTOVXQDIHAJY5NCTFBB6GWKI7KUWDU355BPJHQYV7ZJOGCQZN3ODEUBVDMXZN26L2RYSPJ5WR4STDMNUJRAV5UT7PQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 25, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22538, -121.9826</p>
+            <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA 95032</p>
+        
+            <p><strong>总路程::</strong> 49.56 km (30.80 miles)</p>
+            <p><strong>总爬坡:</strong> 723 m (2,372 ft)</p>
+        
+        <p><strong>发起人:</strong> Mark Thompson</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/265/group_events/1753524" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">25</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-25 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22538, -121.9826
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA 95032 <br>
+        
+                    <span class="meet-up">总路程:</span> 49.56 km (30.80 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 723 m (2,372 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1753524" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/FJSJAQZBOU63LYTOVXQDIHAJY5NCTFBB6GWKI7KUWDU355BPJHQYV7ZJOGCQZN3ODEUBVDMXZN26L2RYSPJ5WR4STDMNUJRAV5UT7PQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Group Road Ride - Down Redwood Gulch</div> <br>
+                <div class="event-description">发起人: Mark Thompson</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1753524" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66a5cbd49719a87a0cc4301e">
+            <a href="?id=event-66a5cbd49719a87a0cc4301e" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66a5cbd49719a87a0cc4301e" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">27</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Mike's Bikes Shop Ride</div>
+            </div>
+            <p class="event-description">Mike's Bikes shop ride led by Mike's Bikes shop employees.  We roll as soon as they close the store (6:10 to 6:15-ish).  </p>
+            <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UKT4UGDENSSJOADIOX2IIEIVZGABUPJUS6CC433Z4CLKMHFHNS3FQ2D26KMGOLKQR7M3NVXQJ4MYQOIN3EYXPMI34JGAGAVCBU7KJKI=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 6:10 PM, Tuesday, AUG 27, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22634, -121.98254</p>
+            <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA 95030</p>
+        
+            <p><strong>总路程::</strong> 37.91 km (23.56 miles)</p>
+            <p><strong>总爬坡:</strong> 490 m (1,607 ft)</p>
+        
+        <p><strong>发起人:</strong> LGBRC Rides</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">27</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-27 18:10:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>6:10 PM</strong> Tuesday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22634, -121.98254
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA 95030 <br>
+        
+                    <span class="meet-up">总路程:</span> 37.91 km (23.56 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 490 m (1,607 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UKT4UGDENSSJOADIOX2IIEIVZGABUPJUS6CC433Z4CLKMHFHNS3FQ2D26KMGOLKQR7M3NVXQJ4MYQOIN3EYXPMI34JGAGAVCBU7KJKI=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Mike's Bikes Shop Ride</div> <br>
+                <div class="event-description">发起人: LGBRC Rides</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+            </div>
+        </div>
+        
+        <div class="event selected-event" data-event-id="event-66bbc61499c68bc28d25042d">
+            <a href="?id=event-66bbc61499c68bc28d25042d" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bbc61499c68bc28d25042d" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">29</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">14th Annual Silicon Valley Bike Summit</div>
+            </div>
+            <p class="event-description">Thursday, August 29 · 9am - 6pm PDT
+Connect with insights and expertise at Silicon Valley’s largest gathering of active transportation leaders and organizers from government, the private sector, non-profits, and the general public. This is THE most information rich event of the year for bicycle professionals, elected and appointed officials, and citizen advocates in and around Silicon Valley. It’s well worth attending by professionals and advocates from elsewhere in the US as well.
+Register on <a href="https://www.eventbrite.com/e/silicon-valley-bike-summit-2024-tickets-841947175667?aff=oddtdtcreator" target="_blank">https://www.eventbrite.com/e/silicon-valley-bike-summit-2024-tickets-841947175667?aff=oddtdtcreator</a></p>
+            <a href="https://bikesiliconvalley.org/events/summit" target="_blank" class="event-link">
+                <img src="https://images.squarespace-cdn.com/content/v1/6189ac221f143a6d4957a531/039e0b0e-165b-446a-8040-31d569c2c79d/2024+Summit+Graphic+-+EB+%26+Website.png?format=1500w" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 9:00 AM, Thursday, AUG 29, 2024</p>
+            <p><strong>集合GPS:</strong> 37.655545, -122.433568</p>
+            <p><strong>集合地点:</strong> Library | Parks & Recreation Center, 901 Civic Campus Way South San Francisco, CA 94080</p>
+        
+        <p><strong>发起人:</strong> Silicon Valley Bicycle Coalition</p>
+        <p><strong>活动来源:</strong> <a href="https://bikesiliconvalley.org/events/summit" target="_blank">新闻 - Silicon Valley Bicycle Coalition</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">29</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-29 09:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>9:00 AM</strong> Thursday<br>
+                        <span class="meet-up">集合GPS:</span> 37.655545, -122.433568
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> Library | Parks & Recreation Center, 901 Civic Campus Way South San Francisco, CA 94080 <br>
+        
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://bikesiliconvalley.org/events/summit" target="_blank" class="event-link">
+                    <img src="https://images.squarespace-cdn.com/content/v1/6189ac221f143a6d4957a531/039e0b0e-165b-446a-8040-31d569c2c79d/2024+Summit+Graphic+-+EB+%26+Website.png?format=1500w" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">14th Annual Silicon Valley Bike Summit</div> <br>
+                <div class="event-description">发起人: Silicon Valley Bicycle Coalition</div> <br>
+                <div class="event-description">活动来源: <a href="https://bikesiliconvalley.org/events/summit" target="_blank" class="event-link">新闻 - Silicon Valley Bicycle Coalition</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365ca7">
+            <a href="?id=event-66bce958be18d8701a365ca7" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce958be18d8701a365ca7" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">01</div>
+                    <div class="month">SEP</div>
+    
+                </div>
+                <div class="event-title">☝🏻</div>
+            </div>
+            <p class="event-description">7:15 AM Roll out, and a coffee break for 30-40 minutes
+
+Distance - ⭐️⭐️
+Elevation- ⭐️
+
+🅿️ Bill Barber Memorial Park
+4 Civic Center Plaza, Irvine, CA 92606
+
+☕️ High Tide Coffee (22.73M)
+27271 La Paz Rd Unit A, Laguna Niguel, CA 92677
+
+---------------------------------------------
+
+**Sunday Group Ride Notice and Rules**
+
+Join us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:
+
+1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.
+
+2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)
+
+3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.
+
+4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.
+
+5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.
+
+6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.
+
+7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.
+
+8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
+
+We look forward to enjoyable ride. See you on the road!</p>
+            <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/Z2QLG7YLGPUOASRNMLY4BWVAL3DE52UDEHVJSJUDATM7EFHFQP7JANMJU7R7BGQO4LMFF7LSSJLMD56LAFYEQH5O6CLMCPJMSK4SSXQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 01, 2024</p>
+            <p><strong>集合GPS:</strong> 33.68695, -117.821</p>
+            <p><strong>集合地点:</strong> 4 Civic Center Plaza, Irvine, CA 92606</p>
+        
+            <p><strong>总路程::</strong> 62.37 km (38.76 miles)</p>
+            <p><strong>总爬坡:</strong> 528 m (1,732 ft)</p>
+        
+        <p><strong>发起人:</strong> Club Organizer</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">01</div>
+                        <div class="month">SEP</div>
+        
+                        <div class="date-relative" event-date="2024-09-01 07:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>7:00 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 33.68695, -117.821
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 4 Civic Center Plaza, Irvine, CA 92606 <br>
+        
+                    <span class="meet-up">总路程:</span> 62.37 km (38.76 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 528 m (1,732 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/Z2QLG7YLGPUOASRNMLY4BWVAL3DE52UDEHVJSJUDATM7EFHFQP7JANMJU7R7BGQO4LMFF7LSSJLMD56LAFYEQH5O6CLMCPJMSK4SSXQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">☝🏻</div> <br>
+                <div class="event-description">发起人: Club Organizer</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
+        </div>
+        <h2>Planning Events</h2>
+        <div class="events-container">
+
+        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cae">
+            <a href="?id=event-66bce958be18d8701a365cae" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce958be18d8701a365cae" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">08</div>
+                    <div class="month">SEP</div>
+    
+                </div>
+                <div class="event-title">✌🏻 Costa Mesa Specialized Ride (Due to labor day weekend, Specialized ride has been rescheduled)</div>
+            </div>
+            <p class="event-description">7 AM Roll out, and a coffee break for 30-40 minutes
+
+Distance - ⭐️⭐️
+Elevation- ⭐️
+
+🅿️ Santa Ana Pony Baseball
+1999 W 19th St, Santa Ana, CA 92706
+
+🍩 Specialized - Costa Mesa (30.27M)
+1901 Harbor Blvd, Costa Mesa, CA 92627
+
+---------------------------------------------
+
+**Sunday Group Ride Notice and Rules**
+
+Join us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:
+
+1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.
+
+2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)
+
+3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.
+
+4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.
+
+5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.
+
+6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.
+
+7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.
+
+8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
+
+We look forward to enjoyable ride. See you on the road!</p>
+            <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OTPXSYRT57CRFPPFPNN4XQGVVKN3XRMI7PNPTJXCAP3JKOEB5YROHEK5R5E2XW4DUT36BTTGNNL7V6TT67SAGUVLFYMOVBJEU3WYO7Y=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 6:45 AM, Sunday, SEP 08, 2024</p>
+            <p><strong>集合GPS:</strong> 33.76202, -117.8961</p>
+            <p><strong>集合地点:</strong> 1999 W 19th St, Santa Ana, CA 92706</p>
+        
+            <p><strong>总路程::</strong> 65.71 km (40.83 miles)</p>
+            <p><strong>总爬坡:</strong> 468 m (1,535 ft)</p>
+        
+        <p><strong>发起人:</strong> Club Organizer</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">08</div>
+                        <div class="month">SEP</div>
+        
+                        <div class="date-relative" event-date="2024-09-08 06:45:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>6:45 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 33.76202, -117.8961
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 1999 W 19th St, Santa Ana, CA 92706 <br>
+        
+                    <span class="meet-up">总路程:</span> 65.71 km (40.83 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 468 m (1,535 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OTPXSYRT57CRFPPFPNN4XQGVVKN3XRMI7PNPTJXCAP3JKOEB5YROHEK5R5E2XW4DUT36BTTGNNL7V6TT67SAGUVLFYMOVBJEU3WYO7Y=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">✌🏻 Costa Mesa Specialized Ride (Due to labor day weekend, Specialized ride has been rescheduled)</div> <br>
+                <div class="event-description">发起人: Club Organizer</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
+        <div class="event selected-event" data-event-id="event-66c3eee6e9115b364c5ecb15">
+            <a href="?id=event-66c3eee6e9115b364c5ecb15" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66c3eee6e9115b364c5ecb15" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">08</div>
+                    <div class="month">SEP</div>
+    
+                </div>
+                <div class="event-title">2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限</div>
+            </div>
+            <p class="event-description">由北加州湾区 <a href="https://www.strava.com/clubs/DLLM" target="_blank">休閒🍩騎帥群🚴</a> 和 <a href="https://www.strava.com/clubs/featherweight" target="_blank">轻如羽毛骑行团(FWC)</a> 联合举办。
+<a href="https://content.rapha.cc/us/en/story/womens100" target="_blank">The Annual Rapha WOMEN'S 100 Event</a>\n
+The Women’s 100 is a global movement of women riding for each other. As we chase our best on a singular day, we’ll harness the power of collective pursuit to ride beyond ourselves.
+<b><a href="https://www.strava.com/challenges/4577?utm_source=social&utm_medium=challenge_partner&utm_campaign=rapha_challenge_4577&_branch_match_id=757508740114612323&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXLy4pSixL1EssKNDLyczL1i9KLMhI1C3Pz03NK9Y1NDDQNTIwMgEAiIxZmy0AAAA%3D" target="_blank">SIGN UP ON STRAVA</a></b>
+Make it official and join thousands of riders around the world by signing up to the Strava challenge. You’ll receive a digital badge and a 20% Rapha voucher when you complete the distance. Plus, you’ll be entered into a prize draw to win £1,000 worth of Rapha products and a brand new FACTOR bike.</p>
+            <a href="https://www.strava.com/routes/3260800078021188950" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OBR7EMTTD76SWXTCOHQJCLGASZAVQ5GJASOAPHRFTVZUARX22CMCPPWOZLOWWMZY44L42NL3GZOGXC55CLDZKZIDA4KATIAUQZJCPKQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Sunday, SEP 08, 2024</p>
+            <p><strong>集合GPS:</strong> 37.451227, -122.107893</p>
+            <p><strong>集合地点:</strong> (TBD) Byxbee Park parking lot, 2375 Embarcadero Rd, Palo Alto, CA 94303</p>
+        
+            <p><strong>总路程::</strong> 101.79 km (63.25 miles)</p>
+            <p><strong>总爬坡:</strong> 334 m (1,095 ft)</p>
+        
+        <p><strong>发起人:</strong> Lingzi</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/routes/3260800078021188950" target="_blank">微信群 - 休閒🍩騎帥群🚴 + 轻如羽毛骑行团(FWC)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">08</div>
+                        <div class="month">SEP</div>
+        
+                        <div class="date-relative" event-date="2024-09-08 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 37.451227, -122.107893
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> (TBD) Byxbee Park parking lot, 2375 Embarcadero Rd, Palo Alto, CA 94303 <br>
+        
+                    <span class="meet-up">总路程:</span> 101.79 km (63.25 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 334 m (1,095 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/routes/3260800078021188950" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OBR7EMTTD76SWXTCOHQJCLGASZAVQ5GJASOAPHRFTVZUARX22CMCPPWOZLOWWMZY44L42NL3GZOGXC55CLDZKZIDA4KATIAUQZJCPKQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限</div> <br>
+                <div class="event-description">发起人: Lingzi</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/routes/3260800078021188950" target="_blank" class="event-link">微信群 - 休閒🍩騎帥群🚴 + 轻如羽毛骑行团(FWC)</a></div>
+            </div>
+        </div>
+        
+        <div class="event selected-event" data-event-id="event-66c4b2ba36c843fcbf1f409f">
+            <a href="?id=event-66c4b2ba36c843fcbf1f409f" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66c4b2ba36c843fcbf1f409f" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">08</div>
+                    <div class="month">SEP</div>
+    
+                </div>
+                <div class="event-title">Rapha Women's 100 Ride</div>
+            </div>
+            <p class="event-description">-Start location: Byxbee Park, 2375 Embarcadero Rd, Palo Alto, CA 94303
+-Time: meet 8:30am leave in 10min
+-note: All gender welcomed; 100km ride
+-Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.</p>
+            <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/GKSWZOOW4Y4RCWIJYCRGFOSRP7YNSOUNMCZJWN7OM6EHP43QXANNJB7JE7KVJ5GPK54GAB3LPVN25OJA36T3I2EMGGJNUEQ5VGR7ZOQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Sunday, SEP 08, 2024</p>
+            <p><strong>集合GPS:</strong> </p>
+            <p><strong>集合地点:</strong> Byxbee Park, 2375 Embarcadero Rd, Palo Alto, CA 94303</p>
+        
+            <p><strong>总路程::</strong> 103.82 km (64.51 miles)</p>
+            <p><strong>总爬坡:</strong> 355 m (1,164 ft)</p>
+        
+        <p><strong>发起人:</strong> Yu Ji 🍪</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank">Strava Club - Featherweight Club (FWC)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">08</div>
+                        <div class="month">SEP</div>
+        
+                        <div class="date-relative" event-date="2024-09-08 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> Byxbee Park, 2375 Embarcadero Rd, Palo Alto, CA 94303 <br>
+        
+                    <span class="meet-up">总路程:</span> 103.82 km (64.51 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 355 m (1,164 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/GKSWZOOW4Y4RCWIJYCRGFOSRP7YNSOUNMCZJWN7OM6EHP43QXANNJB7JE7KVJ5GPK54GAB3LPVN25OJA36T3I2EMGGJNUEQ5VGR7ZOQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Rapha Women's 100 Ride</div> <br>
+                <div class="event-description">发起人: Yu Ji 🍪</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank" class="event-link">Strava Club - Featherweight Club (FWC)</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cb1">
+            <a href="?id=event-66bce958be18d8701a365cb1" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce958be18d8701a365cb1" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">15</div>
+                    <div class="month">SEP</div>
+    
+                </div>
+                <div class="event-title">🤟🏻</div>
+            </div>
+            <p class="event-description">7:15 AM Roll out, and a coffee break for 30-40 minutes
+
+Distance - ⭐️⭐️
+Elevation- 
+
+🅿️ Artic
+2626 E Katella Ave, Anaheim, CA 92806
+
+☕️ CAFE BANCONE (22.5M)
+4450 Lincoln Ave, Cypress, CA 90630
+
+---------------------------------------------
+
+**Sunday Group Ride Notice and Rules**
+
+Join us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:
+
+1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.
+
+2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)
+
+3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.
+
+4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.
+
+5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.
+
+6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.
+
+7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.
+
+8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
+
+We look forward to enjoyable ride. See you on the road!</p>
+            <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/W2WZMZ5FWW5W2BQOAPDXC7XOOH45XJU4S4ARX64AJHJUSPRKHGZHLDZN5DL2BPARMQEZ7YNYI4I2CNHJNC55ODCUAH3XT6UKRQIKTDI=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 15, 2024</p>
+            <p><strong>集合GPS:</strong> 33.8059, -117.87756</p>
+            <p><strong>集合地点:</strong> 2626 E Katella Ave, Anaheim, CA 92806</p>
+        
+            <p><strong>总路程::</strong> 62.68 km (38.95 miles)</p>
+            <p><strong>总爬坡:</strong> 208 m (682 ft)</p>
+        
+        <p><strong>发起人:</strong> Club Organizer</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">15</div>
+                        <div class="month">SEP</div>
+        
+                        <div class="date-relative" event-date="2024-09-15 07:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>7:00 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 33.8059, -117.87756
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 2626 E Katella Ave, Anaheim, CA 92806 <br>
+        
+                    <span class="meet-up">总路程:</span> 62.68 km (38.95 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 208 m (682 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/W2WZMZ5FWW5W2BQOAPDXC7XOOH45XJU4S4ARX64AJHJUSPRKHGZHLDZN5DL2BPARMQEZ7YNYI4I2CNHJNC55ODCUAH3XT6UKRQIKTDI=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">🤟🏻</div> <br>
+                <div class="event-description">发起人: Club Organizer</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cb6">
+            <a href="?id=event-66bce958be18d8701a365cb6" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce958be18d8701a365cb6" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">22</div>
+                    <div class="month">SEP</div>
+    
+                </div>
+                <div class="event-title">🖖🏻</div>
+            </div>
+            <p class="event-description">7:15 AM Roll out, and a coffee break for 30-40 minutes
+
+Distance - ⭐️⭐️
+Elevation- 
+
+🅿️ Artic
+2626 E Katella Ave, Anaheim, CA 92806
+
+☕️ Succulent Coffee Roasters (20M)
+17196 Pacific Coast Hwy, Huntington Beach, CA 92649
+
+---------------------------------------------
+
+**Sunday Group Ride Notice and Rules**
+
+Join us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:
+
+1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.
+
+2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)
+
+3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.
+
+4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.
+
+5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.
+
+6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.
+
+7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.
+
+8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
+
+We look forward to enjoyable ride. See you on the road!</p>
+            <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/LDT4DJGKWGHUVEUQ2ISIWLF65ZEKXGABTX7LJ6V2ZEXVVQS5GHX4OATMJIBIUGXJXYMYMGBPTHLCUOSHEJGGQGJRZVTFN3LVIGKO3EQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 22, 2024</p>
+            <p><strong>集合GPS:</strong> 33.80502, -117.87595</p>
+            <p><strong>集合地点:</strong> 2626 E Katella Ave, Anaheim, CA 92806</p>
+        
+            <p><strong>总路程::</strong> 64.41 km (40.02 miles)</p>
+            <p><strong>总爬坡:</strong> 131 m (429 ft)</p>
+        
+        <p><strong>发起人:</strong> Club Organizer</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">22</div>
+                        <div class="month">SEP</div>
+        
+                        <div class="date-relative" event-date="2024-09-22 07:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>7:00 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 33.80502, -117.87595
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 2626 E Katella Ave, Anaheim, CA 92806 <br>
+        
+                    <span class="meet-up">总路程:</span> 64.41 km (40.02 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 131 m (429 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/LDT4DJGKWGHUVEUQ2ISIWLF65ZEKXGABTX7LJ6V2ZEXVVQS5GHX4OATMJIBIUGXJXYMYMGBPTHLCUOSHEJGGQGJRZVTFN3LVIGKO3EQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">🖖🏻</div> <br>
+                <div class="event-description">发起人: Club Organizer</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cb7">
+            <a href="?id=event-66bce958be18d8701a365cb7" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce958be18d8701a365cb7" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">29</div>
+                    <div class="month">SEP</div>
+    
+                </div>
+                <div class="event-title">🖐🏻</div>
+            </div>
+            <p class="event-description">7:15 AM Roll out, and a coffee break for 30-40 minutes
+
+Distance - ⭐️⭐️
+Elevation- ⭐️
+
+🅿️ McPherson Magnet School
+350 S Prospect St, Orange, CA 92869
+
+☕️ Redshift Coffee Roasters (24.28M)
+22851 Lake Forest Dr, Lake Forest, CA 92630
+
+---------------------------------------------
+
+**Sunday Group Ride Notice and Rules**
+
+Join us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:
+
+1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.
+
+2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)
+
+3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.
+
+4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.
+
+5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.
+
+6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.
+
+7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.
+
+8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
+
+We look forward to enjoyable ride. See you on the road!</p>
+            <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZSAQDW77QFZCD6KB72ACIXURQPZQ2ECOEQTFOTGEZRMRSI5B4KFGTRX542EIOJWZ4ZCVFDSIRJX7WFXGCG3EKC26CPMHPUJPO2SW4PQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 29, 2024</p>
+            <p><strong>集合GPS:</strong> 33.78278, -117.81839</p>
+            <p><strong>集合地点:</strong> 350 S Prospect St, Orange, CA 92869</p>
+        
+            <p><strong>总路程::</strong> 65.09 km (40.44 miles)</p>
+            <p><strong>总爬坡:</strong> 590 m (1,935 ft)</p>
+        
+        <p><strong>发起人:</strong> Club Organizer</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">29</div>
+                        <div class="month">SEP</div>
+        
+                        <div class="date-relative" event-date="2024-09-29 07:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>7:00 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 33.78278, -117.81839
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 350 S Prospect St, Orange, CA 92869 <br>
+        
+                    <span class="meet-up">总路程:</span> 65.09 km (40.44 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 590 m (1,935 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZSAQDW77QFZCD6KB72ACIXURQPZQ2ECOEQTFOTGEZRMRSI5B4KFGTRX542EIOJWZ4ZCVFDSIRJX7WFXGCG3EKC26CPMHPUJPO2SW4PQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">🖐🏻</div> <br>
+                <div class="event-description">发起人: Club Organizer</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
+        <div class="event selected-event" data-event-id="event-66a7fb5f9719a87a0c2b7be9">
+            <a href="?id=event-66a7fb5f9719a87a0c2b7be9" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66a7fb5f9719a87a0c2b7be9" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">27</div>
+                    <div class="month">JUL</div>
+    
+                    <div class="year">2025</div>
+        
+                </div>
+                <div class="event-title">往西，越过天际(Skyline)吧骚年</div>
+            </div>
+            <p class="event-description">路线:
+Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山
+
+适合夏天的避暑路线 credit @Steve
+有两个大爬坡，分别是大家熟悉的 Old La Honda，和很多人熟悉的从Bike Hut开始的Tunitas Creek Rd
+
+预计总时间6 hours
+
+本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 <a href="https://rangerway.com/way/cycling-routes-at-bay-area" target="_blank">旧金山湾区骑行路线 第一章 练</a> 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。
+这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。</p>
+            <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/KZMTYSG3CRZBVSJO6W5THRRHAXI7RP63INTGUTIE2CYOOEUCIUWRJYZNMXUV2T64HSKXYSP6SGPFKC5HMCFQ4HFI5W33FOTLEAOAMEY=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 9:00 AM, Sunday, JUL 27, 2025</p>
+            <p><strong>集合GPS:</strong> 37.42856, -122.25082</p>
+            <p><strong>集合地点:</strong> Woodside Town Hall, 2955 Woodside Rd, Woodside, CA 94062</p>
+        
+            <p><strong>总路程::</strong> 81.28 km (50.50 miles)</p>
+            <p><strong>总爬坡:</strong> 1,724 m (5,656 ft)</p>
+        
+        <p><strong>发起人:</strong> Renjie Weng</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank">Strava Club - Thunder Bluff Leisure Cycling Club 雷霆崖骑行观光团</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">27</div>
+                        <div class="month">JUL</div>
+        
+                        <div class="year">2025</div>
+            
+                        <div class="date-relative" event-date="2025-07-27 09:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>9:00 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 37.42856, -122.25082
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> Woodside Town Hall, 2955 Woodside Rd, Woodside, CA 94062 <br>
+        
+                    <span class="meet-up">总路程:</span> 81.28 km (50.50 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 1,724 m (5,656 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/KZMTYSG3CRZBVSJO6W5THRRHAXI7RP63INTGUTIE2CYOOEUCIUWRJYZNMXUV2T64HSKXYSP6SGPFKC5HMCFQ4HFI5W33FOTLEAOAMEY=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">往西，越过天际(Skyline)吧骚年</div> <br>
+                <div class="event-description">发起人: Renjie Weng</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">Strava Club - Thunder Bluff Leisure Cycling Club 雷霆崖骑行观光团</a></div>
+            </div>
+        </div>
+        
+        </div>
+        <h2>Past Events</h2>
+        <div class="events-container">
 
         <div class="event selected-event" data-event-id="event-66c954dde99d56b3652a387e">
             <a href="?id=event-66c954dde99d56b3652a387e" class="event-link"></a>
@@ -91,16 +1333,559 @@
             </div>
         </div>
         
+        <div class="event extra-event" data-event-id="event-66c9248842db03b1bf9edb02">
+            <a href="?id=event-66c9248842db03b1bf9edb02" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66c9248842db03b1bf9edb02" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">24</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div>
+            </div>
+            <p class="event-description">Sierra is maybe my favorite bay area climb not involving dirt. It's annoying to get to, so, logically, we should hit up Metcalf on the way with its delightful backside descent.</p>
+            <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VJG4IDFANXLGUKN6I2YOFOVBZEQOVWTRHF2STGBU3NBFOFIYU7C4IRS6JCJ2MLWJZUAYBMDMZY7LXVAREDKEJRZVKMXJCKE77Z5REDI=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Saturday, AUG 24, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22633, -121.98218</p>
+            <p><strong>集合地点:</strong> 201 N Santa Cruz Ave, Los Gatos, CA  95030</p>
+        
+            <p><strong>总路程::</strong> 144.74 km (89.94 miles)</p>
+            <p><strong>总爬坡:</strong> 1,983 m (6,505 ft)</p>
+        
+        <p><strong>发起人:</strong> Dan Scannell</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">24</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-24 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Saturday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22633, -121.98218
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Santa Cruz Ave, Los Gatos, CA  95030 <br>
+        
+                    <span class="meet-up">总路程:</span> 144.74 km (89.94 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 1,983 m (6,505 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VJG4IDFANXLGUKN6I2YOFOVBZEQOVWTRHF2STGBU3NBFOFIYU7C4IRS6JCJ2MLWJZUAYBMDMZY7LXVAREDKEJRZVKMXJCKE77Z5REDI=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div> <br>
+                <div class="event-description">发起人: Dan Scannell</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365ca2">
+            <a href="?id=event-66bce958be18d8701a365ca2" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce958be18d8701a365ca2" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">24</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">🌯 Mamba day GMR gate ->shack PR challenge. </div>
+            </div>
+            <p class="event-description">YM9NN2
+
+Gate to shack PR challenge, maybe up to ski lift after if anyone is down for it! 
+
+7:15 AM Roll out
+
+Distance - ⭐️⭐️⭐️
+Elevation- ⭐️⭐️⭐️⭐️</p>
+            <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4IJLDGJMMYABO6QTBDPWQCRRSB24K24XZSQNAVHPYSBXNKC2XVG4LABY2W76V256WE7XFSMMAZBSYG2O2FCOYKJ2WNYA7NL4I5MPTOQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 7:00 AM, Saturday, AUG 24, 2024</p>
+            <p><strong>集合GPS:</strong> 34.15036, -117.83908</p>
+            <p><strong>集合地点:</strong> 1340 E Palm Dr</p>
+        
+            <p><strong>总路程::</strong> 87.58 km (54.42 miles)</p>
+            <p><strong>总爬坡:</strong> 2,473 m (8,113 ft)</p>
+        
+        <p><strong>发起人:</strong> Johnson  G- Ruekn/ACE Cycle Works/RCC#48818</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">24</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-24 07:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>7:00 AM</strong> Saturday<br>
+                        <span class="meet-up">集合GPS:</span> 34.15036, -117.83908
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 1340 E Palm Dr <br>
+        
+                    <span class="meet-up">总路程:</span> 87.58 km (54.42 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 2,473 m (8,113 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4IJLDGJMMYABO6QTBDPWQCRRSB24K24XZSQNAVHPYSBXNKC2XVG4LABY2W76V256WE7XFSMMAZBSYG2O2FCOYKJ2WNYA7NL4I5MPTOQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">🌯 Mamba day GMR gate ->shack PR challenge. </div> <br>
+                <div class="event-description">发起人: Johnson  G- Ruekn/ACE Cycle Works/RCC#48818</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66bffee4a213c281aaf7bc7a">
+            <a href="?id=event-66bffee4a213c281aaf7bc7a" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bffee4a213c281aaf7bc7a" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">18</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Group Road Ride - Hicks/New Almaden</div>
+            </div>
+            <p class="event-description">Meet at Mikes Bikes in Los Gatos. 
+
+Out Kennedy then right onto Hicks for a counterclockwise route. Bathroom/water in New Almaden.  Meet at 8:30am, wheels roll at 8:35am.</p>
+            <a href="https://www.strava.com/clubs/265/group_events/1749107" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/KWBRWBMVJLQUQWIAGWHTAHWNEQF25VV2P7H4OW7TDVDEY5IEX7EJDR3IWL2SZ7TRY726MFEZV35L5DNCSIMH7ZDWQXZMSXDB4WZB2MI=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 18, 2024</p>
+            <p><strong>集合GPS:</strong> 37.2262, -121.98224</p>
+            <p><strong>集合地点:</strong> 201 N Sanat Cruz Ave, Los Gatos 95030</p>
+        
+            <p><strong>总路程::</strong> 49.27 km (30.62 miles)</p>
+            <p><strong>总爬坡:</strong> 896 m (2,939 ft)</p>
+        
+        <p><strong>发起人:</strong> Serenity Marshall</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/265/group_events/1749107" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">18</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-18 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 37.2262, -121.98224
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 201 N Sanat Cruz Ave, Los Gatos 95030 <br>
+        
+                    <span class="meet-up">总路程:</span> 49.27 km (30.62 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 896 m (2,939 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1749107" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/KWBRWBMVJLQUQWIAGWHTAHWNEQF25VV2P7H4OW7TDVDEY5IEX7EJDR3IWL2SZ7TRY726MFEZV35L5DNCSIMH7ZDWQXZMSXDB4WZB2MI=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Group Road Ride - Hicks/New Almaden</div> <br>
+                <div class="event-description">发起人: Serenity Marshall</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1749107" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+            </div>
+        </div>
+        
+        <div class="event selected-event" data-event-id="event-66c048611d2e6b05b76e4536">
+            <a href="?id=event-66c048611d2e6b05b76e4536" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66c048611d2e6b05b76e4536" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">18</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">周日Dublin - Livermore休闲骑</div>
+            </div>
+            <p class="event-description">周日Dublin-Livermore休闲骑, Lunch after ride: <a href="https://maps.app.goo.gl/Cb8vjq6i7tSyeDyy9?g_st=ic" target="_blank">Blossom Bee</a>\n這條路線我給它命名為 Rustic Grand West.  一路上有許多很有特色的鐵皮鏽跡斑斑的老谷倉 以及一些上世紀初的古董皮卡貨車 農具機等等</p>
+            <a href="https://connect.garmin.com/modern/course/299305070" target="_blank" class="event-link">
+                <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihazEM6eimF06diGZYXWmPE6Yd0MbvogtntGN8GF2T3F-XaiMIc61ERbN4XNgtwnaiv3gphnYzRBNsUJZq-vm7UxnT3U-mo2XgE=s2560" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Sunday, AUG 18, 2024</p>
+            <p><strong>集合GPS:</strong> 37.703295, -121.918388</p>
+            <p><strong>集合地点:</strong> Dublin Library, 200 Civic Plaza, Dublin, CA 94568</p>
+        
+            <p><strong>总路程::</strong> 60.69 km (37.71 miles)</p>
+            <p><strong>总爬坡:</strong> 504 m (1,653 ft)</p>
+        
+        <p><strong>发起人:</strong> Steve</p>
+        <p><strong>活动来源:</strong> <a href="https://connect.garmin.com/modern/course/299305070" target="_blank">微信群 - 休閒🍩騎帥群🚴</a></p>
+    
+            <p><strong>预计人数:</strong> 6</p>
+        
+            <p><strong>实际人数:</strong> 5</p>
+        </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">18</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-18 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 37.703295, -121.918388
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> Dublin Library, 200 Civic Plaza, Dublin, CA 94568 <br>
+        
+                    <span class="meet-up">总路程:</span> 60.69 km (37.71 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 504 m (1,653 ft) <br>
+            
+                    <span class="meet-up">预计人数:</span> 6 <br>
+            
+                    <span class="meet-up">实际人数:</span> 5 <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://connect.garmin.com/modern/course/299305070" target="_blank" class="event-link">
+                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihazEM6eimF06diGZYXWmPE6Yd0MbvogtntGN8GF2T3F-XaiMIc61ERbN4XNgtwnaiv3gphnYzRBNsUJZq-vm7UxnT3U-mo2XgE=s2560" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">周日Dublin - Livermore休闲骑</div> <br>
+                <div class="event-description">发起人: Steve</div> <br>
+                <div class="event-description">活动来源: <a href="https://connect.garmin.com/modern/course/299305070" target="_blank" class="event-link">微信群 - 休閒🍩騎帥群🚴</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66bce958be18d8701a365c9b">
+            <a href="?id=event-66bce958be18d8701a365c9b" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce958be18d8701a365c9b" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">18</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">🥃 SBF Anniversary Ride</div>
+            </div>
+            <p class="event-description">MN5A6U
+
+<a href="https://www.facebook.com/events/467112146126958/?ref=newsfeed" target="_blank">https://www.facebook.com/events/467112146126958/?ref=newsfeed</a>
+
+7:30 AM Roll out, and a coffee break for 30-40 minutes
+
+Distance - ⭐️⭐️
+Elevation- ⭐️
+
+🅿️ El Monte Transit Center
+3357 Santa Anita Ave, El Monte, CA 91731
+
+☕️ Local Fixture Coffee & Tea (28.61M)
+6728 Bright Ave, Whittier, CA 90601
+
+☕️ Sustainabull Fitness
+2740 Santa Anita Ave #101, El Monte, CA 91733
+
+---------------------------------------------
+
+**Sunday Group Ride Notice and Rules**
+
+Join us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:
+
+1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.
+
+2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)
+
+3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.
+
+4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.
+
+5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.
+
+6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.
+
+7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.
+
+8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
+
+We look forward to enjoyable ride. See you on the road!</p>
+            <a href="https://www.strava.com/clubs/908336/group_events/1703932" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/Z245ZFU4WMTCAWS6KTYUQ5N6YONPGD4Q2M5X2CU3RYKD3NUU7KE6ACXTKM54NOLWRSGYRR5YCD2CT3T4UXETOD7S2I63D4ZF2S2YI7Y=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 7:15 AM, Sunday, AUG 18, 2024</p>
+            <p><strong>集合GPS:</strong> 34.06214, -118.0424</p>
+            <p><strong>集合地点:</strong> 3357 Santa Anita Ave, El Monte, CA 91731</p>
+        
+            <p><strong>总路程::</strong> 63.94 km (39.73 miles)</p>
+            <p><strong>总爬坡:</strong> 624 m (2,047 ft)</p>
+        
+        <p><strong>发起人:</strong> Edward Shen</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/908336/group_events/1703932" target="_blank">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">18</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-18 07:15:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>7:15 AM</strong> Sunday<br>
+                        <span class="meet-up">集合GPS:</span> 34.06214, -118.0424
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> 3357 Santa Anita Ave, El Monte, CA 91731 <br>
+        
+                    <span class="meet-up">总路程:</span> 63.94 km (39.73 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 624 m (2,047 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/908336/group_events/1703932" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/Z245ZFU4WMTCAWS6KTYUQ5N6YONPGD4Q2M5X2CU3RYKD3NUU7KE6ACXTKM54NOLWRSGYRR5YCD2CT3T4UXETOD7S2I63D4ZF2S2YI7Y=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">🥃 SBF Anniversary Ride</div> <br>
+                <div class="event-description">发起人: Edward Shen</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1703932" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+            </div>
+        </div>
+        
+        <div class="event selected-event" data-event-id="event-66beb4e4790fed4b000f3116">
+            <a href="?id=event-66beb4e4790fed4b000f3116" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66beb4e4790fed4b000f3116" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">17</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">周六中午 Cañada Rd + Old La Honda 休闲环形骑</div>
+            </div>
+            <p class="event-description">週六中午休闲骑。从Cañada Rd北方入口起, 往南爬上Old La Honda，下山后绕过Portola Vally到斯坦福，不走Sand Hill Rd 而是从Alameda de las Pulgas骑到Edgewood Rd，最后返回Canada Rd。</p>
+            <a href="https://connect.garmin.com/modern/course/278007248" target="_blank" class="event-link">
+                <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZub2B85Ws-_xhWL-1E0tU5hK4Qr_3A7EBF2apDP8wpg5UbUETiQ4aPVL_-hb7EovOc8SmErvVPyzlkw2GbPcLC4vORzSq3xQ=s1600-rw-v1" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 12:00 PM, Saturday, AUG 17, 2024</p>
+            <p><strong>集合GPS:</strong> 37.506308, -122.340967</p>
+            <p><strong>集合地点:</strong> Canada Rd 北方入口, Redwood City, CA 94062</p>
+        
+            <p><strong>总路程::</strong> 59.73 km (37.11 miles)</p>
+            <p><strong>总爬坡:</strong> 898 m (2,946 ft)</p>
+        
+        <p><strong>发起人:</strong> Harry Wong</p>
+        <p><strong>活动来源:</strong> <a href="https://connect.garmin.com/modern/course/278007248" target="_blank">微信群 - 休閒🍩騎帥群🚴</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">17</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-17 12:00:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>12:00 PM</strong> Saturday<br>
+                        <span class="meet-up">集合GPS:</span> 37.506308, -122.340967
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> Canada Rd 北方入口, Redwood City, CA 94062 <br>
+        
+                    <span class="meet-up">总路程:</span> 59.73 km (37.11 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 898 m (2,946 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://connect.garmin.com/modern/course/278007248" target="_blank" class="event-link">
+                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZub2B85Ws-_xhWL-1E0tU5hK4Qr_3A7EBF2apDP8wpg5UbUETiQ4aPVL_-hb7EovOc8SmErvVPyzlkw2GbPcLC4vORzSq3xQ=s1600-rw-v1" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">周六中午 Cañada Rd + Old La Honda 休闲环形骑</div> <br>
+                <div class="event-description">发起人: Harry Wong</div> <br>
+                <div class="event-description">活动来源: <a href="https://connect.garmin.com/modern/course/278007248" target="_blank" class="event-link">微信群 - 休閒🍩騎帥群🚴</a></div>
+            </div>
+        </div>
+        
+        <div class="event selected-event" data-event-id="event-66bce7a9be18d8701a2b86fe">
+            <a href="?id=event-66bce7a9be18d8701a2b86fe" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66bce7a9be18d8701a2b86fe" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">17</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Saturday Mt. Hamilton</div>
+            </div>
+            <p class="event-description">Meet at: Berryessa Community Centre, 
+Meet by 8:30, leave in 10 min
+Bring min. 2 bottles of water. only water refill on top of hill.
+Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.</p>
+            <a href="https://www.strava.com/clubs/1157973/group_events/1747967" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/TS5URW4HGKMOJPM7ISER32KPFO66AS6JXQSDMWGWQCYRQ2S7VIVPWQJL4AOWZRQJEL72QWGGCVQ5DYNOPI3O2BHJZG7BDAIBGSHYWEA=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Saturday, AUG 17, 2024</p>
+            <p><strong>集合GPS:</strong> 37.39267, -121.84885</p>
+            <p><strong>集合地点:</strong> Berryessa Community Centre, 3050 Berryessa Rd, San Jose, CA 95132</p>
+        
+            <p><strong>总路程::</strong> 71.40 km (44.37 miles)</p>
+            <p><strong>总爬坡:</strong> 1,623 m (5,324 ft)</p>
+        
+        <p><strong>发起人:</strong> Yu Ji 🍪</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/1157973/group_events/1747967" target="_blank">Strava Club - Featherweight Club (FWC)</a></p>
+    
+            <p><strong>预计人数:</strong> 7</p>
+        
+            <p><strong>实际人数:</strong> 8</p>
+        </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">17</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-17 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Saturday<br>
+                        <span class="meet-up">集合GPS:</span> 37.39267, -121.84885
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> Berryessa Community Centre, 3050 Berryessa Rd, San Jose, CA 95132 <br>
+        
+                    <span class="meet-up">总路程:</span> 71.40 km (44.37 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 1,623 m (5,324 ft) <br>
+            
+                    <span class="meet-up">预计人数:</span> 7 <br>
+            
+                    <span class="meet-up">实际人数:</span> 8 <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/1157973/group_events/1747967" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/TS5URW4HGKMOJPM7ISER32KPFO66AS6JXQSDMWGWQCYRQ2S7VIVPWQJL4AOWZRQJEL72QWGGCVQ5DYNOPI3O2BHJZG7BDAIBGSHYWEA=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Saturday Mt. Hamilton</div> <br>
+                <div class="event-description">发起人: Yu Ji 🍪</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/1157973/group_events/1747967" target="_blank" class="event-link">Strava Club - Featherweight Club (FWC)</a></div>
+            </div>
+        </div>
+        
+        <div class="event extra-event" data-event-id="event-66be557ef93e3609c28d6d70">
+            <a href="?id=event-66be557ef93e3609c28d6d70" class="event-link"></a>
+            <div class="event-section">
+        
+        <div id="event-66be557ef93e3609c28d6d70" style="display: none;">
+            <div class="event-title-row">
+                <div class="date-box">
+                    <div class="date">17</div>
+                    <div class="month">AUG</div>
+    
+                </div>
+                <div class="event-title">Saturday GRAVEL ride: August 17</div>
+            </div>
+            <p class="event-description">Tempo friendly, we will stop to help with any mechanical. Let's go have fun and push pedals on gravel. </p>
+            <a href="https://www.strava.com/clubs/265/group_events/1748161" target="_blank" class="event-link">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/LEDXM3QOAEVDD6G3JB3E6Q4CGD6SV7AZZ3OFGOV7EY3GWCWPNHMEM6M23UK3FXJM5RICVYIMTXPPCNXBTAOOLXMJG4MQT6E2ETH3WGQ=" alt="Route Image" width="100%">
+            </a>
+            <p><strong>时间:</strong> 8:30 AM, Saturday, AUG 17, 2024</p>
+            <p><strong>集合GPS:</strong> 37.22659, -121.98265</p>
+            <p><strong>集合地点:</strong> Mike's Bikes Los Gatos</p>
+        
+            <p><strong>总路程::</strong> 80.91 km (50.28 miles)</p>
+            <p><strong>总爬坡:</strong> 1,166 m (3,825 ft)</p>
+        
+        <p><strong>发起人:</strong> Everyday Heroes Athletics Coach Ben</p>
+        <p><strong>活动来源:</strong> <a href="https://www.strava.com/clubs/265/group_events/1748161" target="_blank">Strava Club - Los Gatos Bicycle Racing Club</a></p>
+    </div>
+                <div class="event-details">
+                    <div class="date-box">
+                        <div class="date">17</div>
+                        <div class="month">AUG</div>
+        
+                        <div class="date-relative" event-date="2024-08-17 08:30:00-07:00"></div>
+        
+                    </div>
+                    <div>
+                        <strong>8:30 AM</strong> Saturday<br>
+                        <span class="meet-up">集合GPS:</span> 37.22659, -121.98265
+                    </div>
+                </div>
+                <div>
+                    <span class="meet-up">集合地点:</span> Mike's Bikes Los Gatos <br>
+        
+                    <span class="meet-up">总路程:</span> 80.91 km (50.28 miles) <br>
+                    <span class="meet-up">总爬坡:</span> 1,166 m (3,825 ft) <br>
+            
+                </div>
+            </div>
+            <div class="event-section">
+                <a href="https://www.strava.com/clubs/265/group_events/1748161" target="_blank" class="event-link">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/LEDXM3QOAEVDD6G3JB3E6Q4CGD6SV7AZZ3OFGOV7EY3GWCWPNHMEM6M23UK3FXJM5RICVYIMTXPPCNXBTAOOLXMJG4MQT6E2ETH3WGQ=" alt="Route Image" width="100%">
+                </a>
+            </div>
+            <div class="event-section">
+                <div class="event-title">Saturday GRAVEL ride: August 17</div> <br>
+                <div class="event-description">发起人: Everyday Heroes Athletics Coach Ben</div> <br>
+                <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1748161" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+            </div>
+        </div>
+        
     </div>
 
         </div>
-        <div class="map-container">
-            <gmp-map
-                center="37.4220656,-122.0840897"
-                zoom="10"
-                map-id="DEMO_MAP_ID"
-            >
-            </gmp-map>
+        <div class="map-container" id="map-container">
+            <!-- The map will be rendered here -->
         </div>
     </div>
 
