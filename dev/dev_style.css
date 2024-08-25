@@ -1,6 +1,9 @@
 .top-bar-container {
   height: 60px;
 }
+.right-most {
+  margin-left: auto;
+}
 .page-container {
   display: flex;
   flex-direction: column;
@@ -22,6 +25,9 @@
   .map-container {
       width: 50%; /* Takes up half the width of the container */
   }
+  .toggle-button-container {
+      display: none;
+  }
 }
 @media only screen and (max-width: 999px) {
   .page-container {
@@ -35,12 +41,15 @@
       height: 50vh; /* Set a fixed height for smaller screens */
       max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
       box-sizing: border-box;
+      display: block;
   }
   .map-container {
-      height: 600px;
       width: 100%;
       order: 1;
       margin: 8px 0px;
-      /* box-sizing: border-box; */
+      display: none;
+  }
+  .toggle-button-container {
+      display: block;
   }
 }

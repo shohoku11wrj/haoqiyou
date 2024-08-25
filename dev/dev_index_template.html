@@ -27,7 +27,7 @@
             });
 
             const events=[
-'{{map_content}}'
+                '{{map_content}}'
             ];
 
             
@@ -61,6 +61,23 @@
 
             new CustomOverlay(map);
         }
+
+        function toggleView() {
+            const listContainer = document.getElementById('list-container');
+            const mapContainer = document.getElementById('map-container');
+            const toggleButton = document.getElementById('toggle-button');
+
+            if (listContainer.style.display === 'none') {
+                listContainer.style.display = 'block';
+                mapContainer.style.display = 'none';
+                toggleButton.src = '../assets/map-view.png';
+            } else {
+                listContainer.style.display = 'none';
+                mapContainer.style.display = 'block';
+                toggleButton.src = '../assets/list-view.png';
+                initMap(); // Reinitialize the map
+            }
+        }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
@@ -78,10 +95,15 @@
                 <span style="color:#0000ff">只显示精选活动</span>
             </label>
         </div>
+        <div class="right-most toggle-button-container">
+            <a href="javascript:toggleView()">
+                <img id="toggle-button" src="../assets/map-view.png" alt="切换视图" style="width: 50px; height: 50px;">
+            </a>
+        </div>
     </div>
 
     <div class="page-container">
-        <div class="list-container">
+        <div class="list-container" id="list-container">
 {{list_content}}
         </div>
         <div class="map-container" id="map-container">
