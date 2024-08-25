@@ -75,7 +75,14 @@
                 listContainer.style.display = 'none';
                 mapContainer.style.display = 'block';
                 toggleButton.src = '../assets/list-view.png';
-                initMap(); // Reinitialize the map
+                if (!map) {
+                    initMap(); // Initialize the map if it is not already initialized
+                } else {
+                    setTimeout(() => {
+                        google.maps.event.trigger(map, 'resize'); // Trigger resize event
+                        map.setCenter({ lat: 37.4220656, lng: -122.0840897 }); // Re-center the map
+                    }, 100); // Delay to ensure the container is fully visible
+                }
             }
         }
     </script>
@@ -102,7 +109,7 @@
         </div>
     </div>
 
-    <div class="page-container">
+    <div class="page-container" id="page-container">
         <div class="list-container" id="list-container">
 {{list_content}}
         </div>
