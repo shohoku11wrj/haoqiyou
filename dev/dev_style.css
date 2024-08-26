@@ -32,24 +32,26 @@
 @media only screen and (max-width: 999px) {
   .page-container {
       flex-direction: column;
-      max-height: 100vh; /* Prevents the container from exceeding the viewport height */
       box-sizing: border-box;
-      height: calc(100vh - 76px);  /* kill scroll bar on larger screen*/
+      height: 100vh;
   }
   .list-container {
       width: 100%;
-      /* order: 2; */
+      order: 2;
       max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
       box-sizing: border-box;
-      display: block;
+      /* display: block; */
   }
   .map-container {
       flex-grow: 1;
-      /* order: 1; */
+      order: 1;
       margin: 8px 0px;
-      display: none;
+      min-height: 70vh;
+      max-height: 85vh;
+      height: 80%;
+      /* display: none; */
   }
   .toggle-button-container {
-      display: block;
+      display: none;
   }
 }
