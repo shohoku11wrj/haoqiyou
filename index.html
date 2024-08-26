@@ -23,11 +23,25 @@
             <span class="top-bar">好 骑 友</span>
         </div>
         <div class="column">
-            <span>Updated on 08/25/24 22:30</span><br/>
+            <span>Updated on 08/25/24 23:07</span><br/>
             <label>
                 <input type="checkbox" id="toggleExtra">
                 <span style="color:#0000ff">只显示精选活动</span>
             </label>
+        </div>
+        <div class="right-most">
+            <a class="dynamic-link" id="dynamic-link" href="./dev">开发预览版</a>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var link = document.getElementById("dynamic-link");
+                var currentPath = window.location.pathname;
+                if (currentPath.endsWith("/index.html")) {
+                    link.href = "./dev/index.html";
+                } else {
+                    link.href = "./dev";
+                }
+            });
+            </script>
         </div>
     </div>
     <div class="page-container">

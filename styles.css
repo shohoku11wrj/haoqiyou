@@ -11,6 +11,9 @@ body {
 .column {
   flex: 0 0 auto; /* Make the column only as wide as its content */
 }
+.right-most {
+  margin-left: auto;
+}
 .top-bar {
   background-color: #a2ab8c;  /* SEKA 海沫绿 */
   color: #c60c30;  /* Deep red color */
@@ -19,6 +22,12 @@ body {
   border-bottom: 4px solid #fff; /* White border at the bottom */
   font-family: 'Noto Sans', 'Heiti', sans-serif;
   font-size: 24px;
+  font-weight: bold;
+}
+.dynamic-link {
+  background-color: hsl(49, 100%, 54%);  /* SEKA 海沫绿 */
+  color: hsl(221, 100%, 50%);  /* Deep red color */
+  font-size: 15px;
   font-weight: bold;
 }
 .events-container {
