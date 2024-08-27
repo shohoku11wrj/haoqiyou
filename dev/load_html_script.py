@@ -10,7 +10,7 @@ import pytz
 
 # Add the root directory to sys.pathfrom
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list
+from utils.load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list
 
 # Load environment variables from .env file
 load_dotenv()

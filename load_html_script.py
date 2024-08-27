@@ -2,7 +2,7 @@
 
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
-from load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list
+from utils.load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list
 from pymongo import MongoClient
 import os
 import pytz

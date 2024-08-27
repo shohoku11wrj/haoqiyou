@@ -36,6 +36,7 @@
                     position: event.position,
                     title: event.title,
                     gmpClickable: true,
+                    icon: event.icon,
                 })
                 marker.addListener("gmp-click", ({ domEvent, latLng }) => {
                     document.location.href = '?id='+event.id;
