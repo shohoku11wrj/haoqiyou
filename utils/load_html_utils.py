@@ -245,6 +245,10 @@ def gen_gmp_advanced_marker_for_events_from_list(event_list, event_time_type="up
         event_time_local = event_time_utc.astimezone(local_tz)
         month_str = event_time_local.strftime('%b').upper()
         day_str = event_time_local.strftime('%d')
+
+        distance_km = event['distance_meters'] / 1000
+        distance_str = f"{distance_km:.2f} km"
+        
         event_title=event['title']
         event_id=f"event-{event['_id']}"
         gps_coordinates_str = event['gps_coordinates']
@@ -257,7 +261,7 @@ def gen_gmp_advanced_marker_for_events_from_list(event_list, event_time_type="up
 
         events_marker += f"""
             {'{'}
-                title: "{month_str} {day_str}: {event_title}",
+                title: "{month_str} {day_str}: {distance_str}\n{event_title}",
                 position: {gps_coordinates_str},
                 id: "{event_id}",
                 icon: "{icon_url}"
