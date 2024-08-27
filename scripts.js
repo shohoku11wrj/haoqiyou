@@ -1,5 +1,12 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("prod-link").addEventListener('click', function() {
+        // get the current full path
+        var currentPath = window.location.pathname;
+        currentPath.replace("/dev", "");
+        link.href = currentPath;
+    });
+
     document.getElementById('toggleExtra').addEventListener('change', function() {
         var extraEvents = document.querySelectorAll('.extra-event');
         extraEvents.forEach(function(event) {

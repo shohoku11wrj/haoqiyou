@@ -29,93 +29,108 @@
             const events=[
                 
             {
-                title: "Sunday Los Gatos Beginner ride",
+                title: "AUG 25: Sunday Los Gatos Beginner ride",
                 position: { lat: 37.23536, lng:  -121.96331 },
                 id: "event-66c3979836c843fcbfcff266",
+                color: "gray"
             },
         
             {
-                title: "Group Road Ride - Down Redwood Gulch",
+                title: "AUG 25: Group Road Ride - Down Redwood Gulch",
                 position: { lat: 37.22538, lng:  -121.9826 },
                 id: "event-66c539cec68f86c19e9840f0",
+                color: "gray"
             },
         
             {
-                title: "🍸",
+                title: "AUG 25: 🍸",
                 position: { lat: 33.89649, lng:  -117.89353 },
                 id: "event-66bce958be18d8701a365ca3",
+                color: "gray"
             },
         
             {
-                title: "周六下午1:30 龟速爬page mill",
+                title: "AUG 24: 周六下午1:30 龟速爬page mill",
                 position: { lat: 37.42856, lng:  -122.25082 },
                 id: "event-66c954dde99d56b3652a387e",
+                color: "gray"
             },
         
             {
-                title: "Saturday Road Ride - Sierra via Metcalf",
+                title: "AUG 24: Saturday Road Ride - Sierra via Metcalf",
                 position: { lat: 37.22633, lng:  -121.98218 },
                 id: "event-66c9248842db03b1bf9edb02",
+                color: "gray"
             },
         
             {
-                title: "🌯 Mamba day GMR gate ->shack PR challenge. ",
+                title: "AUG 24: 🌯 Mamba day GMR gate ->shack PR challenge. ",
                 position: { lat: 34.15036, lng:  -117.83908 },
                 id: "event-66bce958be18d8701a365ca2",
+                color: "gray"
             },
         
             {
-                title: "Mike's Bikes Shop Ride",
+                title: "AUG 27: Mike's Bikes Shop Ride",
                 position: { lat: 37.22634, lng:  -121.98254 },
                 id: "event-66a5cbd49719a87a0cc4301e",
+                color: "green"
             },
         
             {
-                title: "14th Annual Silicon Valley Bike Summit",
+                title: "AUG 29: 14th Annual Silicon Valley Bike Summit",
                 position: { lat: 37.655545, lng:  -122.433568 },
                 id: "event-66bbc61499c68bc28d25042d",
+                color: "green"
             },
         
             {
-                title: "☝🏻",
+                title: "SEP 01: ☝🏻",
                 position: { lat: 33.68695, lng:  -117.821 },
                 id: "event-66bce958be18d8701a365ca7",
+                color: "green"
             },
         
             {
-                title: "✌🏻 Costa Mesa Specialized Ride)",
+                title: "SEP 08: ✌🏻 Costa Mesa Specialized Ride)",
                 position: { lat: 33.76202, lng:  -117.8961 },
                 id: "event-66bce958be18d8701a365cae",
+                color: "green"
             },
         
             {
-                title: "2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限",
+                title: "SEP 08: 2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限",
                 position: { lat: 37.451227, lng:  -122.107893 },
                 id: "event-66c3eee6e9115b364c5ecb15",
+                color: "green"
             },
         
             {
-                title: "🤟🏻",
+                title: "SEP 15: 🤟🏻",
                 position: { lat: 33.8059, lng:  -117.87756 },
                 id: "event-66bce958be18d8701a365cb1",
+                color: "yellow"
             },
         
             {
-                title: "🖖🏻",
+                title: "SEP 22: 🖖🏻",
                 position: { lat: 33.80502, lng:  -117.87595 },
                 id: "event-66bce958be18d8701a365cb6",
+                color: "yellow"
             },
         
             {
-                title: "🖐🏻",
+                title: "SEP 29: 🖐🏻",
                 position: { lat: 33.78278, lng:  -117.81839 },
                 id: "event-66bce958be18d8701a365cb7",
+                color: "yellow"
             },
         
             {
-                title: "往西，越过天际(Skyline)吧骚年",
+                title: "JUL 27: 往西，越过天际(Skyline)吧骚年",
                 position: { lat: 37.42856, lng:  -122.25082 },
                 id: "event-66a7fb5f9719a87a0c2b7be9",
+                color: "yellow"
             },
         
             ];
@@ -183,18 +198,10 @@
 <body>
     <div class="top-bar-container">
         <div class="column">
-            <span class="top-bar"><a id="prod-link" href="/">好 骑 友</a></span>
-            <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var link = document.getElementById("prod-link");
-                var currentPath = window.location.pathname;
-                currentPath.replace("/dev", "");
-                link.href = currentPath;
-            });
-            </script>
+            <span class="top-bar"><a id="prod-link" href=".">好 骑 友</a></span>
         </div>
         <div class="column">
-            <span>Updated on 08/26/24 19:44</span><br/>
+            <span>Updated on 08/26/24 21:51</span><br/>
             <label>
                 <input type="checkbox" id="toggleExtra">
                 <span style="color:#0000ff">只显示精选活动</span>
@@ -227,6 +234,7 @@
                 <div class="event-title">Mike's Bikes Shop Ride</div>
             </div>
             <p class="event-description">Mike's Bikes shop ride led by Mike's Bikes shop employees.  We roll as soon as they close the store (6:10 to 6:15-ish).  </p>
+    
             <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/YL57YI6LHYRROVWFDIVRPH7SZB54JOAGKPCVAYKAHAYDFQB7ZL2D2OLELP77Q76WQYI23LKQZ6UHAHVQPCZGGJ2PL6GNJJFO4XT3SEA=" alt="Route Image" width="100%">
             </a>
@@ -247,6 +255,8 @@
         
                         <div class="date-relative" event-date="2024-08-27 18:10:00-07:00"></div>
         
+                    <div class="area-box">北加</div>
+            
                     </div>
                     <div>
                         <strong>6:10 PM</strong> Tuesday<br>
@@ -270,6 +280,7 @@
                 <div class="event-title">Mike's Bikes Shop Ride</div> <br>
                 <div class="event-description">发起人: LGBRC Rides</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+        
             </div>
         </div>
         
@@ -289,6 +300,7 @@
             <p class="event-description">Thursday, August 29 · 9am - 6pm PDT
 Connect with insights and expertise at Silicon Valley’s largest gathering of active transportation leaders and organizers from government, the private sector, non-profits, and the general public. This is THE most information rich event of the year for bicycle professionals, elected and appointed officials, and citizen advocates in and around Silicon Valley. It’s well worth attending by professionals and advocates from elsewhere in the US as well.
 Register on <a href="https://www.eventbrite.com/e/silicon-valley-bike-summit-2024-tickets-841947175667?aff=oddtdtcreator" target="_blank">https://www.eventbrite.com/e/silicon-valley-bike-summit-2024-tickets-841947175667?aff=oddtdtcreator</a></p>
+    
             <a href="https://bikesiliconvalley.org/events/summit" target="_blank" class="event-link">
                 <img src="https://images.squarespace-cdn.com/content/v1/6189ac221f143a6d4957a531/039e0b0e-165b-446a-8040-31d569c2c79d/2024+Summit+Graphic+-+EB+%26+Website.png?format=1500w" alt="Route Image" width="100%">
             </a>
@@ -306,6 +318,8 @@ Register on <a href="https://www.eventbrite.com/e/silicon-valley-bike-summit-202
         
                         <div class="date-relative" event-date="2024-08-29 09:00:00-07:00"></div>
         
+                    <div class="area-box">北加</div>
+            
                     </div>
                     <div>
                         <strong>9:00 AM</strong> Thursday<br>
@@ -326,6 +340,7 @@ Register on <a href="https://www.eventbrite.com/e/silicon-valley-bike-summit-202
                 <div class="event-title">14th Annual Silicon Valley Bike Summit</div> <br>
                 <div class="event-description">发起人: Silicon Valley Bicycle Coalition</div> <br>
                 <div class="event-description">活动来源: <a href="https://bikesiliconvalley.org/events/summit" target="_blank" class="event-link">新闻 - Silicon Valley Bicycle Coalition</a></div>
+        
             </div>
         </div>
         
@@ -376,6 +391,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
 
 We look forward to enjoyable ride. See you on the road!</p>
+    
             <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/FCL6Q7BH6RT6I4ACKIAMRH2IUFSST5W5BSIRWU57DBAQVIS7PQU5V7QMW5XGXQ22GN5BCLKZC6XHIR3VMRSD23GKDPWJI3KMMNLWWCY=" alt="Route Image" width="100%">
             </a>
@@ -396,6 +412,8 @@ We look forward to enjoyable ride. See you on the road!</p>
         
                         <div class="date-relative" event-date="2024-09-01 07:00:00-07:00"></div>
         
+                    <div class="area-box">南加</div>
+            
                     </div>
                     <div>
                         <strong>7:00 AM</strong> Sunday<br>
@@ -419,6 +437,7 @@ We look forward to enjoyable ride. See you on the road!</p>
                 <div class="event-title">☝🏻</div> <br>
                 <div class="event-description">发起人: Club Organizer</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+        
             </div>
         </div>
         
@@ -469,6 +488,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
 
 We look forward to enjoyable ride. See you on the road!</p>
+    
             <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/AZPKSASSPGLJCCOOSQQXVR4SDBF326ZHW2VDJ7SJA5QTCDVABDX5VKKTEEIZ5234YZNOTRFDXNVBOZI6MZGNCWJUWH3QGLCE7CS6QMI=" alt="Route Image" width="100%">
             </a>
@@ -489,6 +509,8 @@ We look forward to enjoyable ride. See you on the road!</p>
         
                         <div class="date-relative" event-date="2024-09-08 06:45:00-07:00"></div>
         
+                    <div class="area-box">南加</div>
+            
                     </div>
                     <div>
                         <strong>6:45 AM</strong> Sunday<br>
@@ -512,6 +534,7 @@ We look forward to enjoyable ride. See you on the road!</p>
                 <div class="event-title">✌🏻 Costa Mesa Specialized Ride)</div> <br>
                 <div class="event-description">发起人: Club Organizer</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+        
             </div>
         </div>
         
@@ -540,6 +563,11 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
 -note: All gender welcomed; 100km ride
 -Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.
 </p>
+    
+            <a href="https://content.rapha.cc/us/en/story/womens100" target="_blank" class="event-link">
+                <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZzGHdEGNJLzFY7Ym095Q8Dt3H4nVyQ_oCFc-79CWSCpWMUwr7idYVz-lCSKrSNNQrvl89gB4Wp3P5aLeyn2TZiM43nKMbZ1GQ=s1600-rw-v1" alt="Event Image" width="100%">
+            </a>
+        
             <a href="https://www.strava.com/routes/3260800078021188950" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OBR7EMTTD76SWXTCOHQJCLGASZAVQ5GJASOAPHRFTVZUARX22CMCPPWOZLOWWMZY44L42NL3GZOGXC55CLDZKZIDA4KATIAUQZJCPKQ=" alt="Route Image" width="100%">
             </a>
@@ -551,7 +579,7 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
             <p><strong>总爬坡:</strong> 334 m (1,095 ft)</p>
         
         <p><strong>发起人:</strong> Lingzi</p>
-        <p><strong>活动来源:</strong> <a href="https://www.strava.com/routes/3260800078021188950" target="_blank">微信群 - 休閒🍩騎帥群🚴 + 轻如羽毛骑行团(FWC)</a></p>
+        <p><strong>活动来源:</strong> <a href="https://content.rapha.cc/us/en/story/womens100" target="_blank">微信群 - 休閒🍩騎帥群🚴 + 轻如羽毛骑行团(FWC)</a></p>
     </div>
                 <div class="event-details">
                     <div class="date-box">
@@ -560,6 +588,8 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
         
                         <div class="date-relative" event-date="2024-09-08 08:30:00-07:00"></div>
         
+                    <div class="area-box">北加</div>
+            
                     </div>
                     <div>
                         <strong>8:30 AM</strong> Sunday<br>
@@ -582,7 +612,12 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
             <div class="event-section">
                 <div class="event-title">2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限</div> <br>
                 <div class="event-description">发起人: Lingzi</div> <br>
-                <div class="event-description">活动来源: <a href="https://www.strava.com/routes/3260800078021188950" target="_blank" class="event-link">微信群 - 休閒🍩騎帥群🚴 + 轻如羽毛骑行团(FWC)</a></div>
+                <div class="event-description">活动来源: <a href="https://content.rapha.cc/us/en/story/womens100" target="_blank" class="event-link">微信群 - 休閒🍩騎帥群🚴 + 轻如羽毛骑行团(FWC)</a></div>
+        
+                <a href="https://content.rapha.cc/us/en/story/womens100" target="_blank" class="event-link">
+                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZzGHdEGNJLzFY7Ym095Q8Dt3H4nVyQ_oCFc-79CWSCpWMUwr7idYVz-lCSKrSNNQrvl89gB4Wp3P5aLeyn2TZiM43nKMbZ1GQ=s1600-rw-v1" alt="Event Image" width="100%">
+                </a>
+        
             </div>
         </div>
         
@@ -603,6 +638,7 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
 -Time: meet 8:30am leave in 10min
 -note: All gender welcomed; 100km ride
 -Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.</p>
+    
             <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZIN7BN76IKC5FUTWYBVKTIRDBGZL4MUARXWVEVPFBDGLBGPI52OLSL7UAUZX4DAMHVGFEYPXM6OKYQ4VWYNMBO3ZKNICIHUB6KZMK5Q=" alt="Route Image" width="100%">
             </a>
@@ -646,6 +682,7 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
                 <div class="event-title">Rapha Women's 100 Ride</div> <br>
                 <div class="event-description">发起人: Yu Ji 🍪</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank" class="event-link">Strava Club - Featherweight Club (FWC)</a></div>
+        
             </div>
         </div>
         
@@ -700,6 +737,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
 
 We look forward to enjoyable ride. See you on the road!</p>
+    
             <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/B3R6HM34SO5HZKDHZC5TKWH4KSUW5ASXWIWYO3VI7QQXDTNRRBMQWR7HJVLZIKHUSSGGNZL6WKD2SVKEM6VY5QMMKFTGQGDXLMG37EQ=" alt="Route Image" width="100%">
             </a>
@@ -720,6 +758,8 @@ We look forward to enjoyable ride. See you on the road!</p>
         
                         <div class="date-relative" event-date="2024-09-15 07:00:00-07:00"></div>
         
+                    <div class="area-box">南加</div>
+            
                     </div>
                     <div>
                         <strong>7:00 AM</strong> Sunday<br>
@@ -743,6 +783,7 @@ We look forward to enjoyable ride. See you on the road!</p>
                 <div class="event-title">🤟🏻</div> <br>
                 <div class="event-description">发起人: Club Organizer</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+        
             </div>
         </div>
         
@@ -793,6 +834,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
 
 We look forward to enjoyable ride. See you on the road!</p>
+    
             <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZIFLQLUKWZ4NOQS5EWND3TBUBK6PTYH2LVXZETG25T37HZW5LPEPX7G6Q6U3U4HN6ZGUK3CX6ZM4V4BKQ24RTVQN34M7PHD3YYQOTAI=" alt="Route Image" width="100%">
             </a>
@@ -813,6 +855,8 @@ We look forward to enjoyable ride. See you on the road!</p>
         
                         <div class="date-relative" event-date="2024-09-22 07:00:00-07:00"></div>
         
+                    <div class="area-box">南加</div>
+            
                     </div>
                     <div>
                         <strong>7:00 AM</strong> Sunday<br>
@@ -836,6 +880,7 @@ We look forward to enjoyable ride. See you on the road!</p>
                 <div class="event-title">🖖🏻</div> <br>
                 <div class="event-description">发起人: Club Organizer</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+        
             </div>
         </div>
         
@@ -886,6 +931,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
 
 We look forward to enjoyable ride. See you on the road!</p>
+    
             <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/HDEAD2IZX356S3YZM2JHXNPN7EIWAX4PSVZL6GRVG2V7PCEJXZO5H7PO5TFGRPZNWF45FRRXHHAXJV6HACCTE6EBCP7VLZBTHD5J6AA=" alt="Route Image" width="100%">
             </a>
@@ -906,6 +952,8 @@ We look forward to enjoyable ride. See you on the road!</p>
         
                         <div class="date-relative" event-date="2024-09-29 07:00:00-07:00"></div>
         
+                    <div class="area-box">南加</div>
+            
                     </div>
                     <div>
                         <strong>7:00 AM</strong> Sunday<br>
@@ -929,6 +977,7 @@ We look forward to enjoyable ride. See you on the road!</p>
                 <div class="event-title">🖐🏻</div> <br>
                 <div class="event-description">发起人: Club Organizer</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+        
             </div>
         </div>
         
@@ -957,6 +1006,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
 
 本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 <a href="https://rangerway.com/way/cycling-routes-at-bay-area" target="_blank">旧金山湾区骑行路线 第一章 练</a> 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。
 这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。</p>
+    
             <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SZTYX3RR5XTXU4DNDDO5LWP5XLSIHKXKSLLWGO3LXW7QSE6CV4DQ7KDM4GP3X62NZKEX4QTNZWOZ3BQJBU6VKRAWKXKQ7GNM66DHEZY=" alt="Route Image" width="100%">
             </a>
@@ -979,6 +1029,8 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
             
                         <div class="date-relative" event-date="2025-07-27 09:00:00-07:00"></div>
         
+                    <div class="area-box">北加</div>
+            
                     </div>
                     <div>
                         <strong>9:00 AM</strong> Sunday<br>
@@ -1002,6 +1054,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
                 <div class="event-title">往西，越过天际(Skyline)吧骚年</div> <br>
                 <div class="event-description">发起人: Renjie Weng</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">Strava Club - Thunder Bluff Leisure Cycling Club 雷霆崖骑行观光团</a></div>
+        
             </div>
         </div>
         
@@ -1028,6 +1081,11 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
 -Route: <a href="https://www.strava.com/routes/3245464502408241026" target="_blank">https://www.strava.com/routes/3245464502408241026</a>
 -Note: Road only. For beginner, by beginner*.
 -Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.</p>
+    
+            <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank" class="event-link">
+                <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZZSX9e3x47cOK5W83j00GPVqSidCGPszg2HzDL6NYQhEiP2Y1fCg5spDR915DrPeWUPvOawVz6dSIaNqcBUjYqbGf-u0lZu5g=s1600-rw-v1" alt="Event Image" width="100%">
+            </a>
+        
             <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/CIDVNPDRNAG6VNOSLOZ6BIJH7QGGZM3HDSINWTJDQRDVO6WXCTBVYRHI4REU3ZEMGWSQD7HQRERY3ZJZC6S7UBMUVNY2C6MMMBKG2DA=" alt="Route Image" width="100%">
             </a>
@@ -1052,6 +1110,8 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
         
                         <div class="date-relative" event-date="2024-08-25 08:30:00-07:00"></div>
         
+                    <div class="area-box">北加</div>
+            
                     </div>
                     <div>
                         <strong>8:30 AM</strong> Sunday<br>
@@ -1079,6 +1139,11 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
                 <div class="event-title">Sunday Los Gatos Beginner ride</div> <br>
                 <div class="event-description">发起人: Yu Ji 🍪</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank" class="event-link">Strava Club - Featherweight Club (FWC)</a></div>
+        
+                <a href="https://www.strava.com/clubs/1157973/group_events/1752427" target="_blank" class="event-link">
+                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZZSX9e3x47cOK5W83j00GPVqSidCGPszg2HzDL6NYQhEiP2Y1fCg5spDR915DrPeWUPvOawVz6dSIaNqcBUjYqbGf-u0lZu5g=s1600-rw-v1" alt="Event Image" width="100%">
+                </a>
+        
             </div>
         </div>
         
@@ -1096,6 +1161,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
                 <div class="event-title">Group Road Ride - Down Redwood Gulch</div>
             </div>
             <p class="event-description">This route is the clockwise version of the regular Redwood Gulch route (2nd Sunday of the month as of this posting).  This gives us an opportunity to climb highway 9.  One notable change is the out/back after the decent of Redwood Gulch on Stevens Canyon Rd, this adds an additional 4 miles to the total.  Before the intersection with Mt. Eden we will stop at Cooley Picnic Area on the left for bathrooms and water.  After a quick stop we continue around the reservoir and then follow neighborhood roads back to Mike’s Bikes.</p>
+    
             <a href="https://www.strava.com/clubs/265/group_events/1753524" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/GEL6WKEGZRRJCNG3R74Z364JE7PN7JTJJWQCK2AFWK6ZJYUM6NOQGLH5TUOSSYAGXALAOOTJEX2TGPFJEAYMXJXFDWRDLFJ2VBPFKOA=" alt="Route Image" width="100%">
             </a>
@@ -1116,6 +1182,8 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
         
                         <div class="date-relative" event-date="2024-08-25 08:30:00-07:00"></div>
         
+                    <div class="area-box">北加</div>
+            
                     </div>
                     <div>
                         <strong>8:30 AM</strong> Sunday<br>
@@ -1139,6 +1207,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
                 <div class="event-title">Group Road Ride - Down Redwood Gulch</div> <br>
                 <div class="event-description">发起人: Mark Thompson</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1753524" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+        
             </div>
         </div>
         
@@ -1191,6 +1260,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.
 
 We look forward to enjoyable ride. See you on the road!</p>
+    
             <a href="https://www.strava.com/clubs/908336/group_events/1703934" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ICNGGKLQORPF7YRAZQSM2NJI2MN6CXJV7CXJOFE5E3Z47HMFKETA2NPQQUGGPQYVIUTHXTATK5KUV4N4BX3UTZA6SIFQDL7UFKRZBCI=" alt="Route Image" width="100%">
             </a>
@@ -1211,6 +1281,8 @@ We look forward to enjoyable ride. See you on the road!</p>
         
                         <div class="date-relative" event-date="2024-08-25 07:00:00-07:00"></div>
         
+                    <div class="area-box">南加</div>
+            
                     </div>
                     <div>
                         <strong>7:00 AM</strong> Sunday<br>
@@ -1234,6 +1306,7 @@ We look forward to enjoyable ride. See you on the road!</p>
                 <div class="event-title">🍸</div> <br>
                 <div class="event-description">发起人: Club Organizer</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1703934" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+        
             </div>
         </div>
         
@@ -1252,6 +1325,11 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <p class="event-description">周六下午1:30 龟速爬pagemill，欢迎早上起不来的朋友一起😂
 路线待定，扫码进群</p>
+    
+            <a href="https://www.strava.com/clubs/featherweight" target="_blank" class="event-link">
+                <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihbJLgI_FQ8nYFceJ_qcXlR5Wu9_UAyIm2PTnjgEutSN6jaytjrcwn1VI2b7RA15sXqOFolYM4bkymcGz6_XALDEBOY4R7UBwKY=s2560" alt="Event Image" width="100%">
+            </a>
+        
             <a href="https://www.strava.com/clubs/featherweight" target="_blank" class="event-link">
                 <img src="https://www.google.com/maps/vt/data=kPnrPdESQi-JQ9P2L6ePPInSoKneKpNi6Yub7ETuhW7kkeUcwxhZfC1NjpMQLwZxtWA3nKsBbqnPDUHNLzkCXDKW6ehitJVF7PopF3p6UL1jIGCd-2yHo0-b81ueVAe13zIAT-uMovj92achJzNBhvLirilwnVb30KutUkh5CFmt7dUNpRpt4ftde5WAVPcHTSx_VnCxDfWHHAJVP4eHa7z2a8juI6sUvPpKDcx4VQyGa4lbqd1J95BnxDxDSP0FahV2-rMVJfiOSaSnLuQAcDoE_oa4pHXGdPd3TaEzA5IHYOtn5gujoAbhy7h-oumUm4UGSsqt71ZCEXkrbacLAynDTneoA1gE6C0k" alt="Route Image" width="100%">
             </a>
@@ -1269,6 +1347,8 @@ We look forward to enjoyable ride. See you on the road!</p>
         
                         <div class="date-relative" event-date="2024-08-24 13:30:00-07:00"></div>
         
+                    <div class="area-box">北加</div>
+            
                     </div>
                     <div>
                         <strong>1:30 PM</strong> Saturday<br>
@@ -1289,6 +1369,11 @@ We look forward to enjoyable ride. See you on the road!</p>
                 <div class="event-title">周六下午1:30 龟速爬page mill</div> <br>
                 <div class="event-description">发起人: 古梦</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/featherweight" target="_blank" class="event-link">微信群 - 轻如羽毛骑行团(FWC)</a></div>
+        
+                <a href="https://www.strava.com/clubs/featherweight" target="_blank" class="event-link">
+                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihbJLgI_FQ8nYFceJ_qcXlR5Wu9_UAyIm2PTnjgEutSN6jaytjrcwn1VI2b7RA15sXqOFolYM4bkymcGz6_XALDEBOY4R7UBwKY=s2560" alt="Event Image" width="100%">
+                </a>
+        
             </div>
         </div>
         
@@ -1306,6 +1391,7 @@ We look forward to enjoyable ride. See you on the road!</p>
                 <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div>
             </div>
             <p class="event-description">Sierra is maybe my favorite bay area climb not involving dirt. It's annoying to get to, so, logically, we should hit up Metcalf on the way with its delightful backside descent.</p>
+    
             <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/AVMTMLRRRH4TDMAAY7YIPKPVZTCHP6SIGUFRAF5RE4NLTBASAG74IOLJWPESGFF6QKGNDLHGP7ERQXEGT6RDRNQKJVBTODYOG7O6CEA=" alt="Route Image" width="100%">
             </a>
@@ -1326,6 +1412,8 @@ We look forward to enjoyable ride. See you on the road!</p>
         
                         <div class="date-relative" event-date="2024-08-24 08:30:00-07:00"></div>
         
+                    <div class="area-box">北加</div>
+            
                     </div>
                     <div>
                         <strong>8:30 AM</strong> Saturday<br>
@@ -1349,6 +1437,7 @@ We look forward to enjoyable ride. See you on the road!</p>
                 <div class="event-title">Saturday Road Ride - Sierra via Metcalf</div> <br>
                 <div class="event-description">发起人: Dan Scannell</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/265/group_events/1755097" target="_blank" class="event-link">Strava Club - Los Gatos Bicycle Racing Club</a></div>
+        
             </div>
         </div>
         
@@ -1373,6 +1462,7 @@ Gate to shack PR challenge, maybe up to ski lift after if anyone is down for it!
 
 Distance - ⭐️⭐️⭐️
 Elevation- ⭐️⭐️⭐️⭐️</p>
+    
             <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">
                 <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VKQHWPPO2XGADVRN55WO5NIKADLOSAS3UQDHOSYOGYU34UGAU2MF6CVF5DSMBTZKTZ3HMD3UPLDROIWUYHJKJJNH6ZJBGQAYXLR2CCI=" alt="Route Image" width="100%">
             </a>
@@ -1393,6 +1483,8 @@ Elevation- ⭐️⭐️⭐️⭐️</p>
         
                         <div class="date-relative" event-date="2024-08-24 07:00:00-07:00"></div>
         
+                    <div class="area-box">南加</div>
+            
                     </div>
                     <div>
                         <strong>7:00 AM</strong> Saturday<br>
@@ -1416,6 +1508,7 @@ Elevation- ⭐️⭐️⭐️⭐️</p>
                 <div class="event-title">🌯 Mamba day GMR gate ->shack PR challenge. </div> <br>
                 <div class="event-description">发起人: Johnson  G- Ruekn/ACE Cycle Works/RCC#48818</div> <br>
                 <div class="event-description">活动来源: <a href="https://www.strava.com/clubs/908336/group_events/1628302" target="_blank" class="event-link">Strava Club - Ruekn Bicci Gruppo (Southern California)</a></div>
+        
             </div>
         </div>
         

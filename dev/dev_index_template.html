@@ -94,14 +94,6 @@
     <div class="top-bar-container">
         <div class="column">
             <span class="top-bar"><a id="prod-link" href=".">好 骑 友</a></span>
-            <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var link = document.getElementById("prod-link");
-                var currentPath = window.location.pathname;
-                currentPath.replace("/dev", "");
-                link.href = currentPath;
-            });
-            </script>
         </div>
         <div class="column">
             <span>Updated on {{current_time_str_PDT}}</span><br/>
