@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../haoqiyou.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="../haoqiyou.ico" type="image/x-icon">
+    <link rel="icon" href="haoqiyou.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="haoqiyou.ico" type="image/x-icon">
     <title>好骑友网(骑行活动收集器)</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Google tag (gtag.js) -->
@@ -16,11 +16,67 @@
 
         gtag('config', 'UA-51069014-1');
     </script>
+    <script>
+        function initMap() {
+            const centerLocation = { lat: 37.4220656, lng: -122.0840897 };
+            const map = new google.maps.Map(document.getElementById('map-container'), {
+                center: centerLocation,
+                zoom: 10,
+                mapId: 'DEMO_MAP_ID'
+            });
+
+            const events=[
+                '{{map_content}}'
+            ];
+
+            
+            events.map(event=>{
+                    const marker = new google.maps.marker.AdvancedMarkerElement({
+                    map: map,
+                    position: event.position,
+                    title: event.title,
+                    gmpClickable: true,
+                })
+                marker.addListener("gmp-click", ({ domEvent, latLng }) => {
+                    document.location.href = '?id='+event.id;
+                })
+            });
+            // Custom Overlay
+            class CustomOverlay extends google.maps.OverlayView {
+                constructor(map) {
+                    super();
+                    this.map = map;
+                    this.div = null;
+                    this.setMap(map);
+                }
+
+                onRemove() {
+                    if (this.div) {
+                        this.div.parentNode.removeChild(this.div);
+                        this.div = null;
+                    }
+                }
+            }
+
+            new CustomOverlay(map);
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
+    ></script>
 </head>
 <body>
     <div class="top-bar-container">
         <div class="column">
-            <span class="top-bar">好 骑 友</span>
+            <span class="top-bar"><a id="prod-link" href=".">好 骑 友</a></span>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var link = document.getElementById("prod-link");
+                var currentPath = window.location.pathname;
+                currentPath.replace("/dev", "");
+                link.href = currentPath;
+            });
+            </script>
         </div>
         <div class="column">
             <span>Updated on {{current_time_str_PDT}}</span><br/>
@@ -30,10 +86,10 @@
             </label>
         </div>
         <div class="right-most">
-            <a class="dynamic-link" id="dynamic-link" href="./dev">开发预览版</a>
+            <a class="dev-link" id="dev-link" href="./dev">开发预览版</a>
             <script>
             document.addEventListener("DOMContentLoaded", function() {
-                var link = document.getElementById("dynamic-link");
+                var link = document.getElementById("dev-link");
                 var currentPath = window.location.pathname;
                 if (currentPath.endsWith("/index.html")) {
                     link.href = "./dev/index.html";
@@ -44,42 +100,14 @@
             </script>
         </div>
     </div>
-    <div class="page-container">
-        <div class="list-container">
+
+    <div class="page-container" id="page-container">
+        <div class="list-container" id="list-container">
 {{list_content}}
         </div>
-        <div class="map-container">
-            <gmp-map
-                center="37.4220656,-122.0840897"
-                zoom="10"
-                map-id="DEMO_MAP_ID"
-            >
-{{map_content}}
-            </gmp-map>
+        <div class="map-container" id="map-container">
+            <!-- The map will be rendered here -->
         </div>
-        <script>
-        document.querySelectorAll('.event').forEach(function(eventDiv) {
-            eventDiv.addEventListener('click', function(event) {
-                event.preventDefault();
-                const eventId = this.getAttribute('data-event-id');
-                const eventDetails = document.getElementById(eventId).innerHTML;
-                document.getElementById('popup-content').innerHTML = eventDetails;
-                document.getElementById('popup-overlay').style.display = 'block';
-                document.getElementById('popup').style.display = 'block';
-                // Update the URL
-                history.pushState(null, '', `?id=${eventId}`);
-            });
-        });
-
-        function initMap() {
-            var map = new google.maps.Map(document.querySelector('gmp-map'), {
-                center: {lat: 37.4220656, lng: -122.0840897},
-                zoom: 10,
-                mapId: 'DEMO_MAP_ID'
-            });
-        }
-        </script>
-        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=maps,marker&v=beta" defer></script>
     </div>
 
     <div class="popup-overlay" id="popup-overlay"></div>

@@ -183,10 +183,18 @@
 <body>
     <div class="top-bar-container">
         <div class="column">
-            <span class="top-bar">好 骑 友</span>
+            <span class="top-bar"><a id="prod-link" href="/">好 骑 友</a></span>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var link = document.getElementById("prod-link");
+                var currentPath = window.location.pathname;
+                currentPath.replace("/dev", "");
+                link.href = currentPath;
+            });
+            </script>
         </div>
         <div class="column">
-            <span>Updated on 08/25/24 22:30</span><br/>
+            <span>Updated on 08/26/24 19:44</span><br/>
             <label>
                 <input type="checkbox" id="toggleExtra">
                 <span style="color:#0000ff">只显示精选活动</span>

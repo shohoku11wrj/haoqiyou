@@ -325,6 +325,25 @@ def gen_div_for_events_from_list(events_list):
         """
     return events_div
 
+def gen_gmp_advanced_marker_for_events_from_list(event_list):
+    events_marker=""
+    for event in event_list:
+        event_type = "extra-event" if event['source_group_id'] in extra_event_group_ids else "selected-event"
+        event_title=event['title']
+        event_id=f"event-{event['_id']}"
+        gps_coordinates_str = event['gps_coordinates']
+        if gps_coordinates_str=="":
+            continue
+        gps_coordinates_str='{ lat: ' + gps_coordinates_str.replace(',',', lng: ') + ' }'
+        events_marker += f"""
+            {'{'}
+                title: "{event_title}",
+                position: {gps_coordinates_str},
+                id: "{event_id}",
+            {'}'},
+        """
+    return events_marker
+
 ##########################################################################################################
 # 开始创建 html_content                                                                                   #
 ##########################################################################################################
@@ -357,6 +376,10 @@ events_list_content += """
     </div>
 """
 
+map_content = gen_gmp_advanced_marker_for_events_from_list(past_events_list)
+map_content += gen_gmp_advanced_marker_for_events_from_list(future_events_list)
+map_content += gen_gmp_advanced_marker_for_events_from_list(planning_events_list)
+
 # Read the index_template file
 with open('index_template.html', 'r', encoding='utf-8') as file:
     index_template = file.read()
@@ -365,7 +388,7 @@ with open('index_template.html', 'r', encoding='utf-8') as file:
 current_time_str_PDT = datetime.now(local_tz).strftime('%D %H:%M')
 index_html = index_template.replace('{{current_time_str_PDT}}', current_time_str_PDT)
 index_html = index_html.replace('{{list_content}}', events_list_content)
-index_html = index_html.replace('{{map_content}}', '')
+index_html = index_html.replace("'{{map_content}}'", map_content)
 
 # Save the index_html to a file
 with open('index.html', 'w', encoding='utf-8') as file:

@@ -7,6 +7,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  height: 60px;
 }
 .column {
   flex: 0 0 auto; /* Make the column only as wide as its content */
@@ -24,7 +25,14 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
-.dynamic-link {
+.top-bar a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: none; /* Optional: to remove underline */
+}
+.dev-link {
   background-color: hsl(49, 100%, 54%);  /* SEKA 海沫绿 */
   color: hsl(221, 100%, 50%);  /* Deep red color */
   font-size: 15px;
@@ -158,4 +166,55 @@ body {
 .close-btn {
   float: right;
   cursor: pointer;
+}
+.page-container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 1000px) {
+  .page-container {
+      flex-direction: row; /* Change to row direction for larger screens */
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 1;
+      overflow-y: hidden;/*let list-container scroll*/
+      height: calc(100vh - 76px);  /* kill scroll bar on larger screen*/
+  }
+  .list-container {
+      width: 50%; /* Takes up half the width of the container */
+      overflow-y: auto; /* Allows scrolling if content overflows */
+  }
+  .map-container {
+      width: 50%; /* Takes up half the width of the container */
+  }
+  .toggle-button-container {
+      display: none;
+  }
+}
+@media only screen and (max-width: 999px) {
+  .page-container {
+      flex-direction: column;
+      box-sizing: border-box;
+      height: 100vh;
+  }
+  .list-container {
+      width: 100%;
+      order: 2;
+      max-height: 100%; /* Prevents the container from exceeding the height of the page-container */
+      box-sizing: border-box;
+      /* display: block; */
+  }
+  .map-container {
+      flex-grow: 1;
+      order: 1;
+      margin: 8px 0px;
+      min-height: 70vh;
+      max-height: 85vh;
+      height: 80%;
+      /* display: none; */
+  }
+  .toggle-button-container {
+      display: none;
+  }
 }
