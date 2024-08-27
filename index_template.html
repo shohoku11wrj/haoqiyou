@@ -31,12 +31,14 @@
 
             
             events.map(event=>{
-                    const marker = new google.maps.marker.AdvancedMarkerElement({
+                const iconElement = document.createElement('div');
+                iconElement.innerHTML = '<img src="' + event.icon_url + '" alt="Custom Icon" />';
+                const marker = new google.maps.marker.AdvancedMarkerElement({
                     map: map,
                     position: event.position,
                     title: event.title,
                     gmpClickable: true,
-                    icon: event.icon,
+                    content: iconElement,
                 })
                 marker.addListener("gmp-click", ({ domEvent, latLng }) => {
                     document.location.href = '?id='+event.id;

@@ -232,8 +232,8 @@ def gen_div_for_events_from_list(events_list):
 # Define custom icons for different event types
 custom_icons = {
     "upcoming": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-    "planning": "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-    "past": "http://maps.google.com/mapfiles/ms/icons/gray-dot.png",
+    "planning": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+    "past": "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
     "others": "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
 }
 
@@ -261,10 +261,10 @@ def gen_gmp_advanced_marker_for_events_from_list(event_list, event_time_type="up
 
         events_marker += f"""
             {'{'}
-                title: "{month_str} {day_str}: {distance_str}\n{event_title}",
+                title: "{month_str} {day_str}: {event_title}",
                 position: {gps_coordinates_str},
                 id: "{event_id}",
-                icon: "{icon_url}"
+                icon_url: "{icon_url}"
             {'}'},
         """
     return events_marker
