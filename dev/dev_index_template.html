@@ -17,25 +17,28 @@
         gtag('config', 'UA-51069014-1');
     </script>
     <script>
+        let map; // Declare map variable outside the function
+
         function initMap() {
-            const centerLocation = { lat: 37.4220656, lng: -122.0840897 };
-            const map = new google.maps.Map(document.getElementById('map-container'), {
-                center: centerLocation,
-                zoom: 10,
-                mapId: 'DEMO_MAP_ID'
-            });
+            if (!map) { // Check if map is already initialized
+                const centerLocation = { lat: 37.4220656, lng: -122.0840897 };
+                map = new google.maps.Map(document.getElementById('map-container'), {
+                    center: centerLocation,
+                    zoom: 10,
+                    mapId: 'DEMO_MAP_ID'
+                });
+            }
 
             const events=[
                 '{{map_content}}'
             ];
-
             
             events.map(event=>{
                 const iconElement = document.createElement('div');
                 iconElement.innerHTML = '<img src="' + event.icon_url + '" alt="Custom Icon" />';
                 const marker = new google.maps.marker.AdvancedMarkerElement({
                     map: map,
-                    position: event.position,
+                    position: { lat: event.position.lat + event.shift[0], lng: event.position.lng + event.shift[1] },
                     title: event.title,
                     gmpClickable: true,
                     content: iconElement,

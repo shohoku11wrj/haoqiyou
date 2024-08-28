@@ -146,9 +146,29 @@ events_list_content += """
     </div>
 """
 
-map_content = gen_gmp_advanced_marker_for_events_from_list(past_events_list, 'past')
-map_content += gen_gmp_advanced_marker_for_events_from_list(future_events_list, 'upcoming')
-map_content += gen_gmp_advanced_marker_for_events_from_list(planning_events_list, 'planning')
+
+# Iterate the events to find those GPS coordinates that are close to each other (with tolerance of 0.0001),
+# and save them in a set.
+GPS_OVERLAP_TOLERANCE = 0.01
+overlapping_gps_coords = set()
+for i in range(len(all_events_list)):
+    for j in range(i + 1, len(all_events_list)):
+        gps_coordinates_str1 = all_events_list[i]['gps_coordinates']
+        gps_coordinates_str2 = all_events_list[j]['gps_coordinates']
+        if (gps_coordinates_str1 == '') or (gps_coordinates_str2 == ''):
+            continue
+        gps_coordinates1 = [float(coord) for coord in gps_coordinates_str1.split(', ')]
+        gps_coordinates2 = [float(coord) for coord in gps_coordinates_str2.split(', ')]
+        lat1, lon1 = gps_coordinates1
+        lat2, lon2 = gps_coordinates2
+        if abs(lat1 - lat2) < GPS_OVERLAP_TOLERANCE and abs(lon1 - lon2) < GPS_OVERLAP_TOLERANCE:
+            overlapping_gps_coords.add((lat1, lon1))
+
+map_content = gen_gmp_advanced_marker_for_events_from_list(past_events_list, 'past', overlapping_gps_coords)
+map_content += gen_gmp_advanced_marker_for_events_from_list(future_events_list, 'upcoming', overlapping_gps_coords)
+map_content += gen_gmp_advanced_marker_for_events_from_list(planning_events_list, 'planning', overlapping_gps_coords)
+
+
 
 # Read the index_template file
 with open('dev/dev_index_template.html', 'r', encoding='utf-8') as file:
