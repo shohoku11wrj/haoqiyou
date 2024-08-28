@@ -17,7 +17,7 @@ TODO:
  * [x] Map view, can catch all events in the Bay Area mapview.
  * [x] Map view: Each event pin on the map will be labeled "date + time + distance"
  * Map view: shifting markers if overlapping (rotating 4 directions shifts, +polygon original->shifted)
- * Add marker icons to upcoming events/future events/past events
+ * [x] Add marker icons to upcoming events/future events/past events
  * Map view (Optional): cast routes of events on the map
  * [x] Support (cloud) comments for each event: commento.io
  * Allow event owner to cancel/edit details of the event.

@@ -109,7 +109,7 @@ print(f"Total number of past events: {len(past_events_list)}")
 ##########################################################################################################
 
 events_list_content = """
-    <h2><span style="opacity: 0;">U</span>Pcoming Events</h2>
+    <h2><span style="opacity: 0;">U</span>Pcoming Events <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" alt="Green Marker" /></h2>
     <div class="events-container">
 """
 
@@ -118,7 +118,7 @@ events_list_content += gen_div_for_events_from_list(future_events_list)
 
 events_list_content += f"""
         </div>
-        <h2>Planning Events</h2>
+        <h2>Planning Events <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" alt="Blue Marker" /></h2>
         <div class="events-container">
 """
 events_list_content += gen_div_for_events_from_list(planning_events_list)
@@ -126,7 +126,7 @@ events_list_content += gen_div_for_events_from_list(planning_events_list)
 
 events_list_content += f"""
         </div>
-        <h2>Past Events</h2>
+        <h2>Past Events <img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" alt="Yellow Marker" /></h2>
         <div class="events-container">
 """
 events_list_content += gen_div_for_events_from_list(past_events_list)
