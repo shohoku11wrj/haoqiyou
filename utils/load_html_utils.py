@@ -247,10 +247,9 @@ CUSTOM_ICONS = {
     "others": "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
 }
 GPS_OVERLAP_TOLERANCE = 0.01
-GPS_SHIFTS = [[0, -GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, 0], [0, GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, 0]];
 
 def gen_gmp_advanced_marker_for_events_from_list(event_list, event_time_type="upcoming", overlapping_gps_coords=set()):
-    events_marker=""
+    events_markers = []
     for event in event_list:
         event_type = "extra-event" if event['source_group_id'] in extra_event_group_ids else "selected-event"
         event_time_utc = event['event_time_utc'].replace(tzinfo=pytz.utc)
@@ -266,27 +265,17 @@ def gen_gmp_advanced_marker_for_events_from_list(event_list, event_time_type="up
         gps_coordinates_str = event['gps_coordinates']
         if gps_coordinates_str=="":
             continue
-        gps_coordinates_str='{ lat: ' + gps_coordinates_str.replace(',',', lng: ') + ' }'
-        lat, lng = [float(coord) for coord in event['gps_coordinates'].split(', ')]
-        gps_shift = [0, 0]
-        overlapped_gps_count_map = {}
-        for overlapped_gps in overlapping_gps_coords:
-            if abs(lat - overlapped_gps[0]) < GPS_OVERLAP_TOLERANCE and abs(lng - overlapped_gps[1]) < GPS_OVERLAP_TOLERANCE:
-                overlapped_gps_count = overlapped_gps_count_map.get(overlapped_gps, 0)
-                gps_shift = GPS_SHIFTS[overlapped_gps_count]
-                overlapped_gps_count_map[overlapped_gps] = overlapped_gps_count + 1
-                break
+        # reserve 5 digits after the decimal point
+        gps_coordinates = [float(coord) for coord in gps_coordinates_str.split(', ')]
 
         # Determine the color based on the event_time_type
         icon_url = CUSTOM_ICONS.get(event_time_type, CUSTOM_ICONS["others"])
 
-        events_marker += f"""
-            {'{'}
-                title: "{month_str} {day_str}: {event_title}",
-                position: {gps_coordinates_str},
-                shift: {gps_shift},
-                id: "{event_id}",
-                icon_url: "{icon_url}"
-            {'}'},
-        """
-    return events_marker
+        event_marker = {
+            'title': f"{month_str} {day_str}: {event_title}",
+            'position': gps_coordinates,
+            'id': event_id,
+            'icon_url': icon_url
+        }
+        events_markers.append(event_marker)
+    return events_markers

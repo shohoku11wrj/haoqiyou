@@ -163,11 +163,51 @@ for i in range(len(all_events_list)):
         lat2, lon2 = gps_coordinates2
         if abs(lat1 - lat2) < GPS_OVERLAP_TOLERANCE and abs(lon1 - lon2) < GPS_OVERLAP_TOLERANCE:
             overlapping_gps_coords.add((lat1, lon1))
+print(f"Overlapping GPS coordinates: {overlapping_gps_coords}")
 
-map_content = gen_gmp_advanced_marker_for_events_from_list(past_events_list, 'past', overlapping_gps_coords)
-map_content += gen_gmp_advanced_marker_for_events_from_list(future_events_list, 'upcoming', overlapping_gps_coords)
-map_content += gen_gmp_advanced_marker_for_events_from_list(planning_events_list, 'planning', overlapping_gps_coords)
+event_markers = []
+event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(past_events_list, 'past'))
+event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(future_events_list, 'upcoming'))
+event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(planning_events_list, 'planning'))
 
+GPS_SHIFTS = [[0, -GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, 0], [0, GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, 0],
+              [GPS_OVERLAP_TOLERANCE, -GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, GPS_OVERLAP_TOLERANCE],
+              [-GPS_OVERLAP_TOLERANCE, GPS_OVERLAP_TOLERANCE], [-GPS_OVERLAP_TOLERANCE, -GPS_OVERLAP_TOLERANCE],]
+overlapped_gps_count_map = {}
+for event_marker in event_markers:
+    lat, lng = event_marker.get('position')[0], event_marker.get('position')[1]
+    gps_shift = [0, 0]
+    for overlapped_gps in overlapping_gps_coords:
+        if abs(lat - overlapped_gps[0]) < GPS_OVERLAP_TOLERANCE and abs(lng - overlapped_gps[1]) < GPS_OVERLAP_TOLERANCE:
+            print("overlapped_gps", overlapped_gps)
+            overlapped_gps_count = overlapped_gps_count_map.get(overlapped_gps, 0)
+            gps_shift = GPS_SHIFTS[overlapped_gps_count]
+            overlapped_gps_count_map[overlapped_gps] = overlapped_gps_count + 1
+            break
+    event_marker.update({'shift': gps_shift})
+print("overlapped_gps_count_map", overlapped_gps_count_map)
+
+# Serialize event_markers to string
+# """
+#     {'{'}
+#         title: "{month_str} {day_str}: {event_title}",
+#         position: {gps_coordinates},
+#         shift: {gps_shift},
+#         id: "{event_id}",
+#         icon_url: "{icon_url}"
+#     {'}'},
+# """
+map_content = ''
+for event_marker in event_markers:
+    map_content += f"""
+    {{
+        title: "{event_marker['title']}",
+        position: {{ lat: {event_marker['position'][0]}, lng: {event_marker['position'][1]} }},
+        shift: {event_marker['shift']},
+        id: "{event_marker['id']}",
+        icon_url: "{event_marker['icon_url']}"
+    }},
+    """
 
 
 # Read the index_template file
