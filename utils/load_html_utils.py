@@ -238,7 +238,6 @@ def gen_div_for_events_from_list(events_list):
     return events_div
 
 
-
 # Define custom icons for different event types
 CUSTOM_ICONS = {
     "upcoming": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
@@ -246,7 +245,11 @@ CUSTOM_ICONS = {
     "past": "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
     "others": "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
 }
-GPS_OVERLAP_TOLERANCE = 0.01
+GPS_OVERLAP_TOLERANCE = 0.03
+GPS_SHIFTS = [[0, -GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, 0], [0, GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, 0],
+              [GPS_OVERLAP_TOLERANCE, -GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, GPS_OVERLAP_TOLERANCE],
+              [-GPS_OVERLAP_TOLERANCE, GPS_OVERLAP_TOLERANCE], [-GPS_OVERLAP_TOLERANCE, -GPS_OVERLAP_TOLERANCE],]
+
 
 def gen_gmp_advanced_marker_for_events_from_list(event_list, event_time_type="upcoming", overlapping_gps_coords=set()):
     events_markers = []
@@ -273,9 +276,72 @@ def gen_gmp_advanced_marker_for_events_from_list(event_list, event_time_type="up
 
         event_marker = {
             'title': f"{month_str} {day_str}: {event_title}",
+            'date_span': [month_str, day_str],
             'position': gps_coordinates,
             'id': event_id,
-            'icon_url': icon_url
+            'icon_url': icon_url,
+            'event_time_type': event_time_type,
         }
         events_markers.append(event_marker)
     return events_markers
+
+
+# Iterate the events to find those GPS coordinates that are close to each other (with tolerance of 0.0001),
+# and save them in a set.
+def get_overlapping_gps_coords(events_list):
+    overlapping_gps_coords = set()
+    for i in range(len(events_list)):
+        for j in range(i + 1, len(events_list)):
+            gps_coordinates_str1 = events_list[i]['gps_coordinates']
+            gps_coordinates_str2 = events_list[j]['gps_coordinates']
+            if (gps_coordinates_str1 == '') or (gps_coordinates_str2 == ''):
+                continue
+            gps_coordinates1 = [float(coord) for coord in gps_coordinates_str1.split(', ')]
+            gps_coordinates2 = [float(coord) for coord in gps_coordinates_str2.split(', ')]
+            lat1, lon1 = gps_coordinates1
+            lat2, lon2 = gps_coordinates2
+            if abs(lat1 - lat2) < GPS_OVERLAP_TOLERANCE and abs(lon1 - lon2) < GPS_OVERLAP_TOLERANCE:
+                overlapping_gps_coords.add((lat1, lon1))
+    return overlapping_gps_coords
+
+
+# Iterate the event_markers to find those GPS coordinates that are close to each other (with tolerance of 0.0001),
+def insert_shift_to_event_markers(event_markers, overlapping_gps_coords):
+    overlapped_gps_count_map = {}
+    for event_marker in event_markers:
+        lat, lng = event_marker.get('position')[0], event_marker.get('position')[1]
+        gps_shift = [0, 0]
+        for overlapped_gps in overlapping_gps_coords:
+            if abs(lat - overlapped_gps[0]) < GPS_OVERLAP_TOLERANCE and abs(lng - overlapped_gps[1]) < GPS_OVERLAP_TOLERANCE:
+                overlapped_gps_count = overlapped_gps_count_map.get(overlapped_gps, 0)
+                gps_shift = GPS_SHIFTS[overlapped_gps_count]
+                overlapped_gps_count_map[overlapped_gps] = overlapped_gps_count + 1
+                break
+        event_marker.update({'shift': gps_shift})
+
+
+def serialize_event_markers_to_string(event_markers):
+    # Serialize event_markers to string
+    # """
+    #     {'{'}
+    #         title: "{month_str} {day_str}: {event_title}",
+    #         position: {gps_coordinates},
+    #         shift: {gps_shift},
+    #         id: "{event_id}",
+    #         icon_url: "{icon_url}"
+    #     {'}'},
+    # """
+    map_content = ''
+    for event_marker in event_markers:
+        map_content += f"""
+        {{
+            title: "{event_marker['title']}",
+            date_span: {{ month: "{event_marker['date_span'][0]}", day: "{event_marker['date_span'][1]}" }},
+            position: {{ lat: {event_marker['position'][0]}, lng: {event_marker['position'][1]} }},
+            shift: {event_marker['shift']},
+            id: "{event_marker['id']}",
+            icon_url: "{event_marker['icon_url']}",
+            event_time_type: "{event_marker['event_time_type']}"
+        }},
+        """
+    return map_content

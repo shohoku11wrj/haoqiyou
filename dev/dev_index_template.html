@@ -12,7 +12,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51069014-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag(){dataLaayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-51069014-1');
     </script>
@@ -35,7 +35,16 @@
             
             events.map(event=>{
                 const iconElement = document.createElement('div');
-                iconElement.innerHTML = '<img src="' + event.icon_url + '" alt="Custom Icon" />';
+                if (event.event_time_type != "upcoming") {
+                    iconElement.innerHTML = `<img src="${event.icon_url}" alt="Custom Icon" />`;
+                } else {
+                    iconElement.innerHTML = `
+                        <div style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, 0%); background-color: white; padding: 5px; border-radius: 5px; text-align: center; white-space: nowrap;">
+                            ${event.date_span.month} <span style="color: #fc5200">${event.date_span.day}</span>
+                        </div>
+                        <img src="${event.icon_url}" alt="Custom Icon" />
+                    `;
+                }
                 const marker = new google.maps.marker.AdvancedMarkerElement({
                     map: map,
                     position: { lat: event.position.lat + event.shift[0], lng: event.position.lng + event.shift[1] },
@@ -46,6 +55,31 @@
                 marker.addListener("gmp-click", ({ domEvent, latLng }) => {
                     document.location.href = '?id='+event.id;
                 })
+                if (event.shift[0] != 0 || event.shift[1] != 0) {
+                    // Add a red dot at the original position
+                    const dot = new google.maps.Marker({
+                        position: { lat: event.position.lat, lng: event.position.lng },
+                        map: map,
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 5,
+                            fillColor: "#ff0000",
+                            fillOpacity: 1,
+                            strokeWeight: 0
+                        }
+                    });
+                    // Add a red line point from the original position to the shifted position
+                    const line = new google.maps.Polyline({
+                        path: [
+                            { lat: event.position.lat, lng: event.position.lng },
+                            { lat: event.position.lat + event.shift[0], lng: event.position.lng + event.shift[1] }
+                        ],
+                        map: map,
+                        strokeColor: "#ff0000",
+                        strokeOpacity: 0.5,
+                        strokeWeight: 3,
+                    })
+                }
             });
             // Custom Overlay
             class CustomOverlay extends google.maps.OverlayView {

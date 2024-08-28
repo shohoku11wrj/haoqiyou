@@ -10,7 +10,14 @@ import pytz
 
 # Add the root directory to sys.pathfrom
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list, get_start_of_week
+from utils.load_html_utils import(
+    get_start_of_week,
+    gen_div_for_events_from_list,
+    gen_gmp_advanced_marker_for_events_from_list,
+    get_overlapping_gps_coords,
+    insert_shift_to_event_markers,
+    serialize_event_markers_to_string
+)
 
 # Load environment variables from .env file
 load_dotenv()
@@ -147,67 +154,15 @@ events_list_content += """
 """
 
 
-# Iterate the events to find those GPS coordinates that are close to each other (with tolerance of 0.0001),
-# and save them in a set.
-GPS_OVERLAP_TOLERANCE = 0.01
-overlapping_gps_coords = set()
-for i in range(len(all_events_list)):
-    for j in range(i + 1, len(all_events_list)):
-        gps_coordinates_str1 = all_events_list[i]['gps_coordinates']
-        gps_coordinates_str2 = all_events_list[j]['gps_coordinates']
-        if (gps_coordinates_str1 == '') or (gps_coordinates_str2 == ''):
-            continue
-        gps_coordinates1 = [float(coord) for coord in gps_coordinates_str1.split(', ')]
-        gps_coordinates2 = [float(coord) for coord in gps_coordinates_str2.split(', ')]
-        lat1, lon1 = gps_coordinates1
-        lat2, lon2 = gps_coordinates2
-        if abs(lat1 - lat2) < GPS_OVERLAP_TOLERANCE and abs(lon1 - lon2) < GPS_OVERLAP_TOLERANCE:
-            overlapping_gps_coords.add((lat1, lon1))
-print(f"Overlapping GPS coordinates: {overlapping_gps_coords}")
-
 event_markers = []
 event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(past_events_list, 'past'))
 event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(future_events_list, 'upcoming'))
 event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(planning_events_list, 'planning'))
 
-GPS_SHIFTS = [[0, -GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, 0], [0, GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, 0],
-              [GPS_OVERLAP_TOLERANCE, -GPS_OVERLAP_TOLERANCE], [GPS_OVERLAP_TOLERANCE, GPS_OVERLAP_TOLERANCE],
-              [-GPS_OVERLAP_TOLERANCE, GPS_OVERLAP_TOLERANCE], [-GPS_OVERLAP_TOLERANCE, -GPS_OVERLAP_TOLERANCE],]
-overlapped_gps_count_map = {}
-for event_marker in event_markers:
-    lat, lng = event_marker.get('position')[0], event_marker.get('position')[1]
-    gps_shift = [0, 0]
-    for overlapped_gps in overlapping_gps_coords:
-        if abs(lat - overlapped_gps[0]) < GPS_OVERLAP_TOLERANCE and abs(lng - overlapped_gps[1]) < GPS_OVERLAP_TOLERANCE:
-            print("overlapped_gps", overlapped_gps)
-            overlapped_gps_count = overlapped_gps_count_map.get(overlapped_gps, 0)
-            gps_shift = GPS_SHIFTS[overlapped_gps_count]
-            overlapped_gps_count_map[overlapped_gps] = overlapped_gps_count + 1
-            break
-    event_marker.update({'shift': gps_shift})
-print("overlapped_gps_count_map", overlapped_gps_count_map)
+overlapping_gps_coords = get_overlapping_gps_coords(all_events_list)
+insert_shift_to_event_markers(event_markers, overlapping_gps_coords)
 
-# Serialize event_markers to string
-# """
-#     {'{'}
-#         title: "{month_str} {day_str}: {event_title}",
-#         position: {gps_coordinates},
-#         shift: {gps_shift},
-#         id: "{event_id}",
-#         icon_url: "{icon_url}"
-#     {'}'},
-# """
-map_content = ''
-for event_marker in event_markers:
-    map_content += f"""
-    {{
-        title: "{event_marker['title']}",
-        position: {{ lat: {event_marker['position'][0]}, lng: {event_marker['position'][1]} }},
-        shift: {event_marker['shift']},
-        id: "{event_marker['id']}",
-        icon_url: "{event_marker['icon_url']}"
-    }},
-    """
+map_content = serialize_event_markers_to_string(event_markers)
 
 
 # Read the index_template file
