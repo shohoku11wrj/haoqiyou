@@ -14,7 +14,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-51069014-1');
     </script>
     <script>
@@ -32,11 +31,14 @@
 
             
             events.map(event=>{
-                    const marker = new google.maps.marker.AdvancedMarkerElement({
+                const iconElement = document.createElement('div');
+                iconElement.innerHTML = '<img src="' + event.icon_url + '" alt="Custom Icon" />';
+                const marker = new google.maps.marker.AdvancedMarkerElement({
                     map: map,
                     position: event.position,
                     title: event.title,
                     gmpClickable: true,
+                    content: iconElement,
                 })
                 marker.addListener("gmp-click", ({ domEvent, latLng }) => {
                     document.location.href = '?id='+event.id;
@@ -61,30 +63,6 @@
 
             new CustomOverlay(map);
         }
-
-        function toggleView() {
-            const listContainer = document.getElementById('list-container');
-            const mapContainer = document.getElementById('map-container');
-            const toggleButton = document.getElementById('toggle-button');
-
-            if (listContainer.style.display === 'none') {
-                listContainer.style.display = 'block';
-                mapContainer.style.display = 'none';
-                toggleButton.src = '../assets/map-view.png';
-            } else {
-                listContainer.style.display = 'none';
-                mapContainer.style.display = 'block';
-                toggleButton.src = '../assets/list-view.png';
-                if (!map) {
-                    initMap(); // Initialize the map if it is not already initialized
-                } else {
-                    setTimeout(() => {
-                        google.maps.event.trigger(map, 'resize'); // Trigger resize event
-                        map.setCenter({ lat: 37.4220656, lng: -122.0840897 }); // Re-center the map
-                    }, 100); // Delay to ensure the container is fully visible
-                }
-            }
-        }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
@@ -95,12 +73,12 @@
         <div class="column">
             <span class="top-bar"><a id="prod-link" href=".">好 骑 友</a></span>
             <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var link = document.getElementById("prod-link");
-                    var currentUrl = window.location.href;
-                    var newUrl = currentUrl.replace('/dev', '');
-                    link.href = newUrl;
-                });
+            document.addEventListener("DOMContentLoaded", function() {
+                var link = document.getElementById("prod-link");
+                var currentUrl = window.location.href;
+                var newUrl = currentUrl.replace('/dev', '');
+                link.href = newUrl;
+            });
             </script>
         </div>
         <div class="column">
@@ -109,11 +87,6 @@
                 <input type="checkbox" id="toggleExtra">
                 <span style="color:#0000ff">只显示精选活动</span>
             </label>
-        </div>
-        <div class="right-most toggle-button-container">
-            <a href="javascript:toggleView()">
-                <img id="toggle-button" src="../assets/map-view.png" alt="切换视图" style="width: 50px; height: 50px;">
-            </a>
         </div>
     </div>
 

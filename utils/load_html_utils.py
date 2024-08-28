@@ -27,6 +27,16 @@ def convert_urls_to_links(text):
     text = url_pattern.sub(r'<a href="\1" target="_blank">\1</a>', text)
     return text
 
+
+# 获取当前时间所在周的周一00:00AM时间, 切不能小于当前时间
+def get_start_of_week():
+    now = datetime.now(pytz.utc)  # 使用UTC时间
+    start_of_week = now - timedelta(days=now.weekday(), hours=now.hour, minutes=now.minute, seconds=now.second, microseconds=now.microsecond)
+    if start_of_week <= now:
+        start_of_week = start_of_week - timedelta(days=7)
+    return start_of_week
+
+
 def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name):
     # Convert URLs in the description to hyperlinks
     event_description = convert_urls_to_links(event['description'])

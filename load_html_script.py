@@ -2,7 +2,7 @@
 
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
-from utils.load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list
+from utils.load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list, get_start_of_week
 from pymongo import MongoClient
 import os
 import pytz
@@ -20,14 +20,6 @@ collection = db[RIDE_EVENTS_COLLECTION_NAME]
 
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
-
-# 获取当前时间所在周的周一00:00AM时间, 切不能小于当前时间
-def get_start_of_week():
-    now = datetime.now(pytz.utc)  # 使用UTC时间
-    start_of_week = now - timedelta(days=now.weekday(), hours=now.hour, minutes=now.minute, seconds=now.second, microseconds=now.microsecond)
-    if start_of_week <= now:
-        start_of_week = start_of_week - timedelta(days=7)
-    return start_of_week
 
 # Fetch events from MongoDB where the start time is after the Monday of the current week
 start_of_week_utc = get_start_of_week()

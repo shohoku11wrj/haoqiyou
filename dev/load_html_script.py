@@ -10,7 +10,7 @@ import pytz
 
 # Add the root directory to sys.pathfrom
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list
+from utils.load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list, get_start_of_week
 
 # Load environment variables from .env file
 load_dotenv()
@@ -23,23 +23,8 @@ client = MongoClient(MONGO_CONNECTION_STRING)
 db = client[RIDE_EVENT_DB_NAME]
 collection = db[RIDE_EVENTS_COLLECTION_NAME]
 
-
-# List of group_ids of extra events
-extra_event_group_ids = [
-    265,    # Los Gatos Bicycle Racing Club
-    908336  # Ruekn Bicci Gruppo (Southern California)
-]
-
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
-
-# 获取当前时间所在周的周一00:00AM时间, 切不能小于当前时间
-def get_start_of_week():
-    now = datetime.now(pytz.utc)  # 使用UTC时间
-    start_of_week = now - timedelta(days=now.weekday(), hours=now.hour, minutes=now.minute, seconds=now.second, microseconds=now.microsecond)
-    if start_of_week <= now:
-        start_of_week = start_of_week - timedelta(days=7)
-    return start_of_week
 
 # 转移url成hyperlink成<a href="url" target="_blank">text</a>
 def convert_urls_to_links(text):
@@ -134,7 +119,7 @@ print(f"Total number of past events: {len(past_events_list)}")
 ##########################################################################################################
 
 events_list_content = """
-    <h2><span style="opacity: 0;">U</span>Pcoming Events</h2>
+    <h2><span style="opacity: 0;">U</span>Pcoming Events <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" alt="Green Marker" /></h2>
     <div class="events-container">
 """
 
@@ -143,7 +128,7 @@ events_list_content += gen_div_for_events_from_list(future_events_list)
 
 events_list_content += f"""
         </div>
-        <h2>Planning Events</h2>
+        <h2>Planning Events <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" alt="Blue Marker" /></h2>
         <div class="events-container">
 """
 events_list_content += gen_div_for_events_from_list(planning_events_list)
@@ -151,7 +136,7 @@ events_list_content += gen_div_for_events_from_list(planning_events_list)
 
 events_list_content += f"""
         </div>
-        <h2>Past Events</h2>
+        <h2>Past Events <img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" alt="Yellow Marker" /></h2>
         <div class="events-container">
 """
 events_list_content += gen_div_for_events_from_list(past_events_list)

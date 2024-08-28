@@ -14,7 +14,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-51069014-1');
     </script>
     <script>
@@ -158,11 +157,14 @@
 
             
             events.map(event=>{
-                    const marker = new google.maps.marker.AdvancedMarkerElement({
+                const iconElement = document.createElement('div');
+                iconElement.innerHTML = '<img src="' + event.icon_url + '" alt="Custom Icon" />';
+                const marker = new google.maps.marker.AdvancedMarkerElement({
                     map: map,
                     position: event.position,
                     title: event.title,
                     gmpClickable: true,
+                    content: iconElement,
                 })
                 marker.addListener("gmp-click", ({ domEvent, latLng }) => {
                     document.location.href = '?id='+event.id;
@@ -187,30 +189,6 @@
 
             new CustomOverlay(map);
         }
-
-        function toggleView() {
-            const listContainer = document.getElementById('list-container');
-            const mapContainer = document.getElementById('map-container');
-            const toggleButton = document.getElementById('toggle-button');
-
-            if (listContainer.style.display === 'none') {
-                listContainer.style.display = 'block';
-                mapContainer.style.display = 'none';
-                toggleButton.src = '../assets/map-view.png';
-            } else {
-                listContainer.style.display = 'none';
-                mapContainer.style.display = 'block';
-                toggleButton.src = '../assets/list-view.png';
-                if (!map) {
-                    initMap(); // Initialize the map if it is not already initialized
-                } else {
-                    setTimeout(() => {
-                        google.maps.event.trigger(map, 'resize'); // Trigger resize event
-                        map.setCenter({ lat: 37.4220656, lng: -122.0840897 }); // Re-center the map
-                    }, 100); // Delay to ensure the container is fully visible
-                }
-            }
-        }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
@@ -221,32 +199,27 @@
         <div class="column">
             <span class="top-bar"><a id="prod-link" href=".">好 骑 友</a></span>
             <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var link = document.getElementById("prod-link");
-                    var currentUrl = window.location.href;
-                    var newUrl = currentUrl.replace('/dev', '');
-                    link.href = newUrl;
-                });
+            document.addEventListener("DOMContentLoaded", function() {
+                var link = document.getElementById("prod-link");
+                var currentUrl = window.location.href;
+                var newUrl = currentUrl.replace('/dev', '');
+                link.href = newUrl;
+            });
             </script>
         </div>
         <div class="column">
-            <span>Updated on 08/27/24 17:47</span><br/>
+            <span>Updated on 08/27/24 18:18</span><br/>
             <label>
                 <input type="checkbox" id="toggleExtra">
                 <span style="color:#0000ff">只显示精选活动</span>
             </label>
-        </div>
-        <div class="right-most toggle-button-container">
-            <a href="javascript:toggleView()">
-                <img id="toggle-button" src="../assets/map-view.png" alt="切换视图" style="width: 50px; height: 50px;">
-            </a>
         </div>
     </div>
 
     <div class="page-container" id="page-container">
         <div class="list-container" id="list-container">
 
-    <h2><span style="opacity: 0;">U</span>Pcoming Events</h2>
+    <h2><span style="opacity: 0;">U</span>Pcoming Events <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" alt="Green Marker" /></h2>
     <div class="events-container">
 
         <div class="event extra-event" data-event-id="event-66a5cbd49719a87a0cc4301e">
@@ -919,7 +892,7 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
         </div>
         
         </div>
-        <h2>Planning Events</h2>
+        <h2>Planning Events <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" alt="Blue Marker" /></h2>
         <div class="events-container">
 
         <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cb1">
@@ -1291,7 +1264,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
         </div>
         
         </div>
-        <h2>Past Events</h2>
+        <h2>Past Events <img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" alt="Yellow Marker" /></h2>
         <div class="events-container">
 
         <div class="event selected-event" data-event-id="event-66c3979836c843fcbfcff266">
