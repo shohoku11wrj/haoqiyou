@@ -253,7 +253,12 @@
                     content: iconElement,
                 })
                 marker.addListener("gmp-click", ({ domEvent, latLng }) => {
-                    document.location.href = '?id='+event.id;
+                    const eventDetails = document.getElementById(event.id).innerHTML;
+                    document.getElementById('popup-content').innerHTML = eventDetails;
+                    document.getElementById('popup-overlay').style.display = 'block';
+                    document.getElementById('popup').style.display = 'block';
+                    // Update the URL
+                    history.pushState(null, '', `?id=${event.id}`);
                 })
                 if (event.shift[0] != 0 || event.shift[1] != 0) {
                     // Add a red dot at the original position
@@ -319,7 +324,7 @@
             </script>
         </div>
         <div class="column">
-            <span>Updated on 08/28/24 18:27</span><br/>
+            <span>Updated on 08/28/24 20:18</span><br/>
             <label>
                 <input type="checkbox" id="toggleExtra">
                 <span style="color:#0000ff">只显示精选活动</span>

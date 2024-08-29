@@ -52,7 +52,12 @@
                     content: iconElement,
                 })
                 marker.addListener("gmp-click", ({ domEvent, latLng }) => {
-                    document.location.href = '?id='+event.id;
+                    const eventDetails = document.getElementById(event.id).innerHTML;
+                    document.getElementById('popup-content').innerHTML = eventDetails;
+                    document.getElementById('popup-overlay').style.display = 'block';
+                    document.getElementById('popup').style.display = 'block';
+                    // Update the URL
+                    history.pushState(null, '', `?id=${event.id}`);
                 })
                 if (event.shift[0] != 0 || event.shift[1] != 0) {
                     // Add a red dot at the original position
