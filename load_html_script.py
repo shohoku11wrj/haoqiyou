@@ -2,7 +2,14 @@
 
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
-from utils.load_html_utils import gen_div_for_events_from_list, gen_gmp_advanced_marker_for_events_from_list, get_start_of_week
+from utils.load_html_utils import(
+    get_start_of_week,
+    gen_div_for_events_from_list,
+    gen_gmp_advanced_marker_for_events_from_list,
+    get_overlapping_gps_coords,
+    insert_shift_to_event_markers,
+    serialize_event_markers_to_string
+)
 from pymongo import MongoClient
 import os
 import pytz
@@ -128,9 +135,15 @@ events_list_content += """
     </div>
 """
 
-map_content = gen_gmp_advanced_marker_for_events_from_list(past_events_list, 'past')
-map_content += gen_gmp_advanced_marker_for_events_from_list(future_events_list, 'upcoming')
-map_content += gen_gmp_advanced_marker_for_events_from_list(planning_events_list, 'planning')
+event_markers = []
+event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(past_events_list, 'past'))
+event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(future_events_list, 'upcoming'))
+event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(planning_events_list, 'planning'))
+
+overlapping_gps_coords = get_overlapping_gps_coords(all_events_list)
+insert_shift_to_event_markers(event_markers, overlapping_gps_coords)
+
+map_content = serialize_event_markers_to_string(event_markers)
 
 # Read the index_template file
 with open('index_template.html', 'r', encoding='utf-8') as file:
