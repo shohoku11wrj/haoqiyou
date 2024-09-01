@@ -62,7 +62,7 @@
                             <div style='background-color:transparent;'>
                                 <img src="${event.icon_url}" style="width: 100%; height: 100%; background-color: transparent" />
                             </div>
-                            <div style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 5px; border-radius: 5px; text-align: center; white-space: nowrap; font-size: 15px;">
+                            <div class="tooltip-content" style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, -50%); padding: 5px, 0px; border-radius: 5px; text-align: center; white-space: nowrap; font-size: 15px;">
                                 ${event.date_span.month} <span style="color: #fc5200">${event.date_span.day}</span>
                             </div>
                         </div>
@@ -72,14 +72,6 @@
                         popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
                     });
                 }
-                // const marker = new google.maps.marker.AdvancedMarkerElement({
-                //     map: map,
-                //     position: { lat: event.position.lat + event.shift[0], lng: event.position.lng + event.shift[1] },
-                //     title: event.title,
-                //     gmpClickable: true,
-                //     content: iconElement,
-                // })
-                console.log("Creating marker at:", event.position.lat, event.position.lng);
                 var marker = L.marker([event.position.lat + event.shift[0], event.position.lng +  + event.shift[1]],
                                       { icon: customIcon }).addTo(map);
                 marker.bindTooltip(event.title);  //.openTooltip(); // by default, the tooltip is open
@@ -113,29 +105,11 @@
                     }).addTo(map);
                 }
             });
-            // Custom Overlay
-            class CustomOverlay extends google.maps.OverlayView {
-                constructor(map) {
-                    super();
-                    this.map = map;
-                    this.div = null;
-                    this.setMap(map);
-                }
-
-                onRemove() {
-                    if (this.div) {
-                        this.div.parentNode.removeChild(this.div);
-                        this.div = null;
-                    }
-                }
-            }
-
-            new CustomOverlay(map);
         }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
-></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAa-YWC_WqDbvhOCOtfl1xmRo3CvRSeck&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
+    ></script>
 </head>
 <body>
     <div class="top-bar-container">

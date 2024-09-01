@@ -172,6 +172,18 @@ body {
   flex-direction: column;
   box-sizing: border-box;
 }
+.custom-div-icon .tooltip-content {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+.custom-div-icon:hover .tooltip-content {
+  background-color: rgba(255, 255, 255, 1);
+}
 @media only screen and (min-width: 1000px) {
   .page-container {
       flex-direction: row; /* Change to row direction for larger screens */

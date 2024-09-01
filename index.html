@@ -7,6 +7,13 @@
     <link rel="shortcut icon" href="haoqiyou.ico" type="image/x-icon">
     <title>好骑友网(骑行活动收集器)</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Make sure Leaflet's CSS before JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51069014-1"></script>
     <script>
@@ -15,289 +22,6 @@
         gtag('js', new Date());
         gtag('config', 'UA-51069014-1');
     </script>
-    <script>
-        let map; // Declare map variable outside the function
-
-        function initMap() {
-            if (!map) { // Check if map is already initialized
-                const centerLocation = { lat: 37.4220656, lng: -122.0840897 };
-                map = new google.maps.Map(document.getElementById('map-container'), {
-                    center: centerLocation,
-                    zoom: 10,
-                    mapId: 'DEMO_MAP_ID'
-                });
-            }
-
-            const events=[
-                
-        {
-            title: "SEP 08: ✌🏻 Costa Mesa Specialized Ride)",
-            date_span: { month: "SEP", day: "08" },
-            position: { lat: 33.76202, lng: -117.8961 },
-            shift: [0, 0],
-            id: "event-66bce958be18d8701a365cae",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "AUG 25: 🍸",
-            date_span: { month: "AUG", day: "25" },
-            position: { lat: 33.89649, lng: -117.89353 },
-            shift: [0, 0],
-            id: "event-66bce958be18d8701a365ca3",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "SEP 15: 🤟🏻",
-            date_span: { month: "SEP", day: "15" },
-            position: { lat: 33.8059, lng: -117.87756 },
-            shift: [0, -0.03],
-            id: "event-66bce958be18d8701a365cb1",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "SEP 22: 🖖🏻",
-            date_span: { month: "SEP", day: "22" },
-            position: { lat: 33.80502, lng: -117.87595 },
-            shift: [0.03, 0],
-            id: "event-66bce958be18d8701a365cb6",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "SEP 01: ☝🏻",
-            date_span: { month: "SEP", day: "01" },
-            position: { lat: 33.68695, lng: -117.821 },
-            shift: [0, 0],
-            id: "event-66bce958be18d8701a365ca7",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "SEP 29: 🖐🏻",
-            date_span: { month: "SEP", day: "29" },
-            position: { lat: 33.78278, lng: -117.81839 },
-            shift: [0, 0],
-            id: "event-66bce958be18d8701a365cb7",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "AUG 24: 🌯 Mamba day GMR gate ->shack PR challenge. ",
-            date_span: { month: "AUG", day: "24" },
-            position: { lat: 34.15036, lng: -117.83908 },
-            shift: [0, 0],
-            id: "event-66bce958be18d8701a365ca2",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "SEP 01: Sunday Paradise loop (beginner/intermediate)",
-            date_span: { month: "SEP", day: "01" },
-            position: { lat: 37.80598, lng: -122.452 },
-            shift: [0, 0],
-            id: "event-66ce71df133c2e5c9e25b494",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "AUG 29: 14th Annual Silicon Valley Bike Summit",
-            date_span: { month: "AUG", day: "29" },
-            position: { lat: 37.655545, lng: -122.433568 },
-            shift: [0, 0],
-            id: "event-66bbc61499c68bc28d25042d",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "AUG 24: 周六下午1:30 龟速爬page mill",
-            date_span: { month: "AUG", day: "24" },
-            position: { lat: 37.42856, lng: -122.25082 },
-            shift: [0, -0.03],
-            id: "event-66c954dde99d56b3652a387e",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "JUL 27: 往西，越过天际(Skyline)吧骚年",
-            date_span: { month: "JUL", day: "27" },
-            position: { lat: 37.42856, lng: -122.25082 },
-            shift: [0.03, 0],
-            id: "event-66a7fb5f9719a87a0c2b7be9",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "AUG 25: Group Road Ride - Down Redwood Gulch",
-            date_span: { month: "AUG", day: "25" },
-            position: { lat: 37.22538, lng: -121.9826 },
-            shift: [0, -0.03],
-            id: "event-66c539cec68f86c19e9840f0",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "SEP 03: Mike's Bikes Shop Ride",
-            date_span: { month: "SEP", day: "03" },
-            position: { lat: 37.22634, lng: -121.98254 },
-            shift: [0.03, 0],
-            id: "event-66a5cbd49719a87a0cc4301e",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "SEP 02: Bonus Group Road Ride - 9, Skyline, OLH, Alpine",
-            date_span: { month: "SEP", day: "02" },
-            position: { lat: 37.22641, lng: -121.98229 },
-            shift: [0, 0.03],
-            id: "event-66cfc2f81c7c4054e1c36654",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "SEP 01: Group Road Ride - South IBM",
-            date_span: { month: "SEP", day: "01" },
-            position: { lat: 37.2262, lng: -121.98224 },
-            shift: [-0.03, 0],
-            id: "event-66ce71df133c2e5c9e25b492",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "AUG 24: Saturday Road Ride - Sierra via Metcalf",
-            date_span: { month: "AUG", day: "24" },
-            position: { lat: 37.22633, lng: -121.98218 },
-            shift: [0.03, -0.03],
-            id: "event-66c9248842db03b1bf9edb02",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "AUG 31: [LGBRC Rides] - Saturday Road Ride on August 31st, 2024 {Century Ride}",
-            date_span: { month: "AUG", day: "31" },
-            position: { lat: 37.22647, lng: -121.98211 },
-            shift: [0.03, 0.03],
-            id: "event-66ce71df133c2e5c9e25b48b",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "AUG 25: Sunday Los Gatos Beginner ride",
-            date_span: { month: "AUG", day: "25" },
-            position: { lat: 37.23536, lng: -121.96331 },
-            shift: [-0.03, 0.03],
-            id: "event-66c3979836c843fcbfcff266",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "SEP 08: 2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限",
-            date_span: { month: "SEP", day: "08" },
-            position: { lat: 37.425607, lng: -121.924527 },
-            shift: [0, 0],
-            id: "event-66c3eee6e9115b364c5ecb15",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-            ];
-
-            events.map(event=>{
-                const iconElement = document.createElement('div');
-                if (event.event_time_type != "upcoming") {
-                    iconElement.innerHTML = `<img src="${event.icon_url}" alt="Custom Icon" />`;
-                } else {
-                    iconElement.innerHTML = `
-                        <div style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, 0%); background-color: white; padding: 5px; border-radius: 5px; text-align: center; white-space: nowrap;">
-                            ${event.date_span.month} <span style="color: #fc5200">${event.date_span.day}</span>
-                        </div>
-                        <img src="${event.icon_url}" alt="Custom Icon" />
-                    `;
-                }
-                const marker = new google.maps.marker.AdvancedMarkerElement({
-                    map: map,
-                    position: { lat: event.position.lat + event.shift[0], lng: event.position.lng + event.shift[1] },
-                    title: event.title,
-                    gmpClickable: true,
-                    content: iconElement,
-                })
-                marker.addListener("gmp-click", ({ domEvent, latLng }) => {
-                    const eventDetails = document.getElementById(event.id).innerHTML;
-                    document.getElementById('popup-content').innerHTML = eventDetails;
-                    document.getElementById('popup-overlay').style.display = 'block';
-                    document.getElementById('popup').style.display = 'block';
-                    // Update the URL
-                    history.pushState(null, '', `?id=${event.id}`);
-                })
-                if (event.shift[0] != 0 || event.shift[1] != 0) {
-                    // Add a red dot at the original position
-                    const dot = new google.maps.Marker({
-                        position: { lat: event.position.lat, lng: event.position.lng },
-                        map: map,
-                        icon: {
-                            path: google.maps.SymbolPath.CIRCLE,
-                            scale: 5,
-                            fillColor: "#ff0000",
-                            fillOpacity: 1,
-                            strokeWeight: 0
-                        }
-                    });
-                    // Add a red line point from the original position to the shifted position
-                    const line = new google.maps.Polyline({
-                        path: [
-                            { lat: event.position.lat, lng: event.position.lng },
-                            { lat: event.position.lat + event.shift[0], lng: event.position.lng + event.shift[1] }
-                        ],
-                        map: map,
-                        strokeColor: "#ff0000",
-                        strokeOpacity: 0.5,
-                        strokeWeight: 3,
-                    })
-                }
-            });
-            // Custom Overlay
-            class CustomOverlay extends google.maps.OverlayView {
-                constructor(map) {
-                    super();
-                    this.map = map;
-                    this.div = null;
-                    this.setMap(map);
-                }
-
-                onRemove() {
-                    if (this.div) {
-                        this.div.parentNode.removeChild(this.div);
-                        this.div = null;
-                    }
-                }
-            }
-
-            new CustomOverlay(map);
-        }
-    </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeCN5e2OPSOEnTnVlKDyaXp7IJ2jPg9us&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
-    ></script>
 </head>
 <body>
     <div class="top-bar-container">
@@ -305,7 +29,7 @@
             <span class="top-bar"><a id="prod-link" href=".">好 骑 友</a></span>
         </div>
         <div class="column">
-            <span>Updated on 08/31/24 20:30</span><br/>
+            <span>Updated on 09/01/24 11:59</span><br/>
             <label>
                 <input type="checkbox" id="toggleExtra">
                 <span style="color:#0000ff">只显示精选活动</span>
@@ -384,7 +108,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 We look forward to enjoyable ride. See you on the road!</p>
     
             <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4JJJKBU5ZXOCPXKUFIX6PXC67VSH3Z3C7BE7OBYCSZKBBWDENRQH3PZMVJWQRF56NLD7NBMEPMT6JKJW2YTMKTNEAZ3QVZ7TT6HDDTQ=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SX4QAKEQZFR62QN774RXEM2WI2QF45C6KQR2ZYAQHVDP3DLCAXLUYETSEPNAGTRF5SFGAVHA4WGJHURLOVZH7PAMXGJ4GFIH7OKP4QY=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 01, 2024</p>
             <p><strong>集合GPS:</strong> 33.68695, -117.821</p>
@@ -421,7 +145,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735048" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4JJJKBU5ZXOCPXKUFIX6PXC67VSH3Z3C7BE7OBYCSZKBBWDENRQH3PZMVJWQRF56NLD7NBMEPMT6JKJW2YTMKTNEAZ3QVZ7TT6HDDTQ=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SX4QAKEQZFR62QN774RXEM2WI2QF45C6KQR2ZYAQHVDP3DLCAXLUYETSEPNAGTRF5SFGAVHA4WGJHURLOVZH7PAMXGJ4GFIH7OKP4QY=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -448,7 +172,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             <p class="event-description">Route will head out over Shannon, Hicks to Camden and into the neighborhoods at Leyland Park Dr.  We will stop at the bathrooms/water on Mockingbird Hill Ln (12 miles into the ride).  Then summit IBM hill before returning to Mikes Bikes.</p>
     
             <a href="https://www.strava.com/clubs/265/group_events/1760593" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ROHUECV3DNUPTES2GYRLTBWJKZ2VUA4E7BVUVD76TZCWKDQEV2MBRR6NRZLCNJLQA4R6KZLLFT6XVUUWMLFRBKKCD7YF5CIMOUM7HOI=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/FOTHUPUDRQZUG3F2ECT6UXYKQVYLPQATD4USLBDH5KGPIADCNKCUVRHCIXR35EKNUNA447L6F7JBWB35ABRC6U6RBIYF773O36S7ANI=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 8:30 AM, Sunday, SEP 01, 2024</p>
             <p><strong>集合GPS:</strong> 37.2262, -121.98224</p>
@@ -485,7 +209,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/265/group_events/1760593" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ROHUECV3DNUPTES2GYRLTBWJKZ2VUA4E7BVUVD76TZCWKDQEV2MBRR6NRZLCNJLQA4R6KZLLFT6XVUUWMLFRBKKCD7YF5CIMOUM7HOI=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/FOTHUPUDRQZUG3F2ECT6UXYKQVYLPQATD4USLBDH5KGPIADCNKCUVRHCIXR35EKNUNA447L6F7JBWB35ABRC6U6RBIYF773O36S7ANI=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -515,7 +239,7 @@ We look forward to enjoyable ride. See you on the road!</p>
 -Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.</p>
     
             <a href="https://www.strava.com/clubs/1157973/group_events/1760374" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/B7SPLO3F2XRICHZMPJAAVDRQDEITEMBHUUIKN2RAJFJWBP2ECEZA2M2XONJE7ULYSO7M2XFEB3GGWJ5FXXPD3JYNUCVQHBWDEHM4XSY=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/D4VIUC7UCJDX5ITXWQL5YVMCRWIQHXJXKILR7T75R5LE5TOSJBPYXNEWGU43H4WGQQMJ4WLWKFRBGHVTPXX2IZEOXDHZWZ542HMNNRI=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 9:00 AM, Sunday, SEP 01, 2024</p>
             <p><strong>集合GPS:</strong> 37.80598, -122.452</p>
@@ -556,7 +280,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/1157973/group_events/1760374" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/B7SPLO3F2XRICHZMPJAAVDRQDEITEMBHUUIKN2RAJFJWBP2ECEZA2M2XONJE7ULYSO7M2XFEB3GGWJ5FXXPD3JYNUCVQHBWDEHM4XSY=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/D4VIUC7UCJDX5ITXWQL5YVMCRWIQHXJXKILR7T75R5LE5TOSJBPYXNEWGU43H4WGQQMJ4WLWKFRBGHVTPXX2IZEOXDHZWZ542HMNNRI=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -583,7 +307,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             <p class="event-description"></p>
     
             <a href="https://www.strava.com/clubs/265/group_events/1761192" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/53FG3MASSLPTDZUMAZCPK5NDALU7IMJRMND2INEHOHYW7XB7ELLHJT7ZBMUJIULVNZ3FSTUVZOL5RHQOGEPREJ4FDYEVYDE4YLSRTWA=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZTVEQ2FKTAK3IMEGKMW2EP6EPTAL6VE3WTPWTA2M4TNJC7BVVYUKEKLZEOZQIYSR43NPL4FER6Z5ASP77ME57MXV27W6C2DWYF5MGSY=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 8:30 AM, Monday, SEP 02, 2024</p>
             <p><strong>集合GPS:</strong> 37.22641, -121.98229</p>
@@ -620,7 +344,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/265/group_events/1761192" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/53FG3MASSLPTDZUMAZCPK5NDALU7IMJRMND2INEHOHYW7XB7ELLHJT7ZBMUJIULVNZ3FSTUVZOL5RHQOGEPREJ4FDYEVYDE4YLSRTWA=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZTVEQ2FKTAK3IMEGKMW2EP6EPTAL6VE3WTPWTA2M4TNJC7BVVYUKEKLZEOZQIYSR43NPL4FER6Z5ASP77ME57MXV27W6C2DWYF5MGSY=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -647,7 +371,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             <p class="event-description">Mike's Bikes shop ride led by Mike's Bikes shop employees.  We roll as soon as they close the store (6:10 to 6:15-ish).  </p>
     
             <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/TX4OUCRFX2P37MU7MGISAO72CQG3PIBVMYHUWT7RY7EBBKHSB2GHGLODQTDAJGNRDVISW26NGK6UHQ3WIGU2LKJ6FYQKUUYYGWI6IOY=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/NGMP2YXSYWJI2FPOTVBZ72CFEWEN6GLE4Z3OTQLVYGG7XPTLTEGD7FOZFYZFMHBBJUDJFMTXSNLSSL76BQI6VVGF6ZPCZJFETJODDGQ=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 6:10 PM, Tuesday, SEP 03, 2024</p>
             <p><strong>集合GPS:</strong> 37.22634, -121.98254</p>
@@ -684,7 +408,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/265/group_events/1636084" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/TX4OUCRFX2P37MU7MGISAO72CQG3PIBVMYHUWT7RY7EBBKHSB2GHGLODQTDAJGNRDVISW26NGK6UHQ3WIGU2LKJ6FYQKUUYYGWI6IOY=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/NGMP2YXSYWJI2FPOTVBZ72CFEWEN6GLE4Z3OTQLVYGG7XPTLTEGD7FOZFYZFMHBBJUDJFMTXSNLSSL76BQI6VVGF6ZPCZJFETJODDGQ=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -744,7 +468,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 We look forward to enjoyable ride. See you on the road!</p>
     
             <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/XUM3I72UOGJF4MFAH5SO3QGIXMJVGUN77IPMF2VCQ3BTZBERRTCTLODSLPW3U547DPXJ2VBV5BM6BORHPYAHVETQKIC4G35WPVOK6OA=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/BUFOGVLDW3RPTZDT6VAD6UOGXHPSZ2G6RD6AY6W2EQSUS7PJ3FUECR32GHWDM2DO6DMOROST6GMQII2K3OME6J4QGBTCTLQQSU7AGDI=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 6:45 AM, Sunday, SEP 08, 2024</p>
             <p><strong>集合GPS:</strong> 33.76202, -117.8961</p>
@@ -781,7 +505,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735049" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/XUM3I72UOGJF4MFAH5SO3QGIXMJVGUN77IPMF2VCQ3BTZBERRTCTLODSLPW3U547DPXJ2VBV5BM6BORHPYAHVETQKIC4G35WPVOK6OA=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/BUFOGVLDW3RPTZDT6VAD6UOGXHPSZ2G6RD6AY6W2EQSUS7PJ3FUECR32GHWDM2DO6DMOROST6GMQII2K3OME6J4QGBTCTLQQSU7AGDI=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -896,7 +620,7 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
 -Disclaimer: Attendant must wear protective gears, obey traffic laws, and understand cycling's risky nature. The event organizers are not liable for any accidents or injuries if it happens.</p>
     
             <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/QWAIVABTZDV2OYR3TFXOKNDJV3GVPS7VGXDDVMSG4COLO5VLPTNFDQJXC2G5QD6BJ5O6GLIBQFYIK3M3ZGDU4YLMN6OTPFPWSAKDDXY=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/IFGKHKNV7RQRTIQR3GUGPCWNB7T57WYLGYNRBTJ255E5AL5RKRV43IZG2H35ADMEG5VLT5ZGZQVN4AW3JICZFOGAGEV4QL43QIGPAII=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 8:30 AM, Sunday, SEP 08, 2024</p>
             <p><strong>集合GPS:</strong> </p>
@@ -931,7 +655,7 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/1157973/group_events/1752770" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/QWAIVABTZDV2OYR3TFXOKNDJV3GVPS7VGXDDVMSG4COLO5VLPTNFDQJXC2G5QD6BJ5O6GLIBQFYIK3M3ZGDU4YLMN6OTPFPWSAKDDXY=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/IFGKHKNV7RQRTIQR3GUGPCWNB7T57WYLGYNRBTJ255E5AL5RKRV43IZG2H35ADMEG5VLT5ZGZQVN4AW3JICZFOGAGEV4QL43QIGPAII=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -942,10 +666,6 @@ Also see: <a href="https://www.strava.com/clubs/1157973/group_events/1752770" ta
             </div>
         </div>
         
-        </div>
-        <h2>Planning Events <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" alt="Blue Marker" /></h2>
-        <div class="events-container">
-
         <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cb1">
             <a href="?id=event-66bce958be18d8701a365cb1" class="event-link"></a>
             <div class="event-section">
@@ -995,7 +715,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 We look forward to enjoyable ride. See you on the road!</p>
     
             <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/G3WXYLHENJAAHZYXMTXBAQJBU625RTNGK4OILZO6FNXFKNBDKX4DIEKLVLL5ZTCB73FE74HSOP4GUCYT4G5C6XK3F3TMOUHQYE56EIQ=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5LEJEFELHKXUIVXFPLDC27SNAMVAX33UNQ4XEBWFAIG2HHYTPW367RA7IZ4UBSR2TKBRQFXTVPTTF46ESZA5B3RANUK5TEQ3RIIUM5Y=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 15, 2024</p>
             <p><strong>集合GPS:</strong> 33.8059, -117.87756</p>
@@ -1032,7 +752,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735050" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/G3WXYLHENJAAHZYXMTXBAQJBU625RTNGK4OILZO6FNXFKNBDKX4DIEKLVLL5ZTCB73FE74HSOP4GUCYT4G5C6XK3F3TMOUHQYE56EIQ=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5LEJEFELHKXUIVXFPLDC27SNAMVAX33UNQ4XEBWFAIG2HHYTPW367RA7IZ4UBSR2TKBRQFXTVPTTF46ESZA5B3RANUK5TEQ3RIIUM5Y=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1043,6 +763,10 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
         </div>
         
+        </div>
+        <h2>Planning Events <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" alt="Blue Marker" /></h2>
+        <div class="events-container">
+
         <div class="event extra-event" data-event-id="event-66bce958be18d8701a365cb6">
             <a href="?id=event-66bce958be18d8701a365cb6" class="event-link"></a>
             <div class="event-section">
@@ -1092,7 +816,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 We look forward to enjoyable ride. See you on the road!</p>
     
             <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/DGI4YUHZ7A7LR5BKA25MPH7A3WN53N7JVH4QLFHCROORFB3PIZTFJG3SFCAIAMIPGAYM7H3JZHQ5GOU6YA66NKI6Z6LF5OK7XUDNQEI=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SK6UL557UFBO3SIQLSG32WEZUP4QRBS6MTQO34DUCYXEYNZQ37DH7COVURXEHZQSAJRABTFZ5SKRFWTNWML4XX36JUEG54HHFUIEZ3A=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 22, 2024</p>
             <p><strong>集合GPS:</strong> 33.80502, -117.87595</p>
@@ -1129,7 +853,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735051" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/DGI4YUHZ7A7LR5BKA25MPH7A3WN53N7JVH4QLFHCROORFB3PIZTFJG3SFCAIAMIPGAYM7H3JZHQ5GOU6YA66NKI6Z6LF5OK7XUDNQEI=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SK6UL557UFBO3SIQLSG32WEZUP4QRBS6MTQO34DUCYXEYNZQ37DH7COVURXEHZQSAJRABTFZ5SKRFWTNWML4XX36JUEG54HHFUIEZ3A=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1189,7 +913,7 @@ Join us for our Sunday group ride! Here are the key details and rules to ensure 
 We look forward to enjoyable ride. See you on the road!</p>
     
             <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OIPXTMLASKIIQHCSS5K6KHAPVPEUXDNJGC7XPCAYZEM6PALP77VP3ZUGJDLNDFZMNXYGLVUSSFI3HA5FKP423YIPDRSFU2TQB235Z2I=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UV3FQBU6S7I45H74WG4DW7V3RQHJCNCQPHKKAMOS7C5UUNM6T6ULXA5SIEPCPJOXAAPNK4CA3BWBFWZFAOLZBOINWJRDI367UK5LWIQ=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 7:00 AM, Sunday, SEP 29, 2024</p>
             <p><strong>集合GPS:</strong> 33.78278, -117.81839</p>
@@ -1226,7 +950,7 @@ We look forward to enjoyable ride. See you on the road!</p>
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/908336/group_events/1735052" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OIPXTMLASKIIQHCSS5K6KHAPVPEUXDNJGC7XPCAYZEM6PALP77VP3ZUGJDLNDFZMNXYGLVUSSFI3HA5FKP423YIPDRSFU2TQB235Z2I=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UV3FQBU6S7I45H74WG4DW7V3RQHJCNCQPHKKAMOS7C5UUNM6T6ULXA5SIEPCPJOXAAPNK4CA3BWBFWZFAOLZBOINWJRDI367UK5LWIQ=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1264,7 +988,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
 这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。</p>
     
             <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/IHIG46K3VV5J6Z6VJKXPV3XFKCCIICORN5XC4TRE4HDMRDKF46F4GSIU6TJ3266SAFQ4OABH53PI72GRNCR4LKCKVLXXWNW4LCXJUKQ=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZPEXYVMXGOGYNHUFIOV6K7D45ICNDSODORABFLEOW2HIJNQZRWZZEMZATIJZB6DRPFGYZHEC5VZLT46C2RQXM57YMXVBIBGJ2TT6WLY=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 9:00 AM, Sunday, JUL 27, 2025</p>
             <p><strong>集合GPS:</strong> 37.42856, -122.25082</p>
@@ -1303,7 +1027,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/1263183/group_events/1732636" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/IHIG46K3VV5J6Z6VJKXPV3XFKCCIICORN5XC4TRE4HDMRDKF46F4GSIU6TJ3266SAFQ4OABH53PI72GRNCR4LKCKVLXXWNW4LCXJUKQ=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZPEXYVMXGOGYNHUFIOV6K7D45ICNDSODORABFLEOW2HIJNQZRWZZEMZATIJZB6DRPFGYZHEC5VZLT46C2RQXM57YMXVBIBGJ2TT6WLY=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1338,7 +1062,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
  As always, if you are planning on joining it would be great if you could RSVP on the strava event, so that I can keep you updated on any changes of plan. Also feel free to contact me in private for more info or to coordinate the ride.</p>
     
             <a href="https://www.strava.com/clubs/265/group_events/1760573" target="_blank" class="event-link">
-                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/YNP3MPOOCWRHV3FVK7FALKZT7YFO3MQMC3UA6ENR4Q7Y232PHCRMRM7ZXLNBPF35P3Z5ZPM2IC733KY54BGM4NWAXCOCLPSSESS6OKQ=" alt="Route Image" width="100%">
+                <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/C7AEXAPSHXNBI4IYKWCUN4C4YF7U7X5UKY7HRGVE4GORBO56ELNH6T27XHZSQLGWSIWD3MO63LKZFWCVFGXSTBUW2VR65NEVPZDSDBY=" alt="Route Image" width="100%">
             </a>
             <p><strong>时间:</strong> 8:30 AM, Saturday, AUG 31, 2024</p>
             <p><strong>集合GPS:</strong> 37.22647, -121.98211</p>
@@ -1375,7 +1099,7 @@ Redwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gre
             </div>
             <div class="event-section">
                 <a href="https://www.strava.com/clubs/265/group_events/1760573" target="_blank" class="event-link">
-                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/YNP3MPOOCWRHV3FVK7FALKZT7YFO3MQMC3UA6ENR4Q7Y232PHCRMRM7ZXLNBPF35P3Z5ZPM2IC733KY54BGM4NWAXCOCLPSSESS6OKQ=" alt="Route Image" width="100%">
+                    <img src="https://d3o5xota0a1fcr.cloudfront.net/v6/maps/C7AEXAPSHXNBI4IYKWCUN4C4YF7U7X5UKY7HRGVE4GORBO56ELNH6T27XHZSQLGWSIWD3MO63LKZFWCVFGXSTBUW2VR65NEVPZDSDBY=" alt="Route Image" width="100%">
                 </a>
             </div>
             <div class="event-section">
@@ -1902,6 +1626,284 @@ Elevation- ⭐️⭐️⭐️⭐️</p>
         <div class="map-container" id="map-container">
             <!-- The map will be rendered here -->
         </div>
+        <script>
+            let map; // Declare map variable outside the function
+    
+            function initMap() {
+                if (!map) { // Check if map is already initialized
+                    const centerLocation = [37.53, -122.23];
+                    map = L.map('map-container').setView(centerLocation, 10);
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    }).addTo(map);
+                }
+    
+                const events=[
+                    
+        {
+            title: "SEP 08: ✌🏻 Costa Mesa Specialized Ride)",
+            date_span: { month: "SEP", day: "08" },
+            position: { lat: 33.76202, lng: -117.8961 },
+            shift: [0, 0],
+            id: "event-66bce958be18d8701a365cae",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "AUG 25: 🍸",
+            date_span: { month: "AUG", day: "25" },
+            position: { lat: 33.89649, lng: -117.89353 },
+            shift: [0, 0],
+            id: "event-66bce958be18d8701a365ca3",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "SEP 15: 🤟🏻",
+            date_span: { month: "SEP", day: "15" },
+            position: { lat: 33.8059, lng: -117.87756 },
+            shift: [0, -0.03],
+            id: "event-66bce958be18d8701a365cb1",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 22: 🖖🏻",
+            date_span: { month: "SEP", day: "22" },
+            position: { lat: 33.80502, lng: -117.87595 },
+            shift: [0.03, 0],
+            id: "event-66bce958be18d8701a365cb6",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "SEP 01: ☝🏻",
+            date_span: { month: "SEP", day: "01" },
+            position: { lat: 33.68695, lng: -117.821 },
+            shift: [0, 0],
+            id: "event-66bce958be18d8701a365ca7",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 29: 🖐🏻",
+            date_span: { month: "SEP", day: "29" },
+            position: { lat: 33.78278, lng: -117.81839 },
+            shift: [0, 0],
+            id: "event-66bce958be18d8701a365cb7",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "AUG 24: 🌯 Mamba day GMR gate ->shack PR challenge. ",
+            date_span: { month: "AUG", day: "24" },
+            position: { lat: 34.15036, lng: -117.83908 },
+            shift: [0, 0],
+            id: "event-66bce958be18d8701a365ca2",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "SEP 01: Sunday Paradise loop (beginner/intermediate)",
+            date_span: { month: "SEP", day: "01" },
+            position: { lat: 37.80598, lng: -122.452 },
+            shift: [0, 0],
+            id: "event-66ce71df133c2e5c9e25b494",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "AUG 29: 14th Annual Silicon Valley Bike Summit",
+            date_span: { month: "AUG", day: "29" },
+            position: { lat: 37.655545, lng: -122.433568 },
+            shift: [0, 0],
+            id: "event-66bbc61499c68bc28d25042d",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "AUG 24: 周六下午1:30 龟速爬page mill",
+            date_span: { month: "AUG", day: "24" },
+            position: { lat: 37.42856, lng: -122.25082 },
+            shift: [0, -0.03],
+            id: "event-66c954dde99d56b3652a387e",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "JUL 27: 往西，越过天际(Skyline)吧骚年",
+            date_span: { month: "JUL", day: "27" },
+            position: { lat: 37.42856, lng: -122.25082 },
+            shift: [0.03, 0],
+            id: "event-66a7fb5f9719a87a0c2b7be9",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "AUG 25: Group Road Ride - Down Redwood Gulch",
+            date_span: { month: "AUG", day: "25" },
+            position: { lat: 37.22538, lng: -121.9826 },
+            shift: [0, -0.03],
+            id: "event-66c539cec68f86c19e9840f0",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "SEP 03: Mike's Bikes Shop Ride",
+            date_span: { month: "SEP", day: "03" },
+            position: { lat: 37.22634, lng: -121.98254 },
+            shift: [0.03, 0],
+            id: "event-66a5cbd49719a87a0cc4301e",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 02: Bonus Group Road Ride - 9, Skyline, OLH, Alpine",
+            date_span: { month: "SEP", day: "02" },
+            position: { lat: 37.22641, lng: -121.98229 },
+            shift: [0, 0.03],
+            id: "event-66cfc2f81c7c4054e1c36654",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 01: Group Road Ride - South IBM",
+            date_span: { month: "SEP", day: "01" },
+            position: { lat: 37.2262, lng: -121.98224 },
+            shift: [-0.03, 0],
+            id: "event-66ce71df133c2e5c9e25b492",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "AUG 24: Saturday Road Ride - Sierra via Metcalf",
+            date_span: { month: "AUG", day: "24" },
+            position: { lat: 37.22633, lng: -121.98218 },
+            shift: [0.03, -0.03],
+            id: "event-66c9248842db03b1bf9edb02",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "AUG 31: [LGBRC Rides] - Saturday Road Ride on August 31st, 2024 {Century Ride}",
+            date_span: { month: "AUG", day: "31" },
+            position: { lat: 37.22647, lng: -121.98211 },
+            shift: [0.03, 0.03],
+            id: "event-66ce71df133c2e5c9e25b48b",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "AUG 25: Sunday Los Gatos Beginner ride",
+            date_span: { month: "AUG", day: "25" },
+            position: { lat: 37.23536, lng: -121.96331 },
+            shift: [-0.03, 0.03],
+            id: "event-66c3979836c843fcbfcff266",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "SEP 08: 2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限",
+            date_span: { month: "SEP", day: "08" },
+            position: { lat: 37.425607, lng: -121.924527 },
+            shift: [0, 0],
+            id: "event-66c3eee6e9115b364c5ecb15",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+                ];
+    
+                events.map(event=>{
+                    var customIcon = null;
+                    const iconElement = document.createElement('div');
+                    if (event.event_time_type != "upcoming") {
+                        customIcon = L.divIcon({
+                            className: 'custom-div-icon',
+                            html: `
+                            <div style='background-color:transparent;'>
+                                <img src="${event.icon_url}" style="width: 100%; height: 100%; background-color: transparent" />
+                            </div>
+                            `,
+                            iconSize: [32, 32], // Size of the icon
+                            iconAnchor: [16, 30], // Point of the icon which will correspond to marker's location
+                            popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
+                        });
+                    } else {
+                        customIcon = L.divIcon({
+                            className: 'custom-div-icon',
+                            html: `
+                            <div style="position: relative; width: 32px; height: 32px; background-color: transparent">
+                                <div style='background-color:transparent;'>
+                                    <img src="${event.icon_url}" style="width: 100%; height: 100%; background-color: transparent" />
+                                </div>
+                                <div class="tooltip-content" style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, -50%); padding: 5px, 0px; border-radius: 5px; text-align: center; white-space: nowrap; font-size: 15px;">
+                                    ${event.date_span.month} <span style="color: #fc5200">${event.date_span.day}</span>
+                                </div>
+                            </div>
+                            `,
+                            iconSize: [32, 32], // Size of the icon
+                            iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
+                            popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
+                        });
+                    }
+                    var marker = L.marker([event.position.lat + event.shift[0], event.position.lng +  + event.shift[1]],
+                                          { icon: customIcon }).addTo(map);
+                    marker.bindTooltip(event.title);  //.openTooltip(); // by default, the tooltip is open
+                    marker.on('click', function() {
+                        const eventDetails = document.getElementById(event.id).innerHTML;
+                        document.getElementById('popup-content').innerHTML = eventDetails;
+                        document.getElementById('popup-overlay').style.display = 'block';
+                        document.getElementById('popup').style.display = 'block';
+                        // Update the URL
+                        history.pushState(null, '', `?id=${event.id}`);
+                    });
+                    if (event.shift[0] != 0 || event.shift[1] != 0) {
+                        // Add a red dot at the original position
+                        var dot = L.circleMarker([event.position.lat, event.position.lng], {
+                            radius: 5,
+                            fillColor: "#ff0000",
+                            color: "#ff0000",
+                            weight: 1,
+                            opacity: 1,
+                            fillOpacity: 1
+                        }).addTo(map);
+    
+                        // Add a red line from the original position to the shifted position
+                        var line = L.polyline([
+                            [event.position.lat, event.position.lng],
+                            [event.position.lat + event.shift[0], event.position.lng + event.shift[1]]
+                        ], {
+                            color: "#ff0000",
+                            weight: 3,
+                            opacity: 0.5
+                        }).addTo(map);
+                    }
+                });
+            }
+        </script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAa-YWC_WqDbvhOCOtfl1xmRo3CvRSeck&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
+        ></script>
     </div>
 
     <div class="popup-overlay" id="popup-overlay"></div>
