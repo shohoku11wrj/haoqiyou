@@ -8,6 +8,13 @@
     <title>好骑友网(骑行活动收集器)</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="dev_style.css">
+    <!-- Make sure Leaflet's CSS before JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51069014-1"></script>
     <script>
@@ -21,12 +28,12 @@
 
         function initMap() {
             if (!map) { // Check if map is already initialized
-                const centerLocation = { lat: 37.4220656, lng: -122.0840897 };
-                map = new google.maps.Map(document.getElementById('map-container'), {
-                    center: centerLocation,
-                    zoom: 10,
-                    mapId: 'DEMO_MAP_ID'
-                });
+                const centerLocation = [37.53, -122.23];
+                map = L.map('map-container').setView(centerLocation, 10);
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
             }
 
             const events=[
@@ -34,56 +41,76 @@
             ];
             
             events.map(event=>{
-                const iconElement = document.createElement('div');
+                var customIcon = null;
                 if (event.event_time_type != "upcoming") {
-                    iconElement.innerHTML = `<img src="${event.icon_url}" alt="Custom Icon" />`;
-                } else {
-                    iconElement.innerHTML = `
-                        <div style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, 0%); background-color: white; padding: 5px; border-radius: 5px; text-align: center; white-space: nowrap;">
-                            ${event.date_span.month} <span style="color: #fc5200">${event.date_span.day}</span>
+                    customIcon = L.divIcon({
+                        className: 'custom-div-icon',
+                        html: `
+                        <div style='background-color:transparent;'>
+                            <img src="${event.icon_url}" style="width: 100%; height: 100%; background-color: transparent" />
                         </div>
-                        <img src="${event.icon_url}" alt="Custom Icon" />
-                    `;
+                        `,
+                        iconSize: [32, 32], // Size of the icon
+                        iconAnchor: [16, 30], // Point of the icon which will correspond to marker's location
+                        popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
+                    });
+                } else {
+                    customIcon = L.divIcon({
+                        className: 'custom-div-icon',
+                        html: `
+                        <div style="position: relative; width: 32px; height: 32px; background-color: transparent">
+                            <div style='background-color:transparent;'>
+                                <img src="${event.icon_url}" style="width: 100%; height: 100%; background-color: transparent" />
+                            </div>
+                            <div style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 5px; border-radius: 5px; text-align: center; white-space: nowrap; font-size: 15px;">
+                                ${event.date_span.month} <span style="color: #fc5200">${event.date_span.day}</span>
+                            </div>
+                        </div>
+                        `,
+                        iconSize: [32, 32], // Size of the icon
+                        iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
+                        popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
+                    });
                 }
-                const marker = new google.maps.marker.AdvancedMarkerElement({
-                    map: map,
-                    position: { lat: event.position.lat + event.shift[0], lng: event.position.lng + event.shift[1] },
-                    title: event.title,
-                    gmpClickable: true,
-                    content: iconElement,
-                })
-                marker.addListener("gmp-click", ({ domEvent, latLng }) => {
+                // const marker = new google.maps.marker.AdvancedMarkerElement({
+                //     map: map,
+                //     position: { lat: event.position.lat + event.shift[0], lng: event.position.lng + event.shift[1] },
+                //     title: event.title,
+                //     gmpClickable: true,
+                //     content: iconElement,
+                // })
+                console.log("Creating marker at:", event.position.lat, event.position.lng);
+                var marker = L.marker([event.position.lat + event.shift[0], event.position.lng +  + event.shift[1]],
+                                      { icon: customIcon }).addTo(map);
+                marker.bindTooltip(event.title);  //.openTooltip(); // by default, the tooltip is open
+                marker.on('click', function() {
                     const eventDetails = document.getElementById(event.id).innerHTML;
                     document.getElementById('popup-content').innerHTML = eventDetails;
                     document.getElementById('popup-overlay').style.display = 'block';
                     document.getElementById('popup').style.display = 'block';
                     // Update the URL
                     history.pushState(null, '', `?id=${event.id}`);
-                })
+                });
                 if (event.shift[0] != 0 || event.shift[1] != 0) {
                     // Add a red dot at the original position
-                    const dot = new google.maps.Marker({
-                        position: { lat: event.position.lat, lng: event.position.lng },
-                        map: map,
-                        icon: {
-                            path: google.maps.SymbolPath.CIRCLE,
-                            scale: 5,
-                            fillColor: "#ff0000",
-                            fillOpacity: 1,
-                            strokeWeight: 0
-                        }
-                    });
-                    // Add a red line point from the original position to the shifted position
-                    const line = new google.maps.Polyline({
-                        path: [
-                            { lat: event.position.lat, lng: event.position.lng },
-                            { lat: event.position.lat + event.shift[0], lng: event.position.lng + event.shift[1] }
-                        ],
-                        map: map,
-                        strokeColor: "#ff0000",
-                        strokeOpacity: 0.5,
-                        strokeWeight: 3,
-                    })
+                    var dot = L.circleMarker([event.position.lat, event.position.lng], {
+                        radius: 5,
+                        fillColor: "#ff0000",
+                        color: "#ff0000",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 1
+                    }).addTo(map);
+
+                    // Add a red line from the original position to the shifted position
+                    var line = L.polyline([
+                        [event.position.lat, event.position.lng],
+                        [event.position.lat + event.shift[0], event.position.lng + event.shift[1]]
+                    ], {
+                        color: "#ff0000",
+                        weight: 3,
+                        opacity: 0.5
+                    }).addTo(map);
                 }
             });
             // Custom Overlay
