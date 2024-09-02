@@ -110,7 +110,7 @@
                     }
                     var marker = L.marker([event.position.lat + event.shift[0], event.position.lng +  + event.shift[1]],
                                           { icon: customIcon }).addTo(map);
-                    marker.bindTooltip(event.title);  //.openTooltip(); // by default, the tooltip is open
+                    marker.bindTooltip(event.title, { className: 'custom-tooltip' });  //.openTooltip(); // by default, the tooltip is open
                     marker.on('click', function() {
                         const eventDetails = document.getElementById(event.id).innerHTML;
                         document.getElementById('popup-content').innerHTML = eventDetails;

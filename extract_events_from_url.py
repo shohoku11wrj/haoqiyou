@@ -1,9 +1,58 @@
+import json
+import google.generativeai as genai
+import os
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Set up OpenAI API key
+genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
 # Calculate the cutoff date (two weeks ago from today)
 CUTOFF_DATE = datetime.now() - timedelta(weeks=2)
+
+def extract_detail_feilds(html_content):
+    fields_prompt_map = {
+        'organizer: ': '<strong>Ride Leader</strong>: John<strong>. Expected Value: John',
+        'meetup_time: ': 'The start time of the event. For example: given the text of "Time:  Saturday, gather at 9am. rolling by 9:15am". Expected Value: 09:00',
+    }
+    prompt = f"Extract the following fields ${fields_prompt_map.keys} about riding event from the following text:\n```\n{html_content}\n```\nHere are some examples of the fields and their context to extract:\n"
+    for field, context in fields_prompt_map.items():
+        prompt += f"Field: {field}, Context: {context}\n"
+    prompt += '\nThe output should be json format, for example:\n{"organizer": "John", "meetup_time": "09:00"}\n'
+    prompt += '\nFor each riding event, just generate the ${fields_prompt_map.keys} fields.\n'
+
+    try:
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        response = model.generate_content(prompt)
+        # response = genai.generate_text(
+        #     model="models/gemini-1.5-flash-001",
+        #     prompt=prompt,
+        #     temperature=1,
+        #     max_output_tokens=100
+        # )
+        # Process the response
+        if response.text:
+            print("response", response.text)
+        else:
+            # Handle potential errors gracefully
+            print(f"Error: {response.error}")
+        # Example response: response ```json\n{"organizer": "John", "meetup_time": "09:00"}\n```
+        ai_response = response.text.strip()
+        response_json = ai_response.split('json\n')[1].strip()
+        return response_json
+        # return {
+        #     'organizer': ai_response.split('organizer: ')[1].split('\n')[0].strip(),
+        #     'meetup_time': ai_response.split('meetup_time: ')[1].strip()
+        # }
+    except Exception as e:
+        print("Error extracting details: ", e)
+        return {}
+
 
 def fetch_events(url):
     response = requests.get(url)
@@ -27,7 +76,6 @@ def parse_single_event(event):
     # for example: <a href="https://maps.app.goo.gl/emgD6hdD9fLTaJch6"><strong><em>Summit Bicycles</em>&nbsp;</strong></a>
     # meet_up_location_tag = description_tag.find('a', href=True, text=True)
     # event.date sample: 8/21/24, event.time sample: 9am
-    event_time_str = event['date'] + ':00.000-07:00'
 
     # Extract specific details from the description
     date_time_str = ''
@@ -47,6 +95,15 @@ def parse_single_event(event):
             if 'Ride Leader' in text:
                 ride_leader = text.split('Ride Leader:')[1].strip()
 
+    # Extract the event details using AI
+    detail_feilds = extract_detail_feilds(description_tag)
+    # Example: {"organizer": "John", "meetup_time": "09:00"}
+    print("Extracted details: ", detail_feilds)
+    # Parse the string to json
+    detail_feilds = json.loads(detail_feilds)
+    ride_leader = detail_feilds['organizer'] if 'organizer' in detail_feilds else ride_leader
+    event_time_str = event['date'] + detail_feilds['meetup_time'] +':00.000-07:00'
+
     event_details = {
         'source_type': 'webpage',
         'source_event_id': {
@@ -64,7 +121,7 @@ def parse_single_event(event):
         'gps_coordinates': '37.426627, -122.144647',  # Example coordinates, you may need to extract this dynamically
         'is_active': True,
         'meet_up_location': start_location,
-        'organizer': ride_leader,
+        'organizer': detail_feilds['organizer'] if 'organizer' in detail_feilds else ride_leader,
         'strava_url': strava_url,
         'source_group_name': 'Alto Velo C Ride',
         'title': event['title'],
