@@ -42,9 +42,8 @@ def extract_detail_feilds(html_content):
             # Handle potential errors gracefully
             print(f"Error: {response.error}")
         # Example response: response ```json\n{"organizer": "John", "meetup_time": "09:00"}\n```
-        ai_response = response.text.strip()
-        response_json = ai_response.split('json\n')[1].strip()
-        return response_json
+        ai_response = response.text.lstrip('```json').rstrip('```').strip()
+        return ai_response
         # return {
         #     'organizer': ai_response.split('organizer: ')[1].split('\n')[0].strip(),
         #     'meetup_time': ai_response.split('meetup_time: ')[1].strip()
@@ -97,8 +96,8 @@ def parse_single_event(event):
 
     # Extract the event details using AI
     detail_feilds = extract_detail_feilds(description_tag)
-    # Example: {"organizer": "John", "meetup_time": "09:00"}
-    print("Extracted details: ", detail_feilds)
+    # Example: ```json{"organizer": "John", "meetup_time": "09:00"}````
+    print("Extracted details: ", detail_feilds.strip())
     # Parse the string to json
     detail_feilds = json.loads(detail_feilds)
     ride_leader = detail_feilds['organizer'] if 'organizer' in detail_feilds else ride_leader
