@@ -1,6 +1,65 @@
 
 let currentPolyline = null; // Variable to store the current polyline
 
+function getRoutePolyline(eventId) {
+    var polylineElement = document.querySelector(`[data-event-id="${eventId}-route-polyline"]`);
+    if (polylineElement) {
+        var routePolyline = polylineElement.innerHTML.trim();
+        if (routePolyline) {
+            var latLngs = decodePolyline(routePolyline);
+            return L.polyline(latLngs, {
+                color: '#007bf6',
+                weight: 4,
+                opacity: 1.0
+            });
+        }
+    }
+    return null;
+}
+
+function decodePolyline(str, precision) {
+    var index = 0,
+        lat = 0,
+        lng = 0,
+        coordinates = [],
+        shift = 0,
+        result = 0,
+        byte = null,
+        latitude_change,
+        longitude_change,
+        factor = Math.pow(10, precision || 5);
+  
+    while (index < str.length) {
+      byte = null;
+      shift = 0;
+      result = 0;
+  
+      do {
+        byte = str.charCodeAt(index++) - 63;
+        result |= (byte & 0x1f) << shift;
+        shift += 5;
+      } while (byte >= 0x20);
+  
+      latitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+      shift = result = 0;
+  
+      do {
+        byte = str.charCodeAt(index++) - 63;
+        result |= (byte & 0x1f) << shift;
+        shift += 5;
+      } while (byte >= 0x20);
+  
+      longitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+  
+      lat += latitude_change;
+      lng += longitude_change;
+  
+      coordinates.push([lat / factor, lng / factor]);
+    }
+  
+    return coordinates;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initMap();
 
@@ -30,15 +89,26 @@ document.addEventListener('DOMContentLoaded', function() {
     loadRelateiveDateForEvents();
 
     document.querySelectorAll('.event').forEach(function(eventDiv) {
+        const eventId = eventDiv.getAttribute('data-event-id');
+        var routePolyline = getRoutePolyline(eventId);
+        if (routePolyline) {
+            // Add mouseenter event listener
+            eventDiv.addEventListener('mouseenter', function() {
+                routePolyline.addTo(map);
+            });
+
+            // Add mouseleave event listener
+            eventDiv.addEventListener('mouseleave', function() {
+                map.removeLayer(routePolyline);
+            });
+        }
+
         eventDiv.addEventListener('click', function(event) {
             event.preventDefault();
-            const eventId = this.getAttribute('data-event-id');
             const eventDetails = document.getElementById(eventId).innerHTML;
             document.getElementById('popup-content').innerHTML = eventDetails;
             document.getElementById('popup-overlay').style.display = 'block';
             document.getElementById('popup').style.display = 'block';
-
-            // Add polyline to the map
             var routePolyline = getRoutePolyline(eventId);
             if (routePolyline) {
                 // Remove existing polyline if there is one
@@ -48,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentPolyline = routePolyline;
                 currentPolyline.addTo(map);
             }
-            
             // Update the URL
             history.pushState(null, '', `?id=${eventId}`);
         });
