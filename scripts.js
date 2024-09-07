@@ -1,5 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+    initMap();
+
     document.getElementById("prod-link").addEventListener('click', function() {
         // get the current full path
         var currentPath = window.location.pathname;

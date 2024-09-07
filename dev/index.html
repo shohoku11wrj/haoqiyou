@@ -23,313 +23,6 @@
         gtag('js', new Date());
         gtag('config', 'UA-51069014-1');
     </script>
-    <script>
-        let map; // Declare map variable outside the function
-
-        function initMap() {
-            if (!map) { // Check if map is already initialized
-                const centerLocation = [37.53, -122.23];
-                map = L.map('map-container').setView(centerLocation, 10);
-                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 19,
-                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                }).addTo(map);
-            }
-
-            const events=[
-                
-        {
-            title: "OCT 20: 🙉",
-            date_span: { month: "OCT", day: "20" },
-            position: { lat: 33.86929, lng: -117.92518 },
-            shift: [0, 0],
-            id: "event-66da7c9e7db5fac227e6031b",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "SEP 08: ✌🏻 Specialized Ride x PDCC",
-            date_span: { month: "SEP", day: "08" },
-            position: { lat: 33.76202, lng: -117.8961 },
-            shift: [0, 0],
-            id: "event-66bce958be18d8701a365cae",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "SEP 15: 🤟🏻",
-            date_span: { month: "SEP", day: "15" },
-            position: { lat: 33.8059, lng: -117.87756 },
-            shift: [0, -0.03],
-            id: "event-66bce958be18d8701a365cb1",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "SEP 22: 🖖🏻",
-            date_span: { month: "SEP", day: "22" },
-            position: { lat: 33.80502, lng: -117.87595 },
-            shift: [0.03, 0],
-            id: "event-66bce958be18d8701a365cb6",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "OCT 13: 🙈 x PDCC",
-            date_span: { month: "OCT", day: "13" },
-            position: { lat: 33.80501, lng: -117.87595 },
-            shift: [0, 0.03],
-            id: "event-66da7c9e7db5fac227e60318",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "OCT 27: 🙊",
-            date_span: { month: "OCT", day: "27" },
-            position: { lat: 33.87821, lng: -117.86872 },
-            shift: [0, 0],
-            id: "event-66da7c9e7db5fac227e6031e",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "SEP 01: ☝🏻",
-            date_span: { month: "SEP", day: "01" },
-            position: { lat: 33.68695, lng: -117.821 },
-            shift: [0, 0],
-            id: "event-66bce958be18d8701a365ca7",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "SEP 29: 🖐🏻",
-            date_span: { month: "SEP", day: "29" },
-            position: { lat: 33.78278, lng: -117.81839 },
-            shift: [0, 0],
-            id: "event-66bce958be18d8701a365cb7",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "OCT 06: 🐵",
-            date_span: { month: "OCT", day: "06" },
-            position: { lat: 34.07781, lng: -117.81507 },
-            shift: [0, 0],
-            id: "event-66da7c9e7db5fac227e60315",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "SEP 01: Sunday Paradise loop (beginner/intermediate)",
-            date_span: { month: "SEP", day: "01" },
-            position: { lat: 37.80598, lng: -122.452 },
-            shift: [0, 0],
-            id: "event-66ce71df133c2e5c9e25b494",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "AUG 29: 14th Annual Silicon Valley Bike Summit",
-            date_span: { month: "AUG", day: "29" },
-            position: { lat: 37.655545, lng: -122.433568 },
-            shift: [0, 0],
-            id: "event-66bbc61499c68bc28d25042d",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "JUL 27: 往西，越过天际(Skyline)吧骚年",
-            date_span: { month: "JUL", day: "27" },
-            position: { lat: 37.42856, lng: -122.25082 },
-            shift: [0, 0],
-            id: "event-66a7fb5f9719a87a0c2b7be9",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            event_time_type: "planning"
-        },
-        
-        {
-            title: "SEP 07: AV-C Ride Sept 7, 2024 - Stevens Canyon, Redwood Gulch, Sanborn, Quarry Road",
-            date_span: { month: "SEP", day: "07" },
-            position: { lat: 37.42664, lng: -122.144645 },
-            shift: [0, 0],
-            id: "event-66da7d15f0ee9903ac284b70",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "SEP 08: [休闲]周日下午南湾巧遇Women's 100K Group",
-            date_span: { month: "SEP", day: "08" },
-            position: { lat: 37.412484, lng: -121.986965 },
-            shift: [0, 0],
-            id: "event-66d9194b20d63265a67faaae",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "SEP 08: Group Road Ride - Redwood Gulch",
-            date_span: { month: "SEP", day: "08" },
-            position: { lat: 37.22642, lng: -121.98273 },
-            shift: [0, -0.03],
-            id: "event-66d8c62dfaa6e279229a3747",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "SEP 03: EARLY Mikes Bikes Shop Ride",
-            date_span: { month: "SEP", day: "03" },
-            position: { lat: 37.22634, lng: -121.98254 },
-            shift: [0.03, 0],
-            id: "event-66d5ee2a5f1923ebce8d9334",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "SEP 10: Mike's Bikes Shop Ride",
-            date_span: { month: "SEP", day: "10" },
-            position: { lat: 37.22634, lng: -121.98254 },
-            shift: [0, 0.03],
-            id: "event-66a5cbd49719a87a0cc4301e",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "SEP 02: Bonus Group Road Ride - 9, Skyline, OLH, Alpine",
-            date_span: { month: "SEP", day: "02" },
-            position: { lat: 37.22641, lng: -121.98229 },
-            shift: [-0.03, 0],
-            id: "event-66cfc2f81c7c4054e1c36654",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "SEP 01: Group Road Ride - South IBM",
-            date_span: { month: "SEP", day: "01" },
-            position: { lat: 37.2262, lng: -121.98224 },
-            shift: [0.03, -0.03],
-            id: "event-66ce71df133c2e5c9e25b492",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "SEP 07: Saturday Road Ride - Henry Coe",
-            date_span: { month: "SEP", day: "07" },
-            position: { lat: 37.22629, lng: -121.9822 },
-            shift: [0.03, 0.03],
-            id: "event-66d91a2bfaa6e2792271f990",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-        {
-            title: "AUG 31: [LGBRC Rides] - Saturday Road Ride on August 31st, 2024 {Century Ride}",
-            date_span: { month: "AUG", day: "31" },
-            position: { lat: 37.22647, lng: -121.98211 },
-            shift: [-0.03, 0.03],
-            id: "event-66ce71df133c2e5c9e25b48b",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
-            event_time_type: "past"
-        },
-        
-        {
-            title: "SEP 08: 2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限",
-            date_span: { month: "SEP", day: "08" },
-            position: { lat: 37.425607, lng: -121.924527 },
-            shift: [0, 0],
-            id: "event-66c3eee6e9115b364c5ecb15",
-            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
-        },
-        
-            ];
-            
-            events.map(event=>{
-                var customIcon = null;
-                if (event.event_time_type != "upcoming") {
-                    customIcon = L.divIcon({
-                        className: 'custom-div-icon',
-                        html: `
-                        <div style='background-color:transparent;'>
-                            <img src="${event.icon_url}" style="width: 100%; height: 100%; background-color: transparent" />
-                        </div>
-                        `,
-                        iconSize: [32, 32], // Size of the icon
-                        iconAnchor: [16, 30], // Point of the icon which will correspond to marker's location
-                        popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
-                    });
-                } else {
-                    customIcon = L.divIcon({
-                        className: 'custom-div-icon',
-                        html: `
-                        <div style="position: relative; width: 32px; height: 32px; background-color: transparent">
-                            <div style='background-color:transparent;'>
-                                <img src="${event.icon_url}" style="width: 100%; height: 100%; background-color: transparent" />
-                            </div>
-                            <div class="tooltip-content" style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, -50%); padding: 5px, 0px; border-radius: 5px; text-align: center; white-space: nowrap; font-size: 15px;">
-                                ${event.date_span.month} <span style="color: #fc5200">${event.date_span.day}</span>
-                            </div>
-                        </div>
-                        `,
-                        iconSize: [32, 32], // Size of the icon
-                        iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
-                        popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
-                    });
-                }
-                var marker = L.marker([event.position.lat + event.shift[0], event.position.lng +  + event.shift[1]],
-                                      { icon: customIcon }).addTo(map);
-                marker.bindTooltip(event.title);  //.openTooltip(); // by default, the tooltip is open
-                marker.on('click', function() {
-                    const eventDetails = document.getElementById(event.id).innerHTML;
-                    document.getElementById('popup-content').innerHTML = eventDetails;
-                    document.getElementById('popup-overlay').style.display = 'block';
-                    document.getElementById('popup').style.display = 'block';
-                    // Update the URL
-                    history.pushState(null, '', `?id=${event.id}`);
-                });
-                if (event.shift[0] != 0 || event.shift[1] != 0) {
-                    // Add a red dot at the original position
-                    var dot = L.circleMarker([event.position.lat, event.position.lng], {
-                        radius: 5,
-                        fillColor: "#ff0000",
-                        color: "#ff0000",
-                        weight: 1,
-                        opacity: 1,
-                        fillOpacity: 1
-                    }).addTo(map);
-
-                    // Add a red line from the original position to the shifted position
-                    var line = L.polyline([
-                        [event.position.lat, event.position.lng],
-                        [event.position.lat + event.shift[0], event.position.lng + event.shift[1]]
-                    ], {
-                        color: "#ff0000",
-                        weight: 3,
-                        opacity: 0.5
-                    }).addTo(map);
-                }
-            });
-        }
-    </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAa-YWC_WqDbvhOCOtfl1xmRo3CvRSeck&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
-    ></script>
 </head>
 <body>
     <div class="top-bar-container">
@@ -345,7 +38,7 @@
             </script>
         </div>
         <div class="column">
-            <span>Updated on 09/06/24 18:40</span><br/>
+            <span>Updated on 09/06/24 20:22</span><br/>
             <label>
                 <input type="checkbox" id="toggleExtra">
                 <span style="color:#0000ff">只显示精选活动</span>
@@ -2249,6 +1942,235 @@ Register on <a href="https://www.eventbrite.com/e/silicon-valley-bike-summit-202
         <div class="map-container" id="map-container">
             <!-- The map will be rendered here -->
         </div>
+        <script>
+            const events=[
+                
+        {
+            title: "OCT 20: 🙉",
+            date_span: { month: "OCT", day: "20" },
+            position: { lat: 33.86929, lng: -117.92518 },
+            shift: [0, 0],
+            id: "event-66da7c9e7db5fac227e6031b",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "SEP 08: ✌🏻 Specialized Ride x PDCC",
+            date_span: { month: "SEP", day: "08" },
+            position: { lat: 33.76202, lng: -117.8961 },
+            shift: [0, 0],
+            id: "event-66bce958be18d8701a365cae",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 15: 🤟🏻",
+            date_span: { month: "SEP", day: "15" },
+            position: { lat: 33.8059, lng: -117.87756 },
+            shift: [0, -0.03],
+            id: "event-66bce958be18d8701a365cb1",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 22: 🖖🏻",
+            date_span: { month: "SEP", day: "22" },
+            position: { lat: 33.80502, lng: -117.87595 },
+            shift: [0.03, 0],
+            id: "event-66bce958be18d8701a365cb6",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "OCT 13: 🙈 x PDCC",
+            date_span: { month: "OCT", day: "13" },
+            position: { lat: 33.80501, lng: -117.87595 },
+            shift: [0, 0.03],
+            id: "event-66da7c9e7db5fac227e60318",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "OCT 27: 🙊",
+            date_span: { month: "OCT", day: "27" },
+            position: { lat: 33.87821, lng: -117.86872 },
+            shift: [0, 0],
+            id: "event-66da7c9e7db5fac227e6031e",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "SEP 01: ☝🏻",
+            date_span: { month: "SEP", day: "01" },
+            position: { lat: 33.68695, lng: -117.821 },
+            shift: [0, 0],
+            id: "event-66bce958be18d8701a365ca7",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "SEP 29: 🖐🏻",
+            date_span: { month: "SEP", day: "29" },
+            position: { lat: 33.78278, lng: -117.81839 },
+            shift: [0, 0],
+            id: "event-66bce958be18d8701a365cb7",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "OCT 06: 🐵",
+            date_span: { month: "OCT", day: "06" },
+            position: { lat: 34.07781, lng: -117.81507 },
+            shift: [0, 0],
+            id: "event-66da7c9e7db5fac227e60315",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "SEP 01: Sunday Paradise loop (beginner/intermediate)",
+            date_span: { month: "SEP", day: "01" },
+            position: { lat: 37.80598, lng: -122.452 },
+            shift: [0, 0],
+            id: "event-66ce71df133c2e5c9e25b494",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "AUG 29: 14th Annual Silicon Valley Bike Summit",
+            date_span: { month: "AUG", day: "29" },
+            position: { lat: 37.655545, lng: -122.433568 },
+            shift: [0, 0],
+            id: "event-66bbc61499c68bc28d25042d",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "JUL 27: 往西，越过天际(Skyline)吧骚年",
+            date_span: { month: "JUL", day: "27" },
+            position: { lat: 37.42856, lng: -122.25082 },
+            shift: [0, 0],
+            id: "event-66a7fb5f9719a87a0c2b7be9",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            event_time_type: "planning"
+        },
+        
+        {
+            title: "SEP 07: AV-C Ride Sept 7, 2024 - Stevens Canyon, Redwood Gulch, Sanborn, Quarry Road",
+            date_span: { month: "SEP", day: "07" },
+            position: { lat: 37.42664, lng: -122.144645 },
+            shift: [0, 0],
+            id: "event-66da7d15f0ee9903ac284b70",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 08: [休闲]周日下午南湾巧遇Women's 100K Group",
+            date_span: { month: "SEP", day: "08" },
+            position: { lat: 37.412484, lng: -121.986965 },
+            shift: [0, 0],
+            id: "event-66d9194b20d63265a67faaae",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 08: Group Road Ride - Redwood Gulch",
+            date_span: { month: "SEP", day: "08" },
+            position: { lat: 37.22642, lng: -121.98273 },
+            shift: [0, -0.03],
+            id: "event-66d8c62dfaa6e279229a3747",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 03: EARLY Mikes Bikes Shop Ride",
+            date_span: { month: "SEP", day: "03" },
+            position: { lat: 37.22634, lng: -121.98254 },
+            shift: [0.03, 0],
+            id: "event-66d5ee2a5f1923ebce8d9334",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "SEP 10: Mike's Bikes Shop Ride",
+            date_span: { month: "SEP", day: "10" },
+            position: { lat: 37.22634, lng: -121.98254 },
+            shift: [0, 0.03],
+            id: "event-66a5cbd49719a87a0cc4301e",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "SEP 02: Bonus Group Road Ride - 9, Skyline, OLH, Alpine",
+            date_span: { month: "SEP", day: "02" },
+            position: { lat: 37.22641, lng: -121.98229 },
+            shift: [-0.03, 0],
+            id: "event-66cfc2f81c7c4054e1c36654",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "SEP 01: Group Road Ride - South IBM",
+            date_span: { month: "SEP", day: "01" },
+            position: { lat: 37.2262, lng: -121.98224 },
+            shift: [0.03, -0.03],
+            id: "event-66ce71df133c2e5c9e25b492",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "SEP 07: Saturday Road Ride - Henry Coe",
+            date_span: { month: "SEP", day: "07" },
+            position: { lat: 37.22629, lng: -121.9822 },
+            shift: [0.03, 0.03],
+            id: "event-66d91a2bfaa6e2792271f990",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+        {
+            title: "AUG 31: [LGBRC Rides] - Saturday Road Ride on August 31st, 2024 {Century Ride}",
+            date_span: { month: "AUG", day: "31" },
+            position: { lat: 37.22647, lng: -121.98211 },
+            shift: [-0.03, 0.03],
+            id: "event-66ce71df133c2e5c9e25b48b",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+            event_time_type: "past"
+        },
+        
+        {
+            title: "SEP 08: 2024 Rapha Women's 100 | SF Bay Area, 女士优先，男士LGBTQ不限",
+            date_span: { month: "SEP", day: "08" },
+            position: { lat: 37.425607, lng: -121.924527 },
+            shift: [0, 0],
+            id: "event-66c3eee6e9115b364c5ecb15",
+            icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            event_time_type: "upcoming"
+        },
+        
+            ];
+        </script>
+        <script src="../map_scriptrs.js"></script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAa-YWC_WqDbvhOCOtfl1xmRo3CvRSeck&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
+        ></script>
     </div>
 
     <div class="popup-overlay" id="popup-overlay"></div>
