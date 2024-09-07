@@ -10,6 +10,16 @@ extra_event_group_ids = [
     908336  # Ruekn Bicci Gruppo (Southern California)
 ]
 
+DAY_OF_WEEK_MAP = {
+    'Monday': '周一',
+    'Tuesday': '周二',
+    'Wednesday': '周三',
+    'Thursday': '周四',
+    'Friday': '周五',
+    'Saturday': '周六',
+    'Sunday': '周日'
+}
+
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
 
@@ -40,12 +50,14 @@ def get_start_of_week():
 def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name):
     # Convert URLs in the description to hyperlinks
     event_description = convert_urls_to_links(event['description'])
+    day_of_week_str = DAY_OF_WEEK_MAP[day_of_week]
     popup_div = f"""
         <div id="event-{event['_id']}" style="display: none;">
             <div class="event-title-row">
                 <div class="date-box">
                     <div class="date">{day_str}</div>
                     <div class="month">{month_str}</div>
+                    <div class="day-of-week">{day_of_week_str}</div>
     """
     if year != datetime.now().year:
         popup_div += f"""
