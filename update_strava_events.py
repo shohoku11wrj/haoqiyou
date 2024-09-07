@@ -148,6 +148,7 @@ for club_id, event_id, event in all_events_list:
         distance, elevation_gain = get_event_route_distance_and_elevation(event['route_id'], access_token)
         distance_meters = int(distance)
         elevation_gain_meters = int(elevation_gain)
+        route_polyline = event['route']['map']['summary_polyline'] if event['route']['map']['summary_polyline'] else ''
     except ValueError as e:
         print(e)
 
@@ -167,6 +168,7 @@ for club_id, event_id, event in all_events_list:
         'title': event['title'],
         'description': event['description'],
         'route_map_url': event['route']['map_urls']['url'],
+        'route_polyline': route_polyline,
         'is_active': True,
         'raw_event': event
     }
@@ -213,6 +215,7 @@ for strava_route_event in strava_routes_cursor:
         distance_meters = int(distance)
         elevation_gain_meters = int(elevation_gain)
         strava_map_url = route_details.get('map_urls', {}).get('url', None)
+        route_polyline = route_details.get('map', {}).get('summary_polyline', '')
     except ValueError as e:
         print(e)
     
@@ -221,6 +224,7 @@ for strava_route_event in strava_routes_cursor:
         'distance_meters': distance_meters,
         'elevation_gain_meters': elevation_gain_meters,
         'route_map_url': strava_map_url,
+        'route_polyline': route_polyline,
         'raw_event': route_details,
         'is_backfilled': True
     }

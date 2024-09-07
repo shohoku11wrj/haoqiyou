@@ -230,6 +230,7 @@ def gen_div_for_events_from_list(events_list):
                 <a href="{route_url}" target="_blank" class="event-link">
                     <img src="{event['route_map_url']}" alt="Route Image" width="100%">
                 </a>
+                <div data-event-id="event-{event_id}-route-polyline" style="display: none;">{event.get('route_polyline', '')}</div>
             </div>
             <div class="event-section">
                 <div class="event-title">{event['title']}</div> <br>

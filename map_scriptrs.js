@@ -1,3 +1,62 @@
+function decodePolyline(str, precision) {
+  var index = 0,
+      lat = 0,
+      lng = 0,
+      coordinates = [],
+      shift = 0,
+      result = 0,
+      byte = null,
+      latitude_change,
+      longitude_change,
+      factor = Math.pow(10, precision || 5);
+
+  while (index < str.length) {
+    byte = null;
+    shift = 0;
+    result = 0;
+
+    do {
+      byte = str.charCodeAt(index++) - 63;
+      result |= (byte & 0x1f) << shift;
+      shift += 5;
+    } while (byte >= 0x20);
+
+    latitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+    shift = result = 0;
+
+    do {
+      byte = str.charCodeAt(index++) - 63;
+      result |= (byte & 0x1f) << shift;
+      shift += 5;
+    } while (byte >= 0x20);
+
+    longitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+
+    lat += latitude_change;
+    lng += longitude_change;
+
+    coordinates.push([lat / factor, lng / factor]);
+  }
+
+  return coordinates;
+}
+
+function getRoutePolylin(event_id) {
+  var polylineElement = document.querySelector(`[data-event-id="${event_id}-route-polyline"]`);
+  if (polylineElement) {
+    var routePolyline = polylineElement.innerHTML.trim();
+    if (routePolyline) {
+        var latLngs = decodePolyline(routePolyline);
+        return L.polyline(latLngs, {
+            color: '#007bf6',
+            weight: 4,
+            opacity: 1.0
+        });
+      }
+  }
+  return null;
+}
+
 function initMap() {
     if (!window.map) { // Check if map is already initialized
         const centerLocation = [37.53, -122.23];
@@ -44,13 +103,31 @@ function initMap() {
         if (event.position) {
           var marker = L.marker([event.position.lat + event.shift[0], event.position.lng +  + event.shift[1]],
                                 { icon: customIcon }).addTo(map);
-          console.log(marker);
+          var routePolyline = getRoutePolylin(event.id);
+          if (routePolyline) {
+              marker.on('mouseover', function() {
+                routePolyline.addTo(map);
+              });
+
+              marker.on('mouseout', function() {
+                map.removeLayer(routePolyline);
+              });
+          }
           marker.bindTooltip(event.title, { className: 'custom-tooltip' });  //.openTooltip(); // by default, the tooltip is open
           marker.on('click', function() {
               const eventDetails = document.getElementById(event.id).innerHTML;
               document.getElementById('popup-content').innerHTML = eventDetails;
               document.getElementById('popup-overlay').style.display = 'block';
               document.getElementById('popup').style.display = 'block';
+              var routePolyline = getRoutePolylin(event.id);
+              if (routePolyline) {
+                  // Remove existing polyline if there is one
+                  if (currentPolyline) {
+                      map.removeLayer(currentPolyline);
+                  }
+                  currentPolyline = routePolyline;
+                  currentPolyline.addTo(map);
+              }
               // Update the URL
               history.pushState(null, '', `?id=${event.id}`);
           });

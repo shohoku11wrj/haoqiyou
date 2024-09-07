@@ -1,4 +1,6 @@
 
+let currentPolyline = null; // Variable to store the current polyline
+
 document.addEventListener('DOMContentLoaded', function() {
     initMap();
 
@@ -35,11 +37,30 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('popup-content').innerHTML = eventDetails;
             document.getElementById('popup-overlay').style.display = 'block';
             document.getElementById('popup').style.display = 'block';
+
+            // Add polyline to the map
+            var routePolyline = getRoutePolyline(eventId);
+            if (routePolyline) {
+                // Remove existing polyline if there is one
+                if (currentPolyline) {
+                    map.removeLayer(currentPolyline);
+                }
+                currentPolyline = routePolyline;
+                currentPolyline.addTo(map);
+            }
+            
             // Update the URL
             history.pushState(null, '', `?id=${eventId}`);
         });
     });
 
+    // Close button event listener
+    document.getElementById('close-btn').addEventListener('click', closePopupAndRemovePolyline);
+
+    // Popup overlay event listener
+    document.getElementById('popup-overlay').addEventListener('click', closePopupAndRemovePolyline);
+
+    
     document.querySelectorAll('.event-link').forEach(function(link) {
         link.addEventListener('click', function(event) {
             event.stopPropagation();
@@ -55,23 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('popup').style.display = 'block';
         })
     });
-
-    document.getElementById('close-btn').addEventListener('click', function() {
-        document.getElementById('popup-overlay').style.display = 'none';
-        document.getElementById('popup').style.display = 'none';
-        document.getElementById('commento').style.display = 'none';
-        // Remove the event ID from the URL
-        history.pushState(null, '', window.location.pathname);
-    });
-
-    document.getElementById('popup-overlay').addEventListener('click', function() {
-        document.getElementById('popup-overlay').style.display = 'none';
-        document.getElementById('popup').style.display = 'none';
-        document.getElementById('commento').style.display = 'none';
-        // Remove the event ID from the URL
-        history.pushState(null, '', window.location.pathname);
-    });
-
     
     // Check for URL parameter and open popup if it exists
     const urlParams = new URLSearchParams(window.location.search);
@@ -131,6 +135,18 @@ function loadRelateiveDateForEvents() {
           dateRelativeDiv.innerHTML = label;
       }
   });
+}
+
+function closePopupAndRemovePolyline() {
+    document.getElementById('popup-overlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('commento').style.display = 'none';
+    // Remove the polyline when closing the popup
+    if (currentPolyline) {
+        map.removeLayer(currentPolyline);
+    }
+    // Remove the event ID from the URL
+    history.pushState(null, '', window.location.pathname);
 }
 
 // Function to get URL parameter by name

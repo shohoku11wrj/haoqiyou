@@ -12,10 +12,54 @@
   <style>
     #map { height: 1080px; }
   </style>
+  <script src="https://unpkg.com/leaflet-encoded@0.0.9/Polyline.encoded.js"></script>
 </head>
 <body>
   <div id="map"></div>
   <script>
+    function decodePolyline(str, precision) {
+      var index = 0,
+          lat = 0,
+          lng = 0,
+          coordinates = [],
+          shift = 0,
+          result = 0,
+          byte = null,
+          latitude_change,
+          longitude_change,
+          factor = Math.pow(10, precision || 5);
+
+      while (index < str.length) {
+        byte = null;
+        shift = 0;
+        result = 0;
+
+        do {
+          byte = str.charCodeAt(index++) - 63;
+          result |= (byte & 0x1f) << shift;
+          shift += 5;
+        } while (byte >= 0x20);
+
+        latitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+        shift = result = 0;
+
+        do {
+          byte = str.charCodeAt(index++) - 63;
+          result |= (byte & 0x1f) << shift;
+          shift += 5;
+        } while (byte >= 0x20);
+
+        longitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+
+        lat += latitude_change;
+        lng += longitude_change;
+
+        coordinates.push([lat / factor, lng / factor]);
+      }
+
+      return coordinates;
+    }
+
     var map = L.map('map').setView([37.53, -122.23], 10);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -39,7 +83,8 @@
             shift: [0, 0],
             id: "event-66ce71df133c2e5c9e25b494",
             icon_url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            event_time_type: "upcoming"
+            event_time_type: "upcoming",
+            summary_polygon: 'mgofFhcxgVz@dB~DqDb@dA}CpCdBvDkGtEiVel@qGyJIkIe]kk@|D_CAiKdI|@|IqNx`@sOzExJzMtEfJmCxXiArG}GxDr@u@}PzBMFsBpFuDhYc@pAiIdKuG~GiBxKt@dOmIvK{@jKqFzNmZzF|BpLwC`JuL`DiAtAkGjJkMjWwRrMsR`CaGoAkIpC[@sEhDsBCoLvCaBMiKvDc@FmExC[d@qFrCiBpCwHhEgA@nFjI`B~F}NdB}@vDiYMyFiCwEtAmC_CcLzAgCSqDvJ~G|DaHdCa@{A_FhBqFzUkPqA{DcDxA{BoCcDzFoEZ~CiF~@{K{Et@OmGiLnQoAKzB}EzAwTlFiOzLm@p@eMxGoJrCHjAcEtBSvD`DnCc@gE_KtBwE{ByAr@{KeKfHiDgDjBkFL}Ey@qAsHvGoWvEYlHoIsIgBpMoDvC^dCuBzBmFHkBbE`BoHjEmAaA{MbBcEgEmErAsD[qM{JsK}AkGkDk@iCsUa@bXfEdEAxDsKvEKsIqA}BvAsLkDsJ`AdIrBlDaBrHpA|BJrIrKwE@yDgEeE`@cXhCrUjDj@|AjGzJrKZpMsArDfElEcBbE`AzMkElAaBnHjBcElFItB{B_@eCnDwCfBqMnIrIXmHnWwErHwGx@pAM|EeBbGdEnCxIyHi@lLzBxAuBvEvEbI_D~AsG{CeBpEsCImCjClCkCrCHdBqErGzCnCc@qDkIpDjIoCb@sG{CeBpEsCImCjCDxE`Dt@aDu@DqCxCkAvDvHxB_DtAnCbFsBrWxP|GZjB{DzCgArBcEZyHp@c@o@b@n@z@jIgI~Fu\\`D|By@hBh@rDsAzAj@bClG~EsD~ArD_BmG_Fk@cCrA{Ai@sDx@iBaD}B`D|By@hBh@rDsAzAj@bClG~EsDnAdClEoBrBD|BjHb@zEcG|Ie[~GiAxDaWfFgMtA?t@nFrEuAbCtCq@hOcJdJbE|LsAfDRxHhC`DoOnHxAdCEzHqC`GfKFhErBbAvC}BhKuHa@z@vCoBrBfHtLaHhMdF~JuAzAuBcBwDvL|HVQyBbCFcCG\\rBkDVcDqAbDpAjDW]sBxHAx@sBYmGrBY|KxChSxSvRjA@l[mGlPo@vHzAdGmCpIAtIkGdHoBfJa@bQfBzTk@dHdA`IhZfh@|@tQy@fDsIxJu@rKjEx]pQ|\\z@jXpAfCiVxg@_d@rl@ex@jz@kmA|p@s@kCr@jCuqB`cA}ErBeFwC}Xt@q\\`WuJlEiPxDGaC{PrGoNjB_Sc@oi@zKeK?sd@eLic@cE`AaRmEmJJwQoN}c@sEmCmMm_@aM}ThFkSiCaH'
         },
         {
             title: "SEP 03: Mike's Bikes Shop Ride",
@@ -74,7 +119,7 @@
     var customIcon = L.divIcon({
       html: `
         <div style="position: relative; width: 32px; height: 32px; background-color: transparent">
-          <img src="../resources/bicycle-1054.png" style="width: 100%; height: 100%; background-color: transparent" />
+          <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" style="width: 100%; height: 100%; background-color: transparent" />
           <div style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 5px; border-radius: 5px; text-align: center; white-space: nowrap;">
             ${event.date_span.month} <span style="color: #fc5200">${event.date_span.day}</span>
           </div>
@@ -93,6 +138,17 @@
     // `;
     // marker.bindTooltip(iconElement).openTooltip();
     // marker.bindPopup(iconElement).openPopup();
+    if (event.summary_polygon) {
+      var decodedPath = decodePolyline(event.summary_polygon);
+      var routeLine = L.polyline(decodedPath, {
+          color: '#007bf6',
+          weight: 4,
+          opacity: 1.0
+      }).addTo(map);
+
+      // Fit the map to the route bounds
+      map.fitBounds(routeLine.getBounds());
+    }
   });
   </script>
 </body>
