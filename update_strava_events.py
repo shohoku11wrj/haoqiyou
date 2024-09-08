@@ -16,6 +16,9 @@ client = MongoClient(MONGO_CONNECTION_STRING)
 db = client[RIDE_EVENT_DB_NAME]
 collection = db[RIDE_EVENTS_COLLECTION_NAME]
 
+# Google Maps API
+GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
+
 # Strava API AccessToken
 STRAVA_CLIENT_ID = os.getenv('STRAVA_CLIENT_ID')
 STRAVA_CLIENT_SECRET = os.getenv('STRAVA_CLIENT_SECRET')
@@ -53,6 +56,32 @@ club_ids = [
     '1115522',  # NorCal Cycling China Fans
     '908336'    # Ruekn Bicci Gruppo (Southern California)
 ]
+
+# Google Maps APIs
+
+def get_gps_by_address(address):
+    print(address)
+    try:
+        base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+        params = {
+            "address": address,
+            "key": GOOGLE_MAPS_API_KEY
+        }
+        
+        response = requests.get(base_url, params=params)
+        if response.status_code == 200:
+            data = response.json()
+            if data['results']:
+                location = data['results'][0]['geometry']['location']
+                lat = location['lat']
+                lng = location['lng']
+                gps_coordinates = f"{lat:.5f}, {lng:.5f}"
+                return gps_coordinates
+        return ''
+    except Exception as e:
+        print(f"Error fetching GPS coordinates for address: {address}")
+        print(f"Error details: {str(e)}")
+        return ''
 
 # Strava APIs
 
@@ -138,6 +167,10 @@ for club_id, event_id, event in all_events_list:
     event_time_utc = event_time_utc.replace(tzinfo=pytz.utc)
     # Format the GPS coordinates to at most 5 digits after floats, and without brackets
     gps_coordinates = ', '.join(map(str, [round(coord, 5) for coord in event['start_latlng']])) if event['start_latlng'] else ''
+    if gps_coordinates == '' and event['address'] != '':
+        # Fetch GPS coordinates from address using Google Maps API
+        gps_coordinates = get_gps_by_address(event['address'])
+        print(gps_coordinates)
     # Check if organizing_athlete is not None
     if event['organizing_athlete'] is not None:
         organizer = f"{event['organizing_athlete']['firstname']} {event['organizing_athlete']['lastname']}"

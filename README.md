@@ -19,8 +19,9 @@ TODO:
  * [x] Map view: shifting markers if overlapping (rotating 4 directions shifts, +polygon original->shifted)
  * [x] Add marker icons to upcoming events/future events/past events
  * [x] Map view: use more customizable maps -> Leaflet + openstreetmap
- * Map view (Optional): cast routes of events on the map. To avoid overalpping of routes, display single route when hovering the marker.
+ * [x] Map view (Optional): cast routes of events on the map. To avoid overalpping of routes, display single route when hovering the marker.
  * [x] Support (cloud) comments for each event: commento.io
  * Allow event owner to cancel/edit details of the event.
  * Migrate events from MongoDB to local JSON file
+ * Parse riding events from webpage (e.g. https://www.altovelo.org/c-ride)
  
