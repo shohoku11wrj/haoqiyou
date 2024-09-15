@@ -155,7 +155,9 @@ def gen_div_for_events_from_list(events_list):
             print(e)
         
         # Source URL
-        route_url = event.get('strava_url', "")
+        route_url = event.get('route_url', "")
+        if route_url == "":
+            route_url = event.get('strava_url', "")
         if route_url == "" and 'source_url' in event and event['source_url'].startswith('http'):
             route_url = event['source_url']
         source_event_url = event.get('source_url', "")
