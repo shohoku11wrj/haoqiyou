@@ -181,9 +181,15 @@ for club_id, event_id, event in all_events_list:
 
     try:
         distance, elevation_gain = get_event_route_distance_and_elevation(event['route_id'], access_token)
+        if distance is None or elevation_gain is None:
+            distance = 0
+            elevation_gain = 0
         distance_meters = int(distance)
         elevation_gain_meters = int(elevation_gain)
-        route_polyline = event['route']['map']['summary_polyline'] if event['route']['map']['summary_polyline'] else ''
+        if event['route'] is not None:
+            route_polyline = event['route']['map']['summary_polyline']
+        else:
+            route_polyline = ''
     except ValueError as e:
         print(e)
 
@@ -202,7 +208,7 @@ for club_id, event_id, event in all_events_list:
         'strava_url': f"https://www.strava.com/clubs/{club_id}/group_events/{event_id}",
         'title': event['title'],
         'description': event['description'],
-        'route_map_url': event['route']['map_urls']['url'],
+        'route_map_url': event['route']['map_urls']['url'] if event['route'] is not None else '',
         'route_polyline': route_polyline,
         'is_active': True,
         'raw_event': event
