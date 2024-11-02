@@ -59,7 +59,7 @@ function getRoutePolylin(event_id) {
 
 function initMap() {
     if (!window.map) { // Check if map is already initialized
-        const centerLocation = [37.53, -122.23];
+        const centerLocation = [37.63, -122.23];
         window.map = L.map('map-container').setView(centerLocation, 10);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
