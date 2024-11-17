@@ -124,6 +124,7 @@ gpx_file = gpx_files[0]  # Take the first file if multiple files exist
 
 # Extract GPS coordinates
 coordinates = extract_gps_coordinates(gpx_file)
+print("Extracted coordinates length: ", len(coordinates))
 
 # Serialize to base64
 serialized_data = encode_polyline(coordinates)
