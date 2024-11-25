@@ -90,7 +90,7 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
         for i, img_url in enumerate(event['event_picture_urls']):
             popup_div += f"""
                     <div class="slide" data-index="{i}">
-                        <a href="{source_event_url}" target="_blank" class="event-link">
+                        <a href="{img_url}" target="_blank" class="event-link">
                             <img src="{img_url}" alt="Event Image {i+1}" class="slide-image">
                         </a>
                     </div>
@@ -101,7 +101,7 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
                 </div>
                 <button class="slide-nav prev" onclick="moveSlide(-1)">❮</button>
                 <button class="slide-nav next" onclick="moveSlide(1)">❯</button>
-                <div class="slide-dots">e
+                <div class="slide-dots">
             """
             for i in range(len(event['event_picture_urls'])):
                 popup_div += f"""
@@ -284,37 +284,13 @@ def gen_div_for_events_from_list(events_list):
                     <img src="{event['event_picture_url']}" alt="Event Image" width="100%">
                 </a>
             """
-        # If the event has multiple event_picture_urls, create a slideshow
+        # If the event has multiple event_picture_urls, only display the first image
         if 'event_picture_urls' in event and len(event['event_picture_urls']) > 1:
+            first_img_url = event['event_picture_urls'][0]
             events_div += f"""
-                <div class="slideshow-container">
-                    <div class="slides-wrapper">
-            """
-            for i, img_url in enumerate(event['event_picture_urls']):
-                events_div += f"""
-                        <div class="slide" data-index="{i}">
-                            <a href="{source_event_url}" target="_blank" class="event-link">
-                                <img src="{img_url}" alt="Event Image {i+1}" class="slide-image">
-                            </a>
-                        </div>
-                """
-            # Add navigation buttons if there's more than one image
-            if len(event['event_picture_urls']) > 1:
-                events_div += f"""
-                    </div>
-                    <button class="slide-nav prev" onclick="moveSlide(-1)">❮</button>
-                    <button class="slide-nav next" onclick="moveSlide(1)">❯</button>
-                    <div class="slide-dots">e
-                """
-                for i in range(len(event['event_picture_urls'])):
-                    events_div += f"""
-                        <span class="dot" onclick="currentSlide({i})"></span>
-                    """
-                events_div += """
-                    </div>
-                """
-            events_div += """
-                </div>
+                <a href="{source_event_url}" target="_blank" class="event-link">
+                    <img src="{first_img_url}"></img>
+                </a>
             """
     
         events_div += f"""
@@ -415,7 +391,7 @@ def insert_shift_to_event_markers(event_markers, overlapping_gps_coords):
         for overlapped_gps in overlapping_gps_coords:
             if abs(lat - overlapped_gps[0]) < GPS_OVERLAP_TOLERANCE and abs(lng - overlapped_gps[1]) < GPS_OVERLAP_TOLERANCE:
                 overlapped_gps_count = overlapped_gps_count_map.get(overlapped_gps, 0)
-                gps_shift = GPS_SHIFTS[overlapped_gps_count]
+                gps_shift = GPS_SHIFTS[overlapped_gps_count % len(GPS_SHIFTS)]
                 overlapped_gps_count_map[overlapped_gps] = overlapped_gps_count + 1
                 break
         event_marker.update({'shift': gps_shift})

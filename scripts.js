@@ -1,6 +1,7 @@
-
 let currentPolyline = null; // Variable to store the current polyline
 let currentSlideIndex = 0;
+let slideIndex = 0;
+showSlides(slideIndex);
 
 function getRoutePolyline(eventId) {
     var polylineElement = document.querySelector(`[data-event-id="${eventId}-route-polyline"]`);
@@ -245,11 +246,14 @@ function loadCommento(eventId) {
 }
 
 function moveSlide(direction) {
+    console.log('moveSlide: direction ', direction);
     const slidesWrapper = document.querySelector('.slides-wrapper');
+    // restrict the slides to only the current event related slides
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     
     currentSlideIndex += direction;
+    console.log('moveSlide: currentSlideIndex ', currentSlideIndex);
     
     // Handle wrapping
     if (currentSlideIndex >= slides.length) {
@@ -264,11 +268,36 @@ function moveSlide(direction) {
     
     // Update dots
     dots.forEach((dot, index) => {
+        console.log('moveSlide: dot, index, currentSlideIndex ', dot, index, currentSlideIndex);
         dot.classList.toggle('active', index === currentSlideIndex);
     });
 }
 
 function currentSlide(index) {
+    console.log('currentSlide: index ', index);
     currentSlideIndex = index;
     moveSlide(0); // Update display without moving
+}
+
+function showSlides(n) {
+  console.log('showSlides: n ', n);
+  // The slide elements will be duplicated in the DOM, so just need to take the odd ones.
+  let allSlides = document.getElementsByClassName("slide");
+  let slides = Array.from(allSlides).filter((slide, index) => index % 2 === 0);
+  console.log('showSlides: slides ', slides);
+  let dots = document.getElementsByClassName("dot");
+  if (n >= slides.length) { slideIndex = 0 }
+  if (n < 0) { slideIndex = slides.length - 1 }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex].style.display = "block";
+  dots[slideIndex].className += " active";
+}
+
+function moveSlide(n) {
+    showSlides(slideIndex += n);
 }
