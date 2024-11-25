@@ -1,5 +1,6 @@
 
 let currentPolyline = null; // Variable to store the current polyline
+let currentSlideIndex = 0;
 
 function getRoutePolyline(eventId) {
     var polylineElement = document.querySelector(`[data-event-id="${eventId}-route-polyline"]`);
@@ -241,4 +242,33 @@ function loadCommento(eventId) {
   document.getElementById('commento').innerHTML = '';
   document.getElementById('commento').appendChild(script);
   document.getElementById('commento').style.display = 'block';
+}
+
+function moveSlide(direction) {
+    const slidesWrapper = document.querySelector('.slides-wrapper');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    currentSlideIndex += direction;
+    
+    // Handle wrapping
+    if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+    }
+    if (currentSlideIndex < 0) {
+        currentSlideIndex = slides.length - 1;
+    }
+    
+    // Move slides
+    slidesWrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlideIndex);
+    });
+}
+
+function currentSlide(index) {
+    currentSlideIndex = index;
+    moveSlide(0); // Update display without moving
 }

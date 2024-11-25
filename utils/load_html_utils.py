@@ -72,13 +72,48 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
             </div>
             <p class="event-description">{event_description}</p>
     """
+
     # If the event has a event_picture_url URL, display it with link to source_url
-    if 'event_picture_url' in event and event['event_picture_url'].startswith('http'):
+    if ('event_picture_url' in event and event['event_picture_url'].startswith('http'))\
+        or ('event_picture_urls' in event and event['event_picture_urls'] and len(event['event_picture_urls']) == 1 and event['event_picture_urls'][0].startswith('http')):
         popup_div += f"""
             <a href="{source_event_url}" target="_blank" class="event-link">
                 <img src="{event['event_picture_url']}" alt="Event Image" width="100%">
             </a>
+    """
+    # If the event has multiple event_picture_urls, create a slideshow
+    if 'event_picture_urls' in event and len(event['event_picture_urls']) > 1:
+        popup_div += f"""
+            <div class="slideshow-container">
+                <div class="slides-wrapper">
         """
+        for i, img_url in enumerate(event['event_picture_urls']):
+            popup_div += f"""
+                    <div class="slide" data-index="{i}">
+                        <a href="{source_event_url}" target="_blank" class="event-link">
+                            <img src="{img_url}" alt="Event Image {i+1}" class="slide-image">
+                        </a>
+                    </div>
+            """
+        # Add navigation buttons if there's more than one image
+        if len(event['event_picture_urls']) > 1:
+            popup_div += f"""
+                </div>
+                <button class="slide-nav prev" onclick="moveSlide(-1)">❮</button>
+                <button class="slide-nav next" onclick="moveSlide(1)">❯</button>
+                <div class="slide-dots">e
+            """
+            for i in range(len(event['event_picture_urls'])):
+                popup_div += f"""
+                    <span class="dot" onclick="currentSlide({i})"></span>
+                """
+            popup_div += """
+                </div>
+            """
+        popup_div += """
+            </div>
+        """
+
     popup_div += f"""
             <a href="{route_url}" target="_blank" class="event-link">
                 <img src="{event['route_map_url']}" alt="Route Image" width="100%">
@@ -240,13 +275,48 @@ def gen_div_for_events_from_list(events_list):
                 <div class="event-description">发起人: {event['organizer']}</div> <br>
                 <div class="event-description">活动来源: <a href="{source_event_url}" target="_blank" class="event-link">{source_group_name}</a></div>
         """
+
         # If the event has a event_picture_url URL, display it with link to source_url
-        if 'event_picture_url' in event and event['event_picture_url'].startswith('http'):
+        if ('event_picture_url' in event and event['event_picture_url'].startswith('http'))\
+            or ('event_picture_urls' in event and event['event_picture_urls'] and len(event['event_picture_urls']) == 1 and event['event_picture_urls'][0].startswith('http')):
             events_div += f"""
                 <a href="{source_event_url}" target="_blank" class="event-link">
                     <img src="{event['event_picture_url']}" alt="Event Image" width="100%">
                 </a>
-        """
+            """
+        # If the event has multiple event_picture_urls, create a slideshow
+        if 'event_picture_urls' in event and len(event['event_picture_urls']) > 1:
+            events_div += f"""
+                <div class="slideshow-container">
+                    <div class="slides-wrapper">
+            """
+            for i, img_url in enumerate(event['event_picture_urls']):
+                events_div += f"""
+                        <div class="slide" data-index="{i}">
+                            <a href="{source_event_url}" target="_blank" class="event-link">
+                                <img src="{img_url}" alt="Event Image {i+1}" class="slide-image">
+                            </a>
+                        </div>
+                """
+            # Add navigation buttons if there's more than one image
+            if len(event['event_picture_urls']) > 1:
+                events_div += f"""
+                    </div>
+                    <button class="slide-nav prev" onclick="moveSlide(-1)">❮</button>
+                    <button class="slide-nav next" onclick="moveSlide(1)">❯</button>
+                    <div class="slide-dots">e
+                """
+                for i in range(len(event['event_picture_urls'])):
+                    events_div += f"""
+                        <span class="dot" onclick="currentSlide({i})"></span>
+                    """
+                events_div += """
+                    </div>
+                """
+            events_div += """
+                </div>
+            """
+    
         events_div += f"""
             </div>
         </div>
