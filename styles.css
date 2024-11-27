@@ -213,26 +213,29 @@ body {
 .slide-nav {
   cursor: pointer;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 16px;
+  top: 0;
+  bottom: 0;
+  height: 100%; /* Ensure the button covers the entire height */
+  width: 50px; /* Adjust width as needed */
   color: white;
   font-weight: bold;
   font-size: 18px;
   background-color: rgba(0,0,0,0.3);
   border: none;
-  border-radius: 50%;
   user-select: none;
   transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .slide-nav:hover {
   background-color: rgba(0,0,0,0.8);
 }
 .prev {
-  left: 10px;
+  left: 0;
 }
 .next {
-  right: 10px;
+  right: 0;
 }
 .slide-dots {
   text-align: center;

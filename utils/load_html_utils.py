@@ -96,16 +96,17 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
                     </div>
             """
         # Add navigation buttons if there's more than one image
+        picture_count = len(event['event_picture_urls'])
         if len(event['event_picture_urls']) > 1:
             popup_div += f"""
                 </div>
-                <button class="slide-nav prev" onclick="moveSlide(-1)">❮</button>
-                <button class="slide-nav next" onclick="moveSlide(1)">❯</button>
+                <button class="slide-nav prev" onclick="(-1, {picture_count})">❮</button>
+                <button class="slide-nav next" onclick="moveSlide(1, {picture_count})">❯</button>
                 <div class="slide-dots">
             """
             for i in range(len(event['event_picture_urls'])):
                 popup_div += f"""
-                    <span class="dot" onclick="currentSlide({i})"></span>
+                    <span class="dot" onclick="currentSlide({i}, {picture_count})"></span>
                 """
             popup_div += """
                 </div>
