@@ -46,14 +46,16 @@ def convert_urls_to_links(text):
     text = url_pattern.sub(r'<a href="\1" target="_blank">\1</a>', text)
     return text
 
-# Fetch events from MongoDB where the start time is after the Monday of the current week
+# Prod: Fetch events from MongoDB where the start time is after the Monday of the current week
+# Dev: Fetch events for 2 months
 start_of_week_utc = get_start_of_week()
-print(f"Start of the week (UTC): {start_of_week_utc}")
+two_months_before = start_of_week_utc - timedelta(days=90)
+print(f"Start of the week (UTC): {two_months_before}")
 events_cursor = collection.find({
     'is_active': {'$eq': True},
     '$or': [
-        {'event_time_utc': {'$gte': start_of_week_utc}},
-        {'event_time_utc': {'$type': 'string', '$gte': start_of_week_utc.isoformat()}}
+        {'event_time_utc': {'$gte': two_months_before}},
+        {'event_time_utc': {'$type': 'string', '$gte': two_months_before.isoformat()}}
     ]
 })
 
