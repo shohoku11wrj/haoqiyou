@@ -233,13 +233,16 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = currentPath;
     });
 
-    document.getElementById('toggleExtra').addEventListener('change', function() {
-        var extraEvents = document.querySelectorAll('.extra-event');
-        extraEvents.forEach(function(event) {
-            event.style.display = this.checked ? 'none' : 'block';
-            event.style.backgroundColor = this.checked ? 'transparent' : '#cad6e6' ;
-        }, this);
-    });
+    const toggleExtraElement = document.getElementById('toggleExtra');
+    if (toggleExtraElement) {
+        toggleExtraElement.addEventListener('change', function() {
+            var extraEvents = document.querySelectorAll('.extra-event');
+            extraEvents.forEach(function(event) {
+                event.style.display = this.checked ? 'none' : 'block';
+                event.style.backgroundColor = this.checked ? 'transparent' : '#cad6e6' ;
+            }, this);
+        });
+    }
 
     document.querySelectorAll('.expand').forEach(function(link) {
         link.addEventListener('click', function(event) {

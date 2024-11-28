@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../haoqiyou.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../haoqiyou.ico" type="image/x-icon">
+    <title>好骑友网(骑行活动收集器)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="dev_style.css">
+    <!-- Make sure Leaflet's CSS before JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-encoded@0.0.9/Polyline.encoded.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51069014-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLaayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-51069014-1');
+    </script>
+</head>
+<body>
+    <div class="top-bar-container">
+        <div class="column">
+            <span class="top-bar"><a id="prod-link" href=".">好 骑 友</a></span>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var link = document.getElementById("prod-link");
+                var currentUrl = window.location.href;
+                var newUrl = currentUrl.replace('/NorCal2024', '');
+                link.href = newUrl;
+            });
+            </script>
+        </div>
+        <div class="column">
+            <span>Updated on {{current_time_str_PDT}}</span><br/>
+            <label>
+                <input type="checkbox" id="toggleExtra" style="display: none;">
+                <span style="color:#0000ff">North California 2024 骑行活动</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="page-container" id="page-container">
+        <div class="list-container" id="list-container">
+{{list_content}}
+        </div>
+        <div class="map-container" id="map-container">
+            <!-- The map will be rendered here -->
+        </div>
+        <script>
+            const events=[
+                '{{map_content}}'
+            ];
+        </script>
+        <script src="../map_scriptrs.js"></script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAa-YWC_WqDbvhOCOtfl1xmRo3CvRSeck&callback=initMap&libraries=places,geometry,marker&v=beta&loading=async"
+        ></script>
+    </div>
+
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup" id="popup">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <div id="popup-content"></div>
+        <a href="#" id="load-commento-link">点击查看评论区</a>
+        <div id="commento" style="display: none;"></div>
+    </div>
+<script src="../scripts.js"></script>
+</body>
+</html>
