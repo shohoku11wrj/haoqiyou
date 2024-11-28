@@ -85,11 +85,12 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
     if 'event_picture_urls' in event and len(event['event_picture_urls']) > 1:
         popup_div += f"""
             <div class="slideshow-container">
-                <div class="slides-wrapper">
+                <div class="slides-wrapper" slides-length="{len(event['event_picture_urls'])}">
         """
         for i, img_url in enumerate(event['event_picture_urls']):
+
             popup_div += f"""
-                    <div class="slide" data-index="{i}">
+                    <div class="slide" data-index="{i}" style="{'block' if i == 0 else 'none'}">
                         <a href="{img_url}" target="_blank" class="event-link">
                             <img src="{img_url}" alt="Event Image {i+1}" class="slide-image">
                         </a>
@@ -100,7 +101,7 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
         if len(event['event_picture_urls']) > 1:
             popup_div += f"""
                 </div>
-                <button class="slide-nav prev" onclick="(-1, {picture_count})">❮</button>
+                <button class="slide-nav prev" onclick="moveSlide(-1, {picture_count})">❮</button>
                 <button class="slide-nav next" onclick="moveSlide(1, {picture_count})">❯</button>
                 <div class="slide-dots">
             """
