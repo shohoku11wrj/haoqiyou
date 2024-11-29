@@ -23,5 +23,7 @@
   "source_group_name": "轻如羽毛骑行团(FWC)",
   "title": "周六下午1:30 龟速爬page mill",
   "source_url": "https://www.strava.com/clubs/featherweight",
-  "event_picture_url": "https://lh3.googleusercontent.com/drive-viewer/AKGpihZGLHXenlHz1pZnvaNE116-CRuSFYKdvWdlt6e67ZQty76d8o7-a7dkrEe82Bcid7aDWnfPKNAG2ueAaPLe7mRMdlQGdIx7WgE=s2560"
+  "event_picture_urls": [
+    "https://lh3.googleusercontent.com/drive-viewer/AKGpihZGLHXenlHz1pZnvaNE116-CRuSFYKdvWdlt6e67ZQty76d8o7-a7dkrEe82Bcid7aDWnfPKNAG2ueAaPLe7mRMdlQGdIx7WgE=s2560"
+  ]
 }

@@ -76,9 +76,10 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
     # If the event has a event_picture_url URL, display it with link to source_url
     if ('event_picture_url' in event and event['event_picture_url'].startswith('http'))\
         or ('event_picture_urls' in event and event['event_picture_urls'] and len(event['event_picture_urls']) == 1 and event['event_picture_urls'][0].startswith('http')):
+        event_picture_url_0 = event['event_picture_url'] if 'event_picture_url' in event else event['event_picture_urls'][0]
         popup_div += f"""
             <a href="{source_event_url}" target="_blank" class="event-link">
-                <img src="{event['event_picture_url']}" alt="Event Image" width="100%">
+                <img src="{event_picture_url_0}" alt="Event Image" width="100%">
             </a>
     """
     # If the event has multiple event_picture_urls, create a slideshow
@@ -281,9 +282,10 @@ def gen_div_for_events_from_list(events_list):
         # If the event has a event_picture_url URL, display it with link to source_url
         if ('event_picture_url' in event and event['event_picture_url'].startswith('http'))\
             or ('event_picture_urls' in event and event['event_picture_urls'] and len(event['event_picture_urls']) == 1 and event['event_picture_urls'][0].startswith('http')):
+            event_picture_url_0 = event['event_picture_url'] if 'event_picture_url' in event else event['event_picture_urls'][0]
             events_div += f"""
                 <a href="{source_event_url}" target="_blank" class="event-link">
-                    <img src="{event['event_picture_url']}" alt="Event Image" width="100%">
+                    <img src="{event_picture_url_0}" alt="Event Image" width="100%">
                 </a>
             """
         # If the event has multiple event_picture_urls, only display the first image
