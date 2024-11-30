@@ -293,7 +293,7 @@ def gen_div_for_events_from_list(events_list):
             first_img_url = event['event_picture_urls'][0]
             events_div += f"""
                 <a href="{source_event_url}" target="_blank" class="event-link">
-                    <img src="{first_img_url}"></img>
+                    <img src="{first_img_url}"  width="100%"></img>
                 </a>
             """
     
