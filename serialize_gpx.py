@@ -116,7 +116,7 @@ def serialize_to_base64(data):
 
 ### MAIN FUNCTION ###
 # Find the GPX file
-gpx_files = glob.glob('./ignore_this/COURSE_*.gpx')
+gpx_files = glob.glob('./ignore_this/COURSE_247933117.gpx')
 if not gpx_files:
     raise FileNotFoundError("No GPX file found in ./ignore_this/ directory")
 
