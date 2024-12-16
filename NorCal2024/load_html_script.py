@@ -1,5 +1,6 @@
 # NorCal2024/load_html_script.py
 
+from bson import ObjectId
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 from pymongo import MongoClient
@@ -52,7 +53,9 @@ events_cursor = collection.find({
     '$or': [
         {'source_group_id': {'$eq': 59884023036}},
         {'source_type': {'$eq': 'wechat'}},
-        {'source_group_id': {'$eq': 1157973}}
+        {'source_group_id': {'$eq': 1157973}},
+        {'_id': {'$in': [ObjectId('675cbf464d14b254128dbbf1')]}
+        }
     ]
 })
 
