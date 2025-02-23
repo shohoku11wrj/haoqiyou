@@ -23,6 +23,7 @@ GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
 STRAVA_CLIENT_ID = os.getenv('STRAVA_CLIENT_ID')
 STRAVA_CLIENT_SECRET = os.getenv('STRAVA_CLIENT_SECRET')
 STRAVA_REFRESH_TOKEN = os.getenv('STRAVA_REFRESH_TOKEN')
+STRAVA_ACCESS_TOKEN = os.getenv('STRAVA_ACCESS_TOKEN')
 access_token = None
 
 def refresh_access_token(client_id, client_secret, refresh_token):
@@ -44,7 +45,8 @@ def refresh_access_token(client_id, client_secret, refresh_token):
 access_token, refresh_token = refresh_access_token(
     STRAVA_CLIENT_ID, STRAVA_CLIENT_SECRET, STRAVA_REFRESH_TOKEN
 )
-
+# TEST: force reset access_token
+access_token = STRAVA_ACCESS_TOKEN
 
 # 从以下Strava Clubs中获取Events
 club_ids = [
@@ -98,6 +100,7 @@ def get_club_events(club_id, access_token):
         return None
 
 def get_route_details(route_id, access_token):
+    access_token = STRAVA_ACCESS_TOKEN
     if route_id is None or route_id == "":
         return {}
     url = f"https://www.strava.com/api/v3/routes/{route_id}"
