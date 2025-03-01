@@ -45,8 +45,6 @@ def refresh_access_token(client_id, client_secret, refresh_token):
 access_token, refresh_token = refresh_access_token(
     STRAVA_CLIENT_ID, STRAVA_CLIENT_SECRET, STRAVA_REFRESH_TOKEN
 )
-# TEST: force reset access_token
-access_token = STRAVA_ACCESS_TOKEN
 
 # 从以下Strava Clubs中获取Events
 club_ids = [
@@ -56,7 +54,7 @@ club_ids = [
     '265',      # Los Gatos Bicycle Racing Club
     '1047313',  # Alto Velo C Ride
     '1115522',  # NorCal Cycling China Fans
-    '908336'    # Ruekn Bicci Gruppo (Southern California)
+    # '908336'    # Ruekn Bicci Gruppo (Southern California)
 ]
 
 # Google Maps APIs
@@ -96,7 +94,7 @@ def get_club_events(club_id, access_token):
     if response.status_code == 200:
         return response.json()
     else:
-        print(f"Error: {response.status_code}")
+        print(f"Error: {response.status_code}, url: {url}")
         return None
 
 def get_route_details(route_id, access_token):
@@ -112,6 +110,7 @@ def get_route_details(route_id, access_token):
     if response.status_code == 200:
         return response.json()
     else:
+        print(f"Error: {response.status_code}, url: {url}")
         response.raise_for_status()
 
 def get_event_route_distance_and_elevation(route_id, access_token):
@@ -168,6 +167,7 @@ operations = []
 
 for club_id, event_id, event in all_events_list:
     club_name = event['club']['name']
+    print(f"Processing event {event_id} for club {club_id}:{club_name}")
     event_time_utc = datetime.datetime.strptime(event['upcoming_occurrences'][0], '%Y-%m-%dT%H:%M:%SZ')
     event_time_utc = event_time_utc.replace(tzinfo=pytz.utc)
     # Format the GPS coordinates to at most 5 digits after floats, and without brackets

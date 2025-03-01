@@ -7,7 +7,7 @@ import re
 # List of group_ids of extra events
 extra_event_group_ids = [
     265,      # Los Gatos Bicycle Racing Club
-    908336,   # Ruekn Bicci Gruppo (Southern California)
+    # 908336,   # Ruekn Bicci Gruppo (Southern California)
     1047313,  # Alto Veto C Ride
 ]
 
