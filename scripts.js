@@ -254,7 +254,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     loadRelateiveDateForEvents();
 
-    document.querySelectorAll('.event').forEach(function(eventDiv) {
+    const eventElements = document.querySelectorAll('.event');
+    console.log(`Strava events loaded: ${eventElements.length}`);
+
+    eventElements.forEach(function(eventDiv) {
         const eventId = eventDiv.getAttribute('data-event-id');
         var routePolyline = getRoutePolyline(eventId);
         if (routePolyline) {
@@ -283,9 +286,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     document.querySelectorAll('.event-link').forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            event.stopPropagation();
-        });
+        const href = link.getAttribute('href') || '';
+        const isExternalLink = link.target === '_blank' || href.startsWith('http');
+
+        if (isExternalLink) {
+            link.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+        }
     });
   
     document.querySelectorAll("gmp-advanced-marker").forEach(function(advancedMarker){

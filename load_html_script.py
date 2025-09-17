@@ -2,7 +2,7 @@
 
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
-from utils.load_html_utils import(
+from utils.load_html_utils import (
     get_start_of_week,
     gen_div_for_events_from_list,
     gen_gmp_advanced_marker_for_events_from_list,
@@ -42,7 +42,7 @@ events_cursor = collection.find({
 # Save all the fetched events in a list
 all_events_list = []
 for event in events_cursor:
-    # Convert the event's event_time_utc to datetime.datetime object if it's a string, hint: string format 2024-07-26T15:30:00.000+00:00
+    # Convert the event's event_time_utc to datetime.datetime object if it's a string
     if isinstance(event['event_time_utc'], str):
         datetime_str = event['event_time_utc']
         dt, tz = datetime_str[:-6], datetime_str[-6:]
@@ -56,12 +56,16 @@ for event in events_cursor:
         event_time_tz = event_time_tz.replace(tzinfo=timezone(tz_delta))
         # convert to UTC
         event_time_utc = event_time_tz.astimezone(pytz.utc)
-        event_time_utc = event_time_utc.replace(tzinfo=None)  # Ensure no timezone info
+        event_time_utc = event_time_utc.replace(tzinfo=None)  # Remove timezone info
         event['event_time_utc'] = event_time_utc
     elif isinstance(event['event_time_utc'], datetime):
         event['event_time_utc'] = event['event_time_utc'].replace(tzinfo=None)  # Ensure no timezone info
+    
+    # Add the processed event to the list
     all_events_list.append(event)
 
+# Sort events by date
+all_events_list.sort(key=lambda x: x['event_time_utc'])
 
 # Split the events into two lists by 6 hours before the current time;
 # one list for future events (ongoing events started in 6 hours, future events),
@@ -76,11 +80,32 @@ past_events_list = [event for event in all_events_list if event['event_time_utc'
 # Sort the events
 future_events_list.sort(key=lambda x: x['event_time_utc'])
 planning_events_list.sort(key=lambda x: x['event_time_utc'])
-past_events_list.sort(key=lambda x: x['event_time_utc'], reverse=True)  # you are so smart copilot #
+past_events_list.sort(key=lambda x: x['event_time_utc'], reverse=True)  # most recent first
 
-# DEBUG: 在CLI中打印events的数量
+# DEBUG: Print number of events
 print(f"Total number of future events: {len(future_events_list)}")
+print(f"Total number of planning events: {len(planning_events_list)}")
 print(f"Total number of past events: {len(past_events_list)}")
+
+# DEBUG: Uncomment to print all club events data
+# for event in future_events_list:
+#     club_id = event.get('source_group_id', 'N/A')
+#     club_name = event.get('source_group_name', 'N/A')
+#     print(f"Events for Club ID {club_id} & Club Name \"{club_name}\":")
+#     if event.get('source_event_id') == 1726014:
+#         print(event.get('raw_event', 'No raw event data'))
+#     else:
+#         print(f"  Event Id: {event.get('source_event_id', 'N/A')}")
+#         print(f"  Event Name: {event.get('title', 'No title')}")
+#         print(f"  Start Time: {event.get('event_time_utc', 'N/A')}")
+#         print(f"  Start Address: {event.get('meet_up_location', 'N/A')}")
+#         print(f"  Start Position GPS: {event.get('gps_coordinates', 'N/A')}")
+#         print(f"  Route Image: {event.get('route_map_url', 'N/A')}")
+#         print(f"  Organizer: {event.get('organizer', 'N/A')}")
+#         print(f"  Club Name: {event.get('source_group_name', 'N/A')}")
+#         print(f"  Description: {event.get('description', 'No description')}")
+#         print("-" * 40)
+#     print("~" * 40)
 
 # DEBUG: 打印所有俱乐部的事件数据
 # for event in future_events_list:
@@ -154,6 +179,17 @@ current_time_str_PDT = datetime.now(local_tz).strftime('%D %H:%M')
 index_html = index_template.replace('{{current_time_str_PDT}}', current_time_str_PDT)
 index_html = index_html.replace('{{list_content}}', events_list_content)
 index_html = index_html.replace("'{{map_content}}'", map_content)
+
+# Add the events data as a JavaScript variable
+script_tag = f"""
+<script>
+    // Pass the events data to the frontend
+    const events = {0};
+</script>
+""".format(map_content)
+
+# Insert the script tag before the closing body tag
+index_html = index_html.replace('</body>', f"{script_tag}\n</body>")
 
 # Save the index_html to a file
 with open('index.html', 'w', encoding='utf-8') as file:

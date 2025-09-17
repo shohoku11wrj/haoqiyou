@@ -98,7 +98,6 @@ def get_club_events(club_id, access_token):
         return None
 
 def get_route_details(route_id, access_token):
-    access_token = STRAVA_ACCESS_TOKEN
     if route_id is None or route_id == "":
         return {}
     url = f"https://www.strava.com/api/v3/routes/{route_id}"
