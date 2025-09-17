@@ -1,7 +1,8 @@
 # load_html_utils.py
 
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
+from pathlib import Path
 from utils.load_html_utils import (
     get_start_of_week,
     gen_div_for_events_from_list,
@@ -10,59 +11,60 @@ from utils.load_html_utils import (
     insert_shift_to_event_markers,
     serialize_event_markers_to_string
 )
-from pymongo import MongoClient
-import os
+import json
 import pytz
 
 # Load environment variables from .env file
 load_dotenv()
 
-# MongoDB connection setup
-MONGO_CONNECTION_STRING = os.getenv('MONGO_CONNECTION_STRING')
-RIDE_EVENT_DB_NAME = os.getenv('RIDE_EVENT_DB_NAME')
-RIDE_EVENTS_COLLECTION_NAME = os.getenv('RIDE_EVENTS_CITY_COLLECTION_NAME')
-client = MongoClient(MONGO_CONNECTION_STRING)
-db = client[RIDE_EVENT_DB_NAME]
-collection = db[RIDE_EVENTS_COLLECTION_NAME]
+# Local storage paths
+BASE_DIR = Path(__file__).resolve().parent
+EVENTS_FILE_PATH = BASE_DIR / 'storage' / 'events.json'
 
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
 
-# Fetch events from MongoDB where the start time is after the Monday of the current week
+# Fetch events from local JSON storage and filter by start of the current week
 start_of_week_utc = get_start_of_week()
-print(f"Start of the week (UTC): {start_of_week_utc}")
-events_cursor = collection.find({
-    'is_active': {'$eq': True},
-    '$or': [
-        {'event_time_utc': {'$gte': start_of_week_utc}},
-        {'event_time_utc': {'$type': 'string', '$gte': start_of_week_utc.isoformat()}}
-    ]
-})
+start_of_week_naive = start_of_week_utc.astimezone(pytz.utc).replace(tzinfo=None)
+print(f"Start of the week (UTC): {start_of_week_naive}")
 
-# Save all the fetched events in a list
+events_data = []
+if EVENTS_FILE_PATH.exists():
+    try:
+        with EVENTS_FILE_PATH.open('r', encoding='utf-8') as events_file:
+            events_data = json.load(events_file)
+    except json.JSONDecodeError as exc:
+        print(f"Failed to load events from {EVENTS_FILE_PATH}: {exc}")
+
 all_events_list = []
-for event in events_cursor:
-    # Convert the event's event_time_utc to datetime.datetime object if it's a string
-    if isinstance(event['event_time_utc'], str):
-        datetime_str = event['event_time_utc']
-        dt, tz = datetime_str[:-6], datetime_str[-6:]
-        event_time_tz = datetime.strptime(dt, '%Y-%m-%dT%H:%M:%S.%f')
-        # Parse the timezone part
-        tz_hours, tz_minutes = int(tz[1:3]), int(tz[4:6])
-        tz_delta = timedelta(hours=tz_hours, minutes=tz_minutes)
-        if tz[0] == '-':
-            tz_delta = -tz_delta
-        # Apply the timezone to the datetime object
-        event_time_tz = event_time_tz.replace(tzinfo=timezone(tz_delta))
-        # convert to UTC
-        event_time_utc = event_time_tz.astimezone(pytz.utc)
-        event_time_utc = event_time_utc.replace(tzinfo=None)  # Remove timezone info
-        event['event_time_utc'] = event_time_utc
-    elif isinstance(event['event_time_utc'], datetime):
-        event['event_time_utc'] = event['event_time_utc'].replace(tzinfo=None)  # Ensure no timezone info
-    
-    # Add the processed event to the list
+for event in events_data:
+    if not event.get('is_active', True):
+        continue
+
+    event_time_str = event.get('event_time_utc')
+    if not event_time_str:
+        continue
+
+    normalized_time_str = event_time_str.replace('Z', '+00:00')
+    try:
+        event_time_dt = datetime.fromisoformat(normalized_time_str)
+    except ValueError:
+        print(f"Skipping event {event.get('source_event_id')} due to invalid timestamp: {event_time_str}")
+        continue
+
+    if event_time_dt.tzinfo is None:
+        event_time_dt = event_time_dt.replace(tzinfo=pytz.utc)
+
+    event_time_utc = event_time_dt.astimezone(pytz.utc).replace(tzinfo=None)
+    if event_time_utc < start_of_week_naive:
+        continue
+
+    event['event_time_utc'] = event_time_utc
+    event.setdefault('_id', f"{event.get('source_type', 'event')}-{event.get('source_group_id', 'unknown')}-{event.get('source_event_id', 'unknown')}")
     all_events_list.append(event)
+
+print(f"Loaded {len(all_events_list)} events from {EVENTS_FILE_PATH}")
 
 # Sort events by date
 all_events_list.sort(key=lambda x: x['event_time_utc'])

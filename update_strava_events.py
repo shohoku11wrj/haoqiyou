@@ -1,20 +1,17 @@
 from dotenv import load_dotenv
-from pymongo import MongoClient, UpdateOne
 import datetime
+import json
 import os
+from pathlib import Path
 import pytz
 import requests
 
 # Load environment variables from .env file
 load_dotenv()
 
-# MongoDB connection setup
-MONGO_CONNECTION_STRING = os.getenv('MONGO_CONNECTION_STRING')
-RIDE_EVENT_DB_NAME = os.getenv('RIDE_EVENT_DB_NAME')
-RIDE_EVENTS_COLLECTION_NAME = os.getenv('RIDE_EVENTS_CITY_COLLECTION_NAME')
-client = MongoClient(MONGO_CONNECTION_STRING)
-db = client[RIDE_EVENT_DB_NAME]
-collection = db[RIDE_EVENTS_COLLECTION_NAME]
+# Local storage paths
+BASE_DIR = Path(__file__).resolve().parent
+EVENTS_FILE_PATH = BASE_DIR / 'storage' / 'events.json'
 
 # Google Maps API
 GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
@@ -23,7 +20,6 @@ GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
 STRAVA_CLIENT_ID = os.getenv('STRAVA_CLIENT_ID')
 STRAVA_CLIENT_SECRET = os.getenv('STRAVA_CLIENT_SECRET')
 STRAVA_REFRESH_TOKEN = os.getenv('STRAVA_REFRESH_TOKEN')
-STRAVA_ACCESS_TOKEN = os.getenv('STRAVA_ACCESS_TOKEN')
 access_token = None
 
 def refresh_access_token(client_id, client_secret, refresh_token):
@@ -153,22 +149,19 @@ for club_id, events in all_events.items():
 all_events_list = [(club_id, event_id, event) for (club_id, event_id), event in deduped_events.items()]
 
 # DEBUG: 在CLI中打印events的数量
-print(f"Total number of duduped_events: {len(all_events_list)}")
+print(f"Total number of deduped Strava events: {len(all_events_list)}")
 
-all_events_list = []  # List of all events by (club_id, event_id, event) tuple
-for club_id, events in all_events.items():
-    for event in events:
-        all_events_list.append((club_id, event['id'], event))
 # Sort the events by their start time
 all_events_list.sort(key=lambda x: datetime.datetime.strptime(x[2]['upcoming_occurrences'][0], '%Y-%m-%dT%H:%M:%SZ'))
-# Create a list of UpdateOne operations
-operations = []
+
+event_documents = []
 
 for club_id, event_id, event in all_events_list:
     club_name = event['club']['name']
     print(f"Processing event {event_id} for club {club_id}:{club_name}")
     event_time_utc = datetime.datetime.strptime(event['upcoming_occurrences'][0], '%Y-%m-%dT%H:%M:%SZ')
     event_time_utc = event_time_utc.replace(tzinfo=pytz.utc)
+    event_time_utc_iso = event_time_utc.isoformat()
     # Format the GPS coordinates to at most 5 digits after floats, and without brackets
     gps_coordinates = ', '.join(map(str, [round(coord, 5) for coord in event['start_latlng']])) if event['start_latlng'] else ''
     if gps_coordinates == '' and event['address'] != '':
@@ -195,13 +188,14 @@ for club_id, event_id, event in all_events_list:
     except ValueError as e:
         print(e)
 
-    # Prepare the event document for MongoDB
+    # Prepare the event document for JSON storage
     event_document = {
+        '_id': f"strava-{club_id}-{event_id}",
         'source_type': 'strava',
         'source_group_id': int(club_id),
         'source_event_id': event_id,
         'source_group_name': club_name,
-        'event_time_utc': event_time_utc,
+        'event_time_utc': event_time_utc_iso,
         'meet_up_location': event['address'],
         'gps_coordinates': gps_coordinates,
         'distance_meters': distance_meters,
@@ -218,17 +212,10 @@ for club_id, event_id, event in all_events_list:
 
     # DEBUG: print event_document without raw_event
     # print({k: v for k, v in event_document.items() if k != 'raw_event'})
+    event_documents.append(event_document)
 
-    # Add the UpdateOne operation to the list
-    operations.append(
-        UpdateOne(
-            {'source_type': 'strava', 'source_group_id': int(club_id), 'source_event_id': event_id},
-            {'$set': event_document},
-            upsert=True
-        )
-    )
+EVENTS_FILE_PATH.parent.mkdir(parents=True, exist_ok=True)
+with EVENTS_FILE_PATH.open('w', encoding='utf-8') as events_file:
+    json.dump(event_documents, events_file, indent=2)
 
-# Execute the bulk write operation
-if operations:
-    result = collection.bulk_write(operations)
-    print(f"Bulk write result: {result.bulk_api_result}")
+print(f"Stored {len(event_documents)} Strava events in {EVENTS_FILE_PATH}")
