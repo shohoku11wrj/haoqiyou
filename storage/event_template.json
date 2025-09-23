@@ -1,6 +1,3 @@
-/**
-* Insert Document
-*/
 {
   "source_type": "wechat",
   "source_event_id": {
@@ -23,6 +20,7 @@
   "source_group_name": "轻如羽毛骑行团(FWC)",
   "title": "周六下午1:30 龟速爬page mill",
   "source_url": "https://www.strava.com/clubs/featherweight",
+  "route_polyline": "qgdeFdvbhVjBkc@mX?e_@?{JpGwVxZkS?y[pGyE?aDgCoGwIu@qGoGuIkB?u@lEdIpVyEbPwEpGoGbAaDlEyE?aDjE_PrG}OjTkBtIoGpG?hCwEbAcDzKwE?oGjTyEhCgNbAmGbPkSfReI?wEdAmBjEwE??hReIxKyEgCqLpGdIxK?hCkSxKkBpGgNbPkS?wEpGoGdAwEpGeZpGiSfRuQpGwEtIkB?oGvIu@|McDdAkBpG?qG`DmEwEqG`DcA?qGzJcPlBmEw@cA{JtIaD~McZpGoGtI{JbAwEpGmBcAaDpGu@cAsb@jT{JbAqLzKkBgCkS_NkBmEu@qVjBmEt@gRwEyKeI?mi@eP{J}MaDfCaDzKvEpGwEmElGgRzJ|Mp]zK~ThCbDfCjBpGaDtXt@pV`DpGjS~McDfRyJpVw@pGiSxZoGlT}OfRoGhCid@`n@{Jlc@eIxKaDbPt@bAnGgRlGqGnGtIt@kElBbAvEiCoGkExEbA`DlE{JfR?fCbDcAjBhC?fC`DhClBiCdIcAvEpGu@fCjBhCfNcAv@pGvEiCu@cAjBiCxE?jBgCjSbAbIpGbDmE?gCcDiCbDyKcDbA?gCzJiRdIcAxE_NdIyKzJ?vEmEtQhC?pGcDxKt@bAt@kElBfClGgCbDjEn]oe@xE{KcDcA{JiC}OpGoGqGaDgRjByKnGwI`DcPp]oe@`DmTu@mEeIyKu@mTdI_N`D}MbDeAt@}MzJ{KlGqGrLmEhSgRjSmEjBgCxE?vEqGnGeAvEqGnGcAnGhChSqV?iCjSyK?mEoGqG?iCpLkExEfCdIyKt@wIkBqGvE?dIqGdI?vVkTlG_NhNcApLqVbImE?qGbD?d_@an@`U_NxE?`DmEnGcAvEqGxEcPeImTjBqGdItIjBvIzJxK|`@qGjS?vEgCjSuXfNqGzq@bAt@lEkB|\\aDcAt@mEu@gCmB?",
   "event_picture_urls": [
     "https://lh3.googleusercontent.com/drive-viewer/AKGpihZGLHXenlHz1pZnvaNE116-CRuSFYKdvWdlt6e67ZQty76d8o7-a7dkrEe82Bcid7aDWnfPKNAG2ueAaPLe7mRMdlQGdIx7WgE=s2560"
   ]

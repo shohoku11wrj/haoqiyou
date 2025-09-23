@@ -1,8 +1,11 @@
+from __future__ import annotations
+
 from dotenv import load_dotenv
 import datetime
 import json
 import os
 from pathlib import Path
+from typing import Any, Dict, List, Optional
 import pytz
 import requests
 
@@ -21,6 +24,163 @@ STRAVA_CLIENT_ID = os.getenv('STRAVA_CLIENT_ID')
 STRAVA_CLIENT_SECRET = os.getenv('STRAVA_CLIENT_SECRET')
 STRAVA_REFRESH_TOKEN = os.getenv('STRAVA_REFRESH_TOKEN')
 access_token = None
+
+
+def wrap_number_long(value: Any) -> Dict[str, str] | None:
+    """Wrap numeric identifiers using Mongo Extended JSON style."""
+    if value is None:
+        return None
+    if isinstance(value, dict) and "$numberLong" in value:
+        return value
+    return {"$numberLong": str(value)}
+
+
+def isoformat_datetime(value: datetime.datetime) -> str:
+    """Return an ISO-8601 string including milliseconds when absent."""
+    iso_value = value.isoformat()
+    if value.microsecond == 0 and "." not in iso_value:
+        if iso_value.endswith("Z"):
+            return f"{iso_value[:-1]}.000Z"
+        for tz_sep in ("+", "-"):
+            idx = iso_value.rfind(tz_sep)
+            if idx > 10:
+                base = iso_value[:idx]
+                suffix = iso_value[idx + 1:]
+                return f"{base}.000{tz_sep}{suffix}"
+        return f"{iso_value}.000"
+    return iso_value
+
+
+def wrap_date(value: Any) -> Dict[str, str] | None:
+    """Encapsulate datetime strings using Mongo Extended JSON $date."""
+    if value is None:
+        return None
+    if isinstance(value, dict) and "$date" in value:
+        return value
+    if isinstance(value, datetime.datetime):
+        iso_value = isoformat_datetime(value)
+    else:
+        iso_value = str(value)
+    return {"$date": iso_value}
+
+
+def ensure_list_of_strings(value: Any) -> List[str]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return [str(item) for item in value if item]
+    return [str(value)]
+
+
+def clean_dict(data: Dict[str, Any]) -> Dict[str, Any]:
+    cleaned: Dict[str, Any] = {}
+    for key, value in data.items():
+        if value is None:
+            continue
+        if isinstance(value, dict):
+            nested = clean_dict(value)
+            if nested:
+                cleaned[key] = nested
+            continue
+        if isinstance(value, list):
+            cleaned_list = [item for item in value if item not in (None, "")]
+            cleaned[key] = cleaned_list
+            continue
+        cleaned[key] = value
+    return cleaned
+
+
+def dehydrate_event_document(event_document: Dict[str, Any]) -> Dict[str, Any]:
+    dehydrated = {k: v for k, v in event_document.items() if k != 'raw_event'}
+
+    dehydrated['source_event_id'] = wrap_number_long(dehydrated.get('source_event_id'))
+    dehydrated['source_group_id'] = wrap_number_long(dehydrated.get('source_group_id'))
+    dehydrated['event_time_utc'] = wrap_date(dehydrated.get('event_time_utc'))
+
+    if 'event_picture_urls' in dehydrated:
+        dehydrated['event_picture_urls'] = ensure_list_of_strings(dehydrated['event_picture_urls'])
+    elif 'event_picture_url' in dehydrated:
+        dehydrated['event_picture_urls'] = ensure_list_of_strings(dehydrated['event_picture_url'])
+        dehydrated.pop('event_picture_url', None)
+    else:
+        dehydrated['event_picture_urls'] = []
+
+    if not dehydrated.get('source_url'):
+        dehydrated['source_url'] = dehydrated.get('strava_url', '')
+
+    return clean_dict(dehydrated)
+
+
+def _load_existing_events(path: Path) -> List[Dict[str, Any]]:
+    if not path.exists():
+        return []
+    try:
+        with path.open('r', encoding='utf-8') as fh:
+            data = json.load(fh)
+            if isinstance(data, list):
+                return data
+    except (json.JSONDecodeError, OSError) as exc:
+        print(f"Warning: unable to read existing events from {path}: {exc}")
+    return []
+
+
+def _strava_event_key(event: Dict[str, Any]) -> Optional[str]:
+    if event.get('source_type') != 'strava':
+        return None
+
+    source_event_id = event.get('source_event_id')
+    if isinstance(source_event_id, dict):
+        source_event_id = source_event_id.get('$numberLong') or source_event_id.get('$oid')
+    if source_event_id:
+        return f"id:{source_event_id}"
+
+    strava_url = (event.get('strava_url') or event.get('source_url') or '').strip()
+    if strava_url:
+        return f"url:{strava_url}"
+
+    if event.get('_id'):
+        return f"_id:{event['_id']}"
+
+    return None
+
+
+def _event_time_sort_key(event: Dict[str, Any]) -> datetime.datetime:
+    raw_time: Any = event.get('event_time_utc')
+    if isinstance(raw_time, dict):
+        raw_time = raw_time.get('$date')
+    if isinstance(raw_time, str):
+        iso_value = raw_time.replace('Z', '+00:00')
+        try:
+            dt = datetime.datetime.fromisoformat(iso_value)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=datetime.timezone.utc)
+            return dt
+        except ValueError:
+            pass
+    return datetime.datetime(9999, 12, 31, tzinfo=datetime.timezone.utc)
+
+
+def _merge_events(existing_events: List[Dict[str, Any]], new_strava_events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    merged: List[Dict[str, Any]] = []
+    strava_events: Dict[str, Dict[str, Any]] = {}
+
+    for event in existing_events:
+        key = _strava_event_key(event)
+        if key:
+            strava_events[key] = event
+        else:
+            merged.append(event)
+
+    for event in new_strava_events:
+        key = _strava_event_key(event)
+        if key:
+            strava_events[key] = event
+        else:
+            merged.append(event)
+
+    merged.extend(strava_events.values())
+    merged.sort(key=_event_time_sort_key)
+    return merged
 
 def refresh_access_token(client_id, client_secret, refresh_token):
     url = 'https://www.strava.com/oauth/token'
@@ -50,7 +210,7 @@ club_ids = [
     '265',      # Los Gatos Bicycle Racing Club
     '1047313',  # Alto Velo C Ride
     '1115522',  # NorCal Cycling China Fans
-    # '908336'    # Ruekn Bicci Gruppo (Southern California)
+    '908336',    # Ruekn Bicci Gruppo (Southern California)
 ]
 
 # Google Maps APIs
@@ -154,7 +314,7 @@ print(f"Total number of deduped Strava events: {len(all_events_list)}")
 # Sort the events by their start time
 all_events_list.sort(key=lambda x: datetime.datetime.strptime(x[2]['upcoming_occurrences'][0], '%Y-%m-%dT%H:%M:%SZ'))
 
-event_documents = []
+event_documents: List[Dict[str, Any]] = []
 
 for club_id, event_id, event in all_events_list:
     club_name = event['club']['name']
@@ -212,10 +372,15 @@ for club_id, event_id, event in all_events_list:
 
     # DEBUG: print event_document without raw_event
     # print({k: v for k, v in event_document.items() if k != 'raw_event'})
-    event_documents.append(event_document)
+    event_documents.append(dehydrate_event_document(event_document))
+
+existing_events = _load_existing_events(EVENTS_FILE_PATH)
+merged_events = _merge_events(existing_events, event_documents)
 
 EVENTS_FILE_PATH.parent.mkdir(parents=True, exist_ok=True)
 with EVENTS_FILE_PATH.open('w', encoding='utf-8') as events_file:
-    json.dump(event_documents, events_file, indent=2)
+    json.dump(merged_events, events_file, indent=2)
 
-print(f"Stored {len(event_documents)} Strava events in {EVENTS_FILE_PATH}")
+print(
+    f"Stored {len(event_documents)} Strava events (total records: {len(merged_events)}) in {EVENTS_FILE_PATH}"
+)

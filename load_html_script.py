@@ -24,6 +24,33 @@ EVENTS_FILE_PATH = BASE_DIR / 'storage' / 'events.json'
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
 
+
+def unwrap_number_long(value):
+    if isinstance(value, dict) and '$numberLong' in value:
+        try:
+            return int(value['$numberLong'])
+        except (ValueError, TypeError):
+            return value['$numberLong']
+    return value
+
+
+def unwrap_date(value):
+    if isinstance(value, dict) and '$date' in value:
+        return value['$date']
+    return value
+
+
+def normalize_event_for_runtime(event):
+    if not isinstance(event, dict):
+        return event
+    if 'source_group_id' in event:
+        event['source_group_id'] = unwrap_number_long(event.get('source_group_id'))
+    if 'source_event_id' in event:
+        event['source_event_id'] = unwrap_number_long(event.get('source_event_id'))
+    if 'event_time_utc' in event:
+        event['event_time_utc'] = unwrap_date(event.get('event_time_utc'))
+    return event
+
 # Fetch events from local JSON storage and filter by start of the current week
 start_of_week_utc = get_start_of_week()
 start_of_week_naive = start_of_week_utc.astimezone(pytz.utc).replace(tzinfo=None)
@@ -34,6 +61,7 @@ if EVENTS_FILE_PATH.exists():
     try:
         with EVENTS_FILE_PATH.open('r', encoding='utf-8') as events_file:
             events_data = json.load(events_file)
+            events_data = [normalize_event_for_runtime(event) for event in events_data]
     except json.JSONDecodeError as exc:
         print(f"Failed to load events from {EVENTS_FILE_PATH}: {exc}")
 
