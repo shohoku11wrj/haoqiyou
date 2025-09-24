@@ -163,7 +163,7 @@ print(f"Total number of past events: {len(past_events_list)}")
 ##########################################################################################################
 
 events_list_content = """
-    <h2><span style="opacity: 0;">U</span>Pcoming Events <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" alt="Green Marker" /></h2>
+    <h2><span style="opacity: 100;">U</span>Pcoming Events <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" alt="Green Marker" /></h2>
     <div class="events-container">
 """
 
