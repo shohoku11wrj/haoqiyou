@@ -144,8 +144,8 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
             <p><strong>实际人数:</strong> {event['actual_participants_number']}</p>
         """
 
-    # # Generate QR code for the event with URL: https://haoqiyou.net/?id=event-{event['_id']}
-    # qr_code_url = f"https://haoqiyou.net/?id=event-{event['_id']}"
+    # # Generate QR code for the event with URL: https://haoqiyou.info/?id=event-{event['_id']}
+    # qr_code_url = f"https://haoqiyou.info/?id=event-{event['_id']}"
     # popup_div += f"""
     #     <p><strong>扫码查看活动:</strong></p>
     #     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={qr_code_url}" alt="QR Code" width="150">

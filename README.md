@@ -24,4 +24,5 @@ TODO:
  * Allow event owner to cancel/edit details of the event.
  * Migrate events from MongoDB to local JSON file
  * Parse riding events from webpage (e.g. https://www.altovelo.org/c-ride)
- 
+ ## 2025-09-24 New Domain
+ https://haoqiyou.info
