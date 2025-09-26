@@ -3,6 +3,7 @@ import os
 import re
 from collections import deque
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import google.generativeai as genai
@@ -21,6 +22,14 @@ genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 CUTOFF_DATE = datetime.now() - timedelta(weeks=2)
 
 _GARMIN_ROUTE_CACHE: Dict[str, bytes] = {}
+_RIDEWITHGPS_HEADERS = {
+    "User-Agent": os.getenv(
+        "RIDEWITHGPS_USER_AGENT",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    ),
+    "Accept": "application/json, text/plain, */*",
+}
 
 
 def extract_from_connect_garmin(course_url: str) -> bytes:
@@ -112,6 +121,228 @@ def extract_from_connect_garmin(course_url: str) -> bytes:
     _GARMIN_ROUTE_CACHE[course_id] = poly_bytes
     print(poly_bytes)
     return poly_bytes
+
+
+def extract_route_polygon_from_ridewithgps(route_url: str) -> str:
+    """Fetch and encode a Ride with GPS route as a Google polyline string."""
+
+    if not route_url:
+        raise ValueError("A Ride with GPS route URL is required")
+
+    json_url = _build_ridewithgps_json_url(route_url)
+
+    try:
+        response = requests.get(json_url, headers=_RIDEWITHGPS_HEADERS, timeout=30)
+    except requests.RequestException as exc:
+        raise RuntimeError(f"Failed to load Ride with GPS route data from {json_url}") from exc
+
+    if response.status_code in {404, 403} or "json" not in response.headers.get(
+        "Content-Type", ""
+    ).lower():
+        alt_url = _ensure_query_parameter(json_url, "format", "json")
+        if alt_url != json_url:
+            try:
+                response = requests.get(alt_url, headers=_RIDEWITHGPS_HEADERS, timeout=30)
+            except requests.RequestException as exc:
+                raise RuntimeError(
+                    f"Failed to load Ride with GPS route data from {alt_url}"
+                ) from exc
+            json_url = alt_url
+
+    try:
+        response.raise_for_status()
+    except requests.RequestException as exc:
+        raise RuntimeError(f"Failed to load Ride with GPS route data from {json_url}") from exc
+
+    try:
+        payload = response.json()
+    except ValueError as exc:
+        raise ValueError("Ride with GPS route endpoint returned non-JSON data") from exc
+
+    coords = _extract_ridewithgps_coordinates(payload)
+    if not coords:
+        raise ValueError("Unable to locate coordinate data in Ride with GPS payload")
+
+    return _encode_polyline(coords)
+
+
+def _build_ridewithgps_json_url(route_url: str) -> str:
+    parsed = urlparse(route_url)
+
+    scheme = parsed.scheme or "https"
+    netloc = parsed.netloc or "ridewithgps.com"
+    path = parsed.path.rstrip("/")
+
+    if not path:
+        raise ValueError(f"Invalid Ride with GPS route URL: {route_url}")
+
+    if not path.endswith(".json"):
+        path = f"{path}.json"
+
+    return urlunparse((scheme, netloc, path, parsed.params, parsed.query, ""))
+
+
+def _ensure_query_parameter(url: str, key: str, value: str) -> str:
+    parsed = urlparse(url)
+    query_pairs = parse_qsl(parsed.query, keep_blank_values=True)
+
+    updated = dict(query_pairs)
+    if updated.get(key) == value:
+        return url
+
+    updated[key] = value
+    new_query = urlencode(updated, doseq=True)
+
+    return urlunparse((parsed.scheme, parsed.netloc, parsed.path, parsed.params, new_query, parsed.fragment))
+
+
+def _extract_ridewithgps_coordinates(payload: Any) -> List[Tuple[float, float]]:
+    """Traverse the Ride with GPS payload to collect latitude/longitude pairs."""
+
+    queue: deque[Any] = deque([payload])
+
+    while queue:
+        current = queue.popleft()
+
+        if isinstance(current, dict):
+            # GeoJSON LineString format
+            if current.get("type") == "LineString" and isinstance(
+                current.get("coordinates"), list
+            ):
+                coords = _coerce_coordinate_sequence(current["coordinates"])
+                if coords:
+                    return coords
+
+            for key, value in current.items():
+                lowered = key.lower()
+                if lowered in {
+                    "track_points",
+                    "trackpoints",
+                    "points",
+                    "coordinates",
+                    "course_points",
+                }:
+                    coords = _coerce_coordinate_sequence(value)
+                    if coords:
+                        return coords
+                elif lowered == "route_path" and isinstance(value, dict):
+                    coords = _coerce_coordinate_sequence(value.get("coordinates"))
+                    if coords:
+                        return coords
+                queue.append(value)
+        elif isinstance(current, list):
+            # Some payloads nest the interesting dict inside singleton lists.
+            queue.extend(current)
+
+    return []
+
+
+def _coerce_coordinate_sequence(data: Any) -> List[Tuple[float, float]]:
+    """Convert various coordinate point representations into (lat, lon) tuples."""
+
+    if isinstance(data, dict):
+        # Allow nested structures like {"coordinates": [...]}
+        nested = data.get("coordinates") if "coordinates" in data else None
+        if nested is not None:
+            return _coerce_coordinate_sequence(nested)
+        nested = data.get("points") if "points" in data else None
+        if nested is not None:
+            return _coerce_coordinate_sequence(nested)
+        return []
+
+    if not isinstance(data, list):
+        return []
+
+    coords: List[Tuple[float, float]] = []
+
+    for entry in data:
+        lat_lon: Optional[Tuple[float, float]] = None
+
+        if isinstance(entry, dict):
+            lat_lon = _latlon_from_dict(entry)
+        elif isinstance(entry, (list, tuple)) and len(entry) >= 2:
+            lat_lon = _latlon_from_sequence(entry)
+
+        if not lat_lon:
+            continue
+
+        if coords and lat_lon == coords[-1]:
+            continue
+
+        coords.append(lat_lon)
+
+    return coords
+
+
+def _latlon_from_dict(entry: Dict[str, Any]) -> Optional[Tuple[float, float]]:
+    keys = {key.lower(): key for key in entry.keys()}
+
+    lat_key: Optional[str] = None
+    for candidate in ("lat", "latitude", "y"):
+        if candidate in keys:
+            lat_key = keys[candidate]
+            break
+
+    lon_key: Optional[str] = None
+    for candidate in ("lon", "lng", "longitude", "x"):
+        if candidate in keys:
+            lon_key = keys[candidate]
+            break
+
+    if lat_key is None or lon_key is None:
+        # Some payload formats use "a"/"b" or "1"/"0" style keys; attempt detection.
+        lat_key, lon_key = _guess_lat_lon_keys(entry)
+
+    if lat_key is None or lon_key is None:
+        return None
+
+    try:
+        lat = float(entry[lat_key])
+        lon = float(entry[lon_key])
+    except (TypeError, ValueError):
+        return None
+
+    return lat, lon
+
+
+def _guess_lat_lon_keys(entry: Dict[str, Any]) -> Tuple[Optional[str], Optional[str]]:
+    lat_candidate: Optional[str] = None
+    lon_candidate: Optional[str] = None
+
+    for key, value in entry.items():
+        try:
+            numeric = float(value)
+        except (TypeError, ValueError):
+            continue
+
+        if -90.0 <= numeric <= 90.0 and lat_candidate is None:
+            lat_candidate = key
+        elif -180.0 <= numeric <= 180.0 and lon_candidate is None:
+            lon_candidate = key
+
+    return lat_candidate, lon_candidate
+
+
+def _latlon_from_sequence(entry: Iterable[Any]) -> Optional[Tuple[float, float]]:
+    iterator = list(entry)
+    if len(iterator) < 2:
+        return None
+
+    first, second = iterator[0], iterator[1]
+
+    try:
+        first_f = float(first)
+        second_f = float(second)
+    except (TypeError, ValueError):
+        return None
+
+    if -90.0 <= first_f <= 90.0 and -180.0 <= second_f <= 180.0:
+        return first_f, second_f
+
+    if -180.0 <= first_f <= 180.0 and -90.0 <= second_f <= 90.0:
+        return second_f, first_f
+
+    return None
 
 
 def _apply_cookie_overrides(session: requests.Session) -> None:
@@ -603,7 +834,10 @@ def main():
     #event_details_list = parse_event_details(events_list)
     #print(event_details_list)
     #print(extract_from_connect_garmin("https://connect.garmin.com/modern/course/400017456"))
-    print(extract_route_polygon_from_local_html("storage/garmin_route.html"))
+    # extract route from <g> element from garmin html
+    #print(extract_route_polygon_from_local_html("storage/garmin_route.html"))
+    # extract route from ridewithgps
+    print(extract_route_polygon_from_ridewithgps("https://ridewithgps.com/routes/52796073"))
 
 
 if __name__ == '__main__':
