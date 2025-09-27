@@ -835,9 +835,9 @@ def main():
     #print(event_details_list)
     #print(extract_from_connect_garmin("https://connect.garmin.com/modern/course/400017456"))
     # extract route from <g> element from garmin html
-    #print(extract_route_polygon_from_local_html("storage/garmin_route.html"))
+    print(extract_route_polygon_from_local_html("storage/garmin_route.html"))
     # extract route from ridewithgps
-    print(extract_route_polygon_from_ridewithgps("https://ridewithgps.com/routes/52796073"))
+    #print(extract_route_polygon_from_ridewithgps("https://ridewithgps.com/routes/52796073"))
 
 
 if __name__ == '__main__':
