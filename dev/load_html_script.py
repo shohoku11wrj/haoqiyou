@@ -1,152 +1,93 @@
 # dev/load_html_script.py
 
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
-from pymongo import MongoClient
 import os
-import re
 import sys
 import pytz
 
-# Add the root directory to sys.pathfrom
+# Add the root directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from utils.load_html_utils import(
+
+from utils.event_storage import DEFAULT_EVENTS_FILE, load_events_for_runtime
+from utils.load_html_utils import (
     get_start_of_week,
     gen_div_for_events_from_list,
     gen_gmp_advanced_marker_for_events_from_list,
     get_overlapping_gps_coords,
     insert_shift_to_event_markers,
-    serialize_event_markers_to_string
+    serialize_event_markers_to_string,
 )
 
 # Load environment variables from .env file
 load_dotenv()
 
-# MongoDB connection setup
-MONGO_CONNECTION_STRING = os.getenv('MONGO_CONNECTION_STRING')
-RIDE_EVENT_DB_NAME = os.getenv('RIDE_EVENT_DB_NAME')
-RIDE_EVENTS_COLLECTION_NAME = os.getenv('RIDE_EVENTS_CITY_COLLECTION_NAME')
-client = MongoClient(MONGO_CONNECTION_STRING)
-db = client[RIDE_EVENT_DB_NAME]
-collection = db[RIDE_EVENTS_COLLECTION_NAME]
-
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
 
-# 转移url成hyperlink成<a href="url" target="_blank">text</a>
-def convert_urls_to_links(text):
-    # case_1: 原文已经提供了<a>标签
-    if re.search(r'<a href="([^"]+)" target="_blank">[^<]+</a>', text):
-        return text
-    # case_2: 原文提供了markdown形式[text](url)
-    markdown_pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
-    text = markdown_pattern.sub(r'<a href="\2" target="_blank">\1</a>', text)
-    # case_3: 原文只有url
-    url_pattern = re.compile(r'(?<!href=")(https?://[^\s]+)')
-    text = url_pattern.sub(r'<a href="\1" target="_blank">\1</a>', text)
-    return text
-
-# Prod: Fetch events from MongoDB where the start time is after the Monday of the current week
-# Dev: Fetch events for 2 months
+# Fetch events for the dev view (~90 days back)
 start_of_week_utc = get_start_of_week()
-two_months_before = start_of_week_utc - timedelta(days=90)
-print(f"Start of the week (UTC): {two_months_before}")
-events_cursor = collection.find({
-    'is_active': {'$eq': True},
-    '$or': [
-        {'event_time_utc': {'$gte': two_months_before}},
-        {'event_time_utc': {'$type': 'string', '$gte': two_months_before.isoformat()}}
-    ]
-})
+start_of_week_naive = start_of_week_utc.astimezone(pytz.utc).replace(tzinfo=None)
+two_months_before = start_of_week_naive - timedelta(days=90)
+print(f"Start of the week (UTC): {start_of_week_naive}")
 
-# Save all the fetched events in a list
-all_events_list = []
-for event in events_cursor:
-    # Convert the event's event_time_utc to datetime.datetime object if it's a string, hint: string format 2024-07-26T15:30:00.000+00:00
-    if isinstance(event['event_time_utc'], str):
-        datetime_str = event['event_time_utc']
-        dt, tz = datetime_str[:-6], datetime_str[-6:]
-        event_time_tz = datetime.strptime(dt, '%Y-%m-%dT%H:%M:%S.%f')
-        # Parse the timezone part
-        tz_hours, tz_minutes = int(tz[1:3]), int(tz[4:6])
-        tz_delta = timedelta(hours=tz_hours, minutes=tz_minutes)
-        if tz[0] == '-':
-            tz_delta = -tz_delta
-        # Apply the timezone to the datetime object
-        event_time_tz = event_time_tz.replace(tzinfo=timezone(tz_delta))
-        # convert to UTC
-        event_time_utc = event_time_tz.astimezone(pytz.utc)
-        event_time_utc = event_time_utc.replace(tzinfo=None)  # Ensure no timezone info
-        event['event_time_utc'] = event_time_utc
-    elif isinstance(event['event_time_utc'], datetime):
-        event['event_time_utc'] = event['event_time_utc'].replace(tzinfo=None)  # Ensure no timezone info
-    all_events_list.append(event)
+all_events = load_events_for_runtime(active_only=True)
+all_events_list = [
+    event for event in all_events
+    if event.get('event_time_utc') and event['event_time_utc'] >= two_months_before
+]
 
+print(f"Loaded {len(all_events_list)} active events from {DEFAULT_EVENTS_FILE}")
 
-# Split the events into two lists by 6 hours before the current time;
-# one list for future events (ongoing events started in 6 hours, future events),
-# and one list for past events.
+# Split the events into three lists
 six_hours_before = datetime.now(pytz.utc).replace(tzinfo=None) - timedelta(hours=6)
 print(f"Six hours before: {six_hours_before}")
 days_difference = datetime.now(pytz.utc).replace(tzinfo=None) + timedelta(days=14)
-future_events_list = [event for event in all_events_list if event['event_time_utc'] >= six_hours_before and event['event_time_utc'] <= days_difference]
-planning_events_list = [event for event in all_events_list if event['event_time_utc'] > days_difference]
-past_events_list = [event for event in all_events_list if event['event_time_utc'] < six_hours_before]
+future_events_list = [
+    event for event in all_events_list
+    if six_hours_before <= event['event_time_utc'] <= days_difference
+]
+planning_events_list = [
+    event for event in all_events_list
+    if event['event_time_utc'] > days_difference
+]
+past_events_list = [
+    event for event in all_events_list
+    if event['event_time_utc'] < six_hours_before
+]
 
 # Sort the events
 future_events_list.sort(key=lambda x: x['event_time_utc'])
 planning_events_list.sort(key=lambda x: x['event_time_utc'])
-past_events_list.sort(key=lambda x: x['event_time_utc'], reverse=True)  # you are so smart copilot #
+past_events_list.sort(key=lambda x: x['event_time_utc'], reverse=True)
 
 # DEBUG: 在CLI中打印events的数量
 print(f"Total number of future events: {len(future_events_list)}")
+print(f"Total number of planning events: {len(planning_events_list)}")
 print(f"Total number of past events: {len(past_events_list)}")
-
-# DEBUG: 打印所有俱乐部的事件数据
-# for event in future_events_list:
-#     club_id = event['source_group_id']
-#     club_name = event['source_group_name']
-#     print(f"Events for Club ID {club_id} & Club Name \"{club_name}\":")
-#     if event['source_event_id'] == 1726014:
-#         print(event['raw_event'])
-#     else:
-#         print(f"  Event Id: {event['source_event_id']}")
-#         print(f"  Event Name: {event['title']}")
-#         print(f"  Start Time: {event['event_time_utc']}")
-#         print(f"  Start Address: {event['meet_up_location']}")
-#         print(f"  Start Position GPS: {event['gps_coordinates']}")
-#         print(f"  Route Image: {event['route_map_url']}")
-#         print(f"  Organizer: {event['organizer']}")
-#         print(f"  Club Name: {event['source_group_name']}")
-#         print(f"  Description: {event['description']}")
-#         print("-" * 40)
-#     print("~" * 40)
-
 
 ##########################################################################################################
 # 开始创建 html_content                                                                                   #
 ##########################################################################################################
 
 events_list_content = """
-    <h2><span style="opacity: 0;">U</span>Pcoming Events <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" alt="Green Marker" /></h2>
-    <div class="events-container">
+    <h2><span style=\"opacity: 0;\">U</span>Pcoming Events <img src=\"http://maps.google.com/mapfiles/ms/icons/green-dot.png\" alt=\"Green Marker\" /></h2>
+    <div class=\"events-container\">
 """
 
 events_list_content += gen_div_for_events_from_list(future_events_list)
 
-
 events_list_content += f"""
         </div>
-        <h2>Planning Events <img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" alt="Blue Marker" /></h2>
-        <div class="events-container">
+        <h2>Planning Events <img src=\"http://maps.google.com/mapfiles/ms/icons/blue-dot.png\" alt=\"Blue Marker\" /></h2>
+        <div class=\"events-container\">
 """
 events_list_content += gen_div_for_events_from_list(planning_events_list)
 
-
 events_list_content += f"""
         </div>
-        <h2>Past Events <img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" alt="Yellow Marker" /></h2>
-        <div class="events-container">
+        <h2>Past Events <img src=\"http://maps.google.com/mapfiles/ms/icons/yellow-dot.png\" alt=\"Yellow Marker\" /></h2>
+        <div class=\"events-container\">
 """
 events_list_content += gen_div_for_events_from_list(past_events_list)
 
@@ -154,7 +95,6 @@ events_list_content += gen_div_for_events_from_list(past_events_list)
 events_list_content += """
     </div>
 """
-
 
 event_markers = []
 event_markers.extend(gen_gmp_advanced_marker_for_events_from_list(past_events_list, 'past'))

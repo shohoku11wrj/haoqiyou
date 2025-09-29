@@ -2,98 +2,30 @@
 
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
-from pathlib import Path
+from utils.event_storage import DEFAULT_EVENTS_FILE, load_events_for_runtime
 from utils.load_html_utils import (
     get_start_of_week,
     gen_div_for_events_from_list,
     gen_gmp_advanced_marker_for_events_from_list,
     get_overlapping_gps_coords,
     insert_shift_to_event_markers,
-    serialize_event_markers_to_string
+    serialize_event_markers_to_string,
 )
-import json
 import pytz
 
 # Load environment variables from .env file
 load_dotenv()
 
-# Local storage paths
-BASE_DIR = Path(__file__).resolve().parent
-EVENTS_FILE_PATH = BASE_DIR / 'storage' / 'events.json'
-
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
 
-
-def unwrap_number_long(value):
-    if isinstance(value, dict) and '$numberLong' in value:
-        try:
-            return int(value['$numberLong'])
-        except (ValueError, TypeError):
-            return value['$numberLong']
-    return value
-
-
-def unwrap_date(value):
-    if isinstance(value, dict) and '$date' in value:
-        return value['$date']
-    return value
-
-
-def normalize_event_for_runtime(event):
-    if not isinstance(event, dict):
-        return event
-    if 'source_group_id' in event:
-        event['source_group_id'] = unwrap_number_long(event.get('source_group_id'))
-    if 'source_event_id' in event:
-        event['source_event_id'] = unwrap_number_long(event.get('source_event_id'))
-    if 'event_time_utc' in event:
-        event['event_time_utc'] = unwrap_date(event.get('event_time_utc'))
-    return event
-
-# Fetch events from local JSON storage and filter by start of the current week
+# Fetch events from local JSON storage
 start_of_week_utc = get_start_of_week()
 start_of_week_naive = start_of_week_utc.astimezone(pytz.utc).replace(tzinfo=None)
 print(f"Start of the week (UTC): {start_of_week_naive}")
 
-events_data = []
-if EVENTS_FILE_PATH.exists():
-    try:
-        with EVENTS_FILE_PATH.open('r', encoding='utf-8') as events_file:
-            events_data = json.load(events_file)
-            events_data = [normalize_event_for_runtime(event) for event in events_data]
-    except json.JSONDecodeError as exc:
-        print(f"Failed to load events from {EVENTS_FILE_PATH}: {exc}")
-
-all_events_list = []
-for event in events_data:
-    if not event.get('is_active', True):
-        continue
-
-    event_time_str = event.get('event_time_utc')
-    if not event_time_str:
-        continue
-
-    normalized_time_str = event_time_str.replace('Z', '+00:00')
-    try:
-        event_time_dt = datetime.fromisoformat(normalized_time_str)
-    except ValueError:
-        print(f"Skipping event {event.get('source_event_id')} due to invalid timestamp: {event_time_str}")
-        continue
-
-    if event_time_dt.tzinfo is None:
-        event_time_dt = event_time_dt.replace(tzinfo=pytz.utc)
-
-    event_time_utc = event_time_dt.astimezone(pytz.utc).replace(tzinfo=None)
-    # load all events from the storage, instead of filtering by start_of_week_utc
-    # if event_time_utc < start_of_week_naive:
-    #    continue
-
-    event['event_time_utc'] = event_time_utc
-    event.setdefault('_id', f"{event.get('source_type', 'event')}-{event.get('source_group_id', 'unknown')}-{event.get('source_event_id', 'unknown')}")
-    all_events_list.append(event)
-
-print(f"Loaded {len(all_events_list)} events from {EVENTS_FILE_PATH}")
+all_events_list = load_events_for_runtime(active_only=True)
+print(f"Loaded {len(all_events_list)} events from {DEFAULT_EVENTS_FILE}")
 
 # Sort events by date
 all_events_list.sort(key=lambda x: x['event_time_utc'])
