@@ -85,8 +85,9 @@ for event in events_data:
         event_time_dt = event_time_dt.replace(tzinfo=pytz.utc)
 
     event_time_utc = event_time_dt.astimezone(pytz.utc).replace(tzinfo=None)
-    if event_time_utc < start_of_week_naive:
-        continue
+    # load all events from the storage, instead of filtering by start_of_week_utc
+    # if event_time_utc < start_of_week_naive:
+    #    continue
 
     event['event_time_utc'] = event_time_utc
     event.setdefault('_id', f"{event.get('source_type', 'event')}-{event.get('source_group_id', 'unknown')}-{event.get('source_event_id', 'unknown')}")
