@@ -411,6 +411,95 @@ def _encode_from_points(points: Iterable[Any]) -> Optional[str]:
     return _encode_polyline(coords)
 
 
+def extract_route_polygon_from_course_json(course_json: Any) -> str:
+    """Load a Garmin course JSON payload and return an encoded polyline."""
+
+    payload = _load_course_payload(course_json)
+
+    polyline = _extract_polyline_from_payload(payload)
+    if polyline:
+        return polyline
+
+    coords = _extract_course_coordinates(payload)
+    if not coords:
+        raise ValueError("Unable to locate latitude/longitude points in course JSON")
+
+    return _encode_polyline(coords)
+
+
+def _load_course_payload(source: Any) -> Any:
+    """Normalise course input (path, JSON string, or dict) into a payload dict."""
+
+    if isinstance(source, dict):
+        return source
+
+    if isinstance(source, list):
+        raise ValueError("Course JSON payload must be an object, not a list")
+
+    if isinstance(source, (str, os.PathLike)):
+        source_str = str(source)
+        path = Path(source_str)
+        if path.exists():
+            raw = path.read_text(encoding="utf-8")
+        else:
+            stripped = source_str.lstrip()
+            if not stripped:
+                raise ValueError("Empty course JSON input")
+            if stripped[0] in "[{":
+                raw = source_str
+            else:
+                raise FileNotFoundError(f"Course JSON file not found: {source_str}")
+
+        try:
+            return json.loads(raw)
+        except json.JSONDecodeError as exc:
+            raise ValueError("Invalid JSON content for Garmin course") from exc
+
+    if hasattr(source, "read"):
+        raw = source.read()
+        try:
+            return json.loads(raw)
+        except (TypeError, json.JSONDecodeError) as exc:
+            raise ValueError("Invalid JSON content for Garmin course") from exc
+
+    raise TypeError("course_json must be a path, JSON string, or dict payload")
+
+
+def _extract_course_coordinates(payload: Any) -> List[Tuple[float, float]]:
+    """Search the course payload for an ordered sequence of coordinates."""
+
+    queue: deque[Any] = deque([payload])
+    seen: set[int] = set()
+    best_coords: List[Tuple[float, float]] = []
+
+    while queue:
+        current = queue.popleft()
+
+        if isinstance(current, (dict, list)):
+            identity = id(current)
+            if identity in seen:
+                continue
+            seen.add(identity)
+
+        if isinstance(current, dict):
+            for value in current.values():
+                if isinstance(value, list):
+                    coords = _coerce_coordinate_sequence(value)
+                    if coords and len(coords) > len(best_coords):
+                        best_coords = coords
+                if isinstance(value, (dict, list)):
+                    queue.append(value)
+        elif isinstance(current, list):
+            coords = _coerce_coordinate_sequence(current)
+            if coords and len(coords) > len(best_coords):
+                best_coords = coords
+            for item in current:
+                if isinstance(item, (dict, list)):
+                    queue.append(item)
+
+    return best_coords
+
+
 def _encode_polyline(coordinates: Iterable[Iterable[float]], precision: int = 5) -> str:
     """Encode coordinates using Google's polyline algorithm."""
 
@@ -833,11 +922,13 @@ def main():
     #events_list = parse_events(url)
     #event_details_list = parse_event_details(events_list)
     #print(event_details_list)
-    #print(extract_from_connect_garmin("https://connect.garmin.com/modern/course/400017456"))
+    #print(extract_from_connect_garmin("https://connect.garmin.com/modern/course/408102006"))
     # extract route from <g> element from garmin html
-    print(extract_route_polygon_from_local_html("storage/garmin_route.html"))
+    #print(extract_route_polygon_from_local_html("storage/garmin_route.html"))
     # extract route from ridewithgps
     #print(extract_route_polygon_from_ridewithgps("https://ridewithgps.com/routes/52796073"))
+    # extract route from garmin connect course json
+    print(json.dumps(extract_route_polygon_from_course_json("storage/course_1.json")))
 
 
 if __name__ == '__main__':
