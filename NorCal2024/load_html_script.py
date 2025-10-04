@@ -51,7 +51,7 @@ print(f"Loaded {len(all_events_list)} NorCal events from {DEFAULT_EVENTS_FILE}")
 ##########################################################################################################
 
 events_list_content = """
-    <h2><span style=\"opacity: 0;\">U</span>北加州骑行团2024骑行记录回顾 <img src=\"http://maps.google.com/mapfiles/ms/icons/green-dot.png\" alt=\"Green Marker\" /></h2>
+    <h2><span style=\"opacity: 0;\">U</span>北加州骑行团2024骑行记录回顾 <img src=\"https://maps.google.com/mapfiles/ms/icons/green-dot.png\" alt=\"Green Marker\" /></h2>
     <div class=\"events-container\">
 """
 
