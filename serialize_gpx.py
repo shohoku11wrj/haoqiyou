@@ -15,7 +15,7 @@ from typing import Iterable, Iterator, Sequence, Tuple
 import xml.etree.ElementTree as ET
 
 # Garmin exports use the GPX 1.1 namespace.
-GPX_NAMESPACE = {"gpx": "http://www.topografix.com/GPX/1/1"}
+GPX_NAMESPACE = {"gpx": "https://www.topografix.com/GPX/1/1"}
 
 
 def iter_gpx_points(gpx_path: Path) -> Iterator[Tuple[float, float]]:

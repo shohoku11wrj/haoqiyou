@@ -1,0 +1,138 @@
+
+[
+  {
+    "_id": "strava-265-3406175659540070332",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3406175659540070332"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2025-09-27T15:30:00+00:00"
+    },
+    "meet_up_location": "Mike's Bikes, 201 N Santa Cruz Ave, Los Gatos, California 95030, United States",
+    "gps_coordinates": "37.2264, -121.98233",
+    "distance_meters": 0,
+    "elevation_gain_meters": 0,
+    "organizer": "Tyson Kamp",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3406175659540070332",
+    "title": "Saturday Tempo Ride",
+    "description": "This is a 65 mile ride with 2.5k-3k of elevation which feels like less.  We'll start at Mike's and ride to the coffee shop in Morgan Hill by Bike Therapy, and the brew pub if that's your thing.  For the bigger stronger non climbers this is probably a Z2/Z3 mostly ride.  We can stop at Calero for bathrooms and water in both directions if need be.  I intend to have coffee and a pastry in morgan Hill which should take us 2-2.25 hours to reach, and the stop will be 30-40 minutes (not so long that you totally cool off).  The ride home is probably 1.75 hours.  This is sort of a classic base miles ride with a little more pep than you'd probably do in February, with chances to pace line, go hard up a few mini-climbs, or just draft the whole way if that suits you.  You can even hit some sprint signs, just regroup after that.\n\nRoute is here: https://ridewithgps.com/routes/52796073",
+    "route_map_url": "",
+    "route_polyline": "owebFftogVNFDO{m@gUoBqa@wHqw@p@uEWKY`FbBiQi]sMuDnAmNo_Hp~@UIsL|WuU|Nd@aC{Rzi@yqFfc@i_AhEe@?Ll\\{J|Dc@QBPCkAiVKsD|l@ma@?yPiDiC~KuPzIiOt@gBuRwVqAsCbyL}gQfZ{IQBvbLkuLzAiAyv@kOcvBhz@wJw]?T?Ug|@tl@ymAytC_Im_@I]u\\bQon@jZoBgI_b@n\\bSj_@u|@xs@oDnA~l@vbAwLl[fb@fStu@nExRrD{|@xrBkA`hDksM~pQ{@X_ZwQyCkGHRISsfB|}E{b@~v@bBhsAiItyAzWtd@b@dDmAj@H`@rCaBUWmItC`CzR}Ne@@l@gF|G?UwP~KHrLq~@TnJtrGjGJdOPhQIEhAgDfa@VJD_@WKE^t]xL~CjAtOpL_GhNfb@bU`KvBiEls@aTqKiBfHo@SENOG",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3406175659540070332"
+  },
+  {
+    "_id": "strava-908336-3402397921097342174",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "908336"
+    },
+    "source_event_id": {
+      "$numberLong": "3402397921097342174"
+    },
+    "source_group_name": "Ruekn Bici Gruppo (Southern California)",
+    "event_time_utc": {
+      "$date": "2025-09-28T14:30:00+00:00"
+    },
+    "meet_up_location": "14652 Prospect Avenue, 14652 Prospect Avenue, Tustin, California 92780, United States",
+    "gps_coordinates": "33.75024, -117.82131",
+    "distance_meters": 57624,
+    "elevation_gain_meters": 474,
+    "organizer": "Stan \ud83e\udd8a",
+    "strava_url": "https://www.strava.com/clubs/908336/group_events/3402397921097342174",
+    "title": "\ud83d\udc06",
+    "description": "\ud83d\udea9 7:45 AM \u279c \ud83c\udfc1 11:15 AM\n\n\ud83d\udeb4\ud83c\udffb 35.8 mi\n\ud83d\udeb5\ud83c\udffb 1,556 ft\n\n\ud83c\udd7f\ufe0f Columbus Tustin Park\n14652 Prospect Ave, Tustin, CA 92780\n\n\u2615\ufe0f Aloha stacks\n6380 Irvine Blvd, Irvine, CA 92620\n\n---------------------------------------------\n\n**Sunday Group Ride Notice and Rules**\n\nJoin us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:\n\n1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.\n\n2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)\n\n3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.\n\n4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.\n\n5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.\n\n6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.\n\n7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.\n\n8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.\n\nWe look forward to enjoyable ride. See you on the road!",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/RKE3IETMYGOXQ32ZWNF6XRGP4L5H56CBQZXQXQ4RHHMSFUHKXV5M2MWYGOLOTKFNPTNYIW3E3NSMOULXWTNC6J4IPYNXPFGO7K2PKSI=",
+    "route_polyline": "qv~lE~bcnUI`A}}@LEkJml@gBzAsHu@w]bB_MCwa@ek@cBMiXcOqAcLeV{E[@eQkFRuPvHcZB?kX{@oFzGqFlAqHm@kNuG{OW}k@hCoQeEwVvBgK`M_Q~@}_@~PStVpDhUWpVpDvOG\\zDnCxD|VxCrWhUtWfHvVJlEnAlDzG?pHhJ@|D`QzSoOzW}_@``@oQzN{R_K}GuToC{BhIyOvIsLpRsWm@kCuB{A}EsLuEuJmImFoO}DqFuCaBoIdC}C}@BeJ`IsNqA_GRaE|DcE`Pu@n@~EuDnH_@fEbD~MtA`BbM|@lCpH`JfMbK_DvZsUdFSf@wFvGaMdFgVhGiGtOmB~RdEvMpNdV}QxMqRdHcG`l@cLxP_OjMfMpByCdMbMqDbGp^~]bIqMrG[c@iNtFuGhMbIt|@p|@shAthBkQtDePdW`NpV`T`TlUhIlt@ft@vP}\\`GkD`GSdI`Dj\\n_@xUnO`HdQl@hP}GjfAkFrN_MlGqNyAqj@sg@_OoToS{KaLxS_BnWsDlKiXzNm`@~k@qFlEgHcJmc@mNcNuLsb@qW{T_VcX_O_r@iq@}[iOcT_TjEoR_DoA_VnMmIrHoz@ptAlKxK_Cbj@xNAOhl@`DO",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/908336/group_events/3402397921097342174"
+  },
+  {
+    "_id": "strava-265-3405698567506123072",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3405698567506123072"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2025-09-28T15:30:00+00:00"
+    },
+    "meet_up_location": "Mike's Bikes",
+    "gps_coordinates": "37.2264, -121.98233",
+    "distance_meters": 52411,
+    "elevation_gain_meters": 720,
+    "organizer": "Rachel Vasquez",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3405698567506123072",
+    "title": "Sunday Road Ride: Redwood Gulch",
+    "description": "Hello team,\nThis Sunday, we will head towards Steven\u2019s Canyon and climb Redwood Gulch. The route is 27 miles with 2,100 feet of elevation gain. We will stop for water/bathroom at the intersection of Steven\u2019s Canyon and Mt. Eden, this time we will head to the stop on the left side. Depending on how the group is feeling that morning, we can d.ecide if we\u2019d like to go to the end of the paved part of Steven\u2019s Canyon before beginning the main climb of the day. This will add a couple of miles of rolling hills. \n\nWe will meet at Mike\u2019s Bikes in Los Gatos at 8:30am and wheels roll at 8:35am. Please RSVP on Strava if you plan to attend. I hope to see you there!",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4IK53UCNXXVHROAH2Y7YPZPIIRF4WVBVTKIDDEK7ZDVDED6ETI5HE2BLSASATLRTR564EU6AZERK56I7PEQBZV45O5R4VMJPO4FKXOQ=",
+    "route_polyline": "wvebF~sogVmCaA}LkEyAm@{Ai@eIyCgBy@_GuB_@QwHoCuBeA{CgA_AI{Jc@iBO[AUQoAK[J{Frl@}AdOu@jIKRYFgCc@K?IFIb@OtA[tGChADPNR|@r@fAt@tE`BfD`BzAfAr@|@vDlHn@`ATVcDnEk@~@}@|@_BjBiAxAw@j@w@XuBZkA`@sATi@DaAYi@YuAg@mKmC{AOcC}@qEgA}@e@iBq@wBo@y@Ym@YwAeAcA_@aAOcCoA_@c@e@eAk@_AgAqAoAs@i@Qw@?}BXg@EoAm@a@IUD}EdB[FYGsAyAm@a@o@Qy@I_@QwAoAy@[oAKcHRsFXBx@?jEBrDEjGFxHEvA@|@FZb@t@`AhAhA|@n@t@r@`@z@RfAPvJf@zEN|ALzC|AKfEWt@]`@eDvBOTMd@e@lEMZcAzAK^QfA?j@H|BQl@_@j@Yn@EnDKXWVUB_E?m@Qk@Ye@m@e@wAsCiEaAaAKSIYAQDu@Im@Qa@_Ac@oAOeFqCi@c@YY_A}BU}@Iu@?gAHmAAo@Ok@o@s@_@sBK]Sa@u@c@]IcMHc@dHeArR?bCDlGp@fEFdB@rAJfALXR`BHbUV|@R`A?~AgAGeCFcBb@g@FaMD_@Du@`@sCmEeB~A_AZw@fAs@vAcAdC_B~BcBzDgAu@m@u@m@cBSiBi@oAg@s@q@[s@IyPFaCF{G@m@V]d@KZGb@WnFu@lKm@z@_ACSjMuAdiAIb@q@nAOfAB`\\yEwCy@}@{CsB}BwAo@[s@S}@?{AVcG`As@Pi@V[B_@?_@Y]c@_@[WIkB?aAY]Oo@m@Qc@Ic@Ac@oEGmDBJpEb@jG?t@QfHQfAe@l@X[YZ}BdAmC~@yGvBYJi@HuFDqJ@eCAKXQlAEpB?pDBjBFv@@bAIfC@d@Ht@?x@GlBApDH|@?zAGt@BpKkZ?X?FvZGz@?`FEb@GNOPWPkPCwCGaB@oCk@kG??sBEaAiAgEAoXyU?@hPJLBza@DVNJxBAjAH^XNPd@pApC|J^dCz@nCLn@?h@Gh@aApCk@rB_@Za@Hq@F}@G{@IW?CFAHHT`ElARV@VSvBgAxJ?XvCh@xJpBxBf@NLtA|B^ThCb@j@Xv@j@fApAr@r@vA~@Rb@FZ@XGpA?j@VnAr@lCf@t@fBv@^\\lBvB\\RnAh@vAb@bAHrB@d@LZJRNz@|@b@Pd@H`@ItBgA|@Yd@Gr@Hz@h@h@hA^dA|AfFh@l@\\LnBVtBtAbBzAvBzB\\Xn@?`@GtAa@PDXPVd@~@pKAfAg@vCCb@@^Rn@d@j@h@Pp@Q~AuE^eCZgA\\k@TO`AAnBP~@j@bAPxE_A`Ek@d@ObBw@xIsBVOZYnCkDf@c@~@]LIvAi@d@GrA[z@_@VSTYfAsBfAcBXm@T}@DoAGgA?s@Hc@d@}@d@QTDjB`AVFRATOJQZoAJIXAnBJTAn@YXQNQXs@Pw@?a@McBAm@Fc@Ti@^]VHP?pAZhCvAr@n@r@h@`Ct@jBnA|@~@l@`@p@P`BEXF^Xr@|@bA|BlBvCVt@RxAHPhEbEf@`BfAdBhAbARZPb@HfAQpD@ZVr@\\b@Tt@ZrD[zDDv@Lh@h@|@v@pBVvBp@zDl@nA~@t@h@Fn@?p@HzCpFjBvCPv@NtAVt@`Av@\\|@?|@y@nC_@dAGd@Lj@XHd@Ab@PZXPb@R~@Dd@Aj@I^_@d@eAd@_ANSPSXCJDjCWbBOj@SXk@n@Mh@MfAAXBR^~ABb@APUl@{C~E]r@Sv@[r@gCdEIPMl@MXi@t@[t@?XDXCfAk@|BWb@_@`@g@\\e@b@Wh@{@nCQHoBIwAF[b@m@hAO`@MfAKb@OPq@Rc@h@uAnCm@r@Sd@EV?v@EXo@nAsArB]hAm@lCQb@yAZYXq@|@q@~AcArCIr@GjBQnA[fAm@dAOfAMxAgAdCQhAo@r@eAXq@n@i@~AUnA]t@URy@b@WVe@bBYl@Xm@d@cBVWx@c@TS\\u@ToAh@_Bp@o@dAYn@s@PiAfAeCLyANgAl@eAZgAPoAFkBHs@bAsCp@_Bp@}@XYxA[Pc@l@mC\\iArAsBn@oADY?w@DWRe@l@s@tAoCb@i@p@SNQJc@LgANa@l@iAZc@vAGnBHPIz@oCVi@d@c@f@]^a@Vc@j@}BBgAEY?YZu@h@u@LYLm@HQfCeEZs@Rw@\\s@zC_FTm@@QCc@_@_BCS@YLgALi@j@o@RYNk@VcBEkCBKRYRQ~@OdAe@^e@H_@@k@Ee@S_A`AGVFV?h@l@p@@`@A\\Pn@?n@Q|BgAj@@~@b@j@D|@dCDZEPKLqAh@Wb@Ej@?r@Fj@`@pAj@hDJdACxA{@`Dk@bBmBbEQj@InAFd@RNRGj@cBd@u@vDaB~@k@t@}@XQzAm@r@k@pAeCl@cBRoA^k@j@k@zByAd@_APoADk@Lm@Ra@`@QzBF~@?h@Q^QhAPP?f@u@Pa@Pu@^gABcBJ}@P}@Xu@Ta@xCcD`AwA|@_Ab@YtAu@nBu@XQ~@gA~DgH|BmCz@kBzBsDhAwAlAqAbDgFt@yAdB_FFYP{FH}@r@iDTk@j@eAH]RsBNiDNcCLoAf@aDtB}DZoABc@Eu@Is@{@eESuBU{DOmEF_B?[Ec@i@yAa@aBy@gA{BHsAQgASmEmAUQ_@e@Oa@Ic@@Qn@iBd@uBR}BAoAIc@M[aBmCSu@Ak@F{DCc@EQUc@aA_ASYMu@IwADwARu@j@_AHSDYAYy@aDKyAF{BDc@Ns@|@gCViANwAJyDH[JQrAqAXu@L}@?YG[MQs@i@OYg@sAkAu@KYAs@L_HAu@OaB?QHs@`@cBDiAI}@e@oAcBqDG[?u@HaB?i@[aDW}FKa@O[QQYMwA]QQOYCYB[^kBB}@Om@_AaBGQK{@YwGI}@Wc@OQ_@IiB?KAa@WOe@a@gDNIjDs@mAmKfBnBfCgEnCaEDSXW~AeC{BuDcEyF{@}@KQ?c@Nu@`@[d@Yb@c@Vi@Nu@_@w@iE}Dl@eA|DcJjFeLrAgChBmCrBoCfAqAz@oAzBsCpLqQhBwChAyApDkG~@sBtMs^dA{CdAaE\\aB|@{FxAuLp@sGh@gEl@aEv@kDbA_DjAmChAmBtSgXxD}E~DaGx@}BZmAxBoEvOyZlA_BfEyHj@Yf@GfJdDlC`A",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3405698567506123072"
+  },
+  {
+    "_id": "strava-908336-3407586406694183134",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "908336"
+    },
+    "source_event_id": {
+      "$numberLong": "3407586406694183134"
+    },
+    "source_group_name": "Ruekn Bici Gruppo (Southern California)",
+    "event_time_utc": {
+      "$date": "2025-10-05T14:30:00+00:00"
+    },
+    "meet_up_location": "618 North Bradford Avenue, 618 North Bradford Avenue, Placentia, California 92870, United States",
+    "gps_coordinates": "33.87876, -117.86856",
+    "distance_meters": 58178,
+    "elevation_gain_meters": 217,
+    "organizer": "Stan \ud83e\udd8a",
+    "strava_url": "https://www.strava.com/clubs/908336/group_events/3407586406694183134",
+    "title": "\ud83c\udd7f\ufe0f",
+    "description": "\ud83d\udea9 7:45 AM \u279c \ud83c\udfc1 11:15 AM\n\n\ud83d\udeb4\ud83c\udffb 36.15 mi\n\ud83d\udeb5\ud83c\udffb 715 ft\n\n\ud83c\udd7f\ufe0f Valencia High School\n618 Bradford Ave, Placentia, CA 92870\n\n\u2615 Findi Cafe\n5127 W Edinger Ave Suite F, Santa Ana, CA 92704\n\n---------------------------------------------\n\n**Sunday Group Ride Notice and Rules**\n\nJoin us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:\n\n1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.\n\n2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)\n\n3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.\n\n4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.\n\n5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.\n\n6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.\n\n7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.\n\n8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.\n\nWe look forward to enjoyable ride. See you on the road!",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/WXCIKJARCEXYTW4DA2VGP6J2PSDP545YDOUB4KTZER67NZKEPPESZWY3OCGIJ3NYBK6Y6XDXT5EGJDQE4JBMUUTTVFBH3YFZYOH5ARI=",
+    "route_polyline": "o}wmEnelnUwLaClD{YnGe@hMsFzCczBjG_P|@}GKmS_D{U~Ip@|J}@@mPfGwYvAch@hK~C|w@Ydb@{NpQcMnTfd@zSzu@|T|\\~I~C`g@_@tCkC`DkL~XgTlh@gWjVyCzGaDvfA[@kc@zAmEjDsBxKhAvPjPfHbCr`AXB`u@~jCDClL~MG?fAn@}@zJlEjeAIlC_BtRCRdyAyBzIZ`gC~}AZ[xkIaDnLiJbJ}CzH]haAwEVeCoBAnB_a@JO}jCfAkGzEeHlDf@ox@mKyWyJkToMor@_k@gBrDcKiGaw@}n@gf@mSm@{BkV_KePoLmTGstBgr@dF~BD{IqBDkd@aSkVqHxAf@gHjQkPwE_D|LySoJqWOoAoCQeHyQIuAeCa@wHwUkH}COdBbBeSyFs[yj@sMoB|AeHaAoEa\\zO}wAp`@_U~AeMiAqEvo@ad@iK",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/908336/group_events/3407586406694183134"
+  },
+  {
+    "_id": "strava-265-3408481293174661342",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3408481293174661342"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2025-10-05T15:30:00+00:00"
+    },
+    "meet_up_location": "Mike's Bikes",
+    "gps_coordinates": "37.22641, -121.98229",
+    "distance_meters": 56236,
+    "elevation_gain_meters": 621,
+    "organizer": "Rachel Vasquez",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3408481293174661342",
+    "title": "Sunday Road Ride: Calero Park",
+    "description": "Hello team,\nThis Sunday, we will head to Calero Park. This is a relatively flat route with opportunities to practice riding in a pace line. We will stop for water/bathroom at Calero park before heading back to Mike's Bikes. \nThe route is 35 miles with 2000 ft of elevation gain. We begin and end the ride at Mike's Bikes in Los Gatos. Wheels roll at 8:35am sharp.",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/RLAI7UBTP7SCAIECKCCSE5XNECXUK2PUKTXJFOD5XBU7WG32KJV2UL3N3EPF6FIKMPYNXYAXZ2775ODRPGTS6LRWLXMKEJYRJ4YTAAQ=",
+    "route_polyline": "ywebFfwogV`@gBzUlI~FaO`@{l@eJkN_P_M}ZwUoPiGzLcvAjLaEfFaN_A}WhQkx@qBcHJaFrOs`@zDgCfGzAUeEtFqTv@kS`FcNBiKhCkD{E_U{JxAkHiFqB}G}JqEqG`AuEgMlFsDrHiPfL_d@rBo[`F}PUaIyHuSrGqBlNuU|JkAxEsJdC_AhR~@xE}HdHaAlCkDhBcSmAaHbE_DzFqMzBk\\bHeOGwBwGW{@aH{BaEMcJcBgCoBY}G|CaB_[|UsJpGiKvMoJu@_KnBaJdNgNl@j@|CgFvBGlE|EpCeB{_@cb@iF_K~GsM~T{tAdXm~@xF{OvW_VeBuPcAmtBbMwVnHac@`MsR`OkInj@mEmMdNlMeNuo@lG_QfOwG~NsE~[mLpToAnHzA|oBdBtPwW~UwKp[gSvr@_UztAyHvLiSqHqJsPqJxH_UbYyAlHzBjN_AjIyJ~LgMp[wTfReTllAApKwRhAkHxHAlIoD|LkAfXPp_AfEtWAjNkBdi@kHpVdYtf@uAjB~EjNpGaA|JpEpB|GhIxF|IiBzE~TiCjDBfJiFdOw@jSkDjPrFhT~GnJMrNqCjL}@mJcE~B_@lDbAxPfCrE[pC|@tAuAtBbAzFK`NnApAxFDyArKdAlP{DrIqAlM{C~G{MPeHtEoFjIsBnKJnGsE~EoHxj@_GfNzNh@fShM[nEbKxBi@xi@aDrHaTsKgBfHeBjA",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3408481293174661342"
+  }
+]
