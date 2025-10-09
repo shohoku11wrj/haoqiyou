@@ -6,13 +6,35 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  height: 60px;
+  min-height: 60px;
+  flex-wrap: wrap;
 }
 .column {
   flex: 0 0 auto; /* Make the column only as wide as its content */
 }
 .right-most {
+  margin-left: 10px;
+}
+.toggle-button-container {
   margin-left: auto;
+  display: none;
+  align-items: center;
+}
+.toggle-list-btn {
+  padding: 6px 14px;
+  border: 1px solid #a2ab8c;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #4a4a59;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.toggle-list-btn:hover,
+.toggle-list-btn:focus {
+  background-color: #a2ab8c;
+  color: #ffffff;
+  outline: none;
 }
 .top-bar {
   background-color: #a2ab8c;  /* SEKA 海沫绿 */
@@ -175,6 +197,13 @@ body {
   flex-direction: column;
   box-sizing: border-box;
 }
+.page-container.list-hidden .list-container {
+  display: none;
+}
+.page-container.list-hidden .map-container {
+  flex: 1 1 auto;
+  max-width: 100%;
+}
 .custom-div-icon .tooltip-content {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 5px;
@@ -269,14 +298,20 @@ body {
       height: calc(100vh - 76px);  /* kill scroll bar on larger screen*/
   }
   .list-container {
-      width: 50%; /* Takes up half the width of the container */
+      flex: 0 0 50%;
+      max-width: 50%;
       overflow-y: auto; /* Allows scrolling if content overflows */
   }
   .map-container {
-      width: 50%; /* Takes up half the width of the container */
+      flex: 1 1 50%;
+      max-width: 50%;
+  }
+  .page-container.list-hidden .map-container {
+      flex: 1 1 100%;
+      max-width: 100%;
   }
   .toggle-button-container {
-      display: none;
+      display: flex;
   }
 }
 @media only screen and (max-width: 999px) {
@@ -300,8 +335,5 @@ body {
       max-height: 85vh;
       height: 80%;
       /* display: none; */
-  }
-  .toggle-button-container {
-      display: none;
   }
 }

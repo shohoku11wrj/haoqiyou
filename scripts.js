@@ -2,6 +2,30 @@ let currentPolyline = null; // Variable to store the current polyline
 let currentSlideIndex = 0;
 let slideIndex = 0;
 // showSlides(slideIndex);
+const LIST_VISIBILITY_STORAGE_KEY = 'haoqiyou:listHidden';
+
+function safeGetListVisibility() {
+    try {
+        return localStorage.getItem(LIST_VISIBILITY_STORAGE_KEY);
+    } catch (error) {
+        console.warn('Unable to access localStorage for list visibility preference.', error);
+        return null;
+    }
+}
+
+function safeSetListVisibility(value) {
+    try {
+        localStorage.setItem(LIST_VISIBILITY_STORAGE_KEY, value);
+    } catch (error) {
+        console.warn('Unable to persist list visibility preference.', error);
+    }
+}
+
+function invalidateMapSize() {
+    if (window.map && typeof window.map.invalidateSize === 'function') {
+        window.map.invalidateSize();
+    }
+}
 
 function getRoutePolyline(eventId) {
     var polylineElement = document.querySelector(`[data-event-id="${eventId}-route-polyline"]`);
@@ -232,6 +256,63 @@ document.addEventListener('DOMContentLoaded', function() {
         currentPath.replace("/dev", "");
         link.href = currentPath;
     });
+
+    const pageContainer = document.getElementById('page-container');
+    const listContainer = document.getElementById('list-container');
+    const toggleListButton = document.getElementById('toggle-list-btn');
+    const largeScreenQuery = window.matchMedia('(min-width: 1000px)');
+
+    if (pageContainer && listContainer && toggleListButton) {
+        const hideText = toggleListButton.dataset.hideText || '隐藏活动列表';
+        const showText = toggleListButton.dataset.showText || '显示活动列表';
+
+        const applyListVisibility = (hidden) => {
+            pageContainer.classList.toggle('list-hidden', hidden);
+            toggleListButton.textContent = hidden ? showText : hideText;
+            toggleListButton.setAttribute('aria-pressed', hidden ? 'true' : 'false');
+            if (hidden) {
+                listContainer.setAttribute('aria-hidden', 'true');
+            } else {
+                listContainer.removeAttribute('aria-hidden');
+            }
+            safeSetListVisibility(hidden ? '1' : '0');
+            requestAnimationFrame(invalidateMapSize);
+        };
+
+        const enforceLayoutForScreen = () => {
+            if (!largeScreenQuery.matches) {
+                pageContainer.classList.remove('list-hidden');
+                listContainer.removeAttribute('aria-hidden');
+                toggleListButton.textContent = hideText;
+                toggleListButton.setAttribute('aria-pressed', 'false');
+                requestAnimationFrame(invalidateMapSize);
+                return;
+            }
+
+            const storedVisibility = safeGetListVisibility();
+            applyListVisibility(storedVisibility === '1');
+        };
+
+        enforceLayoutForScreen();
+
+        const handleMediaChange = () => {
+            enforceLayoutForScreen();
+        };
+
+        if (typeof largeScreenQuery.addEventListener === 'function') {
+            largeScreenQuery.addEventListener('change', handleMediaChange);
+        } else if (typeof largeScreenQuery.addListener === 'function') {
+            largeScreenQuery.addListener(handleMediaChange);
+        }
+
+        toggleListButton.addEventListener('click', function() {
+            if (!largeScreenQuery.matches) {
+                return;
+            }
+            const willHide = !pageContainer.classList.contains('list-hidden');
+            applyListVisibility(willHide);
+        });
+    }
 
     const toggleExtraElement = document.getElementById('toggleExtra');
     if (toggleExtraElement) {
