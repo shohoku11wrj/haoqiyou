@@ -9,6 +9,8 @@ from typing import Any, Dict, List, Optional
 import pytz
 import requests
 
+from utils import extract_route_from_ridewithgps
+
 # Load environment variables from .env file
 load_dotenv()
 

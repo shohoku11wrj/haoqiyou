@@ -5,6 +5,7 @@ from collections import deque
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 from typing import Any, Dict, Iterable, List, Optional, Tuple
+from utils.extract_route_from_ridewithgps import extract_route_from_ridewithgps
 
 import google.generativeai as genai
 import requests
@@ -928,7 +929,10 @@ def main():
     # extract route from ridewithgps
     #print(extract_route_polygon_from_ridewithgps("https://ridewithgps.com/routes/52796073"))
     # extract route from garmin connect course json
-    print(json.dumps(extract_route_polygon_from_course_json("storage/course_1.json")))
+    #print(json.dumps(extract_route_polygon_from_course_json("storage/course_1.json")))
+
+    route = extract_route_from_ridewithgps("https://ridewithgps.com/routes/51695957")
+    print(json.dumps(route, indent=2))
 
 
 if __name__ == '__main__':
