@@ -26,3 +26,5 @@ TODO:
  * Parse riding events from webpage (e.g. https://www.altovelo.org/c-ride)
  ## 2025-09-24 New Domain
  https://haoqiyou.info
+ ## 2025-10-20 Deploy on Netlify
+
