@@ -74,6 +74,19 @@ def ensure_list_of_strings(value: Any) -> List[str]:
     return [str(value)]
 
 
+def _is_empty_value(value: Any) -> bool:
+    if value is None:
+        return True
+    if isinstance(value, str):
+        return value == ""
+    if isinstance(value, (list, tuple, set)):
+        return len(value) == 0
+    if isinstance(value, dict):
+        return len(value) == 0
+    return False
+
+
+
 def clean_dict(data: Dict[str, Any]) -> Dict[str, Any]:
     cleaned: Dict[str, Any] = {}
     for key, value in data.items():
@@ -162,6 +175,22 @@ def _event_time_sort_key(event: Dict[str, Any]) -> datetime.datetime:
     return datetime.datetime(9999, 12, 31, tzinfo=datetime.timezone.utc)
 
 
+def _merge_event_fields(existing: Dict[str, Any], incoming: Dict[str, Any]) -> Dict[str, Any]:
+    merged = dict(existing)
+
+    for key, new_value in incoming.items():
+        if key == 'raw_event':
+            merged[key] = new_value
+            continue
+
+        current_value = existing.get(key)
+        if _is_empty_value(new_value) and not _is_empty_value(current_value):
+            continue
+        merged[key] = new_value
+
+    return merged
+
+
 def _merge_events(existing_events: List[Dict[str, Any]], new_strava_events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     merged: List[Dict[str, Any]] = []
     strava_events: Dict[str, Dict[str, Any]] = {}
@@ -176,7 +205,10 @@ def _merge_events(existing_events: List[Dict[str, Any]], new_strava_events: List
     for event in new_strava_events:
         key = _strava_event_key(event)
         if key:
-            strava_events[key] = event
+            if key in strava_events:
+                strava_events[key] = _merge_event_fields(strava_events[key], event)
+            else:
+                strava_events[key] = event
         else:
             merged.append(event)
 
