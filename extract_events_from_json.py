@@ -190,8 +190,10 @@ def _encode_polyline_value(value: int) -> str:
 
 
 def main() -> None:
+    # Route info of RideWithGPS has been implemented in utils/fetch_ridewithgps.py
     encoded = extract_encoded_route("storage/ridewithgps.json")
     print(json.dumps(encoded))
+    # Route polyline of FootPathApp can be fetched from HTTP response directly.
 
 
 if __name__ == "__main__":
