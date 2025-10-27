@@ -163,7 +163,7 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
     return popup_div
 
 
-def gen_div_for_events_from_list(events_list):
+def gen_div_for_events_from_list(events_list, event_type):
     events_div = ""
     for event in events_list:
         # 时间
@@ -248,15 +248,15 @@ def gen_div_for_events_from_list(events_list):
         if event_area:
             events_div += f"""
                     <div class="area-box">{event_area}</div>
-            
-                    <div class="area-calendar-separator"></div>
             """
 
-        events_div += f"""
+        if event_type == 'upcoming' or event_type == 'planning':
+            events_div += f"""
+                    <div class="area-calendar-separator"></div>
                     <div class="calendar-box" data-calendar-trigger="icon">
                         <span class="material-symbols-outlined calendar-icon" aria-hidden="true">calendar_add_on</span>
                     </div>
-        """
+            """
         
         events_div += f"""
                     </div>

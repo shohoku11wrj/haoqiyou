@@ -100,7 +100,7 @@ events_list_content = """
     <div class="events-container">
 """
 
-events_list_content += gen_div_for_events_from_list(future_events_list)
+events_list_content += gen_div_for_events_from_list(future_events_list, event_type='upcoming')
 
 
 events_list_content += f"""
@@ -108,7 +108,7 @@ events_list_content += f"""
         <h2>Planning Events <img src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png" alt="Blue Marker" /></h2>
         <div class="events-container">
 """
-events_list_content += gen_div_for_events_from_list(planning_events_list)
+events_list_content += gen_div_for_events_from_list(planning_events_list, event_type='planning')
 
 
 events_list_content += f"""
@@ -116,7 +116,7 @@ events_list_content += f"""
         <h2>Past Events <img src="https://maps.google.com/mapfiles/ms/icons/yellow-dot.png" alt="Yellow Marker" /></h2>
         <div class="events-container">
 """
-events_list_content += gen_div_for_events_from_list(past_events_list)
+events_list_content += gen_div_for_events_from_list(past_events_list, event_type='past')
 
 # Close the last events-container div
 events_list_content += """
