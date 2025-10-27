@@ -108,6 +108,25 @@ body {
   display: inline-block;
   text-align: center;
 }
+.area-calendar-separator {
+  width: 100%;
+  border-top: 1px solid #dfdfe8;
+  margin: 6px 0;
+}
+.calendar-box {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendar-box:focus,
+.calendar-box:focus-visible {
+  outline: 2px solid #a2ab8c;
+  outline-offset: 2px;
+}
+.calendar-box img {
+  display: block;
+}
 .date-box .date {
   margin-top: 8px;
   color: #fc5200;

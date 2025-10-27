@@ -3,6 +3,7 @@
 from datetime import datetime, timedelta, timezone
 import pytz
 import re
+import html
 
 # List of group_ids of extra events
 extra_event_group_ids = [
@@ -20,6 +21,13 @@ DAY_OF_WEEK_MAP = {
     'Saturday': '周六',
     'Sunday': '周日'
 }
+
+
+
+def escape_attr(value):
+    if value is None:
+        return ""
+    return html.escape(str(value), quote=True)
 
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
@@ -162,6 +170,7 @@ def gen_div_for_events_from_list(events_list):
         # Convert the event's event_time_utc from datetime.datetime to local time zone
         event_time_utc = event['event_time_utc'].replace(tzinfo=pytz.utc)
         event_time_local = event_time_utc.astimezone(local_tz)
+        event_time_local_iso = event_time_local.isoformat()
         # 12-hour format with AM/PM
         event_time_str = event_time_local.strftime('%I:%M %p').lstrip('0')
         # Extract month and day separately for the date-box
@@ -169,6 +178,8 @@ def gen_div_for_events_from_list(events_list):
         month_str = event_time_local.strftime('%b').upper()
         day_str = event_time_local.strftime('%d')
         day_of_week = event_time_local.strftime('%A')  # Full weekday name
+        calendar_start_utc = event_time_utc.strftime('%Y%m%dT%H%M%SZ')
+        calendar_end_utc = (event_time_utc + timedelta(hours=3)).strftime('%Y%m%dT%H%M%SZ')
         # 地点
         # Format the GPS coordinates to at most 5 digits after floats, and without brackets
         gps_coordinates_str = event['gps_coordinates']
@@ -216,7 +227,7 @@ def gen_div_for_events_from_list(events_list):
 
         # If year is not current year, add year to the date-box
         events_div += f"""
-        <div class="event {event_class}" data-event-id="event-{event_id}">
+        <div class="event {event_class}" data-event-id="event-{event_id}" data-event-title="{escape_attr(event["title"])}" data-event-start="{calendar_start_utc}" data-event-end="{calendar_end_utc}" data-event-location="{escape_attr(event["meet_up_location"])}" data-event-source-url="{escape_attr(source_event_url)}">
             <a href="{event_url}" class="event-link"></a>
             <div class="event-section">
         """
@@ -232,12 +243,21 @@ def gen_div_for_events_from_list(events_list):
                         <div class="year">{year}</div>
             """
         events_div += f"""
-                        <div class="date-relative" event-date="{event_time_local}"></div>
+                        <div class="date-relative" event-date="{event_time_local_iso}"></div>
         """
         if event_area:
             events_div += f"""
                     <div class="area-box">{event_area}</div>
+            
+                    <div class="area-calendar-separator"></div>
             """
+
+        events_div += f"""
+                    <div class="calendar-box">
+                        <img src="https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_27_2x.png" alt="Calendar Icon" width="40" height="40">
+                    </div>
+        """
+        
         events_div += f"""
                     </div>
                     <div>

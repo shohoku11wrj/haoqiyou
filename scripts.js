@@ -27,6 +27,220 @@ function invalidateMapSize() {
     }
 }
 
+function normaliseEventDateString(value) {
+    if (!value) {
+        return '';
+    }
+    const trimmed = value.trim();
+    if (!trimmed) {
+        return '';
+    }
+    return trimmed.includes('T') ? trimmed : trimmed.replace(' ', 'T');
+}
+
+function parseEventDate(value) {
+    const normalised = normaliseEventDateString(value);
+    if (!normalised) {
+        return null;
+    }
+    const parsed = new Date(normalised);
+    if (!Number.isNaN(parsed.getTime())) {
+        return parsed;
+    }
+
+    const icalMatch = normalised.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z)?$/);
+    if (icalMatch) {
+        const [_, y, m, d, hh, mm, ss, z] = icalMatch;
+        const year = Number.parseInt(y, 10);
+        const month = Number.parseInt(m, 10) - 1;
+        const day = Number.parseInt(d, 10);
+        const hour = Number.parseInt(hh, 10);
+        const minute = Number.parseInt(mm, 10);
+        const second = Number.parseInt(ss, 10);
+        if (z) {
+            return new Date(Date.UTC(year, month, day, hour, minute, second));
+        }
+        return new Date(year, month, day, hour, minute, second);
+    }
+
+    return null;
+}
+
+function formatDateForCalendar(date) {
+    const pad = (num) => String(num).padStart(2, '0');
+    return `${date.getUTCFullYear()}${pad(date.getUTCMonth() + 1)}${pad(date.getUTCDate())}T${pad(date.getUTCHours())}${pad(date.getUTCMinutes())}${pad(date.getUTCSeconds())}Z`;
+}
+
+function getTextContentAfterSpan(span) {
+    if (!span) {
+        return '';
+    }
+    let node = span.nextSibling;
+    let buffer = '';
+    while (node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            buffer += node.textContent;
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            if (node.tagName === 'BR') {
+                break;
+            }
+            break;
+        }
+        node = node.nextSibling;
+    }
+    return buffer.trim();
+}
+
+function extractLocationFromEvent(eventElement, dataset) {
+    if (dataset && dataset.eventLocation) {
+        return dataset.eventLocation;
+    }
+    const locationLabel = '集合地点';
+    const meetUpSpans = eventElement.querySelectorAll('.meet-up');
+    for (const span of meetUpSpans) {
+        if (span.textContent && span.textContent.trim().startsWith(locationLabel)) {
+            const location = getTextContentAfterSpan(span);
+            if (location) {
+                return location;
+            }
+        }
+    }
+    return '';
+}
+
+function findSourceLink(eventElement) {
+    const sourceLink = eventElement.querySelector('.event-description a[href]');
+    return sourceLink ? sourceLink.href : '';
+}
+
+function buildCalendarDetails(eventElement, dataset, eventId) {
+    const detailParts = [];
+    let sourceUrl = dataset ? dataset.eventSourceUrl : '';
+    if (!sourceUrl) {
+        sourceUrl = findSourceLink(eventElement) || '';
+    }
+
+    if (eventId) {
+        const hiddenDetail = document.getElementById(eventId);
+        if (hiddenDetail) {
+            const descriptions = hiddenDetail.querySelectorAll('.event-description');
+            const descriptionText = Array.from(descriptions)
+                .map((node) => node.textContent.trim())
+                .filter(Boolean)
+                .join('\n\n');
+            if (descriptionText) {
+                detailParts.push(descriptionText);
+            }
+        }
+    }
+
+    const meetUpInfo = Array.from(eventElement.querySelectorAll('.meet-up'))
+        .map((span) => {
+            const label = span.textContent ? span.textContent.trim() : '';
+            const value = getTextContentAfterSpan(span);
+            return label && value ? `${label} ${value}` : '';
+        })
+        .filter(Boolean);
+    if (meetUpInfo.length) {
+        detailParts.push(meetUpInfo.join('\n'));
+    }
+
+    if (sourceUrl) {
+        detailParts.push(`活动链接: ${sourceUrl}`);
+    }
+
+    if (eventId) {
+        const eventPageUrl = new URL(window.location.origin + window.location.pathname);
+        eventPageUrl.searchParams.set('id', eventId);
+        detailParts.push(`活动页面: ${eventPageUrl.toString()}`);
+    }
+
+    return {
+        text: detailParts.filter(Boolean).join('\n\n'),
+        sourceUrl,
+    };
+}
+
+function buildGoogleCalendarUrl(eventElement) {
+    if (!eventElement) {
+        return null;
+    }
+    const dataset = eventElement.dataset || {};
+    const eventId = dataset.eventId || eventElement.getAttribute('data-event-id') || '';
+
+    const dateRelativeElement = eventElement.querySelector('.date-relative');
+    const startSource = dataset.eventStart || (dateRelativeElement ? dateRelativeElement.getAttribute('event-date') : '');
+    const startDate = parseEventDate(startSource);
+    if (!startDate) {
+        console.warn('Unable to determine event start time for Google Calendar export.', eventElement);
+        return null;
+    }
+
+    const durationMinutes = dataset.eventDurationMinutes ? Number.parseInt(dataset.eventDurationMinutes, 10) : NaN;
+    let endDate = parseEventDate(dataset.eventEnd);
+    if (!endDate) {
+        const fallbackMinutes = Number.isFinite(durationMinutes) && durationMinutes > 0 ? durationMinutes : 180;
+        endDate = new Date(startDate.getTime() + fallbackMinutes * 60 * 1000);
+    }
+
+    const title = (dataset.eventTitle || '').trim() || (eventElement.querySelector('.event-title')?.textContent.trim()) || '骑行活动';
+    const location = extractLocationFromEvent(eventElement, dataset);
+    const details = buildCalendarDetails(eventElement, dataset, eventId);
+
+    const calendarUrl = new URL('https://calendar.google.com/calendar/render');
+    calendarUrl.searchParams.set('action', 'TEMPLATE');
+    calendarUrl.searchParams.set('text', title);
+    calendarUrl.searchParams.set('dates', `${formatDateForCalendar(startDate)}/${formatDateForCalendar(endDate)}`);
+    if (location) {
+        calendarUrl.searchParams.set('location', location);
+    }
+    if (details.text) {
+        calendarUrl.searchParams.set('details', details.text);
+    }
+    if (details.sourceUrl) {
+        calendarUrl.searchParams.set('sprop', `website:${details.sourceUrl}`);
+    }
+    calendarUrl.searchParams.set('trp', 'false');
+
+    return calendarUrl.toString();
+}
+
+function attachCalendarHandlers() {
+    const calendarBoxes = document.querySelectorAll('.calendar-box');
+    calendarBoxes.forEach((box) => {
+        const eventElement = box.closest('.event');
+        if (!eventElement) {
+            return;
+        }
+
+        if (!box.hasAttribute('tabindex')) {
+            box.setAttribute('tabindex', '0');
+        }
+        if (!box.hasAttribute('role')) {
+            box.setAttribute('role', 'button');
+        }
+        if (!box.hasAttribute('aria-label')) {
+            box.setAttribute('aria-label', '添加到 Google 日历');
+        }
+
+        const activate = (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const calendarUrl = buildGoogleCalendarUrl(eventElement);
+            if (calendarUrl) {
+                window.open(calendarUrl, '_blank', 'noopener,noreferrer');
+            }
+        };
+
+        box.addEventListener('click', activate);
+        box.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                activate(event);
+            }
+        });
+    });
+}
+
 function getRoutePolyline(eventId) {
     var polylineElement = document.querySelector(`[data-event-id="${eventId}-route-polyline"]`);
     if (polylineElement) {
@@ -358,6 +572,8 @@ document.addEventListener('DOMContentLoaded', function() {
             showEventDetailPopup(eventDiv);
         });
     });
+
+    attachCalendarHandlers();
 
     // Close button event listener
     document.getElementById('close-btn').addEventListener('click', closePopupAndRemovePolyline);
