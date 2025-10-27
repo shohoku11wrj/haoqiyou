@@ -253,8 +253,8 @@ def gen_div_for_events_from_list(events_list):
             """
 
         events_div += f"""
-                    <div class="calendar-box">
-                        <img src="https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_27_2x.png" alt="Calendar Icon" width="40" height="40">
+                    <div class="calendar-box" data-calendar-trigger="icon">
+                        <span class="material-symbols-outlined calendar-icon" aria-hidden="true">calendar_add_on</span>
                     </div>
         """
         

@@ -124,8 +124,28 @@ body {
   outline: 2px solid #a2ab8c;
   outline-offset: 2px;
 }
-.calendar-box img {
-  display: block;
+.material-symbols-outlined.calendar-icon {
+  font-size: 36px;
+  line-height: 1;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 36;
+  color: #0000F5;
+}
+.calendar-action-button {
+  margin-top: 6px;
+  padding: 4px 6px;
+  width: 100%;
+  font-size: 12px;
+  border: 1px solid #a2ab8c;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #4a4a59;
+  cursor: pointer;
+}
+.calendar-action-button:hover,
+.calendar-action-button:focus {
+  background-color: #a2ab8c;
+  color: #ffffff;
+  outline: none;
 }
 .date-box .date {
   margin-top: 8px;
