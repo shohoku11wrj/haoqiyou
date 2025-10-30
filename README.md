@@ -9,6 +9,10 @@ Staging on https://haoqiyou.net/dev
  * Step 1. Execute `update_strata_events.py` to fetch ride events from Strava to MongoDB
  * Step 2. Execute `load_html_script.py` to generate HTML into file `index.html`
 
+Feature:
+ * [] Shared Calendar for each riding event
+ * [] Other events in Bay Area and SolCal
+
 TODO:
  * [x] Event detail page & event detail path for each event
  * [x] Share one event via event detail path, or generate a postcard for one event to share
@@ -27,4 +31,4 @@ TODO:
  ## 2025-09-24 New Domain
  https://haoqiyou.info
  ## 2025-10-20 Deploy on Netlify
-
+ ## 2025-10-27 Add riding event to Google Calendar
