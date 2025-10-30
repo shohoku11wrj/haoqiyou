@@ -205,12 +205,26 @@ function buildGoogleCalendarUrl(eventElement) {
     return calendarUrl.toString();
 }
 
-function attachCalendarHandlers() {
-    const calendarBoxes = document.querySelectorAll('.calendar-box');
+function attachCalendarHandlers(root = document) {
+    const calendarBoxes = root.querySelectorAll('.calendar-box');
     calendarBoxes.forEach((box) => {
-        const eventElement = box.closest('.event');
-        if (!eventElement) {
+        if (box.dataset.calendarHandlerAttached === 'true') {
             return;
+        }
+
+        let eventElement = box.closest('.event');
+        const sourceEventId = eventElement?.dataset?.eventId || box.dataset.eventId;
+        if (!eventElement && sourceEventId) {
+            eventElement = document.querySelector(`.event[data-event-id="${sourceEventId}"]`);
+        }
+
+        if (eventElement) {
+            const dataset = eventElement.dataset;
+            Object.keys(dataset).forEach((key) => {
+                if (!box.dataset[key]) {
+                    box.dataset[key] = dataset[key];
+                }
+            });
         }
 
         if (!box.hasAttribute('tabindex')) {
@@ -226,7 +240,10 @@ function attachCalendarHandlers() {
         const activate = (event) => {
             event.preventDefault();
             event.stopPropagation();
-            const calendarUrl = buildGoogleCalendarUrl(eventElement);
+            const contextElement = box.closest('.event')
+                || document.querySelector(`.event[data-event-id="${box.dataset.eventId || ''}"]`)
+                || box;
+            const calendarUrl = buildGoogleCalendarUrl(contextElement);
             if (calendarUrl) {
                 window.open(calendarUrl, '_blank', 'noopener,noreferrer');
             }
@@ -238,6 +255,8 @@ function attachCalendarHandlers() {
                 activate(event);
             }
         });
+
+        box.dataset.calendarHandlerAttached = 'true';
     });
 }
 
@@ -304,7 +323,21 @@ function showEventDetailPopup(eventElement) {
     console.log("showEventDetailPopup");
     const eventId = eventElement.getAttribute('data-event-id');
     const eventDetails = document.getElementById(eventId).innerHTML;
-    document.getElementById('popup-content').innerHTML = eventDetails;
+    const popupContent = document.getElementById('popup-content');
+    popupContent.innerHTML = eventDetails;
+
+    const sourceDataset = eventElement.dataset || {};
+    popupContent.querySelectorAll('.calendar-box').forEach((box) => {
+        Object.keys(sourceDataset).forEach((key) => {
+            box.dataset[key] = sourceDataset[key];
+        });
+        if (!box.dataset.eventId) {
+            box.dataset.eventId = eventId;
+        }
+        box.dataset.calendarHandlerAttached = 'false';
+    });
+    attachCalendarHandlers(popupContent);
+
     document.getElementById('popup-overlay').style.display = 'block';
     document.getElementById('popup').style.display = 'block';
     

@@ -224,6 +224,11 @@ body {
   display: flex;
   align-items: center; /* Align items vertically in the center */
 }
+.area-vertical-separator {
+  align-self: stretch;
+  border-left: 1px solid #dfdfe8;
+  margin: 0 12px;
+}
 .event-title-row .event-title {
   margin: 0 0 0 0px;
 }

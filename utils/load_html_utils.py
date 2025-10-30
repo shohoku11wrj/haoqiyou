@@ -56,7 +56,7 @@ def get_start_of_week():
     return start_of_week
 
 
-def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name):
+def gen_event_detail_popup_div(event, event_type, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name):
     # Convert URLs in the description to hyperlinks
     event_description = convert_urls_to_links(event['description'])
     day_of_week_str = DAY_OF_WEEK_MAP[day_of_week]
@@ -76,6 +76,16 @@ def gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, da
     # Detail page for the event
     popup_div += f"""
                 </div>
+    """
+    if event_type == 'upcoming' or event_type == 'planning':
+        popup_div += f"""
+                <div class="calendar-box" data-calendar-trigger="icon">
+                    <span class="material-symbols-outlined calendar-icon" aria-hidden="true">calendar_add_on</span>
+                </div>
+                <div class="area-vertical-separator"></div>
+        """
+
+    popup_div += f"""
                 <div class="event-title">{event['title']}</div>
             </div>
             <p class="event-description">{event_description}</p>
@@ -231,7 +241,7 @@ def gen_div_for_events_from_list(events_list, event_type):
             <a href="{event_url}" class="event-link"></a>
             <div class="event-section">
         """
-        events_div += gen_event_detail_popup_div(event, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name)
+        events_div += gen_event_detail_popup_div(event, event_type, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name)
         events_div += f"""
                 <div class="event-details">
                     <div class="date-box">
