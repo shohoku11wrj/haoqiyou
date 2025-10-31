@@ -1,0 +1,56 @@
+[
+  {
+    "_id": "strava-265-3416189381542537660",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3416189381542537660"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2025-10-26T15:30:00+00:00"
+    },
+    "meet_up_location": "Mike's Bikes, 201 N Santa Cruz Ave, Los Gatos, California 95030, United States",
+    "gps_coordinates": "37.2264, -121.98233",
+    "distance_meters": 49554,
+    "elevation_gain_meters": 573,
+    "organizer": "Rachel Vasquez",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3416189381542537660",
+    "title": "Sunday Road Ride--Clockwise IBM",
+    "description": "Hi team,\nThis Sunday, we will head to IBM from the clockwise direction. We will head out of Los Gatos via Kennedy road and take Coleman till we pass Almaden Lake Park. From there we will turn right into the neighborhoods. At mile 13 we will stop for bathroom/water at Bernal-Gilman-Joice Ranch park. Then, we will head to IBM. We will regroup at the summit before descending IBM to the intersection of Harry Rd and Camden. From there, we will paceline from Camden to Redmond and make our way back over Kennedy to Mike\u2019s Bikes.\n\nRound trip, the ride is 30 miles with 1,800 ft of elevation gain. Wheels roll at 8:35 am sharp.",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/MHE2UVBW4276GSWF6ZQFAZN7QJUIDV4APMZRJOH3KZCPQFTN5543RVQZGSB7S3RKTKEVW5AYLWLBLVQ72N2DRU7ELQYTDXJNNWSLIKY=",
+    "route_polyline": "swebF|uogVZ}@nExAzDxAnIxCtA}D`DkHFW?k@[oCl@kNFiDN{PGm@Oc@Sc@aBsB_FoH_OaL_@]mJgHT}@nCgSxCcTTu@X[jAs@t@o@`@i@XyA@s@g@aCr@oF~@_D|AuCdAeBjAoAvCcClCqA|@QpAAjBTrDCj@ObAsBvAkDJs@Bu@DuDz@mDnAmBvAmCRwA?{Am@iDWgH@k@D[h@{ATkATgCC[SOu@Og@SI?mAj@WDWCw@e@QWES?QJ_A?WKiASmAASToAGm@?QR{@ASEIa@s@CY@m@AQUoABc@X[n@YF[EYk@a@KY?e@ZoA?[MYmAaB[m@Oi@OeBKiDHkBGq@YaAOiA@oBH[Ra@~BsB\\Kd@?RHPPFP@ZQtCIl@AxAHPFFF?PS`@cCpA{DR_AHk@Bm@KeA[iAAYBa@^_CNuA?c@Ic@_@y@k@cA[Om@KQGMQ_BwCq@}BUiBq@aBo@iAGY@gAEm@]uA_@o@LOTs@d@wBb@eA|@iHb@eMReEr@gD`@qAbA}BfAkBFa@RkB?u@Eu@SyAAYB[PYvBqC[eAu@cEQyA]{Da@oAYs@][[Qe@O[LkCbBc@P_@F[@SA]O[YaB}BKIsBc@m@c@MQGQ_@aDOk@S[WOwHqDeA_@kAEq@H{AbA]HYOUa@kAgCwAcE[yAZIt@]bAy@UU{B_DmFcIaJeRcBoCeEaFmDyD_AyA}@{@eC_Au@a@o@m@cAkBq@oC@W_@gA}EsJkAiBwAwA_BgAq@u@[k@_BmDOc@McA_@mE[oAw@gAw@u@c@YKQmAoA]e@m@oAc@yAKS_A{DEa@eAuC{@oBKUQKcAuAcBkBe@u@]u@q@{BM{@ImAEwAH[B_OMiBeBkLMwAE{AD}BJqAj@aEpFa^TeCB_AAuBPBt@DnErAVKd@gC~@wAZ_Ad@cCt@eA?BbAmAZ{@h@gCFiDRoAr@cBb@yH@gBL{AP{@lAcB\\m@Jc@ByAK}@e@gAIu@DyAQcBn@g@l@aA`@k@j@YlA?f@Pn@j@|IeJp@iAPi@XcBHoALu@vB{GzBcIjAyDXiA`AkI`@eCVk@v@oAXm@tA}EP_AXeCLm@bAaBZu@Hi@Be@?mCBe@Lk@\\{@j@e@xCcBXk@Hc@?}KP{@Dc@Ak@QaAy@RsG?[kCu@cD}@yAQi@a@cBQiBY{b@Dy@VcATc@N}@VwLFk@Vu@bB_DXu@`@wAl@oAd@e@v@k@Zu@H[Fu@Ak@FgAJc@p@mAPw@B_AO_v@Fy@PwADeAEsWz@IVQVGdCA?IvAAwA@?HeC@WFWP{@H?eNN}@v@iBD[?oLGmOjEPt@It@?dCJr@Ip@[t@}@fAkB`AkB\\k@Vm@PmADiALk@xBkE|@aD\\_Av@eAd@y@X{@~AsI\\gAl@aA~@z@XNZ?xHoCR?p@NXd@Fj@Cl@IPY`@OHeDt@a@XKPOl@KjBEZUr@KNg@b@MRMb@AXF|@d@fAFd@@r@MhD?b@Dj@Nj@dC|DpAxA~C~CTj@Nv@B`@C|@k@fCE|@?b@Hb@Xt@^b@RNVH`FX`A?~@Pf@RPN\\b@Zj@XfALrBDzANjBRdA|@`CNh@B`@?|@EXUt@}ArDGPCj@@ZNj@bA`B\\|@T~BLr@Rt@dApAXX~@b@ZR`@p@p@|Bn@zAZh@zBvCd@q@j@e@p@Ip@Hn@j@rBnC^~@Lz@BdBBfMCbCQj@qCzDgAb@}@Ea@Mc@WYk@[gAUuJGoGBYV}@?c@Ec@I[QYe@e@yBjDm@nAq@lBs@~Cc@pDI|B?jBVtEl@`Df@rBV`BBnAEfASpAoBjIKvADj@Jn@Th@`@j@j@b@hAb@pJzDbAt@jAt@lCpAjB`BlBzBvB`BRRd@bA?^Fz@A|@c@|BYfAtAt@b@ZbAfALVm@l@uAl@UNcBxAsBrBkB|B{ErFgBxB[n@u@rBm@z@aBfAm@n@g@bAWt@Kb@Gj@EbBJnA`B~IJ`ADhAExAa@`B[~@aAhBo@v@sEvEs@dA_BhDwAjDoAnDgBzF_@|@cA`B]\\qB~A}CxAk@`@uExDk@f@i@r@e@fAk@|BStAa@vEWpAc@hBsAbEMd@{AfKyAxHcCdNkBrLIv@Cl@BdFFdAsAVq@JkLJeAXoCbBaAt@a@j@_@v@Wz@EZCnAH|@AbDQdAy@hBgAzCQz@It@AzBBzCAdBEbAa@nDUt@Gt@EhA@tHHlC@bEBhk@T|B~A~H?\\fAbGHt@FfDC`DIzBBd@}A|VGfF?hHEt@g@rDMl@q@`C{@~BgChFhAvAbBnC`JdRjGhJr@`BAb@M^u@\\YHd@|BvAbEjAfCT`@XN\\IzAcAp@IjADdA^vHpDVNRZNj@^`DFPLPl@b@rBb@JH`B|BZX\\NR@ZA^Gb@QjCcBZMd@NZP\\ZXr@`@nA\\zDPxAt@bEZdAwBpCQXCZ@XRtADx@?t@[lCgAjBcA|Ba@pAs@fDSdEc@dM}@hHc@dAe@vBUr@MN^n@\\tADl@AfAFXn@hAp@`BThBp@|B~AvCLPPFl@JZNj@bA^x@Hb@?b@OtA_@~BC`@@XZhAJdACl@Ij@S~@qAzDa@bCQRG?GGIQ@yAHm@PuCA[GQQQSIe@?]J_CrBS`@IZAnBNhAX`ADf@?C@^IxAJhDNdBNh@Zl@lA`BLX?Z[nA?d@JXj@`@DXGZo@XYZCb@TnA@PAl@BXf@|@@RSz@?PFl@UnA@RRlAJhA?VK~@?PDRPVv@d@VBVElAk@H?f@Rt@NRNBZUfCUjAi@zAEZAj@VfHl@hD?zASvAwAlCoAlB{@lDEtDCt@Kr@wAjDcArBk@NsDBkBUqA@}@PmCpAwCbCkAnAeAdB}AtC_A~Cs@nFf@`CAr@YxAa@h@u@n@kAr@YZUt@yCbToCfSU|@NNaGdN`AFtBd@b@FZ?rAc@XE|@Ah@Fn@XxBvAvB`AhBnAjB~@hBnAtAnADP?Pa@jDbKxBUjSo@pOZnC?j@Ql@oCdG_Am@wEoCwAu@qDaB_C}@gBfHo@Sk@`B",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3416189381542537660"
+  },
+  {
+    "_id": "strava-265-3414019912539349116",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3414019912539349116"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2025-10-19T15:30:00.000Z"
+    },
+    "meet_up_location": "Mike's Bikes, 201 N Santa Cruz Ave, Los Gatos, California 95030, United States",
+    "gps_coordinates": "37.2264, -121.98233",
+    "distance_meters": 43489,
+    "elevation_gain_meters": 600,
+    "organizer": "Tyson Kamp",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3414019912539349116",
+    "title": "Sunday Redwood Gulch Group Ride",
+    "description": "This is a familiar and mostly flat ride, but not flat at all at RW Gulch.  It's a stiff climb but short and it builds character (yuk yuk). We're not going to stop until 6th street in Saratoga to regroup, but if you need to make \"that stop\" there are bathrooms just before the climb on RW Gulch begins. The group should be together until RW Gulch where you're encouraged to stretch your legs and wait for the rest of us in Saratoga.\n\nIf you need more riding, you can to do this ride then leave the group and go right up hwy 9 at the end of RWG, or keep going after the regroup in Saratoga and go up Bohlman Rd and you can Grand Tour yourself from there.  Plenty of miles and elevation past that point.\n\nhttps://ridewithgps.com/routes/51695957",
+    "route_map_url": "https://ridewithgps.com/routes/51695957/full.png",
+    "route_polyline": "cxebF`wogVj@aBmCcAiC}@gC}@cC_AaC}@{Ag@aDmAcDmAgBw@YIwCiAmAa@_@Q{CiA{CgAuBcA{CgA_AK}BK_CK}BKiBM[CUOoAM[L_@~Da@|D_@~D_@~D_@xDa@xD_@zDa@xD_@xDYjCYjCYdD[dDKRYFgCc@K?IFI`@OtAMhCMjCCjADPNR|@r@fAr@jBn@hBp@rAp@rAp@zAfAr@|@[ZaCyASGK?QNKR]rB]rBQ`@OHy@RK?GA}@}@MA{@C?FGN]b@Ev@EVMRA@eAtA?NHTHLn@ZJPAPQj@Il@?v@Rh@p@t@|At@N?JILu@HGH?FDBR@t@Q~@cB`CsAVi@DaAYi@YuAi@kCq@iCq@o@zBm@zBa@nB_@pBUf@S~@Gf@@z@SxAe@t@MJ[^q@ZSFu@AkCwASGGAc@Ma@Am@LkAb@m@Jc@?aBQeCAeCAkBCo@I]QaBsBy@_@qCEoCEcA?_AWKhEWt@]^qAz@sA|@ORMf@e@lEMZcAzAK^QfA?L?ZH~BQl@_@j@Yn@EnDKXWRUF_B?_B?m@Qk@Ye@m@e@wAiAeBiAeBaA_AKSI[AODu@Im@Qc@[Oc@QoAOsBiAqBiAi@a@Y[_A{BU}@Iu@?gAHmAAo@Om@o@q@_@sBK]Sa@u@c@]IyC@wC@qCBYxEWzEY|EWzEEj@?`CBfC@fCp@fEFbB@tAJfALVRbB@nD@nDBpD@nDV~@R`AGp@UZi@HeCFcBb@g@FuC@uC?uC@_@Fu@^iAeBiAeBmB`Bw@Xw@dAs@vAcAdC_B~Bq@|Aq@~AgAu@m@w@Y{@?BSk@SgBi@oAg@s@q@[s@IyC@yC@yC@iBDiC@kC@iC@m@X]b@KZGb@KtBKvB[fEYfEm@x@_ACGhEGhEGhEGhEGhEGhEEjEGhEGjEEhEGjEGhEEjEGhEIb@q@nAOdA?xD@xD?xD@xD?xDkBiAmBkAy@}@sBsAqBsAcB_As@S}@?{ATaC`@aC`@s@Pi@T[D_@?_@Y]c@_@]WGkB?aAY]Oo@m@Qc@Ku@?SgBCgBAmD@JrELpBTxC?t@GnCIvCIn@GVe@l@}BdAmC~@mCx@kCz@YLi@FyB@{BB{B?yB@{B?eCAKXQnAEnB?rDBjBFv@@`AIfC@f@Ht@?v@GnBApDH|@?zAGt@@|D?|D@TiD?iD?iD?iD?iD?@`E@~D?~D@`E@rBGz@?pB?nBEb@W`@WP}AAAfCAfCKv@_ApB_ApB{C@{C@{C@{CB{C@iBAiBAJs@@oAqA@a@PSPQz@MXSZgAnAgAnAsAl@fAbE^dCz@nCLn@?h@Gf@aArCk@rB_@Za@Hq@F}@G{@KW@CFAHHR~Af@`Bf@LLDH@TSvBc@|Dc@|D?XvCf@nCj@lCj@D@tAVxBh@NJtA|B^VhCb@j@Xv@j@fApAr@r@vA~@Rb@FZ@XGpA?j@VnAr@lCf@r@fBx@^ZlBxB\\RnAh@vAb@bAHrB@d@LXHTPz@|@b@Pd@F`@G^QtAu@|@Yd@Gr@HTLd@Zh@hA^dAl@rBn@rBh@l@\\JnBXtBtAbBzAvBzB\\Xn@?`@GtAa@PDXPVd@Hr@ZnDXlDAdAg@xCCb@@\\Rp@V\\LLh@Pp@Sn@iBn@iB^eCZgA\\k@TO`ACnBR~@j@bAPlB_@jB_@~AU`BUd@ObBw@jD{@lDy@VMZYfAuAfAuAf@c@~@_@LIvAg@d@GrA[z@_@VSTYfAsBfAeBXk@T}@DoAGgA?s@Hc@d@}@d@QTDjB`AVFRATOJQZoAJIXAnBJTAn@YXQNQXs@Pw@?a@MeBAk@Fc@Ti@^_@NMF??AG@OLVJP?pAXhCxAr@n@r@h@`Ct@jBnA|@~@l@`@p@P`BEXF^Xr@|@bA|BlBvCVt@RxAHPdB`BbB`Bf@`BfAdBhAbARZPb@HfAQpD@ZVp@\\d@JXHZZrD[zDDv@Lh@h@|@v@nBVxBp@zDl@nA~@t@h@Fn@?p@HlAvBlAxBjBtCPx@NtAVt@`Av@\\|@?|@y@nC_@dAGd@Lh@XJd@Ab@PZXPb@`AIVHV?h@l@p@@`@A\\Pn@?n@Q|BiAj@B~@b@j@D|@dCDXERKNQH]Ha@RWb@Ej@?r@Fj@`@nAX~A?@PfAJfACxA{@`Dk@bBw@~Au@`BQl@InAFd@RNRIj@aBd@u@zAq@zAo@~@k@t@_AXQr@Wf@Sr@k@pAeCl@cBRoA^k@j@k@zByAd@_APoADm@Lk@Ra@`@QzBF~@Ah@O^QhAPP?f@u@Pa@Pw@^eABcBJ}@P}@Xu@Ta@lAqAjAqA`AwA|@_Ab@[tAs@nBu@XQ~@gAx@{Ax@yAjAqBfBsBT[z@iB|@yA|@yAhAyAlAoApAsBpAsBt@yAt@qBn@mBFYH}BF}BH}@r@iDTk@j@eAH]RsBNiDNcCLoAf@aDz@_Bx@}AZoABc@Eu@Is@{@eESuBU{DOmEF_B?[Ec@gAsDMWU]QOYIiBHsAQgAUgBe@eBe@UQ_@e@Oa@Ic@@Qn@iBd@uBR}BAoAIc@Yu@wAeCG[Gq@H_EIq@KS[c@o@c@QWK[OiAAoABs@F]J_@j@_AHSDYAYy@aDC]G{@@}@D_ADa@Ns@|@gCVkANuAJyDH[JQbA_ANQXu@L}@?YG[MQs@i@OY]aAIQkAu@K[Aq@DoCFoCAu@OaB?QHs@`@cBDkAI{@e@oAcBqDG[?u@HaB?i@[aDK_CK_C]}@UO]QyAa@MOKe@@c@`@kBB}@Om@_AaBGQK{@KmCMkCI}@Wc@OO_@IiB?KCa@UOg@a@gDNGjDs@e@gEg@gEfBpBbAeBbAcBhA_BfA_BBUXU~AeC}@{A}@yAaB}BaB}B{@{@KS?a@Nu@`@[d@Yb@e@Vg@Nu@_@w@cB_BeB_Bl@eA~AqD|AoDlAkCnAmClAkCrAgChBmCrBqCfAqAz@oAzBqCjBuCjBsClBuCjBsChBuChA{AvAeCxAcC~@uBlAgDlAgDnAiDlAgDlAgDlAgDdA}CdA_E\\cB^}B\\{Bb@wDb@uDd@wDb@wDb@uDl@_Ev@mDbA}CjAmChAmBlBgClBeClBgCnBeClBgClBeC|AoBzAmB~A_C~A_Cx@}BZmA|@iBz@gBjBqDhBqDjBqDhBqDjBqDlA_Bz@{AdAoBdAmBj@Wf@GvBt@vBv@vBt@lCbAn@RrBr@",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3414019912539349116"
+  }
+]
