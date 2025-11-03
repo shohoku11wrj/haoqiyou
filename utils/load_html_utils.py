@@ -29,6 +29,11 @@ def escape_attr(value):
         return ""
     return html.escape(str(value), quote=True)
 
+def normalize_text(value):
+    if value is None:
+        return ""
+    return str(value).strip()
+
 # 本地时区
 local_tz = pytz.timezone('America/Los_Angeles')  # Change this to your local time zone
 
@@ -56,7 +61,7 @@ def get_start_of_week():
     return start_of_week
 
 
-def gen_event_detail_popup_div(event, event_type, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name):
+def gen_event_detail_popup_div(event, event_type, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, event_location, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name):
     # Convert URLs in the description to hyperlinks
     event_description = convert_urls_to_links(event['description'])
     day_of_week_str = DAY_OF_WEEK_MAP[day_of_week]
@@ -141,7 +146,10 @@ def gen_event_detail_popup_div(event, event_type, event_time_str, day_of_week, m
             </a>
             <p><strong>时间:</strong> {event_time_str}, {day_of_week}, {month_str} {day_str}, {year}</p>
             <p><strong>集合GPS:</strong> {gps_coordinates_str}</p>
-            <p><strong>集合地点:</strong> {event['meet_up_location']}</p>
+        """
+    if event_location:
+        popup_div += f"""
+            <p><strong>集合地点:</strong> {event_location}</p>
         """
     if 'distance_meters' in event and event['distance_meters'] > 0:
         popup_div += f"""
@@ -192,7 +200,8 @@ def gen_div_for_events_from_list(events_list, event_type):
         calendar_end_utc = (event_time_utc + timedelta(hours=3)).strftime('%Y%m%dT%H%M%SZ')
         # 地点
         # Format the GPS coordinates to at most 5 digits after floats, and without brackets
-        gps_coordinates_str = event['gps_coordinates']
+        gps_coordinates_str = normalize_text(event.get('gps_coordinates', ""))
+        event_location = normalize_text(event.get('meet_up_location', "")) or gps_coordinates_str
         # Find the event_area by matching the GPS coordinates with the area boundaries: south california, north california
         event_area = ""
         if gps_coordinates_str:
@@ -237,11 +246,11 @@ def gen_div_for_events_from_list(events_list, event_type):
 
         # If year is not current year, add year to the date-box
         events_div += f"""
-        <div class="event {event_class}" data-event-id="event-{event_id}" data-event-title="{escape_attr(event["title"])}" data-event-start="{calendar_start_utc}" data-event-end="{calendar_end_utc}" data-event-location="{escape_attr(event["meet_up_location"])}" data-event-source-url="{escape_attr(source_event_url)}">
+        <div class="event {event_class}" data-event-id="event-{event_id}" data-event-title="{escape_attr(event["title"])}" data-event-start="{calendar_start_utc}" data-event-end="{calendar_end_utc}" data-event-location="{escape_attr(event_location)}" data-event-source-url="{escape_attr(source_event_url)}">
             <a href="{event_url}" class="event-link"></a>
             <div class="event-section">
         """
-        events_div += gen_event_detail_popup_div(event, event_type, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name)
+        events_div += gen_event_detail_popup_div(event, event_type, event_time_str, day_of_week, month_str, day_str, year, gps_coordinates_str, event_location, distance_str, elevation_gain_str, source_event_url, route_url, source_group_name)
         events_div += f"""
                 <div class="event-details">
                     <div class="date-box">
@@ -276,7 +285,7 @@ def gen_div_for_events_from_list(events_list, event_type):
                     </div>
                 </div>
                 <div>
-                    <span class="meet-up">集合地点:</span> {event['meet_up_location']} <br>
+                    <span class="meet-up">集合地点:</span> {event_location} <br>
         """
         if 'distance_meters' in event and event['distance_meters'] > 0:
             events_div += f"""

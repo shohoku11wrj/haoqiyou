@@ -1,6 +1,6 @@
 (function () {
     const DATA_SOURCES = [
-        '../storage/events.json',
+        'storage/events.json',
         'https://raw.githubusercontent.com/shohoku11wrj/haoqiyou/main/storage/events.json'
     ];
     const EXTRA_EVENT_GROUP_IDS = new Set([265, 908336, 1047313]);
@@ -69,8 +69,8 @@
         event.source_group_id = parseNumber(raw.source_group_id);
         event.source_group_name = raw.source_group_name || '';
         event.event_time_utc = parseDate(raw.event_time_utc);
-        event.meet_up_location = raw.meet_up_location || '';
-        event.gps_coordinates = raw.gps_coordinates || '';
+        event.meet_up_location = normalizeText(raw.meet_up_location);
+        event.gps_coordinates = normalizeText(raw.gps_coordinates);
         event.distance_meters = parseNumber(raw.distance_meters);
         event.elevation_gain_meters = parseNumber(raw.elevation_gain_meters);
         event.organizer = raw.organizer || '';
@@ -129,6 +129,16 @@
             return Number.isNaN(parsed.getTime()) ? null : parsed;
         }
         return null;
+    }
+
+    function normalizeText(value) {
+        if (typeof value === 'string') {
+            return value.trim();
+        }
+        if (value === null || value === undefined) {
+            return '';
+        }
+        return String(value).trim();
     }
 
     function categorizeEvents(events) {
@@ -208,7 +218,8 @@
         const eventId = `event-${event._id}`;
         const timeParts = buildTimeParts(event.event_time_utc);
         const eventClass = EXTRA_EVENT_GROUP_IDS.has(event.source_group_id) ? 'extra-event' : 'selected-event';
-        const gpsCoordinatesStr = event.gps_coordinates || '';
+        const gpsCoordinatesStr = event.gps_coordinates;
+        const eventLocation = resolveEventLocation(event);
         const distanceStr = formatDistance(event.distance_meters);
         const elevationStr = formatElevation(event.elevation_gain_meters);
         const eventArea = deriveEventArea(gpsCoordinatesStr);
@@ -222,6 +233,7 @@
             timeParts,
             eventType,
             gpsCoordinatesStr,
+            eventLocation,
             distanceStr,
             elevationStr,
             routeUrl,
@@ -247,7 +259,7 @@
             ? `                    <div class="area-calendar-separator"></div>\n                    <div class="calendar-box" data-calendar-trigger="icon">\n                        <span class="material-symbols-outlined calendar-icon" aria-hidden="true">calendar_add_on</span>\n                    </div>\n`
             : '';
 
-        const html = `        <div class="event ${eventClass}" data-event-id="${eventId}" data-event-title="${escapeAttribute(event.title)}" data-event-start="${timeParts.calendarStart}" data-event-end="${timeParts.calendarEnd}" data-event-location="${escapeAttribute(event.meet_up_location)}" data-event-source-url="${escapeAttribute(sourceEventUrl)}">
+        const html = `        <div class="event ${eventClass}" data-event-id="${eventId}" data-event-title="${escapeAttribute(event.title)}" data-event-start="${timeParts.calendarStart}" data-event-end="${timeParts.calendarEnd}" data-event-location="${escapeAttribute(eventLocation)}" data-event-source-url="${escapeAttribute(sourceEventUrl)}">
             <a href="?id=${eventId}" class="event-link"></a>
             <div class="event-section">
 ${popupHtml}
@@ -263,7 +275,7 @@ ${areaBlock}${calendarBlock}                    </div>
                     </div>
                 </div>
                 <div>
-                    <span class="meet-up">集合地点:</span> ${escapeHtml(event.meet_up_location)} <br>
+                    <span class="meet-up">集合地点:</span> ${escapeHtml(eventLocation)} <br>
 ${distanceBlock}${elevationBlock}${expectedBlock}${actualBlock}                </div>
             </div>
             <div class="event-section">
@@ -383,7 +395,7 @@ ${distanceBlock}${elevationBlock}${expectedBlock}${actualBlock}                <
         return result;
     }
 
-    function buildPopupHtml({ event, eventId, timeParts, eventType, gpsCoordinatesStr, distanceStr, elevationStr, routeUrl, sourceEventUrl, sourceGroupName, descriptionHtml }) {
+    function buildPopupHtml({ event, eventId, timeParts, eventType, gpsCoordinatesStr, eventLocation, distanceStr, elevationStr, routeUrl, sourceEventUrl, sourceGroupName, descriptionHtml }) {
         const yearBlock = timeParts.showYear ? `                    <div class="year">${timeParts.year}</div>\n` : '';
         const calendarBlock = (eventType === 'upcoming' || eventType === 'planning')
             ? `                <div class="calendar-box" data-calendar-trigger="icon">\n                    <span class="material-symbols-outlined calendar-icon" aria-hidden="true">calendar_add_on</span>\n                </div>\n                <div class="area-vertical-separator"></div>\n`
@@ -421,6 +433,7 @@ ${distanceBlock}${elevationBlock}${expectedBlock}${actualBlock}                <
         const routeMapImg = event.route_map_url
             ? `<img src="${escapeAttribute(event.route_map_url)}" alt="Route Image" width="100%">`
             : '';
+        const locationBlock = eventLocation ? `            <p><strong>集合地点:</strong> ${escapeHtml(eventLocation)}</p>\n` : '';
 
         return `        <div id="${eventId}" style="display: none;">
             <div class="event-title-row">
@@ -437,10 +450,20 @@ ${pictureHtml}${routeMapImg ? `${routeUrl ? `<a href="${escapeAttribute(routeUrl
             ${routeUrl ? '</a>' : ''}` : ''}
             <p><strong>时间:</strong> ${timeParts.timeLabel}, ${timeParts.dayOfWeekEn}, ${timeParts.monthStr} ${timeParts.dayStr}, ${timeParts.year}</p>
             <p><strong>集合GPS:</strong> ${escapeHtml(gpsCoordinatesStr)}</p>
-            <p><strong>集合地点:</strong> ${escapeHtml(event.meet_up_location)}</p>
-${distanceBlock}${elevationBlock}        <p><strong>发起人:</strong> ${escapeHtml(event.organizer)}</p>
+${locationBlock}${distanceBlock}${elevationBlock}        <p><strong>发起人:</strong> ${escapeHtml(event.organizer)}</p>
         <p><strong>活动来源:</strong> ${sourceEventUrl ? `<a href="${escapeAttribute(sourceEventUrl)}" target="_blank">${escapeHtml(sourceGroupName)}</a>` : escapeHtml(sourceGroupName)}</p>
 ${expectedBlock}${actualBlock}        </div>`;
+    }
+
+    function resolveEventLocation(event) {
+        if (!event) {
+            return '';
+        }
+        const meetupValue = normalizeText(event.meet_up_location);
+        if (meetupValue) {
+            return meetupValue;
+        }
+        return normalizeText(event.gps_coordinates);
     }
 
     function deriveEventArea(gpsCoordinatesStr) {
