@@ -1,6 +1,6 @@
 (function () {
     const DATA_SOURCES = [
-        'storage/events.json',
+        './storage/events.json',
         'https://raw.githubusercontent.com/shohoku11wrj/haoqiyou/main/storage/events.json'
     ];
     const EXTRA_EVENT_GROUP_IDS = new Set([265, 908336, 1047313]);
@@ -207,7 +207,6 @@
         listContainer.innerHTML = htmlParts.join('\n');
         assignMarkerShifts(markerBuckets);
         window.events = markerBuckets.slice();
-        refreshUpdatedTime();
         if (typeof initMap === 'function') {
             initMap();
         }
@@ -662,23 +661,6 @@ ${expectedBlock}${actualBlock}        </div>`;
                 showEventDetailPopup(target);
             }
         }
-    }
-
-    function refreshUpdatedTime() {
-        const updatedElement = document.getElementById('updated-time');
-        if (!updatedElement) {
-            return;
-        }
-        const formatter = new Intl.DateTimeFormat('en-US', {
-            timeZone: TIME_ZONE,
-            month: '2-digit',
-            day: '2-digit',
-            year: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: false
-        });
-        updatedElement.textContent = `Updated on ${formatter.format(new Date())}`;
     }
 
     function showError(error) {
