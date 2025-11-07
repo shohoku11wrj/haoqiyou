@@ -276,7 +276,7 @@
     },
     "source_group_name": "Featherweight Club (FWC)",
     "event_time_utc": {
-      "$date": "2025-10-25T16:30:00+00:00"
+      "$date": "2025-10-25T16:30:00.000Z"
     },
     "meet_up_location": "River View Park",
     "gps_coordinates": "37.4015, -121.94244",
@@ -303,7 +303,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-10-26T14:30:00+00:00"
+      "$date": "2025-10-26T14:30:00.000Z"
     },
     "meet_up_location": "14652 Prospect Avenue, 14652 Prospect Avenue, Tustin, California 92780, United States",
     "gps_coordinates": "33.75024, -117.82131",
@@ -330,7 +330,7 @@
     },
     "source_group_name": "Thunder Bluff Leisure Cycling Club \u96f7\u9706\u5d16\u9a91\u884c\u89c2\u5149\u56e2",
     "event_time_utc": {
-      "$date": "2025-10-26T15:45:00+00:00"
+      "$date": "2025-10-26T15:45:00.000Z"
     },
     "meet_up_location": "199 Main Street, 199 Main Street, Los Altos, California 94022, United States",
     "gps_coordinates": "37.37873, -122.11539",
@@ -357,7 +357,7 @@
     },
     "source_group_name": "Featherweight Club (FWC)",
     "event_time_utc": {
-      "$date": "2025-11-01T16:00:00+00:00"
+      "$date": "2025-11-01T16:00:00.000Z"
     },
     "meet_up_location": "701 Laurel Street, 701 Laurel Street, Menlo Park, California 94025, United States",
     "gps_coordinates": "37.45379, -122.17742",
@@ -384,7 +384,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-11-02T15:30:00+00:00"
+      "$date": "2025-11-02T15:30:00.000Z"
     },
     "meet_up_location": "Rolling Hills Drive, Rolling Hills Drive, Fullerton, California 92835, United States",
     "gps_coordinates": "33.90335, -117.89714",
@@ -411,7 +411,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-11-09T15:00:00+00:00"
+      "$date": "2025-11-09T15:00:00.000Z"
     },
     "meet_up_location": "3260 Fairway Drive, 3260 Fairway Drive, Pico Rivera, California 90660, United States",
     "gps_coordinates": "34.01858, -118.05931",
@@ -438,7 +438,7 @@
     },
     "source_group_name": "Los Gatos Bicycle Racing Club",
     "event_time_utc": {
-      "$date": "2025-11-09T16:30:00+00:00"
+      "$date": "2025-11-09T16:30:00.000Z"
     },
     "meet_up_location": "201 North Santa Cruz Avenue, 201 North Santa Cruz Avenue, Los Gatos, California 95030, United States",
     "gps_coordinates": "37.22648, -121.9824",
@@ -519,7 +519,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-11-16T15:30:00+00:00"
+      "$date": "2025-11-16T15:30:00.000Z"
     },
     "meet_up_location": "360 South Prospect Street, 360 South Prospect Street, Orange, California 92869, United States",
     "gps_coordinates": "33.78401, -117.8184",
@@ -572,7 +572,7 @@
     },
     "source_group_name": "Featherweight Club (FWC)",
     "event_time_utc": {
-      "$date": "2025-11-16T17:30:00+00:00"
+      "$date": "2025-11-16T17:30:00.000Z"
     },
     "meet_up_location": "",
     "gps_coordinates": "38.50526, -122.4703",
@@ -599,7 +599,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-11-23T15:30:00+00:00"
+      "$date": "2025-11-23T15:30:00.000Z"
     },
     "meet_up_location": "",
     "gps_coordinates": "34.0968, -117.70781",
@@ -626,7 +626,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-11-30T15:30:00+00:00"
+      "$date": "2025-11-30T15:30:00.000Z"
     },
     "meet_up_location": "2626 East Katella Avenue, 2626 East Katella Avenue, Anaheim, California 92806, United States",
     "gps_coordinates": "33.80347, -117.87741",
@@ -653,7 +653,7 @@
     },
     "source_group_name": "Thunder Bluff Leisure Cycling Club \u96f7\u9706\u5d16\u9a91\u884c\u89c2\u5149\u56e2",
     "event_time_utc": {
-      "$date": "2026-05-02T16:00:00+00:00"
+      "$date": "2026-05-02T16:00:00.000Z"
     },
     "meet_up_location": "Woodside Town Hall, 2955 Woodside Rd, Woodside, CA 94062",
     "gps_coordinates": "37.42856, -122.25082",
