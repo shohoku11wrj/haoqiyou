@@ -174,7 +174,21 @@ body {
 }
 .event-section:nth-child(3) {
   display: flex;
+  gap: 6px;
   clear: both; /* Ensures it does not overlap with floated elements */
+}
+.event-section:nth-child(3) .event-title {
+  flex-basis: 100%;
+  width: 100%; /* force descriptions onto next row */
+}
+.event-section .route-orientation-icon {
+  top: 80px;
+  left: 8px;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 2;
 }
 .meet-up {
   color: #6d6d78;

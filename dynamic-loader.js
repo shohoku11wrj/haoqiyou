@@ -1,7 +1,7 @@
 (function () {
     const DATA_SOURCES = [
         './storage/events.json',
-        'https://raw.githubusercontent.com/shohoku11wrj/haoqiyou/main/storage/events.json'
+        'https://raw.githubusercontent.com/shohoku11wrj/haoqiyou/refs/heads/main/storage/events.json'
     ];
     const EXTRA_EVENT_GROUP_IDS = new Set([265, 908336, 1047313]);
     const DAY_OF_WEEK_MAP = {
@@ -221,6 +221,7 @@
         const eventLocation = resolveEventLocation(event);
         const distanceStr = formatDistance(event.distance_meters);
         const elevationStr = formatElevation(event.elevation_gain_meters);
+        const orientationStr = formatRouteOrientation(event.route_orientation || '');
         const eventArea = deriveEventArea(gpsCoordinatesStr);
         const routeUrl = resolveRouteUrl(event);
         const sourceEventUrl = resolveSourceEventUrl(event, routeUrl);
@@ -235,6 +236,7 @@
             eventLocation,
             distanceStr,
             elevationStr,
+            orientationStr,
             routeUrl,
             sourceEventUrl,
             sourceGroupName,
@@ -242,6 +244,7 @@
         });
         const distanceBlock = distanceStr ? `                    <span class="meet-up">总路程:</span> ${distanceStr} <br>` : '';
         const elevationBlock = elevationStr ? `                    <span class="meet-up">总爬坡:</span> ${elevationStr} <br>` : '';
+        const orientationBlock = orientationStr ? `                    <span class="meet-up">路线方向:</span> ${escapeHtml(orientationStr)} <br>` : '';
         const expectedBlock = event.expected_participants_number && event.expected_participants_number !== '0'
             ? `                    <span class="meet-up">预计人数:</span> ${escapeHtml(event.expected_participants_number)} <br>`
             : '';
@@ -258,6 +261,15 @@
             ? `                    <div class="area-calendar-separator"></div>\n                    <div class="calendar-box" data-calendar-trigger="icon">\n                        <span class="material-symbols-outlined calendar-icon" aria-hidden="true">calendar_add_on</span>\n                    </div>\n`
             : '';
 
+        const routeSectionClass = 'event-section route-orientation-icon';
+        let routeOrientationIconUrl = '';
+        if (orientationStr.includes('counterclockwise') || orientationStr.includes('逆时针')) {
+            routeOrientationIconUrl = "https://upload.wikimedia.org/wikipedia/commons/3/38/Counterclockwise_Arrow.svg";
+        } else {
+            routeOrientationIconUrl = "https://upload.wikimedia.org/wikipedia/commons/8/8b/Clockwise_Arrow.svg";
+        }
+        const routeOrientationIcon = `<img src="${routeOrientationIconUrl}" class="route-orientation-icon" loading="lazy">`
+
         const html = `        <div class="event ${eventClass}" data-event-id="${eventId}" data-event-title="${escapeAttribute(event.title)}" data-event-start="${timeParts.calendarStart}" data-event-end="${timeParts.calendarEnd}" data-event-location="${escapeAttribute(eventLocation)}" data-event-source-url="${escapeAttribute(sourceEventUrl)}">
             <a href="?id=${eventId}" class="event-link"></a>
             <div class="event-section">
@@ -267,7 +279,7 @@ ${popupHtml}
                         <div class="date">${timeParts.dayStr}</div>
                         <div class="month">${timeParts.monthStr}</div>
 ${yearBlock}                        <div class="date-relative" event-date="${timeParts.localIso}"></div>
-${areaBlock}${calendarBlock}                    </div>
+${areaBlock}${calendarBlock}${routeOrientationIcon}                    </div>
                     <div>
                         <strong>${timeParts.timeLabel}</strong> ${timeParts.dayOfWeekEn}<br>
                         <span class="meet-up">集合GPS:</span> ${escapeHtml(gpsCoordinatesStr)}
@@ -275,9 +287,9 @@ ${areaBlock}${calendarBlock}                    </div>
                 </div>
                 <div>
                     <span class="meet-up">集合地点:</span> ${escapeHtml(eventLocation)} <br>
-${distanceBlock}${elevationBlock}${expectedBlock}${actualBlock}                </div>
+${distanceBlock}${elevationBlock}${orientationBlock}${expectedBlock}${actualBlock}                </div>
             </div>
-            <div class="event-section">
+            <div class="${routeSectionClass}">
                 ${event.route_map_url ? (routeUrl ? `<a href="${escapeAttribute(routeUrl)}" target="_blank" class="event-link">\n                    <img src="${escapeAttribute(event.route_map_url)}" alt="Route Image" width="100%">\n                </a>` : `<img src="${escapeAttribute(event.route_map_url)}" alt="Route Image" width="100%">`) : ''}
                 <div data-event-id="${eventId}-route-polyline" style="display: none;">${event.route_polyline || ''}</div>
             </div>
@@ -394,7 +406,7 @@ ${distanceBlock}${elevationBlock}${expectedBlock}${actualBlock}                <
         return result;
     }
 
-    function buildPopupHtml({ event, eventId, timeParts, eventType, gpsCoordinatesStr, eventLocation, distanceStr, elevationStr, routeUrl, sourceEventUrl, sourceGroupName, descriptionHtml }) {
+    function buildPopupHtml({ event, eventId, timeParts, eventType, gpsCoordinatesStr, eventLocation, distanceStr, elevationStr, orientationStr, routeUrl, sourceEventUrl, sourceGroupName, descriptionHtml }) {
         const yearBlock = timeParts.showYear ? `                    <div class="year">${timeParts.year}</div>\n` : '';
         const calendarBlock = (eventType === 'upcoming' || eventType === 'planning')
             ? `                <div class="calendar-box" data-calendar-trigger="icon">\n                    <span class="material-symbols-outlined calendar-icon" aria-hidden="true">calendar_add_on</span>\n                </div>\n                <div class="area-vertical-separator"></div>\n`
@@ -422,6 +434,7 @@ ${distanceBlock}${elevationBlock}${expectedBlock}${actualBlock}                <
 
         const distanceBlock = distanceStr ? `            <p><strong>总路程::</strong> ${distanceStr}</p>\n` : '';
         const elevationBlock = elevationStr ? `            <p><strong>总爬坡:</strong> ${elevationStr}</p>\n` : '';
+        const orientationBlock = orientationStr ? `            <p><strong>路线方向:</strong> ${escapeHtml(orientationStr)}</p>\n` : '';
         const expectedBlock = event.expected_participants_number && event.expected_participants_number !== '0'
             ? `        <p><strong>预计人数:</strong> ${escapeHtml(event.expected_participants_number)}</p>\n`
             : '';
@@ -449,9 +462,9 @@ ${pictureHtml}${routeMapImg ? `${routeUrl ? `<a href="${escapeAttribute(routeUrl
             ${routeUrl ? '</a>' : ''}` : ''}
             <p><strong>时间:</strong> ${timeParts.timeLabel}, ${timeParts.dayOfWeekEn}, ${timeParts.monthStr} ${timeParts.dayStr}, ${timeParts.year}</p>
             <p><strong>集合GPS:</strong> ${escapeHtml(gpsCoordinatesStr)}</p>
-${locationBlock}${distanceBlock}${elevationBlock}        <p><strong>发起人:</strong> ${escapeHtml(event.organizer)}</p>
+${locationBlock}${distanceBlock}${elevationBlock}${orientationBlock}${expectedBlock}${actualBlock}        <p><strong>发起人:</strong> ${escapeHtml(event.organizer)}</p>
         <p><strong>活动来源:</strong> ${sourceEventUrl ? `<a href="${escapeAttribute(sourceEventUrl)}" target="_blank">${escapeHtml(sourceGroupName)}</a>` : escapeHtml(sourceGroupName)}</p>
-${expectedBlock}${actualBlock}        </div>`;
+        </div>`;
     }
 
     function resolveEventLocation(event) {
@@ -531,6 +544,26 @@ ${expectedBlock}${actualBlock}        </div>`;
         }
         const feet = elevationMeters * 3.28084;
         return `${Math.round(elevationMeters).toLocaleString()} m (${Math.round(feet).toLocaleString()} ft)`;
+    }
+
+    function formatRouteOrientation(orientation) {
+        if (!orientation) {
+            return '';
+        }
+        const normalized = String(orientation).trim().toLowerCase();
+        if (!normalized) {
+            return '';
+        }
+        if (normalized === 'clockwise') {
+            return '顺时针 | clockwise';
+        }
+        if (normalized === 'anti-clockwise' || normalized === 'counterclockwise' || normalized === 'counterclockwise') {
+            return '逆时针 | counterclockwise';
+        }
+        if (normalized === 'non-loop' || normalized === 'nonloop' || normalized === 'not-a-loop') {
+            return '非loop | non-loop';
+        }
+        return normalized;
     }
 
     function escapeHtml(value) {

@@ -12,6 +12,7 @@ from utils.event_storage import (
     save_events_to_storage,
 )
 from utils.extract_route_from_ridewithgps import extract_route_from_ridewithgps
+from utils.route_utils import classify_route_loop
 
 _RIDEWITHGPS_PATTERN = re.compile(r"https://ridewithgps\.com/routes/\S+")
 
@@ -38,6 +39,7 @@ def backfill_route_fields(events_path: Path | str = DEFAULT_EVENTS_FILE) -> None
         print(f"No events found in {path}")
         return
 
+    # First pass: extract route details from Ride with GPS URLs
     updated = False
     attempted = 0
     successful = 0
@@ -74,17 +76,35 @@ def backfill_route_fields(events_path: Path | str = DEFAULT_EVENTS_FILE) -> None
         if event.get("route_polyline") != polyline:
             event["route_polyline"] = polyline
             changes_made = True
-
         if changes_made:
             updated = True
             successful += 1
+    
+    print(f"Backfilled {successful} of {attempted} Ride with GPS events and saved to {path}")
+
+    # Second pass: classify route orientation for closed-loop routes
+    updated = False
+    attempted = 0
+    successful = 0
+    for event in events:
+        polyline = event.get("route_polyline") or event.get("polyline") or ""
+        orientation = event.get("route_orientation")
+        attempted += 1
+        if not orientation and polyline:
+            _, direction = classify_route_loop(polyline)
+            if direction:
+                orientation = direction.value
+                successful += 1
+        if orientation and event.get("route_orientation") != orientation:
+            event["route_orientation"] = orientation
+            changes_made = True
+    print(f"Backfilled {successful} of {attempted} Ride with GPS events and saved to {path}")
 
     if not updated:
         print("No events required backfilling.")
         return
 
     save_events_to_storage(events, path)
-    print(f"Backfilled {successful} of {attempted} Ride with GPS events and saved to {path}")
 
 
 if __name__ == "__main__":
