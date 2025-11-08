@@ -51,7 +51,7 @@
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3405981448879735622",
-    "route_orientation": "anti-clockwise"
+    "route_orientation": "counterclockwise"
   },
   {
     "_id": "wechat-202509280830001",
@@ -213,7 +213,7 @@
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://ridewithgps.com/routes/52971959?privacy_code=Xczs8X5GGEnKnSz6TPSQjxvyht6dDd4c",
-    "route_orientation": "anti-clockwise"
+    "route_orientation": "counterclockwise"
   },
   {
     "_id": "strava-1157973-3413724955580646124",
@@ -297,7 +297,7 @@
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3416626834567319768",
-    "route_orientation": "anti-clockwise"
+    "route_orientation": "counterclockwise"
   },
   {
     "_id": "strava-908336-3414753675894726872",
@@ -325,7 +325,7 @@
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/908336/group_events/3414753675894726872",
-    "route_orientation": "anti-clockwise"
+    "route_orientation": "counterclockwise"
   },
   {
     "_id": "strava-1263183-3415556203490171012",
@@ -381,7 +381,7 @@
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1157973/group_events/2143574",
-    "route_orientation": "anti-clockwise"
+    "route_orientation": "counterclockwise"
   },
   {
     "_id": "strava-908336-3417342901455630794",
@@ -573,7 +573,7 @@
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://connect.garmin.com/modern/course/410004927",
-    "route_orientation": "anti-clockwise"
+    "route_orientation": "counterclockwise"
   },
   {
     "_id": "strava-1157973-3413728775589330668",
@@ -601,7 +601,7 @@
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3413728775589330668",
-    "route_orientation": "anti-clockwise"
+    "route_orientation": "counterclockwise"
   },
   {
     "_id": "strava-908336-3418710054600932246",
