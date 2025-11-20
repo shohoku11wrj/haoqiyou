@@ -559,7 +559,7 @@
     },
     "source_group_name": "Los Gatos Bicycle Racing Club",
     "event_time_utc": {
-      "$date": "2025-11-22T16:30:00+00:00"
+      "$date": "2025-11-22T16:30:00.000Z"
     },
     "meet_up_location": "Mike's Bikes, 201 N Santa Cruz Ave, Los Gatos, California 95030, United States",
     "gps_coordinates": "37.2264, -121.98233",
@@ -586,7 +586,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-11-23T15:45:00+00:00"
+      "$date": "2025-11-23T15:45:00.000Z"
     },
     "meet_up_location": "Claremont Transit Center E, Claremont, California 91711, United States",
     "gps_coordinates": "34.09456, -117.71246",
@@ -643,7 +643,7 @@
     },
     "source_group_name": "Los Gatos Bicycle Racing Club",
     "event_time_utc": {
-      "$date": "2025-11-23T16:30:00+00:00"
+      "$date": "2025-11-23T16:30:00.000Z"
     },
     "meet_up_location": "201 North Santa Cruz Avenue, Los Gatos, California 95030, United States",
     "gps_coordinates": "37.22648, -121.9824",
@@ -670,7 +670,7 @@
     },
     "source_group_name": "Featherweight Club (FWC)",
     "event_time_utc": {
-      "$date": "2025-11-23T17:30:00+00:00"
+      "$date": "2025-11-23T17:30:00.000Z"
     },
     "meet_up_location": "",
     "gps_coordinates": "38.50526, -122.4703",
@@ -698,7 +698,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-11-30T15:45:00+00:00"
+      "$date": "2025-11-30T15:45:00.000Z"
     },
     "meet_up_location": "2626 East Katella Avenue, Anaheim, California 92806, United States",
     "gps_coordinates": "33.80347, -117.87741",
@@ -725,7 +725,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-12-07T15:45:00+00:00"
+      "$date": "2025-12-07T15:45:00.000Z"
     },
     "meet_up_location": "360 South Prospect Street, Orange, California 92869, United States",
     "gps_coordinates": "33.78401, -117.8184",
@@ -752,7 +752,7 @@
     },
     "source_group_name": "Thunder Bluff Leisure Cycling Club \u96f7\u9706\u5d16\u9a91\u884c\u89c2\u5149\u56e2",
     "event_time_utc": {
-      "$date": "2026-05-02T16:00:00+00:00"
+      "$date": "2026-05-02T16:00:00.000Z"
     },
     "meet_up_location": "Woodside Town Hall, 2955 Woodside Rd, Woodside, CA 94062",
     "gps_coordinates": "37.42856, -122.25082",
@@ -768,5 +768,109 @@
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "route_orientation": "clockwise"
+  },
+  {
+    "_id": "altovelo-av-a-ride-saturday-91325-cloverdale-to-av-picnic",
+    "source_type": "webpage",
+    "source_group_id": {
+      "$numberLong": "altovelo"
+    },
+    "source_group_name": "Alto Velo A Ride",
+    "source_event_id": {
+      "$numberLong": "altovelo-av-a-ride-saturday-91325-cloverdale-to-av-picnic"
+    },
+    "title": "AV-A Ride Saturday 9/13/25:  Cloverdale to AV Picnic!",
+    "description": "Join us for another Saturday A ride. It looks like another perfect day to play bikes so let\u2019s go to the coast and do a Cloverdale loop. I designed the route to finish on Kings Mountain where we can meet at Huddart Park for the Alto Velo Picnic which starts @ 3pm.",
+    "event_time_utc": {
+      "$date": "2025-09-13T16:00:00.000Z"
+    },
+    "meet_up_location": "Summit Bikes Palo Alto",
+    "gps_coordinates": "40.7207559, -74.0007613",
+    "distance_meters": 0.0,
+    "elevation_gain_meters": 0,
+    "organizer": "Alto Velo",
+    "route_map_url": "",
+    "route_polyline": "",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.altovelo.org/a-ride/av-a-ride-saturday-91325-cloverdale-to-av-picnic"
+  },
+  {
+    "_id": "altovelo-saturday-a-ride-8am-choose-your-own-adventure",
+    "source_type": "webpage",
+    "source_group_id": {
+      "$numberLong": "altovelo"
+    },
+    "source_group_name": "Alto Velo A Ride",
+    "source_event_id": {
+      "$numberLong": "altovelo-saturday-a-ride-8am-choose-your-own-adventure"
+    },
+    "title": "Saturday A Ride: 8am choose your own adventure",
+    "description": "It\u2019s been a looooong time since the Saturday ride went up Bohlman. We will start by going down foothill and through Stevens Creek Reservoir, stopping for water/bathrooms just before hopping over Mt. Eden and going down into Saratoga.",
+    "event_time_utc": {
+      "$date": "2025-09-06T15:00:00.000Z"
+    },
+    "meet_up_location": "Summit Bikes Palo Alto",
+    "gps_coordinates": "40.7207559, -74.0007613",
+    "distance_meters": 109435.12,
+    "elevation_gain_meters": 0,
+    "organizer": "Alto Velo",
+    "route_map_url": "",
+    "route_polyline": "",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-8am-choose-your-own-adventure"
+  },
+  {
+    "_id": "altovelo-saturday-a-ride-big-basin-shake-shack",
+    "source_type": "webpage",
+    "source_group_id": {
+      "$numberLong": "altovelo"
+    },
+    "source_group_name": "Alto Velo A Ride",
+    "source_event_id": {
+      "$numberLong": "altovelo-saturday-a-ride-big-basin-shake-shack"
+    },
+    "title": "Saturday A Ride- Big Basin + Shake Shack",
+    "description": "Saturday looks like better weather than the last big basin ride- so we\u2019ll try take two on this. We\u2019ll regroup at the top of page mill and bear creek, and probably take a quick stop in Boulder Creek.",
+    "event_time_utc": {
+      "$date": "2025-08-30T16:00:00.000Z"
+    },
+    "meet_up_location": "Summit Bikes Palo Alto",
+    "gps_coordinates": "40.7207559, -74.0007613",
+    "distance_meters": 64373.6,
+    "elevation_gain_meters": 0,
+    "organizer": "Alto Velo",
+    "route_map_url": "",
+    "route_polyline": "",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-big-basin-shake-shack"
+  },
+  {
+    "_id": "altovelo-saturday-a-ride-823-native-sons-and-purisima-creek",
+    "source_type": "webpage",
+    "source_group_id": {
+      "$numberLong": "altovelo"
+    },
+    "source_group_name": "Alto Velo A Ride",
+    "source_event_id": {
+      "$numberLong": "altovelo-saturday-a-ride-823-native-sons-and-purisima-creek"
+    },
+    "title": "Saturday A Ride 8/23 - Native Sons and Purisima Creek",
+    "description": "Exploring roads like Star Hill Rd and Native Sons Rd, with a climb up Kings Mountain and a descent down Tunitas to Half Moon Bay for coffee and snacks.",
+    "event_time_utc": {
+      "$date": "2025-08-23T16:00:00.000Z"
+    },
+    "meet_up_location": "Summit Bicycles, Palo Alto",
+    "gps_coordinates": "40.7207559, -74.0007613",
+    "distance_meters": 131965.88,
+    "elevation_gain_meters": 0,
+    "organizer": "Alto Velo",
+    "route_map_url": "",
+    "route_polyline": "",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-823-native-sons-and-purisima-creek"
   }
 ]
