@@ -559,7 +559,7 @@
     },
     "source_group_name": "Los Gatos Bicycle Racing Club",
     "event_time_utc": {
-      "$date": "2025-11-22T16:30:00.000Z"
+      "$date": "2025-11-22T16:30:00+00:00"
     },
     "meet_up_location": "Mike's Bikes, 201 N Santa Cruz Ave, Los Gatos, California 95030, United States",
     "gps_coordinates": "37.2264, -121.98233",
@@ -569,11 +569,38 @@
     "strava_url": "https://www.strava.com/clubs/265/group_events/3426324926166276238",
     "title": "Saturday Ride! 9 to Page",
     "description": "This will be a tempo climbs, mellow flats ride. Come enjoy the cool, sunny, Saturday and put in some base miles. ",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/BPAYGMUYFZMYHCWLXSQA2BRZACJZJBOTYN7YOPL4YJT5DZP4WN5M7LVPYU2NH7SDLFN74WQXUH4HAEYDMF4ODWQ3NSPWPEVFN25O4ZI=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UH66FCDCSMVK2CLCSSO3EUH4C3F5HPTZ47FTN5ZSCRXPTH7IOYHT4U2ZWHT2YMZVBHCRXGTTJAS77FDGEF322ECJRPQWCSMYBVK6K3Y=",
     "route_polyline": "qvebF`togVcQkGka@`x@i_@fg@uFrP{Gth@_Upo@{e@xt@_Sla@iR|UsDdAtSfVlBlN~ExAn@pKvA`Dc@~E`EfDh@`RzCzIk@~UxEtGqClGmCxRdArIoAzH~BrE@tGlCtGmBbLvAjCzOlDjEnd@qClGiBrSiGlZgZ`e@cI~EoH|IwAfQoClCkEAaF~LkAfHb@fFwD~El@rBrAQtF}SbCQZlC{BhFTpM`DpFtA~JdGjIbHtE_@jBkDOqCdFgEyFaCPqBaBiDhBxBjIgAtGbF[pG~PpG`@jArBuGdXwDlCDfF}FnJzAz[_Ufb@}O|GmFbLsJbJqId\\}[pVeChNaDl@_G{FeF\\aMcDeDxAmGlLgEdCy^lEkN~S}FzRuEvXaClCaTYgEiFkEs@aHkGsR|GeMlXcNnHoS|k@s@pGrBbQyGvEkAvCdB~NsAbJmDvEEuE_BgCkAP{CjGmI`F[bEaDv@oByCuEr@wI}EgAsDqCqAuGb@uAeAqAcGHgHkBqDxBcc@vEuQ{C{FeLaByAtCyFiBqDpD}AuCgFpF_FdAcBbNqF`ByGk@iBxFaDjBaJwA_GoJ_MA_IlSqGbGpAsRoCsI_JoA}At@{BeCmHfAxAoCcLyACeCjDwCuJb@aGhDaE{GoCe@[zDyBHmAfDqEi@o@zG}A~@sH_FaC_H|@mJe@{FgFb@kCdJa@kQaEk@uBeGkGqAoFnJoEOgFfDsJcGmAjBeCYiBiDUuKkJjDiJoAaBkPb@eFoEsAkFrBqN`RwCQiHnCgFuBcAlUsHz[u@dObBfNlK~KfRpD|AzBi@`K{D~@{NbSIxHdHxObApGsF_D}n@sLu^dJ}j@nAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEeDiAv@eKfLs[T_PtGc^`CgF|NoJvPiWjF{KzHw_@`d@qp@bJk}@`b@geA`QsNjo@e_@tsAwbA|{Ew~GlD}CdIsBhl@fF~k@uCvp@?zAcP_FeChGc@tByIaHuWkGwAGss@jzAIVsw@vWO~PiGhA}Ko@sO|JBlAxC`IlCjRsBjRfMhCPtC~EzKpDpF?GmLbPj@lJpOnGaIRaD|Lb@fAmEvGYD_SpIChBnPfKb@BiCjCDhAzDjKk@dQbEhAcGbJeOoMkMlX{^vPi^th@ww@`Rqi@zDu]E`EhC}SfEyMxa@uj@|^ot@rAa@tNfF",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/265/group_events/3426324926166276238"
+  },
+  {
+    "_id": "strava-1157973-3426976418039190356",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "1157973"
+    },
+    "source_event_id": {
+      "$numberLong": "3426976418039190356"
+    },
+    "source_group_name": "Featherweight Club (FWC)",
+    "event_time_utc": {
+      "$date": "2025-11-22T17:30:00+00:00"
+    },
+    "meet_up_location": "2625 Patricia Drive, Santa Clara, California 95051, United States",
+    "gps_coordinates": "37.34225, -121.97393",
+    "distance_meters": 0,
+    "elevation_gain_meters": 0,
+    "organizer": "Carissa \u5609\u7426",
+    "strava_url": "https://www.strava.com/clubs/1157973/group_events/3426976418039190356",
+    "title": "FWC \ud83c\udf5c  Noodle Ride ",
+    "description": "\nHi, meet 9:15am, ride 9:30am, lunch 1:00pm,\n-------------------------------\nPace = Casual, Winter Base, 20-22km/hr\n-------------------------------\n\u231a\ufe0f Saturday November 22, 2025\n\ud83d\udeb2 Santa Clara Central Park Swim Center\n\ud83d\udcea 2625 Patricia Dr, Santa Clara, CA 95051\n\n\ud83d\udcb5 Bring money if going to lunch, about 1pm\n\ud83c\udf5c Pho to chau 999\n\ud83d\udcea 2636 Homestead Rd, Santa Clara, CA 95051\n\n-------------------------------\n\ud83d\uddfa\ufe0fRoute\n70km, Santa Clara, Foothill Alpine Portola Loop, \n\nhttps://connect.garmin.com/modern/course/418905660\n\n\n\ud83d\udcddRegroups: top of Alpine\n\ud83d\udcddNote: the ride will stop for all red lights & all stop signs.\n\ud83d\udcddNote: Please let someone know if you decide to turn around or go a different route on your own.\n-------------------------------\n\ud83d\udc77\u200d\u2640\ufe0fDisclaimer: Attendants must wear protective gears, obey traffic laws, and understand cycling\u2019s risky nature. Descent responsibly. The event organizers are not liable for any accidents or injuries. This is not a guided trip. Every attendant must be able to navigate the route, bring their own personal gear, water, food, tools & repair parts.\n\n----------------------------",
+    "route_map_url": "",
+    "route_polyline": "",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/1157973/group_events/3426976418039190356"
   },
   {
     "_id": "strava-908336-3418710054600932246",
@@ -586,7 +613,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-11-23T15:45:00.000Z"
+      "$date": "2025-11-23T15:45:00+00:00"
     },
     "meet_up_location": "Claremont Transit Center E, Claremont, California 91711, United States",
     "gps_coordinates": "34.09456, -117.71246",
@@ -596,7 +623,7 @@
     "strava_url": "https://www.strava.com/clubs/908336/group_events/3418710054600932246",
     "title": "\ud83d\ude80\ud83e\ude82 (Subject to weather conditions)",
     "description": "\ud83d\udea9 8 AM \u279c \ud83c\udfc1 11:30 AM\n\n\ud83d\udeb4\ud83c\udffb 34.84 mi\n\ud83d\udeb5\ud83c\udffb 2,203 ft\n\n\ud83c\udd7f\ufe0f Claremont Transit Center\n160 E 1st St, Claremont, CA 91711\n\n\u2615\ufe0f Goose coffee\n9090 Milliken Ave suite 150, Rancho Cucamonga, CA 91730\n\n---------------------------------------------\n\n**Sunday Group Ride Notice and Rules**\n\nJoin us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:\n\n1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.\n\n2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)\n\n3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.\n\n4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.\n\n5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.\n\n6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.\n\n7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.\n\n8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.\n\nWe look forward to enjoyable ride. See you on the road!",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/CTEE4SETHZAEQDZQQZDH7IOGFPGSSKM237JTRFZM6JUDWU54HECD2GAXU65XPKAEX62F5PMMOP2TR2GCSXUAY66GF7UYAX5D7RPBUJQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/LE7GCX3MTT5TYIDOBU6UUNHY4P5LGDEURQJ47Q3TWMT7ZQO5E5MATTLGWZWXKMJ7JIYDJ3VA3NR5WEUFXNDK4TZRLAZF2KQ4N23DZVQ=",
     "route_polyline": "qbboE|mmmUoBkh@kXkIsn@GE}bIkzAF?qcDkP?UwE~BkIm@gDwDFkZzOoFg@wDfCb@bCcAZojAZIew@ya@EAm[iCcS_B}q@Imk@ysBSiAeQsEsBqHP}AeCpF{Ka@iBmB[e@yD`@wj@}AgHdBaGlwDr@eDkY`@kdD|iHjBAna@jDt\\l[nM@~ElF?UwA~CAA{BndAAjNcCvGN|Fr@|@xLfLpKbBzDXhg@aBpFeKbL{BrKDhYpGpRz@zHi@vbCiCzIiKtKmAlHJxBt[RUfCkH~Eo@hD|@fcNm@vsComAga@Ax`@}eAFK}E",
     "is_active": true,
     "event_picture_urls": [],
@@ -643,7 +670,7 @@
     },
     "source_group_name": "Los Gatos Bicycle Racing Club",
     "event_time_utc": {
-      "$date": "2025-11-23T16:30:00.000Z"
+      "$date": "2025-11-23T16:30:00+00:00"
     },
     "meet_up_location": "201 North Santa Cruz Avenue, Los Gatos, California 95030, United States",
     "gps_coordinates": "37.22648, -121.9824",
@@ -653,7 +680,7 @@
     "strava_url": "https://www.strava.com/clubs/265/group_events/3426300031694399880",
     "title": "Sunday Road Ride: N. Hicks",
     "description": "Hi team,\nFor this week's Sunday road ride, we will ascend Hicks Rd. from the North. After descending Hicks, we will regroup at the New Almaden parking lot for a bathroom/water break before heading back to Los Gatos at approximately mile 14. The ride is 29 miles with 2900 ft of elevation gain.\n\nRain cancels the ride. Before heading out, we will meet at Mike's Bikes in Los Gatos at 8:30 am. Wheels roll at 8:35 am sharp.",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/GC4IODZT5A5LHM2AA3PZQWICMNDIDBLKXIXP54SNDRWWUGXVZGXQUDJ5PW6MVIRXIQYSG33EFNFNIN4MTSRLSYLJG4CBGJASY6CBJVQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/JCSL5K244NWGTAH4EM3GBPCVFBMOTB6E3XY5OBAIJ5WMNWMB6EICN7UVY6YRARYTE3JCRHNKNWAZK4Y6DQQ3CZLRYDCGH2HL3YEYF5Q=",
     "route_polyline": "mwebFvsogVzE~AtOtFtA}DvCuGPm@?Y[aDn@qOT_UGm@c@gAaBsB_FoH_OaL_@]mJgHT}@nCgSxCcTTu@X[jAs@t@o@`@i@XyA@s@g@aCr@oF~@_D|AuCdAeBjAoAvCcClCqA|@QpAAjBTrDCj@ObAsBvAkDJs@Bu@DuDz@mDnAmBvAmCRwA?{Am@iDWgH@k@D[h@{ATkATgCC[SOu@Og@SI?mAj@WDWCw@e@QWES?QJ_A?WKiASmAASToAGm@?QR{@ASg@}@CY@m@AQUoABc@X[n@YF[EYk@a@KY?e@ZoA?[MYmAaB[m@Oi@OeBKiDHkBGq@c@eBEe@@oBH[Ra@~BsB\\Kd@?RHPPFP@ZQtCIl@AxAHPFFF?PS`@cCpA{DR_AHk@Bm@KeA[iAAYBa@^_CNuA?c@Ic@_@y@k@cA[Om@KQGMQ_BwCq@}BUiBq@aBo@iAGY@gAEm@]uA_@o@LOTs@d@wBb@eA|@iHb@eMReEr@gD`@qAbA}BfAkBFa@RkB?u@Eu@SyAAYB[PYvBqCdA~@dDxAbAHX?b@[LWVS~@c@rBc@lB}@JIVc@Vu@R{@P}BCsDDu@Jc@LWRQtAAf@IZKLUtAeE`@u@`CiDZk@F[@YCQUk@a@u@Ok@GcB?s@Fk@Pe@tA{BdBe@p@c@h@}@`@yAj@oAZm@\\a@j@YdBI`Ac@`@k@Tm@XkBV}@Ti@vB_CRm@Ns@J}BSwCD_AVs@P[h@YZI`@Gn@@d@AZIx@c@`@YTc@La@XeBt@sC@w@Fk@d@aBNw@R{BBeCNu@xAeEJk@Ba@@gCDu@Ha@j@gAXw@r@oAVgA?YSqBDiAL_APq@fB{CNa@H}@K_A@m@VyA\\eA^aBNc@JOZSJ?tAa@p@c@vBm@dAu@hA_AdAoADY?[KgABs@X}@^_A\\c@XKhAENGLQTcBNq@Pe@\\c@^[ZQZEXI`A}@JQFSDc@@gABYF[`BgFJQl@k@Xc@La@TqANc@NOd@AvBnA^Hz@@VAXQT?R@`@h@`@Px@RZDPGPO\\w@TWn@SLQHQTeAHQt@e@rBYl@GbAFf@Qf@[^QL?ZHL?t@}@LIZEx@AfBPNAnBq@p@]f@c@^k@b@a@h@[b@Qr@?h@FjAXzCZb@P|BjBzAzBXZTPPFt@PtA?vAJPANQ?a@Q]OQi@YkA[OYGYAc@@uBAk@U_BCo@GOa@m@y@sBOk@AY@Sh@aBz@oAJu@?aBF}Br@eCRk@fAcBn@a@d@QjA[f@Sd@YRQNWVw@J{@?SUyACk@Dc@LYn@QVNRb@Pn@ZpB^jBNXb@b@RXLZ\\bBRVNHT?NILOHY?k@K}B@m@HYnA{AfBc@~AoAt@}@TIf@GvAj@`@Jf@KPGfC}Bn@c@~Eu@vDoAt@k@t@gA~@c@~@u@xBE`C]b@Qt@}@Vc@j@sBr@_Ad@eAx@a@~@o@fAk@XWR[h@aBxBgCPc@?u@D[^a@jAcBZ}@v@mEBwAg@oCEmCx@wEl@{Bj@{APWlA_AT[`ByFnA_Dj@uBfAyAZ}@R_Af@iDPk@NYlA[JQn@eELa@dA_ALYJc@o@Ik@Q[a@w@kBU[gA}@g@u@{@wCS}@?c@RaBEu@k@kBEc@Hu@~@mCFc@?s@Io@Ma@eAyAe@oCi@}Bc@wAQ_AA}@b@gDHmB^sBDgAA}@Os@W[c@[_C{@g@e@mAiBc@SwAGkAc@}AQWQw@}@WQgA?aBQe@?uAFYQe@eCkAyAiCsByEsIg@Wi@A{C`@c@EQIuC{B_@Ek@BoAb@c@Fm@OoA{AcG{G_BuBu@u@oE{Be@a@c@e@a@u@qB_FaAeCa@wAOw@IwAMoAYiAM[o@eAgAc@mBYoA?wAFwA?mCQQ?sAZgDnA}FxCe@PyC\\wDbAwCbAo@d@YX{@hAgW~a@eArBiE~HwFrIqBxDmLxVpBlBhMfNq@jAa@R]D_@?mE}E[Ia@I_@HYP}CfFm@k@cA`Be@`@Y@yApAaA~Ai@d@gB~@s@hAu@dBC~Ba@dASt@t@~JgAPy@j@uIpHm@t@}AfD_@~@q@|@s@l@uJbE}At@mBnAk@Ju@Do@GQ`@PvBJXFtC|@~NDtAh@MtEgC\\Gn@G~@`@bBfCHb@LlAWxCLvA`@~@r@dAd@z@RlANtCV|@`@\\f@LlESFvBUtB_@dAyA~AkAzAa@p@e@zAK~@EbBCvDWdEMfA_@`F_@~Am@bBmElJs@t@yBnAUXTd@Z|@XjB@pAU|Gs@xF_@jBc@dA}@lAk@Vu@Nu@Qe@?i@HiBx@iCtFoAfAmAX}E?wDoAeCIaARcAj@cAvA{A`DYfA_@p@{@d@q@HiFFe@Rc@`@k@r@gHrMkAzBi@n@m@b@u@VoBXg@NWJEQDPWLZ`AtF|Nd@xAXdC?jBKxA]`BqCtG_@pAc@tCG~@KxKKhBQ?Ev@UbB]hBU|@wClJaBvGEF@@K^LH_CbKsAnDkDxHi@~@i@l@w@x@y@j@u@\\YHd@|BvAbEjAfCT`@XN\\IzAcAp@IjAD|JpEVNRZNj@^`DFPLPl@b@rBb@JH`B|BZX\\NR@ZA^Gb@QjCcBZMd@NZP\\ZXr@^hAp@zGt@bEZdAwBpCQXCZ@XRxADt@?t@[lCgAjBcA|Ba@pAs@fDSdEc@dM}@hHc@dAe@vBUr@MN^n@\\tADl@AfAFXn@hAp@`BThBp@|B~AvCLPPFl@JZNj@bA^x@Hb@?b@OtA_@~BC`@@XZhAJdACl@Ij@S~@qAzDa@bCQRG?GGIQ@yAHm@PuCA[GQQQSIe@?]J_CrBS`@IZAnBNhAX`AFp@IjBJhDF`AFb@Nh@^r@hAzALX?Z[nA?d@JXj@`@DXGZo@XYZCb@TnA@PAl@BXf@|@@RSz@?PFl@UnA@RXhBDl@?VK~@?PDRPVv@d@VBVEbAk@R?f@Rt@NRNBZUfCUjAi@zAEZAj@VfHl@hD?zASvAwAlCoAlB{@lDEtDCt@Kr@wAjDcArBk@NsDBkBUqA@}@PmCpAwCbCkAnAeAdB}AtCSj@k@rBs@nFf@`CAr@YxAa@h@u@n@kAr@YZUt@yCbToCfSU|@NNaGdN`AFtBd@b@FZ?rAc@XE|@Ah@Fn@XxBvAvB`AhBnAhB~@jBnAtAnADP?Pa@jDbKxBUjSo@pOZnC?j@Ql@oCdG_Am@oHeEqDaB_C}@s@|Cs@hCaA[",
     "is_active": true,
     "event_picture_urls": [],
@@ -670,7 +697,7 @@
     },
     "source_group_name": "Featherweight Club (FWC)",
     "event_time_utc": {
-      "$date": "2025-11-23T17:30:00.000Z"
+      "$date": "2025-11-23T17:30:00+00:00"
     },
     "meet_up_location": "",
     "gps_coordinates": "38.50526, -122.4703",
@@ -680,7 +707,7 @@
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3413728775589330668",
     "title": "Annual\u00a0Napa\u00a0Harvest\u00a0Ride 2025",
     "description": "2025\u00a0Annual\u00a0Napa\u00a0Harvest\u00a0Ride\n\n\u231a\ufe0fMeet by: Sunday\u00a011/16/2025 09:30\n\n\ud83d\udccdMeet at: https://maps.app.goo.gl/KJ95mvFbTVPH5Yc39?g_st=com.google.maps.preview.copy \n\n\ud83d\udfe0Event: https://www.strava.com/clubs/1157973/group_events/3413728775589330668\n\n\ud83d\uddfa\ufe0fRoute:\nLong: https://connect.garmin.com/modern/course/410004927\nShort: https://connect.garmin.com/modern/course/410004114 \n\n\ud83d\udcddNote: 3 groups: Long route tempo-A1, long route casual-A2, Short route casual-B. Please meet by your group ride leader by the start. We'll arrange multiple leaders for each group to bridge the gaps.\n\nLunch\u00a0party\u00a0at\u00a0V.\u00a0Sattui\u00a0Winery.\n\n\ud83d\udc77\u200d\u2640\ufe0fDisclaimer: Riders must wear protective gear, follow traffic laws, and accept cycling\u2019s inherent risks. Descend responsibly. Organizers are not liable for accidents or injuries. Ride leads will assist, but each rider is responsible for their own navigation.",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/6DDC62TBFZD6BA63QD62SPNOEQKM7EO4ZKTNTJY25XEMSXRKH6Z4S5CJHFHJEIXVXQEROKWGE3FKIARN73QLN3Q266XPVQP73BUX5WQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/7C4Z4JRCZ37PLT73RNOIXVG6DKNSC3QRV7WCIHEYZEMKWIAJ34QXSCYGHF5VFJCS5VQOVE6R72P65FAFYGLILDB5KYFQTANCJ2EMQAA=",
     "route_polyline": "wk_jF|~mjVmBqDG_Eu_@me@eC}FkDa@jBkLlLyb@xGsOvSs_AtMsI~Qc\\dEaP`\\wh@lb@ulAvCsMwB_BmAeJlF_[{D}WReJ`Jeb@|Pi[fNua@|@aWjE?d@gAiDoFeEe@eAaBbBgVuEuJn@{FoAkGd@qH}HiPfAsIkKuCsC}FmIsB_GmXoI}BmAuGmCqDoAsNoD{KnCwLuBuIR{GpEuIReQvGqRyAiMrBwOg@cGrBwJnGgH`FyWl@}KqFkUdBg]fCcGb@mH{@}PmToOiDsFkGeAiBaD}EkBqOmCkC?qI~GeKjCsIxJeFiB}E_JhL{e@{LwXiAmd@gMwJuE_]|IwTp@sF~G{DlCyKhIgJfLw[nJ}DxImLpCeQw@wEfCiDXsL~CuK_CwJsHkGkFoAoDgHkEk@cIuG_L[yEgBeCyEmGaBsEaIkPuGsD}G_@{FhEiKHsZlNsYZeLxC}N{AaEsKuDk^pJof@vFwSpOoJgAiGzWcGnAoDzFmIlEuEpKuPlS{Lr\\kK~@iE`PmFu@}LyO{Gk@cHjBoI{DyJ_QgCwAoM?ib@vS}XlG}SbXaIjG_Il@iGhKwMvCyJpFkEjIk@~HsCnE\\~ScAlC}IsB}LdEaKaDyXxPoGdWcIbJcIzR^hRyArDmJfF}GI{LfJ}I`DyBdCiGzUgLhF_UrUg^pHyM|a@wSYWhPkMrWaCnQ|HvNChNnFvJa@tGnBvHaGh`@LfQkK|SyAzK{BnAgHGoVr\\qBdS{NhP{DfOkPvQ_HvOeDjPqM`YiExDeKHiHrF{Or\\aCz^iBlGpJ~SzLfMHtEyDfT`FdVhRr`@~OnVhO`Ine@zDnZ|KhhC`yAxMwEhMrDfAuBoAwFjHyMvSeEnGiFbEzA~IvMjCt@tL_FxLu@rNcEfRhBfb@{K~a@u{@`Va`@`U}r@tN}KjI_g@hHeSdNyTds@c}@jGea@rM_^`Pk@tF{B|GdMfGrBxBlEbHhFzOzB~GxOrA`KbKjGnFQzHbEvKaB|XPlEzAhF~HpDPpK|IdFYjAfDnCpAbL}BzQa@dEqCx`@oK`Me@jEqBfHVvGeF~Gh@tHzYlIrBrC|FjKtCgArI|HhPe@pHnAjGo@zFtEtJcBfVdA`BdEd@fDhGoFl@}@`WgNta@}Ph[aJdb@SdJzD|WmF~ZlAdJvB~A}AvHkb@~mAgXhc@jMtIbkA|eB_e@~k@yD_GxD~FyyAriB}EyG",
     "is_active": true,
     "event_picture_urls": [],
@@ -698,7 +725,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-11-30T15:45:00.000Z"
+      "$date": "2025-11-30T15:45:00+00:00"
     },
     "meet_up_location": "2626 East Katella Avenue, Anaheim, California 92806, United States",
     "gps_coordinates": "33.80347, -117.87741",
@@ -708,7 +735,7 @@
     "strava_url": "https://www.strava.com/clubs/908336/group_events/3418712287636118744",
     "title": "\ud83d\udef0\ud83d\udef8 (Subject to weather conditions)",
     "description": "\ud83d\udea9 8 AM \u279c \ud83c\udfc1 11:30 AM\n\n\ud83d\udeb4\ud83c\udffb 36.98 mi\n\ud83d\udeb5\ud83c\udffb 351 ft\n\n\ud83c\udd7f\ufe0f Artic\n2626 E Katella Ave, Anaheim, CA 92806\n\n\u2615\ufe0f Memento Coffee Works\u00ae\n3010 Woodruff Ave, Long Beach, CA 90808\n\n---------------------------------------------\n\n**Sunday Group Ride Notice and Rules**\n\nJoin us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:\n\n1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.\n\n2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)\n\n3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.\n\n4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.\n\n5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.\n\n6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.\n\n7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.\n\n8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.\n\nWe look forward to enjoyable ride. See you on the road!",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/NFUJRYVDNANKKL37YDBLYPQVOKHYRPHEAXABWJGBVOJM2GN23UPA23O7ISC3HNYZC7YP5BB5BLTDUO5W7GAQX474HX7YQOHDVXJEYEQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/5PXRE3HKJJ7EGLV3CPX363FMZOI2WSTGCYWZVJM76WRPBYATRSPCFSKL5SFOBYW2OFT5CBM37B4G4WXFDKGUGSQWBP4CFRRSNBZIBSY=",
     "route_polyline": "ojimEbvmnUddBpj@eI|X`BxTXtfA~BlrSe@h}CfRiAF|N`PDD`ItGpVRh`BzP~^dPfPhBfHm@fVmP`Pzd@b^i@dAiJb@[~jBv@lLsG?hAQk@vXyEmByArDwIfEyF[WxBsVkCoPuN{FcBwaB_@Gf_Bmr@?_GpCwH_LsZkWBiwBdFqi@XoaDpCeXoCwkL_dAV}AkiIlFQlAaTif@whDt`B}^?a`BtNd@jKbJdRbBpUbNxGuKaBeH?qf@hE|@",
     "is_active": true,
     "event_picture_urls": [],
@@ -725,7 +752,7 @@
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2025-12-07T15:45:00.000Z"
+      "$date": "2025-12-07T15:45:00+00:00"
     },
     "meet_up_location": "360 South Prospect Street, Orange, California 92869, United States",
     "gps_coordinates": "33.78401, -117.8184",
@@ -735,7 +762,7 @@
     "strava_url": "https://www.strava.com/clubs/908336/group_events/3418696838676409626",
     "title": "\ud83c\udf88\ud83d\udeeb (Subject to weather conditions)",
     "description": "\ud83d\udea9 8 AM \u279c \ud83c\udfc1 11:30 AM\n\n\ud83d\udeb4\ud83c\udffb 35.66 mi\n\ud83d\udeb5\ud83c\udffb 2,752 ft\n\n\ud83c\udd7f\ufe0f McPherson Athletic Facility\n360 S Prospect St, Orange, CA 92869\n\n\u2615\ufe0f Silverado Canyon Market and Kitchen\n28192 Silverado Canyon Rd, Silverado, CA 92676\n\n---------------------------------------------\n\n**Sunday Group Ride Notice and Rules**\n\nJoin us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:\n\n1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.\n\n2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)\n\n3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.\n\n4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.\n\n5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.\n\n6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.\n\n7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.\n\n8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.\n\nWe look forward to enjoyable ride. See you on the road!",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZCSOYMB34ZC3MPFWZGR774EVWNFRLRUG7EGOHHX3ZK4XKQWVB7TZHOYQ5BXFZRV6XIFW66VNGUQCCE5S66DZYZ3PHPMXWP5IPVOB7NQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZAL7BWUWLCZWC6GRRSQVPKZQ7BBQMO5HX2CVONXP42HXYIJGDWMBAJWBIUKRGSIAQSIX7LPH5P7XHA2SBDUQG6F7TUCBADXPACIIM3A=",
     "route_polyline": "_hemE|kbnU{DDDsu@kF?vCoMBaIeSE_@}{AiEcIiXsUiFaNgGkIqAsG]}c@l_@_jBrMiRnNyMn[kP|IoH`SyHxXc]zQq]pGk_@|Ao\\kFgb@l@}JrGcOtNwKpFgHpWmbA~HcL`JoT`OsM~CqFdA{IuBae@j@eI~D_IfPmL`FaLVcIgBoO}D_Aa@mEfZyq@hE{ObAuNuFwO}A}\\uB_Hg@uVmIeUw@wH`I_[@iKoCqI|EoZyGgd@fEa\\wE{T`GyREoFhBqF}AmGKsR`B}NyC}GjCeJkAuE`A{Fu@cj@FyInBiHoK}MlK|MkBjGj@zu@aAzFjAtEkCdJxC|GaB|NJrR|AlGiBpFDnFaGxRvEzTgE`\\xGfd@}EnZtCtJGdJ_In[t@fHlIdUf@tVtB~G|A|\\tFvOcAtNiEzOgZxq@`@lE|D~@fBnOWbIaF`LgPlL_E~Hk@dItB`e@eAzI_DpFaOrMaJnT_IbLqWlbAqFfHuNvKsGbOm@|J|ExZF~HwA|YwJne@uNlWyXb]aSxH}InHqVvLmSlQwNfTyG|W~Pu@tUeMnPqAl\\xDhUWpVpDvOG\\zDnCxD|VxCvUhTlWtHlKb@GlEuDlGkMxC_ThKu]jk@wIcEeEPgHnHwQyD{EtNHtFqCjRnCtL|MxKaHnLjBpBmA~D`@nK{@vLvBjFcO|NNbJ}@bE_Ht@}LcAOzZgHXSnt@_F?",
     "is_active": true,
     "event_picture_urls": [],
@@ -752,7 +779,7 @@
     },
     "source_group_name": "Thunder Bluff Leisure Cycling Club \u96f7\u9706\u5d16\u9a91\u884c\u89c2\u5149\u56e2",
     "event_time_utc": {
-      "$date": "2026-05-02T16:00:00.000Z"
+      "$date": "2026-05-02T16:00:00+00:00"
     },
     "meet_up_location": "Woodside Town Hall, 2955 Woodside Rd, Woodside, CA 94062",
     "gps_coordinates": "37.42856, -122.25082",
@@ -762,115 +789,11 @@
     "strava_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "title": "\u5f80\u897f\uff0c\u8d8a\u8fc7\u5929\u9645(Skyline)\u5427\u9a9a\u5e74",
     "description": "\u8def\u7ebf:\nRedwood Townhall \u96c6\u5408 - OLH  \u722c\u5761 - Loma \u90b1\u6797 - Pescadero \u5c0f\u9547 - San Gregorio \u5c0f\u5e97 - Tunitas \u722c\u5761 - Kings Mountain \u4e0b\u5c71\n\n\u9002\u5408\u590f\u5929\u7684\u907f\u6691\u8def\u7ebf credit @Steve\n\u6709\u4e24\u4e2a\u5927\u722c\u5761\uff0c\u5206\u522b\u662f\u5927\u5bb6\u719f\u6089\u7684 Old La Honda\uff0c\u548c\u5f88\u591a\u4eba\u719f\u6089\u7684\u4eceBike Hut\u5f00\u59cb\u7684Tunitas Creek Rd\n\n\u9884\u8ba1\u603b\u65f6\u95f46 hours\n\n\u672c\u8def\u7ebf\u4e5f\u53eb\u907f\u6691\u8def\u7ebf\uff0c\u56e0\u4e3a\u5728\u6811\u6797\u4e2d\u7a7f\u884c\uff0c\u6216\u662f\u6d77\u8fb9\u5439\u98ce\u3002\u8d77\u59cb\u4eceRedwood Townhall\u51fa\u53d1\uff0c\u8fd9\u4e5f\u662f\u5728 [\u65e7\u91d1\u5c71\u6e7e\u533a\u9a91\u884c\u8def\u7ebf \u7b2c\u4e00\u7ae0 \u7ec3](https://rangerway.com/way/cycling-routes-at-bay-area) \u4ecb\u7ecd\u8fc7\u7684OLH\u8001\u672c\u7530\u8bad\u7ec3\u8def\u7ebf\u7684\u8d77\u59cb\u70b9\uff0c\u53ef\u4ee5\u628a\u8fd9\u4e2a\u5730\u65b9\u770b\u4f5c\u662f\u6e7e\u533a\u9a91\u884c\u7684\u4e00\u4e2ahub\uff0c\u56e0\u4e3a\u5f88\u591a\u9a91\u884c\u8def\u7ebf\u65e0\u8bba\u662f\u8f6c\u5c71\u8fd8\u662f\u4f11\u95f2\u9a91\u8fd8\u662f\u8fa3\u5821\u56e2\uff0c\u90fd\u4f1a\u4ee5\u8fd9\u91cc\u4e3a\u8d77\u70b9\u6216\u8005\u7ecf\u8fc7\u8fd9\u91cc\u3002\n\u8fd9\u4e00\u8def\u4e0a\u6709\u5f88\u591a\u53ef\u4ee5\u9a7b\u8db3\u4f11\u606f\u7684\u597d\u73a9\u7684\u5730\u65b9\uff0c\u50cfPescadero\u5c0f\u9547\u548cSan Gregorio\u5c0f\u5e97\uff0c\u8fd8\u6709\u4e0b\u56fe\u7684 The Bike Hut\u3002\u4e00\u8def\u7684\u98ce\u666f\u4e5f\u6709\u5f88\u591a\u4ee4\u6211\u521d\u89c1\u60ca\u8273\u7684\u5730\u65b9\u3002\u671f\u5f85\u60a8\u4e5f\u53bb\u63a2\u7d22\u4e00\u756a\uff0c\u53d1\u73b0\u4e0d\u4e00\u6837\u7684\u666f\u8272\u3002",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/EV55PMLGVFYCPLD6RBKARZKNUCDII2UZZ4H7DCNPQX23XBHD3E4APZVN6NP2JKM6KZEWQZUZA34AJNFEXSPHNUZJXOJ6R5V2C4JDYLI=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/6I5XFGXEKQVS3MOYLCLYF5A7RKQ3ZLI5GCC6GS7QVBRNS6J6IVZV5HF44NAAHKJZFLV3WA45HBRG5ZGHDUN4RXOSFOLU74XJDGEBGDY=",
     "route_polyline": "ogmcFtbdiV}BL@lIqApG`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfA~BzHxOuKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCFyHtKhMrEyFlAjG{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiDnE}E|HzIbGPdFvQtI{FlKjI`j@OjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvEsErApBoGzKtMeHbHcIlE`@TrFoHvAcMrRPtEiO`KyAdQ`FdC~Z`Br@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDfZrFxIhGbD`Tm@~DoJvNKrE`FvIrFzDLdJrItMl@v^fSlEpJzKjJqA|MfCjKzLPvBqA`BgQk@yHtG_JnA}@zBlG~LVfV~@`DdCj@xSeEnGfIrBfG@hKlCdHDpOkDl_@`EdQ`OhDz@pOjGfF~Qn]aAjGjDlSpFtGnKpDv@jIWjh@iQ~LcKt@oBfFjBvZvN~m@`BlVsb@hA{X|Gam@hFmU}@s_@uSqSef@}MnDwNaG_EzK}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IgIbGoAaBsDbAqCsEKaD_CoAcBuEsEgAkN~EqIgKyDI{QxDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GsDeAmHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRnD{IuDs@gBkIiGnAlGyOsK{DjKiKf@eF|EmBTkEsFu@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_KbHcCoE_CuSzDeHgFuArB}AW_@{CxCiKhCl@]}G|G_DsN|@aEaFyCYyPjG~@gFxGkIlNaBrD`DvBsDtKgD_JuDuHeOr@uJvAyE`BY[{FpMuJkCqV?kN`\\_q@}TqgAnAmUdCO",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "route_orientation": "clockwise"
-  },
-  {
-    "_id": "altovelo-av-a-ride-saturday-91325-cloverdale-to-av-picnic",
-    "source_type": "webpage",
-    "source_group_id": {
-      "$numberLong": "altovelo"
-    },
-    "source_group_name": "Alto Velo A Ride",
-    "source_event_id": {
-      "$numberLong": "altovelo-av-a-ride-saturday-91325-cloverdale-to-av-picnic"
-    },
-    "title": "AV-A Ride Saturday 9/13/25:  Cloverdale to AV Picnic!",
-    "description": "Join us for another Saturday A ride. It looks like another perfect day to play bikes so let\u2019s go to the coast and do a Cloverdale loop. I designed the route to finish on Kings Mountain where we can meet at Huddart Park for the Alto Velo Picnic which starts @ 3pm.",
-    "event_time_utc": {
-      "$date": "2025-09-13T16:00:00.000Z"
-    },
-    "meet_up_location": "Summit Bikes Palo Alto",
-    "gps_coordinates": "40.7207559, -74.0007613",
-    "distance_meters": 0.0,
-    "elevation_gain_meters": 0,
-    "organizer": "Alto Velo",
-    "route_map_url": "",
-    "route_polyline": "",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.altovelo.org/a-ride/av-a-ride-saturday-91325-cloverdale-to-av-picnic"
-  },
-  {
-    "_id": "altovelo-saturday-a-ride-8am-choose-your-own-adventure",
-    "source_type": "webpage",
-    "source_group_id": {
-      "$numberLong": "altovelo"
-    },
-    "source_group_name": "Alto Velo A Ride",
-    "source_event_id": {
-      "$numberLong": "altovelo-saturday-a-ride-8am-choose-your-own-adventure"
-    },
-    "title": "Saturday A Ride: 8am choose your own adventure",
-    "description": "It\u2019s been a looooong time since the Saturday ride went up Bohlman. We will start by going down foothill and through Stevens Creek Reservoir, stopping for water/bathrooms just before hopping over Mt. Eden and going down into Saratoga.",
-    "event_time_utc": {
-      "$date": "2025-09-06T15:00:00.000Z"
-    },
-    "meet_up_location": "Summit Bikes Palo Alto",
-    "gps_coordinates": "40.7207559, -74.0007613",
-    "distance_meters": 109435.12,
-    "elevation_gain_meters": 0,
-    "organizer": "Alto Velo",
-    "route_map_url": "",
-    "route_polyline": "",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-8am-choose-your-own-adventure"
-  },
-  {
-    "_id": "altovelo-saturday-a-ride-big-basin-shake-shack",
-    "source_type": "webpage",
-    "source_group_id": {
-      "$numberLong": "altovelo"
-    },
-    "source_group_name": "Alto Velo A Ride",
-    "source_event_id": {
-      "$numberLong": "altovelo-saturday-a-ride-big-basin-shake-shack"
-    },
-    "title": "Saturday A Ride- Big Basin + Shake Shack",
-    "description": "Saturday looks like better weather than the last big basin ride- so we\u2019ll try take two on this. We\u2019ll regroup at the top of page mill and bear creek, and probably take a quick stop in Boulder Creek.",
-    "event_time_utc": {
-      "$date": "2025-08-30T16:00:00.000Z"
-    },
-    "meet_up_location": "Summit Bikes Palo Alto",
-    "gps_coordinates": "40.7207559, -74.0007613",
-    "distance_meters": 64373.6,
-    "elevation_gain_meters": 0,
-    "organizer": "Alto Velo",
-    "route_map_url": "",
-    "route_polyline": "",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-big-basin-shake-shack"
-  },
-  {
-    "_id": "altovelo-saturday-a-ride-823-native-sons-and-purisima-creek",
-    "source_type": "webpage",
-    "source_group_id": {
-      "$numberLong": "altovelo"
-    },
-    "source_group_name": "Alto Velo A Ride",
-    "source_event_id": {
-      "$numberLong": "altovelo-saturday-a-ride-823-native-sons-and-purisima-creek"
-    },
-    "title": "Saturday A Ride 8/23 - Native Sons and Purisima Creek",
-    "description": "Exploring roads like Star Hill Rd and Native Sons Rd, with a climb up Kings Mountain and a descent down Tunitas to Half Moon Bay for coffee and snacks.",
-    "event_time_utc": {
-      "$date": "2025-08-23T16:00:00.000Z"
-    },
-    "meet_up_location": "Summit Bicycles, Palo Alto",
-    "gps_coordinates": "40.7207559, -74.0007613",
-    "distance_meters": 131965.88,
-    "elevation_gain_meters": 0,
-    "organizer": "Alto Velo",
-    "route_map_url": "",
-    "route_polyline": "",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-823-native-sons-and-purisima-creek"
   }
 ]
