@@ -1,7 +1,6 @@
 (function () {
     const DATA_SOURCES = [
-        './storage/events.json',
-        'https://raw.githubusercontent.com/shohoku11wrj/haoqiyou/refs/heads/main/storage/events.json'
+        './storage/events.json'
     ];
     const EXTRA_EVENT_GROUP_IDS = new Set([265, 908336, 1047313]);
     const DAY_OF_WEEK_MAP = {
@@ -32,32 +31,45 @@
     });
 
     function loadEvents() {
-        fetchWithFallback(DATA_SOURCES)
-            .then((rawEvents) => {
-                const normalized = rawEvents
-                    .map(normalizeEvent)
-                    .filter((event) => event && event.is_active && event.event_time_utc);
-                const categorized = categorizeEvents(normalized);
-                renderEventLists(categorized);
-            })
-            .catch((error) => {
-                showError(error);
-            });
+        if (window.location.protocol === 'file:') {
+            loadLocalEvents();
+        } else {
+            fetch(DATA_SOURCES[0])
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`请求失败: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(processEvents)
+                .catch(showError);
+        }
     }
 
-    function fetchWithFallback(urls, index = 0) {
-        if (index >= urls.length) {
-            return Promise.reject(new Error('无法加载活动数据'));
-        }
-        return fetch(urls[index])
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`请求失败: ${response.status}`);
-                }
-                return response.json();
-            })
-            .catch(() => fetchWithFallback(urls, index + 1));
+    function loadLocalEvents() {
+        const script = document.createElement('script');
+        script.src = './storage/events.js';
+        script.onload = () => {
+            if (window.LOCAL_EVENTS_DATA) {
+                processEvents(window.LOCAL_EVENTS_DATA);
+            } else {
+                showError(new Error('Local data loaded but window.LOCAL_EVENTS_DATA is missing'));
+            }
+        };
+        script.onerror = () => {
+            showError(new Error('Failed to load local events.js'));
+        };
+        document.body.appendChild(script);
     }
+
+    function processEvents(rawEvents) {
+        const normalized = rawEvents
+            .map(normalizeEvent)
+            .filter((event) => event && event.is_active && event.event_time_utc);
+        const categorized = categorizeEvents(normalized);
+        renderEventLists(categorized);
+    }
+
 
     function normalizeEvent(raw) {
         if (!raw) {
