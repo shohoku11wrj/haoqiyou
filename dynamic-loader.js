@@ -2,6 +2,10 @@
     const DATA_SOURCES = [
         './storage/events.json'
     ];
+    const LOCAL_DATA_SOURCES = [
+        'https://raw.githubusercontent.com/shohoku11wrj/haoqiyou/main/storage/events.json',
+        './storage/events.json'
+    ];
     const EXTRA_EVENT_GROUP_IDS = new Set([265, 908336, 1047313]);
     const DAY_OF_WEEK_MAP = {
         Monday: '周一',
@@ -46,20 +50,25 @@
         }
     }
 
-    function loadLocalEvents() {
-        const script = document.createElement('script');
-        script.src = './storage/events.js';
-        script.onload = () => {
-            if (window.LOCAL_EVENTS_DATA) {
-                processEvents(window.LOCAL_EVENTS_DATA);
-            } else {
-                showError(new Error('Local data loaded but window.LOCAL_EVENTS_DATA is missing'));
+    async function loadLocalEvents() {
+        const cacheBuster = Date.now();
+        for (const source of LOCAL_DATA_SOURCES) {
+            const joiner = source.includes('?') ? '&' : '?';
+            const url = `${source}${joiner}ts=${cacheBuster}`;
+            try {
+                const response = await fetch(url, { cache: 'no-store' });
+                if (!response.ok) {
+                    throw new Error(`Failed to load local events from ${source}: ${response.status}`);
+                }
+                const data = await response.json();
+                processEvents(data);
+                return;
+            } catch (error) {
+                console.warn(`Local events fetch failed for ${source}`, error);
             }
-        };
-        script.onerror = () => {
-            showError(new Error('Failed to load local events.js'));
-        };
-        document.body.appendChild(script);
+        }
+
+        showError(new Error('Failed to load local events.json from GitHub or disk.'));
     }
 
     function processEvents(rawEvents) {

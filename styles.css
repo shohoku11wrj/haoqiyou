@@ -249,6 +249,8 @@ body {
 .close-btn {
   float: right;
   cursor: pointer;
+  font-size: 48px;
+  line-height: 1;
 }
 .page-container {
   display: flex;

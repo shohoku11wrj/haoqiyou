@@ -244,7 +244,7 @@ club_ids = [
     '265',      # Los Gatos Bicycle Racing Club
     '1047313',  # Alto Velo C Ride
     '1115522',  # NorCal Cycling China Fans
-    '908336',    # Ruekn Bicci Gruppo (Southern California)
+    '908336',   # Ruekn Bicci Gruppo (Southern California)
 ]
 
 # Google Maps APIs
