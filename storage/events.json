@@ -557,33 +557,6 @@
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3448879589495090612"
   },
   {
-    "_id": "strava-265-3451816367177225932",
-    "source_type": "strava",
-    "source_group_id": {
-      "$numberLong": "265"
-    },
-    "source_event_id": {
-      "$numberLong": "3451816367177225932"
-    },
-    "source_group_name": "Los Gatos Bicycle Racing Club",
-    "event_time_utc": {
-      "$date": "2026-01-31T16:30:00+00:00"
-    },
-    "meet_up_location": "201 North Santa Cruz Avenue, 201 North Santa Cruz Avenue, Los Gatos, CA, USA",
-    "gps_coordinates": "37.22654, -121.98242",
-    "distance_meters": 119332,
-    "elevation_gain_meters": 2112,
-    "organizer": "Dan Scannell",
-    "strava_url": "https://www.strava.com/clubs/265/group_events/3451816367177225932",
-    "title": "Saturday Road: OLH & West Alpine",
-    "description": "Classic Old La Honda & West Alpine\n\nWeather looks great, but the northern Santa Cruz Mountains are hard to predict. Bring a layer\n\nThe route\n- Saratoga maze to Foothill\n- Left on El Monte\n- Rest stop 1: Arastradero trailhead area\n- Through Portola valley to OLH, regroup at the top on Skyline\n- Descend W OLH, hard left on La Honda\n    - Rest Stop 2: Park just up Sears Ranch past the store\n- Down to left on Pescadero to W Alpine and redwoods and delightful climbing\n- Restroom at the top just before Skyline\n- Descend Page Mill to Moody to Summerhill to the golf course loop\n- Then Foothill again to Stevens Canyon\n- Rest stop 3: Right on Stevens Canyon before Mt Eden and first right\n- Mt. Eden, right on Pierce, down 9, back to LG",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/7I2RLR4F6KYSUEGBYLP5KVWHML4B6KQ4IGZAYUGBGD77PWW6B4I5EY46SCU7DLQBBTVE74BHMFJWMW3YUIMHQ4WNAJSJD7ZN6HE72AA=",
-    "route_polyline": "mxebFdsogVgOoFka@`x@ka@pj@sDhM{Gth@_Upo@{e@xt@_Sla@iR|UsDdAh@~BtMlM{IvNiAbGsQcE}Jj@iA{DkCEChCgKc@iBoPqIBE~RwGXgAlE}Lc@S`DoG`ImJqOcPk@FlLqF?{KqDcDiF{BGkRgMkRrBaImCmAyC}JCn@rOiA|K_QhGwWNWrw@qY??tc@sCvAOfI_C`F_^HLeCqA@mIbJpDrPuBnHiGb@|EdCyAbPuw@Iin@rBea@}EyMnDahErdG|ItIuJxXwTjJkIu@uG~Bn@tFh[rTcAtUlIdHtRfJbA~Em@`IjGhK{n@rj@GhKaFfHsKnHwFtNiHhDwi@xKrBtIgGbOsCh_@`AdKfFv@bLnHMzM_Kfi@w@IFeC`Bd\\vJbLnSjE|AzBEbI_F|BaJhKyCxFIxHdHxObApG`O~NxOtIfCdM|_@nq@}IzNiBnS}HhQlAlWmA|Gg]lUyKtQcFn_@wKtLu`@hZoWna@aE~@|@rFtTvFwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfAzBxH|OsKnC}J|Kw@lHhKrD|@xHYpByDlCe@vBrDnA?|@|DxAPtDdJxDm@zDjGxG?nA[`@iDdEjBjEwA@mIuBiBfBcBHmJjBlEvBXpDjFnEcGpAbHwJ~ZpBbBxBgAt@`DnHhB_@tGmCrFlCbEzDl@DjExClEvB?zKsKfDO`Mj@~IbLfOk@fBhD{@hIj@hFzB`IfD~BzM_AhL_H|XaIjDdCxEoAxFtLjLiD`BsDlBi@|HzIbGPdFvQtI{FvI`IjSw@sCzJoDhBsEY}BvGmGvF_MlEsAGAyAZ~AxNkElGwF|BwGrEXnDiBrC{JtNvBtGeAjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvTqY^wF~AwBRwHeA{DtAoFaEqJSsN|Gqd@xHqKzBmNQuMhC{C_AwAl@}B`HsIrBaK}@YaB~CSaBdDsLvCe@r@iKzBjBp@lGlB~Cy@uBn@uK{AsVcDsKbNq`@zDqAyHyMEyFeCwEU{D}J}JsGViHhDIcGuDcLbByMoHpFeFc@}KuGuDl@gGwNsFeC~@kGoOsGCoLqDsEeAnFoDfAaFkB_X`B_GmEwBt@gAoCoGrAgCcGlCmGw@yCzKwTcB_HeALdAMQkMaBkCqBj@uBpFmI`F[bEaDv@oByCuEr@{F_DuHcI}I?_BeHHgHkBqDxBcc@vEuQ{C{FeLaB_BtCsFiB}CpDqBuCqF`GuEt@cBbNqF`ByGk@iBxFuDjBoIwA}FoJgM?eCbJcLjPq@u@bB}PoCsI_JoA}At@{BeCmHfAnAyCyKoACeCjDwCuJb@aGhDaE{GoCe@[zDyBHmAfDqEi@o@zGiAfAgIgFoCkI`C{Y|AgAdDkNpCYn@kEr@~HdLiYfIkKa@{c@~JqRdAeHoCuPeByb@qGeJeBoJqNqR_AaW{AwC`EmEuJmLSkWyUy[iN{MhDiLlMkKxKaVxYk_@|C|DnEgA`FwH|Fr@dAmEhCwArI{OxGoAbCoDzAgEc@aBac@gk@pd@_s@bt@saAzMqBni@dFbj@uCvp@?jSbEfQpM`BtL|GbGxQpFnHiBlGnM|NlJrEQvAvLk@bHbBlB`GqNtHlAzKkBbN{DjFyFzIuCvEsHbAkJrEz@hA{BnEQbCoLlFjBmFkB`FGvBgIbA|CrFQr@wCmCjB[_D~PiFz@eQuBiDtA{FcD_DpGaDxBeLbEcEnEc@dDlExEwAnEnAvJ{F|LyOp@aSlGlCnWv@p@~ClKr@lJ`DnHuEjBxAjDhNfCuVpCmGyEuGj@_V{C{Ii@aRaEgDb@_FwAaDo@qK_FyAq@mEzD}@mAmKfBnBvK{PgK_ObDsGiFuFjPw]th@ww@`Rqi@~Hql@fEyMxa@uj@|^ot@rAa@tNfFw@~B",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.strava.com/clubs/265/group_events/3451816367177225932"
-  },
-  {
     "_id": "strava-1157973-3450964483403078066",
     "source_type": "strava",
     "source_group_id": {
@@ -819,12 +792,39 @@
     "organizer": "Yu Ji 🪶",
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3452884827214030960",
     "title": "Fwc social: Nicasio Valley",
-    "description": "",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VCIRBBK3322OUFRFHJN7C3IV3RLV7S5H5NKF2DKZYLJU3D3ZEMJU3RO4HJ7IUKXFJTIPFRATN43UY3VVX4CMOA6NWT5RVJFFEYQTVDQ=",
+    "description": "TBD beaded on weather",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/O6ESQYXKLWAYQWUHNFS3LJNAI6N6YVMPLH3DFJX2NSCQNXTV3JUFNVJPQY5XWRKTS627RDKKMJ4FCCH6CNSNXLRQJVQDVPWLF6P34RQ=",
     "route_polyline": "o{veFnfkjVdD_@`Fhv@~BdGiDrf@p@bB_FlJcGrAcKhUuCrKtCnFOgAmIrDaeC~NkG|EaDfMuIpHmC_AaFwHeKYcC{A{A{DSuQkD}DaMfCwHyA_It@qC~Ca@nJePGU{D}HkDoTHiItEuHfMcTto@}AtYeIjQo]l_@}RxJszApwBwDxDkSnEmMrYea@m@u`@qP{JzBaH|GqC{DiNxAsAmEoE|BcAsDuDQgDqDaGlCiJcGeD|PsIlAm@xGwBw@}BfAmBiB{CnAkAhDcEkBoB{FuBWi@zBeEt@aRxRmD|IgJrDaN[qUuEmC~@uPxVsIvFyEpKcIdJ_Q`a@{LrAgT~J}AtC{f@tTmF~F`AfJuZzKuEa@eJlE{@{D{UjGiP`BuEtH_Cfb@iCf@_FjLD|IyIbNcD`BwVvb@uEhVo@|N~Ar@_B{@kDbJ{OzFkWvQwOpYiNxJgDpYP|LeNnd@_DdC}K`A}InHqDrG{GG_ItEE`PkAxHzD~LFlJeZlm@oD|UfEby@jBbfB}W[iTmSiCQoAnClCfMY|B{ChB_Ll@eFnHyh@dd@cDzTcDvHqKjMiJbQsQdHiHvZod@|S{b@zIfK}X\\cNrNcSo@eOrEgJLaDuAiWcg@icAsAeJz@{g@rFwVnDeE`BsIrQ{YbL{DpKZhNkG`A}B~Cmd@aFiFb@_F_EsP}PgOoAe_@zC{ItKqAxC{DiA{I`CyCi@{DdCyFHkNnBkIzDmJbIgH|@aP~IyHHgHbIuS`CqTSkStLeStGuXvMuN~FcWlO_^jF_SWmcAcGoTw@cLA{NbEoRdh@dXbLaN~WXlMeC|Pb@lE_FdHod@pG?xKzDts@kNrEgJdEg^hKyOi@uI~]u]nW{MfQcEvGIrZvFSlDrKvAjoAgzApEiDlIiBjH|@hTlSdSxK`OjBqAl@v@fB~l@zJvFoC`JfAjL}@n@{M`BiDpU}BqU|BaBhDo@zMcXV`EbQpFxkAvAxD~CjB|NeAxToM|@vAvEgAdAeCxA`@nBzFbEjBjAiDzCoAlBhB|BgAvBv@l@yGrImAhB{FYiDdB}CxIhG`GmCfDpDtDPbArDnE}BrAlEhNyApCzD`H}G|I}BfUnJu@kLrqAmLtGsF`rAwlBnIoIxOiH`]m_@nHwOfBwZrS_p@tHgM|CmBjEqBnS?|HjDTzDdPF`@oJpC_D~Hu@vHxAzKoCpEdERtQzAzDbCzAdKX`FvHlC~@tIqH`DgMjG}E`eC_OlIsDX~@_DgFtCsKbKiUbGsA~EmJq@cBhDsf@_CeGaFiv@eD^",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3452884827214030960"
+  },
+  {
+    "_id": "strava-908336-3455319427554915340",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "908336"
+    },
+    "source_event_id": {
+      "$numberLong": "3455319427554915340"
+    },
+    "source_group_name": "Ruekn Bici Gruppo (Southern California)",
+    "event_time_utc": {
+      "$date": "2026-02-15T15:45:00+00:00"
+    },
+    "meet_up_location": "2966 Oakberry Court, 2966 Oakberry Court, Fullerton, CA, USA",
+    "gps_coordinates": "33.90407, -117.86821",
+    "distance_meters": 54674,
+    "elevation_gain_meters": 273,
+    "organizer": "Stan 🦊",
+    "strava_url": "https://www.strava.com/clubs/908336/group_events/3455319427554915340",
+    "title": "🛫✈️🛬",
+    "description": "🚩 8 AM ➜ 🏁 11:30 AM\n\n🅿️ Tri-City Park\n3900 Rolling Hills Dr, Fullerton, CA 92835\n\n☕️ Seesaw Beans and Coffee\n6302 Beach Blvd, Buena Park, CA 90621\n\n---------------------------------------------\n\n**Sunday Group Ride Notice and Rules**\n\nJoin us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:\n\n1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.\n\n2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)\n\n3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.\n\n4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.\n\n5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.\n\n6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.\n\n7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.\n\n8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.\n\nWe look forward to enjoyable ride. See you on the road!",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/3UHXNGNTDBDLL3QEFTWC3UQNCOCI6QBSYW3T26DVQMVKGRZWU3XE65OFXTMXJGS3YIZ33MGVV2BSV7ET2PL74D2ELRVONANU5DOSCYY=",
+    "route_polyline": "sx|mEtoknU_AiBn@mAi@ghC`fBeA`OxItHdBr`CsK~o@baE|GpXrHfJhOzG|`AP_Id{@@fR`NldAlAvk@jGj\\jJjSfHxf@vAlk@mAjWbBljHykCj@AtHqC@L~k@uhAR@~KuG??pIyFD[imAoJZsHbG}NHkJpBMbPeDrIcElCuPlCgYp_@uHzEAlnAci@vfAgh@m]qHgC_K?ud@zM{LDcEaBpBaGD_OgCkIIcNba@MiFeh@F}cApl@RG}g@aSyBgJmHsIyQAeQzDqKik@au@mIwEBahC|QzAXwj@q@}@bNsP~Bo@}Giy@xAceAnXEfKaK|RYyAc{C~B}GrCQh@gEkJOiAeA_@sF}NiI\\oAxIpDxGPg@_}A",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/908336/group_events/3455319427554915340"
   },
   {
     "_id": "strava-1157973-3452881763025829446",
@@ -847,7 +847,7 @@
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3452881763025829446",
     "title": "Fwc Old La Honda TT 2026 (1/2)",
     "description": "No stress, set a lower bar first and see how much you can improve in Summer🍺",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/JQTRLBTIRS25OL5GSSAIT4WAHBPFDTIQR6R3MN437TPIHLDGVJPI5Q3VNDUGTD7C2A67YYO4NYXS6XCI2BH32PJ4UKQT6RGQBT3NWQQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4KNJYVOBDYKMN2U6B3BWSTBGJAOWTYJYWDD5OU2XY6JSN4C3TXTQYIRQUJPNCKYJJLYGNZORFDFVIVWALWURW56CC7E77ZNJFFDDKFY=",
     "route_polyline": "oercF|puhV~FuJ~H`GpYkh@TnKfIpJlE~BtS`DnD|Cp`A~wAnPzL|Q`Z~GjU~Gp_Al@jd@pKvg@s@nn@l@dLbQtc@`U`OrUt[rFnA|QkEdRnDjOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfAzBxH|OsKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCXqHfBdEzGzF|D{Fx@n@h@|E{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiD`BsDlBi@|HzIbGPdFvQtI{FlKjItQaApOvBjEqAxFpH|G}B`NfOJ~CqCpFX|IiH`BeFtI@nQvEjJ?rDwPnHS|BxCvHcAlEqPt@uCrDpBxVfGpKzA~XvMfVrGjc@dBz^cL|o@mHfHaFdLgJ`GoBtYeQ|UkB`N_LnHaFvJg@v]{GvQtArRi@fb@mBzFwKbJ`Aj`@gMzj@~DnVnQbNbD`IoOhDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rIeGkCwAyJ|AcI~EiEoDqF~@sF_@_M`DiFtDuO\\cRdB_BhA{FuDs@gBkI{DrBmAc@lGyOsK{DjKiKL{DvFwC`@uCg@kAwE_@oJrBgE}@sDgJ|CiPeCeLbEdJo@hPzBhFpSaDfO~@rCeLnSod@~BcSjJyHzMnH|H{BdJiY~QoYlJ{HpDoQ`EgDdGpDnDc@nEsKrH\\|EgCnDcGDiDyIaBa@uBdAeE|EeFCkIhFoAnGiKzFsDuBuGn@iDw@oHdBiDGwC}M{FSgRt]}j@hGsPyE[gBhF{Ec@wAtEsDxAkDwEaAaGuF_A}C~EsCmHvBmGFkIoDyFyJpDwIu@aDxHwA?a@sBrEwHCqMwA`@eC|IkE}@cKjE`FxOjHnEvAxDcO}E{TyVqCs@aNhC`R}JTwd@l@yElIeQiKqBuOlEwFqAoUs[aUaO_Ps`@qAgOhCqn@}Mko@c@s^}Fey@gHaYoRg[aQ_M_`@al@oMuNaCiHcMoRqE_DgXqFwIgMe@cIqYjh@qJeH{EtL",
     "is_active": true,
     "event_picture_urls": [],
@@ -874,7 +874,7 @@
     "strava_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "title": "往西，越过天际(Skyline)吧骚年",
     "description": "路线:\nRedwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山\n\n适合夏天的避暑路线 credit @Steve\n有两个大爬坡，分别是大家熟悉的 Old La Honda，和很多人熟悉的从Bike Hut开始的Tunitas Creek Rd\n\n预计总时间6 hours\n\n本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 [旧金山湾区骑行路线 第一章 练](https://rangerway.com/way/cycling-routes-at-bay-area) 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。\n这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/RTJD7QBFSEXEZ3PJ7U33PX2Y3QQD6HXVLGNNVMPDUS6HTCIC2YTCLT6B5YH4FXNTRDRII7RCRH2OHZU6OLV2OIOL7TYS45WAFASKJHQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/YSRAYKAW7KLBYTCBBCVFNVN74RERQFT6HJFEW2ZMLLP6TIKJ2JCGJPW43VVMFU4E5EXO26CYIPYPOUHAZBBLKGV7RGNUBYV7TZP7GYA=",
     "route_polyline": "ogmcFtbdiV}BL@lIqApG`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfA~BzHxOuKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCFyHtKhMrEyFlAjG{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiDnE}E|HzIbGPdFvQtI{FlKjI`j@OjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvEsErApBoGzKtMeHbHcIlE`@TrFoHvAcMrRPtEiO`KyAdQ`FdC~Z`Br@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDfZrFxIhGbD`Tm@~DoJvNKrE`FvIrFzDLdJrItMl@v^fSlEpJzKjJqA|MfCjKzLPvBqA`BgQk@yHtG_JnA}@zBlG~LVfV~@`DdCj@xSeEnGfIrBfG@hKlCdHDpOkDl_@`EdQ`OhDz@pOjGfF~Qn]aAjGjDlSpFtGnKpDv@jIWjh@iQ~LcKt@oBfFjBvZvN~m@`BlVsb@hA{X|Gam@hFmU}@s_@uSqSef@}MnDwNaG_EzK}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IgIbGoAaBsDbAqCsEKaD_CoAcBuEsEgAkN~EqIgKyDI{QxDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GsDeAmHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRnD{IuDs@gBkIiGnAlGyOsK{DjKiKf@eF|EmBTkEsFu@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_KbHcCoE_CuSzDeHgFuArB}AW_@{CxCiKhCl@]}G|G_DsN|@aEaFyCYyPjG~@gFxGkIlNaBrD`DvBsDtKgD_JuDuHeOr@uJvAyE`BY[{FpMuJkCqV?kN`\\_q@}TqgAnAmUdCO",
     "is_active": true,
     "event_picture_urls": [],
