@@ -638,33 +638,6 @@
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3452884827214030960"
   },
   {
-    "_id": "strava-908336-3455319427554915340",
-    "source_type": "strava",
-    "source_group_id": {
-      "$numberLong": "908336"
-    },
-    "source_event_id": {
-      "$numberLong": "3455319427554915340"
-    },
-    "source_group_name": "Ruekn Bici Gruppo (Southern California)",
-    "event_time_utc": {
-      "$date": "2026-02-15T15:45:00+00:00"
-    },
-    "meet_up_location": "2966 Oakberry Court, 2966 Oakberry Court, Fullerton, CA, USA",
-    "gps_coordinates": "33.90407, -117.86821",
-    "distance_meters": 54674,
-    "elevation_gain_meters": 273,
-    "organizer": "Stan 🦊",
-    "strava_url": "https://www.strava.com/clubs/908336/group_events/3455319427554915340",
-    "title": "🛫✈️🛬",
-    "description": "🚩 8 AM ➜ 🏁 11:30 AM\n\n🅿️ Tri-City Park\n3900 Rolling Hills Dr, Fullerton, CA 92835\n\n☕️ Seesaw Beans and Coffee\n6302 Beach Blvd, Buena Park, CA 90621\n\n---------------------------------------------\n\n**Sunday Group Ride Notice and Rules**\n\nJoin us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:\n\n1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.\n\n2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)\n\n3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.\n\n4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.\n\n5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.\n\n6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.\n\n7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.\n\n8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.\n\nWe look forward to enjoyable ride. See you on the road!",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/3UHXNGNTDBDLL3QEFTWC3UQNCOCI6QBSYW3T26DVQMVKGRZWU3XE65OFXTMXJGS3YIZ33MGVV2BSV7ET2PL74D2ELRVONANU5DOSCYY=",
-    "route_polyline": "sx|mEtoknU_AiBn@mAi@ghC`fBeA`OxItHdBr`CsK~o@baE|GpXrHfJhOzG|`AP_Id{@@fR`NldAlAvk@jGj\\jJjSfHxf@vAlk@mAjWbBljHykCj@AtHqC@L~k@uhAR@~KuG??pIyFD[imAoJZsHbG}NHkJpBMbPeDrIcElCuPlCgYp_@uHzEAlnAci@vfAgh@m]qHgC_K?ud@zM{LDcEaBpBaGD_OgCkIIcNba@MiFeh@F}cApl@RG}g@aSyBgJmHsIyQAeQzDqKik@au@mIwEBahC|QzAXwj@q@}@bNsP~Bo@}Giy@xAceAnXEfKaK|RYyAc{C~B}GrCQh@gEkJOiAeA_@sF}NiI\\oAxIpDxGPg@_}A",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.strava.com/clubs/908336/group_events/3455319427554915340"
-  },
-  {
     "_id": "strava-265-3459787537409074036",
     "source_type": "strava",
     "source_group_id": {
@@ -746,6 +719,114 @@
     "source_url": "https://www.strava.com/clubs/265/group_events/3459632442361030944"
   },
   {
+    "_id": "strava-265-3461966005307501416",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3461966005307501416"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2026-02-28T16:30:00+00:00"
+    },
+    "meet_up_location": "201 N Santa Cruz Ave",
+    "gps_coordinates": "37.22649, -121.98243",
+    "distance_meters": 52411,
+    "elevation_gain_meters": 720,
+    "organizer": "Rachel Vasquez",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3461966005307501416",
+    "title": "Saturday Road Ride: Redwood Gulch + bonus",
+    "description": "Hello LGBRC team,\nThis week's Saturday ride will summit Redwood Gulch from Steven's Canyon. The ride is 27 miles with 2,116 ft of elevation gain. This is a no drop, casual ride, so regroups will be frequent. There will be one stop for water refill/bathroom at the intersection of Steven's Canyon and Mt. Eden. When we reach the top of Redwood Gulch, we will wait for everyone to reach the top of the climb before carefully descending Hwy9 and heading back to MB OR we can add some extra miles by climbing Hwy 9 until we reach the Skyline intersection. We can decide on the day. \nWheels roll at 8:35am sharp. I hope to see you there!",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/V6S76MKXUVKSKSM7J275NDWG5P7XV665UKCAUJBJGD36H66BMGV6HGSW7CVPLNWY2E75YC7IKP7ZNF7AHELHRLQNN72BHU5D7ILEWVA=",
+    "route_polyline": "wvebF~sogVmCaA}LkEyAm@{Ai@eIyCgBy@_GuB_@QwHoCuBeA{CgA_AI{Jc@iBO[AUQoAK[J{Frl@}AdOu@jIKRYFgCc@K?IFIb@OtA[tGChADPNR|@r@fAt@tE`BfD`BzAfAr@|@vDlHn@`ATVcDnEk@~@}@|@_BjBiAxAw@j@w@XuBZkA`@sATi@DaAYi@YuAg@mKmC{AOcC}@qEgA}@e@iBq@wBo@y@Ym@YwAeAcA_@aAOcCoA_@c@e@eAk@_AgAqAoAs@i@Qw@?}BXg@EoAm@a@IUD}EdB[FYGsAyAm@a@o@Qy@I_@QwAoAy@[oAKcHRsFXBx@?jEBrDEjGFxHEvA@|@FZb@t@`AhAhA|@n@t@r@`@z@RfAPvJf@zEN|ALzC|AKfEWt@]`@eDvBOTMd@e@lEMZcAzAK^QfA?j@H|BQl@_@j@Yn@EnDKXWVUB_E?m@Qk@Ye@m@e@wAsCiEaAaAKSIYAQDu@Im@Qa@_Ac@oAOeFqCi@c@YY_A}BU}@Iu@?gAHmAAo@Ok@o@s@_@sBK]Sa@u@c@]IcMHc@dHeArR?bCDlGp@fEFdB@rAJfALXR`BHbUV|@R`A?~AgAGeCFcBb@g@FaMD_@Du@`@sCmEeB~A_AZw@fAs@vAcAdC_B~BcBzDgAu@m@u@m@cBSiBi@oAg@s@q@[s@IyPFaCF{G@m@V]d@KZGb@WnFu@lKm@z@_ACSjMuAdiAIb@q@nAOfAB`\\yEwCy@}@{CsB}BwAo@[s@S}@?{AVcG`As@Pi@V[B_@?_@Y]c@_@[WIkB?aAY]Oo@m@Qc@Ic@Ac@oEGmDBJpEb@jG?t@QfHQfAe@l@X[YZ}BdAmC~@yGvBYJi@HuFDqJ@eCAKXQlAEpB?pDBjBFv@@bAIfC@d@Ht@?x@GlBApDH|@?zAGt@BpKkZ?X?FvZGz@?`FEb@GNOPWPkPCwCGaB@oCk@kG??sBEaAiAgEAoXyU?@hPJLBza@DVNJxBAjAH^XNPd@pApC|J^dCz@nCLn@?h@Gh@aApCk@rB_@Za@Hq@F}@G{@IW?CFAHHT`ElARV@VSvBgAxJ?XvCh@xJpBxBf@NLtA|B^ThCb@j@Xv@j@fApAr@r@vA~@Rb@FZ@XGpA?j@VnAr@lCf@t@fBv@^\\lBvB\\RnAh@vAb@bAHrB@d@LZJRNz@|@b@Pd@H`@ItBgA|@Yd@Gr@Hz@h@h@hA^dA|AfFh@l@\\LnBVtBtAbBzAvBzB\\Xn@?`@GtAa@PDXPVd@~@pKAfAg@vCCb@@^Rn@d@j@h@Pp@Q~AuE^eCZgA\\k@TO`AAnBP~@j@bAPxE_A`Ek@d@ObBw@xIsBVOZYnCkDf@c@~@]LIvAi@d@GrA[z@_@VSTYfAsBfAcBXm@T}@DoAGgA?s@Hc@d@}@d@QTDjB`AVFRATOJQZoAJIXAnBJTAn@YXQNQXs@Pw@?a@McBAm@Fc@Ti@^]VHP?pAZhCvAr@n@r@h@`Ct@jBnA|@~@l@`@p@P`BEXF^Xr@|@bA|BlBvCVt@RxAHPhEbEf@`BfAdBhAbARZPb@HfAQpD@ZVr@\\b@Tt@ZrD[zDDv@Lh@h@|@v@pBVvBp@zDl@nA~@t@h@Fn@?p@HzCpFjBvCPv@NtAVt@`Av@\\|@?|@y@nC_@dAGd@Lj@XHd@Ab@PZXPb@R~@Dd@Aj@I^_@d@eAd@_ANSPSXCJDjCWbBOj@SXk@n@Mh@MfAAXBR^~ABb@APUl@{C~E]r@Sv@[r@gCdEIPMl@MXi@t@[t@?XDXCfAk@|BWb@_@`@g@\\e@b@Wh@{@nCQHoBIwAF[b@m@hAO`@MfAKb@OPq@Rc@h@uAnCm@r@Sd@EV?v@EXo@nAsArB]hAm@lCQb@yAZYXq@|@q@~AcArCIr@GjBQnA[fAm@dAOfAMxAgAdCQhAo@r@eAXq@n@i@~AUnA]t@URy@b@WVe@bBYl@Xm@d@cBVWx@c@TS\\u@ToAh@_Bp@o@dAYn@s@PiAfAeCLyANgAl@eAZgAPoAFkBHs@bAsCp@_Bp@}@XYxA[Pc@l@mC\\iArAsBn@oADY?w@DWRe@l@s@tAoCb@i@p@SNQJc@LgANa@l@iAZc@vAGnBHPIz@oCVi@d@c@f@]^a@Vc@j@}BBgAEY?YZu@h@u@LYLm@HQfCeEZs@Rw@\\s@zC_FTm@@QCc@_@_BCS@YLgALi@j@o@RYNk@VcBEkCBKRYRQ~@OdAe@^e@H_@@k@Ee@S_A`AGVFV?h@l@p@@`@A\\Pn@?n@Q|BgAj@@~@b@j@D|@dCDZEPKLqAh@Wb@Ej@?r@Fj@`@pAj@hDJdACxA{@`Dk@bBmBbEQj@InAFd@RNRGj@cBd@u@vDaB~@k@t@}@XQzAm@r@k@pAeCl@cBRoA^k@j@k@zByAd@_APoADk@Lm@Ra@`@QzBF~@?h@Q^QhAPP?f@u@Pa@Pu@^gABcBJ}@P}@Xu@Ta@xCcD`AwA|@_Ab@YtAu@nBu@XQ~@gA~DgH|BmCz@kBzBsDhAwAlAqAbDgFt@yAdB_FFYP{FH}@r@iDTk@j@eAH]RsBNiDNcCLoAf@aDtB}DZoABc@Eu@Is@{@eESuBU{DOmEF_B?[Ec@i@yAa@aBy@gA{BHsAQgASmEmAUQ_@e@Oa@Ic@@Qn@iBd@uBR}BAoAIc@M[aBmCSu@Ak@F{DCc@EQUc@aA_ASYMu@IwADwARu@j@_AHSDYAYy@aDKyAF{BDc@Ns@|@gCViANwAJyDH[JQrAqAXu@L}@?YG[MQs@i@OYg@sAkAu@KYAs@L_HAu@OaB?QHs@`@cBDiAI}@e@oAcBqDG[?u@HaB?i@[aDW}FKa@O[QQYMwA]QQOYCYB[^kBB}@Om@_AaBGQK{@YwGI}@Wc@OQ_@IiB?KAa@WOe@a@gDNIjDs@mAmKfBnBfCgEnCaEDSXW~AeC{BuDcEyF{@}@KQ?c@Nu@`@[d@Yb@c@Vi@Nu@_@w@iE}Dl@eA|DcJjFeLrAgChBmCrBoCfAqAz@oAzBsCpLqQhBwChAyApDkG~@sBtMs^dA{CdAaE\\aB|@{FxAuLp@sGh@gEl@aEv@kDbA_DjAmChAmBtSgXxD}E~DaGx@}BZmAxBoEvOyZlA_BfEyHj@Yf@GfJdDlC`A",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3461966005307501416"
+  },
+  {
+    "_id": "strava-265-3461966558260096808",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3461966558260096808"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2026-02-28T16:30:00+00:00"
+    },
+    "meet_up_location": "201 N Santa Cruz Ave",
+    "gps_coordinates": "37.22649, -121.98243",
+    "distance_meters": 52411,
+    "elevation_gain_meters": 720,
+    "organizer": "Rachel Vasquez",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3461966558260096808",
+    "title": "Saturday Road Ride: Redwood Gulch + bonus",
+    "description": "Hello LGBRC team,\nThis week's Saturday ride will summit Redwood Gulch from Steven's Canyon. The ride is 27 miles with 2,116 ft of elevation gain. This is a no drop, casual ride, so regroups will be frequent. There will be one stop for water refill/bathroom at the intersection of Steven's Canyon and Mt. Eden. When we reach the top of Redwood Gulch, we will wait for everyone to reach the top of the climb before carefully descending Hwy9 and heading back to MB OR we can add some extra miles by climbing Hwy 9 until we reach the Skyline intersection. We can decide on the day. \nWheels roll at 8:35am sharp. I hope to see you there!",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/V6S76MKXUVKSKSM7J275NDWG5P7XV665UKCAUJBJGD36H66BMGV6HGSW7CVPLNWY2E75YC7IKP7ZNF7AHELHRLQNN72BHU5D7ILEWVA=",
+    "route_polyline": "wvebF~sogVmCaA}LkEyAm@{Ai@eIyCgBy@_GuB_@QwHoCuBeA{CgA_AI{Jc@iBO[AUQoAK[J{Frl@}AdOu@jIKRYFgCc@K?IFIb@OtA[tGChADPNR|@r@fAt@tE`BfD`BzAfAr@|@vDlHn@`ATVcDnEk@~@}@|@_BjBiAxAw@j@w@XuBZkA`@sATi@DaAYi@YuAg@mKmC{AOcC}@qEgA}@e@iBq@wBo@y@Ym@YwAeAcA_@aAOcCoA_@c@e@eAk@_AgAqAoAs@i@Qw@?}BXg@EoAm@a@IUD}EdB[FYGsAyAm@a@o@Qy@I_@QwAoAy@[oAKcHRsFXBx@?jEBrDEjGFxHEvA@|@FZb@t@`AhAhA|@n@t@r@`@z@RfAPvJf@zEN|ALzC|AKfEWt@]`@eDvBOTMd@e@lEMZcAzAK^QfA?j@H|BQl@_@j@Yn@EnDKXWVUB_E?m@Qk@Ye@m@e@wAsCiEaAaAKSIYAQDu@Im@Qa@_Ac@oAOeFqCi@c@YY_A}BU}@Iu@?gAHmAAo@Ok@o@s@_@sBK]Sa@u@c@]IcMHc@dHeArR?bCDlGp@fEFdB@rAJfALXR`BHbUV|@R`A?~AgAGeCFcBb@g@FaMD_@Du@`@sCmEeB~A_AZw@fAs@vAcAdC_B~BcBzDgAu@m@u@m@cBSiBi@oAg@s@q@[s@IyPFaCF{G@m@V]d@KZGb@WnFu@lKm@z@_ACSjMuAdiAIb@q@nAOfAB`\\yEwCy@}@{CsB}BwAo@[s@S}@?{AVcG`As@Pi@V[B_@?_@Y]c@_@[WIkB?aAY]Oo@m@Qc@Ic@Ac@oEGmDBJpEb@jG?t@QfHQfAe@l@X[YZ}BdAmC~@yGvBYJi@HuFDqJ@eCAKXQlAEpB?pDBjBFv@@bAIfC@d@Ht@?x@GlBApDH|@?zAGt@BpKkZ?X?FvZGz@?`FEb@GNOPWPkPCwCGaB@oCk@kG??sBEaAiAgEAoXyU?@hPJLBza@DVNJxBAjAH^XNPd@pApC|J^dCz@nCLn@?h@Gh@aApCk@rB_@Za@Hq@F}@G{@IW?CFAHHT`ElARV@VSvBgAxJ?XvCh@xJpBxBf@NLtA|B^ThCb@j@Xv@j@fApAr@r@vA~@Rb@FZ@XGpA?j@VnAr@lCf@t@fBv@^\\lBvB\\RnAh@vAb@bAHrB@d@LZJRNz@|@b@Pd@H`@ItBgA|@Yd@Gr@Hz@h@h@hA^dA|AfFh@l@\\LnBVtBtAbBzAvBzB\\Xn@?`@GtAa@PDXPVd@~@pKAfAg@vCCb@@^Rn@d@j@h@Pp@Q~AuE^eCZgA\\k@TO`AAnBP~@j@bAPxE_A`Ek@d@ObBw@xIsBVOZYnCkDf@c@~@]LIvAi@d@GrA[z@_@VSTYfAsBfAcBXm@T}@DoAGgA?s@Hc@d@}@d@QTDjB`AVFRATOJQZoAJIXAnBJTAn@YXQNQXs@Pw@?a@McBAm@Fc@Ti@^]VHP?pAZhCvAr@n@r@h@`Ct@jBnA|@~@l@`@p@P`BEXF^Xr@|@bA|BlBvCVt@RxAHPhEbEf@`BfAdBhAbARZPb@HfAQpD@ZVr@\\b@Tt@ZrD[zDDv@Lh@h@|@v@pBVvBp@zDl@nA~@t@h@Fn@?p@HzCpFjBvCPv@NtAVt@`Av@\\|@?|@y@nC_@dAGd@Lj@XHd@Ab@PZXPb@R~@Dd@Aj@I^_@d@eAd@_ANSPSXCJDjCWbBOj@SXk@n@Mh@MfAAXBR^~ABb@APUl@{C~E]r@Sv@[r@gCdEIPMl@MXi@t@[t@?XDXCfAk@|BWb@_@`@g@\\e@b@Wh@{@nCQHoBIwAF[b@m@hAO`@MfAKb@OPq@Rc@h@uAnCm@r@Sd@EV?v@EXo@nAsArB]hAm@lCQb@yAZYXq@|@q@~AcArCIr@GjBQnA[fAm@dAOfAMxAgAdCQhAo@r@eAXq@n@i@~AUnA]t@URy@b@WVe@bBYl@Xm@d@cBVWx@c@TS\\u@ToAh@_Bp@o@dAYn@s@PiAfAeCLyANgAl@eAZgAPoAFkBHs@bAsCp@_Bp@}@XYxA[Pc@l@mC\\iArAsBn@oADY?w@DWRe@l@s@tAoCb@i@p@SNQJc@LgANa@l@iAZc@vAGnBHPIz@oCVi@d@c@f@]^a@Vc@j@}BBgAEY?YZu@h@u@LYLm@HQfCeEZs@Rw@\\s@zC_FTm@@QCc@_@_BCS@YLgALi@j@o@RYNk@VcBEkCBKRYRQ~@OdAe@^e@H_@@k@Ee@S_A`AGVFV?h@l@p@@`@A\\Pn@?n@Q|BgAj@@~@b@j@D|@dCDZEPKLqAh@Wb@Ej@?r@Fj@`@pAj@hDJdACxA{@`Dk@bBmBbEQj@InAFd@RNRGj@cBd@u@vDaB~@k@t@}@XQzAm@r@k@pAeCl@cBRoA^k@j@k@zByAd@_APoADk@Lm@Ra@`@QzBF~@?h@Q^QhAPP?f@u@Pa@Pu@^gABcBJ}@P}@Xu@Ta@xCcD`AwA|@_Ab@YtAu@nBu@XQ~@gA~DgH|BmCz@kBzBsDhAwAlAqAbDgFt@yAdB_FFYP{FH}@r@iDTk@j@eAH]RsBNiDNcCLoAf@aDtB}DZoABc@Eu@Is@{@eESuBU{DOmEF_B?[Ec@i@yAa@aBy@gA{BHsAQgASmEmAUQ_@e@Oa@Ic@@Qn@iBd@uBR}BAoAIc@M[aBmCSu@Ak@F{DCc@EQUc@aA_ASYMu@IwADwARu@j@_AHSDYAYy@aDKyAF{BDc@Ns@|@gCViANwAJyDH[JQrAqAXu@L}@?YG[MQs@i@OYg@sAkAu@KYAs@L_HAu@OaB?QHs@`@cBDiAI}@e@oAcBqDG[?u@HaB?i@[aDW}FKa@O[QQYMwA]QQOYCYB[^kBB}@Om@_AaBGQK{@YwGI}@Wc@OQ_@IiB?KAa@WOe@a@gDNIjDs@mAmKfBnBfCgEnCaEDSXW~AeC{BuDcEyF{@}@KQ?c@Nu@`@[d@Yb@c@Vi@Nu@_@w@iE}Dl@eA|DcJjFeLrAgChBmCrBoCfAqAz@oAzBsCpLqQhBwChAyApDkG~@sBtMs^dA{CdAaE\\aB|@{FxAuLp@sGh@gEl@aEv@kDbA_DjAmChAmBtSgXxD}E~DaGx@}BZmAxBoEvOyZlA_BfEyHj@Yf@GfJdDlC`A",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3461966558260096808"
+  },
+  {
+    "_id": "strava-1157973-3462306179729803440",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "1157973"
+    },
+    "source_event_id": {
+      "$numberLong": "3462306179729803440"
+    },
+    "source_group_name": "Featherweight Club (FWC)",
+    "event_time_utc": {
+      "$date": "2026-02-28T17:00:00+00:00"
+    },
+    "meet_up_location": "2625 Patricia Drive, 2625 Patricia Drive, Santa Clara, CA, USA",
+    "gps_coordinates": "37.34225, -121.97394",
+    "distance_meters": 0,
+    "elevation_gain_meters": 0,
+    "organizer": "Carissa 嘉琦",
+    "strava_url": "https://www.strava.com/clubs/1157973/group_events/3462306179729803440",
+    "title": "FWC Casual Cañada",
+    "description": "⌚️ Saturday February 28, 2026.\n🕰️ 9:00am meet, 9:15am ride.\n-------------------------------\n📪 2625 Patricia Dr, Santa Clara, CA 95051.\n📪 Central Park Swim Center.\n-------------------------------\n🗺️ Route: 80km, 20-22 km/hr, casual pace.\nhttps://connect.garmin.com/app/course/434962345\nhttps://ridewithgps.com/routes/54090123\n-------------------------------\nhttps://www.strava.com/clubs/1157973/group_events/3462306179729803440?new=true\n-------------------------------\n🍜🧋 Lunch, https://www.photochau999.com/\n🗺️ 2636 Homestead Rd, Santa Clara, CA 95051\n-------------------------------\n📝 The ride will stop for all red lights & full stop at all stop signs. \n📝 Please let someone know if you decide to turn around or go a different route on your own.\n-------------------------------\n👷‍♀️Disclaimer: Attendants must wear protective gears, obey traffic laws, and understand cycling’s risky nature. Descent responsibly. The event organizers are not liable for any accidents or injuries. This is not a guided trip. Every attendant must be able to navigate the route, bring their own personal gear, water, food, tools & repair parts.\n-------------------------------\n",
+    "route_map_url": "",
+    "route_polyline": "",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/1157973/group_events/3462306179729803440"
+  },
+  {
+    "_id": "strava-908336-3460420644486179746",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "908336"
+    },
+    "source_event_id": {
+      "$numberLong": "3460420644486179746"
+    },
+    "source_group_name": "Ruekn Bici Gruppo (Southern California)",
+    "event_time_utc": {
+      "$date": "2026-03-01T15:45:00+00:00"
+    },
+    "meet_up_location": "255 Visions, 255 Visions, Irvine, CA, USA",
+    "gps_coordinates": "33.69109, -117.76364",
+    "distance_meters": 51270,
+    "elevation_gain_meters": 502,
+    "organizer": "Stan 🦊",
+    "strava_url": "https://www.strava.com/clubs/908336/group_events/3460420644486179746",
+    "title": "🐰🐲🐍",
+    "description": "🚩 8 AM ➜ 🏁 11:30 AM\n\n🅿️ Cypress Community Park\n255 Visions, Irvine, CA 92620\n\n☕️ Dove Cafe\n31991 Dove Canyon Dr # G, Trabuco Canyon, CA 92679\n\n---------------------------------------------\n\n**Sunday Group Ride Notice and Rules**\n\nJoin us for our Sunday group ride! Here are the key details and rules to ensure a pleasant ride for everyone:\n\n1. **Being On Time**: It is essential to BE ON TIME! We will start the ride sharp at the set time.\n\n2. **No Drop Social Ride**: This ride is a no-drop, social ride. The main group will maintain a pace and there will be a few regroup points during the ride (e.g., before complicate route with multiple turns or after a long climb.)\n\n3. ** Experience Level**: The pace will be comfortable for advance beginner with climbing experience. Ensure you have the necessary experience and fitness to participate.\n\n4. **Group Ride Etiquette**: Familiarize yourself with basic group ride hand signals and unwritten ethics.\n\n5. **Route Knowledge**: If you decide to ride at a faster pace and get separated from the group, know the route and be prepared to find your own way home.\n\n6. **Newcomer Responsibility**: If you plan to bring friend(s), please ensure you download the map and stay with your friend(s), they are your responsibility. The main group will not delay the ride.\n\n7. **Safety Gear**: Please bring a helmet, spare tubes, a pump or CO2 cartridges, water, and all necessary supplies.\n\n8. **Participation Acknowledgment**: Participation in this event/ride is voluntary. Participants acknowledge the risks and/or dangers associated with cycling and are thus responsible for their own safety.\n\nWe look forward to enjoyable ride. See you on the road!",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/FZJWCAFUTTC4XSJCIDL3JRU2OJUXCGYXY5GF34ISX4YOCGPUWRW7F4U7DOBZOIRRIUUVVYNSV2TQ3KNABLLUNSKWLOMFZFDYERNQ4FA=",
+    "route_polyline": "gfslEvowmUcDiDbm@s_Aus@is@hDqF~A`BfFqJaEgEfH_NfWs~@`NaM|EwLwDsBqCoF`DwHgAwLlH}DjSiBbKeEr[ie@`LiIdJiAx\\Z{Ukl@_Pkx@xQyKpJuNlBwLc@gq@jKoIzF}LqBoO^eEiJmF_PgSpCoHtBcVaA}B}EwB[wDlI{LfBBxAlC`B{FdQe@h[mM`Zyb@vCsNZk\\jJml@hNaZli@ea@hHeNzD{c@g@eJkDeMxKcErUw@n\\iQuJed@sGmOiRyTaa@yVyUc_@kMiI|FkTrIHhDqPtCaFcAaDp@hC_DxFkDvPuHi@eGbV~LdIpOlXvMzKmFrIbHtGgDjG`HfJBvEyAfDhJzWjDxEwEnKx@dOeN`FvD~Lf@~L_CtZwBtIdLdH|S`WtPzn@xM~]tSxZvAjJWnHeRp_@yArPvEvOzPvLfIvPoXpHcPpVqCjImBlZwD~OmE`IuMnH}L|NpKnNaZ`^mGtEoGhBcQwA}ItHyGna@rB`PaArN`CtI_HnHoGdQaFpH{LpIoNfSsGdDoBWiQwSeW~_@mLtG{IaLkHqA_IlAkP`IqOpSmWlTcDnJ}C~c@_AfB`YvXB|DyFhMsL`LskAllBvVxV",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/908336/group_events/3460420644486179746"
+  },
+  {
     "_id": "strava-1157973-3452881763025829446",
     "source_type": "strava",
     "source_group_id": {
@@ -756,21 +837,48 @@
     },
     "source_group_name": "Featherweight Club (FWC)",
     "event_time_utc": {
-      "$date": "2026-03-07T17:00:00+00:00"
+      "$date": "2026-03-01T16:30:00+00:00"
     },
-    "meet_up_location": "2925 Woodside Rd Woodside CA 94062 United States",
-    "gps_coordinates": "37.42894, -122.25045",
-    "distance_meters": 84367,
-    "elevation_gain_meters": 1571,
+    "meet_up_location": "501 Laurel St Menlo Park CA 94025 United States",
+    "gps_coordinates": "37.45375, -122.17649",
+    "distance_meters": 90749,
+    "elevation_gain_meters": 1594,
     "organizer": "Yu Ji 🪶",
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3452881763025829446",
-    "title": "Fwc Old La Honda TT 2026 (1/2)",
+    "title": "Fwc Old La Honda/Ocean loop",
     "description": "No stress, set a lower bar first and see how much you can improve in Summer🍺",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/O6Y4A7KFF5NZWQBXXVN44N6CZ6VLZM76TDPS2YWGKIRZCQKUU2E46JMVVEPCQSVJ5OK5IM4YBKSYVVTWNXTPDEOZ3IVBRAU3ITEDFZQ=",
-    "route_polyline": "oercF|puhV~FuJ~H`GpYkh@TnKfIpJlE~BtS`DnD|Cp`A~wAnPzL|Q`Z~GjU~Gp_Al@jd@pKvg@s@nn@l@dLbQtc@`U`OrUt[rFnA|QkEdRnDjOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfAzBxH|OsKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCXqHfBdEzGzF|D{Fx@n@h@|E{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiD`BsDlBi@|HzIbGPdFvQtI{FlKjItQaApOvBjEqAxFpH|G}B`NfOJ~CqCpFX|IiH`BeFtI@nQvEjJ?rDwPnHS|BxCvHcAlEqPt@uCrDpBxVfGpKzA~XvMfVrGjc@dBz^cL|o@mHfHaFdLgJ`GoBtYeQ|UkB`N_LnHaFvJg@v]{GvQtArRi@fb@mBzFwKbJ`Aj`@gMzj@~DnVnQbNbD`IoOhDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rIeGkCwAyJ|AcI~EiEoDqF~@sF_@_M`DiFtDuO\\cRdB_BhA{FuDs@gBkI{DrBmAc@lGyOsK{DjKiKL{DvFwC`@uCg@kAwE_@oJrBgE}@sDgJ|CiPeCeLbEdJo@hPzBhFpSaDfO~@rCeLnSod@~BcSjJyHzMnH|H{BdJiY~QoYlJ{HpDoQ`EgDdGpDnDc@nEsKrH\\|EgCnDcGDiDyIaBa@uBdAeE|EeFCkIhFoAnGiKzFsDuBuGn@iDw@oHdBiDGwC}M{FSgRt]}j@hGsPyE[gBhF{Ec@wAtEsDxAkDwEaAaGuF_A}C~EsCmHvBmGFkIoDyFyJpDwIu@aDxHwA?a@sBrEwHCqMwA`@eC|IkE}@cKjE`FxOjHnEvAxDcO}E{TyVqCs@aNhC`R}JTwd@l@yElIeQiKqBuOlEwFqAoUs[aUaO_Ps`@qAgOhCqn@}Mko@c@s^}Fey@gHaYoRg[aQ_M_`@al@oMuNaCiHcMoRqE_DgXqFwIgMe@cIqYjh@qJeH{EtL",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/BZIOSKV3CDVJRLD5OZD4LJVNJZXG6NZKSNCWIX7N3FMMA72S2MME45ITSCTT7OZ6W2UXSZ3UXKKS7TOLEBD2UHVUKBWM7RMIBA3LHDQ=",
+    "route_polyline": "oopcF`{thVdElDfSrB|D|BhbA|yAtQhN`Ut`@~DnTfFdt@|@lh@nKzg@i@jv@dLt_@`EhH`U`OpXr]tCPtOmElTpDjOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfAzBxH|OsKnC}J|Kw@lHhKrD|@xHYzDgF^hKqAnM_CnE}HvC_CxCeDhGe@rK_C|@{FkBw_@pA_JcB_HnJd@rPhFIlGqKjDIzB{B`JrBp_@hBhI}ExF?l@kG`Am@xIbGzI}BZiFpBmChCl@bF`GtG{BfE}LzA?rCnDhI_DfEnEP~OvN~LvB?zKsKfDO`Mj@~IbLdP[hAxC{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiD`BsDlBi@|HzIbGPdFvQtI{FlKjItQaApOvBjEqAxFpH|G}B`NfOJ~CqCpFX|IiH`BeFtI@nQvEjJ?rDwPnHS|BxCvHcAlEqPt@uCrDpBxVfGpKzA~XvMfVrGjc@dBz^cL|o@mHfHaFdLgJ`GoBtYeQ|UkB`N_LnHaFvJg@v]{GvQtArRi@fb@mBzFwKbJ`Aj`@gMzj@~DnVnQbNbD`IoOhDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GqDeAoHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRdB_BhA{FuDs@gBkI{DrBmAc@lGyOsK{DjKiKL{DvFwC`@uCg@kAwE_@oJrBgE}@sDgJ|CiPeCeLbEdJo@hPzBhFpSaDfO~@rCeLnSod@~BcSjJyHzMnH|H{BdJiY~QoYlJ{HpDoQ`EgDdGpDnDc@nEsKrH\\~EiClDaGDiDyIaBa@uBdAeEfFaGMoHhFoAnGiKzFsDuBuGn@iDw@oHdBiDGwC}M{FSgRt]}j@hGkOWkAaEFgBhF{Ec@gBfFyDfAwEyMuF_AgDxEiCgHvBmGFkIoDyFyJpDwIu@aDxHiAPo@eCrEwHAmMyA\\eC|IkE}@cKjE`FxOjHnEvAxDcO}E{TyVqCs@aNhC`R}JTwd@l@yElIeQbH~@jOsEfLpKfEFz[ef@v]aWvKuLbFo_@jFeJjIyKlYaRh@_FmAmW|HiQhBoS|I{N}_@oq@oD{NqN_HgR}QqPeEuc@gHyZrI}l@xAgZhKc`@wEeC{DuAyKuCuBiOxFsMcAeSjEyGoAwCbCgTmQibAizAi[mH_JmLxAnC",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3452881763025829446"
+  },
+  {
+    "_id": "strava-265-3461960465976674764",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3461960465976674764"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2026-03-01T16:30:00+00:00"
+    },
+    "meet_up_location": "201 N Santa Cruz Ave",
+    "gps_coordinates": "37.22649, -121.98243",
+    "distance_meters": 63626,
+    "elevation_gain_meters": 1537,
+    "organizer": "Rachel Vasquez",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3461960465976674764",
+    "title": "Sunday Road Ride: Mt. Umunhum",
+    "description": "Hello team, \nThis Sunday, let’s take advantage of the beautiful weather and summit Mt. Umunhum. The route from Mike’s Bikes in Los Gatos is 39.5 miles with 5,000 ft of elevation gain. We will approach the summit of Mt. Umunhum by first climbing Hicks Rd from the north. There is a bathroom at the intersection of Mt. Umunhum Road and Hicks Rd, but there is no water, so please bring two bottles of water for this ride. After ascending to the top of Mt. Umunhum, we will regroup at the Almaden parking lot where bathrooms and water fountains are available. From this point, we will begin heading back to Mike’s Bikes.\n\nWe will meet at 8:30 am at Mike’s Bikes in Los Gatos and wheels will roll at 8:35 am. I hope to see you there! If you plan to attend, please RSVP to the event on Strava.",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/KPMJ743FA2IE4JJJ7FQOKP5FQ4IJ3KWIR6S3BQ3RHQFIE5CT35FCZHEJJLXQWGSDTNCU7KAC7PVLHVQQ63BHHRSWIN3GXMM5KTWILRY=",
+    "route_polyline": "wvebF~sogVMErE|AtOtFtA}DvCuGPm@?k@YoCLaE^oIT_UGm@c@gAaBsB_FoH_OaL_@]yJoH}KuIyAcAKMWOiBs@SDmHkCKQ_Bm@DWtLouA~@k@PEpCe@`DiAd@[NYd@cBViBP{@Zw@l@_A|@eAF_AYqDGiCi@cHAqADk@`@eCjAwFTc@L]RoAb@oA|@aDp@mEPu@~AuEb@kBN}@BcCj@mBp@mCFe@?u@Gk@MYeAcBMYGi@?w@JiDR_AfAyCl@wAjBaE`@q@dCyD`@sB`AyDPe@^c@vBwAb@KxAEd@PxAnAXLHCHIFYYaBEk@@]Ns@fAaBTs@d@wBb@eA|@iHb@eMReEr@gD`@qAbA}BfAkBFa@RkB?u@Eu@SyAAYB[PYvBqCdA~@dDxAbAHX?b@[LWVS~@c@rBc@lB}@JIVc@Vu@R{@P}BCsDDu@Jc@LWRQtAAf@IZKLUtAeE`@u@`CiDZk@F[@YCQUk@a@u@Ok@GcB?c@F{@Pe@tA{BdBe@p@c@h@}@`@yAj@oAZm@\\a@j@YdBI`Ac@`@k@Tm@XkBV}@Ti@vB_CRm@Ns@J}BSwCD_AVs@P[h@YZI`@Gn@@d@AZIx@c@`@YTc@La@XeBt@sC@w@Fk@d@aBNw@R{BBeCNu@xAeEJk@Ba@@gCDu@Ha@j@gAXw@r@oAVgA?YSqBDiAL_APq@fB{CNa@H}@K_A@m@VyA\\eA^aBNc@JOZS`Ba@p@c@vBm@dAu@hA_AdAoADY?[KgABs@X}@^_A\\c@XKhAENGLQTcBNq@Pe@\\c@^[ZQZEXI`A}@JQFSDc@@gABYF[`BgFJQl@k@Xc@La@TqANc@NOd@AvBnA^Hz@@VAXQT?R@`@h@`@Px@RZDPGPO\\w@TWn@SLQHQTeAHQt@e@rBYl@GbAFf@Qf@[^QL?ZHL?t@}@LIZEx@AfBPNAnBq@p@]f@c@^k@b@a@h@[b@Qr@?h@FjAXzCZb@P|BjBzAzBXZTPPFt@PtA?vAJPANQ?a@Q]OQi@YkA[OYGYAc@@uBAk@U_BCo@GOa@m@y@sBOk@AY@Sh@aBz@oAJu@?aBF}Br@eCRk@fAcBn@a@d@QjA[lAm@RQNWVw@J{@?SUyACk@Dc@LYn@QVNRb@Pn@ZpB^jBNXb@b@RXLZ\\bBRVNHT?NILOHY?k@K}B@m@HYnA{AfBc@~AoAt@}@TIf@GvAj@`@JEnAHj@Xr@l@~@TPf@RRAPIhAoAZGTHP`@RhBLZt@t@v@vAhBfAT@VARQd@u@ROX?PFl@b@LPDPRrBPj@j@l@p@XJHf@`Bb@X`Bl@TR\\r@HH`Ah@`@Zd@d@d@VzAOz@Zx@t@X|@D`@?XWfAAX@b@\\rDBjBDXVj@NP`@RNNFZF`Bp@bBH`@@\\G^Ad@JXPF\\Qz@eALINEL?^NZF\\Gd@c@V?X@pAt@`@Ll@Q\\Ol@c@~@wAvB_ATGRFTXHb@Dj@QjB@l@Lj@VZLH\\FTAx@O~@`@H?ZOh@c@Zm@PQ`@IZ?b@Pz@bBpAbArAlBFPEzA@Xn@t@n@~CNb@NPf@XJPl@rBXl@`@R\\p@JxAZlCj@jAb@r@Xj@z@fADXL|BXzBBb@Al@BPbAlEj@Zt@fAr@`@HPBRBxBLb@f@fAFZAb@_@fAe@|@SPgAd@e@p@IZ?PDR^z@t@b@DFDJ?h@Ml@oAzBWl@Kd@?PHj@HVZZd@P|@b@rAXpC?f@H|@Xt@b@Lb@Db@EPKHQFS?WIm@c@[OYAoAHc@H_@XEPAXHRNNP?x@ORFv@`@lAd@h@NtARnAAvAi@PA^XXb@v@xAVt@LPd@In@Y`@Oz@r@~@b@l@t@PFfA?THZ?dAk@j@Fh@?dBa@^Sd@c@l@mAVKVE\\V|@~@Rb@F`@Cb@Qb@e@d@s@dA_AZKPGXE|@Kt@GP[Py@Qq@QQIm@u@iAa@kB_AwCHi@Fe@JcAdASZG`@M`BN`BC\\EVIP[ZIRQnAa@fAMPUD{@GaAc@i@?wAOm@Ay@Fu@PcC\\_B^OJMDYZoArB{@t@OXUv@MXMFm@?_B\\i@AS@KLUb@O`AIVQPWEa@c@_@IONGPQfAGxARxABpAMb@e@z@a@PYEWSE[EkBIs@YcBMeC_@iDMc@cAsAEMCY@QH[Tc@F{@ESw@k@e@e@GOEm@IYHXDl@FNd@d@v@j@DRGz@Ub@IZAPBXDLbArALb@^hDLdCXbBHr@DjBDZVRXD`@Qd@{@Lc@CqASyAFyAPgAFQNO^H`@b@VDPQHWNaATc@JMRAh@@~A]l@?LGLYTw@NYz@u@nAsBX[\\Q~A_@bC]t@Qx@Gl@@vANh@?`Ab@z@FTELQ`@gAPoAHSZ[HQHu@OaBLaBFa@R[bAeAd@Kh@GvCIjB~@hA`@l@t@PHp@Px@PNIJGFQJu@D}@FYJQ~@[r@eAd@e@Pc@Bc@Ga@Sc@}@_A]WWDWJm@lAe@b@_@ReB`@i@?k@GeAj@[?UIgA?QGm@u@_Ac@{@s@a@No@Xe@HMQWu@w@yAYc@_@YQ@wAh@oA@uASi@OmAe@w@a@SGy@NQ?OOIS@YDQ^Yb@InAIX@ZNl@b@VHR?PGJIDQEc@Mc@u@c@}@Yg@IqC?sAY}@c@e@Q[[IWIk@?QJe@Vm@nA{BLm@?i@EKEGu@c@_@{@ES?QH[d@q@fAe@RQd@}@^gA@c@G[g@gAMc@CyBCSIQs@a@u@gAk@[cAmECQ@m@Cc@Y{BM}BEY{@gAYk@c@s@k@kA[mCKyA]q@a@SYm@m@sBKQg@YOQOc@o@_Do@u@AYD{AGQqAkBsAeA{@cBc@Q[?a@HQP[l@i@b@[NI?_Aa@y@NU@]GMIW[Mk@Am@PkBEk@Ic@UYSGUFwB~@_AvAm@b@]Nm@Pa@MqAu@YAW?e@b@]F[G_@OM?ODMH{@dA]PQGKY@e@F_@A]Ia@q@cBGaBG[OOa@SOQWk@EYCkB]sDAc@@YVgA?YEa@Y}@y@u@{@[{ANe@We@e@a@[aAi@II]s@USaBm@c@Yg@aBKIq@Yk@m@Qk@SsBEQMQm@c@QGY?SNe@t@SPW@UAiBgAw@wAu@u@M[SiBQa@UI[FiAnAQHS@g@SUQm@_AYs@Ik@DoAx@SfC}Bn@c@~Eu@vDoAt@k@t@gA~@c@~@u@xBE`C]b@Qt@}@Vc@j@sBr@_Ad@eAx@a@~@o@fAk@XWR[h@aBxBgCPc@?u@D[^a@jAcBZ}@v@mEBwAg@oCEmCx@wEl@{Bj@{APWlA_AT[`ByFnA_Dj@uB`@m@d@k@Z}@R_Af@iDPk@NYlA[JQn@eELa@dA_AX}@o@Ik@Q[a@w@kBU[gA}@g@u@{@wCS}@?c@RaBEu@k@kBEc@Hu@~@mCFc@?s@Io@Ma@eAyAe@oCi@}Bc@wAQ_AA}@b@gDHmB^sBDgAA}@Os@W[c@[_C{@g@e@mAiBc@SwAGkAc@}AQWQw@}@WQgA?aBQe@?uAFYQe@eCkAyAiCsByEsIg@Wi@A{C`@c@EQIuC{B_@Ek@BoAb@c@Fm@OoA{AcG{G_BuBu@u@oE{Be@a@c@e@a@u@qB_FaAeCa@wAOw@IwAMoAYiAM[o@eAgAc@mBYoA?wAFwA?mCQQ?sAZgDnA}FxCe@PyC\\wDbAwCbAo@d@YX{@hAgW~a@eArBiE~HkF`I}BjEmLxVbB|AvMvNq@jAa@R]D_@?mE}E[Ia@I_@HYP}CfFm@k@cA`Be@`@Y@yApAaA~Ai@d@gB~@s@hAu@dBCj@?rAa@dASt@t@~JgAPy@j@uIpHm@t@}AfD_@~@q@|@s@l@uJbE}At@mBnAk@Ju@Do@GQ`@PvBJXFtC|@~NDtAh@MtEgC\\Gn@G~@`@bBfCHb@LlAWxCLvA`@~@r@dAd@z@RlANtCV|@`@\\f@LlESFvBUtB_@dAyA~AkAzAa@p@e@zAK~@EbBCvDWdEMfA_@`F_@~Am@bBmElJs@t@yBnA}@hA_@Xq@RT`EIpAIl@c@pBKnAKZSXQHi@FwC}@k@?u@PcAj@gARfAtEpB~FiCtFoAfAmAX}E?wDoAeCIaARcAj@cAvA{A`DYfA_@p@{@d@q@HiFFe@Rc@`@u@|@}GhMkAzBi@n@m@b@u@VoBXg@No@XZ`AtF|Nd@xAWHN`@LfABl@?|@Et@S`BW|@eCbGa@xAUnAMfAE|@ItIE`BIj@IxAUbB]hBU|@}CvJ{AlGEF@@K^LH_CbKsAnDkDxHi@~@i@l@w@x@y@j@u@\\YHd@|BvAbEjAfCT`@XN\\IzAcAp@IjADdA^vHpDVNRZNj@^`DFPLPl@b@rBb@JH`B|BZX\\NR@ZA^Gb@QjCcBZMd@NZP\\ZXr@`@nA\\zDPxAt@bEZdAwBpCQXCZ@XRxADt@?t@SjBG`@gAjBcA|Ba@pAs@fDSdEc@dM}@hHc@dAe@vBUr@MN^n@\\tADl@AfAFXn@hAp@`BThBp@|B~AvCLPPFl@JZNj@bA^x@Hb@?b@OtA_@~BC`@@XZhAJdACl@Ij@S~@qAzDa@bCQRG?GGIQ@yAHm@PuCA[GQQQSIe@?]J_CrBUf@GTAnBNhAX`AFp@IjBJhDNdBNh@Zl@lA`BLX?Z[nA?d@JXj@`@DXGZo@XYZCb@TnA@PAl@BXf@|@@RSz@?PFl@UnA@RRlAJhA?VK~@?PDRPVv@d@VBVEbAk@R?f@Rt@NRNBZUfCUjAi@zAEZAj@VfHl@hD?zASvAwAlCoAlB{@lDEtDCt@Kr@wAjDcArBk@NsDBcAKEZGlEEjJs@CWJQLaA~C_@|@{BrDcB|@mBl@a@Dm@GaCi@e@?Ar@YxAa@h@u@n@kAr@YZUt@yCbToCfSU|@NNaGdN`AFtBd@b@FZ?rAc@t@G[@|@Ah@Fn@XxBvAvB`AhBnAjB~@hBnAtAnADP?Pa@jDbKxBUjSo@pOZnC?j@Ql@oCdG_Am@oHeEqDaB_C}@s@|Cs@hCo@S",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3461960465976674764"
   },
   {
     "_id": "strava-1263183-1732636",
@@ -793,7 +901,7 @@
     "strava_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "title": "往西，越过天际(Skyline)吧骚年",
     "description": "路线:\nRedwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山\n\n适合夏天的避暑路线 credit @Steve\n有两个大爬坡，分别是大家熟悉的 Old La Honda，和很多人熟悉的从Bike Hut开始的Tunitas Creek Rd\n\n预计总时间6 hours\n\n本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 [旧金山湾区骑行路线 第一章 练](https://rangerway.com/way/cycling-routes-at-bay-area) 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。\n这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/PRNV6CMDUGIFG6TTY3JC4OZG7XJHAZ5UFFFYR23XTDBPRCGKE7HBEQTXDPZBNQDEOAVGDUOPFJEGMKSJGWM2LBVCBHYPWEAECY5TX5I=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/XZRIOVQJCECBZFUKKVW3IIJGWSWKICF7IPVHLWI2ZGWR3DUY2FXZIEECU5M2EED2LQMOSXSNHSEQFI4MRQCP3KU3UXMB7AUYYKW47OI=",
     "route_polyline": "ogmcFtbdiV}BL@lIqApG`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfA~BzHxOuKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCFyHtKhMrEyFlAjG{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiDnE}E|HzIbGPdFvQtI{FlKjI`j@OjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvEsErApBoGzKtMeHbHcIlE`@TrFoHvAcMrRPtEiO`KyAdQ`FdC~Z`Br@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDfZrFxIhGbD`Tm@~DoJvNKrE`FvIrFzDLdJrItMl@v^fSlEpJzKjJqA|MfCjKzLPvBqA`BgQk@yHtG_JnA}@zBlG~LVfV~@`DdCj@xSeEnGfIrBfG@hKlCdHDpOkDl_@`EdQ`OhDz@pOjGfF~Qn]aAjGjDlSpFtGnKpDv@jIWjh@iQ~LcKt@oBfFjBvZvN~m@`BlVsb@hA{X|Gam@hFmU}@s_@uSqSef@}MnDwNaG_EzK}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IgIbGoAaBsDbAqCsEKaD_CoAcBuEsEgAkN~EqIgKyDI{QxDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GsDeAmHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRnD{IuDs@gBkIiGnAlGyOsK{DjKiKf@eF|EmBTkEsFu@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_KbHcCoE_CuSzDeHgFuArB}AW_@{CxCiKhCl@]}G|G_DsN|@aEaFyCYyPjG~@gFxGkIlNaBrD`DvBsDtKgD_JuDuHeOr@uJvAyE`BY[{FpMuJkCqV?kN`\\_q@}TqgAnAmUdCO",
     "is_active": true,
     "event_picture_urls": [],
