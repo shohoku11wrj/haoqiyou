@@ -125,7 +125,7 @@ def main() -> None:
     parser.add_argument(
         "--days",
         type=int,
-        default=8,
+        default=3,
         help="Age threshold in days (default: 8).",
     )
     args = parser.parse_args()
