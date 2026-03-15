@@ -1,0 +1,63 @@
+name: Weekly Riding Events Update
+
+on:
+  schedule:
+    # This runs every Monday (1) and Friday (5) at 12:00 UTC
+    - cron: '0 12 * * 1,5'
+  workflow_dispatch: # Allows manual triggering from the GitHub Actions tab
+
+jobs:
+  update-events:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to push changes back to the repository
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            # Fallback if requirements.txt is not found
+            pip install requests pytz
+          fi
+
+      - name: Execute Update Script
+        env:
+          # Ensure you have added STRAVA_ACCESS_TOKEN to GitHub Secrets
+          STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
+        run: python update_strava_events.py
+
+      - name: Execute Cleanup Script
+        run: python cleanup_events.py
+
+      - name: Commit and Push changes
+        run: |
+          # Configure Git
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Stage the specific file
+          git add storage/events.json
+          
+          # Only proceed if there are changes
+          if git diff --cached --quiet; then
+            echo "No changes detected in storage/events.json. Skipping push."
+          else
+            # Create timestamp for the commit message
+            TIMESTAMP=$(date +%Y%m%d:%H%M)
+            git commit -m "Automated update: ${TIMESTAMP}"
+            git push origin main
+          fi
+ 
