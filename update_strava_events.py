@@ -217,6 +217,17 @@ def _merge_events(existing_events: List[Dict[str, Any]], new_strava_events: List
     return merged
 
 def refresh_access_token(client_id, client_secret, refresh_token):
+    missing = [
+        name for name, value in (
+            ('STRAVA_CLIENT_ID', client_id),
+            ('STRAVA_CLIENT_SECRET', client_secret),
+            ('STRAVA_REFRESH_TOKEN', refresh_token),
+        ) if not value
+    ]
+    if missing:
+        raise RuntimeError(
+            'Missing required environment variables: ' + ', '.join(missing)
+        )
     url = 'https://www.strava.com/oauth/token'
     payload = {
         'client_id': client_id,
@@ -229,7 +240,9 @@ def refresh_access_token(client_id, client_secret, refresh_token):
         token_info = response.json()
         return token_info['access_token'], token_info['refresh_token']
     else:
-        response.raise_for_status()
+        raise RuntimeError(
+            f"Failed to refresh Strava token ({response.status_code}): {response.text}"
+        )
 
 # Refresh the access token
 access_token, refresh_token = refresh_access_token(
