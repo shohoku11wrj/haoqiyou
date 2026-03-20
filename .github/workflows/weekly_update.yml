@@ -1,5 +1,9 @@
 name: Weekly Riding Events Update
 
+env:
+  # Opt GitHub-hosted actions into Node.js 24 now to avoid future deprecation warnings
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 on:
   schedule:
     # This runs every Monday (1) and Friday (5) at 12:00 UTC
@@ -11,10 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # Required to push changes back to the repository
-    env:
-      # Opt GitHub-hosted actions into Node.js 24 now to avoid future deprecation warnings
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -38,8 +38,11 @@ jobs:
 
       - name: Execute Update Script
         env:
-          # Ensure you have added STRAVA_ACCESS_TOKEN to GitHub Secrets
+          # Ensure these secrets are populated in the repository settings
           STRAVA_ACCESS_TOKEN: ${{ secrets.STRAVA_ACCESS_TOKEN }}
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
         run: python update_strava_events.py
 
       - name: Execute Cleanup Script
