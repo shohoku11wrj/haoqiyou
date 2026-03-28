@@ -5,11 +5,12 @@ import datetime
 import json
 import os
 from pathlib import Path
+import re
 from typing import Any, Dict, List, Optional
 import pytz
 import requests
 
-from utils import extract_route_from_ridewithgps
+from utils.extract_route_from_ridewithgps import extract_route_from_ridewithgps
 
 # Load environment variables from .env file
 load_dotenv()
@@ -85,6 +86,76 @@ def _is_empty_value(value: Any) -> bool:
         return len(value) == 0
     return False
 
+
+
+_RIDEWITHGPS_URL_PATTERN = re.compile(r"https://ridewithgps\.com/routes/\d+\S*")
+_GARMIN_URL_PATTERN = re.compile(
+    r"https://connect\.garmin\.com/(?:modern|app)/course/?\d+\S*"
+)
+
+
+def _clean_route_url(url: str) -> str:
+    return url.rstrip(",.)]>\"'")
+
+
+def _extract_route_urls_from_description(description: str) -> tuple[str, str]:
+    if not description:
+        return "", ""
+
+    ridewithgps_url = ""
+    garmin_url = ""
+
+    ride_match = _RIDEWITHGPS_URL_PATTERN.search(description)
+    if ride_match:
+        ridewithgps_url = _clean_route_url(ride_match.group(0))
+
+    garmin_match = _GARMIN_URL_PATTERN.search(description)
+    if garmin_match:
+        garmin_url = _clean_route_url(garmin_match.group(0))
+
+    return ridewithgps_url, garmin_url
+
+
+def _extract_route_polyline_from_garmin_url(course_url: str) -> str:
+    if not course_url:
+        return ""
+
+    course_match = re.search(r"/course/?(\d+)", course_url)
+    if not course_match:
+        return ""
+
+    course_id = course_match.group(1)
+    api_url = f"https://connect.garmin.com/modern/proxy/course-service/course/{course_id}"
+    headers = {
+        "User-Agent": os.getenv(
+            "GARMIN_USER_AGENT",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+        ),
+        "Accept": "application/json, text/plain, */*",
+        "Referer": course_url,
+        "Origin": "https://connect.garmin.com",
+        "NK": "NT",
+        "X-app-ver": os.getenv("GARMIN_URL_BUST", "5.17.3.2"),
+        "X-lang": os.getenv("GARMIN_LOCALE", "en-US"),
+    }
+
+    try:
+        response = requests.get(api_url, headers=headers, timeout=30)
+        response.raise_for_status()
+        payload = response.json()
+    except (requests.RequestException, ValueError):
+        return ""
+
+    if not isinstance(payload, dict):
+        return ""
+
+    polyline = payload.get("courseDTO", {}).get("geoPolyline")
+    if isinstance(polyline, str):
+        return polyline
+
+    polyline = payload.get("geoPolyline")
+    return polyline if isinstance(polyline, str) else ""
 
 
 def clean_dict(data: Dict[str, Any]) -> Dict[str, Any]:
@@ -381,19 +452,52 @@ for club_id, event_id, event in all_events_list:
     else:
         organizer = "Club Organizer"
 
+    distance_meters = 0
+    elevation_gain_meters = 0
+    route_map_url = ""
+    route_polyline = ""
+
     try:
-        distance, elevation_gain = get_event_route_distance_and_elevation(event['route_id'], access_token)
-        if distance is None or elevation_gain is None:
-            distance = 0
-            elevation_gain = 0
-        distance_meters = int(distance)
-        elevation_gain_meters = int(elevation_gain)
-        if event['route'] is not None:
-            route_polyline = event['route']['map']['summary_polyline']
-        else:
-            route_polyline = ''
-    except ValueError as e:
-        print(e)
+        distance, elevation_gain = get_event_route_distance_and_elevation(
+            event.get('route_id'), access_token
+        )
+        if distance is not None:
+            distance_meters = int(distance)
+        if elevation_gain is not None:
+            elevation_gain_meters = int(elevation_gain)
+    except Exception as e:  # noqa: BLE001
+        print(f"Failed to load Strava route metrics for event {event_id}: {e}")
+
+    strava_route = event.get('route') or {}
+    strava_route_map = strava_route.get('map') or {}
+    strava_map_urls = strava_route.get('map_urls') or {}
+
+    # Priority 1: use the route data embedded in the Strava event itself.
+    route_map_url = strava_map_urls.get('url', '')
+    route_polyline = strava_route_map.get('summary_polyline', '')
+
+    if not route_polyline:
+        description = event.get('description') or ''
+        ridewithgps_url, garmin_url = _extract_route_urls_from_description(description)
+
+        # Priority 2: Garmin Connect route in the event description.
+        if garmin_url:
+            print(f"Event {event_id}: found Garmin route URL in description: {garmin_url}")
+            route_polyline = _extract_route_polyline_from_garmin_url(garmin_url)
+
+        # Priority 3: Ride with GPS route in the event description.
+        if not route_polyline and ridewithgps_url:
+            print(f"Event {event_id}: found Ride with GPS route URL in description: {ridewithgps_url}")
+            try:
+                ridewithgps_route = extract_route_from_ridewithgps(ridewithgps_url)
+                print(
+                    f"Extracted route from Ride with GPS: distance={ridewithgps_route['distance_meters']}m, elevation_gain={ridewithgps_route['elevation_gain_meters']}m"
+                )
+                route_polyline = ridewithgps_route.get('route_polyline', '') or ''
+                if not route_map_url:
+                    route_map_url = ridewithgps_route.get('route_map_url', '') or ''
+            except Exception as e:  # noqa: BLE001
+                print(f"Failed to load Ride with GPS route for event {event_id}: {e}")
 
     # Prepare the event document for JSON storage
     event_document = {
@@ -411,7 +515,7 @@ for club_id, event_id, event in all_events_list:
         'strava_url': f"https://www.strava.com/clubs/{club_id}/group_events/{event_id}",
         'title': event['title'],
         'description': event['description'],
-        'route_map_url': event['route']['map_urls']['url'] if event['route'] is not None else '',
+        'route_map_url': route_map_url,
         'route_polyline': route_polyline,
         'is_active': True,
         'raw_event': event
