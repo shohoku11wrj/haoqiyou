@@ -1,9 +1,7 @@
 (function () {
-    const DATA_SOURCES = [
-        './storage/events.json'
-    ];
+    const REMOTE_EVENTS_SOURCE = 'https://raw.githubusercontent.com/shohoku11wrj/haoqiyou/main/storage/events.json';
     const LOCAL_DATA_SOURCES = [
-        'https://raw.githubusercontent.com/shohoku11wrj/haoqiyou/main/storage/events.json',
+        REMOTE_EVENTS_SOURCE,
         './storage/events.json'
     ];
     const EXTRA_EVENT_GROUP_IDS = new Set([265, 908336, 1047313]);
@@ -37,24 +35,30 @@
     function loadEvents() {
         if (window.location.protocol === 'file:') {
             loadLocalEvents();
-        } else {
-            fetch(DATA_SOURCES[0])
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error(`请求失败: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(processEvents)
-                .catch(showError);
+            return;
         }
+
+        fetchRemoteEvents()
+            .then(processEvents)
+            .catch((error) => {
+                console.error('Remote events fetch failed, attempting local fallback.', error);
+                loadLocalEvents();
+            });
+    }
+
+    function fetchRemoteEvents() {
+        const url = withCacheBuster(REMOTE_EVENTS_SOURCE);
+        return fetch(url, { cache: 'no-store' }).then((response) => {
+            if (!response.ok) {
+                throw new Error(`请求失败: ${response.status}`);
+            }
+            return response.json();
+        });
     }
 
     async function loadLocalEvents() {
-        const cacheBuster = Date.now();
         for (const source of LOCAL_DATA_SOURCES) {
-            const joiner = source.includes('?') ? '&' : '?';
-            const url = `${source}${joiner}ts=${cacheBuster}`;
+            const url = withCacheBuster(source);
             try {
                 const response = await fetch(url, { cache: 'no-store' });
                 if (!response.ok) {
@@ -69,6 +73,11 @@
         }
 
         showError(new Error('Failed to load local events.json from GitHub or disk.'));
+    }
+
+    function withCacheBuster(source) {
+        const joiner = source.includes('?') ? '&' : '?';
+        return `${source}${joiner}ts=${Date.now()}`;
     }
 
     function processEvents(rawEvents) {

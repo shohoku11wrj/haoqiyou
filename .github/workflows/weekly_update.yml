@@ -66,4 +66,38 @@ jobs:
             git commit -m "Automated update: ${TIMESTAMP}"
             git push origin main
           fi
+
+  deploy-cloudflare:
+    name: Trigger Cloudflare Pages deployment
+    runs-on: ubuntu-latest
+    needs: update-events
+    steps:
+      - name: Start deployment via Cloudflare API
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_PROJECT_NAME: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${CLOUDFLARE_ACCOUNT_ID:-}" ] || [ -z "${CLOUDFLARE_PROJECT_NAME:-}" ] || [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
+              echo "Cloudflare secrets not configured; skipping deployment trigger."
+              exit 0
+          fi
+
+          API_URL="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/${CLOUDFLARE_PROJECT_NAME}/deployments"
+          PAYLOAD='{"deployment_trigger":{"type":"ad_hoc"},"environment":"production"}'
+
+          RESPONSE=$(curl --fail-with-body -sS -X POST "$API_URL" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data "$PAYLOAD")
+
+          echo "$RESPONSE"
+
+          SUCCESS=$(echo "$RESPONSE" | jq -r '.success // false')
+          if [ "$SUCCESS" != "true" ]; then
+            echo "Cloudflare deployment trigger failed."
+            exit 1
+          fi
  
