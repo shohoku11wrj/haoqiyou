@@ -276,6 +276,52 @@ body {
 .custom-div-icon:hover .tooltip-content {
   background-color: rgba(255, 255, 255, 1);
 }
+.marker-icon-stack {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  transform-origin: center bottom;
+}
+.marker-icon-stack-upcoming {
+  overflow: visible;
+}
+.marker-icon-size-90 {
+  transform: scale(0.9);
+}
+.marker-icon-size-75 {
+  transform: scale(0.75);
+}
+.marker-icon-size-60 {
+  transform: scale(0.6);
+}
+.marker-icon-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.marker-icon-overlay-light {
+  filter: grayscale(100%) brightness(0.92);
+  opacity: 0.35;
+}
+.marker-icon-overlay-medium {
+  filter: grayscale(100%) brightness(0.88);
+  opacity: 0.65;
+}
+.marker-icon-grayscale {
+  filter: grayscale(100%) brightness(0.82);
+}
+.marker-date-tooltip {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.marker-date-day {
+  color: #fc5200;
+}
 .custom-tooltip {
   font-size: 16px;
 }

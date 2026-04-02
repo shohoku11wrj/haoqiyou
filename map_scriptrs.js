@@ -57,6 +57,50 @@ function getRoutePolylin(event_id) {
   return null;
 }
 
+function buildMarkerIconHtml(event) {
+    const iconUrl = event.icon_url;
+    const markerBucket = event.past_marker_bucket || '';
+    let sizeClass = '';
+
+    if (markerBucket === 'past-31-90') {
+        sizeClass = 'marker-icon-size-90';
+    } else if (markerBucket === 'past-91-180') {
+        sizeClass = 'marker-icon-size-75';
+    } else if (markerBucket === 'past-181-plus') {
+        sizeClass = 'marker-icon-size-60';
+    }
+
+    if (event.event_time_type === 'upcoming') {
+        return `
+        <div class="marker-icon-stack marker-icon-stack-upcoming">
+            <img src="${iconUrl}" class="marker-icon-image" />
+            <div class="tooltip-content marker-date-tooltip">
+                ${event.date_span.month} <span class="marker-date-day">${event.date_span.day}</span>
+            </div>
+        </div>
+        `;
+    }
+
+    if (markerBucket === 'past-31-90' || markerBucket === 'past-91-180') {
+        const overlayClass = markerBucket === 'past-31-90'
+            ? 'marker-icon-overlay-light'
+            : 'marker-icon-overlay-medium';
+        return `
+        <div class="marker-icon-stack ${sizeClass}">
+            <img src="${iconUrl}" class="marker-icon-image" />
+            <img src="${iconUrl}" class="marker-icon-image ${overlayClass}" />
+        </div>
+        `;
+    }
+
+    const grayscaleClass = markerBucket === 'past-181-plus' ? 'marker-icon-grayscale' : '';
+    return `
+    <div class="marker-icon-stack ${sizeClass}">
+        <img src="${iconUrl}" class="marker-icon-image ${grayscaleClass}" />
+    </div>
+    `;
+}
+
 function initMap() {
     if (!window.map) { // Check if map is already initialized
         const centerLocation = [37.63, -122.23];
@@ -69,37 +113,13 @@ function initMap() {
 
     events.map(event=>{
         var customIcon = null;
-        const iconElement = document.createElement('div');
-        if (event.event_time_type != "upcoming") {
-            customIcon = L.divIcon({
-                className: 'custom-div-icon',
-                html: `
-                <div style='background-color:transparent;'>
-                    <img src="${event.icon_url}" style="width: 100%; height: 100%; background-color: transparent" />
-                </div>
-                `,
-                iconSize: [32, 32], // Size of the icon
-                iconAnchor: [16, 30], // Point of the icon which will correspond to marker's location
-                popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
-            });
-        } else {
-            customIcon = L.divIcon({
-                className: 'custom-div-icon',
-                html: `
-                <div style="position: relative; width: 32px; height: 32px; background-color: transparent">
-                    <div style='background-color:transparent;'>
-                        <img src="${event.icon_url}" style="width: 100%; height: 100%; background-color: transparent" />
-                    </div>
-                    <div class="tooltip-content" style="position: absolute; top: -50%; left: 50%; transform: translate(-50%, -50%); padding: 5px, 0px; border-radius: 5px; text-align: center; white-space: nowrap; font-size: 15px;">
-                        ${event.date_span.month} <span style="color: #fc5200">${event.date_span.day}</span>
-                    </div>
-                </div>
-                `,
-                iconSize: [32, 32], // Size of the icon
-                iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
-                popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
-            });
-        }
+        customIcon = L.divIcon({
+            className: 'custom-div-icon',
+            html: buildMarkerIconHtml(event),
+            iconSize: [32, 32], // Size of the icon
+            iconAnchor: [16, event.event_time_type === 'upcoming' ? 32 : 30], // Point of the icon which will correspond to marker's location
+            popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
+        });
         if (event.position) {
           var marker = L.marker([event.position.lat + event.shift[0], event.position.lng +  + event.shift[1]],
                                 { icon: customIcon }).addTo(map);

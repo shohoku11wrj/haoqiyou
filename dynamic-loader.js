@@ -16,6 +16,7 @@
     };
     const TIME_ZONE = 'America/Los_Angeles';
     const GPS_OVERLAP_TOLERANCE = 0.03;
+    const DAY_IN_MS = 24 * 60 * 60 * 1000;
     const GPS_SHIFTS = [
         [0, 0],
         [0, -GPS_OVERLAP_TOLERANCE],
@@ -631,9 +632,27 @@ ${locationBlock}${distanceBlock}${elevationBlock}${orientationBlock}${expectedBl
             shift: [0, 0],
             id: `event-${event._id}`,
             icon_url: iconMap[eventType] || 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-            event_time_type: eventType
+            event_time_type: eventType,
+            past_marker_bucket: eventType === 'past' ? getPastMarkerBucket(event.event_time_utc) : ''
         };
         return marker;
+    }
+
+    function getPastMarkerBucket(eventTimeUtc) {
+        if (!(eventTimeUtc instanceof Date) || Number.isNaN(eventTimeUtc.getTime())) {
+            return 'past-181-plus';
+        }
+        const ageInDays = Math.max(0, Math.floor((Date.now() - eventTimeUtc.getTime()) / DAY_IN_MS));
+        if (ageInDays <= 30) {
+            return 'past-0-30';
+        }
+        if (ageInDays <= 90) {
+            return 'past-31-90';
+        }
+        if (ageInDays <= 180) {
+            return 'past-91-180';
+        }
+        return 'past-181-plus';
     }
 
     function assignMarkerShifts(markers) {
