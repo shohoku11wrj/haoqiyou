@@ -1,8 +1,14 @@
 (function () {
+    const LOADER_SCRIPT = document.currentScript;
+    const BASE_URL = LOADER_SCRIPT && LOADER_SCRIPT.src
+        ? new URL('.', LOADER_SCRIPT.src)
+        : new URL('.', window.location.href);
     const REMOTE_EVENTS_SOURCE = 'https://raw.githubusercontent.com/shohoku11wrj/haoqiyou/main/storage/events.json';
+    const LOCAL_EVENTS_JSON_SOURCE = new URL('storage/events.json', BASE_URL).href;
+    const LOCAL_EVENTS_SCRIPT_SOURCE = new URL('storage/events.js', BASE_URL).href;
     const LOCAL_DATA_SOURCES = [
         REMOTE_EVENTS_SOURCE,
-        './storage/events.json'
+        LOCAL_EVENTS_JSON_SOURCE
     ];
     const EXTRA_EVENT_GROUP_IDS = new Set([265, 908336, 1047313]);
     const DAY_OF_WEEK_MAP = {
@@ -35,7 +41,12 @@
 
     function loadEvents() {
         if (window.location.protocol === 'file:') {
-            loadLocalEvents();
+            loadEmbeddedLocalEvents()
+                .then(processEvents)
+                .catch((error) => {
+                    console.error('Embedded local events load failed.', error);
+                    showError(new Error('Failed to load local events from storage/events.js.'));
+                });
             return;
         }
 
@@ -58,6 +69,11 @@
     }
 
     async function loadLocalEvents() {
+        if (Array.isArray(window.LOCAL_EVENTS_DATA)) {
+            processEvents(window.LOCAL_EVENTS_DATA);
+            return;
+        }
+
         for (const source of LOCAL_DATA_SOURCES) {
             const url = withCacheBuster(source);
             try {
@@ -73,7 +89,54 @@
             }
         }
 
-        showError(new Error('Failed to load local events.json from GitHub or disk.'));
+        try {
+            const embedded = await loadEmbeddedLocalEvents();
+            processEvents(embedded);
+            return;
+        } catch (error) {
+            console.warn('Embedded local events load failed.', error);
+        }
+
+        showError(new Error('Failed to load local events.json from GitHub, disk, or storage/events.js.'));
+    }
+
+    function loadEmbeddedLocalEvents() {
+        if (Array.isArray(window.LOCAL_EVENTS_DATA)) {
+            return Promise.resolve(window.LOCAL_EVENTS_DATA);
+        }
+
+        return new Promise((resolve, reject) => {
+            const existingScript = document.querySelector('script[data-local-events-script="true"]');
+            if (existingScript) {
+                existingScript.addEventListener('load', () => {
+                    if (Array.isArray(window.LOCAL_EVENTS_DATA)) {
+                        resolve(window.LOCAL_EVENTS_DATA);
+                        return;
+                    }
+                    reject(new Error('storage/events.js loaded but LOCAL_EVENTS_DATA is missing.'));
+                }, { once: true });
+                existingScript.addEventListener('error', () => {
+                    reject(new Error('Failed to load storage/events.js.'));
+                }, { once: true });
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.src = withCacheBuster(LOCAL_EVENTS_SCRIPT_SOURCE);
+            script.async = true;
+            script.dataset.localEventsScript = 'true';
+            script.onload = () => {
+                if (Array.isArray(window.LOCAL_EVENTS_DATA)) {
+                    resolve(window.LOCAL_EVENTS_DATA);
+                    return;
+                }
+                reject(new Error('storage/events.js loaded but LOCAL_EVENTS_DATA is missing.'));
+            };
+            script.onerror = () => {
+                reject(new Error('Failed to load storage/events.js.'));
+            };
+            document.head.appendChild(script);
+        });
     }
 
     function withCacheBuster(source) {
