@@ -75,9 +75,17 @@ _STRAVA_SEGMENT_PATTERN = re.compile(r"https?://(?:www\.)?strava\.com/segments/\
 
 DEFAULT_MEET_LOCATION = "Summit Bicycles, 392 California Ave, Palo Alto, CA"
 DEFAULT_MEET_GPS = "37.42797, -122.14508"
+LOS_GATOS_MEET_GPS = "37.2215127, -121.9787266"
 KNOWN_LOCATIONS = {
-    "summit bicycles": DEFAULT_MEET_GPS,
+    "summit bicycles, palo alto": DEFAULT_MEET_GPS,
+    "summit bikes in palo alto": DEFAULT_MEET_GPS,
+    "summit bikes palo alto": DEFAULT_MEET_GPS,
     "392 california ave": DEFAULT_MEET_GPS,
+    "california ave": DEFAULT_MEET_GPS,
+    "summit bicycles, los gatos": LOS_GATOS_MEET_GPS,
+    "summit bikes in los gatos": LOS_GATOS_MEET_GPS,
+    "summit bikes los gatos": LOS_GATOS_MEET_GPS,
+    "111 east main": LOS_GATOS_MEET_GPS,
 }
 CANONICAL_LOCATION_ALIASES = {
     "summit bicycles, palo alto": "Summit Bicycles, Palo Alto",

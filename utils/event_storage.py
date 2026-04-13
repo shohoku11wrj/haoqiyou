@@ -191,4 +191,5 @@ def save_events_to_storage(
     events_path.parent.mkdir(parents=True, exist_ok=True)
     serialised_events = [rehydrate_event_for_storage(event) for event in events]
     with events_path.open("w", encoding="utf-8") as outfile:
-        json.dump(serialised_events, outfile, indent=2)
+        json.dump(serialised_events, outfile, indent=2, ensure_ascii=False)
+        outfile.write("\n")

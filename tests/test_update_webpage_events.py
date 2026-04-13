@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-from update_webpage_events import extract_event_detail
+from update_webpage_events import _determine_gps, extract_event_detail
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -102,6 +102,16 @@ class UpdateWebpageEventsTest(unittest.TestCase):
 
         self.assertEqual(palo_alto_detail["meet_up_location"], "Summit Bicycles, Palo Alto")
         self.assertEqual(los_gatos_detail["meet_up_location"], "Summit Bicycles, Los Gatos")
+
+    def test_infers_distinct_gps_for_known_summit_locations(self) -> None:
+        self.assertEqual(
+            _determine_gps("Summit Bicycles, Palo Alto", ""),
+            "37.42797, -122.14508",
+        )
+        self.assertEqual(
+            _determine_gps("Summit Bicycles, Los Gatos", ""),
+            "37.2215127, -121.9787266",
+        )
 
 
 if __name__ == "__main__":
