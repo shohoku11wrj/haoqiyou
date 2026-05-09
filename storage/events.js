@@ -1150,6 +1150,33 @@ window.LOCAL_EVENTS_DATA = [
     "source_url": "https://www.strava.com/clubs/265/group_events/3487355156575892534"
   },
   {
+    "_id": "wechat-202605090900001",
+    "source_type": "wechat",
+    "source_group_id": {
+      "$numberLong": "1001"
+    },
+    "source_event_id": {
+      "$numberLong": "202605090900001"
+    },
+    "source_group_name": "Featherweight Club (FWC)",
+    "event_time_utc": {
+      "$date": "2026-05-09T16:00:00.000Z"
+    },
+    "meet_up_location": "2 Marshlands Rd, Fremont, CA 94555",
+    "gps_coordinates": "37.53177, -122.07148",
+    "distance_meters": 76070,
+    "elevation_gain_meters": 324,
+    "organizer": "Yu Ji",
+    "title": "周六环Bay休闲骑",
+    "description": "周六环Bay休闲骑\n\n⌚️Meet by: Sat 5/9 9:00am, leave in 15min (plz be on time, catch us if late)\n\n📍Meet at: 2 Marshlands Rd, Fremont, CA 94555\n\n🗺️Event: https://www.strava.com/routes/3486920158170223604\n\n📝Note: Ride at your own pace. Casual riders may start earlier so we can regroup on top. Water refill only on top, so bring plenty.(does not lead to junction this time)\n\n👷‍♀️Disclaimer: Riders must wear protective gear, follow traffic laws, and accept cycling’s inherent risks. Descend responsibly. Organizers are not liable for accidents or injuries. Ride leads will assist, but each rider is responsible for their own navigation.\n\n新人友好局",
+    "route_url": "https://www.strava.com/routes/3486920158170223604",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/NUCKCLF7T4ZQRU6HK2SEULXZW6WXKHXOZOYNIA5O5RCY3S3N67TNQPY3OV2MKNDUT3BYOCUGMRVZRNJG23CYCIDZ2F4VVKKRL3WOTLA=",
+    "route_polyline": "qladFvaahV|HkQXcKdBgHgA_Ho]hDoz@p\\iMlBwa@iDmi@mS}GoJyP|D}IlLcA]weAez@yS_]c`@_[cHsPgD{\\n@{MtLu_@hu@iw@zLm_@l[sq@dUov@dF~ElHmAuCoVx@cIvUwOfqAq~CfUob@xLwOtAcNiHwk@`A{FxJkSvHmj@zDuCnSaB~CyCpHoQfG{Bf^k\\xR{DtEcLtHiFtEFtL~GfBjD~CtS~J`EbPgBbNqOvLIpGgJxX{UdAkF@_c@vKyMrDiB|HhGfJ|WtDxAzL?lFxK}A}GgGaE}Jr@hLQvEtEle@~cBjNfp@l@vFaAtA|Em@nLtAzOsHnv@o}@|LiThb@uXtFQhTrD`CgCvAsKnHJbJ}DjSwCfQG`]zRfR_A~`@lNfLyAzQyT|Ca@jBfBhN`lA}ChR`G`@lOoCgEdNl@|`ArChHrIlKwMlW`Aft@zAdMbEbLmEfCrGdVjAl@pUbq@`F|ShD`WOnMtAhK}@vEcIrEjA|FsI~EmClEyRlfByH_BiEmDsQhv@mIrEaGzg@kBnCg@pFcCbm@zCjUK`K{NpM}It@y\\rPnMlm@aGzb@p\\fBErB}AOb@tEcBbBq]vJvDpz@nCZpLrU}AxH}BFuImE}@t@qAlo@vBvOqFtPrAj@xFzPhMlNsfAfjAiIdE}YpI}A_DeO~EkGnHia@lGuGO}@dHgbAzU{S{He[jb@aLaDcDqD_AfTtGh^bDhDa`@lLeAxA~@`B}x@iaA_QeO{mAspB}S}Sgo@kb@kq@uy@sG}N{D{PoHkz@f@{KzEuRhD}F",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/routes/3486920158170223604"
+  },
+  {
     "_id": "strava-908336-3473915362147609546",
     "source_type": "strava",
     "source_group_id": {
