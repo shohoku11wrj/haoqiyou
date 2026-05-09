@@ -134,6 +134,17 @@ function buildCalendarDetails(eventElement, dataset, eventId) {
         }
     }
 
+    if (!detailParts.length && eventElement) {
+        const descriptions = eventElement.querySelectorAll('.event-description');
+        const descriptionText = Array.from(descriptions)
+            .map((node) => node.textContent.trim())
+            .filter(Boolean)
+            .join('\n\n');
+        if (descriptionText) {
+            detailParts.push(descriptionText);
+        }
+    }
+
     const meetUpInfo = Array.from(eventElement.querySelectorAll('.meet-up'))
         .map((span) => {
             const label = span.textContent ? span.textContent.trim() : '';
@@ -161,11 +172,11 @@ function buildCalendarDetails(eventElement, dataset, eventId) {
     };
 }
 
-function buildGoogleCalendarUrl(eventElement) {
+function buildGoogleCalendarUrl(eventElement, datasetOverride = null) {
     if (!eventElement) {
         return null;
     }
-    const dataset = eventElement.dataset || {};
+    const dataset = datasetOverride || eventElement.dataset || {};
     const eventId = dataset.eventId || eventElement.getAttribute('data-event-id') || '';
 
     const dateRelativeElement = eventElement.querySelector('.date-relative');
@@ -241,9 +252,10 @@ function attachCalendarHandlers(root = document) {
             event.preventDefault();
             event.stopPropagation();
             const contextElement = box.closest('.event')
+                || box.closest('#popup-content')
                 || document.querySelector(`.event[data-event-id="${box.dataset.eventId || ''}"]`)
                 || box;
-            const calendarUrl = buildGoogleCalendarUrl(contextElement);
+            const calendarUrl = buildGoogleCalendarUrl(contextElement, box.dataset);
             if (calendarUrl) {
                 window.open(calendarUrl, '_blank', 'noopener,noreferrer');
             }
