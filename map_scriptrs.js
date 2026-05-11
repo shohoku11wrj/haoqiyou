@@ -101,17 +101,118 @@ function buildMarkerIconHtml(event) {
     `;
 }
 
-function initMap() {
-    if (!window.map) { // Check if map is already initialized
-        const centerLocation = [37.63, -122.23];
-        window.map = L.map('map-container').setView(centerLocation, 10);
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
+function parseMarkerEventDate(value) {
+    if (!value) {
+        return null;
+    }
+    const parsed = new Date(value);
+    return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
+function getTwoMonthsAgo() {
+    const cutoff = new Date();
+    cutoff.setMonth(cutoff.getMonth() - 2);
+    return cutoff;
+}
+
+function shouldHideOldPastMapEvent(event) {
+    const toggleOldPastMapEvents = document.getElementById('toggleOldPastMapEvents');
+    if (toggleOldPastMapEvents && toggleOldPastMapEvents.checked) {
+        return false;
+    }
+    if (!event || event.event_time_type !== 'past') {
+        return false;
     }
 
-    events.map(event=>{
+    const eventDate = parseMarkerEventDate(event.event_time_utc);
+    if (eventDate) {
+        return eventDate < getTwoMonthsAgo();
+    }
+
+    return event.past_marker_bucket === 'past-91-180' || event.past_marker_bucket === 'past-181-plus';
+}
+
+function initPastEventsMapToggle() {
+    const toggleOldPastMapEvents = document.getElementById('toggleOldPastMapEvents');
+    if (!toggleOldPastMapEvents || toggleOldPastMapEvents.dataset.mapFilterAttached === 'true') {
+        return;
+    }
+    toggleOldPastMapEvents.addEventListener('change', function() {
+        renderEventMarkers();
+    });
+    toggleOldPastMapEvents.dataset.mapFilterAttached = 'true';
+}
+
+function getMarkerPosition(event) {
+    if (!event || !event.position) {
+        return null;
+    }
+    const lat = Number(event.position.lat);
+    const lng = Number(event.position.lng);
+    if (Number.isNaN(lat) || Number.isNaN(lng)) {
+        return null;
+    }
+    return { lat, lng };
+}
+
+function assignVisibleMarkerShifts(visibleEvents) {
+    const tolerance = 0.03;
+    const shifts = [
+        [0, 0],
+        [0, -tolerance],
+        [tolerance, 0],
+        [0, tolerance],
+        [-tolerance, 0],
+        [tolerance, -tolerance],
+        [tolerance, tolerance],
+        [-tolerance, tolerance],
+        [-tolerance, -tolerance]
+    ];
+    const groups = [];
+
+    visibleEvents.forEach(function(event) {
+        const position = getMarkerPosition(event);
+        if (!position) {
+            event.visibleShift = [0, 0];
+            return;
+        }
+
+        let group = groups.find(function(item) {
+            return Math.abs(item.lat - position.lat) < tolerance && Math.abs(item.lng - position.lng) < tolerance;
+        });
+        if (!group) {
+            group = { lat: position.lat, lng: position.lng, events: [] };
+            groups.push(group);
+        }
+        group.events.push(event);
+    });
+
+    groups.forEach(function(group) {
+        group.events.forEach(function(event, index) {
+            event.visibleShift = shifts[index % shifts.length];
+        });
+    });
+}
+
+function renderEventMarkers() {
+    if (!window.map) {
+        return;
+    }
+    if (window.currentHoveredRoutePolyline && window.map.hasLayer(window.currentHoveredRoutePolyline)) {
+        window.map.removeLayer(window.currentHoveredRoutePolyline);
+    }
+    window.currentHoveredRoutePolyline = null;
+    if (!window.eventMapLayerGroup) {
+        window.eventMapLayerGroup = L.layerGroup().addTo(window.map);
+    }
+    window.eventMapLayerGroup.clearLayers();
+
+    const visibleEvents = events.filter(function(event) {
+        return !shouldHideOldPastMapEvent(event);
+    });
+    assignVisibleMarkerShifts(visibleEvents);
+
+    visibleEvents.map(event=>{
         var customIcon = null;
         customIcon = L.divIcon({
             className: 'custom-div-icon',
@@ -121,16 +222,23 @@ function initMap() {
             popupAnchor: [0, 0] // Point from which the popup should open relative to the iconAnchor
         });
         if (event.position) {
-          var marker = L.marker([event.position.lat + event.shift[0], event.position.lng +  + event.shift[1]],
-                                { icon: customIcon }).addTo(map);
+          const shift = event.visibleShift || event.shift || [0, 0];
+          var marker = L.marker([event.position.lat + shift[0], event.position.lng + shift[1]],
+                                { icon: customIcon }).addTo(window.eventMapLayerGroup);
           var routePolyline = getRoutePolylin(event.id);
           if (routePolyline) {
               marker.on('mouseover', function() {
+                window.currentHoveredRoutePolyline = routePolyline;
                 routePolyline.addTo(map);
               });
 
               marker.on('mouseout', function() {
-                map.removeLayer(routePolyline);
+                if (map.hasLayer(routePolyline)) {
+                    map.removeLayer(routePolyline);
+                }
+                if (window.currentHoveredRoutePolyline === routePolyline) {
+                    window.currentHoveredRoutePolyline = null;
+                }
               });
           }
           marker.bindTooltip(event.title, { className: 'custom-tooltip' });  //.openTooltip(); // by default, the tooltip is open
@@ -151,7 +259,7 @@ function initMap() {
               // Update the URL
               history.pushState(null, '', `?id=${event.id}`);
           });
-          if (event.shift[0] != 0 || event.shift[1] != 0) {
+          if (shift[0] != 0 || shift[1] != 0) {
               // Add a red dot at the original position
               var dot = L.circleMarker([event.position.lat, event.position.lng], {
                   radius: 5,
@@ -160,18 +268,33 @@ function initMap() {
                   weight: 1,
                   opacity: 1,
                   fillOpacity: 1
-              }).addTo(map);
+              }).addTo(window.eventMapLayerGroup);
 
               // Add a red line from the original position to the shifted position
               var line = L.polyline([
                   [event.position.lat, event.position.lng],
-                  [event.position.lat + event.shift[0], event.position.lng + event.shift[1]]
+                  [event.position.lat + shift[0], event.position.lng + shift[1]]
               ], {
                   color: "#ff0000",
                   weight: 3,
                   opacity: 0.5
-              }).addTo(map);
+              }).addTo(window.eventMapLayerGroup);
           }
         }
     });
 }
+
+function initMap() {
+    if (!window.map) { // Check if map is already initialized
+        const centerLocation = [37.63, -122.23];
+        window.map = L.map('map-container').setView(centerLocation, 10);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+    }
+    initPastEventsMapToggle();
+    renderEventMarkers();
+}
+
+document.addEventListener('DOMContentLoaded', initPastEventsMapToggle);

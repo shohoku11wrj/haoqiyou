@@ -696,6 +696,7 @@ ${locationBlock}${distanceBlock}${elevationBlock}${orientationBlock}${expectedBl
             id: `event-${event._id}`,
             icon_url: iconMap[eventType] || 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
             event_time_type: eventType,
+            event_time_utc: event.event_time_utc.toISOString(),
             past_marker_bucket: eventType === 'past' ? getPastMarkerBucket(event.event_time_utc) : ''
         };
         return marker;

@@ -386,6 +386,7 @@ def gen_gmp_advanced_marker_for_events_from_list(event_list, event_time_type="up
             'id': event_id,
             'icon_url': icon_url,
             'event_time_type': event_time_type,
+            'event_time_utc': event_time_utc.isoformat(),
         }
         events_markers.append(event_marker)
     return events_markers
@@ -461,7 +462,9 @@ def serialize_event_markers_to_string(event_markers):
             shift: {event_marker['shift']},
             id: "{event_marker['id']}",
             icon_url: "{event_marker['icon_url']}",
-            event_time_type: "{event_marker['event_time_type']}"
+            event_time_type: "{event_marker['event_time_type']}",
+            event_time_utc: "{event_marker.get('event_time_utc', '')}",
+            past_marker_bucket: "{event_marker.get('past_marker_bucket', '')}"
         }},
         """
     return map_content

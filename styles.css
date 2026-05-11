@@ -12,6 +12,10 @@ body {
 .column {
   flex: 0 0 auto; /* Make the column only as wide as its content */
 }
+.map-filter-checkbox {
+  margin-left: 12px;
+  white-space: nowrap;
+}
 .right-most {
   margin-left: 10px;
 }
