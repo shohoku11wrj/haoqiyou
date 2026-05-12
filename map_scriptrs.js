@@ -132,15 +132,31 @@ function shouldHideOldPastMapEvent(event) {
     return event.past_marker_bucket === 'past-91-180' || event.past_marker_bucket === 'past-181-plus';
 }
 
-function initPastEventsMapToggle() {
+function shouldHideUnselectedMapEvent(event) {
+    const toggleExtra = document.getElementById('toggleExtra');
+    return Boolean(toggleExtra && toggleExtra.checked && event && event.is_extra_event);
+}
+
+function shouldHideMapEvent(event) {
+    return shouldHideOldPastMapEvent(event) || shouldHideUnselectedMapEvent(event);
+}
+
+function initMapFilterToggles() {
     const toggleOldPastMapEvents = document.getElementById('toggleOldPastMapEvents');
-    if (!toggleOldPastMapEvents || toggleOldPastMapEvents.dataset.mapFilterAttached === 'true') {
-        return;
+    if (toggleOldPastMapEvents && toggleOldPastMapEvents.dataset.mapFilterAttached !== 'true') {
+        toggleOldPastMapEvents.addEventListener('change', function() {
+            renderEventMarkers();
+        });
+        toggleOldPastMapEvents.dataset.mapFilterAttached = 'true';
     }
-    toggleOldPastMapEvents.addEventListener('change', function() {
-        renderEventMarkers();
-    });
-    toggleOldPastMapEvents.dataset.mapFilterAttached = 'true';
+
+    const toggleExtra = document.getElementById('toggleExtra');
+    if (toggleExtra && toggleExtra.dataset.mapFilterAttached !== 'true') {
+        toggleExtra.addEventListener('change', function() {
+            renderEventMarkers();
+        });
+        toggleExtra.dataset.mapFilterAttached = 'true';
+    }
 }
 
 function getMarkerPosition(event) {
@@ -208,7 +224,7 @@ function renderEventMarkers() {
     window.eventMapLayerGroup.clearLayers();
 
     const visibleEvents = events.filter(function(event) {
-        return !shouldHideOldPastMapEvent(event);
+        return !shouldHideMapEvent(event);
     });
     assignVisibleMarkerShifts(visibleEvents);
 
@@ -293,8 +309,8 @@ function initMap() {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
     }
-    initPastEventsMapToggle();
+    initMapFilterToggles();
     renderEventMarkers();
 }
 
-document.addEventListener('DOMContentLoaded', initPastEventsMapToggle);
+document.addEventListener('DOMContentLoaded', initMapFilterToggles);

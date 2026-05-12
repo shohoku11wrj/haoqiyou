@@ -11,6 +11,7 @@
         LOCAL_EVENTS_JSON_SOURCE
     ];
     const EXTRA_EVENT_GROUP_IDS = new Set([265, 908336, 1047313]);
+    const EXTRA_EVENT_GROUP_NAMES = new Set(['altovelo-a-ride']);
     const DAY_OF_WEEK_MAP = {
         Monday: '周一',
         Tuesday: '周二',
@@ -310,7 +311,7 @@
     function prepareEventParts(event, eventType) {
         const eventId = `event-${event._id}`;
         const timeParts = buildTimeParts(event.event_time_utc);
-        const eventClass = EXTRA_EVENT_GROUP_IDS.has(event.source_group_id) ? 'extra-event' : 'selected-event';
+        const eventClass = isExtraEvent(event) ? 'extra-event' : 'selected-event';
         const gpsCoordinatesStr = event.gps_coordinates;
         const eventLocation = resolveEventLocation(event);
         const distanceStr = formatDistance(event.distance_meters);
@@ -697,9 +698,17 @@ ${locationBlock}${distanceBlock}${elevationBlock}${orientationBlock}${expectedBl
             icon_url: iconMap[eventType] || 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
             event_time_type: eventType,
             event_time_utc: event.event_time_utc.toISOString(),
-            past_marker_bucket: eventType === 'past' ? getPastMarkerBucket(event.event_time_utc) : ''
+            past_marker_bucket: eventType === 'past' ? getPastMarkerBucket(event.event_time_utc) : '',
+            is_extra_event: isExtraEvent(event)
         };
         return marker;
+    }
+
+    function isExtraEvent(event) {
+        if (!event) {
+            return false;
+        }
+        return EXTRA_EVENT_GROUP_IDS.has(event.source_group_id) || EXTRA_EVENT_GROUP_NAMES.has(event.source_group_name);
     }
 
     function getPastMarkerBucket(eventTimeUtc) {
