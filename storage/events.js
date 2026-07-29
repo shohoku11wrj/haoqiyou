@@ -1,5 +1,43 @@
 window.LOCAL_EVENTS_DATA = [
   {
+    "_id": "routine-20260801-south-bay-saturday-ride",
+    "source_type": "routine",
+    "source_group_id": {
+      "$numberLong": "0"
+    },
+    "source_event_id": {
+      "$numberLong": "202608011030001"
+    },
+    "source_group_name": "好骑友",
+    "event_time_utc": {
+      "$date": "2026-08-01T17:30:00.000Z"
+    },
+    "recurrence": {
+      "frequency": "weekly",
+      "days_of_week": [
+        "Saturday"
+      ],
+      "local_time": "10:30",
+      "timezone": "America/Los_Angeles",
+      "starts_on": "2026-08-01",
+      "ends_on": null
+    },
+    "duration_minutes": 120,
+    "meet_up_location": "Starbucks, 1291 S Mary Ave, Sunnyvale, CA 94087",
+    "gps_coordinates": "37.35264, -122.05134",
+    "distance_meters": 0,
+    "elevation_gain_meters": 0,
+    "organizer": "Ranger",
+    "title": "周六上午南湾放风骑",
+    "description": "长期有效的每周六南湾休闲骑。\n\n⌚️集合时间：每周六上午 10:30\n\n📍集合地点：Starbucks, 1291 S Mary Ave, Sunnyvale, CA 94087\n\n🗺️路线：South Mary Ave - Stevens 水库\nhttps://www.strava.com/routes/3510868510132711736\n\n📝说明：全程控制在 2 小时以内。骑完有兴趣可以再一起喝杯奶茶。\n\n🎥参考视频：https://www.youtube.com/watch?v=iT2K7O2Lj-8",
+    "route_url": "https://www.strava.com/routes/3510868510132711736",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/DU2G6XNYRJ23URAB3GHU6WM6Q57LJZGBN4L6HPU5DWMQPK45ATLYWOHG5LKCZR42ZNROJW6PBTBQYTZSAWAZMF3FWK2ZBYRBTUCZXCAOLND5UTZPLMMVPNSOUHD77IU7SJ257ROMKOD64EUVCPJGRXVJB2MREOQQKM4O65EMADXYTGXMN6OPW7GPJKKOWZXNCA======",
+    "route_polyline": "",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.youtube.com/watch?v=iT2K7O2Lj-8"
+  },
+  {
     "_id": "wechat-202509210830001",
     "source_type": "wechat",
     "source_group_id": {
