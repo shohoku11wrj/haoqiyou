@@ -2203,7 +2203,7 @@ window.LOCAL_EVENTS_DATA = [
     "title": "Saturday AVA-E: Pigeon Point & Picnic!",
     "description": "Saturday AVA-E: Pigeon Point & Picnic!\nAug 26\nWritten By\nAlto Velo\nThis Saturday is\nAV Picnic day\n, so we’ll be knocking out a nice ride to the lighthouse perfectly timed to arrive at the picnic for an afternoon of festivity, camaraderie, and lots of food! If you haven’t signed up for the picnic,\nyou can do so here\n($5 members/$15 non-members - bring friends and family!). This means we will end at the\nRedwood Picnic Shelter\nin Huddart Park - and not at Summit or Shake Shack.\nTime:\n9:00AM at\nSummit Bicycles Palo Alto\n. Wheels down 9:10AM.\nDate:\n8/26/26\nRide Leader:\nKevin Kauffman\nRoute:\nhttps://www.strava.com/routes/3339466315482731930\n~72 miles/~7.8k feet\nWe’ll start up OLH with a quick water refill at Sky Londa as this will be our last good water stop until our Pesky rendezvous (at 46mi) so please bring enough bottles. We’ll next head down 84 toward Pescadero with a turn-off at Cloverdale/Gazos for the Pigeon Point loop bring us back up HWY1 to Pescadero. We’ll grab a nice pastry + coffee in town before heading down Stage, taking the Lobitos detour, then up Tunitas → down Kings to the picnic.\nRide etiquette:\nhttps://www.altovelo.org/ride-rules\nAlto Velo",
     "route_url": "https://www.strava.com/routes/3339466315482731930",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/OKF4LAYMSSVM456ZOYTGQAGGLMG6RPZK775NV2PF5ZZHODSX52ML4UZGC34MNTXLEC4KD3DQ2ZL5V5K6UYG6HTNQ2PZ5KUCTTZWADHQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/Y5STBICOVYCKESLUPH5W22KF3CGPSHUUNOKBN2VAYJKRRAVLZJ3RINCPVYLSVSHETA6CLOBRIMAYNQQ2NYAHRQ5FPBLKX64VKEF6OWY=",
     "route_polyline": "_{lcFbkohVzAhAcBzDdK`IyHlQvs@tj@tXXzT`T_LnR{EtYwDvIiR|YoQtNeIda@{@jSaKfXw@dKaDRuBjCbPlY|EjSdHb}@Pz^xLpp@_Adk@l@dLbQtc@`U`OpXr]tCPtOmElTpDjOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfAzBxH|OsKnC}J|Kw@lHhKrD|@xHYzDgF^hKqAnM_CnE}HvC_CxCeDhGe@rK_C|@{FkBw_@pA_JcBoKvMxByDZdShFIlGqKjDIzB{B`JrBp_@hBhI}ExF?l@kG`Am@xIbGzI}BZiFpBmChCl@bF`GtG{BfE}LnGnDhH_DfEnEA|NjO`NvB?zKsKfDO`Mj@~IbLdP[hAxC{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiD`BsDlBi@|HzIbGPdFvQtI{FvI`IjSw@pOvBjEqAlE~GvGuB|DrDtGs@bFeE|GgK`HwUhb@mSvEsErApBoGzKtMeHbHcIlEb@TpFoHvAyFrHiE~HPtEiO`KyAdQ`FdC~Ci@~JjC~I?r@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDhI^fEzCtIv@rJrHvBxUkKtQKrE`FvIrFzDLdJrItMl@v^bSlEtJzKvG}@pPrBhKvLRzBqA`BgQk@yHtGwFX{CrBbG|N^rWpChDdUmEfJ|N\\zMvCrLStN{C`TPtIzE~OtMrBz@pOjGfFlQj\\g@nJxDrR`GhGhJvCv@jI]zWpEl@hIpKl@b]~\\yIfE~@vGxFdFPfLmGhMm[tQ}VhK{@rl@wQf^q]h[qBzNtBdF]x_@kN~PkSzFr@hHrKxS{K~J{KnA_FjK_ArMaG~HzDr@vJwBdHGlInMnV~IlCdDrIxFa@t^|J`Mn@hBvFhK`DtHpMjK`FlAbKgg@bOiKtJqn@bwAmDvQeDvk@wEzKe_A~o@cOpDg[bBkgAp^sp@Oe[oCiHaDuDbEeDwAeL?cCsBaD`B{MwCmWqTkCiIcCXcIuEeHc@hCyH{@wCaJ|@gC}B_FRcBhBk@fHyIiHaIupAiJn@@vCAwCiWX{X|Gam@hFuVeAk^mSqSef@}MnDsMaGoAb@sCvJ}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IiIbGmAaBsDbAqCsEKaD_CoAmAcEqDsAuOzE_JiK}Oz@oGfCsG`KiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@qRvLmLrBgIbEeMt@cW{IaLbCcBqRaEqKiZqReCaGkSsRqIgOgM}IqO{RkAyHeEaGyHQgEtAv@rAvIFxBlEt@pMi@fHsSfw@eIrNpA~SqGtU[vHgCScD|Fq@uEiD_DcK}FmPgDcA_F{HyCiFiGgDmBuGl@iFiKd@wAjBzBfGdAl@eAfCl@hAcBoBkULqIlDfD~AsGnAnAr@w@l@yKtBsDMiDuDeEnAuGeBkEwJSiTc_@wS}M_GuJ_C?EqDlDeCnNsGzIdAVwAoLgS{`@c_@cAoJuFwQaNiNkQKeI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GqDeAoHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRdB_BhA{FuDs@gBkI{DrBmAc@lGyOsK{DjKiKL{DvFwC`@uCg@kAwE_@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_K|GoC}EsBkTzD{FgFuArBqB{@",
     "is_active": true,
     "event_picture_urls": [],
@@ -2318,6 +2318,30 @@ window.LOCAL_EVENTS_DATA = [
     "source_url": "https://www.strava.com/clubs/265/group_events/3530441679771050342"
   },
   {
+    "_id": "webpage-2026-09-05-a85f4914",
+    "source_type": "webpage",
+    "source_group_id": {
+      "$numberLong": "0"
+    },
+    "source_group_name": "altovelo-a-ride",
+    "event_time_utc": {
+      "$date": "2026-09-05T16:00:00.000Z"
+    },
+    "meet_up_location": "Summit Bicycles, Palo Alto",
+    "gps_coordinates": "37.42797, -122.14508",
+    "distance_meters": 126334.0,
+    "elevation_gain_meters": 2380.0,
+    "organizer": "Richard Red",
+    "title": "Saturday A Ride 9/5 - Montebello, Gist",
+    "description": "Saturday A Ride 9/5 - Montebello, Gist\nSep 3\nWritten By\nAlto Velo\nHello team, I’m tired of going to Pescadero every week so we are going south for a somewhat unusual segment, Gist! First Montebello, then around Lexington Reservoir to Black Rd, then Gist to Skyline to 9 to a lengthy cafe stop in Saratoga.\nAfter making the route and writing this out, Gist doesn’t look like a real word anymore. It looks like if you mistyped Fist. Which is probably what it will feel like at that point in the ride with its 10.3% average gradient, either to your face or somewhere else on the body…\nRoute:\nhttps://www.strava.com/routes/3530679890378848268\n- 78mi / 7,800ft\nStart: Summit Bicycles, Palo Alto. Meet 9:00 AM, Roll 9:10 AM\nRide Etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader: Richard Red\nAlto Velo",
+    "route_url": "https://www.strava.com/routes/3530679890378848268",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/LVB3JRPKGPHIG7HLEASH2LWYRR7NUSWDZ3GX62JJSLAC7KDTQK3QM33744LPZ3RYMDG5LDOGVRCQDZTGHUG5VOQPHUZRH3HS2IM4SYY=",
+    "route_polyline": "k|lcF~iohVoLaJiM|U`sArdAzWHtUpTd[yd@xCod@fDuU`e@ciAl~@}j@tsAwbAdzE{|GdFyEdIsBhl@fF~k@uCvp@?fSbEjQpM`BtL|GbGxQpFnHiBlGnM|NfJrEKvAvLk@bH~CxBaEnKjFkB}AtBwAvOzElBcBbNrIh@vHcL~HvCxCsIdIqAnEwCdCPsCzAwClVsGpJ~@pDoEpD_C_Aa@|BkE|Bm@rBsDp@y@xNaC|B|C~EaDvA_QzYJbWzMjJ}MoDqMvFv@qKgDFmDfHi@zKwDl@jGlEi@lCzAtBuC`GfBzDqAvGcOlQmE~QaDdC{BfA|GmElE_RbOmQpAwGgB{DtCaG{AuBh@mCkGmEvDm@h@{KlDgHfDGw@pKpMwF|MnD{MkJKcW~P{Y`DwA}C_F`C}Bx@yNrDq@l@sBjE}B`@}B~B~@nEqD_AqDrGqJvCmVpCoAcC]oEvCeIpAyCrI_IwCwHbLsIi@bBcN{EmBvAwO|AuBkFjBpJ}ZjI|@v[wHrEiFhKcEhDeGbAkJrEz@hA{BhFc@hA_K`Ge@vBgIbA|CnGc@VeCmCjB[_DrQkGf@cPuBiDtA{FkDmCxGsD`DcNdH{DjF~ExEwArFdAjGqDdOyQp@aSlGlCnWv@p@~ClKr@lJ`DnHuEjBxAjDhNfCuVpCmGyEuGj@_V{C{Ii@aRaEgDb@_FwAaDo@qK_FyAmBmN}QsRlX{^vPi^fg@_u@nSil@zL}v@dd@co@|^ot@rAa@pe@tPvFiN`Pz]tHxHzUsBxH`DxE|GjMqAdJl@lFhIrFd@zJ}BjCgOtFgDwA_JrJqKqKaPb@uCxJ~A~NhVnGw@tA_D`CdH|ItG~GFhG~BbRcBfHeEg@qFdDiKsAuEeHqDUgFlBsAx@JB~EdJxFtA`Gy@lLnAdChUv@rQ{FnJfApFu@fGkENuKtEuEhLrBnC_ApBnCSvC}EdE{IFJvCvKl@aCtGcDHwBfFcBl@{@rEcC{@kEr@iBmAqF|EqEZ_J~EcRe@XhUoAtB{[qMmGs@eX`Im@b@|BfDyDpA{I~@iHu@lFvT@nJ`CnSpCdC\\~Ck@pTaDjIrBvENfKsDf`@U`PyKtUp@fHlDyFrA`WjAgDSnFhCgFdDe@fB{DEdEtCcByAhF_Bb@xEQcEbEvFnG?`ByC`Gi@`IaExKyC~GmHtGqCfMaFZkArByG|@}DnCkBQ{@vHsF\\OjE{DlCOfC_Bj@kC_BgD|EeDPy[jj@sK`BcC|BcCnM\\xHvObUIhPwJnJoM|BkKhImDdLqJtI_FfRkLtGgCpDu@lIjDdYeCp[sEpMmHnEkP|@uG`DoTbd@cCtUaDjGkFpAyOaBaJlCa]x[iYrPgVjYyOfFoM|SaA_BdEkDtGeXkAsBqGa@qG_QcFZfAuGyBkIhDiBpB`B`CQfExFpCeFjDN^kBcHuEeGkIuA_KaDqFUqMzBiF[mCcCPuF|SsAPm@sBvD_Fc@gFjAgH`F_MjE@nCmCvAgQnH}IbI_FfZae@hGmZhBsStCqHoEkc@{OmDwAkClBcLmCuGAuG_CsEnA{HeAsIlCyRpCmGyEuG`@}WqC}Gi@aRaEgDb@_FwAaDo@qK_FyAmBmNuSgVmoDnBeg@i@fAt`@c@dLeRvHktBZVdlBjGvA`HtW_CdJ_GV~EdC{AbPuw@Iin@rBea@}EyMnDe_F`bHksA~bA}~@|j@ic@jdAgDrPwEpn@gZbe@{TaTuXYasAsdAhM}U`MlJ",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-95-montebello-gist"
+  },
+  {
     "_id": "strava-1157973-3530303449106817470",
     "source_type": "strava",
     "source_group_id": {
@@ -2345,30 +2369,6 @@ window.LOCAL_EVENTS_DATA = [
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3530303449106817470"
   },
   {
-    "_id": "webpage-2026-09-05-a85f4914",
-    "source_type": "webpage",
-    "source_group_id": {
-      "$numberLong": "0"
-    },
-    "source_group_name": "altovelo-a-ride",
-    "event_time_utc": {
-      "$date": "2026-09-05T16:00:00.000Z"
-    },
-    "meet_up_location": "Summit Bicycles, Palo Alto",
-    "gps_coordinates": "37.42797, -122.14508",
-    "distance_meters": 126334.0,
-    "elevation_gain_meters": 2380.0,
-    "organizer": "Richard Red",
-    "title": "Saturday A Ride 9/5 - Montebello, Gist",
-    "description": "Saturday A Ride 9/5 - Montebello, Gist\nSep 3\nWritten By\nAlto Velo\nHello team, I’m tired of going to Pescadero every week so we are going south for a somewhat unusual segment, Gist! First Montebello, then around Lexington Reservoir to Black Rd, then Gist to Skyline to 9 to a lengthy cafe stop in Saratoga.\nAfter making the route and writing this out, Gist doesn’t look like a real word anymore. It looks like if you mistyped Fist. Which is probably what it will feel like at that point in the ride with its 10.3% average gradient, either to your face or somewhere else on the body…\nRoute:\nhttps://www.strava.com/routes/3530679890378848268\n- 78mi / 7,800ft\nStart: Summit Bicycles, Palo Alto. Meet 9:00 AM, Roll 9:10 AM\nRide Etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader: Richard Red\nAlto Velo",
-    "route_url": "https://www.strava.com/routes/3530679890378848268",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/BE7T2YJF7G7CQ3YTIAM5LFOUKPWHNTQZQ35IWKJR2QDGEEPSBWVYYRPCWF7LSWTOGMEDGCAMQ3AXSHYBKICPTFZ4UZPC5PHC652BU2A=",
-    "route_polyline": "k|lcF~iohVoLaJiM|U`sArdAzWHtUpTd[yd@xCod@fDuU`e@ciAl~@}j@tsAwbAdzE{|GdFyEdIsBhl@fF~k@uCvp@?fSbEjQpM`BtL|GbGxQpFnHiBlGnM|NfJrEKvAvLk@bH~CxBaEnKjFkB}AtBwAvOzElBcBbNrIh@vHcL~HvCxCsIdIqAnEwCdCPsCzAwClVsGpJ~@pDoEpD_C_Aa@|BkE|Bm@rBsDp@y@xNaC|B|C~EaDvA_QzYJbWzMjJ}MoDqMvFv@qKgDFmDfHi@zKwDl@jGlEi@lCzAtBuC`GfBzDqAvGcOlQmE~QaDdC{BfA|GmElE_RbOmQpAwGgB{DtCaG{AuBh@mCkGmEvDm@h@{KlDgHfDGw@pKpMwF|MnD{MkJKcW~P{Y`DwA}C_F`C}Bx@yNrDq@l@sBjE}B`@}B~B~@nEqD_AqDrGqJvCmVpCoAcC]oEvCeIpAyCrI_IwCwHbLsIi@bBcN{EmBvAwO|AuBkFjBpJ}ZjI|@v[wHrEiFhKcEhDeGbAkJrEz@hA{BhFc@hA_K`Ge@vBgIbA|CnGc@VeCmCjB[_DrQkGf@cPuBiDtA{FkDmCxGsD`DcNdH{DjF~ExEwArFdAjGqDdOyQp@aSlGlCnWv@p@~ClKr@lJ`DnHuEjBxAjDhNfCuVpCmGyEuGj@_V{C{Ii@aRaEgDb@_FwAaDo@qK_FyAmBmN}QsRlX{^vPi^fg@_u@nSil@zL}v@dd@co@|^ot@rAa@pe@tPvFiN`Pz]tHxHzUsBxH`DxE|GjMqAdJl@lFhIrFd@zJ}BjCgOtFgDwA_JrJqKqKaPb@uCxJ~A~NhVnGw@tA_D`CdH|ItG~GFhG~BbRcBfHeEg@qFdDiKsAuEeHqDUgFlBsAx@JB~EdJxFtA`Gy@lLnAdChUv@rQ{FnJfApFu@fGkENuKtEuEhLrBnC_ApBnCSvC}EdE{IFJvCvKl@aCtGcDHwBfFcBl@{@rEcC{@kEr@iBmAqF|EqEZ_J~EcRe@XhUoAtB{[qMmGs@eX`Im@b@|BfDyDpA{I~@iHu@lFvT@nJ`CnSpCdC\\~Ck@pTaDjIrBvENfKsDf`@U`PyKtUp@fHlDyFrA`WjAgDSnFhCgFdDe@fB{DEdEtCcByAhF_Bb@xEQcEbEvFnG?`ByC`Gi@`IaExKyC~GmHtGqCfMaFZkArByG|@}DnCkBQ{@vHsF\\OjE{DlCOfC_Bj@kC_BgD|EeDPy[jj@sK`BcC|BcCnM\\xHvObUIhPwJnJoM|BkKhImDdLqJtI_FfRkLtGgCpDu@lIjDdYeCp[sEpMmHnEkP|@uG`DoTbd@cCtUaDjGkFpAyOaBaJlCa]x[iYrPgVjYyOfFoM|SaA_BdEkDtGeXkAsBqGa@qG_QcFZfAuGyBkIhDiBpB`B`CQfExFpCeFjDN^kBcHuEeGkIuA_KaDqFUqMzBiF[mCcCPuF|SsAPm@sBvD_Fc@gFjAgH`F_MjE@nCmCvAgQnH}IbI_FfZae@hGmZhBsStCqHoEkc@{OmDwAkClBcLmCuGAuG_CsEnA{HeAsIlCyRpCmGyEuG`@}WqC}Gi@aRaEgDb@_FwAaDo@qK_FyAmBmNuSgVmoDnBeg@i@fAt`@c@dLeRvHktBZVdlBjGvA`HtW_CdJ_GV~EdC{AbPuw@Iin@rBea@}EyMnDe_F`bHksA~bA}~@|j@ic@jdAgDrPwEpn@gZbe@{TaTuXYasAsdAhM}U`MlJ",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-95-montebello-gist"
-  },
-  {
     "_id": "strava-908336-3529248349551267170",
     "source_type": "strava",
     "source_group_id": {
@@ -2379,7 +2379,7 @@ window.LOCAL_EVENTS_DATA = [
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2026-09-06T14:45:00.000Z"
+      "$date": "2026-09-13T14:45:00.000Z"
     },
     "meet_up_location": "130 North Lemon Street, Orange, CA, USA",
     "gps_coordinates": "33.78891, -117.85549",
@@ -2389,7 +2389,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/908336/group_events/3529248349551267170",
     "title": "🧂💭",
     "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Old Towne West Public Parking Structure\n130 N Lemon St, Orange, CA 92866\n\n☕️ SALT&FOAM COFFEE\n2233 W Balboa Blvd #105, Newport Beach, CA 92663",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/NVXTD7JJKB4FBE2K4Y4IY64P3VCJ7LJKJL3D7KCTRW7JSYA4ATIY74ZRX5UC77SUOEFWJVALYYOH2YXGCQSERMK6P4JCV3ZJPXITBFA=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/PZTH6FKJYBM2MKDVLYSTFKEJCLJX3JAYVOJPIOOVWQNSLZTKUSIDZG5V4NKYPEWVN3LBRFQJ6337R573TDMM3H725INNQIACAJ4VYKA=",
     "route_polyline": "gefmE|qinU?kGvAqC`pARll@uIGf[ngAX?vJ~J?`Rhn@D`R}DfNLv`@|eJdBI_v@zMaB`NaRrsAbsAdI~BxPq@nHfBpgA`fAjMkShWdVxHjBxHfFnIa@zH|GjKFvChBrsCnrCcIhMoKhFl@rGzKfHkDpNKjToARy@qCt@}@rNdDrSrArF|K~ZgVwJ`Gmz@lt@qGvAaK|YoCdZg_@nu@qJqD{eDwp@maA{MoeAeSwZ{Kk|@ef@bDiKaE{BDulC_C_[iuB\\yiA}WFg}AawFg@C{~Agd@YTkSqBqVgIuNqdAk@@gZkQ@",
     "is_active": true,
     "event_picture_urls": [],
@@ -2416,7 +2416,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006",
     "title": "FWC Cañada & New Kit Photoshoot!",
     "description": "Social ride + new FWC kit photoshoot with professional photographers 📸\nDetails TBD.",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/Q45CVFT66N66YZNCBLVWC7VBRNOKNB4GK34HOHYZKX5AAWNI5CFWZBRIVKOLU5LAYILB3GY4EHKSHYX7N4LEHZCILRJTOF6NVRYKTFY=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/6LNIU2DOAJGNEHZBK3UN2EHQUYS4TDSJE5HNKDF4KALB6A3W44MFYUKC537QEOLRWJ5YAQG4B5AUZDRTTZG6JZMH6CEMESLTVL5THSA=",
     "route_polyline": "we|cFvfuiVxGoMhLwCvDaDnByFf@{RlEwJ`FwClNcBxFmCr\\od@rbDepCzNyVfB{RbBkE|SiMj{@{zA`EoKvJcGl`AwgAjUgS`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEfLpKbDX~\\wf@v]aWvKuLbFo_@jFeJjIyKlYaRh@_FmAmW|HiQhBoS|I{N}_@oq@gCeMwR{KwQcQ}p@iMu\\zI}l@xAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEmFyAiClAeA`BbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLfMh^~H~IpJ~F?tBebAdZuC~CkIdVqCnC{Eb@sIcBXhMuAfIkUfSm`AvgAwJbGaEnKk{@zzA}ShMcBjEgBzR{NxVsbDdpCs\\nd@yFlCmNbBaFvCmEvJg@zRoBxFqUtL",
     "is_active": true,
     "event_picture_urls": [],
@@ -2443,7 +2443,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "title": "往西，越过天际(Skyline)吧骚年",
     "description": "路线:\nRedwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山\n\n适合夏天的避暑路线 credit @Steve\n有两个大爬坡，分别是大家熟悉的 Old La Honda，和很多人熟悉的从Bike Hut开始的Tunitas Creek Rd\n\n预计总时间6 hours\n\n本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 [旧金山湾区骑行路线 第一章 练](https://rangerway.com/way/cycling-routes-at-bay-area) 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。\n这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SXKP6WWKTW66YO4UJMPG5AT5ZSRSEIWBHART3CDQVWNG7CZ7RQNHU4SJHIWFVKNPQSOD56HFV65VISDUVJWUD7PIAKD47JJQ37NQHTI=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/LGSSQ42MZF45BBVRNVPOQLKN65SOLVG73PGZ2P4CTOHNRM7MBIWOKMGWR2KKYI65W37PDYCTBCDIEYEL27HY2CYEHO76ZW5IFOVCOSY=",
     "route_polyline": "ogmcFtbdiV}BL@lIqApG`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfA~BzHxOuKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCFyHtKhMrEyFlAjG{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiDnE}E|HzIbGPdFvQtI{FlKjI`j@OjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvEsErApBoGzKtMeHbHcIlE`@TrFoHvAcMrRPtEiO`KyAdQ`FdC~Z`Br@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDfZrFxIhGbD`Tm@~DoJvNKrE`FvIrFzDLdJrItMl@v^fSlEpJzKjJqA|MfCjKzLPvBqA`BgQk@yHtG_JnA}@zBlG~LVfV~@`DdCj@xSeEnGfIrBfG@hKlCdHDpOkDl_@`EdQ`OhDz@pOjGfF~Qn]aAjGjDlSpFtGnKpDv@jIWjh@iQ~LcKt@oBfFjBvZvN~m@`BlVsb@hA{X|Gam@hFmU}@s_@uSqSef@}MnDwNaG_EzK}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IgIbGoAaBsDbAqCsEKaD_CoAcBuEsEgAkN~EqIgKyDI{QxDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GsDeAmHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRnD{IuDs@gBkIiGnAlGyOsK{DjKiKf@eF|EmBTkEsFu@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_KbHcCoE_CuSzDeHgFuArB}AW_@{CxCiKhCl@]}G|G_DsN|@aEaFyCYyPjG~@gFxGkIlNaBrD`DvBsDtKgD_JuDuHeOr@uJvAyE`BY[{FpMuJkCqV?kN`\\_q@}TqgAnAmUdCO",
     "is_active": true,
     "event_picture_urls": [],
