@@ -2281,7 +2281,7 @@ window.LOCAL_EVENTS_DATA = [
     "title": "Saturday A Ride 9/5 - Montebello, Gist",
     "description": "Saturday A Ride 9/5 - Montebello, Gist\nSep 3\nWritten By\nAlto Velo\nHello team, I’m tired of going to Pescadero every week so we are going south for a somewhat unusual segment, Gist! First Montebello, then around Lexington Reservoir to Black Rd, then Gist to Skyline to 9 to a lengthy cafe stop in Saratoga.\nAfter making the route and writing this out, Gist doesn’t look like a real word anymore. It looks like if you mistyped Fist. Which is probably what it will feel like at that point in the ride with its 10.3% average gradient, either to your face or somewhere else on the body…\nRoute:\nhttps://www.strava.com/routes/3530679890378848268\n- 78mi / 7,800ft\nStart: Summit Bicycles, Palo Alto. Meet 9:00 AM, Roll 9:10 AM\nRide Etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader: Richard Red\nAlto Velo",
     "route_url": "https://www.strava.com/routes/3530679890378848268",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/72MKBNHLSUT6EWZF5SPV5CLPDZK6RXL5KB5MN74WRJFQMC2RBLX6TSM5BADOBB47UNRQ6ZQKRU2QF6SXRK7PIUUJ2JNGQEPODH74BOI=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VS53T4JHWCMOHGYCVXOXP35P7VTZZ4U2KLMNVUCWQV7X6WDSE4TP7AOXA3PFG25BCH5ZNUVNGUUFGGD6Z2Z7OB3LQ7DCX27VMQCSFQQ=",
     "route_polyline": "k|lcF~iohVoLaJiM|U`sArdAzWHtUpTd[yd@xCod@fDuU`e@ciAl~@}j@tsAwbAdzE{|GdFyEdIsBhl@fF~k@uCvp@?fSbEjQpM`BtL|GbGxQpFnHiBlGnM|NfJrEKvAvLk@bH~CxBaEnKjFkB}AtBwAvOzElBcBbNrIh@vHcL~HvCxCsIdIqAnEwCdCPsCzAwClVsGpJ~@pDoEpD_C_Aa@|BkE|Bm@rBsDp@y@xNaC|B|C~EaDvA_QzYJbWzMjJ}MoDqMvFv@qKgDFmDfHi@zKwDl@jGlEi@lCzAtBuC`GfBzDqAvGcOlQmE~QaDdC{BfA|GmElE_RbOmQpAwGgB{DtCaG{AuBh@mCkGmEvDm@h@{KlDgHfDGw@pKpMwF|MnD{MkJKcW~P{Y`DwA}C_F`C}Bx@yNrDq@l@sBjE}B`@}B~B~@nEqD_AqDrGqJvCmVpCoAcC]oEvCeIpAyCrI_IwCwHbLsIi@bBcN{EmBvAwO|AuBkFjBpJ}ZjI|@v[wHrEiFhKcEhDeGbAkJrEz@hA{BhFc@hA_K`Ge@vBgIbA|CnGc@VeCmCjB[_DrQkGf@cPuBiDtA{FkDmCxGsD`DcNdH{DjF~ExEwArFdAjGqDdOyQp@aSlGlCnWv@p@~ClKr@lJ`DnHuEjBxAjDhNfCuVpCmGyEuGj@_V{C{Ii@aRaEgDb@_FwAaDo@qK_FyAmBmN}QsRlX{^vPi^fg@_u@nSil@zL}v@dd@co@|^ot@rAa@pe@tPvFiN`Pz]tHxHzUsBxH`DxE|GjMqAdJl@lFhIrFd@zJ}BjCgOtFgDwA_JrJqKqKaPb@uCxJ~A~NhVnGw@tA_D`CdH|ItG~GFhG~BbRcBfHeEg@qFdDiKsAuEeHqDUgFlBsAx@JB~EdJxFtA`Gy@lLnAdChUv@rQ{FnJfApFu@fGkENuKtEuEhLrBnC_ApBnCSvC}EdE{IFJvCvKl@aCtGcDHwBfFcBl@{@rEcC{@kEr@iBmAqF|EqEZ_J~EcRe@XhUoAtB{[qMmGs@eX`Im@b@|BfDyDpA{I~@iHu@lFvT@nJ`CnSpCdC\\~Ck@pTaDjIrBvENfKsDf`@U`PyKtUp@fHlDyFrA`WjAgDSnFhCgFdDe@fB{DEdEtCcByAhF_Bb@xEQcEbEvFnG?`ByC`Gi@`IaExKyC~GmHtGqCfMaFZkArByG|@}DnCkBQ{@vHsF\\OjE{DlCOfC_Bj@kC_BgD|EeDPy[jj@sK`BcC|BcCnM\\xHvObUIhPwJnJoM|BkKhImDdLqJtI_FfRkLtGgCpDu@lIjDdYeCp[sEpMmHnEkP|@uG`DoTbd@cCtUaDjGkFpAyOaBaJlCa]x[iYrPgVjYyOfFoM|SaA_BdEkDtGeXkAsBqGa@qG_QcFZfAuGyBkIhDiBpB`B`CQfExFpCeFjDN^kBcHuEeGkIuA_KaDqFUqMzBiF[mCcCPuF|SsAPm@sBvD_Fc@gFjAgH`F_MjE@nCmCvAgQnH}IbI_FfZae@hGmZhBsStCqHoEkc@{OmDwAkClBcLmCuGAuG_CsEnA{HeAsIlCyRpCmGyEuG`@}WqC}Gi@aRaEgDb@_FwAaDo@qK_FyAmBmNuSgVmoDnBeg@i@fAt`@c@dLeRvHktBZVdlBjGvA`HtW_CdJ_GV~EdC{AbPuw@Iin@rBea@}EyMnDe_F`bHksA~bA}~@|j@ic@jdAgDrPwEpn@gZbe@{TaTuXYasAsdAhM}U`MlJ",
     "is_active": true,
     "event_picture_urls": [],
@@ -2342,6 +2342,30 @@ window.LOCAL_EVENTS_DATA = [
     "source_url": "https://www.strava.com/clubs/265/group_events/3532984079147389992"
   },
   {
+    "_id": "webpage-2026-09-12-3b7e2f0c",
+    "source_type": "webpage",
+    "source_group_id": {
+      "$numberLong": "0"
+    },
+    "source_group_name": "altovelo-a-ride",
+    "event_time_utc": {
+      "$date": "2026-09-12T16:00:00.000Z"
+    },
+    "meet_up_location": "Summit Bicycles, Palo Alto",
+    "gps_coordinates": "37.42797, -122.14508",
+    "distance_meters": 108018.0,
+    "elevation_gain_meters": 2053.0,
+    "organizer": "Drew Mathews",
+    "title": "Saturday A Ride 9/12/26 Pumpkin Spice Shake Shack",
+    "description": "Saturday A Ride 9/12/26 Pumpkin Spice Shake Shack\nSep 9\nWritten By\nAlto Velo\nCome ride some beautiful roads in the Peninsula Saturday morning. Sometimes, looping in that shortish, not necessarily convenient for a big ride, but beautiful road or segment I haven’t done in a bit is all the motivation I need for a longer ride. I want to call it adding some spice, but this ride is far from ~spicey~, so let’s call it pumpkin spice. Plus it’s unofficially fall so maybe it fits. I saw a pumpkin carving kit in Safeway on Labor Day weekend which was shocking, so now that my bubble is burst, let’s ring in the fall with some pumpkin spice. Didn’t shake shack have a pumpkin spice shake at one point? Wouldn’t that be the perfect end to this ride.\nWe’ll head up Kings after weaving through Woodside, and then descend Tunitas to hit little Lobitos Creek loop before a water stop at the Bike Hut. We’ll take 1 and Stage to head up 84 and do WOLH. We’ll get water at Sky Londa, descend 84 to Portola Valley. If you are feeling it, join for an upper Alpine to Joaquin down through Los Trancos, or head straight to Shake Shack where we’ll all meet to end our ride with some grub.\nTime:\n9:00AM at\nSummit Bicycles Palo Alto\n. Roll 9:10AM.\nDate:\n9/12/26\nRide Leader:\nDrew Mathews\nRoute:\nA Ride 9/12/26\n67 miles 6700 feet …… six seven\nRide etiquette:\nhttps://www.altovelo.org/ride-rules\nAlto Velo",
+    "route_url": "https://www.strava.com/routes/3532826280522740508",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/XW7Z6RY4YHXYDSJTM44CSFZMSD5AEYT4XLDSSD57ORTFNEAYA5ORZGDTBEQZ5IBNG5TV5JZ2NR2PIW6UAW5HRWANYGP7BQLQFIP3DOI=",
+    "route_polyline": "e{lcF|johV{EsDr@t@}ApDhSxOyHnQvs@rj@tXXzT`T_LnR{EtYwDvIiR|YoQtNeIda@{@jSaKfXw@dKaDRuBjCbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLbQtc@`U`OpFnG_QfHsKb@_KzPwOEeCnYmAzBmDf@mJvMeOgAaR~ArH`b@SaAR~@kHfCgB`IoItGj@rP|BjN~CpChENrBjE{LpV?jNxAnLmd@x]lC|C_B`BfBb@nAtDcBc@u@|EgEbG}GvCcBtEwHpHvCvAtMgDjIb@iCj@oEzFsAdHjPuGxCX`E`F~Nw@iHxC\\|GyBgAiDbL|@rDtCsBzFfFjT{D|ErB}GnCkF~JdEtGg@zDjCYfBxHfGtGbAh^tBdOpCvEs@bLyBhFfGzKpNmCzFz@[~EsE`Ao@rGsCt@mGhIbLbDqGtQ`GgC~ArIlEl@kAjGsBxAr@`Bq@rMcE|PgDrEh@rMwA`GfEpFsFbEkBnJz@dHzHnEx@_KxGw@n@tGnCb@d@hBqDdJ`E~@NvCnEuEbHGkAdMlKuL`AjBdDc@lAtB`HkDpS?hMxM|@fHrCdErAjN~KfMxGdCrSfVpDtIWvA{IeAoNrGmDdCDpD~B?~FtJvS|MhTb_@vJRdBjEoAtGtDdELhDuBrDm@xKs@v@oAoA_BrGmDgDMpInBjUiAbBgCm@m@dAgGeAkB{Be@vAhFhKtGm@fDlBhFhGzHxCbA~ElFnAmFoAi@}Dh@|DlPfDbK|FjDdDn@nEbD}FfCRZwHpGuUqA_TdIsNrSgw@h@gHu@qMyBmEwI?w@{AfEuArIj@jD~E`B|I|O|RdL~HvHjNbShRfDfHjZpR~DjKbBvR`LcCdRbIpMDt]_KbPsKxQt@~Q_DkA_KsAqA\\mAvLSzJoHjDr@{@`D~CQhJ{GjHuKnOiDcDaIoQcNaEoVhM{j@aAk`@vKcJlB{Fh@gb@uAsRzGwQEsU`A{HlE_I~KoHjBaNvRsYX_TjKaI`FeLtFuEnEqQnAOe@uCrF}^wBuZuHgf@wMmVy@}UgGqKqByVtCsDpPu@bAmEyCwHXgCpPeH?sDwEkJAoQdFuIhHaBY}IpCqFY{DsMkN}G|ByFqHkEpAqOwBuQ`AmKkIuIzFeFwQcGQ}H{ImBh@aBrDkLhDgG_MkExA{EcCmW~HiL~GaOr@aCsB{BaIk@iFz@iIgBiDgOj@_JcLaMk@aE`@aK`KsDm@}A_DEkE{Dm@mCcElCsF^uGoHiBu@aDyBfAqBcBvJ_[e@mF{@w@_EdGqDkFwBYuAgE_@fJgBbBtBhBAlIkEvAeEkBm@rDoHj@sE}GoEd@uDeJgCiAOeCgHkDz@xJmBnOaP`MeDvGQhJsCxA{FkBw_@pA}FsB{Ct@yDfG|EmMWgAyC?oCpF{Ec@gBfFcEfAmEyM_FgAeEvEaC}GvBmGFkIoDyFyJpDwIu@aDxHiAPo@eCrEwHCqMwA`@eC|IkE}@cKjE`FxOjHnEvAxDcO}E{TyVqCs@}MjC|Q_KTwd@l@yElIeQbH~@jOsEfLpKfEFz[ef@v]aWvKuLlFa`@lPmVhXcPdAgJjZoM`JiIvGG~CkDpIa@bCz@aAbB`AjD{@tJ|BfHjHrGhJwAhGkDbBoFlUgR`DoEhDoOv^o_@|]sBfCoHfBc@?oCuEJoBpBaBmEsDoApD_KdBNbJqKvFmQxCsCwBeKeBHKlCsEhFm@oCuBu@{G`GcMjB_MYqIvHuUbG}R`MwOdFoJi@eLsDuHkGkFoA}FzBaP|@oDrBoQoGiIn@yFiRuPiIiOwOks@uNu^dJ}j@nAgZhKc`@wEeC{DuAyKuCuBiOxFsMcAeSjEyGoAwCbCgTmQu`AqxAmDmCtBcIkE_ByN}PA_D",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-91226-pumpkin-spice-shake-shack"
+  },
+  {
     "_id": "strava-1157973-3532468967224789086",
     "source_type": "strava",
     "source_group_id": {
@@ -2367,30 +2391,6 @@ window.LOCAL_EVENTS_DATA = [
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3532468967224789086"
-  },
-  {
-    "_id": "webpage-2026-09-12-3b7e2f0c",
-    "source_type": "webpage",
-    "source_group_id": {
-      "$numberLong": "0"
-    },
-    "source_group_name": "altovelo-a-ride",
-    "event_time_utc": {
-      "$date": "2026-09-12T16:00:00.000Z"
-    },
-    "meet_up_location": "Summit Bicycles, Palo Alto",
-    "gps_coordinates": "37.42797, -122.14508",
-    "distance_meters": 108018.0,
-    "elevation_gain_meters": 2053.0,
-    "organizer": "Drew Mathews",
-    "title": "Saturday A Ride 9/12/26 Pumpkin Spice Shake Shack",
-    "description": "Saturday A Ride 9/12/26 Pumpkin Spice Shake Shack\nSep 9\nWritten By\nAlto Velo\nCome ride some beautiful roads in the Peninsula Saturday morning. Sometimes, looping in that shortish, not necessarily convenient for a big ride, but beautiful road or segment I haven’t done in a bit is all the motivation I need for a longer ride. I want to call it adding some spice, but this ride is far from ~spicey~, so let’s call it pumpkin spice. Plus it’s unofficially fall so maybe it fits. I saw a pumpkin carving kit in Safeway on Labor Day weekend which was shocking, so now that my bubble is burst, let’s ring in the fall with some pumpkin spice. Didn’t shake shack have a pumpkin spice shake at one point? Wouldn’t that be the perfect end to this ride.\nWe’ll head up Kings after weaving through Woodside, and then descend Tunitas to hit little Lobitos Creek loop before a water stop at the Bike Hut. We’ll take 1 and Stage to head up 84 and do WOLH. We’ll get water at Sky Londa, descend 84 to Portola Valley. If you are feeling it, join for an upper Alpine to Joaquin down through Los Trancos, or head straight to Shake Shack where we’ll all meet to end our ride with some grub.\nTime:\n9:00AM at\nSummit Bicycles Palo Alto\n. Roll 9:10AM.\nDate:\n9/12/26\nRide Leader:\nDrew Mathews\nRoute:\nA Ride 9/12/26\n67 miles 6700 feet …… six seven\nRide etiquette:\nhttps://www.altovelo.org/ride-rules\nAlto Velo",
-    "route_url": "https://www.strava.com/routes/3532826280522740508",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/GCFOY3WWOT6OGAPVD7EOIYXUMB363444YDYMCXAY4KRYFNK47B4BTIHBE4RSRO56JMWVU2ED2ACKVICR5CAYI4UCIZV5TTNCSNR34YA=",
-    "route_polyline": "e{lcF|johV{EsDr@t@}ApDhSxOyHnQvs@rj@tXXzT`T_LnR{EtYwDvIiR|YoQtNeIda@{@jSaKfXw@dKaDRuBjCbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLbQtc@`U`OpFnG_QfHsKb@_KzPwOEeCnYmAzBmDf@mJvMeOgAaR~ArH`b@SaAR~@kHfCgB`IoItGj@rP|BjN~CpChENrBjE{LpV?jNxAnLmd@x]lC|C_B`BfBb@nAtDcBc@u@|EgEbG}GvCcBtEwHpHvCvAtMgDjIb@iCj@oEzFsAdHjPuGxCX`E`F~Nw@iHxC\\|GyBgAiDbL|@rDtCsBzFfFjT{D|ErB}GnCkF~JdEtGg@zDjCYfBxHfGtGbAh^tBdOpCvEs@bLyBhFfGzKpNmCzFz@[~EsE`Ao@rGsCt@mGhIbLbDqGtQ`GgC~ArIlEl@kAjGsBxAr@`Bq@rMcE|PgDrEh@rMwA`GfEpFsFbEkBnJz@dHzHnEx@_KxGw@n@tGnCb@d@hBqDdJ`E~@NvCnEuEbHGkAdMlKuL`AjBdDc@lAtB`HkDpS?hMxM|@fHrCdErAjN~KfMxGdCrSfVpDtIWvA{IeAoNrGmDdCDpD~B?~FtJvS|MhTb_@vJRdBjEoAtGtDdELhDuBrDm@xKs@v@oAoA_BrGmDgDMpInBjUiAbBgCm@m@dAgGeAkB{Be@vAhFhKtGm@fDlBhFhGzHxCbA~ElFnAmFoAi@}Dh@|DlPfDbK|FjDdDn@nEbD}FfCRZwHpGuUqA_TdIsNrSgw@h@gHu@qMyBmEwI?w@{AfEuArIj@jD~E`B|I|O|RdL~HvHjNbShRfDfHjZpR~DjKbBvR`LcCdRbIpMDt]_KbPsKxQt@~Q_DkA_KsAqA\\mAvLSzJoHjDr@{@`D~CQhJ{GjHuKnOiDcDaIoQcNaEoVhM{j@aAk`@vKcJlB{Fh@gb@uAsRzGwQEsU`A{HlE_I~KoHjBaNvRsYX_TjKaI`FeLtFuEnEqQnAOe@uCrF}^wBuZuHgf@wMmVy@}UgGqKqByVtCsDpPu@bAmEyCwHXgCpPeH?sDwEkJAoQdFuIhHaBY}IpCqFY{DsMkN}G|ByFqHkEpAqOwBuQ`AmKkIuIzFeFwQcGQ}H{ImBh@aBrDkLhDgG_MkExA{EcCmW~HiL~GaOr@aCsB{BaIk@iFz@iIgBiDgOj@_JcLaMk@aE`@aK`KsDm@}A_DEkE{Dm@mCcElCsF^uGoHiBu@aDyBfAqBcBvJ_[e@mF{@w@_EdGqDkFwBYuAgE_@fJgBbBtBhBAlIkEvAeEkBm@rDoHj@sE}GoEd@uDeJgCiAOeCgHkDz@xJmBnOaP`MeDvGQhJsCxA{FkBw_@pA}FsB{Ct@yDfG|EmMWgAyC?oCpF{Ec@gBfFcEfAmEyM_FgAeEvEaC}GvBmGFkIoDyFyJpDwIu@aDxHiAPo@eCrEwHCqMwA`@eC|IkE}@cKjE`FxOjHnEvAxDcO}E{TyVqCs@}MjC|Q_KTwd@l@yElIeQbH~@jOsEfLpKfEFz[ef@v]aWvKuLlFa`@lPmVhXcPdAgJjZoM`JiIvGG~CkDpIa@bCz@aAbB`AjD{@tJ|BfHjHrGhJwAhGkDbBoFlUgR`DoEhDoOv^o_@|]sBfCoHfBc@?oCuEJoBpBaBmEsDoApD_KdBNbJqKvFmQxCsCwBeKeBHKlCsEhFm@oCuBu@{G`GcMjB_MYqIvHuUbG}R`MwOdFoJi@eLsDuHkGkFoA}FzBaP|@oDrBoQoGiIn@yFiRuPiIiOwOks@uNu^dJ}j@nAgZhKc`@wEeC{DuAyKuCuBiOxFsMcAeSjEyGoAwCbCgTmQu`AqxAmDmCtBcIkE_ByN}PA_D",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.altovelo.org/a-ride/saturday-a-ride-91226-pumpkin-spice-shake-shack"
   },
   {
     "_id": "strava-908336-3529248349551267170",
@@ -2464,11 +2464,38 @@ window.LOCAL_EVENTS_DATA = [
     "title": "Sunday A Ride - 9/13/26: Recruitment Ride",
     "description": "Sunday A Ride - 9/13/26: Recruitment Ride\nSep 9\nWritten By\nAlto Velo\nAre you interested in racing with the Alto Velo Racing Team in 2027, or just looking for a ride that isn’t Spectrum? If so, join us\nthisSunday 9/13 at 9:00 AM at Summit Bicycles for our 2027 Recruitment Ride!\nThis is your best opportunity to get to know the team and show off your strengths on the road. We should have something for everyone from fast climbing to fatigued end of day sprints, so be sure to pack a generous amount of nutrition and sunscreen.\nFor this ride, we will head out from Summit Bicycles East via Sand Hill, go up Old La Honda, and come down 84 to the Woodside Store on Tripp for a regroup/water stop. We will then do an out and back on Cañada before heading back on Portola for a spirited firehouse sprint as we head back to Cal Ave.\nRoute:\nhttps://www.strava.com/routes/3532907636271129712\nStart:\nSummit Bicycles, Palo Alto\nTime:\nMeet 9:00 AM, Leave 9:10 AM\nRide etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader:\nGeorge Wehner / Clark Penado\nSummary:\n53.3 miles / 3,928 feet\nAlto Velo",
     "route_url": "https://www.strava.com/routes/3532907636271129712",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/N7SMTOLQNJD4FRUAUSJNL2GW3ZC2D356UGX3JFLE7GLF3XRPYDAZZM7N657MUWLNXS733JWBPTKAKWMPMUNK5E6QU7355PXGDNCQV3A=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/KMEAK32AOG7FFP6FEL64JJLZAUSKIKBECENCXTKSKU75HEVMMMPTAR2YU3KZZJJFBRSHGG2I3QVZVCMNUUILNV6SR7COEDBYI5VVDFI=",
     "route_polyline": "g{lcFzjohVsM}JiM|U`sArdAzWHdUhUoKvQ{EtYwDvIiR|YoQtNeIda@U~OwLf]k@dJv@VgDq@cDdDbPlYjErPhHt{@z@ph@|K`k@u@`s@jNrc@~H~I|NlIpXr]tCPtOmElTpDjOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfAzBxH|OsKnC}J|Kw@lHhKrD|@xHYzDgF^hKqAnM_CnE}HvC_CxCeDvGe@dK_C|@{FkBw_@pA_JcB_HnJDjNpAjBvDm@lGqKjDIzB{B`JrBp_@hBhI}ExF?l@kG`Am@xIbGzI}BZiFpBmChCl@bF`GtG{BfE}LzA?tBfDxBqAp@kLzJmZeB_F_EdGqDkFwBYkBmEIlJgBbBtBhBQ|I{DfAeEkBm@rDoHj@sE}GoEd@uDeJgCiAOeCwFeEeAbZ_CnE}HvC_CxCeDvGFxGqAlCwIoAw_@pA}FsB{Ct@yDfGrEaLMsBaEFgBhF{Ec@wAtEsDxAkDwEaAaGuF_AgDxEiCgHvBmGFkIoDyFyJpDwIu@aDxHiAPo@eCzEeJ\\}ImAeAyD~JkE}@cKjE`FxOjHnEvAxDcO}E{TyVqCs@}MjCss@fr@}N`Rgn@hg@_WnMeD[MsPzLqVsBkEiEO_DqCsCaWeHrHaEiCmEhQgFrFoS{a@qXt\\wJbGaEnKk{@zzA}ShMcBjEgBzR{NxVsbDdpCs\\nd@yFlCmNbBaFvCmEvJg@zRoBxFwD`DgJhBgEfEfEgEfJiBvDaDnByFf@{RlEwJ`FwClNcBxFmCr\\od@rbDepCzNyVfB{RbBkE|SiMj{@{zA`EoKvJcGbiAepAtLyJ`R_BrN|@zH~J|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEfLpKfEFz[ef@v]aWvKuLbFo_@xKuQj^kWh@_FmAmW|HiQhBoS|I{N}_@oq@gCeMwR{KiOwOks@uNu^dJ}j@nAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEeDiAv@eKfLs[T_PtGc^`CgF|NoJzSc\\~DkLbEoV|J{P{TaTuXYasAsdAhM}UvB~A",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.altovelo.org/a-ride/sunday-a-ride-91326-recruitment-ride"
+  },
+  {
+    "_id": "strava-908336-3534341552076467054",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "908336"
+    },
+    "source_event_id": {
+      "$numberLong": "3534341552076467054"
+    },
+    "source_group_name": "Ruekn Bici Gruppo (Southern California)",
+    "event_time_utc": {
+      "$date": "2026-09-20T14:45:00.000Z"
+    },
+    "meet_up_location": "2626 East Katella Avenue, Anaheim, CA, USA",
+    "gps_coordinates": "33.80379, -117.87748",
+    "distance_meters": 54255,
+    "elevation_gain_meters": 268,
+    "organizer": "Stan 🦊",
+    "strava_url": "https://www.strava.com/clubs/908336/group_events/3534341552076467054",
+    "title": "👻👻",
+    "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Artic\n2626 E Katella Ave, Anaheim, CA 92806\n\n☕️ soulciety coffee\n518 E Imperial Hwy, Brea, CA 92821",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UDOOTKBQ6N3FNQXNVXFKBNC4ADAIFMM6ON6CZ2DUGF2TQOPZWLSYQGSZSS5ECHVXYHUHUH3QU2MT63ERZYE5MB23QSW56WGDGY3IGJQ=",
+    "route_polyline": "otimEz}mnUaBCLr\\fBlGrIzM|AhKLrzFil@PvAvsKw}IlCg@s_Dwx@f@gX}KaNOyImCaa@hDeW_F_QxB~Cub@fK}OrBuJVa^mDae@}H}@ae@sUwH[eG|BkGcLcPiFmAgD{EiAmBoM`D_OgAqMwDkGxCgHaAcGnAyz@|HAlBsBYaNcQ{Rd@cGaCeAvJ__@sCmCv@gMm@oA_HKyQcIjAmEcDwA~B}IaGOOeFeUDqL_Bk@{Ey@mt@h@wK|Sgp@QqOxDY~EqFhJy[BekAlFH~BwJnb@hYvD~@~_CAp@_Dz\\vHz@wDxBhDzRpCVqPd^~GbF}^~G{I|DzWhuA_`@pOp`Al]aQf@hF{AdGrMnBr[xj@dSxFeBcB|CNvUjH`@vHtAdCxQHPdHnAnCpWNxSnJ~C}LjPvEfHkQl|@d[?xIkFkBvL`E",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/908336/group_events/3534341552076467054"
   },
   {
     "_id": "strava-1157973-3528256494678268006",
@@ -2491,7 +2518,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006",
     "title": "FWC Cañada & New Kit Photoshoot!",
     "description": "Social ride + new FWC kit photoshoot with professional photographers 📸\nDetails TBD.",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/7ZE7OZBAFF7GFMIMUXSYEV4POXHM77UAN27GIHNCQFY6VKYRPDAHOMOH42XBBTVWHCQJ3JSQCMODACYVJV7USTZJ3TEI6ZXHUNC7W7Y=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/2JSCM2RKTW2Q4KKNSBAYK7WEL4TBQKI5ZFXGZ6TXAIBETR62WHDEG4VYKFEJHW253QDTQ2MZGA4UTL6UMDTS4OHPZGD7BKQFDNGA27Y=",
     "route_polyline": "we|cFvfuiVxGoMhLwCvDaDnByFf@{RlEwJ`FwClNcBxFmCr\\od@rbDepCzNyVfB{RbBkE|SiMj{@{zA`EoKvJcGl`AwgAjUgS`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEfLpKbDX~\\wf@v]aWvKuLbFo_@jFeJjIyKlYaRh@_FmAmW|HiQhBoS|I{N}_@oq@gCeMwR{KwQcQ}p@iMu\\zI}l@xAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEmFyAiClAeA`BbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLfMh^~H~IpJ~F?tBebAdZuC~CkIdVqCnC{Eb@sIcBXhMuAfIkUfSm`AvgAwJbGaEnKk{@zzA}ShMcBjEgBzR{NxVsbDdpCs\\nd@yFlCmNbBaFvCmEvJg@zRoBxFqUtL",
     "is_active": true,
     "event_picture_urls": [],
@@ -2518,7 +2545,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "title": "往西，越过天际(Skyline)吧骚年",
     "description": "路线:\nRedwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山\n\n适合夏天的避暑路线 credit @Steve\n有两个大爬坡，分别是大家熟悉的 Old La Honda，和很多人熟悉的从Bike Hut开始的Tunitas Creek Rd\n\n预计总时间6 hours\n\n本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 [旧金山湾区骑行路线 第一章 练](https://rangerway.com/way/cycling-routes-at-bay-area) 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。\n这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ML5FFI542NVVWJZ56BYJEMQF5S5YG3R3LU7ZF5DIZ32M5JIFN4DZ35TYDNZHD6S76DZAMPGZMFYOJIEPQJJEGAWFYLS5KWCBUVK6SEA=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UKJVB27AAJ3RCNU2B3AO5W3G3FSPHQT5POIQTPGTHG3ZSHWJOP2HLZKEYV26HFJ3DO5NTIARVZZ6CXUOJTIIBXNPZ3IVULWH5VLCNCQ=",
     "route_polyline": "ogmcFtbdiV}BL@lIqApG`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfA~BzHxOuKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCFyHtKhMrEyFlAjG{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiDnE}E|HzIbGPdFvQtI{FlKjI`j@OjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvEsErApBoGzKtMeHbHcIlE`@TrFoHvAcMrRPtEiO`KyAdQ`FdC~Z`Br@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDfZrFxIhGbD`Tm@~DoJvNKrE`FvIrFzDLdJrItMl@v^fSlEpJzKjJqA|MfCjKzLPvBqA`BgQk@yHtG_JnA}@zBlG~LVfV~@`DdCj@xSeEnGfIrBfG@hKlCdHDpOkDl_@`EdQ`OhDz@pOjGfF~Qn]aAjGjDlSpFtGnKpDv@jIWjh@iQ~LcKt@oBfFjBvZvN~m@`BlVsb@hA{X|Gam@hFmU}@s_@uSqSef@}MnDwNaG_EzK}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IgIbGoAaBsDbAqCsEKaD_CoAcBuEsEgAkN~EqIgKyDI{QxDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GsDeAmHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRnD{IuDs@gBkIiGnAlGyOsK{DjKiKf@eF|EmBTkEsFu@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_KbHcCoE_CuSzDeHgFuArB}AW_@{CxCiKhCl@]}G|G_DsN|@aEaFyCYyPjG~@gFxGkIlNaBrD`DvBsDtKgD_JuDuHeOr@uJvAyE`BY[{FpMuJkCqV?kN`\\_q@}TqgAnAmUdCO",
     "is_active": true,
     "event_picture_urls": [],
