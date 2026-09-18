@@ -2281,7 +2281,7 @@ window.LOCAL_EVENTS_DATA = [
     "title": "Saturday A Ride 9/5 - Montebello, Gist",
     "description": "Saturday A Ride 9/5 - Montebello, Gist\nSep 3\nWritten By\nAlto Velo\nHello team, I’m tired of going to Pescadero every week so we are going south for a somewhat unusual segment, Gist! First Montebello, then around Lexington Reservoir to Black Rd, then Gist to Skyline to 9 to a lengthy cafe stop in Saratoga.\nAfter making the route and writing this out, Gist doesn’t look like a real word anymore. It looks like if you mistyped Fist. Which is probably what it will feel like at that point in the ride with its 10.3% average gradient, either to your face or somewhere else on the body…\nRoute:\nhttps://www.strava.com/routes/3530679890378848268\n- 78mi / 7,800ft\nStart: Summit Bicycles, Palo Alto. Meet 9:00 AM, Roll 9:10 AM\nRide Etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader: Richard Red\nAlto Velo",
     "route_url": "https://www.strava.com/routes/3530679890378848268",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VS53T4JHWCMOHGYCVXOXP35P7VTZZ4U2KLMNVUCWQV7X6WDSE4TP7AOXA3PFG25BCH5ZNUVNGUUFGGD6Z2Z7OB3LQ7DCX27VMQCSFQQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/YUGXU4RHVCEPAOZ4W36ZLRGWYBXSCZRXFXW3DJD3RQANGPO6SNPKEG74F4S5L3RDRTBVZGHQ6SUASM2CTY2QJHVIE24CF7N6BQQJTWI=",
     "route_polyline": "k|lcF~iohVoLaJiM|U`sArdAzWHtUpTd[yd@xCod@fDuU`e@ciAl~@}j@tsAwbAdzE{|GdFyEdIsBhl@fF~k@uCvp@?fSbEjQpM`BtL|GbGxQpFnHiBlGnM|NfJrEKvAvLk@bH~CxBaEnKjFkB}AtBwAvOzElBcBbNrIh@vHcL~HvCxCsIdIqAnEwCdCPsCzAwClVsGpJ~@pDoEpD_C_Aa@|BkE|Bm@rBsDp@y@xNaC|B|C~EaDvA_QzYJbWzMjJ}MoDqMvFv@qKgDFmDfHi@zKwDl@jGlEi@lCzAtBuC`GfBzDqAvGcOlQmE~QaDdC{BfA|GmElE_RbOmQpAwGgB{DtCaG{AuBh@mCkGmEvDm@h@{KlDgHfDGw@pKpMwF|MnD{MkJKcW~P{Y`DwA}C_F`C}Bx@yNrDq@l@sBjE}B`@}B~B~@nEqD_AqDrGqJvCmVpCoAcC]oEvCeIpAyCrI_IwCwHbLsIi@bBcN{EmBvAwO|AuBkFjBpJ}ZjI|@v[wHrEiFhKcEhDeGbAkJrEz@hA{BhFc@hA_K`Ge@vBgIbA|CnGc@VeCmCjB[_DrQkGf@cPuBiDtA{FkDmCxGsD`DcNdH{DjF~ExEwArFdAjGqDdOyQp@aSlGlCnWv@p@~ClKr@lJ`DnHuEjBxAjDhNfCuVpCmGyEuGj@_V{C{Ii@aRaEgDb@_FwAaDo@qK_FyAmBmN}QsRlX{^vPi^fg@_u@nSil@zL}v@dd@co@|^ot@rAa@pe@tPvFiN`Pz]tHxHzUsBxH`DxE|GjMqAdJl@lFhIrFd@zJ}BjCgOtFgDwA_JrJqKqKaPb@uCxJ~A~NhVnGw@tA_D`CdH|ItG~GFhG~BbRcBfHeEg@qFdDiKsAuEeHqDUgFlBsAx@JB~EdJxFtA`Gy@lLnAdChUv@rQ{FnJfApFu@fGkENuKtEuEhLrBnC_ApBnCSvC}EdE{IFJvCvKl@aCtGcDHwBfFcBl@{@rEcC{@kEr@iBmAqF|EqEZ_J~EcRe@XhUoAtB{[qMmGs@eX`Im@b@|BfDyDpA{I~@iHu@lFvT@nJ`CnSpCdC\\~Ck@pTaDjIrBvENfKsDf`@U`PyKtUp@fHlDyFrA`WjAgDSnFhCgFdDe@fB{DEdEtCcByAhF_Bb@xEQcEbEvFnG?`ByC`Gi@`IaExKyC~GmHtGqCfMaFZkArByG|@}DnCkBQ{@vHsF\\OjE{DlCOfC_Bj@kC_BgD|EeDPy[jj@sK`BcC|BcCnM\\xHvObUIhPwJnJoM|BkKhImDdLqJtI_FfRkLtGgCpDu@lIjDdYeCp[sEpMmHnEkP|@uG`DoTbd@cCtUaDjGkFpAyOaBaJlCa]x[iYrPgVjYyOfFoM|SaA_BdEkDtGeXkAsBqGa@qG_QcFZfAuGyBkIhDiBpB`B`CQfExFpCeFjDN^kBcHuEeGkIuA_KaDqFUqMzBiF[mCcCPuF|SsAPm@sBvD_Fc@gFjAgH`F_MjE@nCmCvAgQnH}IbI_FfZae@hGmZhBsStCqHoEkc@{OmDwAkClBcLmCuGAuG_CsEnA{HeAsIlCyRpCmGyEuG`@}WqC}Gi@aRaEgDb@_FwAaDo@qK_FyAmBmNuSgVmoDnBeg@i@fAt`@c@dLeRvHktBZVdlBjGvA`HtW_CdJ_GV~EdC{AbPuw@Iin@rBea@}EyMnDe_F`bHksA~bA}~@|j@ic@jdAgDrPwEpn@gZbe@{TaTuXYasAsdAhM}U`MlJ",
     "is_active": true,
     "event_picture_urls": [],
@@ -2315,33 +2315,6 @@ window.LOCAL_EVENTS_DATA = [
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3530303449106817470"
   },
   {
-    "_id": "strava-265-3532984079147389992",
-    "source_type": "strava",
-    "source_group_id": {
-      "$numberLong": "265"
-    },
-    "source_event_id": {
-      "$numberLong": "3532984079147389992"
-    },
-    "source_group_name": "Los Gatos Bicycle Racing Club",
-    "event_time_utc": {
-      "$date": "2026-09-12T15:30:00.000Z"
-    },
-    "meet_up_location": "201 North Santa Cruz Avenue, Los Gatos, CA, USA",
-    "gps_coordinates": "37.22654, -121.98242",
-    "distance_meters": 130813,
-    "elevation_gain_meters": 1351,
-    "organizer": "Dan Scannell",
-    "strava_url": "https://www.strava.com/clubs/265/group_events/3532984079147389992",
-    "title": "Saturday: Mt. Madonna (Groad)",
-    "description": "Mostly paceline road stuff, 1 minute rotations.\n\nMt. Madonna is a road bikeable fire road. One of my favorite climbs.\n\nRest stops\n- Calero (the fancy one across from Fortini Rd)\n- Chicactac Park (Watsonville Rd just before Redwood Retreat)\n- And there again if needed after we descend and loop around\n- Chicken Park off Curie Drive\n\nRide protocol\nhttps://www.losgatosbicycleracing.org/ride-protocol-and-ride-safety/\n\nDan\n🤘",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ACBGSDRFQ7S4OPZZHBLK5A6F3UA6NJ3P37NXCE5CPNBEBHJRISOEKEVH2LHCUTVVKKITN2ET2WIE6NNJW6B4UWF2HL5VAQCUOAQWLRI=",
-    "route_polyline": "svebF`togVvUjI~FaOh@mk@mJyOm[gV~Hij@jAcBaAkBaDa@SuGqNm@sNiFlEsg@s_@wNiBuIWwHpA}K]owD|PGIsLrPIJ_PjEm@R}BzNd@h@eEiDwL~GaAjEqEbGcNfL_d@dBoYjEcNj@qHaKw]g@}iAnGaXxHqBdYua@b@{UeCcGHuB`[sc@j`@}\\pGmN~IuE|Yke@qOoReDmIrG_M~T{tAlKq^tCt@b@{Ak@jBmCeAlMsb@rG_OfUcSeBuP{A}oBnAoHjKwQbEmZ`GaPjHeJnLoHro@cGf[mSpT@xCcDfF_RjO_Mt\\ObSoClE_HzBwOhKqW`RuNl_@mNnXpDh|@uSdD~@xAtCt@pO~BlGbNdOrKdArUoKbOkDnRyTzJiRpRkS`G}QbOkJd@yDvCqDfQwGdKb@hJgDlR{AbMuNlLsG`GsKlJqIjQ_HjH_T|OwCxKmShDmA`TfAfPuR`BwOlUgp@UqP~Qyt@hAoO{Qwt@nQuUr]_Mpg@ih@lLcDdH~@nOhHri@pGxJdExRuFaAx@fXaBmBxHeLjQmGjWwCnXaHnEiB~QnBbXqCd_@tBhPrJzO~A|SkA`\\sFtNmDlc@qBjG_FdCaAvCrBnObCrBlDxO~CzAt@gJtCk@zCaFzAxCP~H`GhJ}D`Iz@jCt@ZzAoCz@|GdBfAbBaBjKnCvBfCXsMjInAnLnQpFuC~AsF`DgAbHPrAgA`IbDrAtChAu@zKcQQqHgDkFyAiLjDiH|BR|BhItExAvD{BpEbJ`DtBbBQhCwEd@_KpKu@`OfHrLxMnExK~HpKy@wFmEkG|GdCrEiDp@}UyAmN^aElAgCzGPbDaBnAcUdL_YT}KyIeOoA_TsB_FwM_FeFXgFeGoPkCyLmEsCaDiFiUnDad@q@}L{CwCmEiRoUkN}DuEkLk\\aIem@SuaB`@iY~HqXHmQqQ|DiGnF}FGaHlHuQfm@we@PE|h@aGXkAdCW|`@mA|Lb@nRoA|BcHrDcGl@yJeEsi@qGgWoJ{MhDqg@hh@wZjLeS{@ub@oM_Lzo@uDrFiDdCeD[wFfC{G`GyUnCiNaBuFhAsTwGoLkPyAmEi@yMsTlXcEmAwDtMgGrHcNiByInDwJa@uRnMaEvIwGjEgAdHoSf]mL`BcItXyIuC\\vEmCrIh@lJmJzKkD~j@gf@nTsBrGqKcEsCiDwD_MsG{DuD?cFmEoSFsP}LkPNuFsBqDt@gElG|@qKq@sFcZg[}EIgGuJ?kBwKqKqiA`vBmgD`lDig@vH{L~Gas@|w@e]|i@cXhq@oEpFjMhTgAtHsLvKqFm@oDlNcB{AmA|CtE`FwO`g@|VfU_V|p@{CbB}LSF|\\mAbE?dNhIq@iIp@MjwAgBnJ_JzPcBbUj@df@bEvObA?UtUp@zA}@jJyIrWcBpMoM`e@}IdJeD}@uEzDqGqAyIll@{CpGcEzCxBhS{Hbj@vEvt@jFlHjHbUnGdGlAfKtCjGhHrHbK`UhHjEtJlLbY`h@cHpChDvLi@dE{Ne@k@nCiD@UxPsPHHrLyQFr@`gCcEj@Yh]}B?EzQBfJvGcAFvHrBjKr_@vNoLdtAoAZoMtXnClErAlXyGzY~z@p[w@~B",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.strava.com/clubs/265/group_events/3532984079147389992"
-  },
-  {
     "_id": "webpage-2026-09-12-3b7e2f0c",
     "source_type": "webpage",
     "source_group_id": {
@@ -2359,7 +2332,7 @@ window.LOCAL_EVENTS_DATA = [
     "title": "Saturday A Ride 9/12/26 Pumpkin Spice Shake Shack",
     "description": "Saturday A Ride 9/12/26 Pumpkin Spice Shake Shack\nSep 9\nWritten By\nAlto Velo\nCome ride some beautiful roads in the Peninsula Saturday morning. Sometimes, looping in that shortish, not necessarily convenient for a big ride, but beautiful road or segment I haven’t done in a bit is all the motivation I need for a longer ride. I want to call it adding some spice, but this ride is far from ~spicey~, so let’s call it pumpkin spice. Plus it’s unofficially fall so maybe it fits. I saw a pumpkin carving kit in Safeway on Labor Day weekend which was shocking, so now that my bubble is burst, let’s ring in the fall with some pumpkin spice. Didn’t shake shack have a pumpkin spice shake at one point? Wouldn’t that be the perfect end to this ride.\nWe’ll head up Kings after weaving through Woodside, and then descend Tunitas to hit little Lobitos Creek loop before a water stop at the Bike Hut. We’ll take 1 and Stage to head up 84 and do WOLH. We’ll get water at Sky Londa, descend 84 to Portola Valley. If you are feeling it, join for an upper Alpine to Joaquin down through Los Trancos, or head straight to Shake Shack where we’ll all meet to end our ride with some grub.\nTime:\n9:00AM at\nSummit Bicycles Palo Alto\n. Roll 9:10AM.\nDate:\n9/12/26\nRide Leader:\nDrew Mathews\nRoute:\nA Ride 9/12/26\n67 miles 6700 feet …… six seven\nRide etiquette:\nhttps://www.altovelo.org/ride-rules\nAlto Velo",
     "route_url": "https://www.strava.com/routes/3532826280522740508",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/XW7Z6RY4YHXYDSJTM44CSFZMSD5AEYT4XLDSSD57ORTFNEAYA5ORZGDTBEQZ5IBNG5TV5JZ2NR2PIW6UAW5HRWANYGP7BQLQFIP3DOI=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/G54SQMP5LS3CHEMERG22QOXSCG3DAYZSEJYCRISWI3SWK4FMUJFXBVKWIID4HYO34RHY5PYQ6AEMQGEV2J7ZUWYIPTRE7YB7N2SMZTY=",
     "route_polyline": "e{lcF|johV{EsDr@t@}ApDhSxOyHnQvs@rj@tXXzT`T_LnR{EtYwDvIiR|YoQtNeIda@{@jSaKfXw@dKaDRuBjCbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLbQtc@`U`OpFnG_QfHsKb@_KzPwOEeCnYmAzBmDf@mJvMeOgAaR~ArH`b@SaAR~@kHfCgB`IoItGj@rP|BjN~CpChENrBjE{LpV?jNxAnLmd@x]lC|C_B`BfBb@nAtDcBc@u@|EgEbG}GvCcBtEwHpHvCvAtMgDjIb@iCj@oEzFsAdHjPuGxCX`E`F~Nw@iHxC\\|GyBgAiDbL|@rDtCsBzFfFjT{D|ErB}GnCkF~JdEtGg@zDjCYfBxHfGtGbAh^tBdOpCvEs@bLyBhFfGzKpNmCzFz@[~EsE`Ao@rGsCt@mGhIbLbDqGtQ`GgC~ArIlEl@kAjGsBxAr@`Bq@rMcE|PgDrEh@rMwA`GfEpFsFbEkBnJz@dHzHnEx@_KxGw@n@tGnCb@d@hBqDdJ`E~@NvCnEuEbHGkAdMlKuL`AjBdDc@lAtB`HkDpS?hMxM|@fHrCdErAjN~KfMxGdCrSfVpDtIWvA{IeAoNrGmDdCDpD~B?~FtJvS|MhTb_@vJRdBjEoAtGtDdELhDuBrDm@xKs@v@oAoA_BrGmDgDMpInBjUiAbBgCm@m@dAgGeAkB{Be@vAhFhKtGm@fDlBhFhGzHxCbA~ElFnAmFoAi@}Dh@|DlPfDbK|FjDdDn@nEbD}FfCRZwHpGuUqA_TdIsNrSgw@h@gHu@qMyBmEwI?w@{AfEuArIj@jD~E`B|I|O|RdL~HvHjNbShRfDfHjZpR~DjKbBvR`LcCdRbIpMDt]_KbPsKxQt@~Q_DkA_KsAqA\\mAvLSzJoHjDr@{@`D~CQhJ{GjHuKnOiDcDaIoQcNaEoVhM{j@aAk`@vKcJlB{Fh@gb@uAsRzGwQEsU`A{HlE_I~KoHjBaNvRsYX_TjKaI`FeLtFuEnEqQnAOe@uCrF}^wBuZuHgf@wMmVy@}UgGqKqByVtCsDpPu@bAmEyCwHXgCpPeH?sDwEkJAoQdFuIhHaBY}IpCqFY{DsMkN}G|ByFqHkEpAqOwBuQ`AmKkIuIzFeFwQcGQ}H{ImBh@aBrDkLhDgG_MkExA{EcCmW~HiL~GaOr@aCsB{BaIk@iFz@iIgBiDgOj@_JcLaMk@aE`@aK`KsDm@}A_DEkE{Dm@mCcElCsF^uGoHiBu@aDyBfAqBcBvJ_[e@mF{@w@_EdGqDkFwBYuAgE_@fJgBbBtBhBAlIkEvAeEkBm@rDoHj@sE}GoEd@uDeJgCiAOeCgHkDz@xJmBnOaP`MeDvGQhJsCxA{FkBw_@pA}FsB{Ct@yDfG|EmMWgAyC?oCpF{Ec@gBfFcEfAmEyM_FgAeEvEaC}GvBmGFkIoDyFyJpDwIu@aDxHiAPo@eCrEwHCqMwA`@eC|IkE}@cKjE`FxOjHnEvAxDcO}E{TyVqCs@}MjC|Q_KTwd@l@yElIeQbH~@jOsEfLpKfEFz[ef@v]aWvKuLlFa`@lPmVhXcPdAgJjZoM`JiIvGG~CkDpIa@bCz@aAbB`AjD{@tJ|BfHjHrGhJwAhGkDbBoFlUgR`DoEhDoOv^o_@|]sBfCoHfBc@?oCuEJoBpBaBmEsDoApD_KdBNbJqKvFmQxCsCwBeKeBHKlCsEhFm@oCuBu@{G`GcMjB_MYqIvHuUbG}R`MwOdFoJi@eLsDuHkGkFoA}FzBaP|@oDrBoQoGiIn@yFiRuPiIiOwOks@uNu^dJ}j@nAgZhKc`@wEeC{DuAyKuCuBiOxFsMcAeSjEyGoAwCbCgTmQu`AqxAmDmCtBcIkE_ByN}PA_D",
     "is_active": true,
     "event_picture_urls": [],
@@ -2393,60 +2366,6 @@ window.LOCAL_EVENTS_DATA = [
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3532468967224789086"
   },
   {
-    "_id": "strava-908336-3529248349551267170",
-    "source_type": "strava",
-    "source_group_id": {
-      "$numberLong": "908336"
-    },
-    "source_event_id": {
-      "$numberLong": "3529248349551267170"
-    },
-    "source_group_name": "Ruekn Bici Gruppo (Southern California)",
-    "event_time_utc": {
-      "$date": "2026-09-13T14:45:00.000Z"
-    },
-    "meet_up_location": "130 North Lemon Street, Orange, CA, USA",
-    "gps_coordinates": "33.78891, -117.85549",
-    "distance_meters": 55643,
-    "elevation_gain_meters": 140,
-    "organizer": "Stan 🦊",
-    "strava_url": "https://www.strava.com/clubs/908336/group_events/3529248349551267170",
-    "title": "🧂💭",
-    "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Old Towne West Public Parking Structure\n130 N Lemon St, Orange, CA 92866\n\n☕️ SALT&FOAM COFFEE\n2233 W Balboa Blvd #105, Newport Beach, CA 92663",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/7VFIY34ONHF76JZ2PU5QALAVXXBQDDTVQI5BFALGPVPUCAVUMNUW7S6YOMUKVUQJTIZH7MORCEDP5N37RBXEE4GKVHIP2ID724EE6AA=",
-    "route_polyline": "gefmE|qinU?kGvAqC`pARll@uIGf[ngAX?vJ~J?`Rhn@D`R}DfNLv`@|eJdBI_v@zMaB`NaRrsAbsAdI~BxPq@nHfBpgA`fAjMkShWdVxHjBxHfFnIa@zH|GjKFvChBrsCnrCcIhMoKhFl@rGzKfHkDpNKjToARy@qCt@}@rNdDrSrArF|K~ZgVwJ`Gmz@lt@qGvAaK|YoCdZg_@nu@qJqD{eDwp@maA{MoeAeSwZ{Kk|@ef@bDiKaE{BDulC_C_[iuB\\yiA}WFg}AawFg@C{~Agd@YTkSqBqVgIuNqdAk@@gZkQ@",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.strava.com/clubs/908336/group_events/3529248349551267170"
-  },
-  {
-    "_id": "strava-265-3532624062302811932",
-    "source_type": "strava",
-    "source_group_id": {
-      "$numberLong": "265"
-    },
-    "source_event_id": {
-      "$numberLong": "3532624062302811932"
-    },
-    "source_group_name": "Los Gatos Bicycle Racing Club",
-    "event_time_utc": {
-      "$date": "2026-09-13T15:30:00.000Z"
-    },
-    "meet_up_location": "Mike's Bikes, Los Gatos, CA, USA",
-    "gps_coordinates": "37.22636, -121.98233",
-    "distance_meters": 0,
-    "elevation_gain_meters": 0,
-    "organizer": "Tyson Kamp",
-    "strava_url": "https://www.strava.com/clubs/265/group_events/3532624062302811932",
-    "title": "Easy Beginner Ride",
-    "description": "We'll do the Mike's Bikes route which starts at the LG shop, goes through neighborhoods over to Stevens Canyon Road.  Left on SC, up Mt Eden for a regroup and then we'll head up Teerlink to Pierce to hwy 9.  I'll finish zig zagging through some LG short punchy climbs (Peach Hill, Canon, etc) to Mikes, but anyone who wants to skip that and go straight back to Mike's down hwy 9 can do that too.  Last chill ride was 35 miles which is an effort for beginners so this will be shorter, roughly 25 miles and probably 1 hour 45 minutes if you skip the hills at the end, maybe 2:15 if you do the hills.  Stil pretty light but a challenge if you're relatively new to bicycling.   This is a fun, no drop ride. \n\nIf you want to go please send an invite to join the club here on Strava so you can fill out a waiver.  Hope to see you there!",
-    "route_map_url": "",
-    "route_polyline": "",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.strava.com/clubs/265/group_events/3532624062302811932"
-  },
-  {
     "_id": "webpage-2026-09-13-1d9b4b5d",
     "source_type": "webpage",
     "source_group_id": {
@@ -2464,11 +2383,62 @@ window.LOCAL_EVENTS_DATA = [
     "title": "Sunday A Ride - 9/13/26: Recruitment Ride",
     "description": "Sunday A Ride - 9/13/26: Recruitment Ride\nSep 9\nWritten By\nAlto Velo\nAre you interested in racing with the Alto Velo Racing Team in 2027, or just looking for a ride that isn’t Spectrum? If so, join us\nthisSunday 9/13 at 9:00 AM at Summit Bicycles for our 2027 Recruitment Ride!\nThis is your best opportunity to get to know the team and show off your strengths on the road. We should have something for everyone from fast climbing to fatigued end of day sprints, so be sure to pack a generous amount of nutrition and sunscreen.\nFor this ride, we will head out from Summit Bicycles East via Sand Hill, go up Old La Honda, and come down 84 to the Woodside Store on Tripp for a regroup/water stop. We will then do an out and back on Cañada before heading back on Portola for a spirited firehouse sprint as we head back to Cal Ave.\nRoute:\nhttps://www.strava.com/routes/3532907636271129712\nStart:\nSummit Bicycles, Palo Alto\nTime:\nMeet 9:00 AM, Leave 9:10 AM\nRide etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader:\nGeorge Wehner / Clark Penado\nSummary:\n53.3 miles / 3,928 feet\nAlto Velo",
     "route_url": "https://www.strava.com/routes/3532907636271129712",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/KMEAK32AOG7FFP6FEL64JJLZAUSKIKBECENCXTKSKU75HEVMMMPTAR2YU3KZZJJFBRSHGG2I3QVZVCMNUUILNV6SR7COEDBYI5VVDFI=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/545EH34JWBRIDTAYWX3EVVZUAHOUPWQ2EZBUR4TZXNFD4C3VZKKQETRMBBSEOAUTY324ME7HHATZXD3N2LDFQEREMQBHA6WFGMBTVOI=",
     "route_polyline": "g{lcFzjohVsM}JiM|U`sArdAzWHdUhUoKvQ{EtYwDvIiR|YoQtNeIda@U~OwLf]k@dJv@VgDq@cDdDbPlYjErPhHt{@z@ph@|K`k@u@`s@jNrc@~H~I|NlIpXr]tCPtOmElTpDjOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfAzBxH|OsKnC}J|Kw@lHhKrD|@xHYzDgF^hKqAnM_CnE}HvC_CxCeDvGe@dK_C|@{FkBw_@pA_JcB_HnJDjNpAjBvDm@lGqKjDIzB{B`JrBp_@hBhI}ExF?l@kG`Am@xIbGzI}BZiFpBmChCl@bF`GtG{BfE}LzA?tBfDxBqAp@kLzJmZeB_F_EdGqDkFwBYkBmEIlJgBbBtBhBQ|I{DfAeEkBm@rDoHj@sE}GoEd@uDeJgCiAOeCwFeEeAbZ_CnE}HvC_CxCeDvGFxGqAlCwIoAw_@pA}FsB{Ct@yDfGrEaLMsBaEFgBhF{Ec@wAtEsDxAkDwEaAaGuF_AgDxEiCgHvBmGFkIoDyFyJpDwIu@aDxHiAPo@eCzEeJ\\}ImAeAyD~JkE}@cKjE`FxOjHnEvAxDcO}E{TyVqCs@}MjCss@fr@}N`Rgn@hg@_WnMeD[MsPzLqVsBkEiEO_DqCsCaWeHrHaEiCmEhQgFrFoS{a@qXt\\wJbGaEnKk{@zzA}ShMcBjEgBzR{NxVsbDdpCs\\nd@yFlCmNbBaFvCmEvJg@zRoBxFwD`DgJhBgEfEfEgEfJiBvDaDnByFf@{RlEwJ`FwClNcBxFmCr\\od@rbDepCzNyVfB{RbBkE|SiMj{@{zA`EoKvJcGbiAepAtLyJ`R_BrN|@zH~J|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEfLpKfEFz[ef@v]aWvKuLbFo_@xKuQj^kWh@_FmAmW|HiQhBoS|I{N}_@oq@gCeMwR{KiOwOks@uNu^dJ}j@nAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEeDiAv@eKfLs[T_PtGc^`CgF|NoJzSc\\~DkLbEoV|J{P{TaTuXYasAsdAhM}UvB~A",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.altovelo.org/a-ride/sunday-a-ride-91326-recruitment-ride"
+  },
+  {
+    "_id": "webpage-2026-09-19-c1ca47e6",
+    "source_type": "webpage",
+    "source_group_id": {
+      "$numberLong": "0"
+    },
+    "source_group_name": "altovelo-a-ride",
+    "event_time_utc": {
+      "$date": "2026-09-19T15:00:00.000Z"
+    },
+    "meet_up_location": "Summit Bicycles, Palo Alto",
+    "gps_coordinates": "37.42797, -122.14508",
+    "distance_meters": 155026.0,
+    "elevation_gain_meters": 3262.0,
+    "organizer": "Richard Red",
+    "title": "[8AM START] Saturday A Ride 9/19 - Birthday Basin",
+    "description": "[8AM START] Saturday A Ride 9/19 - Birthday Basin\nSep 16\nWritten By\nAlto Velo\nHello team, we haven’t been to big basin in months. Pls fix\nRoute:\nhttps://www.strava.com/routes/3535071999473599288\n- 96mi / 10,700ft\nStart: Summit Bicycles, Palo Alto. Meet 8:00 AM, Roll 8:10 AM\nRide Etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader: Richard Red\nAlto Velo",
+    "route_url": "https://www.strava.com/routes/3535071999473599288",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/WJ4C4MNZG2I6GE3JCUFDXRGOICKPNM4A5KM35JX6DXG66TFMOZYNXB2TTHC5DVAYYVVPFQOVBQFSC4YIXIP5EMMFOVI4YSIFWIC3EVA=",
+    "route_polyline": "o|lcF|iohVkL_JiM|U`sArdAzWHtUpTxVe^xObKxAnElKN|IlCfKtJv_A`NzRhLnNuB~PeTpHe@z@hAc@dF`BjPhJnAjJkDTtKhBhDdCXlAkBrJbGfFgDnENnFoJjGpAtBdG`Ej@`@jQjCeJ|FSm@xQ`C~GrH~E|A_An@{GpEh@lAgDxBIt@{DtBd@`EzG`GiDtJc@kDvCBdCbLxAyAnClHgAzBdC|Au@vIfAvCzIqArRpGcG~HmS~L@~FnJ`JvA`DkBhByFxGj@pFaBbBcN~EeAfFqF|AtCpDqDxFhBxAuCdL`BzCzF{EfRuBpb@jBpDIfHpAbGrAdAvGc@pCpAfArDvI|EtEs@nBxC`Dw@ZcElIaFzCkGjAQtAlBHvFrD_FrAcJeB_OjAwCxGwEsBcQr@qGnS}k@bNoHpKwVfTsI`HjGjEr@fEhF`TX`CmCtEwX|F{RjN_Tx^mEfEeClGmLdDyA`MbDdF]~FzF`Dm@rDcP`McHfMwLvHa[rJcJlFcL|O}GhMmSfGaPmBsYpFoKlJjLr@tGvDvCXvf@fElJvEfAtGxH|NjBlC|EhPdJlFlLP~I}Z|y@p@dE~AGdCmEdM_KlBz@zGdQpJcAfJgZzOcLvCkG`FyCbIbNnMhFnLqFpCtGhD`@xB}@lAqFnByA|FYz@`D_CrDw@zPbOlJpIP|F_FbPqBjDzBvCxMzGj@vQvIlDXnC_CdDn@~CqCfF`IzFmA|BlClIr@`HgFaDpMDzDzEvEa@jGbMfJlBmB|DhAvAqFhB}@|EDx@~Q~BzMpB~CfCs@fAlAyBfO~D`RcDPyEvJuAVt@zLcD`B}DnKsC~@f@tG{DhDq@hImGdE{@|GsB|BBvCwGpOh@xM`JvAqCtLxEd@fDqHpFaBnCoJ`DdCiFre@bEdJk@`DcDnAp@pd@~L~HvBlEhEpA|Cu@hJpDlGc@`ChFrLwCAmEnC_AhJ~E`G?vKjI|DgAtFjBpApDrGOtD|EpB?}@bIqB`B`FlJ~C{@T}DdDu@t@jBgCjBxBnAu@xAf@dApNxCvJmEq@}c@pAqFGgNtPsr@YiIcK{K_@uPpCkBxDvLdFnAvG}EXmBwCgFOwEqEkLEyVgLwQ_LeC_CqDgEoL~@wSsHaGeD_KnBwOjEqOdGoKR}FvBl@gEdQj@xAtM}Y`JsIlKiPvW|B`RmE|NPtMwEzKaItGgKpPxBgB`KgHnQcIhKeAlQzDrPmDxQwA~Am@|P_BfFz@JdCkFjGtBy@wLnFmEi@nHpBnCGbD|FdFuCbBnAtE~FdCnH}BlDpAe@bL|DuEfA`@sBtGz@hD_CdEjEvLfBmNlGqFk@uJv@mK`H{GFwJwBsPhS_HtPyPtQ}KdJ_PfOqJbLwQ|I}@lj@}\\hU_[zCuLnJoHxAuJ~DiFhIaDlIgHxXzPnFcEnIc@tFkG`Rm@v^s\\~J[tl@uPxCoI|I[|NkKjNi\\tUmLzRfBpI_I`Di@`GvFrA`IhDJ|DkFVgFKeHyE{TYiUiDgEqEfC]s@dEkIlAoLfJuGU_WnGsIbCIw@_TdByF`JyApC_FfCcNtAbB^xFfBFrC}NhEkBrCwHpAiKIcGaEoJbBaG[iFyVuv@DaDbEI?mA?lAmCmArGmYnIqPiFcEiF{IeOiKsIiBsQyJgNyO{FE}StHkg@kGqDyAoJoKc]gQwDmAoIjAoEoFqDk@q@iHiDkEeH[bAkGg@uCcFmBmG|BkOsImC?}BaGcD[QgCyE}EcIkBeDsIwIuGq@eCbAgFiRuU_IsPq@}PyHqTkGPyKgD{QoA{LvAiImG_IbB_QwE}IRgAgA_LtCfAyFkErDwDeEgGl@uCeEiCrDgCoCiJ|BaAhDiGvCHdC}C?_@pD{C_@gBlAo@xHoA[mB~B}@oEyK`B{C{@}A~A]mEyj@qR{CiIlGpDqDwHyJqFaSaFgAoA`@}ByAqIc@fFsEXJhD{HfHaDc@iCoHeHl@yH`L`AkJ|BqCg@}@iDnAeB|GmCbBqB?fAmEuAoBqMnLvB`F{CzDGdJsEtLzCtDaCjSgDu@qBnAcAeCuCm@mAjBD`DeC{BgCzGsB}@`@eCqEp@kCeFuF@jBzDsDpBqMiDeAdEqFPeBzFsH~JyEj@oDvEaIt@yDpDcFIeBoHoIl@qDsDmCP}CzDeAdJ{HzRcIxHqCfMaFZkArByG|@}DnCkBQ{@vHsF\\OjE{DlCOfC_Bj@kC_BgD|EeDPy[jj@sK`BcC|BcCnM\\xHvObUIhPwJnJoM|BkKhImDdLqJtI_FfRkLtGgCpDu@lIjDdYeCp[sEpMmHnEkP|@uG`DoTbd@cCtUaDjGkFpAyOaBaJlCa]x[iYrPgVjYyOfFoM~SaAaBdEkDtGeXkAsBqGa@qG_QcFZfAuGyBkIhDiBpB`B`CQfExFpCeFjDN^kBcHuEeGkIuA_KaDqFUqMzBiF[mCcCPuF|SsAPo@uAxD}Fc@gF`DsN|CmG`Db@vCsBj@sIkBtEcKZy@jEmFpFsCxHqQhMhFkR}A{N`CyCoDkEaKnAmHmCp@}KyJmSkEgAgF}QZoGmBeHDuGeV_`@mDSgU_MiB|KiFb@iAzBsE{@cAjJwErH{ItCkFxFcNzD{KjBuHmAaGpNcBmBj@cHwAwLsEJ}NgJmGoMoHhByQqF}GcGaBuLkQqMgScEuw@Iin@rBue@mEgM|GkkEnjGeXr[ajA~y@a{@hg@qGxIe@kBaM~GqlAj`@hArB}CrIqEGgXjo@mn@gf@",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.altovelo.org/a-ride/8am-start-saturday-a-ride-919-birthday-basin"
+  },
+  {
+    "_id": "strava-265-3535543333786422578",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3535543333786422578"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2026-09-19T15:30:00.000Z"
+    },
+    "meet_up_location": "201 North Santa Cruz Avenue, Los Gatos, CA, USA",
+    "gps_coordinates": "37.22654, -121.98242",
+    "distance_meters": 56689,
+    "elevation_gain_meters": 1119,
+    "organizer": "Dan Scannell",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3535543333786422578",
+    "title": "Saturday: Montebello",
+    "description": "Montebello, Sunday pace. Rest stop at the junction of Mt. Eden and Steven’s Canyon.",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SRT2L3ZMXDA75YAS3BMV5FTAC2CQGN7YE4CA24GM54VX4FFU7XWQLICKPQD3TVDB7J3YHB6ZDX7FC2VRZUMTXFCKE6FFX3452LO6T4Q=",
+    "route_polyline": "axebFlsogVsOwFka@`x@ka@pj@sDhM{Gth@_Upo@{e@xt@kPv]hFtFcDpGfK`OwKzPgBoBlAlK{D|@{@_HmCgDcJdOiAbGsQcE}Jj@iA{DkCEChCgKc@iBoPqIBE~RwGXgAlE}Lc@S`DoG`IpFhK~CtBz@|EnPfJlDlJxPrUj@nFzCn@q@`S}LxOsIpFsFeAyEvAmE_FoG|BuE`PyGrDjDlCuAzFtBhD{@dQ_QhFZ~ClCkBs@vCsFPcA}CwBfIaFFdG|BuEJtEKeG}BcCnLoEPiAzBsE{@cAjJ_E~GsJhDkFxFcNzD{KjBsFoAuB|@sIpYjFkB}AtBwAvOzElBcBbNrIh@vHcL~HvCxCsIdIqAnEwCbC\\qCnAwClVsGpJ~@pDoEpD_C_Aa@|BkE|Bm@rBsDp@y@xNaC|B|C~EaDvA_QzYJbWzMjJ}MoDqMvFv@qKgDFmDfHi@zKwDl@jGlEi@lCzAtBuC`GfBzDqAvGcOlQmE~QwJjGwDgAmBrMeC|ELvCoDfFkBjIjBkInDgFMwCdC}ElBsMvDfAvJkGlE_RbOmQpAwGgB{DtCaG{AuBh@mCkGmEvDm@h@{KlDgHfDGw@pKpMwF|MnD{MkJKcW~P{Y`DwA}C_F`C}Bx@yNrDq@l@sBjE}B`@}B~B~@nEqD_AqDrGqJvCmVrC{AeCQoEvCeIpAyCrI_IwCwHbLaJu@pBwM{EmBvAwO|AuBkFjB`EoK_DyBj@cH_AqKkFY}NgJmGoMoHhB{P}E{HwGmAqKgFiFmFiBeCaDkScEzAcPaF{B`Ga@|BiHoDeQlIcJpAAMdC~]I~BaFNgIrCwA?uc@pY?Vsw@vWO~PiGhA}Ko@sO|JBlAxC`IlCvPgCpSpMCa\\jA{DlAmbArCc@sCb@ZcTlBw@~BcVx`@_@zHxMzHyOdEoDxCfFhTcBljCm@nSil@~Hql@fEyMxa@uj@|^ot@rAa@jMtE",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3535543333786422578"
   },
   {
     "_id": "strava-908336-3534341552076467054",
@@ -2491,11 +2461,38 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/908336/group_events/3534341552076467054",
     "title": "👻👻",
     "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Artic\n2626 E Katella Ave, Anaheim, CA 92806\n\n☕️ soulciety coffee\n518 E Imperial Hwy, Brea, CA 92821",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UDOOTKBQ6N3FNQXNVXFKBNC4ADAIFMM6ON6CZ2DUGF2TQOPZWLSYQGSZSS5ECHVXYHUHUH3QU2MT63ERZYE5MB23QSW56WGDGY3IGJQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/NJBPKKEIIV75UPBP36Q2DEMJG7TVISXF2ODM2WXHJ5A5ZW6QJTLAMMMIALLIBJZWGB6AAGYWIYQFWTDABP4JLV4FANBAROWODPOS32I=",
     "route_polyline": "otimEz}mnUaBCLr\\fBlGrIzM|AhKLrzFil@PvAvsKw}IlCg@s_Dwx@f@gX}KaNOyImCaa@hDeW_F_QxB~Cub@fK}OrBuJVa^mDae@}H}@ae@sUwH[eG|BkGcLcPiFmAgD{EiAmBoM`D_OgAqMwDkGxCgHaAcGnAyz@|HAlBsBYaNcQ{Rd@cGaCeAvJ__@sCmCv@gMm@oA_HKyQcIjAmEcDwA~B}IaGOOeFeUDqL_Bk@{Ey@mt@h@wK|Sgp@QqOxDY~EqFhJy[BekAlFH~BwJnb@hYvD~@~_CAp@_Dz\\vHz@wDxBhDzRpCVqPd^~GbF}^~G{I|DzWhuA_`@pOp`Al]aQf@hF{AdGrMnBr[xj@dSxFeBcB|CNvUjH`@vHtAdCxQHPdHnAnCpWNxSnJ~C}LjPvEfHkQl|@d[?xIkFkBvL`E",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/908336/group_events/3534341552076467054"
+  },
+  {
+    "_id": "strava-265-3535544075891705188",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "265"
+    },
+    "source_event_id": {
+      "$numberLong": "3535544075891705188"
+    },
+    "source_group_name": "Los Gatos Bicycle Racing Club",
+    "event_time_utc": {
+      "$date": "2026-09-20T15:30:00.000Z"
+    },
+    "meet_up_location": "201 North Santa Cruz Avenue, Los Gatos, CA, USA",
+    "gps_coordinates": "37.22654, -121.98242",
+    "distance_meters": 72124,
+    "elevation_gain_meters": 1824,
+    "organizer": "Dan Scannell",
+    "strava_url": "https://www.strava.com/clubs/265/group_events/3535544075891705188",
+    "title": "Sunday: Reynolds, Umunhum, Cinnabar (Road)",
+    "description": "Umunhum in the correct direction with Reynolds on the way out, and Cinnabar Hills on the way back. Rest stop at Quicksilver in New Almaden.\n\nNo drop, but rather vertical",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/CRDOCXOS3WRHHA4JHXDGBOQJ3VWET5BZVUPT5TZLUILGRPDUHFEZOGSFB4NKUX6DI5BBKKSHYC4VEYVJGMXUIGASVGUC42EIM5YO3CY=",
+    "route_polyline": "uvebF`togVxUjI~FaOh@mk@mJyOm[gV~Hij@rE_Ff@_ObF{KpJeHzMQzC_HpAmMzDsIeAmPxAsKyFEoAqAJaNcA{FtAuB}@uAZqCgCsEcAyP^mDbE_C|@lJpCkLLsN_HoJsFiTjDkPv@kShFeOCgJhCkDhIbDvJwEbBaPzDaAbHgNo@_MlFeEpDwHtFsBhFoLv@yMrGyA~AeEzD`FEsIzBwEFzFxC~CC}EjCeEMdE`EfKvCi@sAiAJwC~BfAlEaDv@gDdENeEOw@fDmE`D_CgAKvCrAhAk@`@_Dc@mC{ILeEkCdEPvEgDyCD{FiCvEDrI{DaFjSikAxOaKv@oHpC}@dAmE|EqDdGwS~NlCtF}G~SoCzIoFhJnAzG|GtFZAqAuCaBc@oJuBwFbEmSzIkG\\kIfAAnGjPf@eHjK_HxBv@`B`GhEeA`DtH~BhApCqAxFzKdQ~Ih@~O~AzBnA`KvGsBdDdAfIeFnArIdE`@pD}BdGfHbB|IhLdXvBdQ~CvCdAtGsEnHfBbEwBzHxOnF]fAcGk@]xAtJrBxDm@vC~EvBs@zDtCzJ{@bDwCrB`EuFnJaJeEgF\\wA`BIbGwBbGcIw@qJhByEpHyEd@mA|CiBc@I~IcCvAaBoQwAeCd@gDkDuFdD`F_@zDjFfVpAiBXoJxAr@lA}CxEe@vFcIrIwAbIv@vBcGHcGvAaBfF]pJzD`FkLoB{BcDvC{Jz@{DuCwBr@wC_FyDl@uJsB\\yAbGj@\\gAyOoFvB{HgBcErEoHeAuG_DwCwBeQiLeXcB}IeGgHqD|BeEa@oAsIgIdFeDeAwGrBoAaK_B{Bi@_PeQ_JyF{KgDnAwEuEs@gDaDxAeCyCC{BpFuDvKeCjFmE~Gu@rE{IzEuCvDeGvEgOi@uJfBsIxX{p@uHyHoAuEc@kIpA{GcFqQ~@aSuIwGiQqDuPqTqG@gEkCiGkHmDsIcKmGwDgOfBGbAmHhCPh@cDbB|BYiGlClHWpDjCfAxBtIhEe@pCpAtBxHdDhBvBkBHqDwBdCe@wCd@vCvAeCt@d@wCvFeDiBuByHqCqAiEd@yBuIkCgAVqDwCqHb@lGsAcCy@hD}Bc@}ApIyAIsEaIaCnCuQgAi_@|Luk@p~@_Pr\\wOsQ_DqHuTuI_KkQ}DyCgEoAmF~EcDxI_PoF}H`KyBvQQvQcJrIbBzH|DzGu\\dm@}Ifd@jDdHuHpc@IjIvApFnIdLdB`IYbIwFjUb@rdAj@dIhHvQ\\lHiFlQmAfXoLdf@sIvQeKjEhDvLi@dE{Ne@k@nCiD@UxPsPHHrLyQFr@`gCcEj@Yh]}B?Ab]vGcAFvHrBjKr_@vNiI|_AvRjHrNrLmCnT_GfNzNh@fShM[nEbKxBi@xi@aDrHuSkKsB~Go@S",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/265/group_events/3535544075891705188"
   },
   {
     "_id": "strava-1157973-3528256494678268006",
@@ -2518,7 +2515,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006",
     "title": "FWC Cañada & New Kit Photoshoot!",
     "description": "Social ride + new FWC kit photoshoot with professional photographers 📸\nDetails TBD.",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/2JSCM2RKTW2Q4KKNSBAYK7WEL4TBQKI5ZFXGZ6TXAIBETR62WHDEG4VYKFEJHW253QDTQ2MZGA4UTL6UMDTS4OHPZGD7BKQFDNGA27Y=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/RSJ5ASP3AYJ2464FCRPWXM4VQ25OL3JNELP3QSSFX3L3W6DB7DWL2ITLCHCSV7MTZFJL5P3QH6GDUNVTY2APLEW4LJXAICKVP4JWD3Q=",
     "route_polyline": "we|cFvfuiVxGoMhLwCvDaDnByFf@{RlEwJ`FwClNcBxFmCr\\od@rbDepCzNyVfB{RbBkE|SiMj{@{zA`EoKvJcGl`AwgAjUgS`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEfLpKbDX~\\wf@v]aWvKuLbFo_@jFeJjIyKlYaRh@_FmAmW|HiQhBoS|I{N}_@oq@gCeMwR{KwQcQ}p@iMu\\zI}l@xAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEmFyAiClAeA`BbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLfMh^~H~IpJ~F?tBebAdZuC~CkIdVqCnC{Eb@sIcBXhMuAfIkUfSm`AvgAwJbGaEnKk{@zzA}ShMcBjEgBzR{NxVsbDdpCs\\nd@yFlCmNbBaFvCmEvJg@zRoBxFqUtL",
     "is_active": true,
     "event_picture_urls": [],
@@ -2545,7 +2542,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "title": "往西，越过天际(Skyline)吧骚年",
     "description": "路线:\nRedwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山\n\n适合夏天的避暑路线 credit @Steve\n有两个大爬坡，分别是大家熟悉的 Old La Honda，和很多人熟悉的从Bike Hut开始的Tunitas Creek Rd\n\n预计总时间6 hours\n\n本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 [旧金山湾区骑行路线 第一章 练](https://rangerway.com/way/cycling-routes-at-bay-area) 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。\n这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UKJVB27AAJ3RCNU2B3AO5W3G3FSPHQT5POIQTPGTHG3ZSHWJOP2HLZKEYV26HFJ3DO5NTIARVZZ6CXUOJTIIBXNPZ3IVULWH5VLCNCQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/3IOTYBDCETPLRYH3AECPVMOQTSHUEIWO4I2A72QSNMUUTMT5J4QYRCV2QXTVFYQVIDZGXZOKSOFHNAC35OSOP6UPXBSL6UHFYXAZTJI=",
     "route_polyline": "ogmcFtbdiV}BL@lIqApG`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfA~BzHxOuKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCFyHtKhMrEyFlAjG{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiDnE}E|HzIbGPdFvQtI{FlKjI`j@OjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvEsErApBoGzKtMeHbHcIlE`@TrFoHvAcMrRPtEiO`KyAdQ`FdC~Z`Br@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDfZrFxIhGbD`Tm@~DoJvNKrE`FvIrFzDLdJrItMl@v^fSlEpJzKjJqA|MfCjKzLPvBqA`BgQk@yHtG_JnA}@zBlG~LVfV~@`DdCj@xSeEnGfIrBfG@hKlCdHDpOkDl_@`EdQ`OhDz@pOjGfF~Qn]aAjGjDlSpFtGnKpDv@jIWjh@iQ~LcKt@oBfFjBvZvN~m@`BlVsb@hA{X|Gam@hFmU}@s_@uSqSef@}MnDwNaG_EzK}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IgIbGoAaBsDbAqCsEKaD_CoAcBuEsEgAkN~EqIgKyDI{QxDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GsDeAmHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRnD{IuDs@gBkIiGnAlGyOsK{DjKiKf@eF|EmBTkEsFu@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_KbHcCoE_CuSzDeHgFuArB}AW_@{CxCiKhCl@]}G|G_DsN|@aEaFyCYyPjG~@gFxGkIlNaBrD`DvBsDtKgD_JuDuHeOr@uJvAyE`BY[{FpMuJkCqV?kN`\\_q@}TqgAnAmUdCO",
     "is_active": true,
     "event_picture_urls": [],
