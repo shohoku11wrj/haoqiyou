@@ -2473,14 +2473,14 @@ window.LOCAL_EVENTS_DATA = [
     },
     "meet_up_location": "Summit Bicycles, Palo Alto",
     "gps_coordinates": "37.42797, -122.14508",
-    "distance_meters": 128275.0,
-    "elevation_gain_meters": 2647.0,
+    "distance_meters": 128747.2,
+    "elevation_gain_meters": 2621.28,
     "organizer": "Rachel",
     "title": "10/10/26 Saturday A Ride - Big Basin",
     "description": "10/10/26 Saturday A Ride - Big Basin\nOct 9\nWritten By\nAlto Velo\nHi all,\nSeems like there was a big group who rode LKHC Lobitos Friday and will be riding it Sunday, so we will be doing classic Big Basin today.\nPace is Rachel pace, stops are typical. Regroup up climbs, keep it together on rollers.\nRide Leader: Rachel\nRoute:\nhttps://www.strava.com/routes/3543658619882287980\n- 80mi / 8600ft\nStart: Summit Bicycles, Palo Alto. Meet 9:00 AM, Roll 9:10 AM\nRide Etiquette:\nhttps://www.altovelo.org/ride-rules\nAlto Velo",
     "route_url": "https://www.strava.com/routes/3543658619882287980",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4JPI4MRASLNRK3RUZ7IIYBTA5IKFCLCDHY5OTUPCUJZJQ2G7T7MXBGA46GGCV6BHZVPD42RZ7VV6JAG7777JA3NUMBYOGRLEVY6XMKI=",
-    "route_polyline": "g{lcFzjohVhm@je@hKgV`rAzaAzBpF~KZ|IlCfKvJh_AxMvTvLxHuCfCV~PeTpHe@z@hAc@dF`BjPhJnAjJiDTrKhBhDdCXlAkBrJbGfFgDnENnFoJjGpAtBdG`Ej@`@jQjCeJ|FQm@vQ`C~GfIfFhAgAn@{GpEh@lAgDxBIZ{DnCd@`EzG`GiDtJc@kDvCBdCbLxAyAnClHgAzBdC|Au@~InAnCrIqArRpGcG~HmS~L@~FnJ`JvA`DkBhByFxGj@pFaBbBcN~EeAfFqF|AtCpDqDxFhBxAuCdL`BzCzF{EfRuBpb@jBpDIfHpAbGrAdAvGc@pCpAfArDvI|EtEs@nBxC`Dw@ZcElIaFzCkGjAQtAlBHvFrD_FrAcJeB_OjAwCxGwEsBcQr@oGnS_l@bNoHpKwVfTsI`HjGjEr@fEhF`TX`CmCtEwX|F{RjN_Tx^mEfEeClGmLdDyA`MbDdF]~FzF`Dm@fDwOlMoHfMwLvH_[rJeJlFcL|O}GhMmSfGaPmBsYpFoKlJjLr@tGvDvCXvf@fElJvEfAtGxH|NjBlC|EhPdJlFlLP~I}Z|y@p@dE~AGdCmEdM_KlBz@zGdQpJcAfJgZzOcLvCkG`FyCbIbNnMhFnLqFpCtGhD`@xB}@lAqFnByA|FYz@`D_CrDw@zPbOlJpIP|F_FbPqBjDzBvCxMzGj@vQvIlDXnC_CdDn@~CqCfF`IzFmA|BlClIr@rGoFsCxMDzDzEvEa@jGbMfJlBmB|DhApAiFnBeA|EDx@~Q~BzMpB~CfCs@fAnAyBdO~D`RcDPyEvJsAPr@`McD`B}DnKsC~@f@tG{DhDq@hImGdE{@|GsB|BBvCwGpOh@xM`JvAqCtLxEd@fDqHpFaBnCoJ`DdCiFre@bEdJk@`DcDnAp@pd@~L~HvBlEhEpA|Cu@hJpDlGc@`ChFrLwCAmEnC_AhJ~E`G?vKjI|DgAtFjBpApDrGOtD|EpB?}@bIqB`B`FlJ~C{@T}DdDu@t@jBgCjBxBnAu@xAf@dApNxCvJmEq@}c@pAqFGeNtPur@YiIcK{K_@uPpCkBxDvLdFnAvG}EXmBwCgFOwEqEkLEyVgLwQ_LeC_CqDgEoL~@uSsHcGeD_KnBwOjEqOdGoKR}FvBl@gEdQj@xAtM{Y`JuIlKiPvW|B`RmE|NPtMwEzKaItGgKpPzBjMuI~KyRrJmC@uI~HyTBgYlV}NvJ}K`NcXhGoCrLeNjJiZLuKaB{MmRnCaAkUtA{PuE}UaRa\\q@oEbAmJkAuI_EaIiUcLyBeX{CmEmLqF}DsPgJiBwH}NeKdAgFaBoPiRmCcIsCkCkKvA}OiFkIb@uIdEgCm@yBkEPiMoMsNaGqO{GGmMdCqAu@yAkIv@}UaBHgCzDyBtN{Fc@_DmLuFgCjByKg@wLaAc@wGlEsCeC`BgKuDyCe@cC`Jo@tCkGvJqHuBoHn@{BfNyAjAaWgCkGhA[tCjIhBZtE_F]{FzGu@FaEcEyLjDwCjAgFcBcGh@yF_E_H`Ee]MyTpG_O}CcXgDu@qBnAcAeCuCm@mAjBD`DeC{BgCzGsB}@VmCgEz@sB{EmGIbBtEcEvAyLiDeAdEqFPeBzFsH~JyEj@oDvEaIt@yDpDcFIeBoHoIl@qCaD{COoDjEeAdJ{HzRcIxHqCfMaFZkArByG|@}DnCkBQ{@vHsF\\OjE{DlCOfC_Bj@kC_BgD|EeDPy[jj@oN~CkDnO\\xHvObUIhPwJnJoM|BkKhImDdLqJtI_FfRkLtGgCpDu@lIjDdY_Dz^yDfJmHnEkP|@uG`DoTbd@cCtUaDjGkFpAyOaBmHhBu^|\\iYrPgVjYyOfFgVx`@xAp[gG`PiMlS}O|GmFbLsJdJwH~ZgMvLmMnHgDvOaDl@_G{FeF\\aMcDeDxAmGlLgEdCy^lEkN~S}FzRuEvXaClCaTYgEiFkEs@aHkGsR|GeMlXcNnHoS~k@s@nGrBbQyGvEkAvCdB~NsAbJsD~EIwFuAmBkAP{CjGmI`F[bEaDv@oByCuEr@wI}EuAcEsDqAmHN_BeHHgHkBqDtBqb@zEgR{C{FeLaByAtCyFiBqDpD}AuCgFpF_FdAcBbNqF`ByGk@iBxFaDjBaJwA_GoJ_MA_IlSqGbGpAsRoCsI_JoA}At@{BeCmHfAxAoCcLyACeCjDwCuJb@aGhDaE{GoCe@[zDyBHmAfDqEi@o@zGiAfAgIgFaC_Hl@wQ}FPkCdJa@kQaEk@uBeGkGqAoFnJoEOgFfDsJcGmAjBeCYiBiDUsKkJhDiJoAaBkPb@eF{@iAqHd@_QdTgCWyHtCsXcN}\\gFoCuB}@xA{F?eOiDgKwJ}ImC_L[{BqFsNaINeAqbAmv@uK`Wim@ke@",
+    "route_map_url": "",
+    "route_polyline": "",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.altovelo.org/a-ride/101026-saturday-a-ride-big-basin"
@@ -2496,18 +2496,18 @@ window.LOCAL_EVENTS_DATA = [
     },
     "source_group_name": "Ruekn Bici Gruppo (Southern California)",
     "event_time_utc": {
-      "$date": "2026-10-11T14:45:00.000Z"
+      "$date": "2026-10-18T14:45:00.000Z"
     },
-    "meet_up_location": "Pico Rivera, California, United States",
+    "meet_up_location": "3260 Fairway Dr Pico Rivera CA 90660 United States",
     "gps_coordinates": "34.01872, -118.05894",
-    "distance_meters": 51012,
+    "distance_meters": 51010,
     "elevation_gain_meters": 449,
     "organizer": "Stan 🦊",
     "strava_url": "https://www.strava.com/clubs/908336/group_events/3542051859561538692",
-    "title": "🐍🐉",
+    "title": "🐍🐉 🐉",
     "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Pico Rivera Golf Club\n3260 Fairway Dr, Pico Rivera, CA 90660\n\n☕️ NOA Coffee & Tea\n350 S Glendora Ave, West Covina, CA 91790",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/WTWTRU7KRW7XPRAH5SNAOALJVZ52QF6RHX2GUHBRENRXRBD7H33ZVC3NA6V4X5F3U2VYVY5BELCWS45AIU2MWQ5OBMXHTS46MR4Q4HA=",
-    "route_polyline": "c~rnEtuqoUtJtE`HjIr@kIfY~ZdQ|IjD}LvJ{OlInJ|RdHpWkc@`c@mb@pP[DehCkJ?G_^}BaWpAaGyGsFuGsKJoFqBnAyKmOSoC`E{FaC?}@cE_CdAmBeCFaRtBeCkAcGpHcCuE}B~EiDsAeEaF}@dAkIcDuE_Fr@gC{GNmCoDLlA{E[wGgCnHeEeEyDbBKtGeA`@kAsU{GaPnAeQkNI_G{BmDqIeErGd@zNmKdC_AjFm{Aev@ay@kx@cIqMmcEeoExKcQjD{MvMcSq_AugAvA{TiiB?{Edv@wBbmBioBOeWeO~N`N~DxJAjeBaEzPw[|c@gLfTpJuExIuLpn@tv@`hAt|Atc@|\\p`@pKnj@lEnkBtc@ve@fMhXnOnM~N|K~SnsAj`E~LhNvWtNZrDpGjGtB{Bg@~ArCeAKhBnThV",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/PRJ3W4KMPONEMSTSTAP6GQZAXLZCFPI7TQ6QCDIF27SSDNIBW3KJGHVMYPQFWWWT3WYUCREHU62E5GXM4MF2EATKACCA62SO6IZY34I=",
+    "route_polyline": "a~rnEtuqoUrJtE`HjIr@kIfY~ZdQ|IjD}LvJ{OlInJ|RdHpWkc@`c@mb@pP[DehCkJ?G_^}BaWpAaGyGsFuGsKJoFqBnAyKmOSoC`E{FaC?}@cE_CdAmBeCFaRtBeCkAcGpHcCuE}B~EiDsAeEaF}@dAkIcDuE_Fr@gC{GNmCoDLlA{E[wGgCnHeEeEyDbBKtGeA`@kAsU{GaPnAeQkNI_G{BmDqIeErGd@zNmKdC_AjFm{Aev@ay@kx@cIqMmcEeoExKcQjD{MvMcSq_AugAvA{TiiB?{Edv@wBbmBioBOeWeO~N`N~DxJAjeBaEzPw[|c@gLfTpJuExIuLpn@tv@`hAt|Atc@|\\p`@pKnj@lEnkBtc@ve@fMhXnOnM~N|K~SnsAj`E~LhNvWtNZrDpGjGtB{Bg@~ArCeAKhBnTlV",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/908336/group_events/3542051859561538692"
@@ -2533,11 +2533,38 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006",
     "title": "FWC Cañada & New Kit Photoshoot!",
     "description": "Social ride + new FWC kit photoshoot with professional photographers 📸\nDetails TBD.",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/3COSYGPCMCXJEGLP4JGBUU2MT64QC4NAT7WSZVJLII23E7OAJTW2TYHBPUGFML6PB3W2PAQN4ZTFFQJNQY5E2TEJUSKDN7I4GBQRVZY=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4YNGAVR3SNRHTCSTLFUP25MW72HR7IBKMTJKRAQLP3GOC4RCDAQGHM26JKKNR33JDPIGSQ3G2NA5AXLMRCKURQZNWAPH5QDUJEKMVMY=",
     "route_polyline": "we|cFvfuiVxGoMhLwCvDaDnByFf@{RlEwJ`FwClNcBxFmCr\\od@rbDepCzNyVfB{RbBkE|SiMj{@{zA`EoKvJcGl`AwgAjUgS`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEfLpKbDX~\\wf@v]aWvKuLbFo_@jFeJjIyKlYaRh@_FmAmW|HiQhBoS|I{N}_@oq@gCeMwR{KwQcQ}p@iMu\\zI}l@xAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEmFyAiClAeA`BbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLfMh^~H~IpJ~F?tBebAdZuC~CkIdVqCnC{Eb@sIcBXhMuAfIkUfSm`AvgAwJbGaEnKk{@zzA}ShMcBjEgBzR{NxVsbDdpCs\\nd@yFlCmNbBaFvCmEvJg@zRoBxFqUtL",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006"
+  },
+  {
+    "_id": "strava-908336-3544520638102206572",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "908336"
+    },
+    "source_event_id": {
+      "$numberLong": "3544520638102206572"
+    },
+    "source_group_name": "Ruekn Bici Gruppo (Southern California)",
+    "event_time_utc": {
+      "$date": "2026-10-25T14:45:00.000Z"
+    },
+    "meet_up_location": "Anaheim, California, United States",
+    "gps_coordinates": "33.80304, -117.87753",
+    "distance_meters": 58750,
+    "elevation_gain_meters": 139,
+    "organizer": "Stan 🦊",
+    "strava_url": "https://www.strava.com/clubs/908336/group_events/3544520638102206572",
+    "title": "🧹☕",
+    "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Artic\n2626 E Katella Ave, Anaheim, CA 92806\n\n☕️ Neat Coffee\n16182 Pacific Coast Hwy, Huntington Beach, CA 92649",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/T2DBXYBDP7SBPQLTQYEI7LJLNC3XUKY22PMWNFX4RFS5UZNTCRGTCK2MFY7W57OOV54IFZAGQSZ2K4BM2U2I63DVZR3FCOE6VMUPDDQ=",
+    "route_polyline": "smimExtmnUbv@jW{Avd@~@nlJwAzc@Dnh@zAxIl@luEppBe@TpFdChDbQP]jaFjFf_@i@fDiEzFnT|UrMvA`aBJbTiDtdDw@Hvt@~j@SjCqBlOzIdBbJLd}@k~@zhAgM|K}FtOoLjNnLkNpCiIdBlC|iAysAeAwA~CiDAgeAu@sEbHwNEsUvE}IF{K_d@QOsu@~k@YoAg{J}Ak`DmCeZvBqVIkdAlAcJxBrB}cAok@yh@aRy_@mJgvAiRgV}I}UkNor@_k@gBrDcKiGaw@}n@gf@mSm@{BkV_KuOcL}TS{bBaj@",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/908336/group_events/3544520638102206572"
   },
   {
     "_id": "strava-1263183-1732636",
@@ -2560,7 +2587,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "title": "往西，越过天际(Skyline)吧骚年",
     "description": "路线:\nRedwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山\n\n适合夏天的避暑路线 credit @Steve\n有两个大爬坡，分别是大家熟悉的 Old La Honda，和很多人熟悉的从Bike Hut开始的Tunitas Creek Rd\n\n预计总时间6 hours\n\n本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 [旧金山湾区骑行路线 第一章 练](https://rangerway.com/way/cycling-routes-at-bay-area) 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。\n这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/7QWLWOGAA4PVNFPWYNRV4DZUS4OJYT3GJVXAS4RDVMFKXTQZAL76ZUCSS3YT66BEMZPFWR3M5K5MN6CRVNFC6OD2VHQ44JL62Q3CBZA=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/P5BYTS6LOE6EOSQLCYAZAR23PYEAUGLVVFQ6GWVOBZEAF3YZE27FX2ERLXNBAFWKXAWSB6MYBKOYIUI2ZER2GOZXYDCBW5FYEJLTX4Y=",
     "route_polyline": "ogmcFtbdiV}BL@lIqApG`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfA~BzHxOuKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCFyHtKhMrEyFlAjG{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiDnE}E|HzIbGPdFvQtI{FlKjI`j@OjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvEsErApBoGzKtMeHbHcIlE`@TrFoHvAcMrRPtEiO`KyAdQ`FdC~Z`Br@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDfZrFxIhGbD`Tm@~DoJvNKrE`FvIrFzDLdJrItMl@v^fSlEpJzKjJqA|MfCjKzLPvBqA`BgQk@yHtG_JnA}@zBlG~LVfV~@`DdCj@xSeEnGfIrBfG@hKlCdHDpOkDl_@`EdQ`OhDz@pOjGfF~Qn]aAjGjDlSpFtGnKpDv@jIWjh@iQ~LcKt@oBfFjBvZvN~m@`BlVsb@hA{X|Gam@hFmU}@s_@uSqSef@}MnDwNaG_EzK}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IgIbGoAaBsDbAqCsEKaD_CoAcBuEsEgAkN~EqIgKyDI{QxDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GsDeAmHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRnD{IuDs@gBkIiGnAlGyOsK{DjKiKf@eF|EmBTkEsFu@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_KbHcCoE_CuSzDeHgFuArB}AW_@{CxCiKhCl@]}G|G_DsN|@aEaFyCYyPjG~@gFxGkIlNaBrD`DvBsDtKgD_JuDuHeOr@uJvAyE`BY[{FpMuJkCqV?kN`\\_q@}TqgAnAmUdCO",
     "is_active": true,
     "event_picture_urls": [],
