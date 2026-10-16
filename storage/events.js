@@ -2486,6 +2486,30 @@ window.LOCAL_EVENTS_DATA = [
     "source_url": "https://www.altovelo.org/a-ride/101026-saturday-a-ride-big-basin"
   },
   {
+    "_id": "webpage-2026-10-17-0ed5e8b6",
+    "source_type": "webpage",
+    "source_group_id": {
+      "$numberLong": "0"
+    },
+    "source_group_name": "altovelo-a-ride",
+    "event_time_utc": {
+      "$date": "2026-10-17T16:00:00.000Z"
+    },
+    "meet_up_location": "Summit Bicycles, Palo Alto",
+    "gps_coordinates": "37.42797, -122.14508",
+    "distance_meters": 109673.0,
+    "elevation_gain_meters": 2931.0,
+    "organizer": "Richard Red",
+    "title": "[GRAVEL] Saturday A Ride 10/17 - LKHC El Sereno",
+    "description": "[GRAVEL] Saturday A Ride 10/17 - LKHC El Sereno\nOct 15\nWritten By\nAlto Velo\nHello team, after being traumatized at Lost and Found four months ago, I think I’m ready to give gravel another shot. And with this Butano-sized bonanza of absolute bullshittery, I’ll be sure to inflict enough trauma upon myself (and perhaps you too) again to become gravel averse for another four months afterwards!\nRoute:\nhttps://www.strava.com/routes/3545904981321735276\n- 68mi / 9,600ft\nStart: Summit Bicycles, Palo Alto. Meet 9:00 AM, Roll 9:10 AM\nRide Etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader: Richard Red\nAlto Velo",
+    "route_url": "https://www.strava.com/routes/3545904981321735276",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/O6PZTTFDIIY6QLPJF6WQ3N6Q4FC4DBUHGOV7M4T6T5SQQCCR3YT2U2ZRNDTLSTHMT7VULOYQJEBEMCO7RVONBIWMIQKI3EW7GET6CKI=",
+    "route_polyline": "{ylcF~kohV|k@fd@fXko@pEF|CsIiAsB|LwEjA{D~SiBfg@kPvJaGfBfDtGiKl{@ch@fjAwy@nOkPbsEqtGdFwEzMqBni@dFbj@uCjq@DrR|DvJjGfFhFlApKnDlC~@oAwBsBbEcBnF`DpTd@pF|BpBqJtCeCmA}E|Em@R}B~IqGxFe@pBhBIaGfMyJpDt@jVgF|R`IdE?~S{YdEaBzGnA^aGvMsGdAA\\tE~@GtFwEViDe@aSxAoEqAkGd@_MvMoTyA_JgHuE{@}E_DuBqFiKnGaIRaD|Lb@fAmEvGYD{b@d{@?fAfAlX{^vPk^lX_`@dWgAdVhFhN~LbPhF|CvFyAmOwCj@uGmEpAsD|BfAfLiDnCfCfKhBpHiIo@qCsFiBh@wJxMlCtFmEtA\\`AiH~GGkAwE_HqFdAcGo@cCiG{F|BuEzBFxD}EmCmIjA~@|Em@bA|B~Cj@yC{PXyHfJoAeA~E~Fb@lDvCUmGzDyDGoHnDoEzAb@xC}CnAlARdCeBqBqEjEeArDlBtE^}BvAhD}BlNlBrIi@lCnC~@gAtBlBbHw@`DbBbGlE?s@`BqHtBKtCcFdGxApBHzD`C~B}C|@_BzDExMfAlCxExAAlGmAmEwEgAv@nHk@xHyC`BdDi@`BaFhCpA`@lCtFdC~B`I~D@lBhB}CpDVxEqJnHh@pIaDvJ~@pFkFu@sB~@iA`BEbE{I|ByHrIuDeAyEnMsGxCeCuBwEt@_HeEaCxAkEkG_BbEAjGaGhDAhRaBrD{J|BaLc@q@zBmJ~BqJvHsAc@z@uJeJtOBsGoDrBdC_HcFgDuEqOP}@hBb@BgAoEoK|@_CyCkB_@gD}BbC_IbBmHcPgLpAsDcEcKzBp@lE~ExAn@pKvA`Dc@~E`EhDh@~QzC|Ik@|UxEtGqClGaCvOx@tLuAzFdCrG@tGlCtGmBbLvAlCdJlBvFgAhUb@lc@qFjRuNfBoTxGsGjHePhPcLxFaIfDu@nE`DbFoAhM`BpFqDhEjE~EpTsAb@|@l@kBbCgAgDgFqAFdCjCvCsBj@vBjBeBfArAfAfFu@~BvGwD_C|DhF}CsBoAdA}Fu@ObBhBe@fDxCwDI}EnJ^t@|BoCnEi@zC^eMbK|A~Co@r@rCrD}B`Bx@~@PqARpAtC}BqA}InCOn@`Bu@bBZdFiAhAVpDkD`DpEeCGyCbCoAdBrBaDzDXzDzCjG~Ck@qGpHcCfRyA`BeDHeDvCqVs@pB`GxD}B|@bEpCbBd@rPyC|BOzBpA`A|@bJs@bGdAjDoBbJd@pDyF`DWzDcGzBeCsEyBtEkB_AgD`BoAiBsGpKUxCeIlCMxAdDk@?dAwF~Ly@a@|BcDcH{GDcDsBbDsDaBeDr@XqAwEjDKwCm@rBuAFh@eAeAiAmFs@j@xTjAnAfBk@iC~E@lErAlCqDjNmCPkb@fd@_K?s@{DyDpKkGrAt@dFiCvCeAYeE~C{D}@uCnCsEFe@`KuHfJ_EdK{C`D{DGf@vCeBnA}EvNzC_AbBpRiGvQsDfAg@lCiBQeBrK{OzFmJlQuCFwEeFqBvAf@tLbBb@oCjD~@A~@lEvCdC_ClLwDtEEnCfHnLwClAaDdJ}GpCgAfDz@vCiCfAQlEgDnAcMu@xAyFcCjB~AeE}CjB{@{B}Aj@|BmGoNaEkIz@sDdEiFfTwBb@qLjNcBb@yFeEeC_IoJ`BsKbIuHjLXpDkCpHj@nF}QrKoAhIqCYuGcN}En@f@iHoJaByBrBNiAcMzHp@xCuAfDt@zDaLzB_BsBmFvEuFnAkJf]iGvL_WxFs@w@v@kCwFlAMrIiA~@yFsKaBGlApALdFaAsBqJEmBxD|@PcDpD|Bs@jAvAyHhDgBlEt@~E_AbBfB`BMnFzBrFpGj@FrKe@hBmGPfBrBe@|GoEbBwAnHaLs@kCpPcM`DaDjGmMbJ\\mCcItDt@VmCQt@vCiB{B`@|BgAoAmKu@FkB}KrGrDgF_FXqBfAqLpT`@{I{@QsFvOL~EgBb@gCnH}]rBw^n_@cErPuYrW{B`GiOzF_GsBuFwLt@oKaAkDjGuQ}B{A{T|Gyw@stAwDwOwR{KcLwLo@}EvH_O|H|G`Jt@h@_KiDt@nCyHB{GuCsMhEkI}@mCsBYgAsK_HyA?}G}C_AcM_M}BJJyCiCoH{DkBnE_l@_RyJ}\\gFoCuB}@xA{F?eOiDgKwJ}ImC_L[gAcEqO}IEwA{Vv_@uUqT{WImz@gp@f@oA_Au@xJeLuDoFZkB",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.altovelo.org/a-ride/gravel-saturday-a-ride-1017-lkhc-el-sereno"
+  },
+  {
     "_id": "strava-908336-3542051859561538692",
     "source_type": "strava",
     "source_group_id": {
@@ -2506,38 +2530,11 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/908336/group_events/3542051859561538692",
     "title": "🐍🐉 🐉",
     "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Pico Rivera Golf Club\n3260 Fairway Dr, Pico Rivera, CA 90660\n\n☕️ NOA Coffee & Tea\n350 S Glendora Ave, West Covina, CA 91790",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/PRJ3W4KMPONEMSTSTAP6GQZAXLZCFPI7TQ6QCDIF27SSDNIBW3KJGHVMYPQFWWWT3WYUCREHU62E5GXM4MF2EATKACCA62SO6IZY34I=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/U5OBZIP7ZZUHVHTH4TMEBCSN6FWF7MMCWFELL7Y7HWYLWCDTQWIJFIKHI22FWNZCJK2IPZR23CHBKABLR75LW6S7TWMGINQC7RKGT7A=",
     "route_polyline": "a~rnEtuqoUrJtE`HjIr@kIfY~ZdQ|IjD}LvJ{OlInJ|RdHpWkc@`c@mb@pP[DehCkJ?G_^}BaWpAaGyGsFuGsKJoFqBnAyKmOSoC`E{FaC?}@cE_CdAmBeCFaRtBeCkAcGpHcCuE}B~EiDsAeEaF}@dAkIcDuE_Fr@gC{GNmCoDLlA{E[wGgCnHeEeEyDbBKtGeA`@kAsU{GaPnAeQkNI_G{BmDqIeErGd@zNmKdC_AjFm{Aev@ay@kx@cIqMmcEeoExKcQjD{MvMcSq_AugAvA{TiiB?{Edv@wBbmBioBOeWeO~N`N~DxJAjeBaEzPw[|c@gLfTpJuExIuLpn@tv@`hAt|Atc@|\\p`@pKnj@lEnkBtc@ve@fMhXnOnM~N|K~SnsAj`E~LhNvWtNZrDpGjGtB{Bg@~ArCeAKhBnTlV",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/908336/group_events/3542051859561538692"
-  },
-  {
-    "_id": "strava-1157973-3528256494678268006",
-    "source_type": "strava",
-    "source_group_id": {
-      "$numberLong": "1157973"
-    },
-    "source_event_id": {
-      "$numberLong": "3528256494678268006"
-    },
-    "source_group_name": "Featherweight Club",
-    "event_time_utc": {
-      "$date": "2026-10-18T16:00:00.000Z"
-    },
-    "meet_up_location": "Cañada Rd Redwood City CA 94062 United States",
-    "gps_coordinates": "37.50591, -122.34027",
-    "distance_meters": 46203,
-    "elevation_gain_meters": 433,
-    "organizer": "Yuji 🪶",
-    "strava_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006",
-    "title": "FWC Cañada & New Kit Photoshoot!",
-    "description": "Social ride + new FWC kit photoshoot with professional photographers 📸\nDetails TBD.",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/4YNGAVR3SNRHTCSTLFUP25MW72HR7IBKMTJKRAQLP3GOC4RCDAQGHM26JKKNR33JDPIGSQ3G2NA5AXLMRCKURQZNWAPH5QDUJEKMVMY=",
-    "route_polyline": "we|cFvfuiVxGoMhLwCvDaDnByFf@{RlEwJ`FwClNcBxFmCr\\od@rbDepCzNyVfB{RbBkE|SiMj{@{zA`EoKvJcGl`AwgAjUgS`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEfLpKbDX~\\wf@v]aWvKuLbFo_@jFeJjIyKlYaRh@_FmAmW|HiQhBoS|I{N}_@oq@gCeMwR{KwQcQ}p@iMu\\zI}l@xAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEmFyAiClAeA`BbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLfMh^~H~IpJ~F?tBebAdZuC~CkIdVqCnC{Eb@sIcBXhMuAfIkUfSm`AvgAwJbGaEnKk{@zzA}ShMcBjEgBzR{NxVsbDdpCs\\nd@yFlCmNbBaFvCmEvJg@zRoBxFqUtL",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006"
   },
   {
     "_id": "strava-908336-3544520638102206572",
@@ -2560,7 +2557,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/908336/group_events/3544520638102206572",
     "title": "🧹☕",
     "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Artic\n2626 E Katella Ave, Anaheim, CA 92806\n\n☕️ Neat Coffee\n16182 Pacific Coast Hwy, Huntington Beach, CA 92649",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/T2DBXYBDP7SBPQLTQYEI7LJLNC3XUKY22PMWNFX4RFS5UZNTCRGTCK2MFY7W57OOV54IFZAGQSZ2K4BM2U2I63DVZR3FCOE6VMUPDDQ=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/VEZI5ZE7TQWYJG3XCV5GBB5L6BQTVJJLTOUDJDBDTMVHFWVVSJLFZ24VBE5BYXC4FOEEW5BEQZHZEZZOPM6DKO2C42I6XQBDONJUNDQ=",
     "route_polyline": "smimExtmnUbv@jW{Avd@~@nlJwAzc@Dnh@zAxIl@luEppBe@TpFdChDbQP]jaFjFf_@i@fDiEzFnT|UrMvA`aBJbTiDtdDw@Hvt@~j@SjCqBlOzIdBbJLd}@k~@zhAgM|K}FtOoLjNnLkNpCiIdBlC|iAysAeAwA~CiDAgeAu@sEbHwNEsUvE}IF{K_d@QOsu@~k@YoAg{J}Ak`DmCeZvBqVIkdAlAcJxBrB}cAok@yh@aRy_@mJgvAiRgV}I}UkNor@_k@gBrDcKiGaw@}n@gf@mSm@{BkV_KuOcL}TS{bBaj@",
     "is_active": true,
     "event_picture_urls": [],
@@ -2587,11 +2584,38 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "title": "往西，越过天际(Skyline)吧骚年",
     "description": "路线:\nRedwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山\n\n适合夏天的避暑路线 credit @Steve\n有两个大爬坡，分别是大家熟悉的 Old La Honda，和很多人熟悉的从Bike Hut开始的Tunitas Creek Rd\n\n预计总时间6 hours\n\n本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 [旧金山湾区骑行路线 第一章 练](https://rangerway.com/way/cycling-routes-at-bay-area) 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。\n这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/P5BYTS6LOE6EOSQLCYAZAR23PYEAUGLVVFQ6GWVOBZEAF3YZE27FX2ERLXNBAFWKXAWSB6MYBKOYIUI2ZER2GOZXYDCBW5FYEJLTX4Y=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/CWRP23BJFMQJB5AXCWVBLYUMV4A5IB5XRPORIHSA2SA6EZF2Y6QQ7RBSA2M2LMWJQTYQPYTYOQVTQUN6PFI4IM76SML6YQG65O4T57Y=",
     "route_polyline": "ogmcFtbdiV}BL@lIqApG`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfA~BzHxOuKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCFyHtKhMrEyFlAjG{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiDnE}E|HzIbGPdFvQtI{FlKjI`j@OjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvEsErApBoGzKtMeHbHcIlE`@TrFoHvAcMrRPtEiO`KyAdQ`FdC~Z`Br@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDfZrFxIhGbD`Tm@~DoJvNKrE`FvIrFzDLdJrItMl@v^fSlEpJzKjJqA|MfCjKzLPvBqA`BgQk@yHtG_JnA}@zBlG~LVfV~@`DdCj@xSeEnGfIrBfG@hKlCdHDpOkDl_@`EdQ`OhDz@pOjGfF~Qn]aAjGjDlSpFtGnKpDv@jIWjh@iQ~LcKt@oBfFjBvZvN~m@`BlVsb@hA{X|Gam@hFmU}@s_@uSqSef@}MnDwNaG_EzK}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IgIbGoAaBsDbAqCsEKaD_CoAcBuEsEgAkN~EqIgKyDI{QxDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GsDeAmHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRnD{IuDs@gBkIiGnAlGyOsK{DjKiKf@eF|EmBTkEsFu@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_KbHcCoE_CuSzDeHgFuArB}AW_@{CxCiKhCl@]}G|G_DsN|@aEaFyCYyPjG~@gFxGkIlNaBrD`DvBsDtKgD_JuDuHeOr@uJvAyE`BY[{FpMuJkCqV?kN`\\_q@}TqgAnAmUdCO",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "route_orientation": "clockwise"
+  },
+  {
+    "_id": "strava-1157973-3528256494678268006",
+    "source_type": "strava",
+    "source_group_id": {
+      "$numberLong": "1157973"
+    },
+    "source_event_id": {
+      "$numberLong": "3528256494678268006"
+    },
+    "source_group_name": "Featherweight Club",
+    "event_time_utc": {
+      "$date": "2026-11-15T17:00:00.000Z"
+    },
+    "meet_up_location": "Cañada Rd Redwood City CA 94062 United States",
+    "gps_coordinates": "37.50591, -122.34027",
+    "distance_meters": 46203,
+    "elevation_gain_meters": 433,
+    "organizer": "Yuji 🪶",
+    "strava_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006",
+    "title": "FWC Cañada & New Kit Photoshoot!",
+    "description": "Social ride + new FWC kit photoshoot with professional photographers 📸\nDetails TBD.",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/2JLY4V2KYKF62LXYNGV2JELHJ3Q5ULIO2DDSDW5JDSYXN7SCYYNJIGNM62V5YQHSXWOESRJHTJR3KYBM43JXFCISAPPHWGEXSPCZK5Y=",
+    "route_polyline": "we|cFvfuiVxGoMhLwCvDaDnByFf@{RlEwJ`FwClNcBxFmCr\\od@rbDepCzNyVfB{RbBkE|SiMj{@{zA`EoKvJcGl`AwgAjUgS`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEfLpKbDX~\\wf@v]aWvKuLbFo_@jFeJjIyKlYaRh@_FmAmW|HiQhBoS|I{N}_@oq@gCeMwR{KwQcQ}p@iMu\\zI}l@xAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEmFyAiClAeA`BbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLfMh^~H~IpJ~F?tBebAdZuC~CkIdVqCnC{Eb@sIcBXhMuAfIkUfSm`AvgAwJbGaEnKk{@zzA}ShMcBjEgBzR{NxVsbDdpCs\\nd@yFlCmNbBaFvCmEvJg@zRoBxFqUtL",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006"
   }
 ];
