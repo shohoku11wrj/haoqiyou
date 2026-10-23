@@ -2503,38 +2503,11 @@ window.LOCAL_EVENTS_DATA = [
     "title": "[GRAVEL] Saturday A Ride 10/17 - LKHC El Sereno",
     "description": "[GRAVEL] Saturday A Ride 10/17 - LKHC El Sereno\nOct 15\nWritten By\nAlto Velo\nHello team, after being traumatized at Lost and Found four months ago, I think I’m ready to give gravel another shot. And with this Butano-sized bonanza of absolute bullshittery, I’ll be sure to inflict enough trauma upon myself (and perhaps you too) again to become gravel averse for another four months afterwards!\nRoute:\nhttps://www.strava.com/routes/3545904981321735276\n- 68mi / 9,600ft\nStart: Summit Bicycles, Palo Alto. Meet 9:00 AM, Roll 9:10 AM\nRide Etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader: Richard Red\nAlto Velo",
     "route_url": "https://www.strava.com/routes/3545904981321735276",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/AOERJ2WU6ZUT2EQZO6CL5L2Q3C4HRO37VWRVUTUUJK2NV7VNPKOAYWUNF76JD4I5RJGWHVQBASZ3G5IUYR5K6GOREJ65S7J2ML4J7SA=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/6GFURMK2FNDLG3FOIPPVDBUXC7UTU5WP5YZTTTKFCNK6QRAVQX7XNRW52NWYQVKTHBLYCQEW37QQ6U4L4NEO3QH7Y2BDSJNNE7AP2WY=",
     "route_polyline": "{ylcF~kohV|k@fd@fXko@pEF|CsIiAsB|LwEjA{D~SiBfg@kPvJaGfBfDtGiKl{@ch@fjAwy@nOkPbsEqtGdFwEzMqBni@dFbj@uCjq@DrR|DvJjGfFhFlApKnDlC~@oAwBsBbEcBnF`DpTd@pF|BpBqJtCeCmA}E|Em@R}B~IqGxFe@pBhBIaGfMyJpDt@jVgF|R`IdE?~S{YdEaBzGnA^aGvMsGdAA\\tE~@GtFwEViDe@aSxAoEqAkGd@_MvMoTyA_JgHuE{@}E_DuBqFiKnGaIRaD|Lb@fAmEvGYD{b@d{@?fAfAlX{^vPk^lX_`@dWgAdVhFhN~LbPhF|CvFyAmOwCj@uGmEpAsD|BfAfLiDnCfCfKhBpHiIo@qCsFiBh@wJxMlCtFmEtA\\`AiH~GGkAwE_HqFdAcGo@cCiG{F|BuEzBFxD}EmCmIjA~@|Em@bA|B~Cj@yC{PXyHfJoAeA~E~Fb@lDvCUmGzDyDGoHnDoEzAb@xC}CnAlARdCeBqBqEjEeArDlBtE^}BvAhD}BlNlBrIi@lCnC~@gAtBlBbHw@`DbBbGlE?s@`BqHtBKtCcFdGxApBHzD`C~B}C|@_BzDExMfAlCxExAAlGmAmEwEgAv@nHk@xHyC`BdDi@`BaFhCpA`@lCtFdC~B`I~D@lBhB}CpDVxEqJnHh@pIaDvJ~@pFkFu@sB~@iA`BEbE{I|ByHrIuDeAyEnMsGxCeCuBwEt@_HeEaCxAkEkG_BbEAjGaGhDAhRaBrD{J|BaLc@q@zBmJ~BqJvHsAc@z@uJeJtOBsGoDrBdC_HcFgDuEqOP}@hBb@BgAoEoK|@_CyCkB_@gD}BbC_IbBmHcPgLpAsDcEcKzBp@lE~ExAn@pKvA`Dc@~E`EhDh@~QzC|Ik@|UxEtGqClGaCvOx@tLuAzFdCrG@tGlCtGmBbLvAlCdJlBvFgAhUb@lc@qFjRuNfBoTxGsGjHePhPcLxFaIfDu@nE`DbFoAhM`BpFqDhEjE~EpTsAb@|@l@kBbCgAgDgFqAFdCjCvCsBj@vBjBeBfArAfAfFu@~BvGwD_C|DhF}CsBoAdA}Fu@ObBhBe@fDxCwDI}EnJ^t@|BoCnEi@zC^eMbK|A~Co@r@rCrD}B`Bx@~@PqARpAtC}BqA}InCOn@`Bu@bBZdFiAhAVpDkD`DpEeCGyCbCoAdBrBaDzDXzDzCjG~Ck@qGpHcCfRyA`BeDHeDvCqVs@pB`GxD}B|@bEpCbBd@rPyC|BOzBpA`A|@bJs@bGdAjDoBbJd@pDyF`DWzDcGzBeCsEyBtEkB_AgD`BoAiBsGpKUxCeIlCMxAdDk@?dAwF~Ly@a@|BcDcH{GDcDsBbDsDaBeDr@XqAwEjDKwCm@rBuAFh@eAeAiAmFs@j@xTjAnAfBk@iC~E@lErAlCqDjNmCPkb@fd@_K?s@{DyDpKkGrAt@dFiCvCeAYeE~C{D}@uCnCsEFe@`KuHfJ_EdK{C`D{DGf@vCeBnA}EvNzC_AbBpRiGvQsDfAg@lCiBQeBrK{OzFmJlQuCFwEeFqBvAf@tLbBb@oCjD~@A~@lEvCdC_ClLwDtEEnCfHnLwClAaDdJ}GpCgAfDz@vCiCfAQlEgDnAcMu@xAyFcCjB~AeE}CjB{@{B}Aj@|BmGoNaEkIz@sDdEiFfTwBb@qLjNcBb@yFeEeC_IoJ`BsKbIuHjLXpDkCpHj@nF}QrKoAhIqCYuGcN}En@f@iHoJaByBrBNiAcMzHp@xCuAfDt@zDaLzB_BsBmFvEuFnAkJf]iGvL_WxFs@w@v@kCwFlAMrIiA~@yFsKaBGlApALdFaAsBqJEmBxD|@PcDpD|Bs@jAvAyHhDgBlEt@~E_AbBfB`BMnFzBrFpGj@FrKe@hBmGPfBrBe@|GoEbBwAnHaLs@kCpPcM`DaDjGmMbJ\\mCcItDt@VmCQt@vCiB{B`@|BgAoAmKu@FkB}KrGrDgF_FXqBfAqLpT`@{I{@QsFvOL~EgBb@gCnH}]rBw^n_@cErPuYrW{B`GiOzF_GsBuFwLt@oKaAkDjGuQ}B{A{T|Gyw@stAwDwOwR{KcLwLo@}EvH_O|H|G`Jt@h@_KiDt@nCyHB{GuCsMhEkI}@mCsBYgAsK_HyA?}G}C_AcM_M}BJJyCiCoH{DkBnE_l@_RyJ}\\gFoCuB}@xA{F?eOiDgKwJ}ImC_L[gAcEqO}IEwA{Vv_@uUqT{WImz@gp@f@oA_Au@xJeLuDoFZkB",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.altovelo.org/a-ride/gravel-saturday-a-ride-1017-lkhc-el-sereno"
-  },
-  {
-    "_id": "strava-908336-3542051859561538692",
-    "source_type": "strava",
-    "source_group_id": {
-      "$numberLong": "908336"
-    },
-    "source_event_id": {
-      "$numberLong": "3542051859561538692"
-    },
-    "source_group_name": "Ruekn Bici Gruppo (Southern California)",
-    "event_time_utc": {
-      "$date": "2026-10-18T14:45:00.000Z"
-    },
-    "meet_up_location": "3260 Fairway Dr Pico Rivera CA 90660 United States",
-    "gps_coordinates": "34.01872, -118.05894",
-    "distance_meters": 51010,
-    "elevation_gain_meters": 449,
-    "organizer": "Stan 🦊",
-    "strava_url": "https://www.strava.com/clubs/908336/group_events/3542051859561538692",
-    "title": "🐍🐉 🐉",
-    "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Pico Rivera Golf Club\n3260 Fairway Dr, Pico Rivera, CA 90660\n\n☕️ NOA Coffee & Tea\n350 S Glendora Ave, West Covina, CA 91790",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/U5OBZIP7ZZUHVHTH4TMEBCSN6FWF7MMCWFELL7Y7HWYLWCDTQWIJFIKHI22FWNZCJK2IPZR23CHBKABLR75LW6S7TWMGINQC7RKGT7A=",
-    "route_polyline": "a~rnEtuqoUrJtE`HjIr@kIfY~ZdQ|IjD}LvJ{OlInJ|RdHpWkc@`c@mb@pP[DehCkJ?G_^}BaWpAaGyGsFuGsKJoFqBnAyKmOSoC`E{FaC?}@cE_CdAmBeCFaRtBeCkAcGpHcCuE}B~EiDsAeEaF}@dAkIcDuE_Fr@gC{GNmCoDLlA{E[wGgCnHeEeEyDbBKtGeA`@kAsU{GaPnAeQkNI_G{BmDqIeErGd@zNmKdC_AjFm{Aev@ay@kx@cIqMmcEeoExKcQjD{MvMcSq_AugAvA{TiiB?{Edv@wBbmBioBOeWeO~N`N~DxJAjeBaEzPw[|c@gLfTpJuExIuLpn@tv@`hAt|Atc@|\\p`@pKnj@lEnkBtc@ve@fMhXnOnM~N|K~SnsAj`E~LhNvWtNZrDpGjGtB{Bg@~ArCeAKhBnTlV",
-    "is_active": true,
-    "event_picture_urls": [],
-    "source_url": "https://www.strava.com/clubs/908336/group_events/3542051859561538692"
   },
   {
     "_id": "webpage-2026-10-18-ac18b718",
@@ -2561,6 +2534,30 @@ window.LOCAL_EVENTS_DATA = [
     "source_url": "https://www.altovelo.org/a-ride/sunday-a-ride-1012-big-basin-via-pagemill-zt9sd-fr5sz"
   },
   {
+    "_id": "webpage-2026-10-24-00e7ab57",
+    "source_type": "webpage",
+    "source_group_id": {
+      "$numberLong": "0"
+    },
+    "source_group_name": "altovelo-a-ride",
+    "event_time_utc": {
+      "$date": "2026-10-24T16:00:00.000Z"
+    },
+    "meet_up_location": "Cardoza Park, Milpitas",
+    "gps_coordinates": "37.42797, -122.14508",
+    "distance_meters": 168900.0,
+    "elevation_gain_meters": 2634.0,
+    "organizer": "Louise Thomas",
+    "title": "[Milpitas start] Saturday A Ride 10/24 - LKHC Mines Rd + Hamilton",
+    "description": "[Milpitas start] Saturday A Ride 10/24 - LKHC Mines Rd + Hamilton\nOct 22\nWritten By\nAlto Velo\nThis week’s Low Key Hill Climb calls for a team excursion to East Bay. We’ll start from Cardoza Park in Milpitas, near the base of Calaveras (feel free to ride over from Palo Alto, but 105 miles is plenty for me). We’ll take Calaveras at a leisurely pace, stop in Livermore for a quick bathroom/water break, then organize ourselves for the 17.7-mile “hill climb” up\nMines Rd\n. After the segment, we’ll regroup at The Junction, then do Mt. Hamilton since we’re out there anyway. Everything except Mines Rd is endurance pace, though you’re also welcome to go hard up Hamilton if you’re feeling it.\nHope to see you there!\n- Louise\nRoute:\nhttps://www.strava.com/routes/3548382685905979924\nSummary:\n105 miles / 8,600 feet\nStart:\nCardoza Park, Milpitas\nTime:\nMeet 9:00 AM, Leave 9:10 AM\nRide etiquette:\nhttps://www.altovelo.org/ride-rules\nRide Leader:\nLouise Thomas\nAlto Velo",
+    "route_url": "https://www.strava.com/routes/3548382685905979924",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/ZVK7T5XXKX42KHZAD3LOZQUQN5RXMOEK4KCNSPMRDODRVHB44XDNJJAUEE6DOX6XS5HG7X5A5E7S76VNVISBFBP3YCB75NQRAHY3L3A=",
+    "route_polyline": "u|ocFtj|fVaAGyHil@xc@iT}Fg^sI{KiHmCeIeNiCkWaE{D@sKeEkX}IwZvI{RhGyAbCwCvL}c@{BeJwDu@eB}EkG{Fo@uGbAoHyAmCqCl@gChGa@nJgEiDmAzBmLxCkGkDiDuJaAbGXpI}At@aIsNoB`GiCkE{C[mCxAl@lCuAnCn@nCgBzF{FyQaE?oLtGkEs@{LlAaGfEmAnMuBcBMwFcDe@HoF{FiD_HvAcD~CgCwHoFhBqGeFeFbCOpFgC}Bm@qKoAaByL|BQnJuHwC}Ar@QhD{Ha@qFjSuCwEwBa@l@eEyBqBlAyAkB_CnDyFeDcGiCtBeDSiArBeAHW}BoDWwD|CDcEgAu@yCrFgD?uKfFkBxM{GyMaLm@sa@~EwPdLw@xFyBP_DzDoC`I_Am@c@oO}C_FwHrTQtJkEdCaCtG{EzDgA~EcOvJsAfHaQOoHpBw_@f[oXrDmR_HqSfLeTbQk_@fAcIcBuPbIsbBfYoOpEyc@vFqy@nV{G`IgDfX_Stm@eI}@yVeSmAwCE_PmCyEgTwCs[pAcM`IaO`Do|@r\\_Tb@{VbE}H`DcVzRaS~CwDk@cMiYcD}Cwc@iAak@oJss@{z@`AapAa@sAmJkCm@itBjQin@~^gb@vFqKdBuq@`^cpA~H}NzF}UdQu^sRsa@gC}B}EeA}t@IcPqOo@cqBcHgi@k@gV}BsEaFwBm[a@aCyAgHpMpc@kx@`@_z@b]qAp]wk@n_@qVv\\wOpcAkq@zFwHlZoV|JsFb]eHFaDvLqK|RqWxEiOjUuc@OkQzFeZvGeJFyHlBiDs@iFt@sGvGiBpAmIfFl@nBkB_@c\\~Mal@_A_IvAwGuCkLlB}BB_DpEsFbIqDFsBwCmGlBmLbG{Gb@wHbEiAnHeSEcHhDkW_CmGDiDlLsD`@_FjCwAlBcGpMwQ\\mExF{Ku@mExBqFrGyFtF_MiEwQeFwEhAiK_CqI|B}G^aRfCoJfC}@xBkIrDiFvAyKnDwCxCwLhFuGj@wHlDcBpHmSnKiBrBnAtD}@vOrB~DiB`CaPxJqAiA_F|CeJbJ[lDnCjBs@nC~AzKZxDwCxKI`DcE|H_A`H}UvFwCtEcN~LqD`G_FbKj@`DiKfJs@lFqHrd@cL|H_F`ZiYfMgF~@mEtKyH|DoFlAqHlEaDtD{K~HcG`LmTfCqAzJt@lBgFpKmGbPmQdR`@dMgH~FdBpEyAdONfBqB|FCvH{IvOcGvEGfQoHbIj@fBeCbDfFfL`D|ReQxQmEbMaRfCa@nCsFhBc@~@qDdd@kNfOkSrGw@vEyD`GNbHkBze@wQtRxAzOmJ|J[tKdEq@zKpBbExa@qPbFA^cCsBsAgBeF\\{AtLHfM_DxFpBvKcLnFhAj^yQ`AsGtCIx@iD~GoHjAHk@rGnAhBrMsGlDIhOwMfGyJp@mEhH{FjCkGJuGpIgMbNaBnDuBl\\}ZhAiD`IpD`DjFjBpNbD|Bdo@iKz^tG~J?pT_Rzc@sWzi@SlHnQdF|BpTcUr~@yd@l]OlEsBzKxAdZqAjR}G~]?rRgHrIItDdCd@rF{Kva@_@lM~BtGoFfM_AhMuMxQ}DpUgAzTgIjNmCpTgL|e@mLtQaG|PgCnOpB|I}DzN\\xH{BnCoE|@{GzM}SvToIlE}AbWkDvCW~JyDzFbGvCUlGtEKVfAgE~E}AvGkDtC_HnV`BpXmGhc@_G|Gn@dVaK`Wl@zK_GhFwCa@rA~AhOjBw@xCVjPcD~HY`I{D`BiC`IdGfA|HkBZbBqDhKhElSvH~CrH?~BoHrBRR`IbD`B|DzIMvCnDfHzB|@mJoCaBnCrCJpKrUoIoCp@pKqCdCqBxOoE`IRjBhDdCDfHxEdAQxH_Dt@i@rBjG\\nA`E_DlBc@vFyD}@cEjBlDO|H|E|DH_AhBd@`BwC|@`EvEeFbLb@vCiBrA`Ge@uBhDlEtB\\rGbJfAEpKtC|@x@nCwApT`DxFg@hDdSxb@i@xH|AnHmApMnHnCrNiBpElAkF|G{IwAuLfAAdCxBhDqCzBpBs@dHrDkB`@_CyAFvE_C`G`Gb@jApCu@lC`Eu@vB|@M|DzAvAuFjI~CuBvD?z@aGpF`@kE~BxDdEsAxBHlErEnCiDpDiEb@gDiIyAhB_Ha@rC|EeBjIVxFpBvJvFfHwArAaA{CaH_DeAaDuBrBxBHjCfH@tEeBhFpGlE|AqFtBXhDgDxDhGrFu@vBfC?mCfK|EtAkB[kCvIz@vBkBgAcErGgCdCfHvFwAr@zIvE|@UlEcEnC{@tGxRyMdEhByFxHoDfMgM|FcFpII~C{AzAbDx`@}CzAWxDkCnAm@tGwAF_AiDeBrDs@rFj@vChCj@hA`GlFQKpFjCdCVpHkAr@}CmEmCfES`LaDZp@fF}BIuAhDaCt@wAsEoCKT`DoBhFj@bCwFpCrFtJsFvQeEdLaFnAuChKkE|ByGpW}FpJnCvb@cKjNm[`YuI|UyMzOkDrL`BhD_GtG@fM_Ck@eClCaD|NZzDmEJsB|B{AzLcCZF|GiAbBgDlXgDb@{@tEgDiD}FzDmAxHLfTwCrDe@tIsDxAiBvFoFxC_HjLwE@uD|GmBe@}A`DcCPeAfJaEdCkDcB}B|@yBnH}E}@cB|G_EhFyBz^xClLc@zDrCzOvGtJcEtEbB`Dg@|GpBrB^rDc@rPaBxF|AnHbHkCf@z@qQpT`@rKsJ~f@aRjN_BfFeD`BqCtGvWxOuIrFlAbHm@|NdB~N_gAnp@~DtNfFla@eaBfn@aN`Kuj@rYcp@dd@k}@nO_DtEqHjYyJxMig@hWxHhl@pEgA_C`B",
+    "is_active": true,
+    "event_picture_urls": [],
+    "source_url": "https://www.altovelo.org/a-ride/milpitas-start-saturday-a-ride-1024-lkhc-mines-rd-hamilton"
+  },
+  {
     "_id": "strava-908336-3544520638102206572",
     "source_type": "strava",
     "source_group_id": {
@@ -2581,7 +2578,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/908336/group_events/3544520638102206572",
     "title": "🧹☕",
     "description": "▶️8 AM ➜ ⏸️☕️ ➜ ⏹️11:20 AM\n\n🅿️ Artic\n2626 E Katella Ave, Anaheim, CA 92806\n\n☕️ Neat Coffee\n16182 Pacific Coast Hwy, Huntington Beach, CA 92649",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/WUNEJLXOQUKX56GYVKF2G7P67EGIF3IWIIMBQ4XKMELUHAOXRY6C2FSX7W7WDSJMPNWO5FE6UBM5DNPLDRYAA6ENOQ74UUVQGPRAGYA=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/QPIUBBUOZCBIGGLDZLQFTQY2HAKJUO6IJHO6ED57D7377QEU6YGE2JD652URWSGAW2I2BIEOQR7GS57LFY47ADDVO5EJEYA76XCEFUI=",
     "route_polyline": "smimExtmnUbv@jW{Avd@~@nlJwAzc@Dnh@zAxIl@luEppBe@TpFdChDbQP]jaFjFf_@i@fDiEzFnT|UrMvA`aBJbTiDtdDw@Hvt@~j@SjCqBlOzIdBbJLd}@k~@zhAgM|K}FtOoLjNnLkNpCiIdBlC|iAysAeAwA~CiDAgeAu@sEbHwNEsUvE}IF{K_d@QOsu@~k@YoAg{J}Ak`DmCeZvBqVIkdAlAcJxBrB}cAok@yh@aRy_@mJgvAiRgV}I}UkNor@_k@gBrDcKiGaw@}n@gf@mSm@{BkV_KuOcL}TS{bBaj@",
     "is_active": true,
     "event_picture_urls": [],
@@ -2602,14 +2599,14 @@ window.LOCAL_EVENTS_DATA = [
     },
     "meet_up_location": "(38.3020, -122.2804)",
     "gps_coordinates": "38.30198, -122.28043",
-    "distance_meters": 0,
-    "elevation_gain_meters": 0,
+    "distance_meters": 96560,
+    "elevation_gain_meters": 617,
     "organizer": "Steve L",
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3546756078428964972",
     "title": "2026 Napa Harvest Ride",
-    "description": "\n\n2026 Napa Valley Harvest Ride\n\n一年一度的豐收騎 又來囉！！\n大家 一起出來收官騎吧！\n本次提供兩條不一樣的路線 ，兩條都可以享受Napa Valley 秋天的絕美的風景。今年的天氣看起來很不錯 非常適合在酒莊野餐。 讓我們在葡萄酒莊慶祝豐收的季節吧。\n\n\n\nDate: 10/25/26 meet up at 08:30 Meet up @ Oxbow Public Market parking lot https://maps.app.goo.gl/heh1AvP2ZFFYn4j96?g_st=com.google.maps.preview.copy\n\n\n\nStarting around 09:00 and by 12:30ish we will have picnic lunch at V. Sattui Winery.  Then everyone can ride back to starting point using your own pace.  Many photo opportunities along the way, take as many photos as you wish.  \n\n\n\nRoute Overview:   \n\n\n\nFast n Long: (60英里/1800ft)\n\n\nhttps://connect.garmin.com/modern/course/524134568\n\n\n\nRelax Pace: 47miles/1600ft\n\n\nhttps://connect.garmin.com/modern/course/524132720",
-    "route_map_url": "",
-    "route_polyline": "",
+    "description": "2026 Annual Napa Valley Harvest Ride 年末丰收期\n\n⌚️Meet by: Sunday 10/25 9:00am\n\n📍Meet at: Oxbow Public Market parking lot \nhttps://maps.app.goo.gl/heh1AvP2ZFFYn4j96?g_st=com.google.maps.preview.copy\n\n🗺️Event Link: https://www.strava.com/clubs/1157973/group_events/3546756078428964972\n\nLong route: https://www.strava.com/routes/3547427696443331426\nShort route (relaxed pace): https://www.strava.com/routes/3547432537105944192 \n\n📝Note: This is a social ride. We will have picnic lunch at V. Sattui Winery.  Then everyone can ride back to starting point using your own pace.  Many photo opportunities along the way, take as many photos as you wish. \n\n👷‍♀️Disclaimer: Riders must wear protective gear, follow traffic laws, and accept cycling’s inherent risks. Descend responsibly. Organizers are not liable for accidents or injuries. Ride leads will assist, but each rider is responsible for their own navigation.\n\n--\n一年一度的豐收騎 又來囉！！\n大家 一起出來收官騎吧！\n本次提供兩條不一樣的路線 ，兩條都可以享受Napa Valley 秋天的絕美的風景。今年的天氣看起來很不錯 非常適合在酒莊野餐。 讓我們在葡萄酒莊慶祝豐收的季節吧。\n--\n我预计可以开始分发车衣了，来现场取的话plz lemme know！ ",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/UMIJE7I4MWTT2IVRQHTPX3SMHBNJAS74TA5HH4DKMP5J2J6ZEIUBI4NXQ6MHJ4ELT7CMV4MMNENRX5AU3YK3NAMVSBHDOQEIP365Z3Y=",
+    "route_polyline": "mxwhFv}iiVhGzOaOfHamB|@uFrBoI|LcF~BkBshAwBJcRvHsWvE}T`L}iAdJ{VrPe_@xFcHxCg}AbeBudDrjCyb@|PoVbSw]~QaZlEcY@}E`Bg]n]uOxT}p@x`@k^|IaFxE_JnRqKfO_p@h[uf@v|@_b@|j@cp@|q@q\\pu@{I~LwJfFsFxOkBoA{AyHlF}\\{D}WReJ`Jeb@|Pi[fNua@|@aWjE?d@gAiDoFeEe@iA{BfBmUuEuJn@aFoAeHd@qH}HiPfAsIkKuCsC}FmIsB_GmXoI}BmAuGmCqDoAsNoD{KnCwLuBuIR{GpEuIReQvGqRyAiMrBwOg@cGrBwJnGgH`FyWl@}K{CcIuAcLdBk\\nCoHW}WuTqPiDsFkGeAiBaD}EkBqOmCkC?qI~GeKjCsIxJeFiBoBr@wS~]}GZ_UdQmEjP|@~EsJbL_DbImLxDuw@lj@qIrNuEnSeHpKuPdb@_FhVdGrLfGrBxBlEbHhFzOzB~GxOx@tIfJtGdHNzHbEvKaB|XPlEzAhF~HpDPpK|IdFYbBbEvBt@bL}BzQa@dEqC~`@oKzLc@jEsBxG`@dHoF~Gh@tHzYlIrBrC|FjKtCgArI|HhPe@pHnAdHo@`FtEtJgBlUhAzBdEd@hDzEe@zAkE?}@`WgNta@}Ph[aJdb@SdJzD|WmF~ZbAbI`CbC}A`Igd@fqAmVv_@lMrIbkA~eB_e@~k@gC{DfCzDyyAriBcJsNG}Ds[g`@gGeLkDa@|N_n@tHyQvSs_AtMsI~Qc\\dEaP`\\uh@pb@amAbIg[|LaIzI_Mp\\qu@bp@}q@~a@}j@zd@{z@xq@e]x[eh@d`@iK|p@y`@tOyTp_@}^b[k@zXaDpa@uSn[gVlZgK`hDemCdyAoaBdH_Fdc@gHzVsP|iAeJ|TaLrWwEbRwHvBKp@vr@dOPfBjBpH}BljBQpP_IsGsP",
     "is_active": true,
     "event_picture_urls": [],
     "source_url": "https://www.strava.com/clubs/1157973/group_events/3546756078428964972"
@@ -2635,7 +2632,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1263183/group_events/1732636",
     "title": "往西，越过天际(Skyline)吧骚年",
     "description": "路线:\nRedwood Townhall 集合 - OLH  爬坡 - Loma 邱林 - Pescadero 小镇 - San Gregorio 小店 - Tunitas 爬坡 - Kings Mountain 下山\n\n适合夏天的避暑路线 credit @Steve\n有两个大爬坡，分别是大家熟悉的 Old La Honda，和很多人熟悉的从Bike Hut开始的Tunitas Creek Rd\n\n预计总时间6 hours\n\n本路线也叫避暑路线，因为在树林中穿行，或是海边吹风。起始从Redwood Townhall出发，这也是在 [旧金山湾区骑行路线 第一章 练](https://rangerway.com/way/cycling-routes-at-bay-area) 介绍过的OLH老本田训练路线的起始点，可以把这个地方看作是湾区骑行的一个hub，因为很多骑行路线无论是转山还是休闲骑还是辣堡团，都会以这里为起点或者经过这里。\n这一路上有很多可以驻足休息的好玩的地方，像Pescadero小镇和San Gregorio小店，还有下图的 The Bike Hut。一路的风景也有很多令我初见惊艳的地方。期待您也去探索一番，发现不一样的景色。",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/RKD4BY7H2TZITZNGRQGJVVVDAPYB4UKTKI7UUTV2TSY7OLOQY3D5DJYHMMNJLAMI7466T6YTPJMDQJKZGCQ2RM54VEIVTEEY67GGW2Q=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/3JODNHP7AS66KK4XZXFMLQYY7SOCH47YPDQKWMXKFSZJYUMJAT2PWX6F3GEHFVDEIQN7YMESFQEYIEJBWUB3M4U7LHKRM3OXLJYHHQA=",
     "route_polyline": "ogmcFtbdiV}BL@lIqApG`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEzMjLJ~CfBdC~RdEwCaIfDoHvLgFzGj@nAcB_@rDwL~J@zF|F|D~EsCbDbBlAuEdDtB`NmBz@zFjH|BzBfK{BvJaFfA~BzHxOuKnC}J|Kw@lHhKrD|@xHYhCmEdCGrAvCbBP|@|DxAP~DbJnDk@zDjGxG?bCcEbDxAzEqAAcIkBiBfBoCFyHtKhMrEyFlAjG{Jn[pBbBxBgAt@`DrHzBaD`P|BxCzDl@DjE|A~CrDl@`KaK`Ea@`Mj@~IbLfOk@fBhD{@hIj@hFzB`I`CrB`Os@hL_HlW_IzEbCjEyAfG~LjLiDnE}E|HzIbGPdFvQtI{FlKjI`j@OjEdHjFgC|DrDtGs@`OmQ`HwUhb@mSvEsErApBoGzKtMeHbHcIlE`@TrFoHvAcMrRPtEiO`KyAdQ`FdC~Z`Br@dE}@nOtH{G|ErL~HgMtOeAnCrGbTxM|GzAOtCaEF]bBvInAjCuChAxDfZrFxIhGbD`Tm@~DoJvNKrE`FvIrFzDLdJrItMl@v^fSlEpJzKjJqA|MfCjKzLPvBqA`BgQk@yHtG_JnA}@zBlG~LVfV~@`DdCj@xSeEnGfIrBfG@hKlCdHDpOkDl_@`EdQ`OhDz@pOjGfF~Qn]aAjGjDlSpFtGnKpDv@jIWjh@iQ~LcKt@oBfFjBvZvN~m@`BlVsb@hA{X|Gam@hFmU}@s_@uSqSef@}MnDwNaG_EzK}DgAaDzBbAjI_BrBsC~@{C}B_GpFwHd@aJjGuD`@kBvJ|EnJ}IcGi@qFqPxAIyHgLqM_Ck@qAnCr@dH}IzDpFjDcF~H_Bl@oAoCeE_B_FnHwGcBa@eCwAc@yBfH}GvAkCaER}DoGXwC`R{E`IgIbGoAaBsDbAqCsEKaD_CoAcBuEsEgAkN~EqIgKyDI{QxDkHtKiJzG_DPz@aDkDs@{JnHwLR]lArApAjA~J_R~CyQu@cPrKu]~JqMEeRcIaLbCcBqRcDmJg[uSeCaGkSsRqIgOgM}IqO{RkAyHeEaGqXPcIuE{XeE}PmGwDwHkCu@qAoHwQeEcFaDeAkEaGa@_g@}`@iF}GcAoJuFwQ{JeMqTo@eI`DwHaD_K`Kj@qK}EUyFpEq@eC{Cm@rCmJkD_Do@}FeHfAu@rI}GsDeAmHvAcIjFmFoDqF~@sF_@_M`DiFtDuO\\cRnD{IuDs@gBkIiGnAlGyOsK{DjKiKf@eF|EmBTkEsFu@kNpByFiKtCmSoCaGPoCaCaKaA{\\gGuGgByHkCXf@{DeEuGjF_KbHcCoE_CuSzDeHgFuArB}AW_@{CxCiKhCl@]}G|G_DsN|@aEaFyCYyPjG~@gFxGkIlNaBrD`DvBsDtKgD_JuDuHeOr@uJvAyE`BY[{FpMuJkCqV?kN`\\_q@}TqgAnAmUdCO",
     "is_active": true,
     "event_picture_urls": [],
@@ -2663,7 +2660,7 @@ window.LOCAL_EVENTS_DATA = [
     "strava_url": "https://www.strava.com/clubs/1157973/group_events/3528256494678268006",
     "title": "FWC Cañada & New Kit Photoshoot!",
     "description": "Social ride + new FWC kit photoshoot with professional photographers 📸\nDetails TBD.",
-    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/SQOSAQ4UP347KB5T3XT63NJDIF3A65DKHXDSMCAWNDA2MBFMR3D7BU5AVBWSBSVXO6ZYMT5Q6PHAQJDGSK2GVE5LMDNDZMB7S5AAN5Q=",
+    "route_map_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/maps/CAIU7VXT7SUGYRRP5YYM37LAQFG4D7EQ2ODYCLQMSC2UICAIZNR3ITWNKEAPNLDXVOTNPDTKDGLTGBINELO2PGEJPJB6ELNT5NB74WI=",
     "route_polyline": "we|cFvfuiVxGoMhLwCvDaDnByFf@{RlEwJ`FwClNcBxFmCr\\od@rbDepCzNyVfB{RbBkE|SiMj{@{zA`EoKvJcGl`AwgAjUgS`R_BhMn@dJlK|B@~FuEbG_AtAuEfFaBtRkPd\\uGhIt@vE`DnL{DjDqClIeQbH~@jOsEfLpKbDX~\\wf@v]aWvKuLbFo_@jFeJjIyKlYaRh@_FmAmW|HiQhBoS|I{N}_@oq@gCeMwR{KwQcQ}p@iMu\\zI}l@xAgZhKc`@wEeC{DuAyKuCuBiOxFcLeAuTlEmFyAiClAeA`BbPlY|EjSvG|x@z@ph@|K`k@_Adk@l@dLfMh^~H~IpJ~F?tBebAdZuC~CkIdVqCnC{Eb@sIcBXhMuAfIkUfSm`AvgAwJbGaEnKk{@zzA}ShMcBjEgBzR{NxVsbDdpCs\\nd@yFlCmNbBaFvCmEvJg@zRoBxFqUtL",
     "is_active": true,
     "event_picture_urls": [],
